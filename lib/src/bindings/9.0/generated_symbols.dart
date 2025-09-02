@@ -6454,12 +6454,12 @@ final Map<String, List<String>> tizen90Symbols = {
     'csr_wp_set_popup_message',
   ],
   'libdevice-certificate-manager.so.2.0': [
-    'dcm_create_key_context',
-    'dcm_create_signature',
-    'dcm_free_key_context',
-    'dcm_get_certificate_chain',
-    'dcm_get_key_bit_length',
-    'dcm_get_key_type',
+    'dcm_create_key_context@@DCMCLIENT_2.0',
+    'dcm_create_signature@@DCMCLIENT_2.0',
+    'dcm_free_key_context@@DCMCLIENT_2.0',
+    'dcm_get_certificate_chain@@DCMCLIENT_2.0',
+    'dcm_get_key_bit_length@@DCMCLIENT_2.0',
+    'dcm_get_key_type@@DCMCLIENT_2.0',
   ],
   'libdpm.so.0': [
     'dpm_add_policy_changed_cb',

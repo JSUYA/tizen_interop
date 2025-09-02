@@ -7673,7 +7673,77 @@ class Tizen90Native {
       _notification_status_message_postPtr
           .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// @brief Sets an absolute path for an image file to display on the notification view.
+  int notification_register_detailed_changed_cb(
+    detailed_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_register_detailed_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_register_detailed_changed_cbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_register_detailed_changed_cb');
+  late final _notification_register_detailed_changed_cb =
+      _notification_register_detailed_changed_cbPtr.asFunction<
+          int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  int notification_unregister_detailed_changed_cb(
+    detailed_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_unregister_detailed_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_unregister_detailed_changed_cbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_unregister_detailed_changed_cb');
+  late final _notification_unregister_detailed_changed_cb =
+      _notification_unregister_detailed_changed_cbPtr.asFunction<
+          int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  int notification_clear(
+    int type,
+  ) {
+    return _notification_clear(
+      type,
+    );
+  }
+
+  late final _notification_clearPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32)>>(
+          'notification_clear');
+  late final _notification_clear =
+      _notification_clearPtr.asFunction<int Function(int)>();
+
+  int notification_get_list(
+    int type,
+    int count,
+    ffi.Pointer<notification_list_h> list,
+  ) {
+    return _notification_get_list(
+      type,
+      count,
+      list,
+    );
+  }
+
+  late final _notification_get_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int32, ffi.Int,
+              ffi.Pointer<notification_list_h>)>>('notification_get_list');
+  late final _notification_get_list = _notification_get_listPtr
+      .asFunction<int Function(int, int, ffi.Pointer<notification_list_h>)>();
+
+  /// @brief Sets an absolute path for an image file to display on the notification
+  /// view.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
   /// @param[in] type The notification image type
@@ -7697,8 +7767,8 @@ class Tizen90Native {
   /// if (noti == NULL)
   /// return;
   ///
-  /// noti_err = notification_set_image(noti, NOTIFICATION_IMAGE_TYPE_ICON, APP_IMAGE_FULL_PATH);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
+  /// noti_err = notification_set_image(noti, NOTIFICATION_IMAGE_TYPE_ICON,
+  /// APP_IMAGE_FULL_PATH); if (noti_err != NOTIFICATION_ERROR_NONE) {
   /// notification_free(noti);
   /// return;
   /// }
@@ -7725,7 +7795,8 @@ class Tizen90Native {
 
   /// @brief Gets the absolute path of an image file.
   /// @since_tizen 2.3
-  /// @remarks Do not free @a image_path. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a image_path. It will be freed when notification_free()
+  /// is called.
   /// @param[in] noti Notification handle
   /// @param[in] type Notification image type
   /// @param[out] image_path Image file full path
@@ -7744,9 +7815,8 @@ class Tizen90Native {
   /// char *image_path = NULL;
   /// int noti_err = NOTIFICATION_ERROR_NONE;
   ///
-  /// noti_err = notification_get_image(noti, NOTIFICATION_IMAGE_TYPE_ICON, &image_path);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_get_image(noti, NOTIFICATION_IMAGE_TYPE_ICON,
+  /// &image_path); if (noti_err != NOTIFICATION_ERROR_NONE) return;
   /// }
   /// @endcode
   int notification_get_image(
@@ -7769,10 +7839,12 @@ class Tizen90Native {
       int Function(notification_h, int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// @brief Sets a timestamp.
-  /// @details If input_time is @c 0, time information is taken from the current time.
+  /// @details If input_time is @c 0, time information is taken from the current
+  /// time.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
-  /// @param[in] input_time The input time. If you want the time stamp to not be shown, set this as #NOTIFICATION_DO_NOT_SHOW_TIME_STAMP
+  /// @param[in] input_time The input time. If you want the time stamp to not be
+  /// shown, set this as #NOTIFICATION_DO_NOT_SHOW_TIME_STAMP
   /// @return #NOTIFICATION_ERROR_NONE on success,
   /// otherwise any other value on failure
   /// @retval #NOTIFICATION_ERROR_NONE Success
@@ -7896,19 +7968,31 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, ffi.Pointer<time_t>)>();
 
   /// @brief Sets the text to display on the notification view.
-  /// @details Sets title, content string. If the text is formatted data (only %d, %f, %s are supported), type - value pair should be set.
-  /// If %d, the type #NOTIFICATION_VARIABLE_TYPE_INT and the value is an integer.
-  /// If %f, the type #NOTIFICATION_VARIABLE_TYPE_DOUBLE and the value is a double.
-  /// If %s, the type #NOTIFICATION_VARIABLE_TYPE_STRING and the value is a string.
-  /// If the type is #NOTIFICATION_VARIABLE_TYPE_COUNT, notification count is displaying with text.
-  /// If the value is #NOTIFICATION_COUNT_POS_LEFT, count is displayed at the left of the text.
-  /// If the value is #NOTIFICATION_COUNT_POS_IN, count is displayed in the text when text has %d format.
-  /// If the value is #NOTIFICATION_COUNT_POS_RIGHT, count is displayed at the right of the text.
-  /// Variable parameters should be terminated #NOTIFICATION_VARIABLE_TYPE_NONE.
+  /// @details Sets title, content string. If the text is formatted data (only %d,
+  /// %f, %s are supported), type - value pair should be set.
+  /// If %d, the type #NOTIFICATION_VARIABLE_TYPE_INT and the value is an
+  /// integer.
+  /// If %f, the type #NOTIFICATION_VARIABLE_TYPE_DOUBLE and the value is
+  /// a double.
+  /// If %s, the type #NOTIFICATION_VARIABLE_TYPE_STRING and the value is
+  /// a string.
+  /// If the type is #NOTIFICATION_VARIABLE_TYPE_COUNT, notification count
+  /// is displaying with text.
+  /// If the value is #NOTIFICATION_COUNT_POS_LEFT, count is displayed at
+  /// the left of the text.
+  /// If the value is #NOTIFICATION_COUNT_POS_IN, count is displayed in
+  /// the text when text has %d format.
+  /// If the value is #NOTIFICATION_COUNT_POS_RIGHT, count is displayed at
+  /// the right of the text.
+  /// Variable parameters should be terminated
+  /// #NOTIFICATION_VARIABLE_TYPE_NONE.
   ///
-  /// Note that You can display the translated contents according to the language of the system.
-  /// The application must supply a String KEY as the fourth argument to support localization.
-  /// If the language on the system changes, the contents of the notification are also translated.
+  /// Note that You can display the translated contents according to the
+  /// language of the system.
+  /// The application must supply a String KEY as the fourth argument to
+  /// support localization.
+  /// If the language on the system changes, the contents of the
+  /// notification are also translated.
   ///
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
@@ -7934,8 +8018,8 @@ class Tizen90Native {
   /// return;
   ///
   /// noti_err = notification_set_text(noti, NOTIFICATION_TEXT_TYPE_TITLE,
-  /// "I'm Title", "IDS_APP_BODY_IM_TITLE", NOTIFICATION_VARIABLE_TYPE_NONE);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
+  /// "I'm Title", "IDS_APP_BODY_IM_TITLE",
+  /// NOTIFICATION_VARIABLE_TYPE_NONE); if (noti_err != NOTIFICATION_ERROR_NONE) {
   /// notification_free(noti);
   /// return;
   /// }
@@ -7967,7 +8051,8 @@ class Tizen90Native {
 
   /// @brief Gets the text from the notification handle.
   /// @since_tizen 2.3
-  /// @remarks Do not free @a text. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a text. It will be freed when notification_free() is
+  /// called.
   /// @param[in] noti The notification handle
   /// @param[in] type The notification text type
   /// @param[out] text The notification text
@@ -7984,9 +8069,8 @@ class Tizen90Native {
   /// int noti_err = NOTIFICATION_ERROR_NONE;
   /// char *text = NULL;
   ///
-  /// noti_err = notification_get_text(noti, NOTIFICATION_TEXT_TYPE_TITLE, &text);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_get_text(noti, NOTIFICATION_TEXT_TYPE_TITLE,
+  /// &text); if (noti_err != NOTIFICATION_ERROR_NONE) return;
   ///
   /// }
   /// @endcode
@@ -8010,7 +8094,8 @@ class Tizen90Native {
       int Function(notification_h, int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// @brief Sets the timestamp to display on the notification view.
-  /// @details The timestamp will be converted to a formatted string and it will be displayed on the set text area.
+  /// @details The timestamp will be converted to a formatted string and it will be
+  /// displayed on the set text area.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
   /// @param[in] type The notification text type
@@ -8086,9 +8171,8 @@ class Tizen90Native {
   /// notification_h noti = NULL;
   /// int noti_err = NOTIFICATION_ERROR_NONE;
   ///
-  /// noti_err = notification_set_sound(noti, NOTIFICATION_SOUND_TYPE_DEFAULT, NULL);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_set_sound(noti, NOTIFICATION_SOUND_TYPE_DEFAULT,
+  /// NULL); if (noti_err != NOTIFICATION_ERROR_NONE) return;
   ///
   /// }
   /// @endcode
@@ -8113,7 +8197,8 @@ class Tizen90Native {
 
   /// @brief Gets the sound type from the notification handle.
   /// @since_tizen 2.3
-  /// @remarks Do not free @a path. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a path. It will be freed when notification_free() is
+  /// called.
   /// @param[in] noti The notification handle
   /// @param[out] type The notification sound type
   /// @param[out] path The user sound file path
@@ -8173,9 +8258,9 @@ class Tizen90Native {
   /// notification_h noti = NULL;
   /// int noti_err = NOTIFICATION_ERROR_NONE;
   ///
-  /// noti_err = notification_set_vibration(noti, NOTIFICATION_VIBRATION_TYPE_DEFAULT, NULL);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_set_vibration(noti,
+  /// NOTIFICATION_VIBRATION_TYPE_DEFAULT, NULL); if (noti_err !=
+  /// NOTIFICATION_ERROR_NONE) return;
   ///
   /// }
   /// @endcode
@@ -8200,7 +8285,8 @@ class Tizen90Native {
 
   /// @brief Gets the vibrate type from the notification handle.
   /// @since_tizen 2.3
-  /// @remarks Do not free @a path. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a path. It will be freed when notification_free() is
+  /// called.
   /// @param[in] noti The notification handle
   /// @param[out] type The notification sound type
   /// @param[out] path The user vibration file path
@@ -8393,9 +8479,8 @@ class Tizen90Native {
   /// int led_on_ms = 0;
   /// int led_off_ms = 0;
   ///
-  /// noti_err = notification_get_led_time_period(noti, &led_on_ms, &led_off_ms);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_get_led_time_period(noti, &led_on_ms,
+  /// &led_off_ms); if (noti_err != NOTIFICATION_ERROR_NONE) return;
   ///
   /// }
   /// @endcode
@@ -8421,11 +8506,13 @@ class Tizen90Native {
               notification_h, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
 
   /// @brief Sets the launch option for a notification.
-  /// @details When notification data selected in display application, application launched by app_control_send_launch_request with app_control handle.
+  /// @details When notification data selected in display application, application
+  /// launched by app_control_send_launch_request with app_control handle.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/appmanager.launch
-  /// @remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege is additionally required.
+  /// @remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege
+  /// is additionally required.
   /// @param[in] noti The notification handle
   /// @param[in] type Launching option type
   /// @param[in] option App Control handler
@@ -8449,9 +8536,9 @@ class Tizen90Native {
   ///
   /// // Do something
   ///
-  /// noti_err = notification_set_launch_option(noti, NOTIFICATION_LAUNCH_OPTION_APP_CONTROL, (void *)app_control);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
-  /// app_control_destroy(app_control);
+  /// noti_err = notification_set_launch_option(noti,
+  /// NOTIFICATION_LAUNCH_OPTION_APP_CONTROL, (void *)app_control); if (noti_err !=
+  /// NOTIFICATION_ERROR_NONE) { app_control_destroy(app_control);
   /// notification_free(noti);
   /// return;
   /// }
@@ -8496,9 +8583,9 @@ class Tizen90Native {
   /// {
   /// app_control_h app_control = NULL;
   ///
-  /// noti_err = notification_get_launch_option(noti, NOTIFICATION_LAUNCH_OPTION_APP_CONTROL, (void *)&app_control);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
-  /// return;
+  /// noti_err = notification_get_launch_option(noti,
+  /// NOTIFICATION_LAUNCH_OPTION_APP_CONTROL, (void *)&app_control); if (noti_err !=
+  /// NOTIFICATION_ERROR_NONE) return;
   ///
   /// // Do something
   ///
@@ -8526,12 +8613,15 @@ class Tizen90Native {
           int Function(notification_h, int, ffi.Pointer<ffi.Void>)>();
 
   /// @brief Sets the handler for a specific event.
-  /// @details When some event occurs on notification, application launched by app_control_send_launch_request with app_control handle. \n
-  /// Setting event handler of a button means that the notification will show the button.
+  /// @details When some event occurs on notification, application launched by
+  /// app_control_send_launch_request with app_control handle. \n
+  /// Setting event handler of a button means that the notification will
+  /// show the button.
   /// @since_tizen 2.4
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/appmanager.launch
-  /// @remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege is additionally required.
+  /// @remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege
+  /// is additionally required.
   /// @param[in] noti The notification handle
   /// @param[in] event_type Event type
   /// @param[in] event_handler App control handle
@@ -8556,9 +8646,9 @@ class Tizen90Native {
   ///
   /// // Do something
   ///
-  /// noti_err = notification_set_event_handler(noti, NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1, app_control);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
-  /// app_control_destroy(app_control);
+  /// noti_err = notification_set_event_handler(noti,
+  /// NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1, app_control); if (noti_err !=
+  /// NOTIFICATION_ERROR_NONE) { app_control_destroy(app_control);
   /// notification_free(noti);
   /// return;
   /// }
@@ -8606,10 +8696,9 @@ class Tizen90Native {
   ///
   /// // Do something
   ///
-  /// noti_err = notification_get_event_handler(noti, NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1, &app_control);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
-  /// notification_free(noti);
-  /// return;
+  /// noti_err = notification_get_event_handler(noti,
+  /// NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1, &app_control); if (noti_err !=
+  /// NOTIFICATION_ERROR_NONE) { notification_free(noti); return;
   /// }
   ///
   /// app_control_destroy(app_control);
@@ -8656,7 +8745,8 @@ class Tizen90Native {
   /// if (noti == NULL)
   /// return;
   ///
-  /// noti_err = notification_set_property(noti, NOTIFICATION_PROP_DISPLAY_ONLY_SIMMODE | NOTIFICATION_PROP_DISABLE_APP_LAUNCH);
+  /// noti_err = notification_set_property(noti,
+  /// NOTIFICATION_PROP_DISPLAY_ONLY_SIMMODE | NOTIFICATION_PROP_DISABLE_APP_LAUNCH);
   /// if (noti_err != NOTIFICATION_ERROR_NONE) {
   /// notification_free(noti);
   /// return;
@@ -8720,7 +8810,8 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, ffi.Pointer<ffi.Int>)>();
 
   /// @brief Sets applications to display the notification.
-  /// @details All display application is enabled(#NOTIFICATION_DISPLAY_APP_ALL) if you do not call this function.
+  /// @details All display application is enabled(#NOTIFICATION_DISPLAY_APP_ALL) if
+  /// you do not call this function.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
   /// @param[in] applist The with | operation
@@ -8741,9 +8832,9 @@ class Tizen90Native {
   /// if (noti == NULL)
   /// return;
   ///
-  /// noti_err = notification_set_display_applist(noti, NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY |
-  /// NOTIFICATION_DISPLAY_APP_TICKER | NOTIFICATION_DISPLAY_APP_INDICATOR);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE) {
+  /// noti_err = notification_set_display_applist(noti,
+  /// NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY | NOTIFICATION_DISPLAY_APP_TICKER |
+  /// NOTIFICATION_DISPLAY_APP_INDICATOR); if (noti_err != NOTIFICATION_ERROR_NONE) {
   /// notification_free(noti);
   /// return;
   /// }
@@ -8766,7 +8857,8 @@ class Tizen90Native {
       _notification_set_display_applistPtr
           .asFunction<int Function(notification_h, int)>();
 
-  /// @brief Gets the application list displaying the notification from the notification handle.
+  /// @brief Gets the application list displaying the notification from the
+  /// notification handle.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
   /// @param[out] applist The display application list
@@ -9070,7 +9162,8 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/notification
-  /// @param[in] noti The notification handle that is created by notification_create()
+  /// @param[in] noti The notification handle that is created by
+  /// notification_create()
   /// @return #NOTIFICATION_ERROR_NONE on success,
   /// otherwise any other value on failure
   /// @retval #NOTIFICATION_ERROR_NONE Success
@@ -9104,7 +9197,8 @@ class Tizen90Native {
       _notification_updatePtr.asFunction<int Function(notification_h)>();
 
   /// @brief Deletes a notification with the given handle.
-  /// @details notification_delete() removes notification data from database and notification_free() releases memory of notification data.
+  /// @details notification_delete() removes notification data from database and
+  /// notification_free() releases memory of notification data.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/notification
@@ -9145,11 +9239,15 @@ class Tizen90Native {
       _notification_deletePtr.asFunction<int Function(notification_h)>();
 
   /// @brief Creates internal structure data and returns a notification handle.
-  /// @details Available type is #NOTIFICATION_TYPE_NOTI and #NOTIFICATION_TYPE_ONGOING.
-  /// #NOTIFICATION_TYPE_NOTI is remaining notification data even if device is restarted.
-  /// #NOTIFICATION_TYPE_ONGOING can display progress on a notification with #NOTIFICATION_LY_ONGOING_PROGRESS layout.
+  /// @details Available type is #NOTIFICATION_TYPE_NOTI and
+  /// #NOTIFICATION_TYPE_ONGOING.
+  /// #NOTIFICATION_TYPE_NOTI is remaining notification data even if
+  /// device is restarted.
+  /// #NOTIFICATION_TYPE_ONGOING can display progress on a notification
+  /// with #NOTIFICATION_LY_ONGOING_PROGRESS layout.
   /// @since_tizen 2.3
-  /// @remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+  /// @remarks The specific error code can be obtained using the get_last_result()
+  /// method. Error codes are described in Exception section.
   /// The returned value should be released using notification_free().
   /// @param[in] type The notification type
   /// @return Notification handle(#notification_h) on success,
@@ -9192,9 +9290,11 @@ class Tizen90Native {
   /// @brief Creates a notification clone.
   /// @details Newly created notification handle is returned.
   /// @since_tizen 2.3
-  /// @remarks This cloned notification handle should be freed using notification_free().
+  /// @remarks This cloned notification handle should be freed using
+  /// notification_free().
   /// @param[in] noti The notification handle
-  /// @param[out] clone The newly created notification handle that has same with input @a noti
+  /// @param[out] clone The newly created notification handle that has same with
+  /// input @a noti
   /// @return #NOTIFICATION_ERROR_NONE if success,
   /// otherwise any other value if failure
   /// @retval #NOTIFICATION_ERROR_NONE Success
@@ -9232,7 +9332,8 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, ffi.Pointer<notification_h>)>();
 
   /// @brief Frees the internal structure data of a notification handle.
-  /// @details Internal data of a notification handle is released. Data of the inserted notification is not deleted.
+  /// @details Internal data of a notification handle is released. Data of the
+  /// inserted notification is not deleted.
   /// @since_tizen 2.3
   /// @param[in] noti The notification handle
   /// @return #NOTIFICATION_ERROR_NONE on success,
@@ -9322,7 +9423,8 @@ class Tizen90Native {
 
   /// @brief Gets the tag of the notification handle.
   /// @since_tizen 2.3
-  /// @remarks Do not free @a tag. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a tag. It will be freed when notification_free() is
+  /// called.
   /// @param[in] noti Notification handle
   /// @param[out] tag Tag for loading notification handle
   /// @return #NOTIFICATION_ERROR_NONE on success,
@@ -9367,7 +9469,8 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/notification
-  /// @remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+  /// @remarks The specific error code can be obtained using the get_last_result()
+  /// method. Error codes are described in Exception section.
   /// The returned value should be released using notification_free().
   /// @param[in] tag Tag for loading notification handle
   /// @return Notification handle(#notification_h) on success,
@@ -9484,7 +9587,8 @@ class Tizen90Native {
 
   /// @brief Gets the package name of the notification.
   /// @since_tizen 2.4
-  /// @remarks Do not free @a pkgname. It will be freed when notification_free() is called.
+  /// @remarks Do not free @a pkgname. It will be freed when notification_free() is
+  /// called.
   /// @param[in] noti Notification handle
   /// @param[out] pkgname The package name of the notification
   /// @return #NOTIFICATION_ERROR_NONE on success,
@@ -9616,10 +9720,13 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, int)>();
 
   /// @brief Sets the 'auto remove' option of the active notification.
-  /// @details The 'auto remove' option lets the active notification be removed several seconds after it shows. Default value is true.
+  /// @details The 'auto remove' option lets the active notification be removed
+  /// several seconds after it shows. Default value is true.
   /// @since_tizen 2.4
-  /// @remarks When 'auto_remove' is set as false, the active notification will not be removed
-  /// as long as the user removes the active notification or the app which posted the active notification removes the active notification.
+  /// @remarks When 'auto_remove' is set as false, the active notification will not
+  /// be removed
+  /// as long as the user removes the active notification or the app which
+  /// posted the active notification removes the active notification.
   /// @param[in] noti Notification handle
   /// @param[in] auto_remove Auto remove option
   /// @return #NOTIFICATION_ERROR_NONE On success,
@@ -9660,7 +9767,8 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, bool)>();
 
   /// @brief Gets the 'auto remove' option of the active notification.
-  /// @details The 'auto remove' option lets the active notification be removed several seconds after it shows. Default value is true.
+  /// @details The 'auto remove' option lets the active notification be removed
+  /// several seconds after it shows. Default value is true.
   /// @since_tizen 2.4
   /// @param[in] noti Notification handle
   /// @param[out] auto_remove Auto remove option
@@ -9701,15 +9809,20 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, ffi.Pointer<ffi.Bool>)>();
 
   /// @brief Saves a notification template to the notification database.
-  /// @details An application can save the created notification as a template for later reuse.
-  /// If the template has the same name as a saved one, the saved template will be overwritten.
-  /// A saved template can be loaded only by the application which saved it.
-  /// All templates are removed when the application package is uninstalled.
+  /// @details An application can save the created notification as a template for
+  /// later reuse.
+  /// If the template has the same name as a saved one, the saved template
+  /// will be overwritten.
+  /// A saved template can be loaded only by the application which saved
+  /// it.
+  /// All templates are removed when the application package is
+  /// uninstalled.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/notification
   /// @remarks The number of templates is limited to 10.
-  /// When you try to add more than 10 templates, #NOTIFICATION_ERROR_MAX_EXCEEDED will be returned.
+  /// When you try to add more than 10 templates,
+  /// #NOTIFICATION_ERROR_MAX_EXCEEDED will be returned.
   /// @param[in] noti Notification handle
   /// @param[in] template_name Template name
   /// @return #NOTIFICATION_ERROR_NONE On success, other value on failure
@@ -9769,7 +9882,8 @@ class Tizen90Native {
   /// @remarks The returned handle should be destroyed using notification_free().
   /// The specific error code can be obtained using get_last_result().
   /// Error codes are described in the Exception section.
-  /// If an invalid template name is given, the result will be set to #NOTIFICATION_ERROR_FROM_DB.
+  /// If an invalid template name is given, the result will be set to
+  /// #NOTIFICATION_ERROR_FROM_DB.
   /// @param[in] template_name Template name
   /// @return Notification handle on success, NULL on failure
   /// @exception #NOTIFICATION_ERROR_NONE Success
@@ -9809,7 +9923,8 @@ class Tizen90Native {
 
   /// @brief Gets notification block state.
   /// @details The user can set the notification block state in settings.
-  /// The block state indicates whether or not notifications can be posted.
+  /// The block state indicates whether or not notifications can be
+  /// posted.
   /// Additionally only notifications to the notification panel are
   /// allowed in "Do not disturb mode". Sound, Vibrate and
   /// Active/Instant notifications are blocked.
@@ -9823,7 +9938,8 @@ class Tizen90Native {
   /// @retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #NOTIFICATION_ERROR_OUT_OF_MEMORY out of memory
   /// @retval #NOTIFICATION_ERROR_IO_ERROR I/O Error
-  /// @retval #NOTIFICATION_ERROR_SERVICE_NOT_READY No response from notification service
+  /// @retval #NOTIFICATION_ERROR_SERVICE_NOT_READY No response from notification
+  /// service
   /// @see #notification_block_state_e
   /// @par Sample code:
   /// @code
@@ -9857,22 +9973,35 @@ class Tizen90Native {
           .asFunction<int Function(ffi.Pointer<ffi.Int32>)>();
 
   /// @brief Sets a text input box to reply directly on the notification.
-  /// @details When you add a text input to the active notification, the notification UI will show a text input with a button.
-  /// So, the user can enter any text and press the button to confirm the text as a input.
+  /// @details When you add a text input to the active notification, the
+  /// notification UI will show a text input with a button.
+  /// So, the user can enter any text and press the button to confirm the
+  /// text as a input.
   /// You can edit some UI component that is related to the text input.
-  /// First, you can add placeholder text to guide the user using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER type.
+  /// First, you can add placeholder text to guide the user using
+  /// notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER
+  /// type.
   /// You also can edit button for the text input.
-  /// For setting just a text to the button, you can set the text using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON type.
-  /// If you want to show image button, you can set an image for the button using notification_set_image() with #NOTIFICATION_IMAGE_TYPE_TEXT_INPUT_BUTTON type.
+  /// For setting just a text to the button, you can set the text using
+  /// notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON type.
+  /// If you want to show image button, you can set an image for the
+  /// button using notification_set_image() with
+  /// #NOTIFICATION_IMAGE_TYPE_TEXT_INPUT_BUTTON type.
   ///
-  /// Note that you should set an app_control for handling the event for user input using notification_set_event_handler().
-  /// #NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON is the event type for the text input.
-  /// You can get the text the user enters in the app_control handle that is passed as a result of the event.
-  /// The app_control will contain #APP_CONTROL_DATA_TEXT key, so you can get the text using app_control_get_extra_data() using APP_CONTROL_DATA_TEXT key.
+  /// Note that you should set an app_control for handling the event for
+  /// user input using notification_set_event_handler().
+  /// #NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON is the event
+  /// type for the text input.
+  /// You can get the text the user enters in the app_control handle that
+  /// is passed as a result of the event.
+  /// The app_control will contain #APP_CONTROL_DATA_TEXT key, so you can
+  /// get the text using app_control_get_extra_data() using APP_CONTROL_DATA_TEXT key.
   /// The value will contain the text user enters.
   ///
-  /// Note that you are able to make the switching button to the text input box.
-  /// You have to set the app_control which you will set in a text input box to the switching button.
+  /// Note that you are able to make the switching button to the text
+  /// input box.
+  /// You have to set the app_control which you will set in a text input
+  /// box to the switching button.
   /// Refer to the second sample code.
   /// @since_tizen 3.0
   /// @param[in] noti Notification handle
@@ -9915,8 +10044,8 @@ class Tizen90Native {
   /// return;
   ///
   /// noti_err = notification_set_display_applist(noti,
-  /// NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY | NOTIFICATION_DISPLAY_APP_ACTIVE);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
+  /// NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY |
+  /// NOTIFICATION_DISPLAY_APP_ACTIVE); if (noti_err != NOTIFICATION_ERROR_NONE)
   /// return;
   ///
   /// // Do something
@@ -9929,9 +10058,8 @@ class Tizen90Native {
   /// if (noti_err != APP_CONTROL_ERROR_NONE)
   /// return;
   ///
-  /// noti_err = app_control_set_operation(app_control, APP_CONTROL_OPERATION_DEFAULT);
-  /// if (noti_err != APP_CONTROL_ERROR_NONE)
-  /// return;
+  /// noti_err = app_control_set_operation(app_control,
+  /// APP_CONTROL_OPERATION_DEFAULT); if (noti_err != APP_CONTROL_ERROR_NONE) return;
   ///
   /// noti_err = notification_set_event_handler(noti,
   /// NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON,
@@ -9993,8 +10121,8 @@ class Tizen90Native {
   /// return;
   ///
   /// noti_err = notification_set_display_applist(noti,
-  /// NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY | NOTIFICATION_DISPLAY_APP_ACTIVE);
-  /// if (noti_err != NOTIFICATION_ERROR_NONE)
+  /// NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY |
+  /// NOTIFICATION_DISPLAY_APP_ACTIVE); if (noti_err != NOTIFICATION_ERROR_NONE)
   /// return;
   ///
   /// // Do something
@@ -10007,9 +10135,8 @@ class Tizen90Native {
   /// if (noti_err != APP_CONTROL_ERROR_NONE)
   /// return;
   ///
-  /// noti_err = app_control_set_operation(app_control, APP_CONTROL_OPERATION_DEFAULT);
-  /// if (noti_err != APP_CONTROL_ERROR_NONE)
-  /// return;
+  /// noti_err = app_control_set_operation(app_control,
+  /// APP_CONTROL_OPERATION_DEFAULT); if (noti_err != APP_CONTROL_ERROR_NONE) return;
   ///
   /// noti_err = notification_set_event_handler(notification,
   /// NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1,
@@ -10049,10 +10176,12 @@ class Tizen90Native {
       .asFunction<int Function(notification_h, int)>();
 
   /// @brief Sets the image height for the extended notification.
-  /// @details The image is shown under the notification's text. The application can set the image height.
+  /// @details The image is shown under the notification's text. The application
+  /// can set the image height.
   /// The image is modified to fit into the height set by this function.
   /// The image can be scaled down and/or cropped.
-  /// If @a height is 0, the default value is used. The default height depends on the screen size.
+  /// If @a height is 0, the default value is used. The default height
+  /// depends on the screen size.
   /// @since_tizen 4.0
   /// @param[in] noti   The notification handle
   /// @param[in] height The image height
@@ -105535,12 +105664,35 @@ class Tizen90Native {
       _asp_session_release_portPtr.asFunction<
           int Function(asp_session_h, ffi.Pointer<ffi.Char>, int, int)>();
 
+  /// @file        bluetooth.h
+  /// @brief       API to control the Bluetooth adapter and devices and
+  /// communications.
+  /// @ingroup     CAPI_NETWORK_BLUETOOTH_MODULE
+  int bt_adapter_enable() {
+    return _bt_adapter_enable();
+  }
+
+  late final _bt_adapter_enablePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('bt_adapter_enable');
+  late final _bt_adapter_enable =
+      _bt_adapter_enablePtr.asFunction<int Function()>();
+
+  int bt_adapter_disable() {
+    return _bt_adapter_disable();
+  }
+
+  late final _bt_adapter_disablePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('bt_adapter_disable');
+  late final _bt_adapter_disable =
+      _bt_adapter_disablePtr.asFunction<int Function()>();
+
   /// @ingroup CAPI_NETWORK_BLUETOOTH_MODULE
   /// @brief Initializes the Bluetooth API.
   /// @since_tizen 2.3
   ///
   /// @remarks This function must be called before Bluetooth API starts. \n
-  /// You must free all resources of the Bluetooth service by calling bt_deinitialize() if Bluetooth service is no longer needed.
+  /// You must free all resources of the Bluetooth service by calling
+  /// bt_deinitialize() if Bluetooth service is no longer needed.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -105678,8 +105830,8 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   /// @brief Gets the name of local Bluetooth adapter.
   ///
-  /// @details Use this function to get the friendly name associated with Bluetooth \n
-  /// device, retrieved by the remote Bluetooth devices.
+  /// @details Use this function to get the friendly name associated with Bluetooth
+  /// \n device, retrieved by the remote Bluetooth devices.
   ///
   /// @since_tizen 2.3
   ///
@@ -105733,7 +105885,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @post bt_adapter_name_changed_cb() will be invoked if this function returns #BT_ERROR_NONE.
+  /// @post bt_adapter_name_changed_cb() will be invoked if this function returns
+  /// #BT_ERROR_NONE.
   ///
   /// @see bt_adapter_get_name()
   /// @see bt_adapter_name_changed_cb()
@@ -105757,8 +105910,10 @@ class Tizen90Native {
   /// @brief  Gets the visibility mode of local Bluetooth adapter.
   /// @since_tizen 2.3
   /// @param[out] mode  The visibility mode of the Bluetooth device
-  /// @param[out] duration  The duration until the visibility mode is changed to #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE (in seconds).
-  /// @a duration is valid only if @a mode is #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE. This value can be NULL.
+  /// @param[out] duration  The duration until the visibility mode is changed to
+  /// #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE (in seconds).
+  /// @a duration is valid only if @a mode is
+  /// #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE. This value can be NULL.
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -105788,15 +105943,19 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   /// @brief Starts the device discovery, asynchronously.
   ///
-  /// @details If a device is discovered, bt_adapter_device_discovery_state_changed_cb() will be invoked \n
-  /// with #BT_ADAPTER_DEVICE_DISCOVERY_FOUND, and then bt_adapter_device_discovery_state_changed_cb() \n
-  /// will be called with #BT_ADAPTER_DEVICE_DISCOVERY_FINISHED in case of the completion or cancellation of the discovery.
+  /// @details If a device is discovered,
+  /// bt_adapter_device_discovery_state_changed_cb() will be invoked \n with
+  /// #BT_ADAPTER_DEVICE_DISCOVERY_FOUND, and then
+  /// bt_adapter_device_discovery_state_changed_cb() \n will be called with
+  /// #BT_ADAPTER_DEVICE_DISCOVERY_FINISHED in case of the completion or
+  /// cancellation of the discovery.
   ///
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks To connect to peer Bluetooth device, you need to know its Bluetooth address. \n
-  /// The device discovery can be stopped by bt_adapter_stop_device_discovery().
+  /// @remarks To connect to peer Bluetooth device, you need to know its Bluetooth
+  /// address. \n The device discovery can be stopped by
+  /// bt_adapter_stop_device_discovery().
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -105830,7 +105989,8 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks The device discovery process will take 10 ~ 20 seconds to get all the devices in vicinity.
+  /// @remarks The device discovery process will take 10 ~ 20 seconds to get all
+  /// the devices in vicinity.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -105841,7 +106001,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_IN_PROGRESS Operation is not in progress
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The device discovery must be in progress with bt_adapter_start_device_discovery().
+  /// @pre The device discovery must be in progress with
+  /// bt_adapter_start_device_discovery().
   /// @post This function invokes bt_adapter_device_discovery_state_changed_cb().
   ///
   /// @see bt_adapter_is_discovering()
@@ -105863,11 +106024,14 @@ class Tizen90Native {
   /// @brief Checks for the device discovery is in progress or not.
   /// @since_tizen 2.3
   ///
-  /// @remarks If Bluetooth discovery is in progress, other operations are not allowed and \n
-  /// you have to either stop the discovery operation, or wait for it to be finished, \n
+  /// @remarks If Bluetooth discovery is in progress, other operations are not
+  /// allowed and \n
+  /// you have to either stop the discovery operation, or wait for it to be
+  /// finished, \n
   /// before performing other operations.
   ///
-  /// @param[out] is_discovering The discovering status: (@c true = in progress , @c  false = not in progress )
+  /// @param[out] is_discovering The discovering status: (@c true = in progress ,
+  /// @c  false = not in progress )
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -105901,7 +106065,8 @@ class Tizen90Native {
   ///
   /// @param[in] uuids The UUID list of the device.
   /// @param[in] no_of_service The number of the UUID list count.
-  /// @param[out] service_mask_list Service mask list converted from the given UUID list.
+  /// @param[out] service_mask_list Service mask list converted from the given UUID
+  /// list.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -105972,7 +106137,8 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   /// @brief Gets the device information of a bonded device.
   /// @since_tizen 2.3
-  /// @remarks The @a device_info must be released with bt_adapter_free_device_info() by you .
+  /// @remarks The @a device_info must be released with
+  /// bt_adapter_free_device_info() by you .
   ///
   /// @param[in] remote_address The address of remote device
   /// @param[out] device_info The bonded device information
@@ -106068,7 +106234,8 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-  /// @brief Registers a callback function to be invoked when the Bluetooth adapter state changes.
+  /// @brief Registers a callback function to be invoked when the Bluetooth adapter
+  /// state changes.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to invoke
@@ -106128,7 +106295,8 @@ class Tizen90Native {
       _bt_adapter_unset_state_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-  /// @brief Registers a callback function to be invoked when the name of Bluetooth adapter changes.
+  /// @brief Registers a callback function to be invoked when the name of Bluetooth
+  /// adapter changes.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to invoke
@@ -106188,7 +106356,8 @@ class Tizen90Native {
       _bt_adapter_unset_name_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-  /// @brief Registers a callback function to be invoked when the visibility mode changes.
+  /// @brief Registers a callback function to be invoked when the visibility mode
+  /// changes.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to register
@@ -106253,12 +106422,15 @@ class Tizen90Native {
   /// @ingroup  CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   /// @brief Registers a callback function to be invoked every second.
   ///
-  /// @details  When you set visibility mode as #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE, \n
-  /// @a callback will be called every second until visibility mode is changed to #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE.
+  /// @details  When you set visibility mode as
+  /// #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE, \n
+  /// @a callback will be called every second until visibility mode is changed to
+  /// #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE.
   ///
   /// @since_tizen 2.3
-  /// until the visibility mode is changed from #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE
-  /// to #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE.
+  /// until the visibility mode is changed from
+  /// #BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE to
+  /// #BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE.
   /// @param[in]  callback  The callback function to register
   /// @param[in]  user_data  The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
@@ -106315,7 +106487,8 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-  /// @brief Registers a callback function to be invoked when the device discovery state changes.
+  /// @brief Registers a callback function to be invoked when the device discovery
+  /// state changes.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to register
@@ -106382,7 +106555,8 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks %http://tizen.org/privilege/bluetooth (public level privilege) is required to use this API since 5.5.
+  /// @remarks %http://tizen.org/privilege/bluetooth (public level privilege) is
+  /// required to use this API since 5.5.
   ///
   /// @remarks The @a hash should be released using free().
   /// @remarks The @a randomizer should be released using free().
@@ -106443,7 +106617,8 @@ class Tizen90Native {
   /// @param[in] hash The hash value received from the controller
   /// @param[in] randomizer The randomizer value received from the controller
   /// @param[in] hash_len The length of the hash value. Allowed value is 16
-  /// @param[in] randomizer_len The length of the randomizer value. Allowed value is 16
+  /// @param[in] randomizer_len The length of the randomizer value. Allowed value
+  /// is 16
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -106492,15 +106667,19 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks %http://tizen.org/privilege/bluetooth (public level privilege) is required to use this API since 5.5.
-  /// @remarks The @a hash192, randomizer192, hash256 and randomizer256 must be released using free().
+  /// @remarks %http://tizen.org/privilege/bluetooth (public level privilege) is
+  /// required to use this API since 5.5.
+  /// @remarks The @a hash192, randomizer192, hash256 and randomizer256 must be
+  /// released using free().
   ///
   /// @param[out] hash192 The hash value derived from the P-192 public key
-  /// @param[out] randomizer192 The randomizer value associated with the P-192 public key
+  /// @param[out] randomizer192 The randomizer value associated with the P-192
+  /// public key
   /// @param[out] hash192_len The length of @a hash192
   /// @param[out] randomizer192_len The length of @a randomizer192
   /// @param[out] hash256 The hash value derived from the P-256 public key
-  /// @param[out] randomizer256 The randomizer value associated with the P-256 public key
+  /// @param[out] randomizer256 The randomizer value associated with the P-256
+  /// public key
   /// @param[out] hash256_len The length of @a hash256
   /// @param[out] randomizer256_len The length of @a randomizer256
   ///
@@ -106569,11 +106748,13 @@ class Tizen90Native {
   ///
   /// @param[in] remote_address Remote device address
   /// @param[in] hash192 The P-192 hash value received via OOB from remote device
-  /// @param[in] randomizer192 The P-192 randomizer value received via OOB from remote device
+  /// @param[in] randomizer192 The P-192 randomizer value received via OOB from
+  /// remote device
   /// @param[in] hash192_len The length of @a hash192
   /// @param[in] randomizer192_len The length of @a randomizer192
   /// @param[in] hash256 The P-256 hash value received via OOB from remote device
-  /// @param[in] randomizer256 The P-256 randomizer value received via OOB from remote device
+  /// @param[in] randomizer256 The P-256 randomizer value received via OOB from
+  /// remote device
   /// @param[in] hash256_len The length of @a hash256
   /// @param[in] randomizer256_len The length of @a randomizer256
   ///
@@ -106676,11 +106857,12 @@ class Tizen90Native {
   /// @brief Checks for the LE device discovery is in progress or not.
   /// @since_tizen 2.3
   ///
-  /// @remarks If Bluetooth LE scan is in progress, other operations are not allowed and \n
-  /// you have to either stop the LE scan operation, or wait for it to be finished, \n
-  /// before performing other operations.
+  /// @remarks If Bluetooth LE scan is in progress, other operations are not
+  /// allowed and \n you have to either stop the LE scan operation, or wait for it
+  /// to be finished, \n before performing other operations.
   ///
-  /// @param[out] is_discovering The discovering status: (@c true = in progress , @c  false = not in progress )
+  /// @param[out] is_discovering The discovering status: (@c true = in progress ,
+  /// @c  false = not in progress )
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -106708,7 +106890,8 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Starts the LE scan to find LE advertisement.
   ///
-  /// @details If a LE advertisement is found, bt_adapter_le_scan_result_cb() will be invoked.
+  /// @details If a LE advertisement is found, bt_adapter_le_scan_result_cb() will
+  /// be invoked.
   ///
   /// @since_tizen 2.3.1
   /// @privlevel public
@@ -106779,9 +106962,10 @@ class Tizen90Native {
   /// @brief Gets the service UUID list from the scan result information.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks The @a uuids must be iterated as count and each pointed data must be released with free().
-  /// Then @a uuids must be released with free(). \n
-  /// 16-bit service UUID or 128-bit service UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)
+  /// @remarks The @a uuids must be iterated as count and each pointed data must be
+  /// released with free(). Then @a uuids must be released with free(). \n 16-bit
+  /// service UUID or 128-bit service UUID is supported. (e.g. 180F,
+  /// 0000180F-0000-1000-8000-00805F9B34FB)
   ///
   /// @param[in] info The scan result information
   /// @param[in] pkt_type The packet type
@@ -106915,12 +107099,13 @@ class Tizen90Native {
               int, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Gets the service solicitation UUID list from the scan result information.
+  /// @brief Gets the service solicitation UUID list from the scan result
+  /// information.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks The @a uuids must be iterated as count and each pointed data must be released with free().
-  /// Then @a uuids must be released with free(). \n
-  /// 16-bit service solicitation UUID or 128-bit service solicitation UUID is supported.
+  /// @remarks The @a uuids must be iterated as count and each pointed data must be
+  /// released with free(). Then @a uuids must be released with free(). \n 16-bit
+  /// service solicitation UUID or 128-bit service solicitation UUID is supported.
   /// (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)
   ///
   /// @param[in] info The scan result information
@@ -106973,7 +107158,8 @@ class Tizen90Native {
   /// @brief Gets the service data list from the scan result information.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks The @a data_list must be released with bt_adapter_le_free_service_data_list() by you .
+  /// @remarks The @a data_list must be released with
+  /// bt_adapter_le_free_service_data_list() by you .
   ///
   /// @param[in] info The scan result information
   /// @param[in] pkt_type The packet type
@@ -107153,7 +107339,8 @@ class Tizen90Native {
   /// @brief Gets iBeacon format's data from the scan result information.
   /// @since_tizen 4.0
   ///
-  /// @remarks The @a ibeacon_info must be released with bt_adapter_le_free_ibeacon_report().
+  /// @remarks The @a ibeacon_info must be released with
+  /// bt_adapter_le_free_ibeacon_report().
   ///
   /// @param[in] info The scan result information
   /// @param[in] pkt_type The packet type
@@ -107229,10 +107416,12 @@ class Tizen90Native {
               ffi.Pointer<bt_adapter_le_ibeacon_scan_result_info_s>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Creates advertiser to advertise device's existence or respond to LE scanning request.
+  /// @brief Creates advertiser to advertise device's existence or respond to LE
+  /// scanning request.
   /// @since_tizen 2.3
   ///
-  /// @remarks The @a advertiser should be released using bt_adapter_le_destroy_advertiser().
+  /// @remarks The @a advertiser should be released using
+  /// bt_adapter_le_destroy_advertiser().
   ///
   /// @param[out] advertiser The handle of advertiser
   ///
@@ -107302,7 +107491,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_advertiser_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_IPSP_MODULE
-  /// @brief Initializes the Bluetooth IPSP (Internet Protocol Support Profile) service.
+  /// @brief Initializes the Bluetooth IPSP (Internet Protocol Support Profile)
+  /// service.
   /// @since_tizen 4.0
   /// @param[in] callback The callback called when the initialization is finished
   /// @param[in] user_data The user data to be passed to the callback function
@@ -107333,7 +107523,8 @@ class Tizen90Native {
       int Function(bt_ipsp_init_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_IPSP_MODULE
-  /// @brief Deinitializes the Bluetooth IPSP (Internet Protocol Support Profile) service.
+  /// @brief Deinitializes the Bluetooth IPSP (Internet Protocol Support Profile)
+  /// service.
   /// @since_tizen 4.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -107418,7 +107609,8 @@ class Tizen90Native {
       _bt_ipsp_disconnectPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_IPSP_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state changes.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state changes.
   /// @since_tizen 4.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -107451,7 +107643,8 @@ class Tizen90Native {
               bt_ipsp_connection_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_IPSP_MODULE
-  /// @brief Unregisters the callback function called when the connection state changes.
+  /// @brief Unregisters the callback function called when the connection state
+  /// changes.
   /// @since_tizen 4.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -107480,10 +107673,11 @@ class Tizen90Native {
   /// @remarks 16-bit UUID or 128-bit UUID is supported.
   /// (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB).
   /// 16-bit UUID is advertised as 16-bit UUID.
-  /// 128-bit UUID made from base UUID(00000000-0000-1000-8000-00805F9B34FB)
-  /// is converted to the 16-bit equivalent form and advertised as such.
-  /// (e.g. 0000180F-0000-1000-8000-00805F9B34FB is converted to 180F 16-bit form).
-  /// Any other 128-bit UUID is advertised as 128-bit UUID.
+  /// 128-bit UUID made from base
+  /// UUID(00000000-0000-1000-8000-00805F9B34FB) is converted to the 16-bit
+  /// equivalent form and advertised as such. (e.g.
+  /// 0000180F-0000-1000-8000-00805F9B34FB is converted to 180F 16-bit form). Any
+  /// other 128-bit UUID is advertised as 128-bit UUID.
   ///
   /// @param[in] advertiser The handle of advertiser
   /// @param[in] pkt_type The packet type
@@ -107527,13 +107721,13 @@ class Tizen90Native {
   /// including data type and system wide data.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks 16-bit service solicitation UUID or 128-bit service solicitation UUID is supported.
-  /// (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB).
-  /// 16-bit UUID is advertised as 16-bit UUID.
-  /// 128-bit UUID made from base UUID(00000000-0000-1000-8000-00805F9B34FB)
-  /// is converted to the 16-bit equivalent form and advertised as such.
-  /// (e.g. 0000180F-0000-1000-8000-00805F9B34FB is converted to 180F 16-bit form).
-  /// Any other 128-bit UUID is advertised as 128-bit UUID.
+  /// @remarks 16-bit service solicitation UUID or 128-bit service solicitation
+  /// UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB). 16-bit
+  /// UUID is advertised as 16-bit UUID. 128-bit UUID made from base
+  /// UUID(00000000-0000-1000-8000-00805F9B34FB) is converted to the 16-bit
+  /// equivalent form and advertised as such. (e.g.
+  /// 0000180F-0000-1000-8000-00805F9B34FB is converted to 180F 16-bit form). Any
+  /// other 128-bit UUID is advertised as 128-bit UUID.
   ///
   /// @param[in] advertiser The handle of advertiser
   /// @param[in] pkt_type The packet type
@@ -107627,8 +107821,9 @@ class Tizen90Native {
               ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Sets the external appearance of this device to advertise or scan response data.
-  /// Please refer to the adopted Bluetooth specification for the the appearance.
+  /// @brief Sets the external appearance of this device to advertise or scan
+  /// response data. Please refer to the adopted Bluetooth specification for the
+  /// the appearance.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] advertiser The handle of advertiser
@@ -107668,9 +107863,10 @@ class Tizen90Native {
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Adds manufacturer specific data to advertise or scan response data.
-  /// Please refer to the Bluetooth Assigned Numbers provided by the Bluetooth SIG for a list of existing company identifiers.
-  /// The maximum advertised or responded data size is 31 bytes
-  /// including data type and system wide data.
+  /// Please refer to the Bluetooth Assigned Numbers provided by the
+  /// Bluetooth SIG for a list of existing company identifiers. The maximum
+  /// advertised or responded data size is 31 bytes including data type and system
+  /// wide data.
   /// @since_tizen 2.3.1
   ///
   ///
@@ -107721,8 +107917,8 @@ class Tizen90Native {
               bt_advertiser_h, int, int, ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Sets whether the device name should be included in advertise or scan response data.
-  /// The maximum advertised or responded data size is 31 bytes
+  /// @brief Sets whether the device name should be included in advertise or scan
+  /// response data. The maximum advertised or responded data size is 31 bytes
   /// including data type and system wide data.
   /// @since_tizen 2.3.1
   ///
@@ -107762,14 +107958,15 @@ class Tizen90Native {
           .asFunction<int Function(bt_advertiser_h, int, bool)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Sets whether the transmission power level should be included in advertise or scan response data.
-  /// The maximum advertised or responded data size is 31 bytes
-  /// including data type and system wide data.
+  /// @brief Sets whether the transmission power level should be included in
+  /// advertise or scan response data. The maximum advertised or responded data
+  /// size is 31 bytes including data type and system wide data.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] advertiser The handle of advertiser
   /// @param[in] pkt_type The packet type
-  /// @param[in] include_tx_power Whether the transmission power level should be included
+  /// @param[in] include_tx_power Whether the transmission power level should be
+  /// included
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -107842,7 +108039,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_advertiser_h, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Clears all data to be advertised or responded to scan request from LE scanning device.
+  /// @brief Clears all data to be advertised or responded to scan request from LE
+  /// scanning device.
   /// @since_tizen 2.3
   ///
   /// @param[in] advertiser The handle of advertiser
@@ -107890,7 +108088,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_IN_PROGRESS Operation is not in progress
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The advertising must be going on with bt_adapter_le_start_advertising_new().
+  /// @pre The advertising must be going on with
+  /// bt_adapter_le_start_advertising_new().
   /// @post This function invokes bt_adapter_le_advertising_state_changed_cb().
   ///
   /// @see bt_adapter_le_start_advertising_new()
@@ -107913,9 +108112,9 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Starts advertising with passed advertiser and advertising parameters.
   ///
-  /// @details Once Bluetooth advertising is started, nearby Bluetooth LE (Low Energy) supported \n
-  /// devices can know this device's existence. And one of them can make a connection request, \n
-  /// if it is allowed.
+  /// @details Once Bluetooth advertising is started, nearby Bluetooth LE (Low
+  /// Energy) supported \n devices can know this device's existence. And one of
+  /// them can make a connection request, \n if it is allowed.
   ///
   /// @since_tizen 2.3.1
   /// @privlevel public
@@ -108003,7 +108202,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_advertiser_h, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Sets whether the advertising type should be connectable or non-connectable.
+  /// @brief Sets whether the advertising type should be connectable or
+  /// non-connectable.
   /// @since_tizen 2.3.1
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -108079,7 +108279,8 @@ class Tizen90Native {
   /// @remarks A bond can be destroyed by bt_device_destroy_bond().\n
   /// The bonding request can be cancelled by bt_device_cancel_bonding().
   ///
-  /// @param[in] remote_address The address of the remote Bluetooth device with which the bond should be created
+  /// @param[in] remote_address The address of the remote Bluetooth device with
+  /// which the bond should be created
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108092,7 +108293,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The remote device must be discoverable with bt_adapter_start_device_discovery().
+  /// @pre The remote device must be discoverable with
+  /// bt_adapter_start_device_discovery().
   /// @post This function invokes bt_device_bond_created_cb().
   ///
   /// @see bt_adapter_start_device_discovery()
@@ -108121,8 +108323,8 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks Use this function when the remote Bluetooth device is not responding to the \n
-  /// bond request or you wish to cancel the bonding request.
+  /// @remarks Use this function when the remote Bluetooth device is not responding
+  /// to the \n bond request or you wish to cancel the bonding request.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108154,7 +108356,8 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @param[in] remote_address The address of the remote Bluetooth device to remove bonding
+  /// @param[in] remote_address The address of the remote Bluetooth device to
+  /// remove bonding
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108168,7 +108371,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The bond with the remote device must be created with bt_device_create_bond().
+  /// @pre The bond with the remote device must be created with
+  /// bt_device_create_bond().
   /// @post This function invokes bt_device_bond_destroyed_cb().
   ///
   /// @see bt_device_create_bond()
@@ -108209,7 +108413,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The bond with the remote device must be created with bt_device_create_bond().
+  /// @pre The bond with the remote device must be created with
+  /// bt_device_create_bond().
   ///
   /// @see bt_device_create_bond()
   int bt_device_set_alias(
@@ -108235,9 +108440,11 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks Once a device is authorized, you don't need to receive a confirmation.
+  /// @remarks Once a device is authorized, you don't need to receive a
+  /// confirmation.
   ///
-  /// @param[in] remote_address The address of the remote Bluetooth device to authorize
+  /// @param[in] remote_address The address of the remote Bluetooth device to
+  /// authorize
   /// @param[in] authorization_state The Bluetooth authorization state
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -108251,7 +108458,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The bond with the remote device must be created with bt_device_create_bond().
+  /// @pre The bond with the remote device must be created with
+  /// bt_device_create_bond().
   /// @post bt_device_authorization_changed_cb() will be invoked.
   ///
   /// @see bt_device_create_bond()
@@ -108276,16 +108484,19 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-  /// @brief Starts the search for services supported by the specified device, asynchronously.
+  /// @brief Starts the search for services supported by the specified device,
+  /// asynchronously.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks If creating a bond succeeds, which means bt_device_bond_created_cb() is called with result #BT_ERROR_NONE, \n
-  /// then you don't need to run this function.\n
-  /// The service search takes a couple of seconds to complete normally.
+  /// @remarks If creating a bond succeeds, which means bt_device_bond_created_cb()
+  /// is called with result #BT_ERROR_NONE, \n then you don't need to run this
+  /// function.\n The service search takes a couple of seconds to complete
+  /// normally.
   ///
-  /// @param[in] remote_address The address of the remote Bluetooth device whose services need to be checked
+  /// @param[in] remote_address The address of the remote Bluetooth device whose
+  /// services need to be checked
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108298,8 +108509,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_SERVICE_SEARCH_FAILED Service search failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The remote device must be discoverable with bt_adapter_start_device_discovery().
-  /// @pre The bond with the remote device must be created with bt_device_create_bond().
+  /// @pre The remote device must be discoverable with
+  /// bt_adapter_start_device_discovery().
+  /// @pre The bond with the remote device must be created with
+  /// bt_device_create_bond().
   /// @post This function invokes bt_device_service_searched_cb().
   ///
   /// @see bt_adapter_start_device_discovery()
@@ -108542,7 +108755,8 @@ class Tizen90Native {
       _bt_device_unset_bond_destroyed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-  /// @brief Registers a callback function to be invoked when the authorization of device changes.
+  /// @brief Registers a callback function to be invoked when the authorization of
+  /// device changes.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to register
@@ -108601,7 +108815,8 @@ class Tizen90Native {
       _bt_device_unset_authorization_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-  /// @brief Registers a callback function to be invoked when the process of service search finishes.
+  /// @brief Registers a callback function to be invoked when the process of
+  /// service search finishes.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -108656,7 +108871,8 @@ class Tizen90Native {
       _bt_device_unset_service_searched_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-  /// @brief Registers a callback function to be invoked when the connection state is changed.
+  /// @brief Registers a callback function to be invoked when the connection state
+  /// is changed.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -108692,7 +108908,8 @@ class Tizen90Native {
               bt_device_connection_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-  /// @brief Unregisters the callback function to be invoked when the connection state is changed.
+  /// @brief Unregisters the callback function to be invoked when the connection
+  /// state is changed.
   /// @since_tizen 2.3
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108755,14 +108972,18 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Removes the RFCOMM server socket which was created using bt_socket_create_rfcomm().
+  /// @brief Removes the RFCOMM server socket which was created using
+  /// bt_socket_create_rfcomm().
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks If callback function bt_socket_connection_state_changed_cb() is set and the remote Bluetooth device is connected, \n
-  /// then bt_socket_connection_state_changed_cb() will be called when this function is finished successfully.
+  /// @remarks If callback function bt_socket_connection_state_changed_cb() is set
+  /// and the remote Bluetooth device is connected, \n then
+  /// bt_socket_connection_state_changed_cb() will be called when this function is
+  /// finished successfully.
   ///
-  /// @param[in] socket_fd The file descriptor of socket (which was created using bt_socket_create_rfcomm()) to destroy
+  /// @param[in] socket_fd The file descriptor of socket (which was created using
+  /// bt_socket_create_rfcomm()) to destroy
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -108773,8 +108994,9 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The socket must be created with bt_socket_create_rfcomm().
-  /// @post If callback function bt_socket_connection_state_changed_cb() is set and the remote Bluetooth device is connected,
-  /// then bt_socket_connection_state_changed_cb() will be called.
+  /// @post If callback function bt_socket_connection_state_changed_cb() is set and
+  /// the remote Bluetooth device is connected, then
+  /// bt_socket_connection_state_changed_cb() will be called.
   /// @see bt_socket_create_rfcomm()
   /// @see bt_socket_connection_state_changed_cb()
   /// @see bt_socket_set_connection_state_changed_cb()
@@ -108794,10 +109016,12 @@ class Tizen90Native {
       _bt_socket_destroy_rfcommPtr.asFunction<int Function(int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Starts listening on passed RFCOMM socket and accepts connection requests.
-  /// @details Pop-up is shown automatically when a RFCOMM connection is requested. \n
-  /// bt_socket_connection_state_changed_cb() will be called with \n
-  /// #BT_SOCKET_CONNECTED if you click "yes" and connection is finished successfully.
+  /// @brief Starts listening on passed RFCOMM socket and accepts connection
+  /// requests.
+  /// @details Pop-up is shown automatically when a RFCOMM connection is requested.
+  /// \n bt_socket_connection_state_changed_cb() will be called with \n
+  /// #BT_SOCKET_CONNECTED if you click "yes" and connection is finished
+  /// successfully.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -108814,7 +109038,8 @@ class Tizen90Native {
   ///
   /// @pre The socket must be created with bt_socket_create_rfcomm().
   /// @post If callback function bt_socket_connection_state_changed_cb() is set,
-  /// then bt_socket_connection_state_changed_cb() will be called when the remote Bluetooth device is connected.
+  /// then bt_socket_connection_state_changed_cb() will be called when the remote
+  /// Bluetooth device is connected.
   /// @see bt_socket_create_rfcomm()
   /// @see bt_socket_connection_state_changed_cb()
   /// @see bt_socket_set_connection_state_changed_cb()
@@ -108837,7 +109062,8 @@ class Tizen90Native {
           .asFunction<int Function(int, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Connects to a specific RFCOMM based service on a remote Bluetooth device UUID, asynchronously.
+  /// @brief Connects to a specific RFCOMM based service on a remote Bluetooth
+  /// device UUID, asynchronously.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -108845,7 +109071,8 @@ class Tizen90Native {
   /// @remarks A connection can be disconnected by bt_socket_disconnect_rfcomm().
   ///
   /// @param[in] remote_address The address of the remote Bluetooth device
-  /// @param[in] service_uuid The UUID of service provided by the remote Bluetooth device
+  /// @param[in] service_uuid The UUID of service provided by the remote Bluetooth
+  /// device
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -108857,8 +109084,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
-  /// @pre The remote device must be discoverable with bt_adapter_start_device_discovery().
-  /// @pre The bond with the remote device must be created with bt_device_create_bond().
+  /// @pre The remote device must be discoverable with
+  /// bt_adapter_start_device_discovery().
+  /// @pre The bond with the remote device must be created with
+  /// bt_device_create_bond().
   /// @post This function invokes bt_socket_connection_state_changed_cb().
   ///
   /// @see bt_device_create_bond()
@@ -108886,11 +109115,13 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Disconnects the RFCOMM connection with the given file descriptor of connected socket.
+  /// @brief Disconnects the RFCOMM connection with the given file descriptor of
+  /// connected socket.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @param[in] socket_fd  The file descriptor of socket to close which was received using bt_socket_connection_state_changed_cb().
+  /// @param[in] socket_fd  The file descriptor of socket to close which was
+  /// received using bt_socket_connection_state_changed_cb().
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -108923,14 +109154,17 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+  /// @remarks The specific error code can be obtained using the get_last_result()
+  /// method. Error codes are described in Exception section.
   ///
-  /// @param[in] socket_fd The file descriptor of connected socket which was received using bt_socket_connection_state_changed_cb()
+  /// @param[in] socket_fd The file descriptor of connected socket which was
+  /// received using bt_socket_connection_state_changed_cb()
   /// @param[in] data The data to be sent
   /// @param[in] length The length of data to be sent
   ///
   /// @return the number of bytes written (zero indicates nothing was written).
-  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2 man page.
+  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2
+  /// man page.
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
@@ -108962,7 +109196,8 @@ class Tizen90Native {
       .asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Registers a callback function that will be invoked when you receive data.
+  /// @brief Registers a callback function that will be invoked when you receive
+  /// data.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -109018,7 +109253,8 @@ class Tizen90Native {
       _bt_socket_unset_data_received_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Registers a callback function that will be invoked when a RFCOMM connection is requested.
+  /// @brief Registers a callback function that will be invoked when a RFCOMM
+  /// connection is requested.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -109074,7 +109310,8 @@ class Tizen90Native {
       _bt_socket_unset_connection_requested_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_SOCKET_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state changes.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state changes.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -109133,15 +109370,18 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_OPP_SERVER_MODULE
-  /// @brief Initializes the Bluetooth OPP server requested by bt_opp_server_connection_requested_cb().
-  /// @details No popup appears when an OPP connection is requested from a remote device. \n
-  /// Instead, @a connection_requested_cb() will be called. \n
-  /// At that time, you can call either bt_opp_server_accept() or bt_opp_server_reject().
+  /// @brief Initializes the Bluetooth OPP server requested by
+  /// bt_opp_server_connection_requested_cb().
+  /// @details No popup appears when an OPP connection is requested from a remote
+  /// device. \n Instead, @a connection_requested_cb() will be called. \n At that
+  /// time, you can call either bt_opp_server_accept() or bt_opp_server_reject().
   /// @since_tizen 2.3
   /// @remarks This function must be called to start Bluetooth OPP server. \n
-  /// You must free all resources of the Bluetooth service by calling bt_opp_server_deinitialize() if Bluetooth OPP service is no longer needed.
+  /// You must free all resources of the Bluetooth service by calling
+  /// bt_opp_server_deinitialize() if Bluetooth OPP service is no longer needed.
   /// @param[in] destination  The destination path
-  /// @param[in] connection_requested_cb  The callback called when an OPP connection is requested
+  /// @param[in] connection_requested_cb  The callback called when an OPP
+  /// connection is requested
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -109206,11 +109446,13 @@ class Tizen90Native {
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks If you initialize OPP server by bt_opp_server_initialize_by_connection_request(), then name is ignored.
-  /// You can cancel the pushes by bt_opp_server_cancel_transfer() with transfer_id.
+  /// @remarks If you initialize OPP server by
+  /// bt_opp_server_initialize_by_connection_request(), then name is ignored. You
+  /// can cancel the pushes by bt_opp_server_cancel_transfer() with transfer_id.
   /// @param[in] progress_cb  The callback called when a file is being transferred
   /// @param[in] finished_cb  The callback called when a transfer is finished
-  /// @param[in] name  The name to store. This can be NULL if you initialize OPP server by bt_opp_server_initialize_by_connection_request().
+  /// @param[in] name  The name to store. This can be NULL if you initialize OPP
+  /// server by bt_opp_server_initialize_by_connection_request().
   /// @param[in] user_data The user data to be passed to the callback function
   /// @param[out]  transfer_id  The ID of transfer
   /// @return 0 on success, otherwise a negative error value.
@@ -109341,8 +109583,8 @@ class Tizen90Native {
   /// @brief Initializes the Bluetooth OPP client.
   /// @since_tizen 2.3
   /// @remarks This function must be called before Bluetooth OPP client starts. \n
-  /// You must free all resources of the Bluetooth service by calling bt_opp_client_deinitialize() \n
-  /// if Bluetooth OPP service is no longer needed.
+  /// You must free all resources of the Bluetooth service by calling
+  /// bt_opp_client_deinitialize() \n if Bluetooth OPP service is no longer needed.
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -109434,17 +109676,22 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_OPP_CLIENT_MODULE
   /// @brief Pushes the file to the remote device, asynchronously.
   ///
-  /// @details At first, bt_opp_client_push_responded_cb() will be called when OPP server responds to the push request. \n
-  /// After connection is established, bt_opp_client_push_progress_cb() will be called repeatedly until a file is transferred completely. \n
-  /// If you send several files, then bt_opp_client_push_progress_cb() with another file will be called repeatedly until the file is transferred completely. \n
-  /// bt_opp_client_push_finished_cb() will be called when the push request is finished.
+  /// @details At first, bt_opp_client_push_responded_cb() will be called when OPP
+  /// server responds to the push request. \n After connection is established,
+  /// bt_opp_client_push_progress_cb() will be called repeatedly until a file is
+  /// transferred completely. \n If you send several files, then
+  /// bt_opp_client_push_progress_cb() with another file will be called repeatedly
+  /// until the file is transferred completely. \n bt_opp_client_push_finished_cb()
+  /// will be called when the push request is finished.
   ///
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   /// @param[in] remote_address The remote address
-  /// @param[in] responded_cb  The callback called when OPP server responds to the push request
-  /// @param[in] progress_cb  The callback called when each file is being transferred
+  /// @param[in] responded_cb  The callback called when OPP server responds to the
+  /// push request
+  /// @param[in] progress_cb  The callback called when each file is being
+  /// transferred
   /// @param[in] finished_cb  The callback called when the push request is finished
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
@@ -109506,8 +109753,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre bt_opp_client_push_files() must be called.
-  /// @post bt_opp_client_push_finished_cb() will be invoked with result #BT_ERROR_CANCELLED,
-  /// which is a parameter of bt_opp_client_push_files().
+  /// @post bt_opp_client_push_finished_cb() will be invoked with result
+  /// #BT_ERROR_CANCELLED, which is a parameter of bt_opp_client_push_files().
   /// @see bt_opp_client_initialize()
   /// @see bt_opp_client_push_files()
   int bt_opp_client_cancel_push() {
@@ -109524,9 +109771,11 @@ class Tizen90Native {
   /// @brief Initializes the Bluetooth HID (Human Interface Device) Host.
   /// @since_tizen 2.3
   /// @remarks This function must be called before Bluetooth HID Host starts. \n
-  /// You must free all resources of the Bluetooth service by calling bt_hid_host_deinitialize() \n
-  /// if Bluetooth HID Host service is no longer needed.
-  /// @param[in] connection_cb  The callback called when the connection state is changed
+  /// You must free all resources of the Bluetooth service by calling
+  /// bt_hid_host_deinitialize() \n if Bluetooth HID Host service is no longer
+  /// needed.
+  /// @param[in] connection_cb  The callback called when the connection state is
+  /// changed
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -109565,7 +109814,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The Bluetooth HID service must be initialized with bt_hid_host_initialize().
+  /// @pre The Bluetooth HID service must be initialized with
+  /// bt_hid_host_initialize().
   /// @see  bt_hid_host_initialize()
   int bt_hid_host_deinitialize() {
     return _bt_hid_host_deinitialize();
@@ -109578,7 +109828,8 @@ class Tizen90Native {
       _bt_hid_host_deinitializePtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HID_HOST_MODULE
-  /// @brief Connects the remote device with the HID (Human Interface Device) service, asynchronously.
+  /// @brief Connects the remote device with the HID (Human Interface Device)
+  /// service, asynchronously.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -109592,8 +109843,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_ENABLED Not enabled
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The local device must be bonded with the remote device by bt_device_create_bond().
-  /// @pre The Bluetooth HID service must be initialized with bt_hid_host_initialize().
+  /// @pre The local device must be bonded with the remote device by
+  /// bt_device_create_bond().
+  /// @pre The Bluetooth HID service must be initialized with
+  /// bt_hid_host_initialize().
   /// @post bt_hid_host_connection_state_changed_cb() will be invoked.
   /// @see bt_hid_host_disconnect()
   /// @see bt_hid_host_connection_state_changed_cb()
@@ -109612,7 +109865,8 @@ class Tizen90Native {
       _bt_hid_host_connectPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HID_HOST_MODULE
-  /// @brief Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.
+  /// @brief Disconnects the remote device with the HID (Human Interface Device)
+  /// service, asynchronously.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -109718,12 +109972,14 @@ class Tizen90Native {
       _bt_hid_device_deactivatePtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HID_DEVICE_MODULE
-  /// @brief Initiates the HID device connection with the Device role, asynchronously.
+  /// @brief Initiates the HID device connection with the Device role,
+  /// asynchronously.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks This function must be called to Initiate the HID device role connection.
+  /// @remarks This function must be called to Initiate the HID device role
+  /// connection.
   ///
   /// @param[in] remote_address The remote device's address.
   ///
@@ -109739,7 +109995,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_ALREADY_DONE Already connected
   ///
   /// @pre The Bluetooth service must be initialized with bt_initialize().
-  /// @pre The local device must be bonded with the remote device by bt_device_create_bond().
+  /// @pre The local device must be bonded with the remote device by
+  /// bt_device_create_bond().
   /// @see bt_initialize()
   /// @see bt_hid_device_activate()
   int bt_hid_device_connect(
@@ -109800,7 +110057,8 @@ class Tizen90Native {
   /// @param[in] mouse_data The mouse data to be passed to the remote device.
   ///
   /// @return the number of bytes written (zero indicates nothing was written).
-  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2 man page.
+  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2
+  /// man page.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
@@ -109840,7 +110098,8 @@ class Tizen90Native {
   /// @param[in] key_data The key data to be passed to the remote device
   ///
   /// @return the number of bytes written (zero indicates nothing was written).
-  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2 man page.
+  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2
+  /// man page.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
@@ -109870,7 +110129,8 @@ class Tizen90Native {
               ffi.Pointer<ffi.Char>, ffi.Pointer<bt_hid_key_data_s>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HID_DEVICE_MODULE
-  /// @brief Sets the callback called when the device receives data from the HID Host.
+  /// @brief Sets the callback called when the device receives data from the HID
+  /// Host.
   /// @since_tizen 3.0
   ///
   /// @param[in] callback The callback function to be set when data is received.
@@ -109934,7 +110194,8 @@ class Tizen90Native {
   /// @param[in] data_len The length of the response data
   ///
   /// @return the number of bytes written (zero indicates nothing was written).
-  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2 man page.
+  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2
+  /// man page.
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
@@ -109976,9 +110237,10 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AUDIO_MODULE
   /// @brief Initializes the Bluetooth profiles related with audio.
   /// @since_tizen 2.3
-  /// @remarks This function must be called before Bluetooth profiles related with audio starts. \n
-  /// You must free all resources of the this service by calling bt_audio_deinitialize() \n
-  /// if Bluetooth profiles related with audio service is no longer needed.
+  /// @remarks This function must be called before Bluetooth profiles related with
+  /// audio starts. \n You must free all resources of the this service by calling
+  /// bt_audio_deinitialize() \n if Bluetooth profiles related with audio service
+  /// is no longer needed.
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -110006,7 +110268,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The Bluetooth audio service must be initialized with bt_audio_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_audio_initialize().
   /// @see bt_audio_initialize()
   int bt_audio_deinitialize() {
     return _bt_audio_deinitialize();
@@ -110018,9 +110281,13 @@ class Tizen90Native {
       _bt_audio_deinitializePtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AUDIO_MODULE
-  /// @brief Connects the remote device with the given audio profile, asynchronously.
-  /// @details If you input type as #BT_AUDIO_PROFILE_TYPE_ALL and connection request succeeds, then bt_audio_connection_state_changed_cb() will be called twice \n
-  /// when #BT_AUDIO_PROFILE_TYPE_HSP_HFP is connected and #BT_AUDIO_PROFILE_TYPE_A2DP is connected.
+  /// @brief Connects the remote device with the given audio profile,
+  /// asynchronously.
+  /// @details If you input type as #BT_AUDIO_PROFILE_TYPE_ALL and connection
+  /// request succeeds, then bt_audio_connection_state_changed_cb() will be called
+  /// twice \n
+  /// when #BT_AUDIO_PROFILE_TYPE_HSP_HFP is connected and
+  /// #BT_AUDIO_PROFILE_TYPE_A2DP is connected.
   ///
   /// @since_tizen 2.3
   /// @privlevel public
@@ -110036,8 +110303,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_ENABLED Not enabled
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The Bluetooth audio service must be initialized with bt_audio_initialize().
-  /// @pre The local device must be bonded with the remote device by bt_device_create_bond().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_audio_initialize().
+  /// @pre The local device must be bonded with the remote device by
+  /// bt_device_create_bond().
   /// @post bt_audio_connection_state_changed_cb() will be invoked.
   /// @see bt_audio_disconnect()
   /// @see bt_audio_connection_state_changed_cb()
@@ -110059,9 +110328,12 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AUDIO_MODULE
-  /// @brief Disconnects the remote device with the given audio profile, asynchronously.
-  /// @details If you input type as #BT_AUDIO_PROFILE_TYPE_ALL and disconnection request succeeds, then bt_audio_connection_state_changed_cb() will be called twice \n
-  /// when #BT_AUDIO_PROFILE_TYPE_HSP_HFP is disconnected and #BT_AUDIO_PROFILE_TYPE_A2DP is disconnected.
+  /// @brief Disconnects the remote device with the given audio profile,
+  /// asynchronously.
+  /// @details If you input type as #BT_AUDIO_PROFILE_TYPE_ALL and disconnection
+  /// request succeeds, then bt_audio_connection_state_changed_cb() will be called
+  /// twice \n when #BT_AUDIO_PROFILE_TYPE_HSP_HFP is disconnected and
+  /// #BT_AUDIO_PROFILE_TYPE_A2DP is disconnected.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -110098,7 +110370,8 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AUDIO_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state is changed.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state is changed.
   /// @since_tizen 2.3
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110108,7 +110381,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The Bluetooth audio service must be initialized with bt_audio_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_audio_initialize().
   /// @see bt_audio_initialize()
   /// @see bt_audio_connection_state_changed_cb()
   int bt_audio_set_connection_state_changed_cb(
@@ -110132,14 +110406,16 @@ class Tizen90Native {
               bt_audio_connection_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AUDIO_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the connection state is changed.
+  /// @brief Unregisters a callback function that will be invoked when the
+  /// connection state is changed.
   /// @since_tizen 2.3
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The Bluetooth audio service must be initialized with bt_audio_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_audio_initialize().
   /// @see bt_audio_initialize()
   /// @see bt_audio_connection_state_changed_cb()
   /// @see bt_audio_set_connection_state_changed_cb()
@@ -110155,12 +110431,15 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_TARGET_MODULE
-  /// @brief Initializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) target service.
+  /// @brief Initializes the Bluetooth AVRCP (Audio/Video Remote Control Profile)
+  /// target service.
   /// @since_tizen 2.4
-  /// @remarks This function must be called before any other AVRCP target functions are called. \n
-  /// You must free all resources of the this service by calling bt_avrcp_target_deinitialize() \n
-  /// if Bluetooth AVRCP service is no longer needed.
-  /// @param[in] callback The callback function called when the connection state is changed
+  /// @remarks This function must be called before any other AVRCP target functions
+  /// are called. \n You must free all resources of the this service by calling
+  /// bt_avrcp_target_deinitialize() \n if Bluetooth AVRCP service is no longer
+  /// needed.
+  /// @param[in] callback The callback function called when the connection state is
+  /// changed
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -110192,14 +110471,16 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_TARGET_MODULE
-  /// @brief Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) target service.
+  /// @brief Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile)
+  /// target service.
   /// @since_tizen 2.4
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The Bluetooth audio service must be initialized with bt_avrcp_target_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_avrcp_target_initialize().
   /// @see bt_avrcp_target_initialize()
   int bt_avrcp_target_deinitialize() {
     return _bt_avrcp_target_deinitialize();
@@ -110471,7 +110752,8 @@ class Tizen90Native {
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, int, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the equalizer state is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the equalizer
+  /// state is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110481,7 +110763,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_equalizer_state_changed_cb()
@@ -110506,14 +110789,17 @@ class Tizen90Native {
               bt_avrcp_equalizer_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the equalizer state is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the
+  /// equalizer state is changed. (e.g., by a TV remote control or other input
+  /// devices).
   /// @since_tizen 2.4
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_equalizer_state_changed_cb()
@@ -110529,7 +110815,8 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the repeat mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the repeat
+  /// mode is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110539,7 +110826,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_repeat_mode_changed_cb()
@@ -110563,14 +110851,16 @@ class Tizen90Native {
               bt_avrcp_repeat_mode_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the repeat mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the repeat
+  /// mode is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_repeat_mode_changed_cb()
@@ -110585,7 +110875,8 @@ class Tizen90Native {
       _bt_avrcp_unset_repeat_mode_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the shuffle mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the shuffle
+  /// mode is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110595,7 +110886,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_shuffle_mode_changed_cb()
@@ -110619,14 +110911,16 @@ class Tizen90Native {
               bt_avrcp_shuffle_mode_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the shuffle mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the shuffle
+  /// mode is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_shuffle_mode_changed_cb()
@@ -110641,7 +110935,8 @@ class Tizen90Native {
       _bt_avrcp_unset_shuffle_mode_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the scan mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the scan mode
+  /// is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110651,7 +110946,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_scan_mode_changed_cb()
@@ -110674,14 +110970,16 @@ class Tizen90Native {
           int Function(bt_avrcp_scan_mode_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the scan mode is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the scan
+  /// mode is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 2.4
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_scan_mode_changed_cb()
@@ -110696,7 +110994,8 @@ class Tizen90Native {
       _bt_avrcp_unset_scan_mode_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the song position is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the song
+  /// position is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110706,7 +111005,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_position_changed_cb()
@@ -110729,14 +111029,16 @@ class Tizen90Native {
           int Function(bt_avrcp_position_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the song position is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the song
+  /// position is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_position_changed_cb()
@@ -110751,7 +111053,8 @@ class Tizen90Native {
       _bt_avrcp_unset_position_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the Play status is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the Play
+  /// status is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110761,7 +111064,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_play_status_changed_cb()
@@ -110785,14 +111089,16 @@ class Tizen90Native {
               bt_avrcp_play_status_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the Play status is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the Play
+  /// status is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_play_status_changed_cb()
@@ -110807,7 +111113,8 @@ class Tizen90Native {
       _bt_avrcp_unset_play_status_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Registers a callback function that will be invoked when the track metadata is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Registers a callback function that will be invoked when the track
+  /// metadata is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -110817,7 +111124,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_unset_track_info_changed_cb()
@@ -110841,14 +111149,16 @@ class Tizen90Native {
               bt_avrcp_track_info_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the track metadata is changed. (e.g., by a TV remote control or other input devices).
+  /// @brief Unregisters a callback function that will be invoked when the track
+  /// metadata is changed. (e.g., by a TV remote control or other input devices).
   /// @since_tizen 3.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
   ///
-  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize() or bt_avrcp_control_initialize().
+  /// @pre The AVRCP service must be initialized with bt_avrcp_target_initialize()
+  /// or bt_avrcp_control_initialize().
   /// @see bt_avrcp_target_initialize()
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_set_track_info_changed_cb()
@@ -110863,12 +111173,15 @@ class Tizen90Native {
       _bt_avrcp_unset_track_info_changed_cbPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_CONTROL_MODULE
-  /// @brief Initializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) controller service.
+  /// @brief Initializes the Bluetooth AVRCP (Audio/Video Remote Control Profile)
+  /// controller service.
   /// @since_tizen 3.0
-  /// @remarks This function must be called before any other AVRCP controller functions are called. \n
-  /// You must free all resources of the this service by calling bt_avrcp_control_deinitialize() \n
-  /// if Bluetooth AVRCP service is no longer needed.
-  /// @param[in] callback The callback function called when the connection state is changed
+  /// @remarks This function must be called before any other AVRCP controller
+  /// functions are called. \n You must free all resources of the this service by
+  /// calling bt_avrcp_control_deinitialize() \n if Bluetooth AVRCP service is no
+  /// longer needed.
+  /// @param[in] callback The callback function called when the connection state is
+  /// changed
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -110899,13 +111212,15 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_CONTROL_MODULE
-  /// @brief Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) controller service.
+  /// @brief Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile)
+  /// controller service.
   /// @since_tizen 3.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
-  /// @pre The Bluetooth audio service must be initialized with bt_avrcp_control_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_avrcp_control_initialize().
   /// @see bt_avrcp_control_initialize()
   int bt_avrcp_control_deinitialize() {
     return _bt_avrcp_control_deinitialize();
@@ -110929,7 +111244,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
-  /// @pre The Bluetooth audio service must be initialized with bt_avrcp_control_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_avrcp_control_initialize().
   /// @see bt_avrcp_control_initialize()
   int bt_avrcp_control_connect(
     ffi.Pointer<ffi.Char> remote_address,
@@ -110946,7 +111262,8 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_CONTROL_MODULE
-  /// @brief Disconnects from the AVRCP (Audio/Video Remote Control Profile) target device.
+  /// @brief Disconnects from the AVRCP (Audio/Video Remote Control Profile) target
+  /// device.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -110957,7 +111274,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #BT_ERROR_NOT_INITIALIZED Not initialized
-  /// @pre The Bluetooth audio service must be initialized with bt_avrcp_control_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_avrcp_control_initialize().
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_control_connect()
   int bt_avrcp_control_disconnect(
@@ -110989,7 +111307,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_ENABLED Not enabled
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   /// @retval #BT_ERROR_REMOTE_DEVICE_NOT_CONNECTED Remote device is not connected
-  /// @pre The Bluetooth audio service must be initialized with bt_avrcp_control_initialize().
+  /// @pre The Bluetooth audio service must be initialized with
+  /// bt_avrcp_control_initialize().
   /// @see bt_avrcp_control_initialize()
   /// @see bt_avrcp_control_connect()
   int bt_avrcp_control_send_player_command(
@@ -111326,7 +111645,8 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_AVRCP_CONTROL_MODULE
   /// @brief  Gets the metadata of the track played by the remote device.
   /// @since_tizen 3.0
-  /// @remarks The @a track must be released using bt_avrcp_control_free_track_info().
+  /// @remarks The @a track must be released using
+  /// bt_avrcp_control_free_track_info().
   /// @param[out] track The track metadata.
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -111390,14 +111710,16 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Registers an application that acts as the Sink role of HDP (Health Device Profile).
+  /// @brief Registers an application that acts as the Sink role of HDP (Health
+  /// Device Profile).
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   /// @remarks The @a app_id must be released with free() by you. \n
   /// Deprecated, because of no usecase and supported devices.
-  /// @param[in] data_type  The data type of MDEP. This value is defined in ISO/IEEE 11073-20601 spec.
-  /// For example, pulse oximeter is 0x1004 and blood pressure monitor is 0x1007.
+  /// @param[in] data_type  The data type of MDEP. This value is defined in
+  /// ISO/IEEE 11073-20601 spec. For example, pulse oximeter is 0x1004 and blood
+  /// pressure monitor is 0x1007.
   /// @param[out] app_id  The ID of application
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -111429,7 +111751,8 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Unregisters the given application that acts as the Sink role of HDP (Health Device Profile).
+  /// @brief Unregisters the given application that acts as the Sink role of HDP
+  /// (Health Device Profile).
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -111479,7 +111802,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The Sink role of HDP must be registered with bt_hdp_register_sink_app().
-  /// @pre The local device must be bonded with the remote device by bt_device_create_bond().
+  /// @pre The local device must be bonded with the remote device by
+  /// bt_device_create_bond().
   /// @post bt_hdp_connected_cb() will be invoked.
   /// @see bt_hdp_disconnect()
   /// @see bt_hdp_set_connection_state_changed_cb()
@@ -111586,11 +111910,14 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state is changed.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state is changed.
   /// @since_tizen 2.3
   /// @remarks Deprecated, because of no usecase and supported devices.
-  /// @param[in] connected_cb The callback function called when a connection is established
-  /// @param[in] disconnected_cb The callback function called when a connection is disconnected
+  /// @param[in] connected_cb The callback function called when a connection is
+  /// established
+  /// @param[in] disconnected_cb The callback function called when a connection is
+  /// disconnected
   /// @param[in] user_data The user data to be passed to the callback function
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -111624,7 +111951,8 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the connection state is changed.
+  /// @brief Unregisters a callback function that will be invoked when the
+  /// connection state is changed.
   /// @since_tizen 2.3
   /// @remarks Deprecated, because of no usecase and supported devices.
   /// @return 0 on success, otherwise a negative error value.
@@ -111646,7 +111974,8 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Registers a callback function that will be invoked when you receive the data.
+  /// @brief Registers a callback function that will be invoked when you receive
+  /// the data.
   /// @since_tizen 2.3
   /// @remarks Deprecated, because of no usecase and supported devices.
   /// @param[in] callback The callback function to register
@@ -111679,7 +112008,8 @@ class Tizen90Native {
 
   /// @deprecated Deprecated since 5.0.
   /// @ingroup CAPI_NETWORK_BLUETOOTH_HDP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when you receive the data.
+  /// @brief Unregisters a callback function that will be invoked when you receive
+  /// the data.
   /// @since_tizen 2.3
   /// @remarks Deprecated, because of no usecase and supported devices.
   /// @return 0 on success, otherwise a negative error value.
@@ -111704,8 +112034,9 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks @a value must be released using free(). \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_read_value() must be used prior to this function \n
-  /// in order to get the remote device's current value.
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_read_value() must be used prior to this function \n in order
+  /// to get the remote device's current value.
   ///
   /// @param[in] gatt_handle The handle of a characteristic or descriptor
   /// @param[out] value The value of @a gatt_handle. It is a byte stream type.
@@ -111735,16 +112066,19 @@ class Tizen90Native {
           ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Gets the value of a characteristic or descriptor's GATT handle as an integer type.
+  /// @brief  Gets the value of a characteristic or descriptor's GATT handle as an
+  /// integer type.
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function returns a locally saved value in @a gatt_handle. \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_read_value() must be used prior to this function \n
-  /// in order to get the remote device's current value.
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_read_value() must be used prior to this function \n in order
+  /// to get the remote device's current value.
   ///
   /// @param[in] gatt_handle The handle of a characteristic or descriptor
   /// @param[in] type The type of a saved value in @a gatt_handle
-  /// @param[in] offset The offset from where a value will be read from @a gatt_handle as an integer type
+  /// @param[in] offset The offset from where a value will be read from @a
+  /// gatt_handle as an integer type
   /// @param[out] value The integer type's value of @a gatt_handle
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -111772,16 +112106,19 @@ class Tizen90Native {
       .asFunction<int Function(bt_gatt_h, int, int, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Gets the value of a characteristic or descriptor's GATT handle as a float type.
+  /// @brief  Gets the value of a characteristic or descriptor's GATT handle as a
+  /// float type.
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function returns a locally saved value in @a gatt_handle. \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_read_value() must be used prior to this function \n
-  /// in order to get the remote device's current value.
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_read_value() must be used prior to this function \n in order
+  /// to get the remote device's current value.
   ///
   /// @param[in] gatt_handle  The handle of a characteristic or descriptor
   /// @param[in] type The type of a saved value in @a gatt_handle
-  /// @param[in] offset The offset from where a value will be read from @a gatt_handle as an integer type
+  /// @param[in] offset The offset from where a value will be read from @a
+  /// gatt_handle as an integer type
   /// @param[out] value The float type's value of @a gatt_handle
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -111813,8 +112150,9 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function updates a value of @a gatt_handle locally. \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_write_value() can be used after this function \n
-  /// in order to update the remote device's value. \n
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_write_value() can be used after this function \n in order to
+  /// update the remote device's value. \n
   ///
   /// @param[in] gatt_handle The handle of a characteristic or descriptor
   /// @param[in] value The value to be updated
@@ -111844,17 +112182,20 @@ class Tizen90Native {
       .asFunction<int Function(bt_gatt_h, ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Updates the value of a characteristic or descriptor's GATT handle using a integer type's value.
+  /// @brief  Updates the value of a characteristic or descriptor's GATT handle
+  /// using a integer type's value.
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function updates a value of @a gatt_handle locally. \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_write_value() can be used after this function \n
-  /// in order to update the remote device's value.
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_write_value() can be used after this function \n in order to
+  /// update the remote device's value.
   ///
   /// @param[in] gatt_handle The handle of a characteristic or descriptor
   /// @param[in] type @a value will be saved in @a gatt_handle as this type
   /// @param[in] value The integer type's value to be updated
-  /// @param[in] offset The offset from where @a value will be saved in @a gatt_handle
+  /// @param[in] offset The offset from where @a value will be saved in @a
+  /// gatt_handle
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -111882,18 +112223,22 @@ class Tizen90Native {
       .asFunction<int Function(bt_gatt_h, int, int, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Updates the value of a characteristic or descriptor's GATT handle using a float type's value.
+  /// @brief  Updates the value of a characteristic or descriptor's GATT handle
+  /// using a float type's value.
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function updates a value of @a gatt_handle locally. \n
-  /// When @a gatt_handle is associated with bt_gatt_client_h, bt_gatt_client_write_value() can be used after this function \n
-  /// in order to update the remote device's value.
+  /// When @a gatt_handle is associated with bt_gatt_client_h,
+  /// bt_gatt_client_write_value() can be used after this function \n in order to
+  /// update the remote device's value.
   ///
   /// @param[in] gatt_handle The handle of a characteristic or descriptor
-  /// @param[in] type @a mantissa and @a exponent will be saved in @a gatt_handle as this type
+  /// @param[in] type @a mantissa and @a exponent will be saved in @a gatt_handle
+  /// as this type
   /// @param[in] mantissa The mantissa of float type's value to be updated
   /// @param[in] exponent The exponent of float type's value to be updated
-  /// @param[in] offset The offset from where @a mantissa and @a exponent will be saved in @a gatt_handle
+  /// @param[in] offset The offset from where @a mantissa and @a exponent will be
+  /// saved in @a gatt_handle
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -111923,11 +112268,13 @@ class Tizen90Native {
       .asFunction<int Function(bt_gatt_h, int, int, int, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Gets the UUID of a service, characteristic or descriptor's GATT handle.
+  /// @brief  Gets the UUID of a service, characteristic or descriptor's GATT
+  /// handle.
   /// @since_tizen 2.3.1
   ///
   /// @remarks @a uuid must be released using free(). \n
-  /// 16-bit UUID or 128-bit UUID is supported. (e.g. 2A19, 00002A19-0000-1000-8000-00805F9B34FB).
+  /// 16-bit UUID or 128-bit UUID is supported. (e.g. 2A19,
+  /// 00002A19-0000-1000-8000-00805F9B34FB).
   ///
   /// @param[in] gatt_handle The handle of a service, characteristic or descriptor
   /// @param[out] uuid The string of the UUID of @a gatt_handle
@@ -111984,8 +112331,9 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks This function doesn't allocate new memory for GATT client handle. \n
-  /// The returned GATT client handle is the same one which was got from bt_gatt_client_create(). \n
-  /// So if it is destroyed by bt_gatt_client_destroy(), all related GATT handles are freed also.
+  /// The returned GATT client handle is the same one which was got from
+  /// bt_gatt_client_create(). \n So if it is destroyed by
+  /// bt_gatt_client_destroy(), all related GATT handles are freed also.
   ///
   /// @param[in] service The service's GATT handle
   /// @param[out] client The GATT client handle which @a service belongs to
@@ -112017,12 +112365,15 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy(). \n
-  /// If there are multiple characteristics which have same UUID, only the first matched one will be returned.
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy(). \n If there are multiple characteristics which have
+  /// same UUID, only the first matched one will be returned.
   ///
   /// @param[in] service The service's GATT handle
-  /// @param[in] uuid The characteristic's GATT handle which has this UUID will be returned if it exists
-  /// @param[out] characteristic The characteristic's GATT handle which has @a uuid if it exists
+  /// @param[in] uuid The characteristic's GATT handle which has this UUID will be
+  /// returned if it exists
+  /// @param[out] characteristic The characteristic's GATT handle which has @a uuid
+  /// if it exists
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112050,7 +112401,8 @@ class Tizen90Native {
               bt_gatt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bt_gatt_h>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Invokes @a callback function on each characteristic that belongs to the specified service.
+  /// @brief  Invokes @a callback function on each characteristic that belongs to
+  /// the specified service.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] service The service's GATT handle
@@ -112088,12 +112440,15 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy(). \n
-  /// If there are multiple included services which have same UUID, only the first matched one will be returned.
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy(). \n If there are multiple included services which
+  /// have same UUID, only the first matched one will be returned.
   ///
   /// @param[in] service The service's GATT handle
-  /// @param[in] uuid The included service's GATT handle which has this UUID will be returned if it exists
-  /// @param[out] included_service The included service's GATT handle which has @a uuid if it exists
+  /// @param[in] uuid The included service's GATT handle which has this UUID will
+  /// be returned if it exists
+  /// @param[out] included_service The included service's GATT handle which has @a
+  /// uuid if it exists
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112121,7 +112476,8 @@ class Tizen90Native {
               bt_gatt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bt_gatt_h>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Invokes @a callback function on each included service that belongs to the specified service.
+  /// @brief  Invokes @a callback function on each included service that belongs to
+  /// the specified service.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] service The service's GATT handle
@@ -112155,14 +112511,17 @@ class Tizen90Native {
           int Function(bt_gatt_h, bt_gatt_foreach_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Gets the service's GATT handle which the specified characteristic belongs to.
+  /// @brief  Gets the service's GATT handle which the specified characteristic
+  /// belongs to.
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy().
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy().
   ///
   /// @param[in] characteristic The characteristic's GATT handle
-  /// @param[out] service The service's GATT handle which @a characteristic belongs to
+  /// @param[out] service The service's GATT handle which @a characteristic belongs
+  /// to
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112190,7 +112549,8 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @param[in] characteristic The characteristic's GATT handle
-  /// @param[out] properties The properties which a characteristic's GATT handle has
+  /// @param[out] properties The properties which a characteristic's GATT handle
+  /// has
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112280,12 +112640,15 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy(). \n
-  /// If there are multiple descriptors which have same UUID, only the first matched one will be returned.
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy(). \n If there are multiple descriptors which have
+  /// same UUID, only the first matched one will be returned.
   ///
   /// @param[in] characteristic The characteristic's GATT handle
-  /// @param[in] uuid The descriptor's GATT handle which has this UUID will be returned if it exists
-  /// @param[out] descriptor The descriptor's GATT handle which has @a uuid if it exists
+  /// @param[in] uuid The descriptor's GATT handle which has this UUID will be
+  /// returned if it exists
+  /// @param[out] descriptor The descriptor's GATT handle which has @a uuid if it
+  /// exists
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112314,7 +112677,8 @@ class Tizen90Native {
               bt_gatt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bt_gatt_h>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Invokes @a callback function on each descriptor that belongs to the specified characteristic.
+  /// @brief  Invokes @a callback function on each descriptor that belongs to the
+  /// specified characteristic.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] characteristic The characteristic's GATT handle
@@ -112348,14 +112712,17 @@ class Tizen90Native {
           int Function(bt_gatt_h, bt_gatt_foreach_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief  Gets the characteristic's GATT handle which the specified descriptor belongs to.
+  /// @brief  Gets the characteristic's GATT handle which the specified descriptor
+  /// belongs to.
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy().
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy().
   ///
   /// @param[in] descriptor The descriptor's GATT handle
-  /// @param[out] characteristic The characteristic's GATT handle which @a descriptor belongs to
+  /// @param[out] characteristic The characteristic's GATT handle which @a
+  /// descriptor belongs to
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112382,7 +112749,8 @@ class Tizen90Native {
   /// @brief  Creates the GATT client handle.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks The GATT client handle must be freed by bt_gatt_client_destroy() after use.
+  /// @remarks The GATT client handle must be freed by bt_gatt_client_destroy()
+  /// after use.
   ///
   /// @param[in] remote_address The address of the remote device
   /// @param[out] client The created GATT client's handle
@@ -112415,7 +112783,8 @@ class Tizen90Native {
   /// @brief  Destroys the GATT client's handle.
   /// @since_tizen 2.3.1
   ///
-  /// @remarks All related service, characteristic and descriptor's GATT handles are freed also.
+  /// @remarks All related service, characteristic and descriptor's GATT handles
+  /// are freed also.
   ///
   /// @param[in] client The GATT client's handle
   /// @return 0 on success, otherwise a negative error value
@@ -112445,7 +112814,8 @@ class Tizen90Native {
   /// @remarks The @a remote_address should be released using free().
   ///
   /// @param[in] client The created GATT client's handle
-  /// @param[out] remote_address The address of the remote device which is associated with @a client
+  /// @param[out] remote_address The address of the remote device which is
+  /// associated with @a client
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112484,13 +112854,15 @@ class Tizen90Native {
           int Function(bt_gatt_client_h, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// @ingroup  CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief  Reads the value of a characteristic or descriptor from the remote device asynchronously.
+  /// @brief  Reads the value of a characteristic or descriptor from the remote
+  /// device asynchronously.
   /// @since_tizen 2.3.1
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
   /// @param[in] gatt_handle The GATT handle of a characteristic or descriptor
-  /// @param[in] callback When a read request is completed, this callback function will be called
+  /// @param[in] callback When a read request is completed, this callback function
+  /// will be called
   /// @param[in] user_data The user data to be passed to @a callback function
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -112526,13 +112898,15 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup  CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief  Writes the value of a characteristic or descriptor to the remote device asynchronously.
+  /// @brief  Writes the value of a characteristic or descriptor to the remote
+  /// device asynchronously.
   /// @since_tizen 2.3.1
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
   /// @param[in] gatt_handle The GATT handle of a characteristic or descriptor
-  /// @param[in] callback When a write request is completed, this callback function will be called
+  /// @param[in] callback When a write request is completed, this callback function
+  /// will be called
   /// @param[in] user_data The user data to be passed to @a callback function
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -112641,7 +113015,8 @@ class Tizen90Native {
           int Function(bt_gatt_client_h, ffi.Pointer<ffi.UnsignedInt>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Registers a callback function to be invoked when the ATT MTU is changed.
+  /// @brief Registers a callback function to be invoked when the ATT MTU is
+  /// changed.
   /// @since_tizen 4.0
   /// @param[in] client The created GATT client's handle
   /// @param[in] callback The callback function to register
@@ -112679,7 +113054,8 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Unregisters the callback function to be invoked when the ATT MTU is changed.
+  /// @brief Unregisters the callback function to be invoked when the ATT MTU is
+  /// changed.
   /// @since_tizen 4.0
   /// @param[in] client The created GATT client's handle
   /// @return 0 on success, otherwise a negative error value.
@@ -112708,11 +113084,13 @@ class Tizen90Native {
           .asFunction<int Function(bt_gatt_client_h)>();
 
   /// @ingroup  CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Registers a callback function to be invoked when the characteristic value is changed on the remote device.
+  /// @brief Registers a callback function to be invoked when the characteristic
+  /// value is changed on the remote device.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] characteristic The characteristic's GATT handle
-  /// @param[in] callback The callback to be invoked when the value is changed and it is informed
+  /// @param[in] callback The callback to be invoked when the value is changed and
+  /// it is informed
   /// @param[in] user_data The user data to be passed to @a callback function
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -112749,10 +113127,12 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup  CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Unregisters a callback function to be invoked when the characteristic value is changed on the remote device.
+  /// @brief Unregisters a callback function to be invoked when the characteristic
+  /// value is changed on the remote device.
   /// @since_tizen 2.3.1
   ///
-  /// @param[in] characteristic The characteristic's GATT handle, whose value change will not be informed
+  /// @param[in] characteristic The characteristic's GATT handle, whose value
+  /// change will not be informed
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -112780,11 +113160,13 @@ class Tizen90Native {
   /// @since_tizen 2.3.1
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated client is destroyed by bt_gatt_client_destroy(). \n
-  /// If there are multiple services which have same UUID, only the first matched one will be returned.
+  /// It will be freed when an associated client is destroyed by
+  /// bt_gatt_client_destroy(). \n If there are multiple services which have same
+  /// UUID, only the first matched one will be returned.
   ///
   /// @param[in] client The GATT client's handle
-  /// @param[in] uuid The service's GATT handle which has this UUID will be returned if it exists
+  /// @param[in] uuid The service's GATT handle which has this UUID will be
+  /// returned if it exists
   /// @param[out] service The service's GATT handle which has @a uuid if it exists
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -112813,7 +113195,8 @@ class Tizen90Native {
               ffi.Pointer<bt_gatt_h>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief  Invokes @a callback function on each service that belongs to the specified GATT client.
+  /// @brief  Invokes @a callback function on each service that belongs to the
+  /// specified GATT client.
   /// @since_tizen 2.3.1
   ///
   /// @param[in] client The GATT client's handle
@@ -112847,7 +113230,8 @@ class Tizen90Native {
               bt_gatt_client_h, bt_gatt_foreach_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Registers a callback function to be invoked when service is changed from a remote device(GATT server).
+  /// @brief Registers a callback function to be invoked when service is changed
+  /// from a remote device(GATT server).
   /// @since_tizen 3.0
   ///
   /// @param[in] client The GATT client's handle
@@ -112907,7 +113291,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_gatt_client_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Connects to a specific LE based service on a remote bluetooth device address, asynchronously.
+  /// @brief Connects to a specific LE based service on a remote bluetooth device
+  /// address, asynchronously.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -112953,7 +113338,9 @@ class Tizen90Native {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, bool)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
-  /// @brief Disconnects to LE connection with the given remote Bluetooth device address, asynchronously or cancels a LE connection attempt currently in progress.
+  /// @brief Disconnects to LE connection with the given remote Bluetooth device
+  /// address, asynchronously or cancels a LE connection attempt currently in
+  /// progress.
   /// @since_tizen 2.3
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -112991,7 +113378,8 @@ class Tizen90Native {
       _bt_gatt_disconnectPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state is changed.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state is changed.
   /// @since_tizen 2.3
   ///
   /// @param[in] callback The callback function to register.
@@ -113027,7 +113415,8 @@ class Tizen90Native {
               bt_gatt_connection_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the connection state is changed.
+  /// @brief Unregisters a callback function that will be invoked when the
+  /// connection state is changed.
   /// @since_tizen 2.3
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -113128,10 +113517,12 @@ class Tizen90Native {
   /// @brief  Gets the permissions which a characteristic's GATT handle has.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a permissions can be one or more values of #bt_gatt_permission_e, combined with bitwise 'or'.
+  /// @remarks The @a permissions can be one or more values of
+  /// #bt_gatt_permission_e, combined with bitwise 'or'.
   ///
   /// @param[in] gatt_handle The handle of a characteristic
-  /// @param[out] permissions The permissions which a characteristic's GATT handle has
+  /// @param[out] permissions The permissions which a characteristic's GATT handle
+  /// has
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -113161,7 +113552,8 @@ class Tizen90Native {
   /// @brief  Gets the permissions which a descriptor's GATT handle has.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a permissions can be one or more values of #bt_gatt_permission_e, combined with bitwise 'or'.
+  /// @remarks The @a permissions can be one or more values of
+  /// #bt_gatt_permission_e, combined with bitwise 'or'.
   ///
   /// @param[in] gatt_handle The handle of a descriptor
   /// @param[out] permissions The permissions which a descriptor's GATT handle has
@@ -113194,7 +113586,8 @@ class Tizen90Native {
   /// @brief  Creates the GATT service.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a service should be destroyed by using bt_gatt_service_destroy().
+  /// @remarks The @a service should be destroyed by using
+  /// bt_gatt_service_destroy().
   ///
   /// @param[in] uuid The UUID of the service
   /// @param[in] type The type of the service
@@ -113260,7 +113653,8 @@ class Tizen90Native {
   /// @since_tizen 3.0
   ///
   /// @param[in] service The service's GATT handle
-  /// @param[in] included_service The service's GATT handle to be added as included service
+  /// @param[in] included_service The service's GATT handle to be added as included
+  /// service
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -113321,9 +113715,12 @@ class Tizen90Native {
   /// @brief  Creates the GATT characteristic.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a permissions can be one or more values of #bt_gatt_permission_e, combined with bitwise 'or'. \n
-  /// @remarks The @a properties can be one or more values of #bt_gatt_property_e, combined with bitwise 'or'. \n
-  /// @remarks The @a characteristic should be destroyed by using bt_gatt_characteristic_destroy().
+  /// @remarks The @a permissions can be one or more values of
+  /// #bt_gatt_permission_e, combined with bitwise 'or'. \n
+  /// @remarks The @a properties can be one or more values of #bt_gatt_property_e,
+  /// combined with bitwise 'or'. \n
+  /// @remarks The @a characteristic should be destroyed by using
+  /// bt_gatt_characteristic_destroy().
   ///
   /// @param[in] uuid The UUID of the characteristic
   /// @param[in] permissions the permissions of the characteristic
@@ -113404,14 +113801,17 @@ class Tizen90Native {
   /// @brief  Creates the GATT characteristic descriptor.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a permissions can be one or more values of #bt_gatt_permission_e, combined with bitwise 'or'. \n
-  /// @remarks The @a descriptor should be destroyed by using bt_gatt_descriptor_destroy().
+  /// @remarks The @a permissions can be one or more values of
+  /// #bt_gatt_permission_e, combined with bitwise 'or'. \n
+  /// @remarks The @a descriptor should be destroyed by using
+  /// bt_gatt_descriptor_destroy().
   ///
   /// @param[in] uuid The UUID of the descriptor
   /// @param[in] permissions The permissions of the descriptor
   /// @param[in] value The value(byte stream) associated with the descriptor
   /// @param[in] value_length The length of @a value
-  /// @param[out] descriptor The GATT handle of the created characteristic descriptor
+  /// @param[out] descriptor The GATT handle of the created characteristic
+  /// descriptor
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -113496,7 +113896,8 @@ class Tizen90Native {
   /// @brief  Creates the GATT server's handle.
   /// @since_tizen 3.0
   ///
-  /// @remarks The @a server handle should be destroyed by using bt_gatt_server_destroy().
+  /// @remarks The @a server handle should be destroyed by using
+  /// bt_gatt_server_destroy().
   ///
   /// @param[out] server The GATT server's handle
   /// @return 0 on success, otherwise a negative error value
@@ -113548,7 +113949,9 @@ class Tizen90Native {
       _bt_gatt_server_destroyPtr.asFunction<int Function(bt_gatt_server_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Registers a callback function to be invoked when a read request for a specified characteristic or descriptor is issued from a remote device(GATT client).
+  /// @brief Registers a callback function to be invoked when a read request for a
+  /// specified characteristic or descriptor is issued from a remote device(GATT
+  /// client).
   /// @since_tizen 3.0
   ///
   /// @param[in] gatt_handle The GATT handle of a characteristic or descriptor
@@ -113586,7 +113989,9 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Registers a callback function to be invoked when the remote device enables or disables the Notification/Indication for particular characteristics.
+  /// @brief Registers a callback function to be invoked when the remote device
+  /// enables or disables the Notification/Indication for particular
+  /// characteristics.
   /// @since_tizen 3.0
   ///
   /// @param[in] gatt_handle The GATT handle of a characteristic
@@ -113627,7 +114032,9 @@ class Tizen90Native {
                   ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Registers a callback function to be invoked when a value of a characteristic or descriptor has been changed by a remote device(GATT client)'s request.
+  /// @brief Registers a callback function to be invoked when a value of a
+  /// characteristic or descriptor has been changed by a remote device(GATT
+  /// client)'s request.
   /// @since_tizen 3.0
   ///
   /// @param[in] gatt_handle The GATT handle of a characteristic or descriptor
@@ -113664,7 +114071,8 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Registers a specified service to the specified GATT server that the local device is hosting.
+  /// @brief Registers a specified service to the specified GATT server that the
+  /// local device is hosting.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -113701,7 +114109,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_gatt_server_h, bt_gatt_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Unregisters a specified service from the specified GATT server that the local device is hosting.
+  /// @brief Unregisters a specified service from the specified GATT server that
+  /// the local device is hosting.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -113734,7 +114143,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_gatt_server_h, bt_gatt_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Unregisters all services from the specified GATT server that the local device is hosting.
+  /// @brief Unregisters all services from the specified GATT server that the local
+  /// device is hosting.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -113763,7 +114173,8 @@ class Tizen90Native {
           .asFunction<int Function(bt_gatt_server_h)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief Registers the application along with the GATT services of the application it is hosting.
+  /// @brief Registers the application along with the GATT services of the
+  /// application it is hosting.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -113789,7 +114200,8 @@ class Tizen90Native {
       _bt_gatt_server_startPtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief  Sends a response to the remote device as a result of a read/write request.
+  /// @brief  Sends a response to the remote device as a result of a read/write
+  /// request.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -113799,8 +114211,10 @@ class Tizen90Native {
   /// @param[in] request_id The identification of a read/write request
   /// @param[in] request_type The request type for read/write
   /// @param[in] offset The offset from where a value is read
-  /// @param[in] resp_status The application error if any occurred or BT_ERROR_NONE for successful.
-  /// @param[in] value The value to be sent. It will be sent from @a offset. If it is NULL, a requested GATT handle's value will be sent from @a offset.
+  /// @param[in] resp_status The application error if any occurred or BT_ERROR_NONE
+  /// for successful.
+  /// @param[in] value The value to be sent. It will be sent from @a offset. If it
+  /// is NULL, a requested GATT handle's value will be sent from @a offset.
   /// @param[in] value_length Value Length
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -113836,12 +114250,15 @@ class Tizen90Native {
           int Function(int, int, int, int, ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief  Notifies value change of the characteristic to the remote devices which enable a Client Characteristic Configuration Descriptor.
+  /// @brief  Notifies value change of the characteristic to the remote devices
+  /// which enable a Client Characteristic Configuration Descriptor.
   /// @since_tizen 3.0
   ///
   /// @param[in] characteristic The characteristic which has a changed value
-  /// @param[in] callback The function to be invoked on each remote device when a sending operation is done
-  /// @param[in] device_address Remote device address to send notify or indicate and if set to NULL then notify/indicate all is enabled.
+  /// @param[in] callback The function to be invoked on each remote device when a
+  /// sending operation is done
+  /// @param[in] device_address Remote device address to send notify or indicate
+  /// and if set to NULL then notify/indicate all is enabled.
   /// @param[in] user_data The user data to be passed to @a callback function
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -113878,11 +114295,13 @@ class Tizen90Native {
   /// @since_tizen 3.0
   ///
   /// @remarks The returned GATT handle must not be freed by application. \n
-  /// It will be freed when an associated server is destroyed by bt_gatt_server_destroy(). \n
-  /// If there are multiple services which have same UUID, only the first matched one will be returned.
+  /// It will be freed when an associated server is destroyed by
+  /// bt_gatt_server_destroy(). \n If there are multiple services which have same
+  /// UUID, only the first matched one will be returned.
   ///
   /// @param[in] server The GATT server's handle
-  /// @param[in] uuid The service's GATT handle which has this UUID will be returned if it exists
+  /// @param[in] uuid The service's GATT handle which has this UUID will be
+  /// returned if it exists
   /// @param[out] service The service's GATT handle which has @a uuid if it exists
   /// @return 0 on success, otherwise a negative error value
   /// @retval #BT_ERROR_NONE Successful
@@ -113911,7 +114330,8 @@ class Tizen90Native {
               ffi.Pointer<bt_gatt_h>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_GATT_SERVER_MODULE
-  /// @brief  Invokes @a callback function on each service that belongs to the specified GATT server.
+  /// @brief  Invokes @a callback function on each service that belongs to the
+  /// specified GATT server.
   /// @since_tizen 3.0
   ///
   /// @param[in] server The GATT server's handle
@@ -113981,8 +114401,9 @@ class Tizen90Native {
   /// @details This initialization is necessary to call other PBAP client APIs.
   /// @since_tizen 3.0
   ///
-  /// @remarks This function must be called to initialize Bluetooth PBAP client. You must free all resources of the Bluetooth service \n
-  /// by calling bt_pbap_client_deinitialize() if Bluetooth PBAP Client is no longer needed.
+  /// @remarks This function must be called to initialize Bluetooth PBAP client.
+  /// You must free all resources of the Bluetooth service \n by calling
+  /// bt_pbap_client_deinitialize() if Bluetooth PBAP Client is no longer needed.
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -114012,7 +114433,8 @@ class Tizen90Native {
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
   /// @brief Deinitializes the Bluetooth PBAP Client.
-  /// @details This deinitialization must be done to free resources when the PBAP client is not longer needed.
+  /// @details This deinitialization must be done to free resources when the PBAP
+  /// client is not longer needed.
   /// @since_tizen 3.0
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -114043,7 +114465,8 @@ class Tizen90Native {
       _bt_pbap_client_deinitializePtr.asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state is changed.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state is changed.
   /// @since_tizen 3.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -114076,7 +114499,8 @@ class Tizen90Native {
               bt_pbap_connection_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Unregisters a callback function that will be invoked when the connection state is changed.
+  /// @brief Unregisters a callback function that will be invoked when the
+  /// connection state is changed.
   /// @since_tizen 3.0
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114116,7 +114540,8 @@ class Tizen90Native {
   ///
   /// @pre The state of the local Bluetooth adapter must be #BT_ADAPTER_ENABLED.
   /// @pre The PBAP client must be initialized with bt_pbap_client_initialize().
-  /// @pre The local device must be bonded with the remote device by bt_device_create_bond().
+  /// @pre The local device must be bonded with the remote device by
+  /// bt_device_create_bond().
   /// @post bt_pbap_connection_state_changed_cb() will be invoked.
   /// @see bt_pbap_client_disconnect()
   /// @see bt_pbap_client_set_connection_state_changed_cb()
@@ -114181,7 +114606,8 @@ class Tizen90Native {
   /// @param[in] address The other device's address
   /// @param[in] source Source of the phone book (Phone/SIM)
   /// @param[in] folder_type Type of folder
-  /// @param[in] callback The callback function called when PBAP phone book size is returned.
+  /// @param[in] callback The callback function called when PBAP phone book size is
+  /// returned.
   /// @param[in] user_data Data to be passed to the PBAP phone book size callback.
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -114228,8 +114654,10 @@ class Tizen90Native {
               bt_pbap_phone_book_size_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Gets all contacts and call logs as vCard from PBAP server, asynchronously.
-  /// @details The received phone book file will be saved in the platform downloads folder.
+  /// @brief Gets all contacts and call logs as vCard from PBAP server,
+  /// asynchronously.
+  /// @details The received phone book file will be saved in the platform downloads
+  /// folder.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -114240,11 +114668,15 @@ class Tizen90Native {
   /// @param[in] folder_type Type of folder
   /// @param[in] format The vCard format
   /// @param[in] order Specifies which field shall be used to sort vCards.
-  /// @param[in] offset The number of vCards to be excluded, counting from the beginning
+  /// @param[in] offset The number of vCards to be excluded, counting from the
+  /// beginning
   /// @param[in] max_list_count The maximum number of vCards to be fetched
-  /// @param[in] fields vCard fields to be fetched; one or more #bt_pbap_field_e values combined with bitwise 'or'
-  /// @param[in] callback The callback function called when PBAP phone book is Pulled.
-  /// @param[in] user_data Data to be passed to the PBAP phone book pulling callback.
+  /// @param[in] fields vCard fields to be fetched; one or more #bt_pbap_field_e
+  /// values combined with bitwise 'or'
+  /// @param[in] callback The callback function called when PBAP phone book is
+  /// Pulled.
+  /// @param[in] user_data Data to be passed to the PBAP phone book pulling
+  /// callback.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114305,7 +114737,8 @@ class Tizen90Native {
               bt_pbap_phone_book_received_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Gets contact and call log information from the PBAP server, asynchronously.
+  /// @brief Gets contact and call log information from the PBAP server,
+  /// asynchronously.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -114317,7 +114750,8 @@ class Tizen90Native {
   /// @param[in] offset vCards to be excluded from beginning.
   /// @param[in] max_list_count Maximum number of vCards to be fetched
   /// @param[in] callback The callback function called when PBAP List is returned.
-  /// @param[in] user_data Data to be passed to the PBAP phone book pulling callback.
+  /// @param[in] user_data Data to be passed to the PBAP phone book pulling
+  /// callback.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114371,10 +114805,12 @@ class Tizen90Native {
           bt_pbap_list_vcards_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Gets the selected contact using the index parameter as vCard from PBAP server, asynchronously.
-  /// @details The received phone book file will be saved in the platform downloads folder.
-  /// The @a index value should be equal to the value of the @a index field in the #bt_pbap_vcard_info_s structure,
-  /// which can be obtained with bt_pbap_client_get_list() or bt_pbap_client_search_phone_book().
+  /// @brief Gets the selected contact using the index parameter as vCard from PBAP
+  /// server, asynchronously.
+  /// @details The received phone book file will be saved in the platform downloads
+  /// folder. The @a index value should be equal to the value of the @a index field
+  /// in the #bt_pbap_vcard_info_s structure, which can be obtained with
+  /// bt_pbap_client_get_list() or bt_pbap_client_search_phone_book().
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -114385,9 +114821,12 @@ class Tizen90Native {
   /// @param[in] folder_type Type of folder
   /// @param[in] index The handle index of vCard to be fetched
   /// @param[in] format Format of vCard
-  /// @param[in] fields vCard fields to be fetched; one or more #bt_pbap_field_e values combined with bitwise 'or'
-  /// @param[in] callback The callback function called when PBAP phone book is Pulled.
-  /// @param[in] user_data Data to be passed to the PBAP phone book Pulling callback.
+  /// @param[in] fields vCard fields to be fetched; one or more #bt_pbap_field_e
+  /// values combined with bitwise 'or'
+  /// @param[in] callback The callback function called when PBAP phone book is
+  /// Pulled.
+  /// @param[in] user_data Data to be passed to the PBAP phone book Pulling
+  /// callback.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114401,7 +114840,8 @@ class Tizen90Native {
   /// @pre The state of the local Bluetooth adapter must be #BT_ADAPTER_ENABLED.
   /// @pre The PBAP client must be initialized with bt_pbap_client_initialize().
   /// @pre PBAP connection must be created with bt_pbap_client_connect().
-  /// @pre The vCard information (#bt_pbap_vcard_info_s) must be obtained with bt_pbap_client_get_list() or bt_pbap_client_search_phone_book().
+  /// @pre The vCard information (#bt_pbap_vcard_info_s) must be obtained with
+  /// bt_pbap_client_get_list() or bt_pbap_client_search_phone_book().
   /// @see bt_pbap_client_connect()
   /// @see bt_pbap_client_get_list()
   /// @see bt_pbap_client_search_phone_book()
@@ -114444,7 +114884,8 @@ class Tizen90Native {
               bt_pbap_phone_book_received_cb, ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_PBAP_MODULE
-  /// @brief Finds and fetches the contact and call log information from the PBAP server, asynchronously.
+  /// @brief Finds and fetches the contact and call log information from the PBAP
+  /// server, asynchronously.
   /// @since_tizen 3.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -114458,7 +114899,8 @@ class Tizen90Native {
   /// @param[in] offset vCards to be excluded from beginning.
   /// @param[in] max_list_count Maximum number of vCards to be fetched
   /// @param[in] callback The callback function called when PBAP List is returned.
-  /// @param[in] user_data Data to be passed to the PBAP phone book pulling callback.
+  /// @param[in] user_data Data to be passed to the PBAP phone book pulling
+  /// callback.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114528,19 +114970,21 @@ class Tizen90Native {
               ffi.Pointer<ffi.Void>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Creates a scan filter to find only LE advertisements which match specific requirements.
+  /// @brief Creates a scan filter to find only LE advertisements which match
+  /// specific requirements.
   /// @details If the filter's attribute is not set, then the filter will accept
   /// all values of that attribute. If an attribute is set, the filter
   /// will accept only advertisements which match the set attribute.
   ///
   /// For example, if device name is set with
-  /// bt_adapter_le_scan_filter_set_device_name(), the filter will accept
-  /// only advertisements from devices with the given name. If device name
-  /// is not set, advertisements will be filtered without regard to device
-  /// names.
+  /// bt_adapter_le_scan_filter_set_device_name(), the filter will
+  /// accept only advertisements from devices with the given name. If device name
+  /// is not set, advertisements will be filtered without regard to
+  /// device names.
   /// @since_tizen 4.0
   ///
-  /// @remarks The @a scan_filter should be destroyed with bt_adapter_le_scan_filter_destroy().
+  /// @remarks The @a scan_filter should be destroyed with
+  /// bt_adapter_le_scan_filter_destroy().
   ///
   /// @param[out] scan_filter The scan filter handle
   ///
@@ -114604,7 +115048,8 @@ class Tizen90Native {
   /// @since_tizen 4.0
   ///
   /// @param[in] scan_filter The scan filter handle
-  /// @param[in] address The device address by which advertisements will be filtered
+  /// @param[in] address The device address by which advertisements will be
+  /// filtered
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114700,10 +115145,10 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Sets the service UUID and the mask for the advertisements filter,
   /// to use for filtering by partial data.
-  /// @details Any previously set value will be overwritten. The mask works as follows:
-  /// For each bit set to 1 in the mask, the corresponding bits in @a uuid
-  /// and in the filtered data will have to be equal. If the mask bit is set to 0,
-  /// the corresponding bits will be ignored.
+  /// @details Any previously set value will be overwritten. The mask works as
+  /// follows: For each bit set to 1 in the mask, the corresponding bits in @a uuid
+  /// and in the filtered data will have to be equal. If the mask bit
+  /// is set to 0, the corresponding bits will be ignored.
   /// @since_tizen 4.0
   ///
   /// @remarks The @a mask and the service @a uuid must have equal lengths.
@@ -114747,7 +115192,8 @@ class Tizen90Native {
   /// @since_tizen 4.0
   ///
   /// @param[in] scan_filter The scan filter handle
-  /// @param[in] uuid The service solicitation UUID by which advertisements will be filtered
+  /// @param[in] uuid The service solicitation UUID by which advertisements will be
+  /// filtered
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -114776,18 +115222,20 @@ class Tizen90Native {
           .asFunction<int Function(bt_scan_filter_h, ffi.Pointer<ffi.Char>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
-  /// @brief Sets the service solicitation UUID and the mask for the advertisements filter,
-  /// to use for filtering by partial data.
-  /// @details Any previously set value will be overwritten. The mask works as follows:
-  /// For each bit set to 1 in the mask, the corresponding bits in @a uuid
-  /// and in the filtered data will have to be equal. If the mask bit is set to 0,
-  /// the corresponding bits will be ignored.
+  /// @brief Sets the service solicitation UUID and the mask for the advertisements
+  /// filter, to use for filtering by partial data.
+  /// @details Any previously set value will be overwritten. The mask works as
+  /// follows: For each bit set to 1 in the mask, the corresponding bits in @a uuid
+  /// and in the filtered data will have to be equal. If the mask bit
+  /// is set to 0, the corresponding bits will be ignored.
   /// @since_tizen 4.0
   ///
-  /// @remarks The @a mask and the service solicitation @a uuid must have equal lengths.
+  /// @remarks The @a mask and the service solicitation @a uuid must have equal
+  /// lengths.
   ///
   /// @param[in] scan_filter The scan filter handle
-  /// @param[in] uuid The service solicitation UUID by which advertisements will be filtered
+  /// @param[in] uuid The service solicitation UUID by which advertisements will be
+  /// filtered
   /// @param[in] mask The mask by which advertisements will be filtered
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -114867,10 +115315,10 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Sets the service data and the mask for the advertisements filter,
   /// to use for filtering by partial data.
-  /// @details Any previously set value will be overwritten. The mask works as follows:
-  /// For each bit set to 1 in the mask, the corresponding bits in @a data
-  /// and in the filtered data will have to be equal. If the mask bit is set to 0,
-  /// the corresponding bits will be ignored.
+  /// @details Any previously set value will be overwritten. The mask works as
+  /// follows: For each bit set to 1 in the mask, the corresponding bits in @a data
+  /// and in the filtered data will have to be equal. If the mask bit
+  /// is set to 0, the corresponding bits will be ignored.
   /// @since_tizen 4.0
   ///
   /// @remarks The @a mask and the service @a data must have equal lengths.
@@ -114965,10 +115413,10 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   /// @brief Sets the manufacturer data and the mask for the advertisements filter,
   /// to use for filtering by partial data.
-  /// @details Any previously set value will be overwritten. The mask works as follows:
-  /// For each bit set to 1 in the mask, the corresponding bits in @a data
-  /// and in the filtered data will have to be equal. If the mask bit is set to 0,
-  /// the corresponding bits will be ignored.
+  /// @details Any previously set value will be overwritten. The mask works as
+  /// follows: For each bit set to 1 in the mask, the corresponding bits in @a data
+  /// and in the filtered data will have to be equal. If the mask bit
+  /// is set to 0, the corresponding bits will be ignored.
   /// @since_tizen 4.0
   ///
   /// @remarks The @a mask and the manufacturer @a data must have equal lengths.
@@ -115026,7 +115474,8 @@ class Tizen90Native {
   /// @details The filter type is used when searching only for iBeacon or proximity
   /// type's advertising data. If the type is not set, LE scanner will
   /// search devices as with regard to other filtered attributes.
-  /// If the type is set, all other attributes set for the filter are ignored.
+  /// If the type is set, all other attributes set for the filter are
+  /// ignored.
   /// @since_tizen 4.0
   ///
   /// @param[in] scan_filter The scan filter handle
@@ -115063,8 +115512,8 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks Several scan filters can be registered. If an advertisement passes \n
-  /// any of the registered scan filters, it will be included in the results.
+  /// @remarks Several scan filters can be registered. If an advertisement passes
+  /// \n any of the registered scan filters, it will be included in the results.
   ///
   /// @param[in] scan_filter The scan filter handle
   ///
@@ -115152,9 +115601,11 @@ class Tizen90Native {
   /// @brief Checks if LE 2M PHY feature is supported or not.
   /// @since_tizen 5.0
   ///
-  /// @remarks The LE 2M PHY feature was introduced in the BT 5.0 core specification.
+  /// @remarks The LE 2M PHY feature was introduced in the BT 5.0 core
+  /// specification.
   ///
-  /// @param[out] is_supported The LE 2M PHY feature support: (@c true = supported , @c  false = not supported)
+  /// @param[out] is_supported The LE 2M PHY feature support: (@c true = supported
+  /// , @c  false = not supported)
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115184,9 +115635,11 @@ class Tizen90Native {
   /// @brief Checks if LE CODED PHY feature is supported or not.
   /// @since_tizen 5.0
   ///
-  /// @remarks The LE CODED PHY feature was introduced in the BT 5.0 core specification.
+  /// @remarks The LE CODED PHY feature was introduced in the BT 5.0 core
+  /// specification.
   ///
-  /// @param[out] is_supported The LE CODED PHY feature support: (@c true = supported , @c  false = not supported)
+  /// @param[out] is_supported The LE CODED PHY feature support: (@c true =
+  /// supported , @c  false = not supported)
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115213,9 +115666,11 @@ class Tizen90Native {
           .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Registers a L2CAP Connection-oriented Channel (CoC) server socket with a specific protocol/service multiplexer (PSM) value.
-  /// @details If 0 is passed, the system will assign a dynamic PSM value when bt_socket_listen_and_accept_l2cap_channel()
-  /// is called. This @a psm value can be read from the bt_socket_get_l2cap_psm().
+  /// @brief Registers a L2CAP Connection-oriented Channel (CoC) server socket with
+  /// a specific protocol/service multiplexer (PSM) value.
+  /// @details If 0 is passed, the system will assign a dynamic PSM value when
+  /// bt_socket_listen_and_accept_l2cap_channel() is called. This @a psm value can
+  /// be read from the bt_socket_get_l2cap_psm().
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -115256,14 +115711,19 @@ class Tizen90Native {
           .asFunction<int Function(int, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Removes the L2CAP Connection-oriented Channel (CoC) server socket which was created using bt_socket_create_l2cap_channel().
+  /// @brief Removes the L2CAP Connection-oriented Channel (CoC) server socket
+  /// which was created using bt_socket_create_l2cap_channel().
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks If callback function bt_socket_l2cap_channel_connection_state_changed_cb() is set and the remote Bluetooth device is connected,
-  /// then bt_socket_l2cap_channel_connection_state_changed_cb() will be called when this function is finished successfully.
+  /// @remarks If callback function
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() is set and the remote
+  /// Bluetooth device is connected, then
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() will be called when
+  /// this function is finished successfully.
   ///
-  /// @param[in] socket_fd The file descriptor of socket (which was created using bt_socket_create_l2cap_channel()) to destroy
+  /// @param[in] socket_fd The file descriptor of socket (which was created using
+  /// bt_socket_create_l2cap_channel()) to destroy
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -115274,8 +115734,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The socket must be created with bt_socket_create_l2cap_channel().
-  /// @post If callback function bt_socket_l2cap_channel_connection_state_changed_cb() is set and the remote Bluetooth device is connected,
-  /// then bt_socket_l2cap_channel_connection_state_changed_cb() will be called.
+  /// @post If callback function
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() is set and the remote
+  /// Bluetooth device is connected, then
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() will be called.
   /// @see bt_socket_create_l2cap_channel()
   /// @see bt_socket_l2cap_channel_connection_state_changed_cb()
   /// @see bt_socket_set_l2cap_channel_connection_state_changed_cb()
@@ -115295,10 +115757,12 @@ class Tizen90Native {
       _bt_socket_destroy_l2cap_channelPtr.asFunction<int Function(int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Starts listening on passed L2CAP_LE socket and accepts connection requests.
-  /// @details Pop-up is shown automatically when a L2CAP CoC connection is requested.
-  /// bt_socket_l2cap_channel_connection_state_changed_cb() will be called with
-  /// #BT_SOCKET_CONNECTED if the user click "yes" and connection is finished successfully.
+  /// @brief Starts listening on passed L2CAP_LE socket and accepts connection
+  /// requests.
+  /// @details Pop-up is shown automatically when a L2CAP CoC connection is
+  /// requested. bt_socket_l2cap_channel_connection_state_changed_cb() will be
+  /// called with #BT_SOCKET_CONNECTED if the user click "yes" and connection is
+  /// finished successfully.
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -115314,8 +115778,10 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The socket must be created with bt_socket_create_l2cap_channel().
-  /// @post If callback function bt_socket_l2cap_channel_connection_state_changed_cb() is set,
-  /// then bt_socket_l2cap_channel_connection_state_changed_cb() will be called when the remote Bluetooth device is connected.
+  /// @post If callback function
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() is set, then
+  /// bt_socket_l2cap_channel_connection_state_changed_cb() will be called when the
+  /// remote Bluetooth device is connected.
   /// @see bt_socket_create_l2cap_channel()
   /// @see bt_socket_l2cap_channel_connection_state_changed_cb()
   /// @see bt_socket_set_l2cap_channel_connection_state_changed_cb()
@@ -115338,15 +115804,18 @@ class Tizen90Native {
           .asFunction<int Function(int, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Gets the assigned PSM for the listening L2CAP Connection-oriented Channel (CoC) server socket.
-  /// @details It is used to get the system assigned PSM value especially when bt_socket_create_l2cap_channel()
-  /// is called with @a psm value 0.
+  /// @brief Gets the assigned PSM for the listening L2CAP Connection-oriented
+  /// Channel (CoC) server socket.
+  /// @details It is used to get the system assigned PSM value especially when
+  /// bt_socket_create_l2cap_channel() is called with @a psm value 0.
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @param[in] socket_fd The file descriptor of connected socket which was received using bt_socket_l2cap_channel_connection_state_changed_cb()
-  /// @param[out] psm The assigned dynamic PSM value for the listening L2CAP CoC server socket
+  /// @param[in] socket_fd The file descriptor of connected socket which was
+  /// received using bt_socket_l2cap_channel_connection_state_changed_cb()
+  /// @param[out] psm The assigned dynamic PSM value for the listening L2CAP CoC
+  /// server socket
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115378,12 +115847,14 @@ class Tizen90Native {
       .asFunction<int Function(int, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Connects to a specific L2CAP CoC socket on a remote Bluetooth device PSM, asynchronously.
+  /// @brief Connects to a specific L2CAP CoC socket on a remote Bluetooth device
+  /// PSM, asynchronously.
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   ///
-  /// @remarks A connection can be disconnected by bt_socket_disconnect_l2cap_channel().
+  /// @remarks A connection can be disconnected by
+  /// bt_socket_disconnect_l2cap_channel().
   ///
   /// @param[in] remote_address The address of the remote Bluetooth device
   /// @param[in] psm The dynamic PSM of a remote Bluetooth device
@@ -115399,7 +115870,8 @@ class Tizen90Native {
   ///
   /// @pre The state of local Bluetooth must be #BT_ADAPTER_ENABLED.
   /// @pre The remote device must be scannable with bt_adapter_le_start_scan().
-  /// @post This function invokes bt_socket_l2cap_channel_connection_state_changed_cb().
+  /// @post This function invokes
+  /// bt_socket_l2cap_channel_connection_state_changed_cb().
   ///
   /// @see bt_adapter_le_start_scan()
   /// @see bt_socket_disconnect_l2cap_channel()
@@ -115424,11 +115896,13 @@ class Tizen90Native {
           .asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Disconnects the L2CAP CoC connection with the given file descriptor of connected socket.
+  /// @brief Disconnects the L2CAP CoC connection with the given file descriptor of
+  /// connected socket.
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @param[in] socket_fd  The file descriptor of socket to close which was received using bt_socket_l2cap_channel_connection_state_changed_cb().
+  /// @param[in] socket_fd  The file descriptor of socket to close which was
+  /// received using bt_socket_l2cap_channel_connection_state_changed_cb().
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -115462,14 +115936,17 @@ class Tizen90Native {
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+  /// @remarks The specific error code can be obtained using the get_last_result()
+  /// method. Error codes are described in Exception section.
   ///
-  /// @param[in] socket_fd The file descriptor of connected socket which was received using bt_socket_l2cap_channel_connection_state_changed_cb()
+  /// @param[in] socket_fd The file descriptor of connected socket which was
+  /// received using bt_socket_l2cap_channel_connection_state_changed_cb()
   /// @param[in] data The data to be sent
   /// @param[in] length The length of data to be sent
   ///
   /// @return the number of bytes written (zero indicates nothing was written).
-  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2 man page.
+  /// @retval On error, -1 is returned, and errno is set appropriately. See write 2
+  /// man page.
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
   /// @retval #BT_ERROR_PERMISSION_DENIED Permission denied
   /// @retval #BT_ERROR_INVALID_PARAMETER Invalid parameter
@@ -115503,7 +115980,8 @@ class Tizen90Native {
           .asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Registers a callback function that will be invoked when a L2CAP CoC connection is requested.
+  /// @brief Registers a callback function that will be invoked when a L2CAP CoC
+  /// connection is requested.
   /// @since_tizen 7.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -115561,7 +116039,8 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Registers a callback function that will be invoked when the connection state changes.
+  /// @brief Registers a callback function that will be invoked when the connection
+  /// state changes.
   /// @since_tizen 7.0
   /// @param[in] callback The callback function to register
   /// @param[in] user_data The user data to be passed to the callback function
@@ -115622,8 +116101,10 @@ class Tizen90Native {
           .asFunction<int Function()>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_L2CAP_SOCKET_MODULE
-  /// @brief Starts listening on passed L2CAP Connection-oriented Channel (CoC) socket.
-  /// @details bt_socket_l2cap_channel_connection_requested_cb() will be called when a L2CAP CoC connection is requested.
+  /// @brief Starts listening on passed L2CAP Connection-oriented Channel (CoC)
+  /// socket.
+  /// @details bt_socket_l2cap_channel_connection_requested_cb() will be called
+  /// when a L2CAP CoC connection is requested.
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
@@ -115641,7 +116122,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The socket must be created with bt_socket_create_l2cap_channel().
-  /// @post This function invokes bt_socket_l2cap_channel_connection_state_changed_cb().
+  /// @post This function invokes
+  /// bt_socket_l2cap_channel_connection_state_changed_cb().
   ///
   /// @see bt_socket_create_l2cap_channel()
   /// @see bt_socket_set_l2cap_channel_connection_requested_cb()
@@ -115668,7 +116150,8 @@ class Tizen90Native {
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @param[in] requested_socket_fd  The file descriptor of socket on which a connection is requested
+  /// @param[in] requested_socket_fd  The file descriptor of socket on which a
+  /// connection is requested
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -115678,7 +116161,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_ENABLED Not enabled
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The connection is requested by bt_socket_l2cap_channel_connection_requested_cb().
+  /// @pre The connection is requested by
+  /// bt_socket_l2cap_channel_connection_requested_cb().
   /// @see bt_socket_create_l2cap_channel()
   /// @see bt_socket_l2cap_channel_connection_requested_cb()
   /// @see bt_socket_listen_l2cap_channel()
@@ -115702,7 +116186,8 @@ class Tizen90Native {
   /// @since_tizen 7.0
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
-  /// @param[in] socket_fd  The file descriptor of socket on which a connection is requested
+  /// @param[in] socket_fd  The file descriptor of socket on which a connection is
+  /// requested
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
   /// @retval #BT_ERROR_NOT_SUPPORTED Not supported
@@ -115712,7 +116197,8 @@ class Tizen90Native {
   /// @retval #BT_ERROR_NOT_ENABLED Not enabled
   /// @retval #BT_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The connection is requested by bt_socket_l2cap_channel_connection_requested_cb().
+  /// @pre The connection is requested by
+  /// bt_socket_l2cap_channel_connection_requested_cb().
   /// @see bt_socket_create_l2cap_channel()
   /// @see bt_socket_l2cap_channel_connection_requested_cb()
   /// @see bt_socket_listen_l2cap_channel()
@@ -115734,7 +116220,8 @@ class Tizen90Native {
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
   /// @brief Starts the LE scan to find LE advertisement.
   ///
-  /// @details If a LE advertisement is found, bt_adapter_le_new_scan_result_cb() will be invoked.
+  /// @details If a LE advertisement is found, bt_adapter_le_new_scan_result_cb()
+  /// will be invoked.
   ///
   /// @since_tizen 8.0
   /// @privlevel public
@@ -115876,7 +116363,8 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   /// @param[in] advertiser The handle of advertiser
-  /// @param[in] primary_phy Primary phy of advertiser. Valid values are #BT_LE_1M_PHY, #BT_LE_CODED_PHY.
+  /// @param[in] primary_phy Primary phy of advertiser. Valid values are
+  /// #BT_LE_1M_PHY, #BT_LE_CODED_PHY.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115910,8 +116398,8 @@ class Tizen90Native {
   /// @privlevel public
   /// @privilege %http://tizen.org/privilege/bluetooth
   /// @param[in] advertiser The handle of advertiser
-  /// @param[in] secondary_phy Secondary phy of advertiser, Valid values are #BT_LE_1M_PHY,
-  /// #BT_LE_2M_PHY, #BT_LE_CODED_PHY.
+  /// @param[in] secondary_phy Secondary phy of advertiser, Valid values are
+  /// #BT_LE_1M_PHY, #BT_LE_2M_PHY, #BT_LE_CODED_PHY.
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115943,9 +116431,11 @@ class Tizen90Native {
   /// @brief Checks if LE Extended Advertising feature is supported or not.
   /// @since_tizen 8.0
   ///
-  /// @remarks The LE Extended Advertising feature was introduced in the BT 5.0 core specification.
+  /// @remarks The LE Extended Advertising feature was introduced in the BT 5.0
+  /// core specification.
   ///
-  /// @param[out] is_supported The LE Extended Advertising feature support: (@c true = supported , @c false = not supported)
+  /// @param[out] is_supported The LE Extended Advertising feature support: (@c
+  /// true = supported , @c false = not supported)
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -115975,9 +116465,11 @@ class Tizen90Native {
   /// @brief Checks if LE Extended Scan feature is supported or not.
   /// @since_tizen 8.0
   ///
-  /// @remarks The LE Extended Scan feature was introduced in the BT 5.0 core specification.
+  /// @remarks The LE Extended Scan feature was introduced in the BT 5.0 core
+  /// specification.
   ///
-  /// @param[out] is_supported The LE Extended Scan feature support: (@c true = supported , @c false = not supported)
+  /// @param[out] is_supported The LE Extended Scan feature support: (@c true =
+  /// supported , @c false = not supported)
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -116007,9 +116499,11 @@ class Tizen90Native {
   /// @brief Gets maximum advertisement data length supported by controller.
   /// @since_tizen 8.0
   ///
-  /// @remarks The LE Maximum Advertising Data Length feature was introduced in the BT 5.0 core specification.
+  /// @remarks The LE Maximum Advertising Data Length feature was introduced in the
+  /// BT 5.0 core specification.
   ///
-  /// @param[out] data_length The maximum length supported by controller for use as advertisement data or scan response data
+  /// @param[out] data_length The maximum length supported by controller for use as
+  /// advertisement data or scan response data
   ///
   /// @return 0 on success, otherwise a negative error value.
   /// @retval #BT_ERROR_NONE Successful
@@ -116138,7 +116632,8 @@ class Tizen90Native {
           int Function(bt_new_scan_result_h, ffi.Pointer<ffi.Int>)>();
 
   /// @ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
-  /// @brief Gets the periodic advertising interval data from the extended scan result.
+  /// @brief Gets the periodic advertising interval data from the extended scan
+  /// result.
   /// @since_tizen 8.0
   ///
   /// @param[in] handle The extended scan result handle
@@ -167406,8 +167901,10 @@ class Tizen90Native {
   /// @brief Gets the display name of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a display_name must be released using free().
-  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
-  /// @param[in] api_version The API version of the application to get privilege information
+  /// @remarks Since 6.0, this function returns
+  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @param[in] api_version The API version of the application to get privilege
+  /// information
   /// @param[in] privilege The privilege
   /// @param[out] display_name The display name of the privilege
   /// @return @c 0 on success,
@@ -167442,10 +167939,13 @@ class Tizen90Native {
   /// @brief Gets the display name of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a display_name must be released using free().
-  /// @remarks @a package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
-  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @remarks @a package_type must be one of followings:
+  /// "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
+  /// @remarks Since 6.0, this function returns
+  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
   /// @param[in] package_type The type of application package
-  /// @param[in] api_version The API version of the application to get privilege information
+  /// @param[in] api_version The API version of the application to get privilege
+  /// information
   /// @param[in] privilege The privilege
   /// @param[out] display_name The display name of the privilege
   /// @return @c 0 on success,
@@ -167482,8 +167982,10 @@ class Tizen90Native {
   /// @brief Gets the description of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a description must be released using free().
-  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
-  /// @param[in] api_version The API version of the application to get privilege information
+  /// @remarks Since 6.0, this function returns
+  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @param[in] api_version The API version of the application to get privilege
+  /// information
   /// @param[in] privilege The privilege
   /// @param[out] description The description of the privilege
   /// @return @c 0 on success,
@@ -167518,10 +168020,13 @@ class Tizen90Native {
   /// @brief Gets the description of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a description must be released using free().
-  /// @remarks @a package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
-  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @remarks @a package_type must be one of followings:
+  /// "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
+  /// @remarks Since 6.0, this function returns
+  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
   /// @param[in] package_type The type of application package
-  /// @param[in] api_version The API version of the application to get privilege information
+  /// @param[in] api_version The API version of the application to get privilege
+  /// information
   /// @param[in]  privilege The privilege
   /// @param[out] description The description of the privilege
   /// @return @c 0 on success,
@@ -167556,12 +168061,15 @@ class Tizen90Native {
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// @deprecated Deprecated since 8.0.
-  /// @brief Gets the display name of the privacy group in which the given privilege is included.
+  /// @brief Gets the display name of the privacy group in which the given
+  /// privilege is included.
   /// @since_tizen 3.0
   /// @remarks @a privacy_name must be released using free().
-  /// @remarks @a privilege must be privacy related, otherwise #PRVINFO_ERROR_INVALID_PARAMETER is returned.
+  /// @remarks @a privilege must be privacy related, otherwise
+  /// #PRVINFO_ERROR_INVALID_PARAMETER is returned.
   /// @param[in] privilege The privilege
-  /// @param[out] privacy_name The privacy group's display name that the given privilege is included in
+  /// @param[out] privacy_name The privacy group's display name that the given
+  /// privilege is included in
   /// @return @c 0 on success,
   /// otherwise a negative error value
   /// @retval #PRVINFO_ERROR_NONE Successful
@@ -167589,15 +168097,26 @@ class Tizen90Native {
           int Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
-  /// @brief Gets the privilege information list of the given locale and privileges.
-  /// @details If the given @a locale is not recognized, @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_UNKNOWN_LOCALE_CODE and the result in the @a privilege_info_list is provided according to the current locale. If all of the privileges in @a privilege_name_list are invalid then @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_INVALID_PARAMETER. Otherwise, @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_SUCCESS. If some of the privileges in @a privilege_name_list are invalid then corresponding elements in the @a privilege_info_list will have the display_name and the description set to an empty string.
+  /// @brief Gets the privilege information list of the given locale and
+  /// privileges.
+  /// @details If the given @a locale is not recognized, @a return_result is set to
+  /// #PRIVILEGE_CONSUMER_RETURN_CODE_UNKNOWN_LOCALE_CODE and the result in the @a
+  /// privilege_info_list is provided according to the current locale. If all of
+  /// the privileges in @a privilege_name_list are invalid then @a return_result is
+  /// set to #PRIVILEGE_CONSUMER_RETURN_CODE_INVALID_PARAMETER. Otherwise, @a
+  /// return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_SUCCESS. If some of
+  /// the privileges in @a privilege_name_list are invalid then corresponding
+  /// elements in the @a privilege_info_list will have the display_name and the
+  /// description set to an empty string.
   /// @since_tizen 5.5
   ///
-  /// @remarks You must destroy the newly created privilege_info_list by calling privilege_info_free_privilege_info_list() if it is no longer needed.
+  /// @remarks You must destroy the newly created privilege_info_list by calling
+  /// privilege_info_free_privilege_info_list() if it is no longer needed.
   ///
   /// @param[in] locale The locale information
   /// @param[in] privilege_name_list The privilege name list
-  /// @param[out] privilege_info_list The privilege information list of the given locale and privileges
+  /// @param[out] privilege_info_list The privilege information list of the given
+  /// locale and privileges
   /// @param[out] return_result The return code to be sent to consumer.
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -167610,8 +168129,8 @@ class Tizen90Native {
   /// @see privilege_consumer_return_code_e
   int privilege_info_get_privilege_info_list(
     ffi.Pointer<ffi.Char> locale,
-    ffi.Pointer<GList> privilege_name_list,
-    ffi.Pointer<ffi.Pointer<GList>> privilege_info_list,
+    ffi.Pointer<ffi.Int> privilege_name_list,
+    ffi.Pointer<ffi.Pointer<ffi.Int>> privilege_info_list,
     ffi.Pointer<ffi.Int32> return_result,
   ) {
     return _privilege_info_get_privilege_info_list(
@@ -167624,18 +168143,19 @@ class Tizen90Native {
 
   late final _privilege_info_get_privilege_info_listPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<GList>,
-                  ffi.Pointer<ffi.Pointer<GList>>, ffi.Pointer<ffi.Int32>)>>(
+              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>,
+                  ffi.Pointer<ffi.Pointer<ffi.Int>>, ffi.Pointer<ffi.Int32>)>>(
       'privilege_info_get_privilege_info_list');
   late final _privilege_info_get_privilege_info_list =
       _privilege_info_get_privilege_info_listPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<GList>,
-              ffi.Pointer<ffi.Pointer<GList>>, ffi.Pointer<ffi.Int32>)>();
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Pointer<ffi.Int>>, ffi.Pointer<ffi.Int32>)>();
 
   /// @brief Destroys the privilege information list.
   /// @since_tizen 5.5
   ///
-  /// @remarks If @a privilege_info_list is NULL, no operation is performed and #PRVINFO_ERROR_INVALID_PARAMETER will be returned.
+  /// @remarks If @a privilege_info_list is NULL, no operation is performed and
+  /// #PRVINFO_ERROR_INVALID_PARAMETER will be returned.
   ///
   /// @param[in] privilege_info_list The privilege information list to destroy
   ///
@@ -167644,7 +168164,7 @@ class Tizen90Native {
   /// @retval #PRVINFO_ERROR_NONE Successful
   /// @retval #PRVINFO_ERROR_INVALID_PARAMETER Invalid function parameter
   int privilege_info_free_privilege_info_list(
-    ffi.Pointer<GList> privilege_info_list,
+    ffi.Pointer<ffi.Int> privilege_info_list,
   ) {
     return _privilege_info_free_privilege_info_list(
       privilege_info_list,
@@ -167652,11 +168172,11 @@ class Tizen90Native {
   }
 
   late final _privilege_info_free_privilege_info_listPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GList>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
           'privilege_info_free_privilege_info_list');
   late final _privilege_info_free_privilege_info_list =
       _privilege_info_free_privilege_info_listPtr
-          .asFunction<int Function(ffi.Pointer<GList>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Int>)>();
 
   /// @brief Sets API version that the caller uses.
   ///
@@ -196797,9 +197317,12 @@ class Tizen90Native {
 
   /// @brief Runs the main loop of IME application.
   ///
-  /// @details This function starts to run IME application's main loop. The ime_create_cb()
-  /// callback function is called to initialize IME application before the main loop starts up. And
-  /// the ime_terminate_cb() callback function is called when IME application is terminated.
+  /// @details This function starts to run IME application's main loop. The
+  /// ime_create_cb()
+  /// callback function is called to initialize IME application before the main
+  /// loop starts up. And
+  /// the ime_terminate_cb() callback function is called when IME application is
+  /// terminated.
   ///
   /// @since_tizen 2.4
   ///
@@ -196807,23 +197330,29 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks IME application MUST implement ime_app_main() function which is the main
+  /// @remarks IME application MUST implement ime_app_main() function which is the
+  /// main
   /// entry point of IME application. In ime_app_main() function, the ime_run()
-  /// function MUST be called with the necessary callback functions; ime_create_cb(),
+  /// function MUST be called with the necessary callback functions;
+  /// ime_create_cb(),
   /// ime_terminate_cb(), ime_show_cb(), and ime_hide_cb() callback functions
   /// are mandatory for IME application.
   ///
   /// @param[in] basic_cb The structure pointer of the essential callback functions
   /// @param[in] user_data User data to be passed to the callback functions
   ///
-  /// @return 0 if IME application ends successfully, otherwise a negative error value
+  /// @return 0 if IME application ends successfully, otherwise a negative error
+  /// value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
-  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not set
+  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not
+  /// set
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @pre The ime_event_set_***() functions can be called to set the event handling callback functions.
+  /// @pre The ime_event_set_***() functions can be called to set the event
+  /// handling callback functions.
   ///
   /// @see #ime_callback_s
   /// @see ime_event_set_focus_in_cb()
@@ -196848,11 +197377,12 @@ class Tizen90Native {
   /// @code
   /// static void inputmethod_create_cb(void *user_data);
   /// static void inputmethod_terminate_cb(void *user_data);
-  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void *user_data);
-  /// static void inputmethod_hide_cb(int context_id, void *user_data);
+  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void
+  /// user_data); static void inputmethod_hide_cb(int context_id, void *user_data);
   /// static void inputmethod_focus_in_cb(int context_id, void *user_data);
   /// static void inputmethod_focus_out_cb(int context_id, void *user_data);
-  /// static void inputmethod_cursor_position_updated_cb(int cursor_pos, void *user_data);
+  /// static void inputmethod_cursor_position_updated_cb(int cursor_pos, void
+  /// user_data);
   ///
   /// static void inputmethod_create_cb(void *user_data)
   /// {
@@ -196865,7 +197395,8 @@ class Tizen90Native {
   /// }
   /// }
   ///
-  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void *user_data)
+  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void
+  /// user_data)
   /// {
   /// Ecore_IMF_Input_Panel_Layout layout;
   /// ime_layout_variation_e layout_variation;
@@ -196876,7 +197407,8 @@ class Tizen90Native {
   ///
   /// ime_win = ime_get_main_window();
   /// if (ime_win) {
-  /// // Compose IME UI properly with the context information and show.
+  /// // Compose IME UI properly with the context information and
+  /// show.
   ///
   /// evas_object_show(ime_win);
   /// }
@@ -196901,7 +197433,8 @@ class Tizen90Native {
   ///
   /// ime_event_set_focus_in_cb(inputmethod_focus_in_cb, NULL);
   /// ime_event_set_focus_out_cb(inputmethod_focus_out_cb, NULL);
-  /// ime_event_set_cursor_position_updated_cb(inputmethod_cursor_position_updated_cb, NULL);
+  /// ime_event_set_cursor_position_updated_cb(inputmethod_cursor_position_updated_cb,
+  /// NULL);
   ///
   /// ime_run(&basic_callback, NULL);
   /// }
@@ -196923,7 +197456,8 @@ class Tizen90Native {
   late final _ime_run = _ime_runPtr.asFunction<
       int Function(ffi.Pointer<ime_callback_s>, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control has focus.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control has focus.
   ///
   /// @since_tizen 2.4
   ///
@@ -196931,19 +197465,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_focus_in_cb() callback function is called when an associated text input
-  /// UI control has focus.
+  /// @remarks The ime_focus_in_cb() callback function is called when an associated
+  /// text input UI control has focus.
   ///
   /// @param[in] callback_func @c focus_in event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_focus_in_cb()
   /// @see ime_run()
@@ -196964,7 +197500,8 @@ class Tizen90Native {
   late final _ime_event_set_focus_in_cb = _ime_event_set_focus_in_cbPtr
       .asFunction<int Function(ime_focus_in_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control loses focus.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control loses focus.
   ///
   /// @since_tizen 2.4
   ///
@@ -196972,19 +197509,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_focus_out_cb() callback function is called when an associated text input
-  /// UI control loses focus.
+  /// @remarks The ime_focus_out_cb() callback function is called when an
+  /// associated text input UI control loses focus.
   ///
   /// @param[in] callback_func @c focus_out event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_focus_out_cb()
   /// @see ime_run()
@@ -197005,7 +197544,8 @@ class Tizen90Native {
   late final _ime_event_set_focus_out_cb = _ime_event_set_focus_out_cbPtr
       .asFunction<int Function(ime_focus_out_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control responds to a request with the surrounding text.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control responds to a request with the surrounding text.
   ///
   /// @since_tizen 2.4
   ///
@@ -197013,19 +197553,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_surrounding_text_updated_cb() callback function is called when an
-  /// associated text input UI control responds to a request with the surrounding text.
+  /// @remarks The ime_surrounding_text_updated_cb() callback function is called
+  /// when an associated text input UI control responds to a request with the
+  /// surrounding text.
   ///
   /// @param[in] callback_func @c surrounding_text_updated event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_surrounding_text_updated_cb()
   /// @see ime_run()
@@ -197049,7 +197592,8 @@ class Tizen90Native {
           int Function(
               ime_surrounding_text_updated_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called to reset the input context of an associated text input UI control.
+  /// @brief Sets the event callback function that is called to reset the input
+  /// context of an associated text input UI control.
   ///
   /// @since_tizen 2.4
   ///
@@ -197057,19 +197601,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_input_context_reset_cb() callback function is called to reset the input
-  /// context of an associated text input UI control.
+  /// @remarks The ime_input_context_reset_cb() callback function is called to
+  /// reset the input context of an associated text input UI control.
   ///
   /// @param[in] callback_func @c input_context_reset event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_input_context_reset_cb()
   /// @see ime_run()
@@ -197091,7 +197637,8 @@ class Tizen90Native {
       _ime_event_set_input_context_reset_cbPtr.asFunction<
           int Function(ime_input_context_reset_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when the position of the cursor in an associated text input UI control changes.
+  /// @brief Sets the event callback function that is called when the position of
+  /// the cursor in an associated text input UI control changes.
   ///
   /// @since_tizen 2.4
   ///
@@ -197099,19 +197646,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_cursor_position_updated_cb() callback function is called when the position
-  /// of the cursor in an associated text input UI control changes.
+  /// @remarks The ime_cursor_position_updated_cb() callback function is called
+  /// when the position of the cursor in an associated text input UI control
+  /// changes.
   ///
   /// @param[in] callback_func @c cursor_position_updated event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_cursor_position_updated_cb()
   /// @see ime_run()
@@ -197135,7 +197685,8 @@ class Tizen90Native {
           int Function(
               ime_cursor_position_updated_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the language from the input panel.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the language from the input panel.
   ///
   /// @since_tizen 2.4
   ///
@@ -197143,19 +197694,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_language_requested_cb() callback function is called when an associated
-  /// text input UI control requests the language from the input panel.
+  /// @remarks The ime_language_requested_cb() callback function is called when an
+  /// associated text input UI control requests the language from the input panel.
   ///
   /// @param[in] callback_func @c language_requested event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_language_requested_cb()
   /// @see ime_run()
@@ -197177,7 +197730,8 @@ class Tizen90Native {
       _ime_event_set_language_requested_cbPtr.asFunction<
           int Function(ime_language_requested_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called to set the preferred language to the input panel.
+  /// @brief Sets the event callback function that is called to set the preferred
+  /// language to the input panel.
   ///
   /// @since_tizen 2.4
   ///
@@ -197185,19 +197739,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_language_set_cb() callback function is called to set the preferred
-  /// language to the input panel.
+  /// @remarks The ime_language_set_cb() callback function is called to set the
+  /// preferred language to the input panel.
   ///
   /// @param[in] callback_func @c language_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_language_set_cb()
   /// @see ime_run()
@@ -197218,7 +197774,8 @@ class Tizen90Native {
   late final _ime_event_set_language_set_cb = _ime_event_set_language_set_cbPtr
       .asFunction<int Function(ime_language_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called to set the application specific data to deliver to the input panel.
+  /// @brief Sets the event callback function that is called to set the application
+  /// specific data to deliver to the input panel.
   ///
   /// @since_tizen 2.4
   ///
@@ -197226,19 +197783,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_imdata_set_cb() callback function is called to set the application
-  /// specific data to deliver to the input panel.
+  /// @remarks The ime_imdata_set_cb() callback function is called to set the
+  /// application specific data to deliver to the input panel.
   ///
   /// @param[in] callback_func @c imdata_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_imdata_set_cb()
   /// @see ime_event_set_imdata_requested_cb()
@@ -197260,7 +197819,9 @@ class Tizen90Native {
   late final _ime_event_set_imdata_set_cb = _ime_event_set_imdata_set_cbPtr
       .asFunction<int Function(ime_imdata_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the application specific data from the input panel.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the application specific data from the input
+  /// panel.
   ///
   /// @since_tizen 2.4
   ///
@@ -197268,19 +197829,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_imdata_requested_cb() callback function is called when an associated
-  /// text input UI control requests the application specific data from the input panel.
+  /// @remarks The ime_imdata_requested_cb() callback function is called when an
+  /// associated text input UI control requests the application specific data from
+  /// the input panel.
   ///
   /// @param[in] callback_func @c imdata_requested event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_imdata_requested_cb()
   /// @see ime_event_set_imdata_set_cb()
@@ -197303,7 +197867,8 @@ class Tizen90Native {
       _ime_event_set_imdata_requested_cbPtr.asFunction<
           int Function(ime_imdata_requested_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the input panel to set its layout.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the input panel to set its layout.
   ///
   /// @since_tizen 2.4
   ///
@@ -197311,19 +197876,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_layout_set_cb() callback function is called when an associated text input
-  /// UI control requests the input panel to set its layout.
+  /// @remarks The ime_layout_set_cb() callback function is called when an
+  /// associated text input UI control requests the input panel to set its layout.
   ///
   /// @param[in] callback_func @c layout_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_layout_set_cb()
   /// @see ime_run()
@@ -197344,7 +197911,9 @@ class Tizen90Native {
   late final _ime_event_set_layout_set_cb = _ime_event_set_layout_set_cbPtr
       .asFunction<int Function(ime_layout_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the input panel to set the @c Return key label.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the input panel to set the @c Return key
+  /// label.
   ///
   /// @since_tizen 2.4
   ///
@@ -197352,19 +197921,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_return_key_type_set_cb() callback function is called when an associated
-  /// text input UI control requests the input panel to set the @c Return key label.
+  /// @remarks The ime_return_key_type_set_cb() callback function is called when an
+  /// associated text input UI control requests the input panel to set the @c
+  /// Return key label.
   ///
   /// @param[in] callback_func @c return_key_type_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_return_key_type_set_cb()
   /// @see ime_run()
@@ -197386,7 +197958,9 @@ class Tizen90Native {
       _ime_event_set_return_key_type_set_cbPtr.asFunction<
           int Function(ime_return_key_type_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the input panel to control the @c Return key state.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the input panel to control the @c Return key
+  /// state.
   ///
   /// @since_tizen 2.4
   ///
@@ -197394,19 +197968,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_return_key_state_set_cb() callback function is called when an associated
-  /// text input UI control requests the input panel to enable or disable the @c Return key state.
+  /// @remarks The ime_return_key_state_set_cb() callback function is called when
+  /// an associated text input UI control requests the input panel to enable or
+  /// disable the @c Return key state.
   ///
   /// @param[in] callback_func @c return_key_state_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_return_key_state_set_cb()
   /// @see ime_run()
@@ -197428,7 +198005,8 @@ class Tizen90Native {
       _ime_event_set_return_key_state_set_cbPtr.asFunction<
           int Function(ime_return_key_state_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the position and size from the input panel.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the position and size from the input panel.
   ///
   /// @since_tizen 2.4
   ///
@@ -197436,19 +198014,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_geometry_requested_cb() callback function is called when an associated
-  /// text input UI control requests the position and size from the input panel.
+  /// @remarks The ime_geometry_requested_cb() callback function is called when an
+  /// associated text input UI control requests the position and size from the
+  /// input panel.
   ///
   /// @param[in] callback_func @c geometry_requested event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_geometry_requested_cb()
   /// @see ime_run()
@@ -197470,7 +198051,8 @@ class Tizen90Native {
       _ime_event_set_geometry_requested_cbPtr.asFunction<
           int Function(ime_geometry_requested_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when a key event is received from external devices or @c ime_send_key_event().
+  /// @brief Sets the event callback function that is called when a key event is
+  /// received from external devices or @c ime_send_key_event().
   ///
   /// @since_tizen 2.4
   ///
@@ -197478,19 +198060,23 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_process_key_event_cb() callback function is called when the key event
-  /// is received from the external keyboard devices or ime_send_key_event() function.
+  /// @remarks The ime_process_key_event_cb() callback function is called when the
+  /// key event
+  /// is received from the external keyboard devices or ime_send_key_event()
+  /// function.
   ///
   /// @param[in] callback_func @c process_key_event event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_process_key_event_cb()
   /// @see ime_run()
@@ -197498,13 +198084,15 @@ class Tizen90Native {
   /// @code
   /// static void inputmethod_create_cb(void *user_data);
   /// static void inputmethod_terminate_cb(void *user_data);
-  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void *user_data);
-  /// static void inputmethod_hide_cb(int context_id, void *user_data);
+  /// static void inputmethod_show_cb(int context_id, ime_context_h context, void
+  /// user_data); static void inputmethod_hide_cb(int context_id, void *user_data);
   ///
-  /// static bool inputmethod_process_key_event_cb(ime_key_code_e keycode, ime_key_mask_e keymask, void *user_data);
+  /// static bool inputmethod_process_key_event_cb(ime_key_code_e keycode,
+  /// ime_key_mask_e keymask, void *user_data);
   /// {
   /// if (keymask & IME_KEY_MASK_CONTROL) {
-  /// return false; // e.g., Control+C key event would be forwarded to UI control of the client application
+  /// return false; // e.g., Control+C key event would be forwarded
+  /// to UI control of the client application
   /// }
   /// if (keymask & IME_KEY_MASK_ALT) {
   /// return false;
@@ -197512,8 +198100,8 @@ class Tizen90Native {
   ///
   /// if (!(keymask & IME_KEY_MASK_RELEASED)) { // The key is pressed
   /// if (keycode == IME_KEY_1) {
-  /// ime_update_preedit_string("1"); // Show "1" preedit string
-  /// return true;
+  /// ime_update_preedit_string("1"); // Show "1" preedit
+  /// string return true;
   /// }
   /// else if (keycode == IME_KEY_2) {
   /// ime_commit_string("12"); // Input "12" string
@@ -197533,7 +198121,8 @@ class Tizen90Native {
   /// inputmethod_hide_cb,
   /// };
   ///
-  /// ime_event_set_process_key_event_cb(inputmethod_process_key_event_cb, NULL);
+  /// ime_event_set_process_key_event_cb(inputmethod_process_key_event_cb,
+  /// NULL);
   ///
   /// ime_run(&basic_callback, NULL);
   /// }
@@ -197556,7 +198145,8 @@ class Tizen90Native {
       _ime_event_set_process_key_event_cbPtr.asFunction<
           int Function(ime_process_key_event_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when a key event is received with a keycode from external devices or @c ime_send_key_event().
+  /// @brief Sets the event callback function that is called when a key event is
+  /// received with a keycode from external devices or @c ime_send_key_event().
   ///
   /// @since_tizen 5.5
   ///
@@ -197564,19 +198154,23 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_process_key_event_with_keycode_cb() callback function is called when the key event
-  /// is received from external keyboard devices or ime_send_key_event().
+  /// @remarks The ime_process_key_event_with_keycode_cb() callback function is
+  /// called when the key event is received from external keyboard devices or
+  /// ime_send_key_event().
   ///
-  /// @param[in] callback_func @c process_key_event_with_keycode() event callback function
+  /// @param[in] callback_func @c process_key_event_with_keycode() event callback
+  /// function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_process_key_event_with_keycode_cb()
   /// @see ime_run()
@@ -197600,7 +198194,8 @@ class Tizen90Native {
           int Function(
               ime_process_key_event_with_keycode_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when the system display language is changed.
+  /// @brief Sets the event callback function that is called when the system
+  /// display language is changed.
   ///
   /// @since_tizen 2.4
   ///
@@ -197608,19 +198203,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_display_language_changed_cb() callback function is called when the system
-  /// display language is changed.
+  /// @remarks The ime_display_language_changed_cb() callback function is called
+  /// when the system display language is changed.
   ///
   /// @param[in] callback_func @c display_language_changed event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_display_language_changed_cb()
   /// @see ime_run()
@@ -197644,7 +198241,8 @@ class Tizen90Native {
           int Function(
               ime_display_language_changed_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when the device is rotated.
+  /// @brief Sets the event callback function that is called when the device is
+  /// rotated.
   ///
   /// @since_tizen 2.4
   ///
@@ -197652,19 +198250,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_rotation_degree_changed_cb() callback function is called when the device
-  /// is rotated.
+  /// @remarks The ime_rotation_degree_changed_cb() callback function is called
+  /// when the device is rotated.
   ///
   /// @param[in] callback_func @c rotation_degree_changed event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_rotation_degree_changed_cb()
   /// @see ime_run()
@@ -197688,7 +198288,8 @@ class Tizen90Native {
           int Function(
               ime_rotation_degree_changed_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when Accessibility in Settings application is on or off.
+  /// @brief Sets the event callback function that is called when Accessibility in
+  /// Settings application is on or off.
   ///
   /// @since_tizen 2.4
   ///
@@ -197696,19 +198297,22 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_accessibility_state_changed_cb() callback function is called when
-  /// Accessibility in Settings application is on or off.
+  /// @remarks The ime_accessibility_state_changed_cb() callback function is called
+  /// when Accessibility in Settings application is on or off.
   ///
-  /// @param[in] callback_func @c accessibility_state_changed event callback function
+  /// @param[in] callback_func @c accessibility_state_changed event callback
+  /// function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_accessibility_state_changed_cb()
   /// @see ime_run()
@@ -197732,7 +198336,8 @@ class Tizen90Native {
           int Function(
               ime_accessibility_state_changed_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called to create the option window.
+  /// @brief Sets the event callback function that is called to create the option
+  /// window.
   ///
   /// @since_tizen 2.4
   ///
@@ -197740,18 +198345,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_option_window_created_cb() callback function is called to create the option window.
+  /// @remarks The ime_option_window_created_cb() callback function is called to
+  /// create the option window.
   ///
   /// @param[in] callback_func @c option_window_created event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_option_window_created_cb()
   /// @see ime_run()
@@ -197774,7 +198382,8 @@ class Tizen90Native {
       _ime_event_set_option_window_created_cbPtr.asFunction<
           int Function(ime_option_window_created_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called to destroy the option window.
+  /// @brief Sets the event callback function that is called to destroy the option
+  /// window.
   ///
   /// @since_tizen 2.4
   ///
@@ -197782,18 +198391,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_option_window_destroyed_cb() callback function is called to destroy the option window.
+  /// @remarks The ime_option_window_destroyed_cb() callback function is called to
+  /// destroy the option window.
   ///
   /// @param[in] callback_func @c option_window_destroyed event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_option_window_destroyed_cb()
   /// @see ime_run()
@@ -197819,9 +198431,11 @@ class Tizen90Native {
 
   /// @brief Sends a key event to the associated text input UI control.
   ///
-  /// @details This function sends key down or up event with key mask to the client application.
-  /// If @a forward_key is @c true, this key event goes to the edit field directly. And if @a forward_key
-  /// is @c false, the ime_process_key_event_cb() callback function receives the key event before the edit field.
+  /// @details This function sends key down or up event with key mask to the client
+  /// application. If @a forward_key is @c true, this key event goes to the edit
+  /// field directly. And if @a forward_key is @c false, the
+  /// ime_process_key_event_cb() callback function receives the key event before
+  /// the edit field.
   ///
   /// @since_tizen 2.4
   ///
@@ -197831,14 +198445,17 @@ class Tizen90Native {
   ///
   /// @param[in] keycode The key code to be sent
   /// @param[in] keymask The modifier key mask
-  /// @param[in] forward_key The flag to send the key event directly to the edit field
+  /// @param[in] forward_key The flag to send the key event directly to the edit
+  /// field
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post If @a forward_key is @c false, the ime_process_key_event_cb() callback function can compose the text with the key events.
+  /// @post If @a forward_key is @c false, the ime_process_key_event_cb() callback
+  /// function can compose the text with the key events.
   ///
   /// @see ime_key_code_e
   /// @see ime_key_mask_e
@@ -197873,7 +198490,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -197904,7 +198522,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @see ime_commit_string()
@@ -197930,7 +198549,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @see ime_commit_string()
@@ -197955,17 +198575,21 @@ class Tizen90Native {
   /// @privilege %http://tizen.org/privilege/ime
   ///
   /// @param[in] str The UTF-8 string to be updated in preedit
-  /// @param[in] attrs The Eina_List which has #ime_preedit_attribute lists; @a str can be composed of multiple
-  /// string attributes: underline, highlight color and reversal color. The @a attrs will be released internally
+  /// @param[in] attrs The Eina_List which has #ime_preedit_attribute lists; @a str
+  /// can be composed of multiple
+  /// string attributes: underline, highlight color and reversal color. The @a
+  /// attrs will be released internally
   /// on success and it can be NULL if no attributes to set
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post This function is supposed to be followed by the ime_show_preedit_string() function.
+  /// @post This function is supposed to be followed by the
+  /// ime_show_preedit_string() function.
   ///
   /// @see #ime_preedit_attribute
   /// @see ime_commit_string()
@@ -198036,10 +198660,12 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post This function is supposed to be followed by the ime_update_preedit_string() function.
+  /// @post This function is supposed to be followed by the
+  /// ime_update_preedit_string() function.
   ///
   /// @see ime_show_preedit_string()
   /// @see ime_hide_preedit_string()
@@ -198086,7 +198712,8 @@ class Tizen90Native {
   late final _ime_update_preedit_cursor =
       _ime_update_preedit_cursorPtr.asFunction<int Function(int)>();
 
-  /// @brief Requests the surrounding text from the position of the cursor, asynchronously.
+  /// @brief Requests the surrounding text from the position of the cursor,
+  /// asynchronously.
   ///
   /// @since_tizen 2.4
   ///
@@ -198094,18 +198721,24 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] maxlen_before The maximum length of string to be retrieved before the cursor; -1 means unlimited
-  /// @param[in] maxlen_after The maximum length of string to be retrieved after the cursor; -1 means unlimited
+  /// @param[in] maxlen_before The maximum length of string to be retrieved before
+  /// the cursor; -1 means unlimited
+  /// @param[in] maxlen_after The maximum length of string to be retrieved after
+  /// the cursor; -1 means unlimited
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
-  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not set
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
+  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not
+  /// set
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @pre The ime_surrounding_text_updated_cb() callback function MUST be set by ime_event_set_surrounding_text_updated_cb().
+  /// @pre The ime_surrounding_text_updated_cb() callback function MUST be set by
+  /// ime_event_set_surrounding_text_updated_cb().
   ///
-  /// @post The requested surrounding text can be received using the ime_surrounding_text_updated_cb() callback function.
+  /// @post The requested surrounding text can be received using the
+  /// ime_surrounding_text_updated_cb() callback function.
   ///
   /// @see ime_delete_surrounding_text()
   /// @see ime_event_set_surrounding_text_updated_cb()
@@ -198134,12 +198767,15 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] offset The offset value from the cursor position (in characters not bytes). For example, please use -3 if you want to remove 3 characters in front of current cursor position.
+  /// @param[in] offset The offset value from the cursor position (in characters
+  /// not bytes). For example, please use -3 if you want to remove 3 characters in
+  /// front of current cursor position.
   /// @param[in] len The length of the text to delete (in characters not bytes)
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -198160,7 +198796,8 @@ class Tizen90Native {
   late final _ime_delete_surrounding_text =
       _ime_delete_surrounding_textPtr.asFunction<int Function(int, int)>();
 
-  /// @brief Gets the surrounding text from the position of the cursor, synchronously.
+  /// @brief Gets the surrounding text from the position of the cursor,
+  /// synchronously.
   ///
   /// @since_tizen 3.0
   ///
@@ -198170,14 +198807,17 @@ class Tizen90Native {
   ///
   /// @remarks @a text must be released using free().
   ///
-  /// @param[in] maxlen_before The maximum length of string to be retrieved before the cursor; -1 means unlimited
-  /// @param[in] maxlen_after The maximum length of string to be retrieved after the cursor; -1 means unlimited
+  /// @param[in] maxlen_before The maximum length of string to be retrieved before
+  /// the cursor; -1 means unlimited
+  /// @param[in] maxlen_after The maximum length of string to be retrieved after
+  /// the cursor; -1 means unlimited
   /// @param[out] text The surrounding text
   /// @param[out] cursor_pos The cursor position
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   /// @retval #IME_ERROR_OUT_OF_MEMORY Failed to obtain text due to out of memory
@@ -198219,7 +198859,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   int ime_set_selection(
@@ -198240,8 +198881,9 @@ class Tizen90Native {
 
   /// @brief Gets the selected text synchronously.
   ///
-  /// @details If multi-line text is selected, the result will contain '\n' for each newline character.
-  /// And if the selected text is empty, the result will be an empty string.
+  /// @details If multi-line text is selected, the result will contain '\n' for
+  /// each newline character. And if the selected text is empty, the result will be
+  /// an empty string.
   ///
   /// @since_tizen 4.0
   ///
@@ -198255,7 +198897,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   int ime_get_selected_text(
@@ -198281,13 +198924,16 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The specific error code can be obtained using the get_last_result() method if this function returns NULL.
-  /// @remarks The returned value should not be released. The returned value is managed by the platform and will be released when terminating this process.
+  /// @remarks The specific error code can be obtained using the get_last_result()
+  /// method if this function returns NULL.
+  /// @remarks The returned value should not be released. The returned value is
+  /// managed by the platform and will be released when terminating this process.
   ///
   /// @return The input panel main window object on success, otherwise NULL
   ///
   /// @exception #IME_ERROR_NONE Successful
-  /// @exception #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @exception #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @exception #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   /// @exception #IME_ERROR_OPERATION_FAILED Operation failed
   ///
@@ -198321,7 +198967,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -198349,8 +198996,8 @@ class Tizen90Native {
 
   /// @brief Requests to create an option window from the input panel.
   ///
-  /// @details The input panel can call this function to open the option window. This
-  /// function calls ime_option_window_created_cb() callback function with
+  /// @details The input panel can call this function to open the option window.
+  /// This function calls ime_option_window_created_cb() callback function with
   /// #IME_OPTION_WINDOW_TYPE_KEYBOARD parameter.
   ///
   /// @since_tizen 2.4
@@ -198361,18 +199008,20 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
-  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not set
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
+  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not
+  /// set
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
   /// @pre The ime_option_window_created_cb() and ime_option_window_destroyed_cb()
-  /// callback functions MUST be set by ime_event_set_option_window_created_cb() and
-  /// ime_event_set_option_window_destroyed_cb() respectively.
+  /// callback functions MUST be set by ime_event_set_option_window_created_cb()
+  /// and ime_event_set_option_window_destroyed_cb() respectively.
   ///
   /// @post This function calls ime_option_window_created_cb() callback function to
-  /// create the option window. And ime_destroy_option_window() function can be called
-  /// to close the option window.
+  /// create the option window. And ime_destroy_option_window() function can be
+  /// called to close the option window.
   ///
   /// @see ime_event_set_option_window_created_cb()
   /// @see ime_option_window_created_cb()
@@ -198389,8 +199038,8 @@ class Tizen90Native {
 
   /// @brief Requests to destroy an option window.
   ///
-  /// @details The input panel can call this function to close the option window which
-  /// is created from either the input panel or Settings application.
+  /// @details The input panel can call this function to close the option window
+  /// which is created from either the input panel or Settings application.
   ///
   /// @since_tizen 2.4
   ///
@@ -198402,14 +199051,16 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
-  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not set
+  /// @retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not
+  /// set
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @pre The ime_option_window_created_cb() and ime_option_window_destroyed_cb()
-  /// callback functions MUST be set by ime_event_set_option_window_created_cb() and
-  /// ime_event_set_option_window_destroyed_cb() respectively.
+  /// callback functions MUST be set by ime_event_set_option_window_created_cb()
+  /// and ime_event_set_option_window_destroyed_cb() respectively.
   ///
   /// @post This function calls ime_option_window_destroyed_cb() callback function
   /// to destroy the option window.
@@ -198433,8 +199084,9 @@ class Tizen90Native {
 
   /// @brief Gets the layout information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the layout information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the layout information in ime_show_cb()
+  /// callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198442,16 +199094,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] layout Layout information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   /// @see ime_layout_set_cb()
@@ -198474,8 +199129,9 @@ class Tizen90Native {
 
   /// @brief Gets the layout variation information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the layout variation information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the layout variation information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198483,16 +199139,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] layout_variation Layout variation information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   /// @see #ime_layout_variation_e
@@ -198516,8 +199175,9 @@ class Tizen90Native {
 
   /// @brief Gets the cursor position information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the cursor position information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the cursor position information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198525,16 +199185,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] cursor_pos Cursor position information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   /// @see ime_cursor_position_updated_cb()
@@ -198558,8 +199221,9 @@ class Tizen90Native {
 
   /// @brief Gets the autocapital type information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the autocapital type information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the autocapital type information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198567,16 +199231,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] autocapital_type Autocapital type information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_autocapital_type(
@@ -198597,10 +199264,12 @@ class Tizen90Native {
       _ime_context_get_autocapital_typePtr
           .asFunction<int Function(ime_context_h, ffi.Pointer<ffi.Int32>)>();
 
-  /// @brief Gets the @c Return key label type information from the given input context.
+  /// @brief Gets the @c Return key label type information from the given input
+  /// context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the @c Return key label type information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the @c Return key label type information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198608,16 +199277,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] return_key_type The @c Return key label type information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   /// @see ime_return_key_type_set_cb()
@@ -198641,8 +199313,9 @@ class Tizen90Native {
 
   /// @brief Gets the @c Return key state information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the @c Return key state information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the @c Return key state information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198650,17 +199323,20 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
-  /// @param[out] return_key_state The @c Return key state information \n @c true to enable @c Return key
-  /// button, @c false to disable @c Return key button
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
+  /// @param[out] return_key_state The @c Return key state information \n @c true
+  /// to enable @c Return key button, @c false to disable @c Return key button
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   /// @see ime_return_key_state_set_cb()
@@ -198684,8 +199360,9 @@ class Tizen90Native {
 
   /// @brief Gets the prediction mode information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the prediction mode information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the prediction mode information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198693,17 +199370,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
-  /// @param[out] prediction_mode Prediction mode information \n @c true to allow the predictive
-  /// text feature if available, @c false to disable the predictive text feature
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
+  /// @param[out] prediction_mode Prediction mode information \n @c true to allow
+  /// the predictive text feature if available, @c false to disable the predictive
+  /// text feature
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_prediction_mode(
@@ -198726,8 +199407,9 @@ class Tizen90Native {
 
   /// @brief Gets the password mode information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the password mode information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the password mode information in ime_show_cb()
+  /// callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198735,19 +199417,24 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks If @a password_mode is @c true, the input panel is advised not to support the predictive text.
+  /// @remarks If @a password_mode is @c true, the input panel is advised not to
+  /// support the predictive text.
   ///
-  /// @param[in] context The input context information of an associated text input UI control
-  /// @param[out] password_mode Password mode information \n @c true to indicate that a password being inputted,
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
+  /// @param[out] password_mode Password mode information \n @c true to indicate
+  /// that a password being inputted,
   /// @c false to indicate non-password edit field.
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_password_mode(
@@ -198769,8 +199456,9 @@ class Tizen90Native {
 
   /// @brief Gets the input hint information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the input hint information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the input hint information in ime_show_cb()
+  /// callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198778,19 +199466,23 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks @a input_hint is a bit-wise value which recommends the input panel provide
-  /// an auto completion and so on if it is capable of supporting such features.
+  /// @remarks @a input_hint is a bit-wise value which recommends the input panel
+  /// provide an auto completion and so on if it is capable of supporting such
+  /// features.
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] input_hint Input hint information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_input_hint(
@@ -198812,8 +199504,9 @@ class Tizen90Native {
 
   /// @brief Gets the text bidirectional information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the bidirectional information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the bidirectional information in ime_show_cb()
+  /// callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198821,16 +199514,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] bidi Text bidirectional information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_bidi_direction(
@@ -198853,8 +199549,9 @@ class Tizen90Native {
 
   /// @brief Gets the preferred language information from the given input context.
   ///
-  /// @details Each edit field has various attributes for input panel. This function can be
-  /// called to get the preferred language information in ime_show_cb() callback function.
+  /// @details Each edit field has various attributes for input panel. This
+  /// function can be called to get the preferred language information in
+  /// ime_show_cb() callback function.
   ///
   /// @since_tizen 2.4
   ///
@@ -198862,16 +199559,19 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] context The input context information of an associated text input UI control
+  /// @param[in] context The input context information of an associated text input
+  /// UI control
   /// @param[out] language Preferred language information
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
-  /// @post Input panel UI should be drawn or operated by this information accordingly.
+  /// @post Input panel UI should be drawn or operated by this information
+  /// accordingly.
   ///
   /// @see ime_show_cb()
   int ime_context_get_language(
@@ -198902,11 +199602,13 @@ class Tizen90Native {
   /// @remarks @a dev_name must be released using free().
   ///
   /// @param[in] dev_info The device information from the key event
-  /// @param[out] dev_name The name of key input device. This can be an empty string if the device name is not available
+  /// @param[out] dev_name The name of key input device. This can be an empty
+  /// string if the device name is not available
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -198941,11 +199643,13 @@ class Tizen90Native {
   /// @privilege %http://tizen.org/privilege/ime
   ///
   /// @param[in] dev_info The device information from the key event
-  /// @param[out] dev_class The class of key input device. This can be #ECORE_IMF_DEVICE_CLASS_NONE if the device class is not available
+  /// @param[out] dev_class The class of key input device. This can be
+  /// #ECORE_IMF_DEVICE_CLASS_NONE if the device class is not available
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -198978,11 +199682,13 @@ class Tizen90Native {
   /// @privilege %http://tizen.org/privilege/ime
   ///
   /// @param[in] dev_info The device information from the key event
-  /// @param[out] dev_subclass The subclass of key input device. This can be #ECORE_IMF_DEVICE_SUBCLASS_NONE if the device subclass is not available
+  /// @param[out] dev_subclass The subclass of key input device. This can be
+  /// #ECORE_IMF_DEVICE_SUBCLASS_NONE if the device subclass is not available
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -199006,7 +199712,8 @@ class Tizen90Native {
   late final _ime_device_info_get_subclass = _ime_device_info_get_subclassPtr
       .asFunction<int Function(ime_device_info_h, ffi.Pointer<ffi.Int32>)>();
 
-  /// @brief Sets the event callback function that is called to set the prediction hint string to deliver to the input panel.
+  /// @brief Sets the event callback function that is called to set the prediction
+  /// hint string to deliver to the input panel.
   ///
   /// @since_tizen 4.0
   ///
@@ -199014,18 +199721,20 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_prediction_hint_set_cb() callback function is called to set the prediction
-  /// hint string to deliver to the input panel.
+  /// @remarks The ime_prediction_hint_set_cb() callback function is called to set
+  /// the prediction hint string to deliver to the input panel.
   ///
   /// @param[in] callback_func The prediction hint event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_prediction_hint_set_cb()
   /// @see ime_run()
@@ -199047,7 +199756,8 @@ class Tizen90Native {
       _ime_event_set_prediction_hint_set_cbPtr.asFunction<
           int Function(ime_prediction_hint_set_cb, ffi.Pointer<ffi.Void>)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the text entry to set the MIME type.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the text entry to set the MIME type.
   ///
   /// @since_tizen 4.0
   ///
@@ -199055,18 +199765,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_mime_type_set_request_cb() callback function is called when an associated text input
-  /// UI control requests the text entry to set the MIME type.
+  /// @remarks The ime_mime_type_set_request_cb() callback function is called when
+  /// an associated text input UI control requests the text entry to set the MIME
+  /// type.
   ///
   /// @param[in] callback_func MIME type event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_mime_type_set_request_cb()
   /// @see ime_run()
@@ -199104,7 +199817,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   int ime_send_private_command(
@@ -199121,7 +199835,8 @@ class Tizen90Native {
   late final _ime_send_private_command = _ime_send_private_commandPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// @brief Commits contents such as image to the associated text input UI control.
+  /// @brief Commits contents such as image to the associated text input UI
+  /// control.
   ///
   /// @since_tizen 4.0
   ///
@@ -199131,11 +199846,13 @@ class Tizen90Native {
   ///
   /// @param[in] content The content URI to be sent
   /// @param[in] description The content description
-  /// @param[in] mime_type The MIME type received from the ime_mime_type_set_request_cb()
+  /// @param[in] mime_type The MIME type received from the
+  /// ime_mime_type_set_request_cb()
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -199169,11 +199886,13 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @param[in] floating_mode @c true - floating mode on, @c false - floating mode off
+  /// @param[in] floating_mode @c true - floating mode on, @c false - floating mode
+  /// off
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @see ime_set_floating_drag_start()
@@ -199192,7 +199911,8 @@ class Tizen90Native {
   late final _ime_set_floating_mode =
       _ime_set_floating_modePtr.asFunction<int Function(bool)>();
 
-  /// @brief Allows the floating input panel window to move along with the mouse pointer when the mouse is pressed.
+  /// @brief Allows the floating input panel window to move along with the mouse
+  /// pointer when the mouse is pressed.
   ///
   /// @since_tizen 4.0
   ///
@@ -199200,11 +199920,13 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks This function can be used in floating mode. If the floating mode is deactivated, calling this function has no effect.
+  /// @remarks This function can be used in floating mode. If the floating mode is
+  /// deactivated, calling this function has no effect.
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @pre The floating mode was turned on with ime_set_floating_mode().
@@ -199221,9 +199943,11 @@ class Tizen90Native {
   late final _ime_set_floating_drag_start =
       _ime_set_floating_drag_startPtr.asFunction<int Function()>();
 
-  /// @brief Disallows the movement of the floating input panel window with the mouse pointer when the mouse is pressed.
+  /// @brief Disallows the movement of the floating input panel window with the
+  /// mouse pointer when the mouse is pressed.
   ///
-  /// @details This function must be called after invoking ime_set_floating_drag_start(). Otherwise the call is ignored.
+  /// @details This function must be called after invoking
+  /// ime_set_floating_drag_start(). Otherwise the call is ignored.
   ///
   /// @since_tizen 4.0
   ///
@@ -199231,11 +199955,13 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks This function can be used in floating mode. If the floating mode is deactivated, calling this function has no effect.
+  /// @remarks This function can be used in floating mode. If the floating mode is
+  /// deactivated, calling this function has no effect.
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
   /// @pre The floating mode was turned on with ime_set_floating_mode().
@@ -199253,7 +199979,8 @@ class Tizen90Native {
   late final _ime_set_floating_drag_end =
       _ime_set_floating_drag_endPtr.asFunction<int Function()>();
 
-  /// @brief Sets the event callback function that is called to set key-value pairs of predicting messages to deliver to the input panel.
+  /// @brief Sets the event callback function that is called to set key-value pairs
+  /// of predicting messages to deliver to the input panel.
   ///
   /// @since_tizen 5.0
   ///
@@ -199261,18 +199988,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_prediction_hint_data_set_cb() callback function is called to provide the prediction
-  /// hint key and value which can be delivered to the input panel.
+  /// @remarks The ime_prediction_hint_data_set_cb() callback function is called to
+  /// provide the prediction hint key and value which can be delivered to the input
+  /// panel.
   ///
   /// @param[in] callback_func The callback function to give hints
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_prediction_hint_data_set_cb()
   /// @see ime_run()
@@ -199306,7 +200036,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   int ime_request_hide() {
     return _ime_request_hide();
@@ -199330,7 +200061,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -199363,7 +200095,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   int ime_set_candidate_visibility_state(
     bool visible,
@@ -199379,7 +200112,8 @@ class Tizen90Native {
   late final _ime_set_candidate_visibility_state =
       _ime_set_candidate_visibility_statePtr.asFunction<int Function(bool)>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control requests the input panel to set input hint.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control requests the input panel to set input hint.
   ///
   /// @since_tizen 6.5
   ///
@@ -199387,19 +200121,21 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_input_hint_set_cb() callback function is called to set the input hint
-  /// to deliver to the input panel.
+  /// @remarks The ime_input_hint_set_cb() callback function is called to set the
+  /// input hint to deliver to the input panel.
   ///
   /// @param[in] callback_func @c input_hint_set event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_OPERATION_FAILED Operation failed
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_input_hint_set_cb()
   /// @see ime_run()
@@ -199429,12 +200165,13 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_input_hint_set_cb() callback function is called to set the input hint
-  /// to deliver to the input panel.
+  /// @remarks The ime_input_hint_set_cb() callback function is called to set the
+  /// input hint to deliver to the input panel.
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function
   ///
   /// @see ime_input_hint_set_cb()
   /// @see ime_event_set_input_hint_set_cb()
@@ -199448,7 +200185,8 @@ class Tizen90Native {
   late final _ime_event_unset_input_hint_set_cb =
       _ime_event_unset_input_hint_set_cbPtr.asFunction<int Function()>();
 
-  /// @brief Sets the event callback function that is called when an associated text input UI control sets the position align of the input panel.
+  /// @brief Sets the event callback function that is called when an associated
+  /// text input UI control sets the position align of the input panel.
   ///
   /// @since_tizen 9.0
   ///
@@ -199456,23 +200194,25 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_position_align_set_cb() callback function is called when an associated text input
-  /// UI control sets the position align of the input panel.
+  /// @remarks The ime_position_align_set_cb() callback function is called when an
+  /// associated text input UI control sets the position align of the input panel.
   ///
   /// @param[in] callback_func ime_position_align_set_cb() event callback function
   /// @param[in] user_data User data to be passed to the callback function
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   ///
-  /// @post The ime_run() function should be called to start the IME application's main loop.
+  /// @post The ime_run() function should be called to start the IME application's
+  /// main loop.
   ///
   /// @see ime_position_align_set_cb()
   /// @see ime_run()
   int ime_event_set_position_align_set_cb(
-    ime_position_align_set_cb callback_func,
+    int callback_func,
     ffi.Pointer<ffi.Void> user_data,
   ) {
     return _ime_event_set_position_align_set_cb(
@@ -199482,12 +200222,11 @@ class Tizen90Native {
   }
 
   late final _ime_event_set_position_align_set_cbPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ime_position_align_set_cb,
-              ffi.Pointer<ffi.Void>)>>('ime_event_set_position_align_set_cb');
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Void>)>>(
+      'ime_event_set_position_align_set_cb');
   late final _ime_event_set_position_align_set_cb =
-      _ime_event_set_position_align_set_cbPtr.asFunction<
-          int Function(ime_position_align_set_cb, ffi.Pointer<ffi.Void>)>();
+      _ime_event_set_position_align_set_cbPtr
+          .asFunction<int Function(int, ffi.Pointer<ffi.Void>)>();
 
   /// @brief Unsets ime_position_align_set_cb() event callback function.
   ///
@@ -199497,12 +200236,13 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks The ime_position_align_set_cb() callback function is called when an associated text input
-  /// UI control sets the position align of the input panel.
+  /// @remarks The ime_position_align_set_cb() callback function is called when an
+  /// associated text input UI control sets the position align of the input panel.
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function
   ///
   /// @see ime_position_align_set_cb()
   /// @see ime_event_set_position_align_set_cb()
@@ -199518,7 +200258,8 @@ class Tizen90Native {
 
   /// @brief Moves and resizes the floating input panel window.
   ///
-  /// @details This function must be called after the ime_focus_in_cb() callback is called. Otherwise the call will be ignored.
+  /// @details This function must be called after the ime_focus_in_cb() callback is
+  /// called. Otherwise the call will be ignored.
   ///
   /// @since_tizen 9.0
   ///
@@ -199526,8 +200267,10 @@ class Tizen90Native {
   ///
   /// @privilege %http://tizen.org/privilege/ime
   ///
-  /// @remarks Regardless of the rotation degree, the @a x, @a y values of the top-left corner on the screen are based on 0, 0.
-  /// This function can be used in floating mode. If the floating mode is deactivated, calling this function has no effect.
+  /// @remarks Regardless of the rotation degree, the @a x, @a y values of the
+  /// top-left corner on the screen are based on 0, 0. This function can be used in
+  /// floating mode. If the floating mode is deactivated, calling this function has
+  /// no effect.
   ///
   /// @param[in] x The top-left x coordinate of the input panel
   /// @param[in] y The top-left y coordinate of the input panel
@@ -199536,7 +200279,8 @@ class Tizen90Native {
   ///
   /// @return 0 on success, otherwise a negative error value
   /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
+  /// privilege to call this function.
   /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
   /// @retval #IME_ERROR_NOT_RUNNING IME main loop is not started yet
   ///
@@ -216097,6 +216841,34 @@ abstract class notification_block_state {
   static const int NOTIFICATION_BLOCK_STATE_DO_NOT_DISTURB = 2;
 }
 
+/// @addtogroup NOTIFICATION_MODULE
+/// @{
+typedef detailed_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<detailed_changed_cbFunction>>;
+typedef detailed_changed_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> data,
+    ffi.Int32 type,
+    ffi.Pointer<notification_op> op_list,
+    ffi.Int num_op);
+typedef Dartdetailed_changed_cbFunction = void Function(
+    ffi.Pointer<ffi.Void> data,
+    int type,
+    ffi.Pointer<notification_op> op_list,
+    int num_op);
+
+/// @brief The structure for notification operation.
+/// @since_tizen 2.3
+typedef notification_op = _notification_op;
+
+final class _notification_list extends ffi.Struct {
+  external notification_list_h prev;
+
+  external notification_list_h next;
+
+  external notification_h noti;
+}
+
+typedef notification_list_h = ffi.Pointer<_notification_list>;
 typedef time_t = __time_t;
 typedef __time_t = ffi.Long;
 typedef Dart__time_t = int;
@@ -245363,8 +246135,6 @@ typedef Dartppm_request_multiple_response_cbFunction = void Function(
 abstract class privilege_info_error_e {
   /// < Successful
   static const int PRVINFO_ERROR_NONE = 0;
-
-  /// < Invalid function parameter
   static const int PRVINFO_ERROR_INVALID_PARAMETER = -22;
 
   /// < Out of memory
@@ -245372,11 +246142,7 @@ abstract class privilege_info_error_e {
 
   /// < Unknown error
   static const int PRVINFO_ERROR_INTERNAL_ERROR = -1073741824;
-
-  /// < @deprecated Not supported (Deprecated since 8.0)
   static const int PRVINFO_ERROR_NOT_SUPPORTED = -1073741822;
-
-  /// < No matched privilege (Since 6.0)
   static const int PRVINFO_ERROR_NO_MATCHING_PRIVILEGE = -31588351;
 }
 
@@ -245405,19 +246171,6 @@ abstract class privilege_consumer_return_code_e {
   /// < Invalid parameter.
   static const int PRIVILEGE_CONSUMER_RETURN_CODE_INVALID_PARAMETER = 2;
 }
-
-typedef GList = _GList;
-
-final class _GList extends ffi.Struct {
-  external gpointer data;
-
-  external ffi.Pointer<GList1> next;
-
-  external ffi.Pointer<GList1> prev;
-}
-
-typedef gpointer = ffi.Pointer<ffi.Void>;
-typedef GList1 = _GList;
 
 /// @brief The structure for a client data JSON.
 /// @since_tizen 7.0
@@ -257640,20 +258393,10 @@ typedef Dartautofill_service_terminate_received_cbFunction = void Function(
 abstract class ime_error_e {
   /// < Successful
   static const int IME_ERROR_NONE = 0;
-
-  /// < Invalid parameter
   static const int IME_ERROR_INVALID_PARAMETER = -22;
-
-  /// < Permission denied
   static const int IME_ERROR_PERMISSION_DENIED = -13;
-
-  /// < Necessary callback function is not set
   static const int IME_ERROR_NO_CALLBACK_FUNCTION = -49414143;
-
-  /// < IME main loop is not started yet
   static const int IME_ERROR_NOT_RUNNING = -49414142;
-
-  /// < Operation failed
   static const int IME_ERROR_OPERATION_FAILED = -49414141;
 
   /// < out of memory
@@ -257682,28 +258425,35 @@ abstract class ime_layout_variation_e {
   /// < The plain normal layout
   static const int IME_LAYOUT_NORMAL_VARIATION_NORMAL = 0;
 
-  /// < Filename layout; symbols such as '/', '*', '\', '|', '&lt;', '&gt;', '?', '&quot;' and ':' should be disabled
+  /// < Filename layout; symbols such as
+  /// '/', '*', '\', '|', '&lt;', '&gt;',
+  /// '?', '&quot;' and ':' should be
+  /// disabled
   static const int IME_LAYOUT_NORMAL_VARIATION_FILENAME = 1;
 
   /// < The name of a person
   static const int IME_LAYOUT_NORMAL_VARIATION_PERSON_NAME = 2;
-
-  /// < The plain normal number layout
   static const int IME_LAYOUT_NUMBERONLY_VARIATION_NORMAL = 0;
 
-  /// < The number layout to allow a negative sign
+  /// < The number layout to allow a
+  /// negative sign
   static const int IME_LAYOUT_NUMBERONLY_VARIATION_SIGNED = 1;
 
-  /// < The number layout to allow decimal point to provide fractional value
+  /// < The number layout to allow
+  /// decimal point to provide
+  /// fractional value
   static const int IME_LAYOUT_NUMBERONLY_VARIATION_DECIMAL = 2;
 
-  /// < The number layout to allow decimal point and negative sign
+  /// < The number layout to
+  /// allow decimal point and
+  /// negative sign
   static const int IME_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL = 3;
 
   /// < The normal password layout
   static const int IME_LAYOUT_PASSWORD_VARIATION_NORMAL = 0;
 
-  /// < The password layout to allow only number
+  /// < The password layout to allow
+  /// only number
   static const int IME_LAYOUT_PASSWORD_VARIATION_NUMBERONLY = 1;
 }
 
@@ -257743,7 +258493,8 @@ abstract class ime_event_type_e {
 ///
 /// @since_tizen 2.4
 ///
-/// @remarks A preedit string may have one or more different attributes. This structure describes each attribute of the string.
+/// @remarks A preedit string may have one or more different attributes. This
+/// structure describes each attribute of the string.
 ///
 /// @see ime_update_preedit_string()
 /// @see #ime_attribute_type
@@ -257752,7 +258503,8 @@ final class ime_preedit_attribute extends ffi.Struct {
   @ffi.UnsignedInt()
   external int start;
 
-  /// < The character length of this attribute, the range is [start, start+length]
+  /// < The character length of this attribute, the range is
+  /// [start, start+length]
   @ffi.UnsignedInt()
   external int length;
 
@@ -257769,7 +258521,8 @@ final class _ime_context extends ffi.Opaque {}
 
 final class _ime_device_info extends ffi.Opaque {}
 
-/// @brief The structure type to contain the set of the essential callback functions for IME application lifecycle and appearance.
+/// @brief The structure type to contain the set of the essential callback
+/// functions for IME application lifecycle and appearance.
 ///
 /// @since_tizen 2.4
 ///
@@ -257798,10 +258551,12 @@ final class ime_callback_s extends ffi.Struct {
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks This callback function is mandatory and must be registered using ime_run(). The
-/// ime_get_main_window() can be used to get the created input panel window.
+/// @remarks This callback function is mandatory and must be registered using
+/// ime_run(). The ime_get_main_window() can be used to get the created input
+/// panel window.
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
 /// @pre The ime_run() function calls this callback function.
 ///
@@ -257822,10 +258577,12 @@ typedef Dartime_create_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks This callback function is mandatory and must be registered using ime_run(). The
-/// ime_get_main_window() can be used to get the created input panel window.
+/// @remarks This callback function is mandatory and must be registered using
+/// ime_run(). The ime_get_main_window() can be used to get the created input
+/// panel window.
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
 /// @see ime_run()
 /// @see ime_get_main_window()
@@ -257836,7 +258593,8 @@ typedef ime_terminate_cbFunction = ffi.Void Function(
 typedef Dartime_terminate_cbFunction = void Function(
     ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the input panel to show itself.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to show itself.
 ///
 /// @since_tizen 2.4
 ///
@@ -257844,14 +258602,17 @@ typedef Dartime_terminate_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks This callback function is mandatory and must be registered using ime_run().
-/// IME application should configure its input panel with #ime_context_h structure information.
-/// The ime_get_main_window() can be used to get the created input panel window.
+/// @remarks This callback function is mandatory and must be registered using
+/// ime_run(). IME application should configure its input panel with
+/// #ime_context_h structure information. The ime_get_main_window() can be used
+/// to get the created input panel window.
 /// @a context should not be released.
 ///
-/// @param[in] context_id The input context identification value of an associated text input UI control
+/// @param[in] context_id The input context identification value of an associated
+/// text input UI control
 /// @param[in] context The input context information handle
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
 /// @see ime_run()
 /// @see ime_get_main_window()
@@ -257874,8 +258635,8 @@ typedef Dartime_show_cbFunction = void Function(
 
 /// @brief Handle of an associated text input UI control's input context.
 ///
-/// @details This is one of parameters of ime_show_cb() callback function. IME application
-/// should configure its input panel with this structure information.
+/// @details This is one of parameters of ime_show_cb() callback function. IME
+/// application should configure its input panel with this structure information.
 ///
 /// @since_tizen 2.4
 ///
@@ -257892,7 +258653,8 @@ typedef Dartime_show_cbFunction = void Function(
 /// @see ime_context_get_language()
 typedef ime_context_h = ffi.Pointer<_ime_context>;
 
-/// @brief Called when an associated text input UI control requests the input panel to hide itself.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to hide itself.
 ///
 /// @since_tizen 2.4
 ///
@@ -257900,11 +258662,14 @@ typedef ime_context_h = ffi.Pointer<_ime_context>;
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks This callback function is mandatory and must be registered using ime_run(). The
-/// ime_get_main_window() can be used to get the created input panel window.
+/// @remarks This callback function is mandatory and must be registered using
+/// ime_run(). The ime_get_main_window() can be used to get the created input
+/// panel window.
 ///
-/// @param[in] context_id The input context identification value of an associated text input UI control
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] context_id The input context identification value of an associated
+/// text input UI control
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
 /// @see ime_run()
 /// @see ime_get_main_window()
@@ -257922,10 +258687,13 @@ typedef Dartime_hide_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @param[in] context_id The input context identification value of an associated text input UI control
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] context_id The input context identification value of an associated
+/// text input UI control
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_focus_in_cb() function.
+/// @pre The callback can be registered using ime_event_set_focus_in_cb()
+/// function.
 ///
 /// @see ime_event_set_focus_in_cb()
 typedef ime_focus_in_cb
@@ -257943,10 +258711,13 @@ typedef Dartime_focus_in_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @param[in] context_id The input context identification value of an associated text input UI control
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] context_id The input context identification value of an associated
+/// text input UI control
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_focus_out_cb() function.
+/// @pre The callback can be registered using ime_event_set_focus_out_cb()
+/// function.
 ///
 /// @see ime_event_set_focus_out_cb()
 typedef ime_focus_out_cb
@@ -257956,7 +258727,8 @@ typedef ime_focus_out_cbFunction = ffi.Void Function(
 typedef Dartime_focus_out_cbFunction = void Function(
     int context_id, ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control responds to a request with the surrounding text.
+/// @brief Called when an associated text input UI control responds to a request
+/// with the surrounding text.
 ///
 /// @since_tizen 2.4
 ///
@@ -257964,15 +258736,20 @@ typedef Dartime_focus_out_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks The ime_request_surrounding_text() must be called to invoke this callback function, asynchronously.
-/// @remarks @a text can be used only in the callback. To use outside, make a copy.
+/// @remarks The ime_request_surrounding_text() must be called to invoke this
+/// callback function, asynchronously.
+/// @remarks @a text can be used only in the callback. To use outside, make a
+/// copy.
 ///
-/// @param[in] context_id The input context identification value of an associated text input UI control
+/// @param[in] context_id The input context identification value of an associated
+/// text input UI control
 /// @param[in] text The UTF-8 string requested
 /// @param[in] cursor_pos The cursor position
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_surrounding_text_updated_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_surrounding_text_updated_cb() function.
 ///
 /// @see ime_event_set_surrounding_text_updated_cb()
 /// @see ime_request_surrounding_text()
@@ -257989,7 +258766,8 @@ typedef Dartime_surrounding_text_updated_cbFunction = void Function(
     int cursor_pos,
     ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called to reset the input context of an associated text input UI control.
+/// @brief Called to reset the input context of an associated text input UI
+/// control.
 ///
 /// @since_tizen 2.4
 ///
@@ -257997,9 +258775,11 @@ typedef Dartime_surrounding_text_updated_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_input_context_reset_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_input_context_reset_cb() function.
 ///
 /// @see ime_event_set_input_context_reset_cb()
 typedef ime_input_context_reset_cb
@@ -258009,7 +258789,8 @@ typedef ime_input_context_reset_cbFunction = ffi.Void Function(
 typedef Dartime_input_context_reset_cbFunction = void Function(
     ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when the position of the cursor in an associated text input UI control changes.
+/// @brief Called when the position of the cursor in an associated text input UI
+/// control changes.
 ///
 /// @since_tizen 2.4
 ///
@@ -258018,9 +258799,11 @@ typedef Dartime_input_context_reset_cbFunction = void Function(
 /// @privilege %http://tizen.org/privilege/ime
 ///
 /// @param[in] cursor_pos The cursor position
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_cursor_position_updated_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_cursor_position_updated_cb() function.
 ///
 /// @see ime_event_set_cursor_position_updated_cb()
 typedef ime_cursor_position_updated_cb
@@ -258030,7 +258813,8 @@ typedef ime_cursor_position_updated_cbFunction = ffi.Void Function(
 typedef Dartime_cursor_position_updated_cbFunction = void Function(
     int cursor_pos, ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the language from the input panel.
+/// @brief Called when an associated text input UI control requests the language
+/// from the input panel.
 ///
 /// @since_tizen 2.4
 ///
@@ -258040,10 +258824,13 @@ typedef Dartime_cursor_position_updated_cbFunction = void Function(
 ///
 /// @remarks The allocated @a lang_code will be released internally.
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
-/// @param[out] lang_code Input panel's current input language code (e.g., &quot;en_US&quot;)
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
+/// @param[out] lang_code Input panel's current input language code (e.g.,
+/// &quot;en_US&quot;)
 ///
-/// @pre The callback can be registered using ime_event_set_language_requested_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_language_requested_cb() function.
 ///
 /// @see ime_event_set_language_requested_cb()
 typedef ime_language_requested_cb
@@ -258063,14 +258850,17 @@ typedef Dartime_language_requested_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a language information is already set to the input panel when it is shown
-/// through #ime_context_h. This callback function will be only called when the client
-/// application changes the edit field's language attribute after the input panel is shown.
+/// @remarks @a language information is already set to the input panel when it is
+/// shown through #ime_context_h. This callback function will be only called when
+/// the client application changes the edit field's language attribute after the
+/// input panel is shown.
 ///
 /// @param[in] language The preferred language that the client application wants
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_language_set_cb() function.
+/// @pre The callback can be registered using ime_event_set_language_set_cb()
+/// function.
 ///
 /// @see ime_event_set_language_set_cb()
 typedef ime_language_set_cb
@@ -258093,10 +258883,12 @@ abstract class Ecore_IMF_Input_Panel_Lang {
   static const int ECORE_IMF_INPUT_PANEL_LANG_ALPHABET = 1;
 }
 
-/// @brief Called to set the application specific data to deliver to the input panel.
+/// @brief Called to set the application specific data to deliver to the input
+/// panel.
 ///
-/// @details This function is used by the applications to deliver the specific data to the input panel.
-/// The data format MUST be negotiated by both application and input panel.
+/// @details This function is used by the applications to deliver the specific
+/// data to the input panel. The data format MUST be negotiated by both
+/// application and input panel.
 ///
 /// @since_tizen 2.4
 ///
@@ -258107,10 +258899,13 @@ abstract class Ecore_IMF_Input_Panel_Lang {
 /// @remarks @a data should not be released.
 ///
 /// @param[in] data The specific data to be set to the input panel
-/// @param[in] data_length The length of data, in bytes, to send to the input panel
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] data_length The length of data, in bytes, to send to the input
+/// panel
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_imdata_set_cb() function.
+/// @pre The callback can be registered using ime_event_set_imdata_set_cb()
+/// function.
 ///
 /// @see ime_event_set_imdata_set_cb()
 typedef ime_imdata_set_cb
@@ -258124,10 +258919,12 @@ typedef Dartime_imdata_set_cbFunction = void Function(
     int data_length,
     ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the application specific data from the input panel.
+/// @brief Called when an associated text input UI control requests the
+/// application specific data from the input panel.
 ///
-/// @details This function is used by the applications to request the specific data from the input panel.
-/// The data format MUST be negotiated by both application and input panel.
+/// @details This function is used by the applications to request the specific
+/// data from the input panel. The data format MUST be negotiated by both
+/// application and input panel.
 ///
 /// @since_tizen 2.4
 ///
@@ -258135,13 +258932,17 @@ typedef Dartime_imdata_set_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks The allocated @a data and @a data_length will be released internally.
+/// @remarks The allocated @a data and @a data_length will be released
+/// internally.
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 /// @param[out] data Input panel's data to be set to the application
-/// @param[out] data_length The length of data, in bytes, to send to the application
+/// @param[out] data_length The length of data, in bytes, to send to the
+/// application
 ///
-/// @pre The callback can be registered using ime_event_set_imdata_requested_cb() function.
+/// @pre The callback can be registered using ime_event_set_imdata_requested_cb()
+/// function.
 ///
 /// @see ime_event_set_imdata_requested_cb()
 typedef ime_imdata_requested_cb
@@ -258155,7 +258956,8 @@ typedef Dartime_imdata_requested_cbFunction = void Function(
     ffi.Pointer<ffi.Pointer<ffi.Void>> data,
     ffi.Pointer<ffi.UnsignedInt> data_length);
 
-/// @brief Called when an associated text input UI control requests the input panel to set its layout.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to set its layout.
 ///
 /// @since_tizen 2.4
 ///
@@ -258163,14 +258965,17 @@ typedef Dartime_imdata_requested_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a layout information is already set to the input panel when it is shown
-/// through #ime_context_h. This callback function will be only called when the client
-/// application changes the edit field's layout attribute after the input panel is shown.
+/// @remarks @a layout information is already set to the input panel when it is
+/// shown through #ime_context_h. This callback function will be only called when
+/// the client application changes the edit field's layout attribute after the
+/// input panel is shown.
 ///
 /// @param[in] layout The input panel layout
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_layout_set_cb() function.
+/// @pre The callback can be registered using ime_event_set_layout_set_cb()
+/// function.
 ///
 /// @see ime_event_set_layout_set_cb()
 typedef ime_layout_set_cb
@@ -258216,10 +259021,15 @@ abstract class Ecore_IMF_Input_Panel_Layout {
   /// < Hexadecimal layout @since 1.2
   static const int ECORE_IMF_INPUT_PANEL_LAYOUT_HEX = 9;
 
-  /// < Command-line terminal layout including ESC, Alt, Ctrl key, so on (no auto-correct, no auto-capitalization) @since 1.2
+  /// < Command-line terminal layout
+  /// including ESC, Alt, Ctrl key, so on
+  /// (no auto-correct, no
+  /// auto-capitalization) @since 1.2
   static const int ECORE_IMF_INPUT_PANEL_LAYOUT_TERMINAL = 10;
 
-  /// < Like normal, but no auto-correct, no auto-capitalization etc. @since 1.2
+  /// < Like normal, but no auto-correct,
+  /// no auto-capitalization etc.
+  /// @since 1.2
   static const int ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD = 11;
 
   /// < Date and time layout @since 1.8
@@ -258228,12 +259038,16 @@ abstract class Ecore_IMF_Input_Panel_Layout {
   /// < Emoticon layout @since 1.10
   static const int ECORE_IMF_INPUT_PANEL_LAYOUT_EMOTICON = 13;
 
-  /// < Voice layout, but if the IME does not support voice layout, then normal layout will be shown @since 1.19 @since_tizen 3.0
+  /// < Voice layout, but if the IME does not
+  /// support voice layout, then normal layout
+  /// will be shown @since 1.19
+  /// @since_tizen 3.0
   static const int ECORE_IMF_INPUT_PANEL_LAYOUT_VOICE = 14;
 }
 
-/// @brief Called when an associated text input UI control requests the input panel to set the @c Return key label.
-/// The input panel can show text or image on the @c Return button according to the @c Return key action.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to set the @c Return key label. The input panel can show text or image
+/// on the @c Return button according to the @c Return key action.
 ///
 /// @since_tizen 2.4
 ///
@@ -258241,15 +259055,17 @@ abstract class Ecore_IMF_Input_Panel_Layout {
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a type information is already set to the input panel when it is shown
-/// through #ime_context_h. This callback function will be only called when the client
-/// application changes the edit field's @c Return key type attribute after the input panel
-/// is shown.
+/// @remarks @a type information is already set to the input panel when it is
+/// shown through #ime_context_h. This callback function will be only called when
+/// the client application changes the edit field's @c Return key type attribute
+/// after the input panel is shown.
 ///
 /// @param[in] type The type of @c Return key on the input panel
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_return_key_type_set_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_return_key_type_set_cb() function.
 ///
 /// @see ime_event_set_return_key_type_set_cb()
 typedef ime_return_key_type_set_cb
@@ -258283,7 +259099,8 @@ abstract class Ecore_IMF_Input_Panel_Return_Key_Type {
   /// < Next @since 1.2
   static const int ECORE_IMF_INPUT_PANEL_RETURN_KEY_TYPE_NEXT = 5;
 
-  /// < Search or magnifier icon @since 1.2
+  /// < Search or magnifier icon
+  /// @since 1.2
   static const int ECORE_IMF_INPUT_PANEL_RETURN_KEY_TYPE_SEARCH = 6;
 
   /// < Send @since 1.2
@@ -258293,8 +259110,8 @@ abstract class Ecore_IMF_Input_Panel_Return_Key_Type {
   static const int ECORE_IMF_INPUT_PANEL_RETURN_KEY_TYPE_SIGNIN = 8;
 }
 
-/// @brief Called when an associated text input UI control requests the input panel to enable
-/// or disable the @c Return key state.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to enable or disable the @c Return key state.
 ///
 /// @since_tizen 2.4
 ///
@@ -258302,15 +259119,18 @@ abstract class Ecore_IMF_Input_Panel_Return_Key_Type {
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a disabled information is already set to the input panel when it is shown
-/// through #ime_context_h. This callback function will be only called when the client
-/// application changes the edit field's @c Return key disable attribute after the input panel
-/// is shown.
+/// @remarks @a disabled information is already set to the input panel when it is
+/// shown through #ime_context_h. This callback function will be only called when
+/// the client application changes the edit field's @c Return key disable
+/// attribute after the input panel is shown.
 ///
-/// @param[in] disabled The Boolean state to disable @c Return key. The @c Return key is enabled by default
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] disabled The Boolean state to disable @c Return key. The @c Return
+/// key is enabled by default
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_return_key_state_set_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_return_key_state_set_cb() function.
 ///
 /// @see ime_event_set_return_key_state_set_cb()
 typedef ime_return_key_state_set_cb
@@ -258320,7 +259140,8 @@ typedef ime_return_key_state_set_cbFunction = ffi.Void Function(
 typedef Dartime_return_key_state_set_cbFunction = void Function(
     bool disabled, ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the position and size from the input panel.
+/// @brief Called when an associated text input UI control requests the position
+/// and size from the input panel.
 ///
 /// @since_tizen 2.4
 ///
@@ -258330,13 +259151,15 @@ typedef Dartime_return_key_state_set_cbFunction = void Function(
 ///
 /// @remarks @a x, @a y, @a w, and @a h should not be released.
 ///
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 /// @param[out] x The x position in screen
 /// @param[out] y The y position in screen
 /// @param[out] w The window width
 /// @param[out] h The window height
 ///
-/// @pre The callback can be registered using ime_event_set_geometry_requested_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_geometry_requested_cb() function.
 ///
 /// @see ime_event_set_geometry_requested_cb()
 typedef ime_geometry_requested_cb
@@ -258354,9 +259177,11 @@ typedef Dartime_geometry_requested_cbFunction = void Function(
     ffi.Pointer<ffi.Int> w,
     ffi.Pointer<ffi.Int> h);
 
-/// @brief Called when a key event is received from external devices or ime_send_key_event().
+/// @brief Called when a key event is received from external devices or
+/// ime_send_key_event().
 ///
-/// @details This function processes the key event before an associated text input UI control does.
+/// @details This function processes the key event before an associated text
+/// input UI control does.
 ///
 /// @since_tizen 2.4
 ///
@@ -258364,17 +259189,22 @@ typedef Dartime_geometry_requested_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks If the key event is from the external device, @a dev_info will have its name, class and subclass information.
-/// @a dev_info should not be released by the application. The platform manages the handle; the handle is released when ime_process_key_event_cb() exits.
+/// @remarks If the key event is from the external device, @a dev_info will have
+/// its name, class and subclass information.
+/// @a dev_info should not be released by the application. The platform manages
+/// the handle; the handle is released when ime_process_key_event_cb() exits.
 ///
 /// @param[in] key_code The key code to be sent
 /// @param[in] key_mask The modifier key mask
 /// @param[in] dev_info The device information handle
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @return @c true if the event was processed, otherwise the event was not processed and was forwarded to the client application.
+/// @return @c true if the event was processed, otherwise the event was not
+/// processed and was forwarded to the client application.
 ///
-/// @pre The callback should be registered using ime_event_set_process_key_event_cb() function.
+/// @pre The callback should be registered using
+/// ime_event_set_process_key_event_cb() function.
 ///
 /// @see ime_event_set_process_key_event_cb()
 /// @see ime_device_info_get_name()
@@ -259086,8 +259916,9 @@ abstract class ime_key_mask_e {
 
 /// @brief Handle of the device information of the key event.
 ///
-/// @details This is one of parameters of ime_process_key_event_cb() callback function. IME application
-/// may distinguish the key event by using this if necessary.
+/// @details This is one of parameters of ime_process_key_event_cb() callback
+/// function. IME application may distinguish the key event by using this if
+/// necessary.
 ///
 /// @since_tizen 2.4
 ///
@@ -259097,9 +259928,11 @@ abstract class ime_key_mask_e {
 /// @see ime_device_info_get_subclass()
 typedef ime_device_info_h = ffi.Pointer<_ime_device_info>;
 
-/// @brief Called when a key event is received with a keycode from external devices or ime_send_key_event().
+/// @brief Called when a key event is received with a keycode from external
+/// devices or ime_send_key_event().
 ///
-/// @details This function processes a key event with a keycode before an associated UI control for the text input deals with the key event.
+/// @details This function processes a key event with a keycode before an
+/// associated UI control for the text input deals with the key event.
 ///
 /// @since_tizen 5.5
 ///
@@ -259107,18 +259940,25 @@ typedef ime_device_info_h = ffi.Pointer<_ime_device_info>;
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks If the key event is from the external device, @a dev_info will have its name, class and subclass information.
-/// @a dev_info should not be released by the application. The platform manages the handle; the handle is released when ime_process_key_event_with_keycode_cb() exits.
+/// @remarks If the key event is from the external device, @a dev_info will have
+/// its name, class and subclass information.
+/// @a dev_info should not be released by the application. The platform manages
+/// the handle; the handle is released when
+/// ime_process_key_event_with_keycode_cb() exits.
 ///
 /// @param[in] key_code The X11 key code to be sent
 /// @param[in] key_sym The key symbol to be sent
 /// @param[in] key_mask The modifier key mask
 /// @param[in] dev_info The device information handle
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @return @c true if the event was processed, otherwise @c false. When @c false returns, the event was not processed and was forwarded to the client application.
+/// @return @c true if the event was processed, otherwise @c false. When @c false
+/// returns, the event was not processed and was forwarded to the client
+/// application.
 ///
-/// @pre The callback should be registered using ime_event_set_process_key_event_with_keycode_cb() function.
+/// @pre The callback should be registered using
+/// ime_event_set_process_key_event_with_keycode_cb() function.
 ///
 /// @see ime_event_set_process_key_event_with_keycode_cb()
 /// @see ime_device_info_get_name()
@@ -259153,9 +259993,11 @@ typedef Dartime_process_key_event_with_keycode_cbFunction = bool Function(
 /// @privilege %http://tizen.org/privilege/ime
 ///
 /// @param[in] language The language code
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_display_language_changed_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_display_language_changed_cb() function.
 ///
 /// @see ime_event_set_display_language_changed_cb()
 typedef ime_display_language_changed_cb
@@ -259174,9 +260016,11 @@ typedef Dartime_display_language_changed_cbFunction = void Function(
 /// @privilege %http://tizen.org/privilege/ime
 ///
 /// @param[in] degree The rotation degree
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_rotation_degree_changed_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_rotation_degree_changed_cb() function.
 ///
 /// @see ime_event_set_rotation_degree_changed_cb()
 typedef ime_rotation_degree_changed_cb
@@ -259195,9 +260039,11 @@ typedef Dartime_rotation_degree_changed_cbFunction = void Function(
 /// @privilege %http://tizen.org/privilege/ime
 ///
 /// @param[in] state Accessibility option state
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_accessibility_state_changed_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_accessibility_state_changed_cb() function.
 ///
 /// @see ime_event_set_accessibility_state_changed_cb()
 typedef ime_accessibility_state_changed_cb = ffi
@@ -259215,16 +260061,21 @@ typedef Dartime_accessibility_state_changed_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks if Input panel requests to open the option window, @a type will be #IME_OPTION_WINDOW_TYPE_KEYBOARD.
-/// And if Settings application requests to open it, @a type will be #IME_OPTION_WINDOW_TYPE_SETTING_APPLICATION.
-/// The @a window should not be released. The @a window can be used until ime_option_window_destroyed_cb() will be called.
+/// @remarks if Input panel requests to open the option window, @a type will be
+/// #IME_OPTION_WINDOW_TYPE_KEYBOARD. And if Settings application requests to
+/// open it, @a type will be #IME_OPTION_WINDOW_TYPE_SETTING_APPLICATION. The @a
+/// window should not be released. The @a window can be used until
+/// ime_option_window_destroyed_cb() will be called.
 ///
 /// @param[in] window The created window object
 /// @param[in] type The type of option window
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_option_window_created_cb() function. The
-/// ime_create_option_window() calls this callback function or Settings application can call this callback function.
+/// @pre The callback can be registered using
+/// ime_event_set_option_window_created_cb() function. The
+/// ime_create_option_window() calls this callback function or Settings
+/// application can call this callback function.
 ///
 /// @see ime_event_set_option_window_created_cb()
 /// @see ime_create_option_window()
@@ -259250,7 +260101,8 @@ typedef Dartime_option_window_created_cbFunction = void Function(
 /// @param[in] window The window object to destroy
 /// @param[in] user_data User data to be passed to the callback function
 ///
-/// @pre The callback can be registered using ime_event_set_option_window_destroyed_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_option_window_destroyed_cb() function.
 /// ime_destroy_option_window() calls this callback function.
 ///
 /// @see ime_event_set_option_window_destroyed_cb()
@@ -259319,16 +260171,20 @@ typedef DartEina_Magic = int;
 ///
 /// @see ecore_imf_context_autocapital_type_set()
 abstract class Ecore_IMF_Autocapital_Type {
-  /// < No auto-capitalization when typing @since 1.1
+  /// < No auto-capitalization when typing
+  /// @since 1.1
   static const int ECORE_IMF_AUTOCAPITAL_TYPE_NONE = 0;
 
-  /// < Autocapitalize each word typed @since 1.1
+  /// < Autocapitalize each word typed
+  /// @since 1.1
   static const int ECORE_IMF_AUTOCAPITAL_TYPE_WORD = 1;
 
-  /// < Autocapitalize the start of each sentence @since 1.1
+  /// < Autocapitalize the start of each
+  /// sentence @since 1.1
   static const int ECORE_IMF_AUTOCAPITAL_TYPE_SENTENCE = 2;
 
-  /// < Autocapitalize all letters @since 1.1
+  /// < Autocapitalize all letters
+  /// @since 1.1
   static const int ECORE_IMF_AUTOCAPITAL_TYPE_ALLCHARACTER = 3;
 }
 
@@ -259338,51 +260194,25 @@ abstract class Ecore_IMF_Autocapital_Type {
 abstract class Ecore_IMF_Input_Hints {
   /// < No active hints @since 1.12
   static const int ECORE_IMF_INPUT_HINT_NONE = 0;
-
-  /// < Suggest word auto completion @since 1.12
   static const int ECORE_IMF_INPUT_HINT_AUTO_COMPLETE = 1;
-
-  /// < Typed text should not be stored. @since 1.12
   static const int ECORE_IMF_INPUT_HINT_SENSITIVE_DATA = 2;
 
   /// < Multiline text @since 1.18
   static const int ECORE_IMF_INPUT_HINT_MULTILINE = 4;
-
-  /// < Autofill hint for a credit card expiration date @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DATE =
       256;
-
-  /// < Autofill hint for a credit card expiration day @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DAY =
       512;
-
-  /// < Autofill hint for a credit card expiration month @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_MONTH =
       768;
-
-  /// < Autofill hint for a credit card expiration year @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_YEAR =
       1024;
-
-  /// < Autofill hint for a credit card number @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_NUMBER = 1280;
-
-  /// < Autofill hint for an email address @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_EMAIL_ADDRESS = 1536;
-
-  /// < Autofill hint for a user's real name @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_NAME = 1792;
-
-  /// < Autofill hint for a phone number @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_PHONE = 2048;
-
-  /// < Autofill hint for a postal address @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_ADDRESS = 2304;
-
-  /// < Autofill hint for a postal code @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_CODE = 2560;
-
-  /// < Autofill hint for a user's ID @deprecated since 1.24 since_tizen 6.0
   static const int ECORE_IMF_INPUT_HINT_AUTOFILL_ID = 2816;
 }
 
@@ -259407,25 +260237,31 @@ abstract class Ecore_IMF_Device_Class {
   /// < Not a device @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_NONE = 0;
 
-  /// < The user/seat (the user themselves) @since 1.14
+  /// < The user/seat (the user themselves)
+  /// @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_SEAT = 1;
 
-  /// < A regular keyboard, numberpad or attached buttons @since 1.14
+  /// < A regular keyboard, numberpad or
+  /// attached buttons @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_KEYBOARD = 2;
 
-  /// < A mouse, trackball or touchpad relative motion device @since 1.14
+  /// < A mouse, trackball or touchpad relative
+  /// motion device @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_MOUSE = 3;
 
-  /// < A touchscreen with fingers or stylus @since 1.14
+  /// < A touchscreen with fingers or stylus
+  /// @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_TOUCH = 4;
 
   /// < A special pen device @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_PEN = 5;
 
-  /// < A laser pointer, wii-style or "minority report" pointing device @since 1.14
+  /// < A laser pointer, wii-style or "minority
+  /// report" pointing device @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_POINTER = 6;
 
-  /// <  A gamepad controller or joystick @since 1.14
+  /// <  A gamepad controller or joystick
+  /// @since 1.14
   static const int ECORE_IMF_DEVICE_CLASS_GAMEPAD = 7;
 }
 
@@ -259436,7 +260272,8 @@ abstract class Ecore_IMF_Device_Subclass {
   /// < Not a device @since 1.14
   static const int ECORE_IMF_DEVICE_SUBCLASS_NONE = 0;
 
-  /// < The normal flat of your finger @since 1.14
+  /// < The normal flat of your finger
+  /// @since 1.14
   static const int ECORE_IMF_DEVICE_SUBCLASS_FINGER = 1;
 
   /// < A fingernail @since 1.14
@@ -259460,7 +260297,8 @@ abstract class Ecore_IMF_Device_Subclass {
   /// < A trackpad style mouse @since 1.14
   static const int ECORE_IMF_DEVICE_SUBCLASS_TRACKPAD = 8;
 
-  /// < A trackpoint style mouse @since 1.14
+  /// < A trackpoint style mouse
+  /// @since 1.14
   static const int ECORE_IMF_DEVICE_SUBCLASS_TRACKPOINT = 9;
 
   /// < A trackball style mouse @since 1.14
@@ -259469,11 +260307,13 @@ abstract class Ecore_IMF_Device_Subclass {
   /// < A remote controller @since_tizen 4.0
   static const int ECORE_IMF_DEVICE_SUBCLASS_REMOCON = 11;
 
-  /// < A virtual keyboard @since_tizen 4.0
+  /// < A virtual keyboard
+  /// @since_tizen 4.0
   static const int ECORE_IMF_DEVICE_SUBCLASS_VIRTUAL_KEYBOARD = 12;
 }
 
-/// @brief Called to set the prediction hint string to deliver to the input panel.
+/// @brief Called to set the prediction hint string to deliver to the input
+/// panel.
 ///
 /// @since_tizen 4.0
 ///
@@ -259481,13 +260321,15 @@ abstract class Ecore_IMF_Device_Subclass {
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a prediction_hint is valid only in the callback. To use outside the callback, make a copy.
-/// This function is used by the applications to deliver the prediction hint message to the input panel.
+/// @remarks @a prediction_hint is valid only in the callback. To use outside the
+/// callback, make a copy. This function is used by the applications to deliver
+/// the prediction hint message to the input panel.
 ///
 /// @param[in] prediction_hint The prediction hint to be set to the input panel
 /// @param[in] user_data User data to be passed to the callback function
 ///
-/// @pre The callback can be registered using ime_event_set_prediction_hint_set_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_prediction_hint_set_cb() function.
 ///
 /// @see ime_event_set_prediction_hint_set_cb()
 typedef ime_prediction_hint_set_cb
@@ -259497,7 +260339,8 @@ typedef ime_prediction_hint_set_cbFunction = ffi.Void Function(
 typedef Dartime_prediction_hint_set_cbFunction = void Function(
     ffi.Pointer<ffi.Char> prediction_hint, ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the text entry to set the MIME type.
+/// @brief Called when an associated text input UI control requests the text
+/// entry to set the MIME type.
 ///
 /// @since_tizen 4.0
 ///
@@ -259505,13 +260348,15 @@ typedef Dartime_prediction_hint_set_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a mime_type is valid only in the callback. To use outside the callback, make a copy.
-/// This function is used by the applications to deliver the MIME type to the input panel.
+/// @remarks @a mime_type is valid only in the callback. To use outside the
+/// callback, make a copy. This function is used by the applications to deliver
+/// the MIME type to the input panel.
 ///
 /// @param[in] mime_type The MIME type to be set to the input panel
 /// @param[in] user_data User data to be passed to the callback function
 ///
-/// @pre The callback can be registered using ime_event_set_mime_type_set_request_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_mime_type_set_request_cb() function.
 ///
 /// @see ime_event_set_mime_type_set_request_cb()
 typedef ime_mime_type_set_request_cb
@@ -259521,7 +260366,8 @@ typedef ime_mime_type_set_request_cbFunction = ffi.Void Function(
 typedef Dartime_mime_type_set_request_cbFunction = void Function(
     ffi.Pointer<ffi.Char> mime_type, ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called to set key-value pairs of predicting messages to deliver to the input panel.
+/// @brief Called to set key-value pairs of predicting messages to deliver to the
+/// input panel.
 ///
 /// @since_tizen 5.0
 ///
@@ -259529,14 +260375,16 @@ typedef Dartime_mime_type_set_request_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a key and @a value is valid only in the callback. To use outside the callback, make a copy.
-/// This function is used by applications to deliver predicted hint messages to the input panel.
+/// @remarks @a key and @a value is valid only in the callback. To use outside
+/// the callback, make a copy. This function is used by applications to deliver
+/// predicted hint messages to the input panel.
 ///
 /// @param[in] key The prediction hint key to be set to the input panel
 /// @param[in] value The prediction hint value to be set to the input panel
 /// @param[in] user_data User data to be passed to the callback function
 ///
-/// @pre The callback can be registered using ime_event_set_prediction_hint_data_set_cb() function.
+/// @pre The callback can be registered using
+/// ime_event_set_prediction_hint_data_set_cb() function.
 ///
 /// @see ime_event_set_prediction_hint_data_set_cb()
 typedef ime_prediction_hint_data_set_cb
@@ -259550,7 +260398,8 @@ typedef Dartime_prediction_hint_data_set_cbFunction = void Function(
     ffi.Pointer<ffi.Char> value,
     ffi.Pointer<ffi.Void> user_data);
 
-/// @brief Called when an associated text input UI control requests the input panel to set input hint.
+/// @brief Called when an associated text input UI control requests the input
+/// panel to set input hint.
 ///
 /// @since_tizen 6.5
 ///
@@ -259558,14 +260407,17 @@ typedef Dartime_prediction_hint_data_set_cbFunction = void Function(
 ///
 /// @privilege %http://tizen.org/privilege/ime
 ///
-/// @remarks @a input_hint information is already set to the input panel when it is shown
-/// through #ime_context_h. This callback function will be only called when the client
-/// application changes the edit field's input hint attribute after the input panel is shown.
+/// @remarks @a input_hint information is already set to the input panel when it
+/// is shown through #ime_context_h. This callback function will be only called
+/// when the client application changes the edit field's input hint attribute
+/// after the input panel is shown.
 ///
 /// @param[in] input_hint The input hint
-/// @param[in] user_data User data to be passed from the callback registration function
+/// @param[in] user_data User data to be passed from the callback registration
+/// function
 ///
-/// @pre The callback can be registered using ime_event_set_input_hint_set_cb() function.
+/// @pre The callback can be registered using ime_event_set_input_hint_set_cb()
+/// function.
 ///
 /// @see ime_event_set_input_hint_set_cb()
 typedef ime_input_hint_set_cb
@@ -259574,64 +260426,6 @@ typedef ime_input_hint_set_cbFunction = ffi.Void Function(
     ffi.Int32 input_hint, ffi.Pointer<ffi.Void> user_data);
 typedef Dartime_input_hint_set_cbFunction = void Function(
     int input_hint, ffi.Pointer<ffi.Void> user_data);
-
-/// @brief Called when an associated text input UI control sets the position align of the input panel.
-///
-/// @since_tizen 9.0
-///
-/// @privlevel public
-///
-/// @remarks Regardless of the rotation degree, the @a x, @a y values of the top-left corner on the screen are based on 0, 0.
-/// This function is used to adjust the position of the input panel when its size changes in floating mode.
-///
-/// @param[in] x The x coordinate of the @a align
-/// @param[in] y The y coordinate of the @a align
-/// @param[in] align The position alignment that the client application wants
-/// @param[in] user_data User data to be passed to the callback function
-///
-/// @pre The callback can be registered using ime_event_set_position_align_set_cb() function.
-///
-/// @see ime_event_set_position_align_set_cb()
-typedef ime_position_align_set_cb
-    = ffi.Pointer<ffi.NativeFunction<ime_position_align_set_cbFunction>>;
-typedef ime_position_align_set_cbFunction = ffi.Void Function(
-    ffi.Int x, ffi.Int y, ffi.Int32 align, ffi.Pointer<ffi.Void> user_data);
-typedef Dartime_position_align_set_cbFunction = void Function(
-    int x, int y, int align, ffi.Pointer<ffi.Void> user_data);
-
-/// @enum _Ecore_IMF_Input_Panel_Align
-/// @brief Enumeration for defining the types of Ecore_IMF Input Panel align
-/// @since 1.28
-///
-/// @since_tizen 9.0
-abstract class Ecore_IMF_Input_Panel_Align {
-  /// < The top-left corner
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_TOP_LEFT = 0;
-
-  /// < The top-center position
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_TOP_CENTER = 1;
-
-  /// < The top-right corner
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_TOP_RIGHT = 2;
-
-  /// < The middle-left position
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_MIDDLE_LEFT = 3;
-
-  /// < The middle-center position
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_MIDDLE_CENTER = 4;
-
-  /// < The middle-right position
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_MIDDLE_RIGHT = 5;
-
-  /// < The bottom-left corner
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_BOTTOM_LEFT = 6;
-
-  /// < The bottom-center position
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_BOTTOM_CENTER = 7;
-
-  /// < The bottom-right corner
-  static const int ECORE_IMF_INPUT_PANEL_ALIGN_BOTTOM_RIGHT = 8;
-}
 
 /// @brief Enumeration for input method manager function error.
 /// @since_tizen 2.4
