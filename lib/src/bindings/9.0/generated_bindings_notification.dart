@@ -3133,6 +3133,79 @@ class Tizen90Notification {
   late final _notification_get_extension_image_size =
       _notification_get_extension_image_sizePtr
           .asFunction<int Function(notification_h, ffi.Pointer<ffi.Int>)>();
+
+  int notification_clear(
+    int type,
+  ) {
+    return _notification_clear(
+      type,
+    );
+  }
+
+  late final _notification_clearPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32)>>(
+          'notification_clear');
+  late final _notification_clear =
+      _notification_clearPtr.asFunction<int Function(int)>();
+
+  int notification_get_list(
+    int type,
+    int count,
+    ffi.Pointer<ffi.Int> list,
+  ) {
+    return _notification_get_list(
+      type,
+      count,
+      list,
+    );
+  }
+
+  late final _notification_get_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int32, ffi.Int,
+              ffi.Pointer<ffi.Int>)>>('notification_get_list');
+  late final _notification_get_list = _notification_get_listPtr
+      .asFunction<int Function(int, int, ffi.Pointer<ffi.Int>)>();
+
+  int notification_register_detailed_changed_cb(
+    notification_detailed_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_register_detailed_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_register_detailed_changed_cbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_register_detailed_changed_cb');
+  late final _notification_register_detailed_changed_cb =
+      _notification_register_detailed_changed_cbPtr.asFunction<
+          int Function(
+              notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  int notification_unregister_detailed_changed_cb(
+    notification_detailed_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_unregister_detailed_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_unregister_detailed_changed_cbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_unregister_detailed_changed_cb');
+  late final _notification_unregister_detailed_changed_cb =
+      _notification_unregister_detailed_changed_cbPtr.asFunction<
+          int Function(
+              notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
 }
 
 /// Enumeration for notification errors.
@@ -3819,6 +3892,29 @@ abstract class notification_block_state {
   /// < User set do not disturb mode
   static const int NOTIFICATION_BLOCK_STATE_DO_NOT_DISTURB = 2;
 }
+
+/// @nodoc
+typedef notification_detailed_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<notification_detailed_changed_cbFunction>>;
+/// @nodoc
+typedef notification_detailed_changed_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> data,
+    ffi.Int32 type,
+    ffi.Pointer<notification_op> op_list,
+    ffi.Int num_op);
+/// @nodoc
+typedef Dartnotification_detailed_changed_cbFunction = void Function(
+    ffi.Pointer<ffi.Void> data,
+    int type,
+    ffi.Pointer<notification_op> op_list,
+    int num_op);
+
+/// The structure for notification operation.
+///
+/// **Since Tizen:**
+/// - 2.3
+/// @nodoc
+typedef notification_op = _notification_op;
 
 /// @nodoc
 const int NOTIFICATION_DO_NOT_SHOW_TIME_STAMP = -1;

@@ -41,3 +41,13 @@ outdir=$ROOT_DIR/rootstraps/$version
 rm -fr $outdir
 mkdir -p $outdir
 cp -fr $rootstrap/usr $outdir
+
+# Overlay internal headers/libraries that the stock rootstrap does not ship
+# (e.g. tts_setting/stt_setting, and internal symbols missing from the public
+# headers). These live in overlays/<version>/ mirroring the rootstrap layout
+# and are copied on top of the fetched rootstrap so the generators see them.
+overlay=$ROOT_DIR/overlays/$version
+if [ -d "$overlay" ]; then
+  echo "Applying overlays from $overlay"
+  cp -fr "$overlay/." "$outdir/"
+fi

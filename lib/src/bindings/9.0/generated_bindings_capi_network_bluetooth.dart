@@ -14550,6 +14550,24 @@ class Tizen90CapiNetworkBluetooth {
               bt_new_scan_result_h,
               ffi.Pointer<
                   ffi.Pointer<bt_adapter_le_device_scan_result_info_s>>)>();
+
+  int bt_adapter_enable() {
+    return _bt_adapter_enable();
+  }
+
+  late final _bt_adapter_enablePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('bt_adapter_enable');
+  late final _bt_adapter_enable =
+      _bt_adapter_enablePtr.asFunction<int Function()>();
+
+  int bt_adapter_disable() {
+    return _bt_adapter_disable();
+  }
+
+  late final _bt_adapter_disablePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('bt_adapter_disable');
+  late final _bt_adapter_disable =
+      _bt_adapter_disablePtr.asFunction<int Function()>();
 }
 
 /// Enumeration of PBAP fields.

@@ -113,6 +113,7 @@ entrypoints:
   - header: job_scheduler.h
   - header: message_port.h
   - header: notification.h
+  - header: notification_internal.h
   - header: notification_error.h
   - header: notification_ex.h
   - header: notification_ex_app_control_action.h
@@ -237,6 +238,7 @@ entrypoints:
   - header: asp.h  # deprecated
   - header: bluetooth.h
   - header: bluetooth_type.h
+  - header: bluetooth_internal.h
   - header: dns-sd.h
   - header: inm.h
   - header: iotcon.h
@@ -514,6 +516,7 @@ modules:
   - notification_error.h
   - notification_type.h
   - notification_status.h
+  - notification_internal.h
   deps:
   - capi_appfw_app_control
   primitive_typedefs:
@@ -1012,6 +1015,7 @@ modules:
   headers:
   - bluetooth.h
   - bluetooth_type.h
+  - bluetooth_internal.h
 - name: capi_network_connection
   library: libcapi-network-connection.so.1
   _category: Network / Connection
