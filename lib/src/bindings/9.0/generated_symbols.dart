@@ -6360,6 +6360,28 @@ const Map<String, List<String>> ttsEngineSymbols = {
 };
 
 /// @nodoc
+const Map<String, List<String>> sttSettingSymbols = {
+  'libstt_setting.so': [
+    'stt_setting_finalize',
+    'stt_setting_foreach_supported_engines',
+    'stt_setting_foreach_supported_languages',
+    'stt_setting_get_auto_language',
+    'stt_setting_get_default_language',
+    'stt_setting_get_engine',
+    'stt_setting_get_silence_detection',
+    'stt_setting_initialize',
+    'stt_setting_set_auto_language',
+    'stt_setting_set_config_changed_cb',
+    'stt_setting_set_default_language',
+    'stt_setting_set_engine',
+    'stt_setting_set_engine_changed_cb',
+    'stt_setting_set_silence_detection',
+    'stt_setting_unset_config_changed_cb',
+    'stt_setting_unset_engine_changed_cb',
+  ],
+};
+
+/// @nodoc
 const Map<String, List<String>> ttsSettingSymbols = {
   'libtts_setting.so': [
     'tts_setting_finalize',

@@ -123,6 +123,7 @@ import '../../src/bindings/9.0/generated_bindings_rpc_port.dart';
 import '../../src/bindings/9.0/generated_bindings_storage.dart';
 import '../../src/bindings/9.0/generated_bindings_stt.dart';
 import '../../src/bindings/9.0/generated_bindings_stt_engine.dart';
+import '../../src/bindings/9.0/generated_bindings_stt_setting.dart';
 import '../../src/bindings/9.0/generated_bindings_tbm.dart';
 import '../../src/bindings/9.0/generated_bindings_tizen_core.dart';
 import '../../src/bindings/9.0/generated_bindings_ttrace.dart';
@@ -302,6 +303,7 @@ export '../../src/bindings/9.0/generated_bindings_rpc_port.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_storage.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_stt.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_stt_engine.dart' hide bool;
+export '../../src/bindings/9.0/generated_bindings_stt_setting.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_tbm.dart';
 export '../../src/bindings/9.0/generated_bindings_tizen_core.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_ttrace.dart';
@@ -882,6 +884,10 @@ Tizen90Stt get tizenStt =>
 Tizen90SttEngine? _tizenSttEngine;
 Tizen90SttEngine get tizenSttEngine => _tizenSttEngine ??=
     _getTizenInstance(sttEngineSymbols, Tizen90SttEngine.fromLookup)!;
+
+Tizen90SttSetting? _tizenSttSetting;
+Tizen90SttSetting get tizenSttSetting => _tizenSttSetting ??=
+    _getTizenInstance(sttSettingSymbols, Tizen90SttSetting.fromLookup)!;
 
 Tizen90Tbm? _tizenTbm;
 Tizen90Tbm get tizenTbm =>
