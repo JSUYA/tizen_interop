@@ -3618,6 +3618,28 @@ typedef bool (*stt_result_time_cb)(void* stt, int index, some_enum event, const 
 PROXY_GROUP_RETURN(stt_result_time_cb, bool, void* stt, int index, some_enum event, const char* text, long start_time, long end_time, void* user_data)
 #undef CB_PARAMS_NAMES
 
+typedef void (*stt_setting_config_changed_cb)(void* user_data);
+#define CB_PARAMS_NAMES user_data
+PROXY_GROUP_NON_BLOCKING(stt_setting_config_changed_cb, void* user_data)
+PROXY_GROUP_BLOCKING(stt_setting_config_changed_cb, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*stt_setting_engine_changed_cb)(void* user_data);
+#define CB_PARAMS_NAMES user_data
+PROXY_GROUP_NON_BLOCKING(stt_setting_engine_changed_cb, void* user_data)
+PROXY_GROUP_BLOCKING(stt_setting_engine_changed_cb, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef bool (*stt_setting_supported_engine_cb)(const char* engine_id, const char* engine_name, const char* setting_path, void* user_data);
+#define CB_PARAMS_NAMES engine_id, engine_name, setting_path, user_data
+PROXY_GROUP_RETURN(stt_setting_supported_engine_cb, bool, const char* engine_id, const char* engine_name, const char* setting_path, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef bool (*stt_setting_supported_language_cb)(const char* engine_id, const char* language, void* user_data);
+#define CB_PARAMS_NAMES engine_id, language, user_data
+PROXY_GROUP_RETURN(stt_setting_supported_language_cb, bool, const char* engine_id, const char* language, void* user_data)
+#undef CB_PARAMS_NAMES
+
 typedef void (*stt_speech_status_cb)(void* stt, some_enum status, void* user_data);
 #define CB_PARAMS_NAMES stt, status, user_data
 PROXY_GROUP_NON_BLOCKING(stt_speech_status_cb, void* stt, some_enum status, void* user_data)
@@ -5728,6 +5750,12 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
   MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_recognition_result_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_stt_recognition_result_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_result_time_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_setting_config_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_stt_setting_config_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_setting_engine_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_stt_setting_engine_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_setting_supported_engine_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_setting_supported_language_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_speech_status_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_stt_speech_status_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_stt_state_changed_cb)

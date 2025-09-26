@@ -197,10 +197,12 @@
 #include <stt.h>
 #include <stte.h>
 #include <tts.h>
-// #include <tts_internal.h>
-#include <tts_setting.h>
 #include <ttse.h>
 // #include <ttse_internal.h>
 #include <vce.h>
 #include <voice_control.h>
 #include <voice_control_manager.h>
+
+// Additional
+#include <stt_setting.h>
+#include <tts_setting.h>

@@ -96,6 +96,7 @@ headers:
     - "**/yaca/*.h"
     # Additional
     - "**/tts_setting.h"
+    - "**/stt_setting.h"
 
 compiler-opts:
   - "-m32"
