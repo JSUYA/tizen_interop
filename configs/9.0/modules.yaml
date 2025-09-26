@@ -366,6 +366,7 @@ entrypoints:
   - header: vce.h
   - header: voice_control.h
   - header: voice_control_manager.h
+  - header: tts_setting.h
 modules:
 - name: accounts_svc
   library: libaccounts-svc.so.0
@@ -1400,6 +1401,11 @@ modules:
   _category: UIX / TTS Engine
   headers:
   - ttse.h
+- name: tts_setting
+  library: libtts_setting.so
+  _category: UIX / TTS Setting
+  headers:
+  - tts_setting.h
 - name: vc
   library: libvc.so
   _category: UIX / Voice control

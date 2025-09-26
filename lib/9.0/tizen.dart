@@ -128,6 +128,7 @@ import '../../src/bindings/9.0/generated_bindings_tizen_core.dart';
 import '../../src/bindings/9.0/generated_bindings_ttrace.dart';
 import '../../src/bindings/9.0/generated_bindings_tts.dart';
 import '../../src/bindings/9.0/generated_bindings_tts_engine.dart';
+import '../../src/bindings/9.0/generated_bindings_tts_setting.dart';
 import '../../src/bindings/9.0/generated_bindings_update_control.dart';
 import '../../src/bindings/9.0/generated_bindings_vc.dart';
 import '../../src/bindings/9.0/generated_bindings_vc_engine.dart';
@@ -306,6 +307,7 @@ export '../../src/bindings/9.0/generated_bindings_tizen_core.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_ttrace.dart';
 export '../../src/bindings/9.0/generated_bindings_tts.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_tts_engine.dart' hide bool;
+export '../../src/bindings/9.0/generated_bindings_tts_setting.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_update_control.dart';
 export '../../src/bindings/9.0/generated_bindings_vc.dart' hide bool;
 export '../../src/bindings/9.0/generated_bindings_vc_engine.dart' hide bool;
@@ -900,6 +902,10 @@ Tizen90Tts get tizenTts =>
 Tizen90TtsEngine? _tizenTtsEngine;
 Tizen90TtsEngine get tizenTtsEngine => _tizenTtsEngine ??=
     _getTizenInstance(ttsEngineSymbols, Tizen90TtsEngine.fromLookup)!;
+
+Tizen90TtsSetting? _tizenTtsSetting;
+Tizen90TtsSetting get tizenTtsSetting => _tizenTtsSetting ??=
+    _getTizenInstance(ttsSettingSymbols, Tizen90TtsSetting.fromLookup)!;
 
 Tizen90UpdateControl? _tizenUpdateControl;
 Tizen90UpdateControl get tizenUpdateControl => _tizenUpdateControl ??=

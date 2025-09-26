@@ -6360,6 +6360,40 @@ const Map<String, List<String>> ttsEngineSymbols = {
 };
 
 /// @nodoc
+const Map<String, List<String>> ttsSettingSymbols = {
+  'libtts_setting.so': [
+    'tts_setting_finalize',
+    'tts_setting_foreach_supported_engines',
+    'tts_setting_foreach_supported_voices',
+    'tts_setting_get_auto_voice',
+    'tts_setting_get_background_volume_ratio',
+    'tts_setting_get_engine',
+    'tts_setting_get_pitch',
+    'tts_setting_get_pitch_range',
+    'tts_setting_get_speed',
+    'tts_setting_get_speed_range',
+    'tts_setting_get_voice',
+    'tts_setting_initialize',
+    'tts_setting_set_auto_voice',
+    'tts_setting_set_background_volume_ratio',
+    'tts_setting_set_background_volume_ratio_changed_cb',
+    'tts_setting_set_engine',
+    'tts_setting_set_engine_changed_cb',
+    'tts_setting_set_pitch',
+    'tts_setting_set_pitch_changed_cb',
+    'tts_setting_set_speed',
+    'tts_setting_set_speed_changed_cb',
+    'tts_setting_set_voice',
+    'tts_setting_set_voice_changed_cb',
+    'tts_setting_unset_background_volume_ratio_changed_cb',
+    'tts_setting_unset_engine_changed_cb',
+    'tts_setting_unset_pitch_changed_cb',
+    'tts_setting_unset_speed_changed_cb',
+    'tts_setting_unset_voice_changed_cb',
+  ],
+};
+
+/// @nodoc
 const Map<String, List<String>> vcSymbols = {
   'libvc.so': [
     'vc_cmd_create',
