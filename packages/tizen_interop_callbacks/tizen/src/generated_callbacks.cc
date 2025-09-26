@@ -1238,13 +1238,6 @@ PROXY_GROUP_NON_BLOCKING(data_control_sql_update_response_cb, int request_id, vo
 PROXY_GROUP_BLOCKING(data_control_sql_update_response_cb, int request_id, void* provider, bool provider_result, const char* error, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_detailed_changed_cb 0
-typedef void (*detailed_changed_cb)(void* data, some_enum type, void* op_list, int num_op);
-#define CB_PARAMS_NAMES data, type, op_list, num_op
-PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(detailed_changed_cb, void* data, some_enum type, void* op_list, int num_op)
-PROXY_GROUP_BLOCKING_NO_USER_DATA(detailed_changed_cb, void* data, some_enum type, void* op_list, int num_op)
-#undef CB_PARAMS_NAMES
-
 typedef void (*device_changed_cb)(some_enum type, void* value, void* user_data);
 #define CB_PARAMS_NAMES type, value, user_data
 PROXY_GROUP_NON_BLOCKING(device_changed_cb, some_enum type, void* value, void* user_data)
@@ -2508,7 +2501,7 @@ typedef int (*ml_custom_easy_invoke_cb)(const void* in, void* out, void* user_da
 PROXY_GROUP_RETURN(ml_custom_easy_invoke_cb, int, const void* in, void* out, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ml_data_destroy_cb 5
+#define BASE_CALLBACK_ID_ml_data_destroy_cb 0
 typedef void (*ml_data_destroy_cb)(void* data);
 #define CB_PARAMS_NAMES data
 PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(ml_data_destroy_cb, void* data)
@@ -2917,6 +2910,13 @@ typedef void (*noti_ex_reporter_events_event_cb)(void* handle, void* info, void*
 #define CB_PARAMS_NAMES handle, info, items, count, user_data
 PROXY_GROUP_NON_BLOCKING(noti_ex_reporter_events_event_cb, void* handle, void* info, void* items, int count, void* user_data)
 PROXY_GROUP_BLOCKING(noti_ex_reporter_events_event_cb, void* handle, void* info, void* items, int count, void* user_data)
+#undef CB_PARAMS_NAMES
+
+#define BASE_CALLBACK_ID_notification_detailed_changed_cb 5
+typedef void (*notification_detailed_changed_cb)(void* data, some_enum type, void* op_list, int num_op);
+#define CB_PARAMS_NAMES data, type, op_list, num_op
+PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(notification_detailed_changed_cb, void* data, some_enum type, void* op_list, int num_op)
+PROXY_GROUP_BLOCKING_NO_USER_DATA(notification_detailed_changed_cb, void* data, some_enum type, void* op_list, int num_op)
 #undef CB_PARAMS_NAMES
 
 typedef bool (*package_info_app_cb)(some_enum comp_type, const char* app_id, void* user_data);
@@ -3854,6 +3854,46 @@ typedef void (*tts_service_state_changed_cb)(void* tts, some_enum previous, some
 #define CB_PARAMS_NAMES tts, previous, current, user_data
 PROXY_GROUP_NON_BLOCKING(tts_service_state_changed_cb, void* tts, some_enum previous, some_enum current, void* user_data)
 PROXY_GROUP_BLOCKING(tts_service_state_changed_cb, void* tts, some_enum previous, some_enum current, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*tts_setting_background_volume_ratio_changed_cb)(double ratio, void* user_data);
+#define CB_PARAMS_NAMES ratio, user_data
+PROXY_GROUP_NON_BLOCKING(tts_setting_background_volume_ratio_changed_cb, double ratio, void* user_data)
+PROXY_GROUP_BLOCKING(tts_setting_background_volume_ratio_changed_cb, double ratio, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*tts_setting_engine_changed_cb)(const char* engine_id, void* user_data);
+#define CB_PARAMS_NAMES engine_id, user_data
+PROXY_GROUP_NON_BLOCKING(tts_setting_engine_changed_cb, const char* engine_id, void* user_data)
+PROXY_GROUP_BLOCKING(tts_setting_engine_changed_cb, const char* engine_id, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*tts_setting_pitch_changed_cb)(int pitch, void* user_data);
+#define CB_PARAMS_NAMES pitch, user_data
+PROXY_GROUP_NON_BLOCKING(tts_setting_pitch_changed_cb, int pitch, void* user_data)
+PROXY_GROUP_BLOCKING(tts_setting_pitch_changed_cb, int pitch, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*tts_setting_speed_changed_cb)(int speed, void* user_data);
+#define CB_PARAMS_NAMES speed, user_data
+PROXY_GROUP_NON_BLOCKING(tts_setting_speed_changed_cb, int speed, void* user_data)
+PROXY_GROUP_BLOCKING(tts_setting_speed_changed_cb, int speed, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef bool (*tts_setting_supported_engine_cb)(const char* engine_id, const char* engine_name, const char* setting_path, void* user_data);
+#define CB_PARAMS_NAMES engine_id, engine_name, setting_path, user_data
+PROXY_GROUP_RETURN(tts_setting_supported_engine_cb, bool, const char* engine_id, const char* engine_name, const char* setting_path, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef bool (*tts_setting_supported_voice_cb)(const char* engine_id, const char* language, int voice_type, void* user_data);
+#define CB_PARAMS_NAMES engine_id, language, voice_type, user_data
+PROXY_GROUP_RETURN(tts_setting_supported_voice_cb, bool, const char* engine_id, const char* language, int voice_type, void* user_data)
+#undef CB_PARAMS_NAMES
+
+typedef void (*tts_setting_voice_changed_cb)(const char* language, int voice_type, bool auto_voice, void* user_data);
+#define CB_PARAMS_NAMES language, voice_type, auto_voice, user_data
+PROXY_GROUP_NON_BLOCKING(tts_setting_voice_changed_cb, const char* language, int voice_type, bool auto_voice, void* user_data)
+PROXY_GROUP_BLOCKING(tts_setting_voice_changed_cb, const char* language, int voice_type, bool auto_voice, void* user_data)
 #undef CB_PARAMS_NAMES
 
 typedef void (*tts_state_changed_cb)(void* tts, some_enum previous, some_enum current, void* user_data);
@@ -4962,8 +5002,6 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_data_control_sql_select_response_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_data_control_sql_update_response_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_data_control_sql_update_response_cb)
-  MULTI_PROXY_MAP_ENTRY(platform_blocking_detailed_changed_cb)
-  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_detailed_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_device_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_device_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_diagnostics_notification_cb)
@@ -5477,6 +5515,8 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_noti_ex_reporter_events_error_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_noti_ex_reporter_events_event_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_noti_ex_reporter_events_event_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_notification_detailed_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_notification_detailed_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_app_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_cert_info_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_dependency_info_cb)
@@ -5745,6 +5785,18 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_screen_reader_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_service_state_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_service_state_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_background_volume_ratio_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_setting_background_volume_ratio_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_engine_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_setting_engine_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_pitch_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_setting_pitch_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_speed_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_setting_speed_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_supported_engine_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_supported_voice_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_setting_voice_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_setting_voice_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_state_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_tts_state_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_tts_supported_personal_voice_cb)
@@ -5945,8 +5997,8 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
 };
 
 std::map<std::string, int> reserved_base_id_map = {
-  {"detailed_changed_cb", BASE_CALLBACK_ID_detailed_changed_cb},
   {"ml_data_destroy_cb", BASE_CALLBACK_ID_ml_data_destroy_cb},
+  {"notification_detailed_changed_cb", BASE_CALLBACK_ID_notification_detailed_changed_cb},
   {"stte_cancel_cb", BASE_CALLBACK_ID_stte_cancel_cb},
   {"stte_check_app_agreed_cb", BASE_CALLBACK_ID_stte_check_app_agreed_cb},
   {"stte_deinitialize_cb", BASE_CALLBACK_ID_stte_deinitialize_cb},

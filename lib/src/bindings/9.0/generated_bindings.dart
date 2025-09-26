@@ -7674,7 +7674,7 @@ class Tizen90Native {
           .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int notification_register_detailed_changed_cb(
-    detailed_changed_cb callback,
+    notification_detailed_changed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
     return _notification_register_detailed_changed_cb(
@@ -7685,14 +7685,16 @@ class Tizen90Native {
 
   late final _notification_register_detailed_changed_cbPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+              ffi.Int Function(
+                  notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
       'notification_register_detailed_changed_cb');
   late final _notification_register_detailed_changed_cb =
       _notification_register_detailed_changed_cbPtr.asFunction<
-          int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+          int Function(
+              notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   int notification_unregister_detailed_changed_cb(
-    detailed_changed_cb callback,
+    notification_detailed_changed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
     return _notification_unregister_detailed_changed_cb(
@@ -7703,11 +7705,13 @@ class Tizen90Native {
 
   late final _notification_unregister_detailed_changed_cbPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
+              ffi.Int Function(
+                  notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>>(
       'notification_unregister_detailed_changed_cb');
   late final _notification_unregister_detailed_changed_cb =
       _notification_unregister_detailed_changed_cbPtr.asFunction<
-          int Function(detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+          int Function(
+              notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
 
   int notification_clear(
     int type,
@@ -167901,10 +167905,8 @@ class Tizen90Native {
   /// @brief Gets the display name of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a display_name must be released using free().
-  /// @remarks Since 6.0, this function returns
-  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
-  /// @param[in] api_version The API version of the application to get privilege
-  /// information
+  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @param[in] api_version The API version of the application to get privilege information
   /// @param[in] privilege The privilege
   /// @param[out] display_name The display name of the privilege
   /// @return @c 0 on success,
@@ -167939,13 +167941,10 @@ class Tizen90Native {
   /// @brief Gets the display name of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a display_name must be released using free().
-  /// @remarks @a package_type must be one of followings:
-  /// "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
-  /// @remarks Since 6.0, this function returns
-  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @remarks @a package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
+  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
   /// @param[in] package_type The type of application package
-  /// @param[in] api_version The API version of the application to get privilege
-  /// information
+  /// @param[in] api_version The API version of the application to get privilege information
   /// @param[in] privilege The privilege
   /// @param[out] display_name The display name of the privilege
   /// @return @c 0 on success,
@@ -167982,10 +167981,8 @@ class Tizen90Native {
   /// @brief Gets the description of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a description must be released using free().
-  /// @remarks Since 6.0, this function returns
-  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
-  /// @param[in] api_version The API version of the application to get privilege
-  /// information
+  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @param[in] api_version The API version of the application to get privilege information
   /// @param[in] privilege The privilege
   /// @param[out] description The description of the privilege
   /// @return @c 0 on success,
@@ -168020,13 +168017,10 @@ class Tizen90Native {
   /// @brief Gets the description of the given privilege.
   /// @since_tizen 2.3
   /// @remarks @a description must be released using free().
-  /// @remarks @a package_type must be one of followings:
-  /// "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
-  /// @remarks Since 6.0, this function returns
-  /// #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
+  /// @remarks @a package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB"
+  /// @remarks Since 6.0, this function returns #PRVINFO_ERROR_NO_MATCHING_PRIVILEGE if the given @a privilege doesn't exist.
   /// @param[in] package_type The type of application package
-  /// @param[in] api_version The API version of the application to get privilege
-  /// information
+  /// @param[in] api_version The API version of the application to get privilege information
   /// @param[in]  privilege The privilege
   /// @param[out] description The description of the privilege
   /// @return @c 0 on success,
@@ -168061,15 +168055,12 @@ class Tizen90Native {
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// @deprecated Deprecated since 8.0.
-  /// @brief Gets the display name of the privacy group in which the given
-  /// privilege is included.
+  /// @brief Gets the display name of the privacy group in which the given privilege is included.
   /// @since_tizen 3.0
   /// @remarks @a privacy_name must be released using free().
-  /// @remarks @a privilege must be privacy related, otherwise
-  /// #PRVINFO_ERROR_INVALID_PARAMETER is returned.
+  /// @remarks @a privilege must be privacy related, otherwise #PRVINFO_ERROR_INVALID_PARAMETER is returned.
   /// @param[in] privilege The privilege
-  /// @param[out] privacy_name The privacy group's display name that the given
-  /// privilege is included in
+  /// @param[out] privacy_name The privacy group's display name that the given privilege is included in
   /// @return @c 0 on success,
   /// otherwise a negative error value
   /// @retval #PRVINFO_ERROR_NONE Successful
@@ -168097,26 +168088,15 @@ class Tizen90Native {
           int Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
-  /// @brief Gets the privilege information list of the given locale and
-  /// privileges.
-  /// @details If the given @a locale is not recognized, @a return_result is set to
-  /// #PRIVILEGE_CONSUMER_RETURN_CODE_UNKNOWN_LOCALE_CODE and the result in the @a
-  /// privilege_info_list is provided according to the current locale. If all of
-  /// the privileges in @a privilege_name_list are invalid then @a return_result is
-  /// set to #PRIVILEGE_CONSUMER_RETURN_CODE_INVALID_PARAMETER. Otherwise, @a
-  /// return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_SUCCESS. If some of
-  /// the privileges in @a privilege_name_list are invalid then corresponding
-  /// elements in the @a privilege_info_list will have the display_name and the
-  /// description set to an empty string.
+  /// @brief Gets the privilege information list of the given locale and privileges.
+  /// @details If the given @a locale is not recognized, @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_UNKNOWN_LOCALE_CODE and the result in the @a privilege_info_list is provided according to the current locale. If all of the privileges in @a privilege_name_list are invalid then @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_INVALID_PARAMETER. Otherwise, @a return_result is set to #PRIVILEGE_CONSUMER_RETURN_CODE_SUCCESS. If some of the privileges in @a privilege_name_list are invalid then corresponding elements in the @a privilege_info_list will have the display_name and the description set to an empty string.
   /// @since_tizen 5.5
   ///
-  /// @remarks You must destroy the newly created privilege_info_list by calling
-  /// privilege_info_free_privilege_info_list() if it is no longer needed.
+  /// @remarks You must destroy the newly created privilege_info_list by calling privilege_info_free_privilege_info_list() if it is no longer needed.
   ///
   /// @param[in] locale The locale information
   /// @param[in] privilege_name_list The privilege name list
-  /// @param[out] privilege_info_list The privilege information list of the given
-  /// locale and privileges
+  /// @param[out] privilege_info_list The privilege information list of the given locale and privileges
   /// @param[out] return_result The return code to be sent to consumer.
   ///
   /// @return 0 on success, otherwise a negative error value.
@@ -168154,8 +168134,7 @@ class Tizen90Native {
   /// @brief Destroys the privilege information list.
   /// @since_tizen 5.5
   ///
-  /// @remarks If @a privilege_info_list is NULL, no operation is performed and
-  /// #PRVINFO_ERROR_INVALID_PARAMETER will be returned.
+  /// @remarks If @a privilege_info_list is NULL, no operation is performed and #PRVINFO_ERROR_INVALID_PARAMETER will be returned.
   ///
   /// @param[in] privilege_info_list The privilege information list to destroy
   ///
@@ -200185,49 +200164,6 @@ class Tizen90Native {
   late final _ime_event_unset_input_hint_set_cb =
       _ime_event_unset_input_hint_set_cbPtr.asFunction<int Function()>();
 
-  /// @brief Sets the event callback function that is called when an associated
-  /// text input UI control sets the position align of the input panel.
-  ///
-  /// @since_tizen 9.0
-  ///
-  /// @privlevel public
-  ///
-  /// @privilege %http://tizen.org/privilege/ime
-  ///
-  /// @remarks The ime_position_align_set_cb() callback function is called when an
-  /// associated text input UI control sets the position align of the input panel.
-  ///
-  /// @param[in] callback_func ime_position_align_set_cb() event callback function
-  /// @param[in] user_data User data to be passed to the callback function
-  ///
-  /// @return 0 on success, otherwise a negative error value
-  /// @retval #IME_ERROR_NONE No error
-  /// @retval #IME_ERROR_PERMISSION_DENIED The application does not have the
-  /// privilege to call this function.
-  /// @retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
-  ///
-  /// @post The ime_run() function should be called to start the IME application's
-  /// main loop.
-  ///
-  /// @see ime_position_align_set_cb()
-  /// @see ime_run()
-  int ime_event_set_position_align_set_cb(
-    int callback_func,
-    ffi.Pointer<ffi.Void> user_data,
-  ) {
-    return _ime_event_set_position_align_set_cb(
-      callback_func,
-      user_data,
-    );
-  }
-
-  late final _ime_event_set_position_align_set_cbPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Void>)>>(
-      'ime_event_set_position_align_set_cb');
-  late final _ime_event_set_position_align_set_cb =
-      _ime_event_set_position_align_set_cbPtr
-          .asFunction<int Function(int, ffi.Pointer<ffi.Void>)>();
-
   /// @brief Unsets ime_position_align_set_cb() event callback function.
   ///
   /// @since_tizen 9.0
@@ -210058,6 +209994,766 @@ class Tizen90Native {
           int Function(tts_h, ffi.Pointer<ffi.Char>, tts_synthesis_parameter_h,
               ffi.Pointer<ffi.Int>)>();
 
+  /// @brief Initialize TTS setting.
+  ///
+  /// @remarks If the function succeeds, @a tts setting must be released with tts_setting_finalize().
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE TTS setting has Already been initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_finalize()
+  int tts_setting_initialize() {
+    return _tts_setting_initialize();
+  }
+
+  late final _tts_setting_initializePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('tts_setting_initialize');
+  late final _tts_setting_initialize =
+      _tts_setting_initializePtr.asFunction<int Function()>();
+
+  /// @brief finalize TTS setting.
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_initialize()
+  int tts_setting_finalize() {
+    return _tts_setting_finalize();
+  }
+
+  late final _tts_setting_finalizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('tts_setting_finalize');
+  late final _tts_setting_finalize =
+      _tts_setting_finalizePtr.asFunction<int Function()>();
+
+  /// @brief Retrieve supported engine informations using callback function.
+  ///
+  /// @param[in] callback Callback function
+  /// @param[in] user_data User data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @post	This function invokes tts_setting_supported_engine_cb() repeatedly for getting engine information.
+  ///
+  /// @see tts_setting_supported_engine_cb()
+  int tts_setting_foreach_supported_engines(
+    tts_setting_supported_engine_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_foreach_supported_engines(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_foreach_supported_enginesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_supported_engine_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_foreach_supported_engines');
+  late final _tts_setting_foreach_supported_engines =
+      _tts_setting_foreach_supported_enginesPtr.asFunction<
+          int Function(
+              tts_setting_supported_engine_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Get current engine id.
+  ///
+  /// @remark If the function is success, @a engine_id must be released with free() by you.
+  ///
+  /// @param[out] engine_id Engine id
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_OUT_OF_MEMORY Out of memory.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_engine()
+  int tts_setting_get_engine(
+    ffi.Pointer<ffi.Pointer<ffi.Char>> engine_id,
+  ) {
+    return _tts_setting_get_engine(
+      engine_id,
+    );
+  }
+
+  late final _tts_setting_get_enginePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('tts_setting_get_engine');
+  late final _tts_setting_get_engine = _tts_setting_get_enginePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// @brief Set current engine id.
+  ///
+  /// @param[in] engine_id Engine id
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_engine()
+  int tts_setting_set_engine(
+    ffi.Pointer<ffi.Char> engine_id,
+  ) {
+    return _tts_setting_set_engine(
+      engine_id,
+    );
+  }
+
+  late final _tts_setting_set_enginePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'tts_setting_set_engine');
+  late final _tts_setting_set_engine = _tts_setting_set_enginePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  /// @brief Get supported voices of current engine.
+  ///
+  /// @param[in] callback Callback function
+  /// @param[in] user_data User data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @post	This function invokes tts_setting_supported_voice_cb() repeatedly for getting supported voices.
+  ///
+  /// @see tts_setting_supported_voice_cb()
+  int tts_setting_foreach_supported_voices(
+    tts_setting_supported_voice_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_foreach_supported_voices(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_foreach_supported_voicesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_supported_voice_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_foreach_supported_voices');
+  late final _tts_setting_foreach_supported_voices =
+      _tts_setting_foreach_supported_voicesPtr.asFunction<
+          int Function(
+              tts_setting_supported_voice_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Get a default voice of current engine.
+  ///
+  /// @remark If the function is success, @a language must be released with free() by you.
+  ///
+  /// @param[out] language Default language
+  /// @param[out] voice_type Default voice type
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_OUT_OF_MEMORY Out of memory.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_voice()
+  int tts_setting_get_voice(
+    ffi.Pointer<ffi.Pointer<ffi.Char>> language,
+    ffi.Pointer<ffi.Int> voice_type,
+  ) {
+    return _tts_setting_get_voice(
+      language,
+      voice_type,
+    );
+  }
+
+  late final _tts_setting_get_voicePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Int>)>>('tts_setting_get_voice');
+  late final _tts_setting_get_voice = _tts_setting_get_voicePtr.asFunction<
+      int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Int>)>();
+
+  /// @brief Set a default voice of current engine.
+  ///
+  /// @param[in] language Default language
+  /// @param[in] voice_type Default voice type
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_INVALID_VOICE Invalid voice.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_voice()
+  int tts_setting_set_voice(
+    ffi.Pointer<ffi.Char> language,
+    int voice_type,
+  ) {
+    return _tts_setting_set_voice(
+      language,
+      voice_type,
+    );
+  }
+
+  late final _tts_setting_set_voicePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
+      'tts_setting_set_voice');
+  late final _tts_setting_set_voice = _tts_setting_set_voicePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+
+  /// @brief Get a automatic option of voice.
+  ///
+  /// @param[out] value Automatic option
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_auto_voice()
+  int tts_setting_get_auto_voice(
+    ffi.Pointer<ffi.Bool> value,
+  ) {
+    return _tts_setting_get_auto_voice(
+      value,
+    );
+  }
+
+  late final _tts_setting_get_auto_voicePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+          'tts_setting_get_auto_voice');
+  late final _tts_setting_get_auto_voice = _tts_setting_get_auto_voicePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+
+  /// @brief Set a automatic option of voice.
+  ///
+  /// @param[in] value Automatic option
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_auto_voice()
+  int tts_setting_set_auto_voice(
+    bool value,
+  ) {
+    return _tts_setting_set_auto_voice(
+      value,
+    );
+  }
+
+  late final _tts_setting_set_auto_voicePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+          'tts_setting_set_auto_voice');
+  late final _tts_setting_set_auto_voice =
+      _tts_setting_set_auto_voicePtr.asFunction<int Function(bool)>();
+
+  /// @brief Gets the speed range.
+  ///
+  /// @param[out] min The minimum speed value
+  /// @param[out] normal The normal speed value
+  /// @param[out] max The maximum speed value
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_speed()
+  /// @see tts_setting_set_speed()
+  int tts_setting_get_speed_range(
+    ffi.Pointer<ffi.Int> min,
+    ffi.Pointer<ffi.Int> normal,
+    ffi.Pointer<ffi.Int> max,
+  ) {
+    return _tts_setting_get_speed_range(
+      min,
+      normal,
+      max,
+    );
+  }
+
+  late final _tts_setting_get_speed_rangePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>>('tts_setting_get_speed_range');
+  late final _tts_setting_get_speed_range =
+      _tts_setting_get_speed_rangePtr.asFunction<
+          int Function(ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>();
+
+  /// @brief Get default speed.
+  ///
+  /// @param[out] speed Default voice speed
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_speed_range()
+  /// @see tts_setting_set_speed()
+  int tts_setting_get_speed(
+    ffi.Pointer<ffi.Int> speed,
+  ) {
+    return _tts_setting_get_speed(
+      speed,
+    );
+  }
+
+  late final _tts_setting_get_speedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
+          'tts_setting_get_speed');
+  late final _tts_setting_get_speed = _tts_setting_get_speedPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Int>)>();
+
+  /// @brief Set default speed.
+  ///
+  /// @param[in] speed Default voice speed
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_speed_range()
+  /// @see tts_setting_get_speed()
+  int tts_setting_set_speed(
+    int speed,
+  ) {
+    return _tts_setting_set_speed(
+      speed,
+    );
+  }
+
+  late final _tts_setting_set_speedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'tts_setting_set_speed');
+  late final _tts_setting_set_speed =
+      _tts_setting_set_speedPtr.asFunction<int Function(int)>();
+
+  /// @brief Gets the pitch range.
+  ///
+  /// @param[out] min The minimum pitch value
+  /// @param[out] normal The normal pitch value
+  /// @param[out] max The maximum pitch value
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_pitch()
+  /// @see tts_setting_set_pitch()
+  int tts_setting_get_pitch_range(
+    ffi.Pointer<ffi.Int> min,
+    ffi.Pointer<ffi.Int> normal,
+    ffi.Pointer<ffi.Int> max,
+  ) {
+    return _tts_setting_get_pitch_range(
+      min,
+      normal,
+      max,
+    );
+  }
+
+  late final _tts_setting_get_pitch_rangePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>>('tts_setting_get_pitch_range');
+  late final _tts_setting_get_pitch_range =
+      _tts_setting_get_pitch_rangePtr.asFunction<
+          int Function(ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>();
+
+  /// @brief Set a default pitch.
+  ///
+  /// @param[out] pitch Default voice pitch
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_pitch_range()
+  /// @see tts_setting_set_pitch()
+  int tts_setting_get_pitch(
+    ffi.Pointer<ffi.Int> pitch,
+  ) {
+    return _tts_setting_get_pitch(
+      pitch,
+    );
+  }
+
+  late final _tts_setting_get_pitchPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
+          'tts_setting_get_pitch');
+  late final _tts_setting_get_pitch = _tts_setting_get_pitchPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Int>)>();
+
+  /// @brief Set a default pitch.
+  ///
+  /// @param[in] pitch Default voice pitch
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_pitch_range()
+  /// @see tts_setting_get_pitch()
+  int tts_setting_set_pitch(
+    int pitch,
+  ) {
+    return _tts_setting_set_pitch(
+      pitch,
+    );
+  }
+
+  late final _tts_setting_set_pitchPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'tts_setting_set_pitch');
+  late final _tts_setting_set_pitch =
+      _tts_setting_set_pitchPtr.asFunction<int Function(int)>();
+
+  /// @brief Gets a current background volume ratio.
+  ///
+  /// @param[out] ratio Current background volume ratio
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_background_volume_ratio()
+  int tts_setting_get_background_volume_ratio(
+    ffi.Pointer<ffi.Double> ratio,
+  ) {
+    return _tts_setting_get_background_volume_ratio(
+      ratio,
+    );
+  }
+
+  late final _tts_setting_get_background_volume_ratioPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Double>)>>(
+          'tts_setting_get_background_volume_ratio');
+  late final _tts_setting_get_background_volume_ratio =
+      _tts_setting_get_background_volume_ratioPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Double>)>();
+
+  /// @brief Sets a current background volume ratio.
+  ///
+  /// @param[in] ratio Current background volume ratio (Range 0.0 ~ 1.0)
+  ///
+  /// @return 0 on success, otherwise a negative error value.
+  /// @retval #TTS_SETTING_ERROR_NONE Success.
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter.
+  /// @retval #TTS_SETTING_ERROR_INVALID_STATE Not initialized.
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Operation failure.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_get_background_volume_ratio()
+  int tts_setting_set_background_volume_ratio(
+    double ratio,
+  ) {
+    return _tts_setting_set_background_volume_ratio(
+      ratio,
+    );
+  }
+
+  late final _tts_setting_set_background_volume_ratioPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Double)>>(
+          'tts_setting_set_background_volume_ratio');
+  late final _tts_setting_set_background_volume_ratio =
+      _tts_setting_set_background_volume_ratioPtr
+          .asFunction<int Function(double)>();
+
+  /// @brief Registers a callback function to be called when engine information is changed
+  ///
+  /// @param[in] callback The callback function to register
+  /// @param[in] user_data The user data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_engine_changed_cb()
+  /// @see tts_setting_unset_engine_changed_cb()
+  int tts_setting_set_engine_changed_cb(
+    tts_setting_engine_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_set_engine_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_set_engine_changed_cbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_engine_changed_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_set_engine_changed_cb');
+  late final _tts_setting_set_engine_changed_cb =
+      _tts_setting_set_engine_changed_cbPtr.asFunction<
+          int Function(tts_setting_engine_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Unregisters the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_engine_changed_cb()
+  int tts_setting_unset_engine_changed_cb() {
+    return _tts_setting_unset_engine_changed_cb();
+  }
+
+  late final _tts_setting_unset_engine_changed_cbPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'tts_setting_unset_engine_changed_cb');
+  late final _tts_setting_unset_engine_changed_cb =
+      _tts_setting_unset_engine_changed_cbPtr.asFunction<int Function()>();
+
+  /// @brief Registers a callback function to be called when default voice is changed
+  ///
+  /// @param[in] callback The callback function to register
+  /// @param[in] user_data The user data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_voice_changed_cb()
+  /// @see tts_setting_unset_voice_changed_cb()
+  int tts_setting_set_voice_changed_cb(
+    tts_setting_voice_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_set_voice_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_set_voice_changed_cbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_voice_changed_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_set_voice_changed_cb');
+  late final _tts_setting_set_voice_changed_cb =
+      _tts_setting_set_voice_changed_cbPtr.asFunction<
+          int Function(tts_setting_voice_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Unregisters the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_voice_changed_cb()
+  int tts_setting_unset_voice_changed_cb() {
+    return _tts_setting_unset_voice_changed_cb();
+  }
+
+  late final _tts_setting_unset_voice_changed_cbPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'tts_setting_unset_voice_changed_cb');
+  late final _tts_setting_unset_voice_changed_cb =
+      _tts_setting_unset_voice_changed_cbPtr.asFunction<int Function()>();
+
+  /// @brief Registers a callback function to be called when default speed is changed
+  ///
+  /// @param[in] callback The callback function to register
+  /// @param[in] user_data The user data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_speed_changed_cb()
+  /// @see tts_setting_unset_speed_changed_cb()
+  int tts_setting_set_speed_changed_cb(
+    tts_setting_speed_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_set_speed_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_set_speed_changed_cbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_speed_changed_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_set_speed_changed_cb');
+  late final _tts_setting_set_speed_changed_cb =
+      _tts_setting_set_speed_changed_cbPtr.asFunction<
+          int Function(tts_setting_speed_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Unregisters the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_speed_changed_cb()
+  int tts_setting_unset_speed_changed_cb() {
+    return _tts_setting_unset_speed_changed_cb();
+  }
+
+  late final _tts_setting_unset_speed_changed_cbPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'tts_setting_unset_speed_changed_cb');
+  late final _tts_setting_unset_speed_changed_cb =
+      _tts_setting_unset_speed_changed_cbPtr.asFunction<int Function()>();
+
+  /// @brief Registers a callback function to be called when default pitch is changed
+  ///
+  /// @param[in] callback The callback function to register
+  /// @param[in] user_data The user data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_pitch_changed_cb()
+  /// @see tts_setting_unset_pitch_changed_cb()
+  int tts_setting_set_pitch_changed_cb(
+    tts_setting_pitch_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_set_pitch_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_set_pitch_changed_cbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(tts_setting_pitch_changed_cb,
+              ffi.Pointer<ffi.Void>)>>('tts_setting_set_pitch_changed_cb');
+  late final _tts_setting_set_pitch_changed_cb =
+      _tts_setting_set_pitch_changed_cbPtr.asFunction<
+          int Function(tts_setting_pitch_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Unregisters the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_pitch_changed_cb()
+  int tts_setting_unset_pitch_changed_cb() {
+    return _tts_setting_unset_pitch_changed_cb();
+  }
+
+  late final _tts_setting_unset_pitch_changed_cbPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'tts_setting_unset_pitch_changed_cb');
+  late final _tts_setting_unset_pitch_changed_cb =
+      _tts_setting_unset_pitch_changed_cbPtr.asFunction<int Function()>();
+
+  /// @brief Sets a callback function to be called when current background volume is changed
+  ///
+  /// @param[in] callback The callback function to register
+  /// @param[in] user_data The user data to be passed to the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_INVALID_PARAMETER Invalid parameter
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_background_volume_ratio_changed_cb()
+  /// @see tts_setting_unset_background_volume_ratio_changed_cb()
+  int tts_setting_set_background_volume_ratio_changed_cb(
+    tts_setting_background_volume_ratio_changed_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _tts_setting_set_background_volume_ratio_changed_cb(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _tts_setting_set_background_volume_ratio_changed_cbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(tts_setting_background_volume_ratio_changed_cb,
+                  ffi.Pointer<ffi.Void>)>>(
+      'tts_setting_set_background_volume_ratio_changed_cb');
+  late final _tts_setting_set_background_volume_ratio_changed_cb =
+      _tts_setting_set_background_volume_ratio_changed_cbPtr.asFunction<
+          int Function(tts_setting_background_volume_ratio_changed_cb,
+              ffi.Pointer<ffi.Void>)>();
+
+  /// @brief Unsets the callback function
+  ///
+  /// @return 0 on success, otherwise a negative error value
+  /// @retval #TTS_SETTING_ERROR_NONE Successful
+  /// @retval #TTS_SETTING_ERROR_OPERATION_FAILED Invalid state
+  /// @retval #TTS_SETTING_ERROR_NOT_SUPPORTED TTS NOT supported
+  ///
+  /// @see tts_setting_set_background_volume_ratio_changed_cb()
+  int tts_setting_unset_background_volume_ratio_changed_cb() {
+    return _tts_setting_unset_background_volume_ratio_changed_cb();
+  }
+
+  late final _tts_setting_unset_background_volume_ratio_changed_cbPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'tts_setting_unset_background_volume_ratio_changed_cb');
+  late final _tts_setting_unset_background_volume_ratio_changed_cb =
+      _tts_setting_unset_background_volume_ratio_changed_cbPtr
+          .asFunction<int Function()>();
+
   /// @brief Main function for Text-To-Speech (TTS) engine.
   /// @details This function is the main function for operating TTS engine.
   /// @since_tizen 3.0
@@ -216843,14 +217539,14 @@ abstract class notification_block_state {
 
 /// @addtogroup NOTIFICATION_MODULE
 /// @{
-typedef detailed_changed_cb
-    = ffi.Pointer<ffi.NativeFunction<detailed_changed_cbFunction>>;
-typedef detailed_changed_cbFunction = ffi.Void Function(
+typedef notification_detailed_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<notification_detailed_changed_cbFunction>>;
+typedef notification_detailed_changed_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Void> data,
     ffi.Int32 type,
     ffi.Pointer<notification_op> op_list,
     ffi.Int num_op);
-typedef Dartdetailed_changed_cbFunction = void Function(
+typedef Dartnotification_detailed_changed_cbFunction = void Function(
     ffi.Pointer<ffi.Void> data,
     int type,
     ffi.Pointer<notification_op> op_list,
@@ -216861,9 +217557,11 @@ typedef Dartdetailed_changed_cbFunction = void Function(
 typedef notification_op = _notification_op;
 
 final class _notification_list extends ffi.Struct {
-  external notification_list_h prev;
+  @ffi.Int()
+  external int prev;
 
-  external notification_list_h next;
+  @ffi.Int()
+  external int next;
 
   external notification_h noti;
 }
@@ -246135,6 +246833,8 @@ typedef Dartppm_request_multiple_response_cbFunction = void Function(
 abstract class privilege_info_error_e {
   /// < Successful
   static const int PRVINFO_ERROR_NONE = 0;
+
+  /// < Invalid function parameter
   static const int PRVINFO_ERROR_INVALID_PARAMETER = -22;
 
   /// < Out of memory
@@ -246142,7 +246842,11 @@ abstract class privilege_info_error_e {
 
   /// < Unknown error
   static const int PRVINFO_ERROR_INTERNAL_ERROR = -1073741824;
+
+  /// < @deprecated Not supported (Deprecated since 8.0)
   static const int PRVINFO_ERROR_NOT_SUPPORTED = -1073741822;
+
+  /// < No matched privilege (Since 6.0)
   static const int PRVINFO_ERROR_NO_MATCHING_PRIVILEGE = -31588351;
 }
 
@@ -262584,6 +263288,180 @@ typedef Darttts_synthesized_pcm_cbFunction = void Function(
 /// @since_tizen 9.0
 typedef tts_synthesis_parameter_h = ffi.Pointer<tts_synthesis_parameter_s>;
 
+/// @brief Enumerations of error codes.
+abstract class tts_setting_error_e {
+  /// < Success, No error
+  static const int TTS_SETTING_ERROR_NONE = 0;
+
+  /// < Out of Memory
+  static const int TTS_SETTING_ERROR_OUT_OF_MEMORY = -12;
+
+  /// < I/O error
+  static const int TTS_SETTING_ERROR_IO_ERROR = -5;
+
+  /// < Invalid parameter
+  static const int TTS_SETTING_ERROR_INVALID_PARAMETER = -22;
+
+  /// < Permission denied
+  static const int TTS_SETTING_ERROR_PERMISSION_DENIED = -13;
+
+  /// < TTS is NOT supported
+  static const int TTS_SETTING_ERROR_NOT_SUPPORTED = -1073741822;
+
+  /// < Invalid state
+  static const int TTS_SETTING_ERROR_INVALID_STATE = -49348607;
+
+  /// < Invalid voice
+  static const int TTS_SETTING_ERROR_INVALID_VOICE = -49348606;
+
+  /// < No available TTS-engine
+  static const int TTS_SETTING_ERROR_ENGINE_NOT_FOUND = -49348605;
+
+  /// < Operation failed
+  static const int TTS_SETTING_ERROR_OPERATION_FAILED = -49348604;
+
+  /// < Not supported feature of current engine
+  static const int TTS_SETTING_ERROR_NOT_SUPPORTED_FEATURE = -49348602;
+}
+
+/// @brief Called to get a engine information.
+///
+/// @param[in] engine_id Engine id.
+/// @param[in] engine_name Engine name.
+/// @param[in] setting_path Gadget path of engine specific setting.
+/// @param[in] user_data User data passed from the tts_setting_foreach_supported_engines().
+///
+/// @return @c true to continue with the next iteration of the loop, \n @c false to break out of the loop.
+/// @pre tts_setting_foreach_supported_engines() will invoke this callback.
+///
+/// @see tts_setting_foreach_supported_engines()
+typedef tts_setting_supported_engine_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_supported_engine_cbFunction>>;
+typedef tts_setting_supported_engine_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_supported_engine_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called to get a voice.
+///
+/// @param[in] engine_id Engine id
+/// @param[in] language A language is specified as an ISO 3166 alpha-2 two letter country-code \n
+/// followed by ISO 639-1 for the two-letter language code.
+/// For example, "ko_KR" for Korean, "en_US" for American English..
+/// @param[in] voice_type Voice type
+/// @param[in] user_data User data passed from the tts_setting_foreach_supported_voices()
+///
+/// @return @c true to continue with the next iteration of the loop, \n @c false to break out of the loop.
+/// @pre tts_setting_foreach_supported_voices() will invoke this callback.
+///
+/// @see tts_setting_foreach_supported_voices()
+typedef tts_setting_supported_voice_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_supported_voice_cbFunction>>;
+typedef tts_setting_supported_voice_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    ffi.Int voice_type,
+    ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_supported_voice_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    int voice_type,
+    ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called when the default engine is changed.
+///
+/// @param[in] engine_id Engine id
+/// @param[in] user_data The user data passed from the callback registration function
+///
+/// @pre An application registers this callback using tts_setting_set_engine_changed_cb().
+///
+/// @see tts_setting_set_engine_changed_cb()
+/// @see tts_setting_unset_engine_changed_cb()
+typedef tts_setting_engine_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_engine_changed_cbFunction>>;
+typedef tts_setting_engine_changed_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Char> engine_id, ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_engine_changed_cbFunction = void Function(
+    ffi.Pointer<ffi.Char> engine_id, ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called when the default voice is changed.
+///
+/// @param[in] language A language
+/// @param[in] voice_type Voice type
+/// @param[in] auto_voice Auto voice
+/// @param[in] user_data The user data passed from the callback registration function
+///
+/// @pre An application registers this callback using registration function.
+///
+/// @see tts_setting_set_voice_changed_cb()
+/// @see tts_setting_unset_voice_changed_cb()
+typedef tts_setting_voice_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_voice_changed_cbFunction>>;
+typedef tts_setting_voice_changed_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Char> language,
+    ffi.Int voice_type,
+    ffi.Bool auto_voice,
+    ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_voice_changed_cbFunction = void Function(
+    ffi.Pointer<ffi.Char> language,
+    int voice_type,
+    bool auto_voice,
+    ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called when the default speed is changed.
+///
+/// @param[in] speed Default speed
+/// @param[in] user_data The user data passed from the callback registration function
+///
+/// @pre An application registers this callback using registration function.
+///
+/// @see tts_setting_set_speed_changed_cb()
+/// @see tts_setting_unset_speed_changed_cb()
+typedef tts_setting_speed_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_speed_changed_cbFunction>>;
+typedef tts_setting_speed_changed_cbFunction = ffi.Void Function(
+    ffi.Int speed, ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_speed_changed_cbFunction = void Function(
+    int speed, ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called when the default pitch is changed.
+///
+/// @param[in] pitch Default pitch
+/// @param[in] user_data The user data passed from the callback registration function
+///
+/// @pre An application registers this callback using registration function.
+///
+/// @see tts_setting_set_pitch_changed_cb()
+/// @see tts_setting_unset_pitch_changed_cb()
+typedef tts_setting_pitch_changed_cb
+    = ffi.Pointer<ffi.NativeFunction<tts_setting_pitch_changed_cbFunction>>;
+typedef tts_setting_pitch_changed_cbFunction = ffi.Void Function(
+    ffi.Int pitch, ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_pitch_changed_cbFunction = void Function(
+    int pitch, ffi.Pointer<ffi.Void> user_data);
+
+/// @brief Called when the current background volume ratio is changed.
+///
+/// @param[in] ratio Current background volume ratio
+/// @param[in] user_data The user data passed from the callback registration function
+///
+/// @pre An application registers this callback using registration function.
+///
+/// @see tts_setting_set_background_volume_ratio_changed_cb()
+/// @see tts_setting_unset_background_volume_ratio_changed_cb()
+typedef tts_setting_background_volume_ratio_changed_cb = ffi.Pointer<
+    ffi.NativeFunction<tts_setting_background_volume_ratio_changed_cbFunction>>;
+typedef tts_setting_background_volume_ratio_changed_cbFunction = ffi.Void
+    Function(ffi.Double ratio, ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_setting_background_volume_ratio_changed_cbFunction = void
+    Function(double ratio, ffi.Pointer<ffi.Void> user_data);
+
 /// @brief Enumeration for error codes.
 /// @since_tizen 3.0
 abstract class ttse_error_e {
@@ -266013,6 +266891,12 @@ const int TTS_VOICE_TYPE_FEMALE = 2;
 const int TTS_VOICE_TYPE_CHILD = 3;
 
 const int TTS_VOICE_TYPE_PERSONAL = 4;
+
+const int TTS_SETTING_VOICE_TYPE_MALE = 1;
+
+const int TTS_SETTING_VOICE_TYPE_FEMALE = 2;
+
+const int TTS_SETTING_VOICE_TYPE_CHILD = 3;
 
 const int TTSE_VOICE_TYPE_MALE = 1;
 

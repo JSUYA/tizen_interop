@@ -94,6 +94,8 @@ headers:
     - "**/web/*.h"
     - "**/wifi-direct/*.h"
     - "**/yaca/*.h"
+    # Additional
+    - "**/tts_setting.h"
 
 compiler-opts:
   - "-m32"
