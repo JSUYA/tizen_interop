@@ -7727,6 +7727,26 @@ class Tizen90Native {
   late final _notification_clear =
       _notification_clearPtr.asFunction<int Function(int)>();
 
+  int notification_status_monitor_message_cb_set(
+    notification_status_message_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_status_monitor_message_cb_set(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_status_monitor_message_cb_setPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  notification_status_message_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_status_monitor_message_cb_set');
+  late final _notification_status_monitor_message_cb_set =
+      _notification_status_monitor_message_cb_setPtr.asFunction<
+          int Function(
+              notification_status_message_cb, ffi.Pointer<ffi.Void>)>();
+
   int notification_get_list(
     int type,
     int count,
@@ -217978,6 +217998,12 @@ typedef Dartnotification_detailed_changed_cbFunction = void Function(
 /// @brief The structure for notification operation.
 /// @since_tizen 2.3
 typedef notification_op = _notification_op;
+typedef notification_status_message_cb
+    = ffi.Pointer<ffi.NativeFunction<notification_status_message_cbFunction>>;
+typedef notification_status_message_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Char> message, ffi.Pointer<ffi.Void> data);
+typedef Dartnotification_status_message_cbFunction = void Function(
+    ffi.Pointer<ffi.Char> message, ffi.Pointer<ffi.Void> data);
 
 final class _notification_list extends ffi.Struct {
   @ffi.Int()

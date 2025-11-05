@@ -8,7 +8,7 @@
 #include "types.h"
 
 static_assert(kProxyInstanceCount == 5, "Callbacks instances count mismatch");
-static constexpr int32_t kNoUserDataCallbackCount = 54;
+static constexpr int32_t kNoUserDataCallbackCount = 55;
 
 uint32_t reserved_callback_ids[kProxyInstanceCount * kNoUserDataCallbackCount] = {};
 
@@ -2919,6 +2919,13 @@ PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(notification_detailed_changed_cb, void* da
 PROXY_GROUP_BLOCKING_NO_USER_DATA(notification_detailed_changed_cb, void* data, some_enum type, void* op_list, int num_op)
 #undef CB_PARAMS_NAMES
 
+#define BASE_CALLBACK_ID_notification_status_message_cb 10
+typedef void (*notification_status_message_cb)(const char* message, void* data);
+#define CB_PARAMS_NAMES message, data
+PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(notification_status_message_cb, const char* message, void* data)
+PROXY_GROUP_BLOCKING_NO_USER_DATA(notification_status_message_cb, const char* message, void* data)
+#undef CB_PARAMS_NAMES
+
 typedef bool (*package_info_app_cb)(some_enum comp_type, const char* app_id, void* user_data);
 #define CB_PARAMS_NAMES comp_type, app_id, user_data
 PROXY_GROUP_RETURN(package_info_app_cb, bool, some_enum comp_type, const char* app_id, void* user_data)
@@ -3667,17 +3674,17 @@ typedef int (*stte_audio_type_cb)(const char* audio_type, void* user_data);
 PROXY_GROUP_RETURN(stte_audio_type_cb, int, const char* audio_type, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_cancel_cb 10
+#define BASE_CALLBACK_ID_stte_cancel_cb 15
 typedef int (*stte_cancel_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_cancel_cb, int)
 
-#define BASE_CALLBACK_ID_stte_check_app_agreed_cb 15
+#define BASE_CALLBACK_ID_stte_check_app_agreed_cb 20
 typedef int (*stte_check_app_agreed_cb)(const char* appid, bool* is_agreed);
 #define CB_PARAMS_NAMES appid, is_agreed
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_check_app_agreed_cb, int, const char* appid, bool* is_agreed)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_deinitialize_cb 20
+#define BASE_CALLBACK_ID_stte_deinitialize_cb 25
 typedef int (*stte_deinitialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_deinitialize_cb, int)
 
@@ -3691,39 +3698,39 @@ typedef int (*stte_foreach_supported_langs_cb)(void* callback, void* user_data);
 PROXY_GROUP_RETURN(stte_foreach_supported_langs_cb, int, void* callback, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_get_info_cb 25
+#define BASE_CALLBACK_ID_stte_get_info_cb 30
 typedef int (*stte_get_info_cb)(char** engine_uuid, char** engine_name, char** engine_setting, bool* use_network);
 #define CB_PARAMS_NAMES engine_uuid, engine_name, engine_setting, use_network
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_get_info_cb, int, char** engine_uuid, char** engine_name, char** engine_setting, bool* use_network)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_get_recording_format_cb 30
+#define BASE_CALLBACK_ID_stte_get_recording_format_cb 35
 typedef int (*stte_get_recording_format_cb)(void* types, int* rate, int* channels);
 #define CB_PARAMS_NAMES types, rate, channels
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_get_recording_format_cb, int, void* types, int* rate, int* channels)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_initialize_cb 35
+#define BASE_CALLBACK_ID_stte_initialize_cb 40
 typedef int (*stte_initialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_initialize_cb, int)
 
-#define BASE_CALLBACK_ID_stte_is_valid_language_cb 40
+#define BASE_CALLBACK_ID_stte_is_valid_language_cb 45
 typedef int (*stte_is_valid_language_cb)(const char* language, bool* is_valid);
 #define CB_PARAMS_NAMES language, is_valid
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_is_valid_language_cb, int, const char* language, bool* is_valid)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_need_app_credential_cb 45
+#define BASE_CALLBACK_ID_stte_need_app_credential_cb 50
 typedef bool (*stte_need_app_credential_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_need_app_credential_cb, bool)
 
-#define BASE_CALLBACK_ID_stte_private_data_requested_cb 50
+#define BASE_CALLBACK_ID_stte_private_data_requested_cb 55
 typedef int (*stte_private_data_requested_cb)(const char* key, char** data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_private_data_requested_cb, int, const char* key, char** data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_private_data_set_cb 55
+#define BASE_CALLBACK_ID_stte_private_data_set_cb 60
 typedef int (*stte_private_data_set_cb)(const char* key, const char* data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_private_data_set_cb, int, const char* key, const char* data)
@@ -3734,13 +3741,13 @@ typedef bool (*stte_result_time_cb)(int index, some_enum event, const char* text
 PROXY_GROUP_RETURN(stte_result_time_cb, bool, int index, some_enum event, const char* text, long start_time, long end_time, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_set_recording_data_cb 60
+#define BASE_CALLBACK_ID_stte_set_recording_data_cb 65
 typedef int (*stte_set_recording_data_cb)(const void* data, unsigned int length);
 #define CB_PARAMS_NAMES data, length
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_set_recording_data_cb, int, const void* data, unsigned int length)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_set_silence_detection_cb 65
+#define BASE_CALLBACK_ID_stte_set_silence_detection_cb 70
 typedef int (*stte_set_silence_detection_cb)(bool is_set);
 #define CB_PARAMS_NAMES is_set
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_set_silence_detection_cb, int, bool is_set)
@@ -3751,17 +3758,17 @@ typedef int (*stte_start_cb)(const char* language, const char* type, const char*
 PROXY_GROUP_RETURN(stte_start_cb, int, const char* language, const char* type, const char* appid, const char* credential, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_stop_cb 70
+#define BASE_CALLBACK_ID_stte_stop_cb 75
 typedef int (*stte_stop_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_stop_cb, int)
 
-#define BASE_CALLBACK_ID_stte_support_recognition_type_cb 75
+#define BASE_CALLBACK_ID_stte_support_recognition_type_cb 80
 typedef int (*stte_support_recognition_type_cb)(const char* type, bool* is_supported);
 #define CB_PARAMS_NAMES type, is_supported
 PROXY_GROUP_RETURN_NO_USER_DATA(stte_support_recognition_type_cb, int, const char* type, bool* is_supported)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_stte_support_silence_detection_cb 80
+#define BASE_CALLBACK_ID_stte_support_silence_detection_cb 85
 typedef bool (*stte_support_silence_detection_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(stte_support_silence_detection_cb, bool)
 
@@ -3770,14 +3777,14 @@ typedef bool (*stte_supported_language_cb)(const char* language, void* user_data
 PROXY_GROUP_RETURN(stte_supported_language_cb, bool, const char* language, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_sync_adapter_cancel_sync_cb 85
+#define BASE_CALLBACK_ID_sync_adapter_cancel_sync_cb 90
 typedef void (*sync_adapter_cancel_sync_cb)(void* account, const char* sync_job_name, const char* sync_capability, void* sync_job_user_data);
 #define CB_PARAMS_NAMES account, sync_job_name, sync_capability, sync_job_user_data
 PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(sync_adapter_cancel_sync_cb, void* account, const char* sync_job_name, const char* sync_capability, void* sync_job_user_data)
 PROXY_GROUP_BLOCKING_NO_USER_DATA(sync_adapter_cancel_sync_cb, void* account, const char* sync_job_name, const char* sync_capability, void* sync_job_user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_sync_adapter_start_sync_cb 90
+#define BASE_CALLBACK_ID_sync_adapter_start_sync_cb 95
 typedef bool (*sync_adapter_start_sync_cb)(void* account, const char* sync_job_name, const char* sync_capability, void* sync_job_user_data);
 #define CB_PARAMS_NAMES account, sync_job_name, sync_capability, sync_job_user_data
 PROXY_GROUP_RETURN_NO_USER_DATA(sync_adapter_start_sync_cb, bool, void* account, const char* sync_job_name, const char* sync_capability, void* sync_job_user_data)
@@ -3952,24 +3959,24 @@ PROXY_GROUP_NON_BLOCKING(tts_utterance_started_cb, void* tts, int utt_id, void* 
 PROXY_GROUP_BLOCKING(tts_utterance_started_cb, void* tts, int utt_id, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_activated_mode_changed_cb 95
+#define BASE_CALLBACK_ID_ttse_activated_mode_changed_cb 100
 typedef void (*ttse_activated_mode_changed_cb)(int activated_mode);
 #define CB_PARAMS_NAMES activated_mode
 PROXY_GROUP_NON_BLOCKING_NO_USER_DATA(ttse_activated_mode_changed_cb, int activated_mode)
 PROXY_GROUP_BLOCKING_NO_USER_DATA(ttse_activated_mode_changed_cb, int activated_mode)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_cancel_synthesis_cb 100
+#define BASE_CALLBACK_ID_ttse_cancel_synthesis_cb 105
 typedef int (*ttse_cancel_synthesis_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(ttse_cancel_synthesis_cb, int)
 
-#define BASE_CALLBACK_ID_ttse_check_app_agreed_cb 105
+#define BASE_CALLBACK_ID_ttse_check_app_agreed_cb 110
 typedef int (*ttse_check_app_agreed_cb)(const char* appid, bool* is_agreed);
 #define CB_PARAMS_NAMES appid, is_agreed
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_check_app_agreed_cb, int, const char* appid, bool* is_agreed)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_deinitialize_cb 110
+#define BASE_CALLBACK_ID_ttse_deinitialize_cb 115
 typedef int (*ttse_deinitialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(ttse_deinitialize_cb, int)
 
@@ -3978,29 +3985,29 @@ typedef int (*ttse_foreach_supported_voices_cb)(void* callback, void* user_data)
 PROXY_GROUP_RETURN(ttse_foreach_supported_voices_cb, int, void* callback, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_get_info_cb 115
+#define BASE_CALLBACK_ID_ttse_get_info_cb 120
 typedef int (*ttse_get_info_cb)(char** engine_uuid, char** engine_name, char** engine_setting, bool* use_network);
 #define CB_PARAMS_NAMES engine_uuid, engine_name, engine_setting, use_network
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_get_info_cb, int, char** engine_uuid, char** engine_name, char** engine_setting, bool* use_network)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_initialize_cb 120
+#define BASE_CALLBACK_ID_ttse_initialize_cb 125
 typedef int (*ttse_initialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(ttse_initialize_cb, int)
 
-#define BASE_CALLBACK_ID_ttse_is_valid_voice_cb 125
+#define BASE_CALLBACK_ID_ttse_is_valid_voice_cb 130
 typedef int (*ttse_is_valid_voice_cb)(const char* language, int type, bool* is_valid);
 #define CB_PARAMS_NAMES language, type, is_valid
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_is_valid_voice_cb, int, const char* language, int type, bool* is_valid)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_load_voice_cb 130
+#define BASE_CALLBACK_ID_ttse_load_voice_cb 135
 typedef int (*ttse_load_voice_cb)(const char* language, int type);
 #define CB_PARAMS_NAMES language, type
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_load_voice_cb, int, const char* language, int type)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_need_app_credential_cb 135
+#define BASE_CALLBACK_ID_ttse_need_app_credential_cb 140
 typedef bool (*ttse_need_app_credential_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(ttse_need_app_credential_cb, bool)
 
@@ -4009,19 +4016,19 @@ typedef int (*ttse_personal_tts_id_set_cb)(const char* ptts_id, void* user_data)
 PROXY_GROUP_RETURN(ttse_personal_tts_id_set_cb, int, const char* ptts_id, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_private_data_requested_cb 140
+#define BASE_CALLBACK_ID_ttse_private_data_requested_cb 145
 typedef int (*ttse_private_data_requested_cb)(const char* key, char** data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_private_data_requested_cb, int, const char* key, char** data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_private_data_set_cb 145
+#define BASE_CALLBACK_ID_ttse_private_data_set_cb 150
 typedef int (*ttse_private_data_set_cb)(const char* key, const char* data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_private_data_set_cb, int, const char* key, const char* data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_set_pitch_cb 150
+#define BASE_CALLBACK_ID_ttse_set_pitch_cb 155
 typedef int (*ttse_set_pitch_cb)(int pitch);
 #define CB_PARAMS_NAMES pitch
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_set_pitch_cb, int, int pitch)
@@ -4037,7 +4044,7 @@ typedef bool (*ttse_supported_voice_cb)(const char* language, int type, void* us
 PROXY_GROUP_RETURN(ttse_supported_voice_cb, bool, const char* language, int type, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_ttse_unload_voice_cb 155
+#define BASE_CALLBACK_ID_ttse_unload_voice_cb 160
 typedef int (*ttse_unload_voice_cb)(const char* language, int type);
 #define CB_PARAMS_NAMES language, type
 PROXY_GROUP_RETURN_NO_USER_DATA(ttse_unload_voice_cb, int, const char* language, int type)
@@ -4118,7 +4125,7 @@ PROXY_GROUP_NON_BLOCKING(vc_mgr_vc_tts_streaming_cb, int pid, int utt_id, some_e
 PROXY_GROUP_BLOCKING(vc_mgr_vc_tts_streaming_cb, int pid, int utt_id, some_enum event, char* buffer, int len, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_cancel_cb 160
+#define BASE_CALLBACK_ID_vce_cancel_cb 165
 typedef int (*vce_cancel_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(vce_cancel_cb, int)
 
@@ -4132,7 +4139,7 @@ typedef bool (*vce_command_cb)(int id, int type, int format, const char* command
 PROXY_GROUP_RETURN(vce_command_cb, bool, int id, int type, int format, const char* command, const char* param, int domain, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_deinitialize_cb 165
+#define BASE_CALLBACK_ID_vce_deinitialize_cb 170
 typedef int (*vce_deinitialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(vce_deinitialize_cb, int)
 
@@ -4141,59 +4148,59 @@ typedef int (*vce_foreach_supported_languages_cb)(void* callback, void* user_dat
 PROXY_GROUP_RETURN(vce_foreach_supported_languages_cb, int, void* callback, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_get_info_cb 170
+#define BASE_CALLBACK_ID_vce_get_info_cb 175
 typedef int (*vce_get_info_cb)(char** engine_uuid, char** engine_name, char** engine_settings_app_id, bool* use_network);
 #define CB_PARAMS_NAMES engine_uuid, engine_name, engine_settings_app_id, use_network
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_get_info_cb, int, char** engine_uuid, char** engine_name, char** engine_settings_app_id, bool* use_network)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_get_recording_format_cb 175
+#define BASE_CALLBACK_ID_vce_get_recording_format_cb 180
 typedef int (*vce_get_recording_format_cb)(const char* audio_id, void* types, int* rate, int* channels);
 #define CB_PARAMS_NAMES audio_id, types, rate, channels
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_get_recording_format_cb, int, const char* audio_id, void* types, int* rate, int* channels)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_initialize_cb 180
+#define BASE_CALLBACK_ID_vce_initialize_cb 185
 typedef int (*vce_initialize_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(vce_initialize_cb, int)
 
-#define BASE_CALLBACK_ID_vce_is_language_supported_cb 185
+#define BASE_CALLBACK_ID_vce_is_language_supported_cb 190
 typedef bool (*vce_is_language_supported_cb)(const char* language);
 #define CB_PARAMS_NAMES language
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_is_language_supported_cb, bool, const char* language)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_nlu_base_info_requested_cb 190
+#define BASE_CALLBACK_ID_vce_nlu_base_info_requested_cb 195
 typedef int (*vce_nlu_base_info_requested_cb)(const char* key, char** value);
 #define CB_PARAMS_NAMES key, value
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_nlu_base_info_requested_cb, int, const char* key, char** value)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_private_data_requested_cb 195
+#define BASE_CALLBACK_ID_vce_private_data_requested_cb 200
 typedef int (*vce_private_data_requested_cb)(const char* key, char** data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_private_data_requested_cb, int, const char* key, char** data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_private_data_set_cb 200
+#define BASE_CALLBACK_ID_vce_private_data_set_cb 205
 typedef int (*vce_private_data_set_cb)(const char* key, const char* data);
 #define CB_PARAMS_NAMES key, data
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_private_data_set_cb, int, const char* key, const char* data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_process_haptic_event_cb 205
+#define BASE_CALLBACK_ID_vce_process_haptic_event_cb 210
 typedef int (*vce_process_haptic_event_cb)(const char* event);
 #define CB_PARAMS_NAMES event
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_process_haptic_event_cb, int, const char* event)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_process_list_event_cb 210
+#define BASE_CALLBACK_ID_vce_process_list_event_cb 215
 typedef int (*vce_process_list_event_cb)(const char* event);
 #define CB_PARAMS_NAMES event
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_process_list_event_cb, int, const char* event)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_process_text_cb 215
+#define BASE_CALLBACK_ID_vce_process_text_cb 220
 typedef int (*vce_process_text_cb)(const char* text);
 #define CB_PARAMS_NAMES text
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_process_text_cb, int, const char* text)
@@ -4204,55 +4211,55 @@ typedef int (*vce_request_tts_cb)(int pid, int utt_id, const char* text, const c
 PROXY_GROUP_RETURN(vce_request_tts_cb, int, int pid, int utt_id, const char* text, const char* language, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_audio_type_cb 220
+#define BASE_CALLBACK_ID_vce_set_audio_type_cb 225
 typedef int (*vce_set_audio_type_cb)(const char* audio_type);
 #define CB_PARAMS_NAMES audio_type
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_audio_type_cb, int, const char* audio_type)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_commands_cb 225
+#define BASE_CALLBACK_ID_vce_set_commands_cb 230
 typedef int (*vce_set_commands_cb)(void* vc_command);
 #define CB_PARAMS_NAMES vc_command
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_commands_cb, int, void* vc_command)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_domain_cb 230
+#define BASE_CALLBACK_ID_vce_set_domain_cb 235
 typedef int (*vce_set_domain_cb)(const char* domain);
 #define CB_PARAMS_NAMES domain
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_domain_cb, int, const char* domain)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_language_cb 235
+#define BASE_CALLBACK_ID_vce_set_language_cb 240
 typedef int (*vce_set_language_cb)(const char* language);
 #define CB_PARAMS_NAMES language
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_language_cb, int, const char* language)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_recording_data_cb 240
+#define BASE_CALLBACK_ID_vce_set_recording_data_cb 245
 typedef int (*vce_set_recording_data_cb)(const void* data, unsigned int length, void* speech_detected);
 #define CB_PARAMS_NAMES data, length, speech_detected
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_recording_data_cb, int, const void* data, unsigned int length, void* speech_detected)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_set_server_dialog_cb 245
+#define BASE_CALLBACK_ID_vce_set_server_dialog_cb 250
 typedef int (*vce_set_server_dialog_cb)(const char* app_id, const char* credential);
 #define CB_PARAMS_NAMES app_id, credential
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_set_server_dialog_cb, int, const char* app_id, const char* credential)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_specific_engine_request_cb 250
+#define BASE_CALLBACK_ID_vce_specific_engine_request_cb 255
 typedef int (*vce_specific_engine_request_cb)(const char* engine_app_id, const char* event, const char* request);
 #define CB_PARAMS_NAMES engine_app_id, event, request
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_specific_engine_request_cb, int, const char* engine_app_id, const char* event, const char* request)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_start_cb 255
+#define BASE_CALLBACK_ID_vce_start_cb 260
 typedef int (*vce_start_cb)(bool stop_by_silence);
 #define CB_PARAMS_NAMES stop_by_silence
 PROXY_GROUP_RETURN_NO_USER_DATA(vce_start_cb, int, bool stop_by_silence)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_stop_cb 260
+#define BASE_CALLBACK_ID_vce_stop_cb 265
 typedef int (*vce_stop_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(vce_stop_cb, int)
 
@@ -4266,7 +4273,7 @@ typedef int (*vce_tts_audio_format_request_cb)(int* rate, int* channel, int* aud
 PROXY_GROUP_RETURN(vce_tts_audio_format_request_cb, int, int* rate, int* channel, int* audio_type, void* user_data)
 #undef CB_PARAMS_NAMES
 
-#define BASE_CALLBACK_ID_vce_unset_commands_cb 265
+#define BASE_CALLBACK_ID_vce_unset_commands_cb 270
 typedef int (*vce_unset_commands_cb)();
 PROXY_GROUP_RETURN_NO_USER_DATA_NO_PARAM(vce_unset_commands_cb, int)
 
@@ -5539,6 +5546,8 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_noti_ex_reporter_events_event_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_notification_detailed_changed_cb)
   MULTI_PROXY_MAP_ENTRY(platform_non_blocking_notification_detailed_changed_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_blocking_notification_status_message_cb)
+  MULTI_PROXY_MAP_ENTRY(platform_non_blocking_notification_status_message_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_app_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_cert_info_cb)
   MULTI_PROXY_MAP_ENTRY(platform_blocking_package_info_dependency_info_cb)
@@ -6027,6 +6036,7 @@ std::map<std::string, MultiProxyFunctionsContainer> multi_proxy_map = {
 std::map<std::string, int> reserved_base_id_map = {
   {"ml_data_destroy_cb", BASE_CALLBACK_ID_ml_data_destroy_cb},
   {"notification_detailed_changed_cb", BASE_CALLBACK_ID_notification_detailed_changed_cb},
+  {"notification_status_message_cb", BASE_CALLBACK_ID_notification_status_message_cb},
   {"stte_cancel_cb", BASE_CALLBACK_ID_stte_cancel_cb},
   {"stte_check_app_agreed_cb", BASE_CALLBACK_ID_stte_check_app_agreed_cb},
   {"stte_deinitialize_cb", BASE_CALLBACK_ID_stte_deinitialize_cb},

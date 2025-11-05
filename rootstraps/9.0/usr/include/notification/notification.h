@@ -50,6 +50,12 @@ int notification_unregister_detailed_changed_cb(
 
 int notification_clear(notification_type_e type) NOTIFICATION_DEPRECATED_API;
 
+// For toast message(251105)
+typedef void (*notification_status_message_cb)(const char *message, void *data);
+
+int notification_status_monitor_message_cb_set(
+    notification_status_message_cb callback, void *user_data);
+
 struct _notification_list {
   notification_list_h prev;
   notification_list_h next;
