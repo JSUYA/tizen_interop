@@ -3206,6 +3206,26 @@ class Tizen90Notification {
       _notification_unregister_detailed_changed_cbPtr.asFunction<
           int Function(
               notification_detailed_changed_cb, ffi.Pointer<ffi.Void>)>();
+
+  int notification_status_monitor_message_cb_set(
+    notification_status_message_cb callback,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _notification_status_monitor_message_cb_set(
+      callback,
+      user_data,
+    );
+  }
+
+  late final _notification_status_monitor_message_cb_setPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  notification_status_message_cb, ffi.Pointer<ffi.Void>)>>(
+      'notification_status_monitor_message_cb_set');
+  late final _notification_status_monitor_message_cb_set =
+      _notification_status_monitor_message_cb_setPtr.asFunction<
+          int Function(
+              notification_status_message_cb, ffi.Pointer<ffi.Void>)>();
 }
 
 /// Enumeration for notification errors.
@@ -3915,6 +3935,15 @@ typedef Dartnotification_detailed_changed_cbFunction = void Function(
 /// - 2.3
 /// @nodoc
 typedef notification_op = _notification_op;
+/// @nodoc
+typedef notification_status_message_cb
+    = ffi.Pointer<ffi.NativeFunction<notification_status_message_cbFunction>>;
+/// @nodoc
+typedef notification_status_message_cbFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Char> message, ffi.Pointer<ffi.Void> data);
+/// @nodoc
+typedef Dartnotification_status_message_cbFunction = void Function(
+    ffi.Pointer<ffi.Char> message, ffi.Pointer<ffi.Void> data);
 
 /// @nodoc
 const int NOTIFICATION_DO_NOT_SHOW_TIME_STAMP = -1;

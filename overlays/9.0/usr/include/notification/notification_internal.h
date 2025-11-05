@@ -17,6 +17,8 @@ typedef void (*notification_detailed_changed_cb)(void *data,
                                                  notification_op *op_list,
                                                  int num_op);
 
+typedef void (*notification_status_message_cb)(const char *message, void *data);
+
 int notification_clear(notification_type_e type);
 int notification_get_list(notification_type_e type, int count,
                           notification_list_h *list);
@@ -24,6 +26,8 @@ int notification_register_detailed_changed_cb(
     notification_detailed_changed_cb callback, void *user_data);
 int notification_unregister_detailed_changed_cb(
     notification_detailed_changed_cb callback, void *user_data);
+int notification_status_monitor_message_cb_set(
+    notification_status_message_cb callback, void *user_data);
 
 #ifdef __cplusplus
 }

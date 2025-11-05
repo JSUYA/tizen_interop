@@ -778,6 +778,7 @@ const Map<String, List<String>> notificationSymbols = {
     'notification_set_time_to_text',
     'notification_set_vibration',
     'notification_status_message_post',
+    'notification_status_monitor_message_cb_set',
     'notification_unregister_detailed_changed_cb',
     'notification_update',
   ],
