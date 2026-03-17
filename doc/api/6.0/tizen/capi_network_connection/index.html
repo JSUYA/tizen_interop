@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_network_connection</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_network_connection</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_network_connection</h1>
+      <p class="summary">Module-scoped API list for tizenCapiNetworkConnection in Tizen 6.0.</p>
+    </section>
+    <p>Network &#47; Connection</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiNetworkConnection</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-network-connection.so.1</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_network_connection/index.html">tizen_6_0_tizen_capi_network_connection</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_add_profile.html">connection_add_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_add_route.html">connection_add_route</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_add_route_entry.html">connection_add_route_entry</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_add_route_ipv6.html">connection_add_route_ipv6</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_close_profile.html">connection_close_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_create.html">connection_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_destroy.html">connection_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_destroy_profile_iterator.html">connection_destroy_profile_iterator</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_foreach_ipv6_address.html">connection_foreach_ipv6_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_bt_state.html">connection_get_bt_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_cellular_state.html">connection_get_cellular_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_current_profile.html">connection_get_current_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_default_cellular_service_profile.html">connection_get_default_cellular_service_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_ethernet_cable_state.html">connection_get_ethernet_cable_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_ethernet_state.html">connection_get_ethernet_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_ip_address.html">connection_get_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_mac_address.html">connection_get_mac_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_profile_iterator.html">connection_get_profile_iterator</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_proxy.html">connection_get_proxy</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_statistics.html">connection_get_statistics</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_type.html">connection_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_get_wifi_state.html">connection_get_wifi_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_is_metered_network.html">connection_is_metered_network</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_open_profile.html">connection_open_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_clone.html">connection_profile_clone</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_create.html">connection_profile_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_destroy.html">connection_profile_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_apn.html">connection_profile_get_cellular_apn</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_auth_info.html">connection_profile_get_cellular_auth_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_home_url.html">connection_profile_get_cellular_home_url</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_pdn_type.html">connection_profile_get_cellular_pdn_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_roam_pdn_type.html">connection_profile_get_cellular_roam_pdn_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_cellular_service_type.html">connection_profile_get_cellular_service_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_dhcp_lease_duration.html">connection_profile_get_dhcp_lease_duration</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_dhcp_server_address.html">connection_profile_get_dhcp_server_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_dns_address.html">connection_profile_get_dns_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_dns_config_type.html">connection_profile_get_dns_config_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_gateway_address.html">connection_profile_get_gateway_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_id.html">connection_profile_get_id</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_internet_state.html">connection_profile_get_internet_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_ip_address.html">connection_profile_get_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_ip_config_type.html">connection_profile_get_ip_config_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_ipv6_state.html">connection_profile_get_ipv6_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_name.html">connection_profile_get_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_network_interface_name.html">connection_profile_get_network_interface_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_prefix_length.html">connection_profile_get_prefix_length</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_proxy_address.html">connection_profile_get_proxy_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_proxy_type.html">connection_profile_get_proxy_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_state.html">connection_profile_get_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_subnet_mask.html">connection_profile_get_subnet_mask</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_type.html">connection_profile_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_bssid.html">connection_profile_get_wifi_bssid</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_encryption_type.html">connection_profile_get_wifi_encryption_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_essid.html">connection_profile_get_wifi_essid</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_frequency.html">connection_profile_get_wifi_frequency</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_max_speed.html">connection_profile_get_wifi_max_speed</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_rssi.html">connection_profile_get_wifi_rssi</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_get_wifi_security_type.html">connection_profile_get_wifi_security_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_cellular_default.html">connection_profile_is_cellular_default</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_cellular_editable.html">connection_profile_is_cellular_editable</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_cellular_hidden.html">connection_profile_is_cellular_hidden</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_cellular_roaming.html">connection_profile_is_cellular_roaming</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_wifi_passphrase_required.html">connection_profile_is_wifi_passphrase_required</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_is_wifi_wps_supported.html">connection_profile_is_wifi_wps_supported</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_iterator_has_next.html">connection_profile_iterator_has_next</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_iterator_next.html">connection_profile_iterator_next</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_refresh.html">connection_profile_refresh</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_apn.html">connection_profile_set_cellular_apn</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_auth_info.html">connection_profile_set_cellular_auth_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_home_url.html">connection_profile_set_cellular_home_url</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_pdn_type.html">connection_profile_set_cellular_pdn_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_roam_pdn_type.html">connection_profile_set_cellular_roam_pdn_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_cellular_service_type.html">connection_profile_set_cellular_service_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_dns_address.html">connection_profile_set_dns_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_dns_config_type.html">connection_profile_set_dns_config_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_gateway_address.html">connection_profile_set_gateway_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_ip_address.html">connection_profile_set_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_ip_config_type.html">connection_profile_set_ip_config_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_prefix_length.html">connection_profile_set_prefix_length</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_proxy_address.html">connection_profile_set_proxy_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_proxy_type.html">connection_profile_set_proxy_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_state_changed_cb.html">connection_profile_set_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_subnet_mask.html">connection_profile_set_subnet_mask</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_set_wifi_passphrase.html">connection_profile_set_wifi_passphrase</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_unset_state_changed_cb.html">connection_profile_unset_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_remove_profile.html">connection_remove_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_remove_route.html">connection_remove_route</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_remove_route_entry.html">connection_remove_route_entry</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_remove_route_ipv6.html">connection_remove_route_ipv6</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_reset_profile.html">connection_reset_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_reset_statistics.html">connection_reset_statistics</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_default_cellular_service_profile.html">connection_set_default_cellular_service_profile</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_default_cellular_service_profile_async.html">connection_set_default_cellular_service_profile_async</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_ethernet_cable_state_chaged_cb.html">connection_set_ethernet_cable_state_chaged_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_ethernet_cable_state_changed_cb.html">connection_set_ethernet_cable_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_internet_state_changed_cb.html">connection_set_internet_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_ip_address_changed_cb.html">connection_set_ip_address_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_proxy_address_changed_cb.html">connection_set_proxy_address_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_type_changed_cb.html">connection_set_type_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_ethernet_cable_state_chaged_cb.html">connection_unset_ethernet_cable_state_chaged_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_ethernet_cable_state_changed_cb.html">connection_unset_ethernet_cable_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_internet_state_changed_cb.html">connection_unset_internet_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_ip_address_changed_cb.html">connection_unset_ip_address_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_proxy_address_changed_cb.html">connection_unset_proxy_address_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_unset_type_changed_cb.html">connection_unset_type_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_update_profile.html">connection_update_profile</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_closed_cb.html">connection_closed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_closed_cbFunction.html">connection_closed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_closed_cbFunction.html">Dartconnection_closed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ipv6_address_cb.html">connection_ipv6_address_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ipv6_address_cbFunction.html">connection_ipv6_address_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_ipv6_address_cbFunction.html">Dartconnection_ipv6_address_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_opened_cb.html">connection_opened_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_opened_cbFunction.html">connection_opened_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_opened_cbFunction.html">Dartconnection_opened_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_state_changed_cb.html">connection_profile_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_profile_state_changed_cbFunction.html">connection_profile_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_profile_state_changed_cbFunction.html">Dartconnection_profile_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_reset_cb.html">connection_reset_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_reset_cbFunction.html">connection_reset_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_reset_cbFunction.html">Dartconnection_reset_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_default_cb.html">connection_set_default_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_set_default_cbFunction.html">connection_set_default_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_set_default_cbFunction.html">Dartconnection_set_default_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ethernet_cable_state_chaged_cb.html">connection_ethernet_cable_state_chaged_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ethernet_cable_state_chaged_cbFunction.html">connection_ethernet_cable_state_chaged_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_ethernet_cable_state_chaged_cbFunction.html">Dartconnection_ethernet_cable_state_chaged_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ethernet_cable_state_changed_cb.html">connection_ethernet_cable_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_ethernet_cable_state_changed_cbFunction.html">connection_ethernet_cable_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_ethernet_cable_state_changed_cbFunction.html">Dartconnection_ethernet_cable_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_internet_state_changed_cb.html">connection_internet_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_internet_state_changed_cbFunction.html">connection_internet_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_internet_state_changed_cbFunction.html">Dartconnection_internet_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_address_changed_cb.html">connection_address_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_address_changed_cbFunction.html">connection_address_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_address_changed_cbFunction.html">Dartconnection_address_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_type_changed_cb.html">connection_type_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/connection_type_changed_cbFunction.html">connection_type_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_connection/Dartconnection_type_changed_cbFunction.html">Dartconnection_type_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

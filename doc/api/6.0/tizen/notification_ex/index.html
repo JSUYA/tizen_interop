@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; notification_ex</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">notification_ex</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; notification_ex</h1>
+      <p class="summary">Module-scoped API list for tizenNotificationEx in Tizen 6.0.</p>
+    </section>
+    <p>Application Framework &#47; Notification EX</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenNotificationEx</code></div>
+  <div><strong>Shared objects</strong><br><code>libnotification-ex.so.1</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_notification_ex/index.html">tizen_6_0_tizen_notification_ex</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_app_control_create.html">noti_ex_action_app_control_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_app_control_get.html">noti_ex_action_app_control_get</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_app_control_set.html">noti_ex_action_app_control_set</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_destroy.html">noti_ex_action_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_execute.html">noti_ex_action_execute</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_get_extra.html">noti_ex_action_get_extra</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_get_type.html">noti_ex_action_get_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_is_local.html">noti_ex_action_is_local</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_visibility_create.html">noti_ex_action_visibility_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_action_visibility_set.html">noti_ex_action_visibility_set</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_create.html">noti_ex_color_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_destroy.html">noti_ex_color_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_get_alpha.html">noti_ex_color_get_alpha</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_get_blue.html">noti_ex_color_get_blue</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_get_green.html">noti_ex_color_get_green</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_color_get_red.html">noti_ex_color_get_red</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_clone.html">noti_ex_event_info_clone</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_destroy.html">noti_ex_event_info_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_get_channel.html">noti_ex_event_info_get_channel</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_get_event_type.html">noti_ex_event_info_get_event_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_get_item_id.html">noti_ex_event_info_get_item_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_get_owner.html">noti_ex_event_info_get_owner</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_event_info_get_request_id.html">noti_ex_event_info_get_request_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_create.html">noti_ex_geometry_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_destroy.html">noti_ex_geometry_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_get_height.html">noti_ex_geometry_get_height</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_get_width.html">noti_ex_geometry_get_width</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_get_x.html">noti_ex_geometry_get_x</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_geometry_get_y.html">noti_ex_geometry_get_y</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_add_receiver.html">noti_ex_item_add_receiver</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_button_create.html">noti_ex_item_button_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_button_get_title.html">noti_ex_item_button_get_title</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_button_set_multi_language_title.html">noti_ex_item_button_set_multi_language_title</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_create.html">noti_ex_item_chat_message_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_get_image.html">noti_ex_item_chat_message_get_image</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_get_message_type.html">noti_ex_item_chat_message_get_message_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_get_name.html">noti_ex_item_chat_message_get_name</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_get_text.html">noti_ex_item_chat_message_get_text</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_chat_message_get_time.html">noti_ex_item_chat_message_get_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_checkbox_create.html">noti_ex_item_checkbox_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_checkbox_get_check_state.html">noti_ex_item_checkbox_get_check_state</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_checkbox_get_title.html">noti_ex_item_checkbox_get_title</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_checkbox_set_check_state.html">noti_ex_item_checkbox_set_check_state</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_checkbox_set_multi_language_title.html">noti_ex_item_checkbox_set_multi_language_title</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_check_type_exist.html">noti_ex_item_check_type_exist</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_destroy.html">noti_ex_item_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_entry_create.html">noti_ex_item_entry_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_entry_get_text.html">noti_ex_item_entry_get_text</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_entry_set_multi_language.html">noti_ex_item_entry_set_multi_language</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_entry_set_text.html">noti_ex_item_entry_set_text</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_find_by_id.html">noti_ex_item_find_by_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_find_by_main_type.html">noti_ex_item_find_by_main_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_action.html">noti_ex_item_get_action</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_channel.html">noti_ex_item_get_channel</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_enable.html">noti_ex_item_get_enable</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_extension_data.html">noti_ex_item_get_extension_data</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_id.html">noti_ex_item_get_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_info.html">noti_ex_item_get_info</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_led_info.html">noti_ex_item_get_led_info</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_main_type.html">noti_ex_item_get_main_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_ongoing_state.html">noti_ex_item_get_ongoing_state</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_policy.html">noti_ex_item_get_policy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_receiver_list.html">noti_ex_item_get_receiver_list</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_sender_app_id.html">noti_ex_item_get_sender_app_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_sound_path.html">noti_ex_item_get_sound_path</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_style.html">noti_ex_item_get_style</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_tag.html">noti_ex_item_get_tag</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_type.html">noti_ex_item_get_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_vibration_path.html">noti_ex_item_get_vibration_path</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_get_visible.html">noti_ex_item_get_visible</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_add_child.html">noti_ex_item_group_add_child</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_create.html">noti_ex_item_group_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_foreach_child.html">noti_ex_item_group_foreach_child</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_get_app_label.html">noti_ex_item_group_get_app_label</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_is_vertical.html">noti_ex_item_group_is_vertical</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_remove_child.html">noti_ex_item_group_remove_child</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_set_direction.html">noti_ex_item_group_set_direction</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_image_create.html">noti_ex_item_image_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_image_get_image_path.html">noti_ex_item_image_get_image_path</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_info_get_delete_time.html">noti_ex_item_info_get_delete_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_info_get_hide_time.html">noti_ex_item_info_get_hide_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_info_get_time.html">noti_ex_item_info_get_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_info_set_delete_time.html">noti_ex_item_info_set_delete_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_info_set_hide_time.html">noti_ex_item_info_set_hide_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_input_selector_create.html">noti_ex_item_input_selector_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_input_selector_get_contents.html">noti_ex_item_input_selector_get_contents</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_input_selector_set_contents.html">noti_ex_item_input_selector_set_contents</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_input_selector_set_multi_language_contents.html">noti_ex_item_input_selector_set_multi_language_contents</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_create.html">noti_ex_item_progress_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_get_current.html">noti_ex_item_progress_get_current</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_get_max.html">noti_ex_item_progress_get_max</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_get_min.html">noti_ex_item_progress_get_min</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_get_type.html">noti_ex_item_progress_get_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_set_current.html">noti_ex_item_progress_set_current</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_progress_set_type.html">noti_ex_item_progress_set_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_remove_receiver.html">noti_ex_item_remove_receiver</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_action.html">noti_ex_item_set_action</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_channel.html">noti_ex_item_set_channel</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_enable.html">noti_ex_item_set_enable</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_extension_data.html">noti_ex_item_set_extension_data</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_id.html">noti_ex_item_set_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_led_info.html">noti_ex_item_set_led_info</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_main_type.html">noti_ex_item_set_main_type</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_ongoing_state.html">noti_ex_item_set_ongoing_state</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_policy.html">noti_ex_item_set_policy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_sound_path.html">noti_ex_item_set_sound_path</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_style.html">noti_ex_item_set_style</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_tag.html">noti_ex_item_set_tag</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_vibration_path.html">noti_ex_item_set_vibration_path</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_set_visible.html">noti_ex_item_set_visible</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_text_create.html">noti_ex_item_text_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_text_get_contents.html">noti_ex_item_text_get_contents</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_text_get_hyperlink.html">noti_ex_item_text_get_hyperlink</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_text_set_contents.html">noti_ex_item_text_set_contents</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_text_set_multi_language.html">noti_ex_item_text_set_multi_language</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_time_create.html">noti_ex_item_time_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_time_get_time.html">noti_ex_item_time_get_time</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_create.html">noti_ex_led_info_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_destroy.html">noti_ex_led_info_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_get_color.html">noti_ex_led_info_get_color</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_get_off_period.html">noti_ex_led_info_get_off_period</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_get_on_period.html">noti_ex_led_info_get_on_period</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_set_off_period.html">noti_ex_led_info_set_off_period</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_led_info_set_on_period.html">noti_ex_led_info_set_on_period</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_create.html">noti_ex_manager_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_delete.html">noti_ex_manager_delete</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_delete_all.html">noti_ex_manager_delete_all</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_destroy.html">noti_ex_manager_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_find_by_root_id.html">noti_ex_manager_find_by_root_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_get.html">noti_ex_manager_get</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_get_by_channel.html">noti_ex_manager_get_by_channel</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_get_notification_count.html">noti_ex_manager_get_notification_count</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_hide.html">noti_ex_manager_hide</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_send_error.html">noti_ex_manager_send_error</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_manager_update.html">noti_ex_manager_update</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_multi_lang_create.html">noti_ex_multi_lang_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_multi_lang_destroy.html">noti_ex_multi_lang_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_create.html">noti_ex_padding_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_destroy.html">noti_ex_padding_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_get_bottom.html">noti_ex_padding_get_bottom</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_get_left.html">noti_ex_padding_get_left</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_get_right.html">noti_ex_padding_get_right</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_padding_get_top.html">noti_ex_padding_get_top</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_create.html">noti_ex_reporter_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_delete.html">noti_ex_reporter_delete</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_delete_all.html">noti_ex_reporter_delete_all</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_destroy.html">noti_ex_reporter_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_find_by_root_id.html">noti_ex_reporter_find_by_root_id</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_post.html">noti_ex_reporter_post</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_post_list.html">noti_ex_reporter_post_list</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_send_error.html">noti_ex_reporter_send_error</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_reporter_update.html">noti_ex_reporter_update</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_create.html">noti_ex_style_create</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_destroy.html">noti_ex_style_destroy</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_get_background_color.html">noti_ex_style_get_background_color</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_get_background_image.html">noti_ex_style_get_background_image</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_get_color.html">noti_ex_style_get_color</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_get_geometry.html">noti_ex_style_get_geometry</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_get_padding.html">noti_ex_style_get_padding</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_set_background_color.html">noti_ex_style_set_background_color</a></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_style_set_background_image.html">noti_ex_style_set_background_image</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_foreach_child_cb.html">noti_ex_item_group_foreach_child_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_notification_ex/noti_ex_item_group_foreach_child_cbFunction.html">noti_ex_item_group_foreach_child_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_notification_ex/Dartnoti_ex_item_group_foreach_child_cbFunction.html">Dartnoti_ex_item_group_foreach_child_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

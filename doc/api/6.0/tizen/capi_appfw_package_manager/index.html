@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_appfw_package_manager</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_appfw_package_manager</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_appfw_package_manager</h1>
+      <p class="summary">Module-scoped API list for tizenCapiAppfwPackageManager in Tizen 6.0.</p>
+    </section>
+    <p>Application Framework &#47; Package Manager</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiAppfwPackageManager</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-appfw-package-manager.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/index.html">tizen_6_0_tizen_capi_appfw_package_manager</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_create.html">package_archive_info_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_destroy.html">package_archive_info_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_foreach_direct_dependency.html">package_archive_info_foreach_direct_dependency</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_api_version.html">package_archive_info_get_api_version</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_author.html">package_archive_info_get_author</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_description.html">package_archive_info_get_description</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_icon.html">package_archive_info_get_icon</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_label.html">package_archive_info_get_label</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_package.html">package_archive_info_get_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_type.html">package_archive_info_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_version.html">package_archive_info_get_version</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_clone.html">package_info_clone</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_create.html">package_info_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_destroy.html">package_info_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_app_from_package.html">package_info_foreach_app_from_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_cert_info.html">package_info_foreach_cert_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_dependency_info.html">package_info_foreach_dependency_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_dependency_info_depends_on.html">package_info_foreach_dependency_info_depends_on</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_privilege_info.html">package_info_foreach_privilege_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_icon.html">package_info_get_icon</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_installed_storage.html">package_info_get_installed_storage</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_installed_time.html">package_info_get_installed_time</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_label.html">package_info_get_label</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_main_app_id.html">package_info_get_main_app_id</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_package.html">package_info_get_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_root_path.html">package_info_get_root_path</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_tep_name.html">package_info_get_tep_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_type.html">package_info_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_version.html">package_info_get_version</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_accessible.html">package_info_is_accessible</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_equal.html">package_info_is_equal</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_preload_package.html">package_info_is_preload_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_removable_package.html">package_info_is_removable_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_system_package.html">package_info_is_system_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_create.html">package_info_updateinfo_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_destroy.html">package_info_updateinfo_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_foreach_info.html">package_info_updateinfo_foreach_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_pkgid.html">package_info_updateinfo_get_pkgid</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_type.html">package_info_updateinfo_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_version.html">package_info_updateinfo_get_version</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_all_cache_dir.html">package_manager_clear_all_cache_dir</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_cache_dir.html">package_manager_clear_cache_dir</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_data_dir.html">package_manager_clear_data_dir</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_compare_app_cert_info.html">package_manager_compare_app_cert_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_compare_package_cert_info.html">package_manager_compare_package_cert_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_create.html">package_manager_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_destroy.html">package_manager_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_decrypt_package.html">package_manager_drm_decrypt_package</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_generate_license_request.html">package_manager_drm_generate_license_request</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_register_license.html">package_manager_drm_register_license</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_add_bool.html">package_manager_filter_add_bool</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_count.html">package_manager_filter_count</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_create.html">package_manager_filter_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_destroy.html">package_manager_filter_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_foreach_package_info.html">package_manager_filter_foreach_package_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_foreach_package_info.html">package_manager_foreach_package_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_id_by_app_id.html">package_manager_get_package_id_by_app_id</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_info.html">package_manager_get_package_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_size_info.html">package_manager_get_package_size_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_permission_type.html">package_manager_get_permission_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_total_package_size_info.html">package_manager_get_total_package_size_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_is_preload_package_by_app_id.html">package_manager_is_preload_package_by_app_id</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_create.html">package_manager_request_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_destroy.html">package_manager_request_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install.html">package_manager_request_install</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_packages.html">package_manager_request_install_packages</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_packages_with_cb.html">package_manager_request_install_packages_with_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_with_cb.html">package_manager_request_install_with_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_move.html">package_manager_request_move</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_move_with_cb.html">package_manager_request_move_with_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_event_cb.html">package_manager_request_set_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_mode.html">package_manager_request_set_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_tep.html">package_manager_request_set_tep</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_type.html">package_manager_request_set_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_uninstall.html">package_manager_request_uninstall</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_uninstall_with_cb.html">package_manager_request_uninstall_with_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_unset_event_cb.html">package_manager_request_unset_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_set_event_cb.html">package_manager_set_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_set_event_status.html">package_manager_set_event_status</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_unset_event_cb.html">package_manager_unset_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_create.html">package_manager_updateinfo_request_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_destroy.html">package_manager_updateinfo_request_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_register.html">package_manager_updateinfo_request_register</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_unregister.html">package_manager_updateinfo_request_unregister</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_unregister_all.html">package_manager_updateinfo_request_unregister_all</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_pkgid.html">package_manager_updateinfo_set_pkgid</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_type.html">package_manager_updateinfo_set_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_version.html">package_manager_updateinfo_set_version</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_app_size.html">package_size_info_get_app_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_cache_size.html">package_size_info_get_cache_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_data_size.html">package_size_info_get_data_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_app_size.html">package_size_info_get_external_app_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_cache_size.html">package_size_info_get_external_cache_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_data_size.html">package_size_info_get_external_data_size</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cb.html">package_info_dependency_info_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cbFunction.html">package_info_dependency_info_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_dependency_info_cbFunction.html">Dartpackage_info_dependency_info_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cb.html">package_info_app_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cbFunction.html">package_info_app_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_app_cbFunction.html">Dartpackage_info_app_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cb.html">package_info_cert_info_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cbFunction.html">package_info_cert_info_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_cert_info_cbFunction.html">Dartpackage_info_cert_info_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cb.html">package_info_privilege_info_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cbFunction.html">package_info_privilege_info_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_privilege_info_cbFunction.html">Dartpackage_info_privilege_info_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cb.html">package_info_updateinfo_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cbFunction.html">package_info_updateinfo_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_updateinfo_cbFunction.html">Dartpackage_info_updateinfo_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cb.html">package_manager_package_info_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cbFunction.html">package_manager_package_info_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_package_info_cbFunction.html">Dartpackage_manager_package_info_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cb.html">package_manager_size_info_receive_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cbFunction.html">package_manager_size_info_receive_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_size_info_receive_cbFunction.html">Dartpackage_manager_size_info_receive_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cb.html">package_manager_total_size_info_receive_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cbFunction.html">package_manager_total_size_info_receive_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_total_size_info_receive_cbFunction.html">Dartpackage_manager_total_size_info_receive_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cbFunction.html">package_manager_request_event_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_request_event_cbFunction.html">Dartpackage_manager_request_event_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cb.html">package_manager_event_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cbFunction.html">package_manager_event_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_event_cbFunction.html">Dartpackage_manager_event_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_media_codec</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_media_codec</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_media_codec</h1>
+      <p class="summary">Module-scoped API list for tizenCapiMediaCodec in Tizen 6.0.</p>
+    </section>
+    <p>Multimedia &#47; Media Codec</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiMediaCodec</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-media-codec.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_media_codec/index.html">tizen_6_0_tizen_capi_media_codec</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_configure_from_media_format.html">mediacodec_configure_from_media_format</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_create.html">mediacodec_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_destroy.html">mediacodec_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_flush_buffers.html">mediacodec_flush_buffers</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_foreach_supported_codec.html">mediacodec_foreach_supported_codec</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_get_output.html">mediacodec_get_output</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_get_packet_pool.html">mediacodec_get_packet_pool</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_get_supported_type.html">mediacodec_get_supported_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_prepare.html">mediacodec_prepare</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_process_input.html">mediacodec_process_input</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_adec_info.html">mediacodec_set_adec_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_aenc_info.html">mediacodec_set_aenc_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_buffer_status_cb.html">mediacodec_set_buffer_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_codec.html">mediacodec_set_codec</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_eos_cb.html">mediacodec_set_eos_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_error_cb.html">mediacodec_set_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_input_buffer_used_cb.html">mediacodec_set_input_buffer_used_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_output_buffer_available_cb.html">mediacodec_set_output_buffer_available_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_vdec_info.html">mediacodec_set_vdec_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_set_venc_info.html">mediacodec_set_venc_info</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unprepare.html">mediacodec_unprepare</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unset_buffer_status_cb.html">mediacodec_unset_buffer_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unset_eos_cb.html">mediacodec_unset_eos_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unset_error_cb.html">mediacodec_unset_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unset_input_buffer_used_cb.html">mediacodec_unset_input_buffer_used_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_unset_output_buffer_available_cb.html">mediacodec_unset_output_buffer_available_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_supported_codec_cb.html">mediacodec_supported_codec_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_supported_codec_cbFunction.html">mediacodec_supported_codec_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_supported_codec_cbFunction.html">Dartmediacodec_supported_codec_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_buffer_status_cb.html">mediacodec_buffer_status_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_buffer_status_cbFunction.html">mediacodec_buffer_status_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_buffer_status_cbFunction.html">Dartmediacodec_buffer_status_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_eos_cb.html">mediacodec_eos_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_eos_cbFunction.html">mediacodec_eos_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_eos_cbFunction.html">Dartmediacodec_eos_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_error_cb.html">mediacodec_error_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_error_cbFunction.html">mediacodec_error_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_error_cbFunction.html">Dartmediacodec_error_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_input_buffer_used_cb.html">mediacodec_input_buffer_used_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_input_buffer_used_cbFunction.html">mediacodec_input_buffer_used_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_input_buffer_used_cbFunction.html">Dartmediacodec_input_buffer_used_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_output_buffer_available_cb.html">mediacodec_output_buffer_available_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/mediacodec_output_buffer_available_cbFunction.html">mediacodec_output_buffer_available_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_codec/Dartmediacodec_output_buffer_available_cbFunction.html">Dartmediacodec_output_buffer_available_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

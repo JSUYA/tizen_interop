@@ -58,10 +58,16 @@ The script:
 1. Reads `generated_symbols.dart`, `generated_bindings.dart`, `lib/<version>/tizen.dart`,
    and `packages/tizen_interop_callbacks/lib/tizen_interop_callbacks.dart`.
 2. Creates temporary module wrapper libraries under `lib/module_docs/<version>/modules/`.
-3. Generates `doc/api/` with `dart doc`, where each module has its own library page.
+3. Generates `doc/api/` with `dart doc`, then writes a custom navigation layer:
+   `doc/api/index.html -> doc/api/<version>/index.html -> doc/api/<version>/tizen/index.html ->
+   doc/api/<version>/tizen/<module>/index.html`.
 4. Deletes the temporary wrapper libraries and restores `dartdoc_options.yaml`.
 
 If a symbol listed in `generated_symbols.dart` is missing from
 `generated_bindings.dart` and looks callback-related, the generated module
-library includes a note pointing to the callback registration interface from
-`tizen_interop_callbacks`.
+page includes the callback registration interface from
+`tizen_interop_callbacks`, so unresolved callback APIs can be checked against
+`TizenInteropCallbacks.register()`, `RegisteredCallback.interopCallback`, and
+`RegisteredCallback.interopUserData`.
+
+The original dartdoc landing page is preserved as `doc/api/dartdoc-index.html`.

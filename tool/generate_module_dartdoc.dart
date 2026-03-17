@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:collection';
 import 'dart:io';
 
@@ -74,6 +75,18 @@ class CallbackReference {
   final List<String> usedByMethods;
 }
 
+class ApiDocEntry {
+  ApiDocEntry({
+    required this.label,
+    required this.fileName,
+    required this.kind,
+  });
+
+  final String label;
+  final String fileName;
+  final String kind;
+}
+
 class ModuleInfo {
   ModuleInfo({
     required this.symbolMapVariable,
@@ -103,6 +116,50 @@ class ModuleInfo {
 
   String get descriptionText =>
       descriptions.isEmpty ? 'Unknown module' : descriptions.join(', ');
+
+  String get moduleSlug => _moduleSlugFromGetter(getterName);
+
+  List<ApiDocEntry> get functionEntries => methods
+      .map(
+        (method) => ApiDocEntry(
+          label: method.name,
+          fileName: '${method.name}.html',
+          kind: 'Function',
+        ),
+      )
+      .toList(growable: false);
+
+  List<ApiDocEntry> get callbackEntries {
+    final entries = <ApiDocEntry>[];
+    for (final callbackReference in callbackReferences) {
+      final group = callbackReference.group;
+      entries.add(
+        ApiDocEntry(
+          label: group.callbackType,
+          fileName: '${group.callbackType}.html',
+          kind: 'Callback typedef',
+        ),
+      );
+      entries.add(
+        ApiDocEntry(
+          label: group.nativeSignatureType,
+          fileName: '${group.nativeSignatureType}.html',
+          kind: 'Native callback signature',
+        ),
+      );
+      final dartSignatureType = group.dartSignatureType;
+      if (dartSignatureType != null) {
+        entries.add(
+          ApiDocEntry(
+            label: dartSignatureType,
+            fileName: '$dartSignatureType.html',
+            kind: 'Dart callback signature',
+          ),
+        );
+      }
+    }
+    return entries;
+  }
 }
 
 class _Config {
@@ -285,6 +342,12 @@ Future<void> main(List<String> args) async {
         'dart',
         ['doc', '--validate-links', '-o', config.outputDirectory, '.'],
         workingDirectory: rootDir.path,
+      );
+      _writeNavigationHierarchy(
+        outputDirectory: outputDirectory,
+        version: version,
+        modules: modules,
+        callbackInterop: callbackInterop,
       );
     }
   } finally {
@@ -755,6 +818,467 @@ void _restoreDartdocOptions({
   }
 }
 
+void _writeNavigationHierarchy({
+  required Directory outputDirectory,
+  required String version,
+  required List<ModuleInfo> modules,
+  required CallbackInteropInfo callbackInterop,
+}) {
+  final rawIndexFile = File('${outputDirectory.path}/index.html');
+  final preservedIndexFile = File('${outputDirectory.path}/dartdoc-index.html');
+  if (rawIndexFile.existsSync()) {
+    preservedIndexFile.writeAsStringSync(rawIndexFile.readAsStringSync());
+  }
+
+  File('${outputDirectory.path}/index.html').writeAsStringSync(
+    _buildRootIndexPage(version: version, modules: modules),
+  );
+
+  final versionDirectory = Directory('${outputDirectory.path}/$version')
+    ..createSync(recursive: true);
+  File('${versionDirectory.path}/index.html').writeAsStringSync(
+    _buildVersionIndexPage(version: version, modules: modules),
+  );
+
+  final tizenDirectory = Directory('${versionDirectory.path}/tizen')
+    ..createSync(recursive: true);
+  File('${tizenDirectory.path}/index.html').writeAsStringSync(
+    _buildTizenIndexPage(version: version, modules: modules),
+  );
+
+  for (final module in modules) {
+    final moduleDirectory =
+        Directory('${tizenDirectory.path}/${module.moduleSlug}')
+          ..createSync(recursive: true);
+    File('${moduleDirectory.path}/index.html').writeAsStringSync(
+      _buildModuleIndexPage(
+        version: version,
+        module: module,
+        callbackInterop: callbackInterop,
+      ),
+    );
+  }
+}
+
+String _buildRootIndexPage({
+  required String version,
+  required List<ModuleInfo> modules,
+}) {
+  final body = StringBuffer()
+    ..writeln('<p>')
+    ..writeln(
+      'This landing page avoids the single huge library page layout used by '
+      'the default published docs. Start with a Tizen version, then enter the '
+      '<code>tizen</code> library, then a single module.',
+    )
+    ..writeln('</p>')
+    ..writeln('<div class="card-grid">')
+    ..writeln(
+      _buildCard(
+        href: '$version/',
+        title: 'Tizen $version',
+        subtitle: '${modules.length} modules',
+        description:
+            'Version-scoped documentation entry for generated native bindings.',
+      ),
+    )
+    ..writeln('</div>')
+    ..writeln('<div class="meta-links">')
+    ..writeln('<a href="dartdoc-index.html">Open raw dartdoc index</a>')
+    ..writeln('<a href="search.html">Open raw dartdoc search</a>')
+    ..writeln('</div>');
+
+  return _buildHtmlPage(
+    title: 'tizen_interop docs',
+    description: 'Version-scoped navigation for generated Tizen bindings.',
+    breadcrumbs: const [('Docs', 'index.html')],
+    body: body.toString(),
+  );
+}
+
+String _buildVersionIndexPage({
+  required String version,
+  required List<ModuleInfo> modules,
+}) {
+  final body = StringBuffer()
+    ..writeln('<p>')
+    ..writeln(
+      'This version keeps the generated bindings under a single '
+      '<code>tizen</code> entry point and then narrows into individual '
+      'modules.',
+    )
+    ..writeln('</p>')
+    ..writeln('<div class="card-grid">')
+    ..writeln(
+      _buildCard(
+        href: 'tizen/',
+        title: 'tizen',
+        subtitle: '${modules.length} modules',
+        description:
+            'Browse module-scoped APIs generated from Tizen $version bindings.',
+      ),
+    )
+    ..writeln('</div>')
+    ..writeln('<div class="meta-links">')
+    ..writeln('<a href="../dartdoc-index.html">Open raw dartdoc index</a>')
+    ..writeln('</div>');
+
+  return _buildHtmlPage(
+    title: 'Tizen $version',
+    description: 'Entry point for Tizen $version module documentation.',
+    breadcrumbs: [
+      ('Docs', '../index.html'),
+      ('Tizen $version', 'index.html'),
+    ],
+    body: body.toString(),
+  );
+}
+
+String _buildTizenIndexPage({
+  required String version,
+  required List<ModuleInfo> modules,
+}) {
+  final rows = modules
+      .map(
+        (module) => '''
+<tr>
+  <td><a href="${module.moduleSlug}/">${_escapeHtml(module.moduleSlug)}</a></td>
+  <td><code>${_escapeHtml(module.getterName)}</code></td>
+  <td>${_escapeHtml(module.descriptionText)}</td>
+  <td>${module.functionEntries.length}</td>
+  <td>${module.callbackEntries.length}</td>
+  <td><a href="../../${module.libraryName}/index.html">raw</a></td>
+</tr>
+''',
+      )
+      .join();
+
+  final body = '''
+<p>Choose a single module to avoid loading one page with every API in the version.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Getter</th>
+      <th>Description</th>
+      <th>Functions</th>
+      <th>Callback docs</th>
+      <th>Raw</th>
+    </tr>
+  </thead>
+  <tbody>
+$rows
+  </tbody>
+</table>
+''';
+
+  return _buildHtmlPage(
+    title: 'Tizen $version / tizen',
+    description: 'Module list for the Tizen $version library.',
+    breadcrumbs: [
+      ('Docs', '../../index.html'),
+      ('Tizen $version', '../index.html'),
+      ('tizen', 'index.html'),
+    ],
+    body: body,
+  );
+}
+
+String _buildModuleIndexPage({
+  required String version,
+  required ModuleInfo module,
+  required CallbackInteropInfo callbackInterop,
+}) {
+  final functions = module.functionEntries
+      .map(
+        (entry) =>
+            '<li><a href="../../../${module.libraryName}/${entry.fileName}">'
+            '${_escapeHtml(entry.label)}</a></li>',
+      )
+      .join();
+  final callbacks = module.callbackEntries
+      .map(
+        (entry) =>
+            '<li><a href="../../../${module.libraryName}/${entry.fileName}">'
+            '${_escapeHtml(entry.label)}</a>'
+            ' <span class="muted">${_escapeHtml(entry.kind)}</span></li>',
+      )
+      .join();
+
+  final missingCallbackBlock = module.callbackRelatedMissingSymbols.isEmpty
+      ? ''
+      : '''
+<section>
+  <h2>Missing callback-related symbols</h2>
+  <p>
+    These symbols were listed in <code>generated_symbols.dart</code> but not found in
+    <code>generated_bindings.dart</code>. For these cases, inspect
+    <code>package:tizen_interop_callbacks</code> through the callback interop
+    interface below.
+  </p>
+  <ul>
+${module.callbackRelatedMissingSymbols.map((symbol) => '    <li><code>${_escapeHtml(symbol)}</code></li>').join('\n')}
+  </ul>
+</section>
+
+<section>
+  <h2>Callback interop interface</h2>
+  <ul>
+    <li><code>${_escapeHtml(callbackInterop.helperClassName)}.${_escapeHtml(callbackInterop.registrationMethodName)}&lt;NativeCbType&gt;(callbackName, callback, {userObject, blocking})</code></li>
+    <li><code>${_escapeHtml(callbackInterop.registeredCallbackTypeName)}.${_escapeHtml(callbackInterop.pointerGetterName)}</code></li>
+    <li><code>${_escapeHtml(callbackInterop.registeredCallbackTypeName)}.${_escapeHtml(callbackInterop.userDataGetterName)}</code></li>
+  </ul>
+  <p class="muted">
+    Verify the native callback typedef for this module, register it with
+    <code>${_escapeHtml(callbackInterop.helperClassName)}</code>, then pass the
+    registered callback pointer and user-data pointer to the native setter or adder API.
+  </p>
+</section>
+''';
+
+  final missingOtherBlock = module.unresolvedSymbols.isEmpty
+      ? ''
+      : '''
+<section>
+  <h2>Other unresolved symbols</h2>
+  <ul>
+${module.unresolvedSymbols.map((symbol) => '    <li><code>${_escapeHtml(symbol)}</code></li>').join('\n')}
+  </ul>
+</section>
+''';
+
+  final body = '''
+<p>${_escapeHtml(module.descriptionText)}</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>${_escapeHtml(module.getterName)}</code></div>
+  <div><strong>Shared objects</strong><br>${module.sharedObjects.map((value) => '<code>${_escapeHtml(value)}</code>').join('<br>')}</div>
+  <div><strong>Raw library page</strong><br><a href="../../../${module.libraryName}/index.html">${_escapeHtml(module.libraryName)}</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+$functions
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+$callbacks
+  </ul>
+</section>
+
+$missingCallbackBlock
+$missingOtherBlock
+''';
+
+  return _buildHtmlPage(
+    title: 'Tizen $version / tizen / ${module.moduleSlug}',
+    description:
+        'Module-scoped API list for ${module.getterName} in Tizen $version.',
+    breadcrumbs: [
+      ('Docs', '../../../index.html'),
+      ('Tizen $version', '../../index.html'),
+      ('tizen', '../index.html'),
+      (module.moduleSlug, 'index.html'),
+    ],
+    body: body,
+  );
+}
+
+String _buildHtmlPage({
+  required String title,
+  required String description,
+  required List<(String, String)> breadcrumbs,
+  required String body,
+}) {
+  final breadcrumbHtml = breadcrumbs
+      .map(
+        (crumb) =>
+            '<a href="${_escapeHtml(crumb.$2)}">${_escapeHtml(crumb.$1)}</a>',
+      )
+      .join('<span class="sep">/</span>');
+
+  return '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${_escapeHtml(title)}</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs">$breadcrumbHtml</nav>
+      <h1>${_escapeHtml(title)}</h1>
+      <p class="summary">${_escapeHtml(description)}</p>
+    </section>
+    $body
+  </main>
+</body>
+</html>
+''';
+}
+
+String _buildCard({
+  required String href,
+  required String title,
+  required String subtitle,
+  required String description,
+}) {
+  return '''
+<a class="card" href="${_escapeHtml(href)}">
+  <h2>${_escapeHtml(title)}</h2>
+  <span class="sub">${_escapeHtml(subtitle)}</span>
+  <span>${_escapeHtml(description)}</span>
+</a>
+''';
+}
+
 String _buildModuleLibrary({
   required String version,
   required ModuleInfo module,
@@ -964,6 +1488,16 @@ String _camelToSnake(String value) {
       )
       .toLowerCase();
 }
+
+String _moduleSlugFromGetter(String getterName) {
+  const prefix = 'tizen';
+  final trimmed = getterName.startsWith(prefix)
+      ? getterName.substring(prefix.length)
+      : getterName;
+  return _camelToSnake(trimmed).replaceFirst(RegExp(r'^_+'), '');
+}
+
+String _escapeHtml(String value) => htmlEscape.convert(value);
 
 String _normalizeDocLine(String line) {
   return line

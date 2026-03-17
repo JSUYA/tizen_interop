@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_location_manager</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_location_manager</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_location_manager</h1>
+      <p class="summary">Module-scoped API list for tizenCapiLocationManager in Tizen 6.0.</p>
+    </section>
+    <p>Location &#47; Location Manager</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiLocationManager</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-location-manager.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_location_manager/index.html">tizen_6_0_tizen_capi_location_manager</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_foreach_last_satellites_in_view.html">gps_status_foreach_last_satellites_in_view</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_foreach_satellites_in_view.html">gps_status_foreach_satellites_in_view</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_get_last_satellite.html">gps_status_get_last_satellite</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_get_nmea.html">gps_status_get_nmea</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_get_satellite.html">gps_status_get_satellite</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_set_satellite_updated_cb.html">gps_status_set_satellite_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_unset_satellite_updated_cb.html">gps_status_unset_satellite_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_contains_coordinates.html">location_bounds_contains_coordinates</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_contains_coordinates_on_edge.html">location_bounds_contains_coordinates_on_edge</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_create_circle.html">location_bounds_create_circle</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_create_polygon.html">location_bounds_create_polygon</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_create_rect.html">location_bounds_create_rect</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_destroy.html">location_bounds_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_foreach_polygon_coords.html">location_bounds_foreach_polygon_coords</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_get_circle_coords.html">location_bounds_get_circle_coords</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_get_rect_coords.html">location_bounds_get_rect_coords</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_get_type.html">location_bounds_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_set_state_changed_cb.html">location_bounds_set_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_unset_state_changed_cb.html">location_bounds_unset_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_add_boundary.html">location_manager_add_boundary</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_clear_mock_location.html">location_manager_clear_mock_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_create.html">location_manager_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_destroy.html">location_manager_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_enable_method.html">location_manager_enable_method</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_enable_mock_location.html">location_manager_enable_mock_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_foreach_boundary.html">location_manager_foreach_boundary</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_foreach_location_batch.html">location_manager_foreach_location_batch</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_accessibility_state.html">location_manager_get_accessibility_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_accuracy.html">location_manager_get_accuracy</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_distance.html">location_manager_get_distance</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_last_accuracy.html">location_manager_get_last_accuracy</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_last_location.html">location_manager_get_last_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_last_position.html">location_manager_get_last_position</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_last_velocity.html">location_manager_get_last_velocity</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_location.html">location_manager_get_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_method.html">location_manager_get_method</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_position.html">location_manager_get_position</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_velocity.html">location_manager_get_velocity</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_get_velocity_accuracy.html">location_manager_get_velocity_accuracy</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_is_enabled_method.html">location_manager_is_enabled_method</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_is_enabled_mock_location.html">location_manager_is_enabled_mock_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_is_supported_method.html">location_manager_is_supported_method</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_remove_boundary.html">location_manager_remove_boundary</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_request_single_location.html">location_manager_request_single_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_distance_based_location_changed_cb.html">location_manager_set_distance_based_location_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_fused_mode.html">location_manager_set_fused_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_location_batch_cb.html">location_manager_set_location_batch_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_location_changed_cb.html">location_manager_set_location_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_mock_location.html">location_manager_set_mock_location</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_position_updated_cb.html">location_manager_set_position_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_service_state_changed_cb.html">location_manager_set_service_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_setting_changed_cb.html">location_manager_set_setting_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_velocity_updated_cb.html">location_manager_set_velocity_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_set_zone_changed_cb.html">location_manager_set_zone_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_start.html">location_manager_start</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_start_batch.html">location_manager_start_batch</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_stop.html">location_manager_stop</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_stop_batch.html">location_manager_stop_batch</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_distance_based_location_changed_cb.html">location_manager_unset_distance_based_location_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_location_batch_cb.html">location_manager_unset_location_batch_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_location_changed_cb.html">location_manager_unset_location_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_position_updated_cb.html">location_manager_unset_position_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_service_state_changed_cb.html">location_manager_unset_service_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_setting_changed_cb.html">location_manager_unset_setting_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_velocity_updated_cb.html">location_manager_unset_velocity_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_manager_unset_zone_changed_cb.html">location_manager_unset_zone_changed_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_get_satellites_cb.html">gps_status_get_satellites_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_get_satellites_cbFunction.html">gps_status_get_satellites_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartgps_status_get_satellites_cbFunction.html">Dartgps_status_get_satellites_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_satellite_updated_cb.html">gps_status_satellite_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/gps_status_satellite_updated_cbFunction.html">gps_status_satellite_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartgps_status_satellite_updated_cbFunction.html">Dartgps_status_satellite_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/polygon_coords_cb.html">polygon_coords_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/polygon_coords_cbFunction.html">polygon_coords_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartpolygon_coords_cbFunction.html">Dartpolygon_coords_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_state_changed_cb.html">location_bounds_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_state_changed_cbFunction.html">location_bounds_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_bounds_state_changed_cbFunction.html">Dartlocation_bounds_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_cb.html">location_bounds_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_bounds_cbFunction.html">location_bounds_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_bounds_cbFunction.html">Dartlocation_bounds_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_batch_get_location_cb.html">location_batch_get_location_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_batch_get_location_cbFunction.html">location_batch_get_location_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_batch_get_location_cbFunction.html">Dartlocation_batch_get_location_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_updated_cb.html">location_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_updated_cbFunction.html">location_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_updated_cbFunction.html">Dartlocation_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_changed_cb.html">location_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_changed_cbFunction.html">location_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_changed_cbFunction.html">Dartlocation_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_batch_cb.html">location_batch_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_batch_cbFunction.html">location_batch_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_batch_cbFunction.html">Dartlocation_batch_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_position_updated_cb.html">location_position_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_position_updated_cbFunction.html">location_position_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_position_updated_cbFunction.html">Dartlocation_position_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_service_state_changed_cb.html">location_service_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_service_state_changed_cbFunction.html">location_service_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_service_state_changed_cbFunction.html">Dartlocation_service_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_setting_changed_cb.html">location_setting_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_setting_changed_cbFunction.html">location_setting_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_setting_changed_cbFunction.html">Dartlocation_setting_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_velocity_updated_cb.html">location_velocity_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_velocity_updated_cbFunction.html">location_velocity_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_velocity_updated_cbFunction.html">Dartlocation_velocity_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_zone_changed_cb.html">location_zone_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/location_zone_changed_cbFunction.html">location_zone_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_location_manager/Dartlocation_zone_changed_cbFunction.html">Dartlocation_zone_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

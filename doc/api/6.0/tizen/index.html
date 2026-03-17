@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="index.html">tizen</a></nav>
+      <h1>Tizen 6.0 &#47; tizen</h1>
+      <p class="summary">Module list for the Tizen 6.0 library.</p>
+    </section>
+    <p>Choose a single module to avoid loading one page with every API in the version.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Getter</th>
+      <th>Description</th>
+      <th>Functions</th>
+      <th>Callback docs</th>
+      <th>Raw</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+  <td><a href="accounts_svc/">accounts_svc</a></td>
+  <td><code>tizenAccountsSvc</code></td>
+  <td>Account &#47; Account Manager</td>
+  <td>76</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_accounts_svc/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="appcore_agent/">appcore_agent</a></td>
+  <td><code>tizenAppcoreAgent</code></td>
+  <td>Application Framework &#47; Service Application</td>
+  <td>4</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_appcore_agent/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="asp/">asp</a></td>
+  <td><code>tizenAsp</code></td>
+  <td>Network &#47; Application Service Platform</td>
+  <td>60</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_asp/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="badge/">badge</a></td>
+  <td><code>tizenBadge</code></td>
+  <td>Application Framework &#47; Badge</td>
+  <td>10</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_badge/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="bundle/">bundle</a></td>
+  <td><code>tizenBundle</code></td>
+  <td>Application Framework &#47; Bundle</td>
+  <td>22</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_bundle/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="calendar_service2/">calendar_service2</a></td>
+  <td><code>tizenCalendarService2</code></td>
+  <td>Social &#47; Calendar</td>
+  <td>79</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_calendar_service2/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_alarm/">capi_appfw_alarm</a></td>
+  <td><code>tizenCapiAppfwAlarm</code></td>
+  <td>Application Framework &#47; Application &#47; Alarm</td>
+  <td>24</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_alarm/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_app_common/">capi_appfw_app_common</a></td>
+  <td><code>tizenCapiAppfwAppCommon</code></td>
+  <td>Application Framework &#47; Application &#47; App Common, Resource Manager</td>
+  <td>26</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_app_common/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_app_control/">capi_appfw_app_control</a></td>
+  <td><code>tizenCapiAppfwAppControl</code></td>
+  <td>Application Framework &#47; Application &#47; App Control</td>
+  <td>38</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_app_control/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_app_manager/">capi_appfw_app_manager</a></td>
+  <td><code>tizenCapiAppfwAppManager</code></td>
+  <td>Application Framework &#47; Application Manager</td>
+  <td>60</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_app_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_application/">capi_appfw_application</a></td>
+  <td><code>tizenCapiAppfwApplication</code></td>
+  <td>Applicatoin Framework &#47; Application</td>
+  <td>6</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_application/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_event/">capi_appfw_event</a></td>
+  <td><code>tizenCapiAppfwEvent</code></td>
+  <td>Application Framework &#47; Application &#47; Event</td>
+  <td>5</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_event/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_job_scheduler/">capi_appfw_job_scheduler</a></td>
+  <td><code>tizenCapiAppfwJobScheduler</code></td>
+  <td>Application Framework &#47; Application &#47; Job scheduler</td>
+  <td>22</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_job_scheduler/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_package_manager/">capi_appfw_package_manager</a></td>
+  <td><code>tizenCapiAppfwPackageManager</code></td>
+  <td>Application Framework &#47; Package Manager</td>
+  <td>94</td>
+  <td>30</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_package_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_appfw_preference/">capi_appfw_preference</a></td>
+  <td><code>tizenCapiAppfwPreference</code></td>
+  <td>Application Framework &#47; Application &#47; Preference</td>
+  <td>15</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_appfw_preference/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_base_common/">capi_base_common</a></td>
+  <td><code>tizenCapiBaseCommon</code></td>
+  <td>Base &#47; Common Error</td>
+  <td>3</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_base_common/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_content_media_content/">capi_content_media_content</a></td>
+  <td><code>tizenCapiContentMediaContent</code></td>
+  <td>Content &#47; Media Content</td>
+  <td>209</td>
+  <td>45</td>
+  <td><a href="../../tizen_6_0_tizen_capi_content_media_content/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_content_mime_type/">capi_content_mime_type</a></td>
+  <td><code>tizenCapiContentMimeType</code></td>
+  <td>Content &#47; Mime Type</td>
+  <td>4</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_content_mime_type/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_context/">capi_context</a></td>
+  <td><code>tizenCapiContext</code></td>
+  <td>Context &#47; Contextual History, Contextual Trigger</td>
+  <td>47</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_context/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_context_motion/">capi_context_motion</a></td>
+  <td><code>tizenCapiContextMotion</code></td>
+  <td>Context &#47; Activity Recognition, Gesture Recognition</td>
+  <td>13</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_context_motion/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_geofence_manager/">capi_geofence_manager</a></td>
+  <td><code>tizenCapiGeofenceManager</code></td>
+  <td>Location &#47; Geofence Manager</td>
+  <td>36</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_capi_geofence_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_location_manager/">capi_location_manager</a></td>
+  <td><code>tizenCapiLocationManager</code></td>
+  <td>Location &#47; Location Manager</td>
+  <td>66</td>
+  <td>42</td>
+  <td><a href="../../tizen_6_0_tizen_capi_location_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_audio_io/">capi_media_audio_io</a></td>
+  <td><code>tizenCapiMediaAudioIo</code></td>
+  <td>Multimedia &#47; Audio I&#47;O</td>
+  <td>40</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_audio_io/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_camera/">capi_media_camera</a></td>
+  <td><code>tizenCapiMediaCamera</code></td>
+  <td>Multimedia &#47; Camera</td>
+  <td>155</td>
+  <td>84</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_camera/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_codec/">capi_media_codec</a></td>
+  <td><code>tizenCapiMediaCodec</code></td>
+  <td>Multimedia &#47; Media Codec</td>
+  <td>26</td>
+  <td>18</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_codec/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_controller/">capi_media_controller</a></td>
+  <td><code>tizenCapiMediaController</code></td>
+  <td>Multimedia &#47; Media Controller</td>
+  <td>161</td>
+  <td>99</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_controller/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_image_util/">capi_media_image_util</a></td>
+  <td><code>tizenCapiMediaImageUtil</code></td>
+  <td>Multimedia &#47; Image Util</td>
+  <td>62</td>
+  <td>24</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_image_util/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_metadata_editor/">capi_media_metadata_editor</a></td>
+  <td><code>tizenCapiMediaMetadataEditor</code></td>
+  <td>Multimedia &#47; Metadata Editor</td>
+  <td>9</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_metadata_editor/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_metadata_extractor/">capi_media_metadata_extractor</a></td>
+  <td><code>tizenCapiMediaMetadataExtractor</code></td>
+  <td>Multimedia &#47; Metadata Extractor</td>
+  <td>9</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_metadata_extractor/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_player/">capi_media_player</a></td>
+  <td><code>tizenCapiMediaPlayer</code></td>
+  <td>Multimedia &#47; Player</td>
+  <td>118</td>
+  <td>45</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_player/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_radio/">capi_media_radio</a></td>
+  <td><code>tizenCapiMediaRadio</code></td>
+  <td>Multimeida &#47; Radio</td>
+  <td>22</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_radio/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_recorder/">capi_media_recorder</a></td>
+  <td><code>tizenCapiMediaRecorder</code></td>
+  <td>Multimedia &#47; Recorder</td>
+  <td>67</td>
+  <td>42</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_recorder/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_screen_mirroring/">capi_media_screen_mirroring</a></td>
+  <td><code>tizenCapiMediaScreenMirroring</code></td>
+  <td>Multimedia &#47; Screen Mirroring</td>
+  <td>22</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_screen_mirroring/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_sound_manager/">capi_media_sound_manager</a></td>
+  <td><code>tizenCapiMediaSoundManager</code></td>
+  <td>Multimedia &#47; Sound Manager</td>
+  <td>60</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_sound_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_sound_pool/">capi_media_sound_pool</a></td>
+  <td><code>tizenCapiMediaSoundPool</code></td>
+  <td>Multimedia &#47; Sound Pool</td>
+  <td>20</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_sound_pool/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_streamer/">capi_media_streamer</a></td>
+  <td><code>tizenCapiMediaStreamer</code></td>
+  <td>Multimedia &#47; Media Streamer</td>
+  <td>43</td>
+  <td>27</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_streamer/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_streamrecorder/">capi_media_streamrecorder</a></td>
+  <td><code>tizenCapiMediaStreamrecorder</code></td>
+  <td>Multimedia &#47; StreamRecorder</td>
+  <td>51</td>
+  <td>27</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_streamrecorder/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_thumbnail_util/">capi_media_thumbnail_util</a></td>
+  <td><code>tizenCapiMediaThumbnailUtil</code></td>
+  <td>Multimedia &#47; Thumbnail Util</td>
+  <td>8</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_thumbnail_util/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_tone_player/">capi_media_tone_player</a></td>
+  <td><code>tizenCapiMediaTonePlayer</code></td>
+  <td>Multimedia &#47; Tone Player</td>
+  <td>2</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_tone_player/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_tool/">capi_media_tool</a></td>
+  <td><code>tizenCapiMediaTool</code></td>
+  <td>Multimedia &#47; Media Tool</td>
+  <td>86</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_tool/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_media_wav_player/">capi_media_wav_player</a></td>
+  <td><code>tizenCapiMediaWavPlayer</code></td>
+  <td>Multimedia &#47; WAV Player</td>
+  <td>3</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_media_wav_player/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_mediademuxer/">capi_mediademuxer</a></td>
+  <td><code>tizenCapiMediademuxer</code></td>
+  <td>Multimedia &#47; Media Demuxer</td>
+  <td>18</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_mediademuxer/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_mediamuxer/">capi_mediamuxer</a></td>
+  <td><code>tizenCapiMediamuxer</code></td>
+  <td>Multimedia &#47; Media Muxer</td>
+  <td>17</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_mediamuxer/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_messaging_email/">capi_messaging_email</a></td>
+  <td><code>tizenCapiMessagingEmail</code></td>
+  <td>Messaging &#47; Email</td>
+  <td>12</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_messaging_email/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_bluetooth/">capi_network_bluetooth</a></td>
+  <td><code>tizenCapiNetworkBluetooth</code></td>
+  <td>Network &#47; Bluetooth</td>
+  <td>272</td>
+  <td>162</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_bluetooth/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_connection/">capi_network_connection</a></td>
+  <td><code>tizenCapiNetworkConnection</code></td>
+  <td>Network &#47; Connection</td>
+  <td>106</td>
+  <td>33</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_connection/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_http/">capi_network_http</a></td>
+  <td><code>tizenCapiNetworkHttp</code></td>
+  <td>Network &#47; HTTP</td>
+  <td>54</td>
+  <td>18</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_http/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_inm/">capi_network_inm</a></td>
+  <td><code>tizenCapiNetworkInm</code></td>
+  <td>Network &#47; Intelligent Network Monitoring</td>
+  <td>116</td>
+  <td>60</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_inm/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_mtp/">capi_network_mtp</a></td>
+  <td><code>tizenCapiNetworkMtp</code></td>
+  <td>Network &#47; MTP</td>
+  <td>0</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_mtp/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_softap/">capi_network_softap</a></td>
+  <td><code>tizenCapiNetworkSoftap</code></td>
+  <td>Network &#47; SoftAP</td>
+  <td>51</td>
+  <td>24</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_softap/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_stc/">capi_network_stc</a></td>
+  <td><code>tizenCapiNetworkStc</code></td>
+  <td>Network &#47; Smart Traffic Control</td>
+  <td>27</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_stc/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_network_wifi_manager/">capi_network_wifi_manager</a></td>
+  <td><code>tizenCapiNetworkWifiManager</code></td>
+  <td>Network &#47; WI-Fi Manager</td>
+  <td>173</td>
+  <td>60</td>
+  <td><a href="../../tizen_6_0_tizen_capi_network_wifi_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_privacy_privilege_manager/">capi_privacy_privilege_manager</a></td>
+  <td><code>tizenCapiPrivacyPrivilegeManager</code></td>
+  <td>Security &#47; Privacy Privilege Manager</td>
+  <td>6</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_privacy_privilege_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_device/">capi_system_device</a></td>
+  <td><code>tizenCapiSystemDevice</code></td>
+  <td>System &#47; Device</td>
+  <td>32</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_device/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_info/">capi_system_info</a></td>
+  <td><code>tizenCapiSystemInfo</code></td>
+  <td>System &#47; System Information</td>
+  <td>14</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_info/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_media_key/">capi_system_media_key</a></td>
+  <td><code>tizenCapiSystemMediaKey</code></td>
+  <td>System &#47; Media key</td>
+  <td>2</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_media_key/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_peripheral_io/">capi_system_peripheral_io</a></td>
+  <td><code>tizenCapiSystemPeripheralIo</code></td>
+  <td>System &#47; Peripheral IO</td>
+  <td>43</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_peripheral_io/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_runtime_info/">capi_system_runtime_info</a></td>
+  <td><code>tizenCapiSystemRuntimeInfo</code></td>
+  <td>System &#47; Runtime information</td>
+  <td>20</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_runtime_info/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_sensor/">capi_system_sensor</a></td>
+  <td><code>tizenCapiSystemSensor</code></td>
+  <td>System &#47; Sensor</td>
+  <td>74</td>
+  <td>27</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_sensor/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_system_settings/">capi_system_system_settings</a></td>
+  <td><code>tizenCapiSystemSystemSettings</code></td>
+  <td>System &#47; System Settings</td>
+  <td>13</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_system_settings/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_system_usbhost/">capi_system_usbhost</a></td>
+  <td><code>tizenCapiSystemUsbhost</code></td>
+  <td>System &#47; USB Host</td>
+  <td>80</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_system_usbhost/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_autofill/">capi_ui_autofill</a></td>
+  <td><code>tizenCapiUiAutofill</code></td>
+  <td>UIX &#47; Autofill</td>
+  <td>13</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_autofill/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_autofill_common/">capi_ui_autofill_common</a></td>
+  <td><code>tizenCapiUiAutofillCommon</code></td>
+  <td>UIX &#47; Autofill common</td>
+  <td>91</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_autofill_common/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_autofill_manager/">capi_ui_autofill_manager</a></td>
+  <td><code>tizenCapiUiAutofillManager</code></td>
+  <td>UIX &#47; Autofill manager</td>
+  <td>6</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_autofill_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_autofill_service/">capi_ui_autofill_service</a></td>
+  <td><code>tizenCapiUiAutofillService</code></td>
+  <td>UIX &#47; Autofill service</td>
+  <td>15</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_autofill_service/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_inputmethod/">capi_ui_inputmethod</a></td>
+  <td><code>tizenCapiUiInputmethod</code></td>
+  <td>UIX &#47; Input Method</td>
+  <td>60</td>
+  <td>69</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_inputmethod/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_ui_inputmethod_manager/">capi_ui_inputmethod_manager</a></td>
+  <td><code>tizenCapiUiInputmethodManager</code></td>
+  <td>UIX &#47; Input Method Manager</td>
+  <td>6</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_ui_inputmethod_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_vpnsvc/">capi_vpnsvc</a></td>
+  <td><code>tizenCapiVpnsvc</code></td>
+  <td>Network &#47; VPN Service</td>
+  <td>21</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_capi_vpnsvc/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="capi_web_url_download/">capi_web_url_download</a></td>
+  <td><code>tizenCapiWebUrlDownload</code></td>
+  <td>Content &#47; Download</td>
+  <td>41</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_capi_web_url_download/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="cbhm/">cbhm</a></td>
+  <td><code>tizenCbhm</code></td>
+  <td>UI &#47; Clipboard History Manager</td>
+  <td>17</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_cbhm/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="contacts_service2/">contacts_service2</a></td>
+  <td><code>tizenContactsService2</code></td>
+  <td>Social &#47; Contacts</td>
+  <td>114</td>
+  <td>18</td>
+  <td><a href="../../tizen_6_0_tizen_contacts_service2/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="core_sync_client/">core_sync_client</a></td>
+  <td><code>tizenCoreSyncClient</code></td>
+  <td>Account &#47; Sync Manager</td>
+  <td>7</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_core_sync_client/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="csr_client/">csr_client</a></td>
+  <td><code>tizenCsrClient</code></td>
+  <td>Security &#47; CSR</td>
+  <td>49</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_csr_client/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="data_control/">data_control</a></td>
+  <td><code>tizenDataControl</code></td>
+  <td>Application Framework &#47; Data Control</td>
+  <td>95</td>
+  <td>18</td>
+  <td><a href="../../tizen_6_0_tizen_data_control/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="device_certificate_manager/">device_certificate_manager</a></td>
+  <td><code>tizenDeviceCertificateManager</code></td>
+  <td>Security &#47; Device Certificate Manager</td>
+  <td>6</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_device_certificate_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="diagnostics/">diagnostics</a></td>
+  <td><code>tizenDiagnostics</code></td>
+  <td>System &#47; Diagnostics</td>
+  <td>8</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_diagnostics/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="dlog/">dlog</a></td>
+  <td><code>tizenDlog</code></td>
+  <td>System &#47; Dlog</td>
+  <td>2</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_dlog/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="dpm/">dpm</a></td>
+  <td><code>tizenDpm</code></td>
+  <td>Security &#47; Device Policy Manager</td>
+  <td>77</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_dpm/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="eom/">eom</a></td>
+  <td><code>tizenEom</code></td>
+  <td>UI &#47; External Output Manager</td>
+  <td>19</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_eom/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="feedback/">feedback</a></td>
+  <td><code>tizenFeedback</code></td>
+  <td>System &#47; Feedback</td>
+  <td>6</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_feedback/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="fido_client/">fido_client</a></td>
+  <td><code>tizenFidoClient</code></td>
+  <td>Account &#47; FIDO Client</td>
+  <td>20</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_fido_client/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="iotcon/">iotcon</a></td>
+  <td><code>tizenIotcon</code></td>
+  <td>Network &#47; IoTCon</td>
+  <td>185</td>
+  <td>72</td>
+  <td><a href="../../tizen_6_0_tizen_iotcon/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="key_manager_client/">key_manager_client</a></td>
+  <td><code>tizenKeyManagerClient</code></td>
+  <td>Security &#47; Key Manager Client</td>
+  <td>63</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_key_manager_client/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="ma/">ma</a></td>
+  <td><code>tizenMa</code></td>
+  <td>UIX &#47; Multi assistant</td>
+  <td>45</td>
+  <td>33</td>
+  <td><a href="../../tizen_6_0_tizen_ma/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="message_port/">message_port</a></td>
+  <td><code>tizenMessagePort</code></td>
+  <td>Application Framework &#47; Message Port</td>
+  <td>13</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_message_port/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_barcode_detector/">mv_barcode_detector</a></td>
+  <td><code>tizenMvBarcodeDetector</code></td>
+  <td>Multimedia &#47; Media Vision BarCode</td>
+  <td>1</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_mv_barcode_detector/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_barcode_generator/">mv_barcode_generator</a></td>
+  <td><code>tizenMvBarcodeGenerator</code></td>
+  <td>Multimedia &#47; Media Vision BarCode</td>
+  <td>2</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_mv_barcode_generator/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_common/">mv_common</a></td>
+  <td><code>tizenMvCommon</code></td>
+  <td>Multimedia &#47; Media Vision Common</td>
+  <td>22</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_mv_common/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_face/">mv_face</a></td>
+  <td><code>tizenMvFace</code></td>
+  <td>Multimedia &#47; Media Vision Face</td>
+  <td>20</td>
+  <td>15</td>
+  <td><a href="../../tizen_6_0_tizen_mv_face/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_image/">mv_image</a></td>
+  <td><code>tizenMvImage</code></td>
+  <td>Multimedia &#47; Media Vision Image</td>
+  <td>18</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_mv_image/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_inference/">mv_inference</a></td>
+  <td><code>tizenMvInference</code></td>
+  <td>Multimedia &#47; Media Vision Inference</td>
+  <td>18</td>
+  <td>18</td>
+  <td><a href="../../tizen_6_0_tizen_mv_inference/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="mv_surveillance/">mv_surveillance</a></td>
+  <td><code>tizenMvSurveillance</code></td>
+  <td>Multimedia &#47; Media Vision Surveillance</td>
+  <td>11</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_mv_surveillance/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="notification/">notification</a></td>
+  <td><code>tizenNotification</code></td>
+  <td>Application Framework &#47; Notification</td>
+  <td>54</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_notification/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="notification_ex/">notification_ex</a></td>
+  <td><code>tizenNotificationEx</code></td>
+  <td>Application Framework &#47; Notification EX</td>
+  <td>161</td>
+  <td>3</td>
+  <td><a href="../../tizen_6_0_tizen_notification_ex/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="nsd_dns_sd/">nsd_dns_sd</a></td>
+  <td><code>tizenNsdDnsSd</code></td>
+  <td>Network &#47; DNSSD</td>
+  <td>19</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_nsd_dns_sd/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="nsd_ssdp/">nsd_ssdp</a></td>
+  <td><code>tizenNsdSsdp</code></td>
+  <td>Network &#47; SSDP</td>
+  <td>13</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_nsd_ssdp/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="oauth2/">oauth2</a></td>
+  <td><code>tizenOauth2</code></td>
+  <td>Account &#47; OAuth 2.0</td>
+  <td>0</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_oauth2/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="phonenumber_utils/">phonenumber_utils</a></td>
+  <td><code>tizenPhonenumberUtils</code></td>
+  <td>Social &#47; Phonenumber utils</td>
+  <td>16</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_phonenumber_utils/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="privilege_info/">privilege_info</a></td>
+  <td><code>tizenPrivilegeInfo</code></td>
+  <td>Security &#47; Privilege Info</td>
+  <td>7</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_privilege_info/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="push/">push</a></td>
+  <td><code>tizenPush</code></td>
+  <td>Messaging &#47; Push</td>
+  <td>17</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_push/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="rpc_port/">rpc_port</a></td>
+  <td><code>tizenRpcPort</code></td>
+  <td>Application Framework &#47; RPC Port</td>
+  <td>51</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_rpc_port/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="shortcut/">shortcut</a></td>
+  <td><code>tizenShortcut</code></td>
+  <td>Application Framework &#47; Shortcut</td>
+  <td>8</td>
+  <td>12</td>
+  <td><a href="../../tizen_6_0_tizen_shortcut/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="storage/">storage</a></td>
+  <td><code>tizenStorage</code></td>
+  <td>System &#47; Storage</td>
+  <td>14</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_storage/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="stt/">stt</a></td>
+  <td><code>tizenStt</code></td>
+  <td>UIX &#47; STT</td>
+  <td>37</td>
+  <td>27</td>
+  <td><a href="../../tizen_6_0_tizen_stt/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="stt_engine/">stt_engine</a></td>
+  <td><code>tizenSttEngine</code></td>
+  <td>UIX &#47; STT Engine</td>
+  <td>8</td>
+  <td>9</td>
+  <td><a href="../../tizen_6_0_tizen_stt_engine/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="tbm/">tbm</a></td>
+  <td><code>tizenTbm</code></td>
+  <td>UI &#47; TBM Surface</td>
+  <td>9</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_tbm/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="ttrace/">ttrace</a></td>
+  <td><code>tizenTtrace</code></td>
+  <td>System &#47; T-trace</td>
+  <td>5</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_ttrace/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="tts/">tts</a></td>
+  <td><code>tizenTts</code></td>
+  <td>UIX &#47; TTS</td>
+  <td>32</td>
+  <td>21</td>
+  <td><a href="../../tizen_6_0_tizen_tts/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="tts_engine/">tts_engine</a></td>
+  <td><code>tizenTtsEngine</code></td>
+  <td>UIX &#47; TTS Engine</td>
+  <td>7</td>
+  <td>6</td>
+  <td><a href="../../tizen_6_0_tizen_tts_engine/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="update_control/">update_control</a></td>
+  <td><code>tizenUpdateControl</code></td>
+  <td>System &#47; Update Control</td>
+  <td>8</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_update_control/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="vc/">vc</a></td>
+  <td><code>tizenVc</code></td>
+  <td>UIX &#47; Voice control</td>
+  <td>33</td>
+  <td>24</td>
+  <td><a href="../../tizen_6_0_tizen_vc/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="vc_engine/">vc_engine</a></td>
+  <td><code>tizenVcEngine</code></td>
+  <td>UIX &#47; Voice control engine</td>
+  <td>26</td>
+  <td>24</td>
+  <td><a href="../../tizen_6_0_tizen_vc_engine/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="vc_manager/">vc_manager</a></td>
+  <td><code>tizenVcManager</code></td>
+  <td>UIX &#47; Voice control manager</td>
+  <td>65</td>
+  <td>48</td>
+  <td><a href="../../tizen_6_0_tizen_vc_manager/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="wifi_direct/">wifi_direct</a></td>
+  <td><code>tizenWifiDirect</code></td>
+  <td>Network &#47; Wi-Fi Direct</td>
+  <td>102</td>
+  <td>36</td>
+  <td><a href="../../tizen_6_0_tizen_wifi_direct/index.html">raw</a></td>
+</tr>
+<tr>
+  <td><a href="yaca/">yaca</a></td>
+  <td><code>tizenYaca</code></td>
+  <td>Security &#47; YACA</td>
+  <td>59</td>
+  <td>0</td>
+  <td><a href="../../tizen_6_0_tizen_yaca/index.html">raw</a></td>
+</tr>
+
+  </tbody>
+</table>
+
+  </main>
+</body>
+</html>

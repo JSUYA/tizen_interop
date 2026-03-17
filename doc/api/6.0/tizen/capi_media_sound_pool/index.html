@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_media_sound_pool</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_media_sound_pool</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_media_sound_pool</h1>
+      <p class="summary">Module-scoped API list for tizenCapiMediaSoundPool in Tizen 6.0.</p>
+    </section>
+    <p>Multimedia &#47; Sound Pool</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiMediaSoundPool</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-media-sound-pool.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/index.html">tizen_6_0_tizen_capi_media_sound_pool</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_activate.html">sound_pool_activate</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_create.html">sound_pool_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_deactivate.html">sound_pool_deactivate</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_destroy.html">sound_pool_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_get_state.html">sound_pool_get_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_get_volume.html">sound_pool_get_volume</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_load_source_from_file.html">sound_pool_load_source_from_file</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_set_state_changed_cb.html">sound_pool_set_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_set_volume.html">sound_pool_set_volume</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_get_priority.html">sound_pool_stream_get_priority</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_get_state.html">sound_pool_stream_get_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_get_volume.html">sound_pool_stream_get_volume</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_pause.html">sound_pool_stream_pause</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_play.html">sound_pool_stream_play</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_resume.html">sound_pool_stream_resume</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_set_priority.html">sound_pool_stream_set_priority</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_set_volume.html">sound_pool_stream_set_volume</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_stop.html">sound_pool_stream_stop</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_unload_source.html">sound_pool_unload_source</a></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_unset_state_changed_cb.html">sound_pool_unset_state_changed_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_state_changed_cb.html">sound_pool_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_state_changed_cbFunction.html">sound_pool_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/Dartsound_pool_state_changed_cbFunction.html">Dartsound_pool_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_state_changed_cb.html">sound_pool_stream_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/sound_pool_stream_state_changed_cbFunction.html">sound_pool_stream_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_media_sound_pool/Dartsound_pool_stream_state_changed_cbFunction.html">Dartsound_pool_stream_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

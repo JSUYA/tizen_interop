@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; tts</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">tts</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; tts</h1>
+      <p class="summary">Module-scoped API list for tizenTts in Tizen 6.0.</p>
+    </section>
+    <p>UIX &#47; TTS</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenTts</code></div>
+  <div><strong>Shared objects</strong><br><code>libtts.so</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_tts/index.html">tizen_6_0_tizen_tts</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_tts/tts_add_text.html">tts_add_text</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_create.html">tts_create</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_destroy.html">tts_destroy</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_foreach_supported_voices.html">tts_foreach_supported_voices</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_default_voice.html">tts_get_default_voice</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_error_message.html">tts_get_error_message</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_max_text_size.html">tts_get_max_text_size</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_mode.html">tts_get_mode</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_private_data.html">tts_get_private_data</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_speed_range.html">tts_get_speed_range</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_get_state.html">tts_get_state</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_pause.html">tts_pause</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_play.html">tts_play</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_prepare.html">tts_prepare</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_repeat.html">tts_repeat</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_credential.html">tts_set_credential</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_default_voice_changed_cb.html">tts_set_default_voice_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_engine_changed_cb.html">tts_set_engine_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_error_cb.html">tts_set_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_mode.html">tts_set_mode</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_private_data.html">tts_set_private_data</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_state_changed_cb.html">tts_set_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_utterance_completed_cb.html">tts_set_utterance_completed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_set_utterance_started_cb.html">tts_set_utterance_started_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_stop.html">tts_stop</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unprepare.html">tts_unprepare</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_default_voice_changed_cb.html">tts_unset_default_voice_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_engine_changed_cb.html">tts_unset_engine_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_error_cb.html">tts_unset_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_state_changed_cb.html">tts_unset_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_utterance_completed_cb.html">tts_unset_utterance_completed_cb</a></li><li><a href="../../../tizen_6_0_tizen_tts/tts_unset_utterance_started_cb.html">tts_unset_utterance_started_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_tts/tts_supported_voice_cb.html">tts_supported_voice_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_supported_voice_cbFunction.html">tts_supported_voice_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_supported_voice_cbFunction.html">Darttts_supported_voice_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_default_voice_changed_cb.html">tts_default_voice_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_default_voice_changed_cbFunction.html">tts_default_voice_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_default_voice_changed_cbFunction.html">Darttts_default_voice_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_engine_changed_cb.html">tts_engine_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_engine_changed_cbFunction.html">tts_engine_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_engine_changed_cbFunction.html">Darttts_engine_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_error_cb.html">tts_error_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_error_cbFunction.html">tts_error_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_error_cbFunction.html">Darttts_error_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_state_changed_cb.html">tts_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_state_changed_cbFunction.html">tts_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_state_changed_cbFunction.html">Darttts_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_utterance_completed_cb.html">tts_utterance_completed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_utterance_completed_cbFunction.html">tts_utterance_completed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_utterance_completed_cbFunction.html">Darttts_utterance_completed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_utterance_started_cb.html">tts_utterance_started_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_tts/tts_utterance_started_cbFunction.html">tts_utterance_started_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_tts/Darttts_utterance_started_cbFunction.html">Darttts_utterance_started_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

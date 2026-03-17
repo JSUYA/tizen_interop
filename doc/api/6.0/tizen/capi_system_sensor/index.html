@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_system_sensor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_system_sensor</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_system_sensor</h1>
+      <p class="summary">Module-scoped API list for tizenCapiSystemSensor in Tizen 6.0.</p>
+    </section>
+    <p>System &#47; Sensor</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiSystemSensor</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-system-sensor.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_system_sensor/index.html">tizen_6_0_tizen_capi_system_sensor</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_add_provider.html">sensor_add_provider</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_add_sensor_added_cb.html">sensor_add_sensor_added_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_add_sensor_removed_cb.html">sensor_add_sensor_removed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_create_listener.html">sensor_create_listener</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_create_provider.html">sensor_create_provider</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_destroy_listener.html">sensor_destroy_listener</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_destroy_provider.html">sensor_destroy_provider</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_default_sensor.html">sensor_get_default_sensor</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_default_sensor_by_uri.html">sensor_get_default_sensor_by_uri</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_fifo_count.html">sensor_get_fifo_count</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_max_batch_count.html">sensor_get_max_batch_count</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_max_range.html">sensor_get_max_range</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_min_interval.html">sensor_get_min_interval</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_min_range.html">sensor_get_min_range</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_name.html">sensor_get_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_resolution.html">sensor_get_resolution</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_sensor_list.html">sensor_get_sensor_list</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_sensor_list_by_uri.html">sensor_get_sensor_list_by_uri</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_type.html">sensor_get_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_uri.html">sensor_get_uri</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_get_vendor.html">sensor_get_vendor</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_is_supported.html">sensor_is_supported</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_is_supported_by_uri.html">sensor_is_supported_by_uri</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_is_wake_up.html">sensor_is_wake_up</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_flush.html">sensor_listener_flush</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_read_data.html">sensor_listener_read_data</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_read_data_list.html">sensor_listener_read_data_list</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_accuracy_cb.html">sensor_listener_set_accuracy_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_attribute_int.html">sensor_listener_set_attribute_int</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_event_cb.html">sensor_listener_set_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_events_cb.html">sensor_listener_set_events_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_interval.html">sensor_listener_set_interval</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_max_batch_latency.html">sensor_listener_set_max_batch_latency</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_option.html">sensor_listener_set_option</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_start.html">sensor_listener_start</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_stop.html">sensor_listener_stop</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_accuracy_cb.html">sensor_listener_unset_accuracy_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_event_cb.html">sensor_listener_unset_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_events_cb.html">sensor_listener_unset_events_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_publish.html">sensor_provider_publish</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_publish_events.html">sensor_provider_publish_events</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_interval_changed_cb.html">sensor_provider_set_interval_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_name.html">sensor_provider_set_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_range.html">sensor_provider_set_range</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_resolution.html">sensor_provider_set_resolution</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_start_cb.html">sensor_provider_set_start_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_stop_cb.html">sensor_provider_set_stop_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_vendor.html">sensor_provider_set_vendor</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_create_option.html">sensor_recorder_create_option</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_create_query.html">sensor_recorder_create_query</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_double.html">sensor_recorder_data_get_double</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_int.html">sensor_recorder_data_get_int</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_time.html">sensor_recorder_data_get_time</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_destroy_option.html">sensor_recorder_destroy_option</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_destroy_query.html">sensor_recorder_destroy_query</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_is_supported.html">sensor_recorder_is_supported</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_option_set_int.html">sensor_recorder_option_set_int</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_query_set_int.html">sensor_recorder_query_set_int</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_query_set_time.html">sensor_recorder_query_set_time</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_read.html">sensor_recorder_read</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_read_sync.html">sensor_recorder_read_sync</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_start.html">sensor_recorder_start</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_stop.html">sensor_recorder_stop</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_remove_provider.html">sensor_remove_provider</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_remove_sensor_added_cb.html">sensor_remove_sensor_added_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_remove_sensor_removed_cb.html">sensor_remove_sensor_removed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_altitude.html">sensor_util_get_altitude</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_angle_change.html">sensor_util_get_angle_change</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_declination.html">sensor_util_get_declination</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_inclination.html">sensor_util_get_inclination</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_orientation.html">sensor_util_get_orientation</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_rotation_matrix.html">sensor_util_get_rotation_matrix</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_rotation_matrix_from_vector.html">sensor_util_get_rotation_matrix_from_vector</a></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_util_remap_coordinate_system.html">sensor_util_remap_coordinate_system</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_added_cb.html">sensor_added_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_added_cbFunction.html">sensor_added_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_added_cbFunction.html">Dartsensor_added_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cb.html">sensor_removed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cbFunction.html">sensor_removed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_removed_cbFunction.html">Dartsensor_removed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cb.html">sensor_accuracy_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cbFunction.html">sensor_accuracy_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_accuracy_changed_cbFunction.html">Dartsensor_accuracy_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_event_cb.html">sensor_event_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_event_cbFunction.html">sensor_event_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_event_cbFunction.html">Dartsensor_event_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_events_cb.html">sensor_events_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_events_cbFunction.html">sensor_events_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_events_cbFunction.html">Dartsensor_events_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cb.html">sensor_provider_interval_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cbFunction.html">sensor_provider_interval_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_interval_changed_cbFunction.html">Dartsensor_provider_interval_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cb.html">sensor_provider_start_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cbFunction.html">sensor_provider_start_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_start_cbFunction.html">Dartsensor_provider_start_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cb.html">sensor_provider_stop_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cbFunction.html">sensor_provider_stop_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_stop_cbFunction.html">Dartsensor_provider_stop_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cb.html">sensor_recorder_data_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cbFunction.html">sensor_recorder_data_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_system_sensor/Dartsensor_recorder_data_cbFunction.html">Dartsensor_recorder_data_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

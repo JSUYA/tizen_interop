@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; contacts_service2</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">contacts_service2</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; contacts_service2</h1>
+      <p class="summary">Module-scoped API list for tizenContactsService2 in Tizen 6.0.</p>
+    </section>
+    <p>Social &#47; Contacts</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenContactsService2</code></div>
+  <div><strong>Shared objects</strong><br><code>libcontacts-service2.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_contacts_service2/index.html">tizen_6_0_tizen_contacts_service2</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_activity_delete_by_account_id.html">contacts_activity_delete_by_account_id</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_activity_delete_by_contact_id.html">contacts_activity_delete_by_contact_id</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_connect.html">contacts_connect</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_connect_on_thread.html">contacts_connect_on_thread</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_connect_with_flags.html">contacts_connect_with_flags</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_add_changed_cb.html">contacts_db_add_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_add_status_changed_cb.html">contacts_db_add_status_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_delete_record.html">contacts_db_delete_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_delete_records.html">contacts_db_delete_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_all_records.html">contacts_db_get_all_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_changes_by_version.html">contacts_db_get_changes_by_version</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_count.html">contacts_db_get_count</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_count_for_search_records.html">contacts_db_get_count_for_search_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_count_for_search_records_with_query.html">contacts_db_get_count_for_search_records_with_query</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_count_for_search_records_with_range.html">contacts_db_get_count_for_search_records_with_range</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_count_with_query.html">contacts_db_get_count_with_query</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_current_version.html">contacts_db_get_current_version</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_last_change_version.html">contacts_db_get_last_change_version</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_record.html">contacts_db_get_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_records_with_query.html">contacts_db_get_records_with_query</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_get_status.html">contacts_db_get_status</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_insert_record.html">contacts_db_insert_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_insert_records.html">contacts_db_insert_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_remove_changed_cb.html">contacts_db_remove_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_remove_status_changed_cb.html">contacts_db_remove_status_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_replace_record.html">contacts_db_replace_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_replace_records.html">contacts_db_replace_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records.html">contacts_db_search_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records_for_snippet.html">contacts_db_search_records_for_snippet</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records_with_query.html">contacts_db_search_records_with_query</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records_with_query_for_snippet.html">contacts_db_search_records_with_query_for_snippet</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records_with_range.html">contacts_db_search_records_with_range</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_search_records_with_range_for_snippet.html">contacts_db_search_records_with_range_for_snippet</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_update_record.html">contacts_db_update_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_update_records.html">contacts_db_update_records</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_disconnect.html">contacts_disconnect</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_disconnect_on_thread.html">contacts_disconnect_on_thread</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_bool.html">contacts_filter_add_bool</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_double.html">contacts_filter_add_double</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_filter.html">contacts_filter_add_filter</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_int.html">contacts_filter_add_int</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_lli.html">contacts_filter_add_lli</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_operator.html">contacts_filter_add_operator</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_add_str.html">contacts_filter_add_str</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_create.html">contacts_filter_create</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_filter_destroy.html">contacts_filter_destroy</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_group_add_contact.html">contacts_group_add_contact</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_group_remove_contact.html">contacts_group_remove_contact</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_group_set_group_order.html">contacts_group_set_group_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_add.html">contacts_list_add</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_create.html">contacts_list_create</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_destroy.html">contacts_list_destroy</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_first.html">contacts_list_first</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_get_count.html">contacts_list_get_count</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_get_current_record_p.html">contacts_list_get_current_record_p</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_last.html">contacts_list_last</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_next.html">contacts_list_next</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_prev.html">contacts_list_prev</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_list_remove.html">contacts_list_remove</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_get_aggregation_suggestions.html">contacts_person_get_aggregation_suggestions</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_get_default_property.html">contacts_person_get_default_property</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_link_person.html">contacts_person_link_person</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_reset_usage.html">contacts_person_reset_usage</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_set_default_property.html">contacts_person_set_default_property</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_set_favorite_order.html">contacts_person_set_favorite_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_person_unlink_contact.html">contacts_person_unlink_contact</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_phone_log_reset_statistics.html">contacts_phone_log_reset_statistics</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_phone_log_reset_statistics_by_sim.html">contacts_phone_log_reset_statistics_by_sim</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_create.html">contacts_query_create</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_destroy.html">contacts_query_destroy</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_set_distinct.html">contacts_query_set_distinct</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_set_filter.html">contacts_query_set_filter</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_set_projection.html">contacts_query_set_projection</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_query_set_sort.html">contacts_query_set_sort</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_add_child_record.html">contacts_record_add_child_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_clone.html">contacts_record_clone</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_clone_child_record_list.html">contacts_record_clone_child_record_list</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_create.html">contacts_record_create</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_destroy.html">contacts_record_destroy</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_bool.html">contacts_record_get_bool</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_child_record_at_p.html">contacts_record_get_child_record_at_p</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_child_record_count.html">contacts_record_get_child_record_count</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_double.html">contacts_record_get_double</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_int.html">contacts_record_get_int</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_lli.html">contacts_record_get_lli</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_str.html">contacts_record_get_str</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_str_p.html">contacts_record_get_str_p</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_get_uri_p.html">contacts_record_get_uri_p</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_remove_child_record.html">contacts_record_remove_child_record</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_set_bool.html">contacts_record_set_bool</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_set_double.html">contacts_record_set_double</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_set_int.html">contacts_record_set_int</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_set_lli.html">contacts_record_set_lli</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_record_set_str.html">contacts_record_set_str</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_add_name_display_order_changed_cb.html">contacts_setting_add_name_display_order_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_add_name_sorting_order_changed_cb.html">contacts_setting_add_name_sorting_order_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_get_name_display_order.html">contacts_setting_get_name_display_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_get_name_sorting_order.html">contacts_setting_get_name_sorting_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_remove_name_display_order_changed_cb.html">contacts_setting_remove_name_display_order_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_remove_name_sorting_order_changed_cb.html">contacts_setting_remove_name_sorting_order_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_set_name_display_order.html">contacts_setting_set_name_display_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_set_name_sorting_order.html">contacts_setting_set_name_sorting_order</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_get_initialization_status.html">contacts_sim_get_initialization_status</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_get_initialization_status_by_sim_slot_no.html">contacts_sim_get_initialization_status_by_sim_slot_no</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_import_all_contacts.html">contacts_sim_import_all_contacts</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_import_all_contacts_by_sim_slot_no.html">contacts_sim_import_all_contacts_by_sim_slot_no</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_get_entity_count.html">contacts_vcard_get_entity_count</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_get_limit_size_of_photo.html">contacts_vcard_get_limit_size_of_photo</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_make_from_contact.html">contacts_vcard_make_from_contact</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_make_from_my_profile.html">contacts_vcard_make_from_my_profile</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_make_from_person.html">contacts_vcard_make_from_person</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_parse_to_contact_foreach.html">contacts_vcard_parse_to_contact_foreach</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_parse_to_contacts.html">contacts_vcard_parse_to_contacts</a></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_set_limit_size_of_photo.html">contacts_vcard_set_limit_size_of_photo</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_changed_cb.html">contacts_db_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_changed_cbFunction.html">contacts_db_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_db_changed_cbFunction.html">Dartcontacts_db_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_status_changed_cb.html">contacts_db_status_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_db_status_changed_cbFunction.html">contacts_db_status_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_db_status_changed_cbFunction.html">Dartcontacts_db_status_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_name_display_order_changed_cb.html">contacts_setting_name_display_order_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_name_display_order_changed_cbFunction.html">contacts_setting_name_display_order_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_setting_name_display_order_changed_cbFunction.html">Dartcontacts_setting_name_display_order_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_name_sorting_order_changed_cb.html">contacts_setting_name_sorting_order_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_setting_name_sorting_order_changed_cbFunction.html">contacts_setting_name_sorting_order_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_setting_name_sorting_order_changed_cbFunction.html">Dartcontacts_setting_name_sorting_order_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_import_progress_cb.html">contacts_sim_import_progress_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_sim_import_progress_cbFunction.html">contacts_sim_import_progress_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_sim_import_progress_cbFunction.html">Dartcontacts_sim_import_progress_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_parse_cb.html">contacts_vcard_parse_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/contacts_vcard_parse_cbFunction.html">contacts_vcard_parse_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_contacts_service2/Dartcontacts_vcard_parse_cbFunction.html">Dartcontacts_vcard_parse_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

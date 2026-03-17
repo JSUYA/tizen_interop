@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; vc</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">vc</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; vc</h1>
+      <p class="summary">Module-scoped API list for tizenVc in Tizen 6.0.</p>
+    </section>
+    <p>UIX &#47; Voice control</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenVc</code></div>
+  <div><strong>Shared objects</strong><br><code>libvc.so</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_vc/index.html">tizen_6_0_tizen_vc</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_vc/vc_deinitialize.html">vc_deinitialize</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_foreach_supported_languages.html">vc_foreach_supported_languages</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_get_current_language.html">vc_get_current_language</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_get_result.html">vc_get_result</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_get_service_state.html">vc_get_service_state</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_get_state.html">vc_get_state</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_get_system_command_list.html">vc_get_system_command_list</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_initialize.html">vc_initialize</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_prepare.html">vc_prepare</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_request_dialog.html">vc_request_dialog</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_command_list.html">vc_set_command_list</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_current_language_changed_cb.html">vc_set_current_language_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_error_cb.html">vc_set_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_invocation_name.html">vc_set_invocation_name</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_result_cb.html">vc_set_result_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_server_dialog.html">vc_set_server_dialog</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_service_state_changed_cb.html">vc_set_service_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_set_state_changed_cb.html">vc_set_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_cancel.html">vc_tts_cancel</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_get_synthesized_audio_details.html">vc_tts_get_synthesized_audio_details</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_request.html">vc_tts_request</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_set_streaming_cb.html">vc_tts_set_streaming_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_set_utterance_status_cb.html">vc_tts_set_utterance_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_unset_streaming_cb.html">vc_tts_unset_streaming_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_unset_utterance_status_cb.html">vc_tts_unset_utterance_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unprepare.html">vc_unprepare</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_command_list.html">vc_unset_command_list</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_current_language_changed_cb.html">vc_unset_current_language_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_error_cb.html">vc_unset_error_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_result_cb.html">vc_unset_result_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_server_dialog.html">vc_unset_server_dialog</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_service_state_changed_cb.html">vc_unset_service_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_vc/vc_unset_state_changed_cb.html">vc_unset_state_changed_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_vc/vc_supported_language_cb.html">vc_supported_language_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_supported_language_cbFunction.html">vc_supported_language_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_supported_language_cbFunction.html">Dartvc_supported_language_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_result_cb.html">vc_result_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_result_cbFunction.html">vc_result_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_result_cbFunction.html">Dartvc_result_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_current_language_changed_cb.html">vc_current_language_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_current_language_changed_cbFunction.html">vc_current_language_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_current_language_changed_cbFunction.html">Dartvc_current_language_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_error_cb.html">vc_error_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_error_cbFunction.html">vc_error_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_error_cbFunction.html">Dartvc_error_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_service_state_changed_cb.html">vc_service_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_service_state_changed_cbFunction.html">vc_service_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_service_state_changed_cbFunction.html">Dartvc_service_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_state_changed_cb.html">vc_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_state_changed_cbFunction.html">vc_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_state_changed_cbFunction.html">Dartvc_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_streaming_cb.html">vc_tts_streaming_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_streaming_cbFunction.html">vc_tts_streaming_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_tts_streaming_cbFunction.html">Dartvc_tts_streaming_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_utterance_status_cb.html">vc_tts_utterance_status_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_vc/vc_tts_utterance_status_cbFunction.html">vc_tts_utterance_status_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_vc/Dartvc_tts_utterance_status_cbFunction.html">Dartvc_tts_utterance_status_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>Other unresolved symbols</h2>
+  <ul>
+    <li><code>vc_cmd_create</code></li>
+    <li><code>vc_cmd_destroy</code></li>
+    <li><code>vc_cmd_get_command</code></li>
+    <li><code>vc_cmd_get_format</code></li>
+    <li><code>vc_cmd_get_type</code></li>
+    <li><code>vc_cmd_get_unfixed_command</code></li>
+    <li><code>vc_cmd_list_add</code></li>
+    <li><code>vc_cmd_list_create</code></li>
+    <li><code>vc_cmd_list_destroy</code></li>
+    <li><code>vc_cmd_list_first</code></li>
+    <li><code>vc_cmd_list_foreach_commands</code></li>
+    <li><code>vc_cmd_list_get_count</code></li>
+    <li><code>vc_cmd_list_get_current</code></li>
+    <li><code>vc_cmd_list_last</code></li>
+    <li><code>vc_cmd_list_next</code></li>
+    <li><code>vc_cmd_list_prev</code></li>
+    <li><code>vc_cmd_list_remove</code></li>
+    <li><code>vc_cmd_set_command</code></li>
+    <li><code>vc_cmd_set_format</code></li>
+    <li><code>vc_cmd_set_type</code></li>
+  </ul>
+</section>
+
+
+  </main>
+</body>
+</html>

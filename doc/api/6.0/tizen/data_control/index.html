@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; data_control</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">data_control</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; data_control</h1>
+      <p class="summary">Module-scoped API list for tizenDataControl in Tizen 6.0.</p>
+    </section>
+    <p>Application Framework &#47; Data Control</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenDataControl</code></div>
+  <div><strong>Shared objects</strong><br><code>libdata-control.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_data_control/index.html">tizen_6_0_tizen_data_control</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_data_control/data_control_add_data_change_cb.html">data_control_add_data_change_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_data_add.html">data_control_bulk_data_add</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_data_create.html">data_control_bulk_data_create</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_data_destroy.html">data_control_bulk_data_destroy</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_data_get_count.html">data_control_bulk_data_get_count</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_data_get_data.html">data_control_bulk_data_get_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_result_data_add.html">data_control_bulk_result_data_add</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_result_data_create.html">data_control_bulk_result_data_create</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_result_data_destroy.html">data_control_bulk_result_data_destroy</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_result_data_get_count.html">data_control_bulk_result_data_get_count</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_result_data_get_result_data.html">data_control_bulk_result_data_get_result_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_add.html">data_control_map_add</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_add_bulk_data.html">data_control_map_add_bulk_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_bind_add_bulk_data_response_cb.html">data_control_map_bind_add_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_bind_response_cb.html">data_control_map_bind_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_create.html">data_control_map_create</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_destroy.html">data_control_map_destroy</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_get.html">data_control_map_get</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_get_data_id.html">data_control_map_get_data_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_get_handle_id.html">data_control_map_get_handle_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_get_provider_id.html">data_control_map_get_provider_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_get_with_page.html">data_control_map_get_with_page</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_register_add_bulk_data_response_cb.html">data_control_map_register_add_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_register_response_cb.html">data_control_map_register_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_remove.html">data_control_map_remove</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_set.html">data_control_map_set</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_set_data_id.html">data_control_map_set_data_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_set_provider_id.html">data_control_map_set_provider_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_unbind_add_bulk_data_response_cb.html">data_control_map_unbind_add_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_unbind_response_cb.html">data_control_map_unbind_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_unregister_add_bulk_data_response_cb.html">data_control_map_unregister_add_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_map_unregister_response_cb.html">data_control_map_unregister_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_add_data_change_consumer_filter_cb.html">data_control_provider_add_data_change_consumer_filter_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_create_delete_statement.html">data_control_provider_create_delete_statement</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_create_insert_statement.html">data_control_provider_create_insert_statement</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_create_select_statement.html">data_control_provider_create_select_statement</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_create_update_statement.html">data_control_provider_create_update_statement</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_foreach_data_change_consumer.html">data_control_provider_foreach_data_change_consumer</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_get_client_appid.html">data_control_provider_get_client_appid</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_map_register_add_bulk_data_request_cb.html">data_control_provider_map_register_add_bulk_data_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_map_register_cb.html">data_control_provider_map_register_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_map_unregister_add_bulk_data_request_cb.html">data_control_provider_map_unregister_add_bulk_data_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_map_unregister_cb.html">data_control_provider_map_unregister_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_match_data_id.html">data_control_provider_match_data_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_match_provider_id.html">data_control_provider_match_provider_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_remove_data_change_consumer_filter_cb.html">data_control_provider_remove_data_change_consumer_filter_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_bulk_insert_result.html">data_control_provider_send_bulk_insert_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_data_change_noti.html">data_control_provider_send_data_change_noti</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_delete_result.html">data_control_provider_send_delete_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_error.html">data_control_provider_send_error</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_insert_result.html">data_control_provider_send_insert_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_map_bulk_add_result.html">data_control_provider_send_map_bulk_add_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_map_get_value_result.html">data_control_provider_send_map_get_value_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_map_result.html">data_control_provider_send_map_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_select_result.html">data_control_provider_send_select_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_send_update_result.html">data_control_provider_send_update_result</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_sql_register_cb.html">data_control_provider_sql_register_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_sql_register_insert_bulk_data_request_cb.html">data_control_provider_sql_register_insert_bulk_data_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_sql_unregister_cb.html">data_control_provider_sql_unregister_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_sql_unregister_insert_bulk_data_request_cb.html">data_control_provider_sql_unregister_insert_bulk_data_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_remove_data_change_cb.html">data_control_remove_data_change_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_bind_insert_bulk_data_response_cb.html">data_control_sql_bind_insert_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_bind_response_cb.html">data_control_sql_bind_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_create.html">data_control_sql_create</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_delete.html">data_control_sql_delete</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_destroy.html">data_control_sql_destroy</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_blob_data.html">data_control_sql_get_blob_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_column_count.html">data_control_sql_get_column_count</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_column_item_size.html">data_control_sql_get_column_item_size</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_column_item_type.html">data_control_sql_get_column_item_type</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_column_name.html">data_control_sql_get_column_name</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_data_id.html">data_control_sql_get_data_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_double_data.html">data_control_sql_get_double_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_handle_id.html">data_control_sql_get_handle_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_int64_data.html">data_control_sql_get_int64_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_int_data.html">data_control_sql_get_int_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_provider_id.html">data_control_sql_get_provider_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_get_text_data.html">data_control_sql_get_text_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_insert.html">data_control_sql_insert</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_insert_bulk_data.html">data_control_sql_insert_bulk_data</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_register_insert_bulk_data_response_cb.html">data_control_sql_register_insert_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_register_response_cb.html">data_control_sql_register_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_select.html">data_control_sql_select</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_select_with_page.html">data_control_sql_select_with_page</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_set_data_id.html">data_control_sql_set_data_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_set_provider_id.html">data_control_sql_set_provider_id</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_step_first.html">data_control_sql_step_first</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_step_last.html">data_control_sql_step_last</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_step_next.html">data_control_sql_step_next</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_step_previous.html">data_control_sql_step_previous</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_unbind_insert_bulk_data_response_cb.html">data_control_sql_unbind_insert_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_unbind_response_cb.html">data_control_sql_unbind_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_unregister_insert_bulk_data_response_cb.html">data_control_sql_unregister_insert_bulk_data_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_unregister_response_cb.html">data_control_sql_unregister_response_cb</a></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_sql_update.html">data_control_sql_update</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_data_control/data_control_data_change_cb.html">data_control_data_change_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_data_change_cbFunction.html">data_control_data_change_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_data_change_cbFunction.html">Dartdata_control_data_change_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_add_callback_result_cb.html">data_control_add_callback_result_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_add_callback_result_cbFunction.html">data_control_add_callback_result_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_add_callback_result_cbFunction.html">Dartdata_control_add_callback_result_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_cb.html">data_control_bulk_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_bulk_cbFunction.html">data_control_bulk_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_bulk_cbFunction.html">Dartdata_control_bulk_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_data_change_consumer_filter_cb.html">data_control_provider_data_change_consumer_filter_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_data_change_consumer_filter_cbFunction.html">data_control_provider_data_change_consumer_filter_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_provider_data_change_consumer_filter_cbFunction.html">Dartdata_control_provider_data_change_consumer_filter_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_data_change_consumer_cb.html">data_control_provider_data_change_consumer_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_data_change_consumer_cbFunction.html">data_control_provider_data_change_consumer_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_provider_data_change_consumer_cbFunction.html">Dartdata_control_provider_data_change_consumer_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_bulk_cb.html">data_control_provider_bulk_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_data_control/data_control_provider_bulk_cbFunction.html">data_control_provider_bulk_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_data_control/Dartdata_control_provider_bulk_cbFunction.html">Dartdata_control_provider_bulk_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

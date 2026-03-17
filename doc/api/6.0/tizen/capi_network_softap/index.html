@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_network_softap</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_network_softap</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_network_softap</h1>
+      <p class="summary">Module-scoped API list for tizenCapiNetworkSoftap in Tizen 6.0.</p>
+    </section>
+    <p>Network &#47; SoftAP</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiNetworkSoftap</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-network-softap.so.0.1.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_network_softap/index.html">tizen_6_0_tizen_capi_network_softap</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_clone.html">softap_client_clone</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_destroy.html">softap_client_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_get_ip_address.html">softap_client_get_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_get_mac_address.html">softap_client_get_mac_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_get_name.html">softap_client_get_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_get_time.html">softap_client_get_time</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_create.html">softap_create</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_destroy.html">softap_destroy</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_disable.html">softap_disable</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_disable_dhcp.html">softap_disable_dhcp</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_enable.html">softap_enable</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_enable_dhcp.html">softap_enable_dhcp</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_enable_dhcp_with_range.html">softap_enable_dhcp_with_range</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_foreach_connected_clients.html">softap_foreach_connected_clients</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_channel.html">softap_get_channel</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_gateway_address.html">softap_get_gateway_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_ip_address.html">softap_get_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_mac_address.html">softap_get_mac_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_mode.html">softap_get_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_network_interface_name.html">softap_get_network_interface_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_passphrase.html">softap_get_passphrase</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_security_type.html">softap_get_security_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_ssid.html">softap_get_ssid</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_ssid_visibility.html">softap_get_ssid_visibility</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_subnet_mask.html">softap_get_subnet_mask</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_get_vendor_element.html">softap_get_vendor_element</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_is_dhcp_enabled.html">softap_is_dhcp_enabled</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_is_enabled.html">softap_is_enabled</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_push_wps_button.html">softap_push_wps_button</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_reload_settings.html">softap_reload_settings</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_channel.html">softap_set_channel</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_client_connection_state_changed_cb.html">softap_set_client_connection_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_disabled_cb.html">softap_set_disabled_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_enabled_cb.html">softap_set_enabled_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_ip_address.html">softap_set_ip_address</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_mode.html">softap_set_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_passphrase.html">softap_set_passphrase</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_passphrase_changed_cb.html">softap_set_passphrase_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_security_type.html">softap_set_security_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_security_type_changed_cb.html">softap_set_security_type_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_ssid.html">softap_set_ssid</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_ssid_visibility.html">softap_set_ssid_visibility</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_ssid_visibility_changed_cb.html">softap_set_ssid_visibility_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_vendor_element.html">softap_set_vendor_element</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_set_wps_pin.html">softap_set_wps_pin</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_client_connection_state_changed_cb.html">softap_unset_client_connection_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_disabled_cb.html">softap_unset_disabled_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_enabled_cb.html">softap_unset_enabled_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_passphrase_changed_cb.html">softap_unset_passphrase_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_security_type_changed_cb.html">softap_unset_security_type_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_unset_ssid_visibility_changed_cb.html">softap_unset_ssid_visibility_changed_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_connected_client_cb.html">softap_connected_client_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_connected_client_cbFunction.html">softap_connected_client_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_connected_client_cbFunction.html">Dartsoftap_connected_client_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_settings_reloaded_cb.html">softap_settings_reloaded_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_settings_reloaded_cbFunction.html">softap_settings_reloaded_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_settings_reloaded_cbFunction.html">Dartsoftap_settings_reloaded_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_connection_state_changed_cb.html">softap_client_connection_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_client_connection_state_changed_cbFunction.html">softap_client_connection_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_client_connection_state_changed_cbFunction.html">Dartsoftap_client_connection_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_disabled_cb.html">softap_disabled_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_disabled_cbFunction.html">softap_disabled_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_disabled_cbFunction.html">Dartsoftap_disabled_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_enabled_cb.html">softap_enabled_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_enabled_cbFunction.html">softap_enabled_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_enabled_cbFunction.html">Dartsoftap_enabled_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_passphrase_changed_cb.html">softap_passphrase_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_passphrase_changed_cbFunction.html">softap_passphrase_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_passphrase_changed_cbFunction.html">Dartsoftap_passphrase_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_security_type_changed_cb.html">softap_security_type_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_security_type_changed_cbFunction.html">softap_security_type_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_security_type_changed_cbFunction.html">Dartsoftap_security_type_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_ssid_visibility_changed_cb.html">softap_ssid_visibility_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/softap_ssid_visibility_changed_cbFunction.html">softap_ssid_visibility_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_network_softap/Dartsoftap_ssid_visibility_changed_cbFunction.html">Dartsoftap_ssid_visibility_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>

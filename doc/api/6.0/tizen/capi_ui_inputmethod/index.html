@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; capi_ui_inputmethod</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">capi_ui_inputmethod</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; capi_ui_inputmethod</h1>
+      <p class="summary">Module-scoped API list for tizenCapiUiInputmethod in Tizen 6.0.</p>
+    </section>
+    <p>UIX &#47; Input Method</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenCapiUiInputmethod</code></div>
+  <div><strong>Shared objects</strong><br><code>libcapi-ui-inputmethod.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/index.html">tizen_6_0_tizen_capi_ui_inputmethod</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_commit_content.html">ime_commit_content</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_commit_string.html">ime_commit_string</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_autocapital_type.html">ime_context_get_autocapital_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_bidi_direction.html">ime_context_get_bidi_direction</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_cursor_position.html">ime_context_get_cursor_position</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_input_hint.html">ime_context_get_input_hint</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_language.html">ime_context_get_language</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_layout.html">ime_context_get_layout</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_layout_variation.html">ime_context_get_layout_variation</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_password_mode.html">ime_context_get_password_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_prediction_mode.html">ime_context_get_prediction_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_return_key_state.html">ime_context_get_return_key_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_return_key_type.html">ime_context_get_return_key_type</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_create_option_window.html">ime_create_option_window</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_delete_surrounding_text.html">ime_delete_surrounding_text</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_destroy_option_window.html">ime_destroy_option_window</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_class.html">ime_device_info_get_class</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_name.html">ime_device_info_get_name</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_subclass.html">ime_device_info_get_subclass</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_accessibility_state_changed_cb.html">ime_event_set_accessibility_state_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_cursor_position_updated_cb.html">ime_event_set_cursor_position_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_display_language_changed_cb.html">ime_event_set_display_language_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_focus_in_cb.html">ime_event_set_focus_in_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_focus_out_cb.html">ime_event_set_focus_out_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_geometry_requested_cb.html">ime_event_set_geometry_requested_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_imdata_requested_cb.html">ime_event_set_imdata_requested_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_imdata_set_cb.html">ime_event_set_imdata_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_input_context_reset_cb.html">ime_event_set_input_context_reset_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_language_requested_cb.html">ime_event_set_language_requested_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_language_set_cb.html">ime_event_set_language_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_layout_set_cb.html">ime_event_set_layout_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_mime_type_set_request_cb.html">ime_event_set_mime_type_set_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_option_window_created_cb.html">ime_event_set_option_window_created_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_option_window_destroyed_cb.html">ime_event_set_option_window_destroyed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_prediction_hint_data_set_cb.html">ime_event_set_prediction_hint_data_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_prediction_hint_set_cb.html">ime_event_set_prediction_hint_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_process_key_event_cb.html">ime_event_set_process_key_event_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_process_key_event_with_keycode_cb.html">ime_event_set_process_key_event_with_keycode_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_return_key_state_set_cb.html">ime_event_set_return_key_state_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_return_key_type_set_cb.html">ime_event_set_return_key_type_set_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_rotation_degree_changed_cb.html">ime_event_set_rotation_degree_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_surrounding_text_updated_cb.html">ime_event_set_surrounding_text_updated_cb</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_main_window.html">ime_get_main_window</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_selected_text.html">ime_get_selected_text</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_surrounding_text.html">ime_get_surrounding_text</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_hide_preedit_string.html">ime_hide_preedit_string</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_request_hide.html">ime_request_hide</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_request_surrounding_text.html">ime_request_surrounding_text</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_run.html">ime_run</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_send_key_event.html">ime_send_key_event</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_send_private_command.html">ime_send_private_command</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_candidate_visibility_state.html">ime_set_candidate_visibility_state</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_drag_end.html">ime_set_floating_drag_end</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_drag_start.html">ime_set_floating_drag_start</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_mode.html">ime_set_floating_mode</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_selection.html">ime_set_selection</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_size.html">ime_set_size</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_show_preedit_string.html">ime_show_preedit_string</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_update_input_panel_event.html">ime_update_input_panel_event</a></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_update_preedit_string.html">ime_update_preedit_string</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_accessibility_state_changed_cb.html">ime_accessibility_state_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_accessibility_state_changed_cbFunction.html">ime_accessibility_state_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_accessibility_state_changed_cbFunction.html">Dartime_accessibility_state_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_cursor_position_updated_cb.html">ime_cursor_position_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_cursor_position_updated_cbFunction.html">ime_cursor_position_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_cursor_position_updated_cbFunction.html">Dartime_cursor_position_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_display_language_changed_cb.html">ime_display_language_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_display_language_changed_cbFunction.html">ime_display_language_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_display_language_changed_cbFunction.html">Dartime_display_language_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_focus_in_cb.html">ime_focus_in_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_focus_in_cbFunction.html">ime_focus_in_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_focus_in_cbFunction.html">Dartime_focus_in_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_focus_out_cb.html">ime_focus_out_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_focus_out_cbFunction.html">ime_focus_out_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_focus_out_cbFunction.html">Dartime_focus_out_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_geometry_requested_cb.html">ime_geometry_requested_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_geometry_requested_cbFunction.html">ime_geometry_requested_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_geometry_requested_cbFunction.html">Dartime_geometry_requested_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_imdata_requested_cb.html">ime_imdata_requested_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_imdata_requested_cbFunction.html">ime_imdata_requested_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_imdata_requested_cbFunction.html">Dartime_imdata_requested_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_imdata_set_cb.html">ime_imdata_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_imdata_set_cbFunction.html">ime_imdata_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_imdata_set_cbFunction.html">Dartime_imdata_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_input_context_reset_cb.html">ime_input_context_reset_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_input_context_reset_cbFunction.html">ime_input_context_reset_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_input_context_reset_cbFunction.html">Dartime_input_context_reset_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_language_requested_cb.html">ime_language_requested_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_language_requested_cbFunction.html">ime_language_requested_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_language_requested_cbFunction.html">Dartime_language_requested_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_language_set_cb.html">ime_language_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_language_set_cbFunction.html">ime_language_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_language_set_cbFunction.html">Dartime_language_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_layout_set_cb.html">ime_layout_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_layout_set_cbFunction.html">ime_layout_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_layout_set_cbFunction.html">Dartime_layout_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_mime_type_set_request_cb.html">ime_mime_type_set_request_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_mime_type_set_request_cbFunction.html">ime_mime_type_set_request_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_mime_type_set_request_cbFunction.html">Dartime_mime_type_set_request_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_option_window_created_cb.html">ime_option_window_created_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_option_window_created_cbFunction.html">ime_option_window_created_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_option_window_created_cbFunction.html">Dartime_option_window_created_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_option_window_destroyed_cb.html">ime_option_window_destroyed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_option_window_destroyed_cbFunction.html">ime_option_window_destroyed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_option_window_destroyed_cbFunction.html">Dartime_option_window_destroyed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_prediction_hint_data_set_cb.html">ime_prediction_hint_data_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_prediction_hint_data_set_cbFunction.html">ime_prediction_hint_data_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_prediction_hint_data_set_cbFunction.html">Dartime_prediction_hint_data_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_prediction_hint_set_cb.html">ime_prediction_hint_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_prediction_hint_set_cbFunction.html">ime_prediction_hint_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_prediction_hint_set_cbFunction.html">Dartime_prediction_hint_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_process_key_event_cb.html">ime_process_key_event_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_process_key_event_cbFunction.html">ime_process_key_event_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_process_key_event_cbFunction.html">Dartime_process_key_event_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_process_key_event_with_keycode_cb.html">ime_process_key_event_with_keycode_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_process_key_event_with_keycode_cbFunction.html">ime_process_key_event_with_keycode_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_process_key_event_with_keycode_cbFunction.html">Dartime_process_key_event_with_keycode_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_return_key_state_set_cb.html">ime_return_key_state_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_return_key_state_set_cbFunction.html">ime_return_key_state_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_return_key_state_set_cbFunction.html">Dartime_return_key_state_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_return_key_type_set_cb.html">ime_return_key_type_set_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_return_key_type_set_cbFunction.html">ime_return_key_type_set_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_return_key_type_set_cbFunction.html">Dartime_return_key_type_set_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_rotation_degree_changed_cb.html">ime_rotation_degree_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_rotation_degree_changed_cbFunction.html">ime_rotation_degree_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_rotation_degree_changed_cbFunction.html">Dartime_rotation_degree_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_surrounding_text_updated_cb.html">ime_surrounding_text_updated_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/ime_surrounding_text_updated_cbFunction.html">ime_surrounding_text_updated_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_capi_ui_inputmethod/Dartime_surrounding_text_updated_cbFunction.html">Dartime_surrounding_text_updated_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Missing callback-related symbols</h2>
+  <p>
+    These symbols were listed in <code>generated_symbols.dart</code> but not found in
+    <code>generated_bindings.dart</code>. For these cases, inspect
+    <code>package:tizen_interop_callbacks</code> through the callback interop
+    interface below.
+  </p>
+  <ul>
+    <li><code>ime_event_set_process_input_device_event_cb</code></li>
+    <li><code>ime_event_unset_process_input_device_event_cb</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback interop interface</h2>
+  <ul>
+    <li><code>TizenInteropCallbacks.register&lt;NativeCbType&gt;(callbackName, callback, {userObject, blocking})</code></li>
+    <li><code>RegisteredCallback.interopCallback</code></li>
+    <li><code>RegisteredCallback.interopUserData</code></li>
+  </ul>
+  <p class="muted">
+    Verify the native callback typedef for this module, register it with
+    <code>TizenInteropCallbacks</code>, then pass the
+    registered callback pointer and user-data pointer to the native setter or adder API.
+  </p>
+</section>
+
+<section>
+  <h2>Other unresolved symbols</h2>
+  <ul>
+    <li><code>ime_input_device_rotary_get_direction</code></li>
+  </ul>
+</section>
+
+
+  </main>
+</body>
+</html>

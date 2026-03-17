@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tizen 6.0 &#47; tizen &#47; asp</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --text: #211f1a;
+      --muted: #5a5449;
+      --accent: #145a8d;
+      --accent-soft: #e5f0f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f2eee6 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 {
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: #f2ece1;
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.92em;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(33, 31, 26, 0.06);
+      margin-bottom: 24px;
+    }
+    .crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .sep { color: #8a8377; }
+    .summary {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      display: block;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(20, 90, 141, 0.06);
+    }
+    .card:hover {
+      background: #fffaf0;
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .card .sub {
+      display: block;
+      color: var(--accent);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      margin-bottom: 8px;
+    }
+    .meta-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(33, 31, 26, 0.04);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .module-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .module-meta > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) {
+      main { padding: 20px 14px 40px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <nav class="crumbs"><a href="..&#47;..&#47;..&#47;index.html">Docs</a><span class="sep">/</span><a href="..&#47;..&#47;index.html">Tizen 6.0</a><span class="sep">/</span><a href="..&#47;index.html">tizen</a><span class="sep">/</span><a href="index.html">asp</a></nav>
+      <h1>Tizen 6.0 &#47; tizen &#47; asp</h1>
+      <p class="summary">Module-scoped API list for tizenAsp in Tizen 6.0.</p>
+    </section>
+    <p>Network &#47; Application Service Platform</p>
+<div class="module-meta">
+  <div><strong>Getter</strong><br><code>tizenAsp</code></div>
+  <div><strong>Shared objects</strong><br><code>libasp.so.0</code></div>
+  <div><strong>Raw library page</strong><br><a href="../../../tizen_6_0_tizen_asp/index.html">tizen_6_0_tizen_asp</a></div>
+</div>
+
+<section>
+  <h2>Functions</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_asp/asp_advert_add_info.html">asp_advert_add_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_change_service_status.html">asp_advert_change_service_status</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_create.html">asp_advert_create</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_destroy.html">asp_advert_destroy</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_get_info.html">asp_advert_get_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_get_p2p_config_method.html">asp_advert_get_p2p_config_method</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_get_p2p_role_scheme.html">asp_advert_get_p2p_role_scheme</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_remove_info.html">asp_advert_remove_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_auto_accept.html">asp_advert_set_auto_accept</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_discovery_tech.html">asp_advert_set_discovery_tech</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_p2p_config_method.html">asp_advert_set_p2p_config_method</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_p2p_response.html">asp_advert_set_p2p_response</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_p2p_role_scheme.html">asp_advert_set_p2p_role_scheme</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_preferred_connection.html">asp_advert_set_preferred_connection</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_service_type.html">asp_advert_set_service_type</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_status.html">asp_advert_set_status</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_set_status_changed_cb.html">asp_advert_set_status_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_start_advertising.html">asp_advert_start_advertising</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_stop_advertising.html">asp_advert_stop_advertising</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_unset_status_changed_cb.html">asp_advert_unset_status_changed_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_deinitialize.html">asp_deinitialize</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_initialize.html">asp_initialize</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_add_info.html">asp_seek_add_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_create.html">asp_seek_create</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_destroy.html">asp_seek_destroy</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_remove_info.html">asp_seek_remove_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_set_discovery_tech.html">asp_seek_set_discovery_tech</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_set_preferred_connection.html">asp_seek_set_preferred_connection</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_set_search_result_cb.html">asp_seek_set_search_result_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_start.html">asp_seek_start</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_stop.html">asp_seek_stop</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_unset_search_result_cb.html">asp_seek_unset_search_result_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_bind_port.html">asp_session_bind_port</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_close.html">asp_session_close</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_confirm.html">asp_session_confirm</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_connect.html">asp_session_connect</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_create.html">asp_session_create</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_destroy.html">asp_session_destroy</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_close_status.html">asp_session_get_close_status</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_handle.html">asp_session_get_handle</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_id.html">asp_session_get_id</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_info.html">asp_session_get_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_mac.html">asp_session_get_mac</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_p2p_config_method.html">asp_session_get_p2p_config_method</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_get_p2p_role_scheme.html">asp_session_get_p2p_role_scheme</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_release_port.html">asp_session_release_port</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_config_request_cb.html">asp_session_set_config_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_connect_status_cb.html">asp_session_set_connect_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_info.html">asp_session_set_info</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_p2p_config_method.html">asp_session_set_p2p_config_method</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_p2p_role_scheme.html">asp_session_set_p2p_role_scheme</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_port_status_cb.html">asp_session_set_port_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_request_cb.html">asp_session_set_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_state_ready.html">asp_session_set_state_ready</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_set_status_cb.html">asp_session_set_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_unset_config_request_cb.html">asp_session_unset_config_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_unset_connect_status_cb.html">asp_session_unset_connect_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_unset_port_status_cb.html">asp_session_unset_port_status_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_unset_request_cb.html">asp_session_unset_request_cb</a></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_unset_status_cb.html">asp_session_unset_status_cb</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Callback docs</h2>
+  <ul>
+<li><a href="../../../tizen_6_0_tizen_asp/asp_advert_status_changed_cb.html">asp_advert_status_changed_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_advert_status_changed_cbFunction.html">asp_advert_status_changed_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_advert_status_changed_cbFunction.html">Dartasp_advert_status_changed_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_search_result_cb.html">asp_seek_search_result_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_seek_search_result_cbFunction.html">asp_seek_search_result_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_seek_search_result_cbFunction.html">Dartasp_seek_search_result_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_config_request_cb.html">asp_session_config_request_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_config_request_cbFunction.html">asp_session_config_request_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_session_config_request_cbFunction.html">Dartasp_session_config_request_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_connect_status_cb.html">asp_session_connect_status_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_connect_status_cbFunction.html">asp_session_connect_status_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_session_connect_status_cbFunction.html">Dartasp_session_connect_status_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_port_status_cb.html">asp_session_port_status_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_port_status_cbFunction.html">asp_session_port_status_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_session_port_status_cbFunction.html">Dartasp_session_port_status_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_request_cb.html">asp_session_request_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_request_cbFunction.html">asp_session_request_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_session_request_cbFunction.html">Dartasp_session_request_cbFunction</a> <span class="muted">Dart callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_status_cb.html">asp_session_status_cb</a> <span class="muted">Callback typedef</span></li><li><a href="../../../tizen_6_0_tizen_asp/asp_session_status_cbFunction.html">asp_session_status_cbFunction</a> <span class="muted">Native callback signature</span></li><li><a href="../../../tizen_6_0_tizen_asp/Dartasp_session_status_cbFunction.html">Dartasp_session_status_cbFunction</a> <span class="muted">Dart callback signature</span></li>
+  </ul>
+</section>
+
+
+
+
+  </main>
+</body>
+</html>
