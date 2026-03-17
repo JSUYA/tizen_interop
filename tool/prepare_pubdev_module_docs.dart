@@ -264,12 +264,24 @@ Future<void> _prepare(Directory rootDir, _Config config) async {
   );
   generatedFiles.add(categoryDocFile.path);
 
+  final footerTextFile = File(
+    '${rootDir.path}/doc/dartdoc/tizen_$versionId.footer.txt',
+  );
+  footerTextFile.writeAsStringSync(
+    _buildFooterText(
+      version: config.version,
+      generatedModules: generatedModules,
+    ),
+  );
+  generatedFiles.add(footerTextFile.path);
+
   final dartdocOptionsFile = File('${rootDir.path}/dartdoc_options.yaml')
     ..writeAsStringSync(
       _buildDartdocOptions(
         categoryName: categoryName,
         versionId: versionId,
         generatedModules: generatedModules,
+        footerTextPath: 'doc/dartdoc/tizen_$versionId.footer.txt',
       ),
     );
   generatedFiles.add(dartdocOptionsFile.path);
@@ -492,16 +504,37 @@ This category is generated for pub.dev documentation.
 - Goal: expose module-scoped API pages instead of the single large
   `package:tizen_interop/$version/tizen.dart` library page.
 
+## Recommended navigation
+
+1. Open `$version/tizen/index`.
+2. Pick a single module library such as `accounts_svc` or `capi_media_player`.
+3. Read the top-level API list only inside that module library.
+
+## Recommended imports
+
+- `package:tizen_interop/$version/tizen/index.dart` for discovery.
+- `package:tizen_interop/$version/tizen/<module>.dart` for direct module access.
+
 ## Modules
 
 $modules
 ''';
 }
 
+String _buildFooterText({
+  required String version,
+  required List<_GeneratedModule> generatedModules,
+}) {
+  return 'Generated pub.dev module docs for Tizen $version. '
+      'Landing library: package:tizen_interop/$version/tizen/index.dart. '
+      'Module libraries: ${generatedModules.length}.';
+}
+
 String _buildDartdocOptions({
   required String categoryName,
   required String versionId,
   required List<_GeneratedModule> generatedModules,
+  required String footerTextPath,
 }) {
   final includes = [
     'tizen_${versionId}_tizen',
@@ -510,13 +543,29 @@ String _buildDartdocOptions({
 
   return '''
 $_yamlGeneratedMarker
+# Publish-time dartdoc configuration for Tizen ${versionId.replaceAll('_', '.')}.
+# This file is temporary and is created by scripts/prepare_pubdev_module_docs.sh.
+# pub.dev reads only the uploaded package contents, so wrapper libraries and this
+# file must exist before publishing.
 dartdoc:
+  # Group all generated module libraries under a single topic page.
   categories:
     $categoryName:
       markdown: doc/dartdoc/tizen_$versionId.md
       displayName: Tizen ${versionId.replaceAll('_', '.')} / tizen
   categoryOrder:
     - $categoryName
+
+  # Explicitly exclude the original monolithic library.
+  exclude:
+    - tizen_interop
+
+  # Add a short generated footer so users understand these pages are
+  # module-scoped wrappers for the published package.
+  footerText:
+    - $footerTextPath
+
+  # Publish only the generated landing library and module libraries.
   include:
 $includes
 ''';

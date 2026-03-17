@@ -61,8 +61,11 @@ This command generates:
 1. Public wrapper libraries under `lib/6.0/tizen/`.
 2. A small landing library at `lib/6.0/tizen/index.dart`.
 3. A category markdown file at `doc/dartdoc/tizen_6_0.md`.
-4. A publish-time `dartdoc_options.yaml` that includes only the generated
-   wrapper libraries and groups them under `Tizen 6.0 / tizen`.
+4. A publish-time `dartdoc_options.yaml` that:
+   groups the generated libraries under `Tizen 6.0 / tizen`,
+   excludes the original monolithic `tizen_interop` library,
+   adds generated footer text,
+   and includes only the generated wrapper libraries.
 
 To verify the exact publish-time setup:
 
