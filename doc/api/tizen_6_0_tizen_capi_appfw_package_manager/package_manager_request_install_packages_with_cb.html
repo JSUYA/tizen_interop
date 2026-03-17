@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the package_manager_request_install_packages_with_cb function from the tizen_6_0_tizen_capi_appfw_package_manager library, for the Dart programming language.">
+  <title>package_manager_request_install_packages_with_cb function - tizen_6_0_tizen_capi_appfw_package_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_appfw_package_manager.dart</a></li>
+    <li class="self-crumb">package_manager_request_install_packages_with_cb function</li>
+  </ol>
+  <div class="self-name">package_manager_request_install_packages_with_cb</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_appfw_package_manager&#47;tizen_6_0_tizen_capi_appfw_package_manager-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">package_manager_request_install_packages_with_cb</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">package_manager_request_install_packages_with_cb</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span></li>
+<li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-paths"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">paths</span>, </span></li>
+<li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-paths_count"><span class="type-annotation">int</span> <span class="parameter-name">paths_count</span>, </span></li>
+<li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span></li>
+<li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+<li><span class="parameter" id="package_manager_request_install_packages_with_cb-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@platform
+@brief Installs the packages located at the given paths, asynchronously.
+@details The progress of the request is asynchronously received by the callback function.
+The @a callback is the individual callback only called for the current API call.
+The @a callback is the only callback called, even if another callback was set for this request
+with package_manager_request_set_event_cb().
+@since_tizen 6.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request       The request handle
+Parameter  paths         The array of absolute paths to the packages to be installed
+Parameter  paths_count   The number of paths in array
+Parameter  callback      The callback function to be invoked
+Parameter  user_data     The user data to be passed to the callback function
+Output parameter id            The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error</p>
+<p>Module getter: <code>tizenCapiAppfwPackageManager</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int package_manager_request_install_packages_with_cb(
+  package_manager_request_h request,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; paths,
+  int paths_count,
+  package_manager_request_event_cb callback,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+  ffi.Pointer&lt;ffi.Int&gt; id,
+) =&gt;
+    tizenCapiAppfwPackageManager.package_manager_request_install_packages_with_cb(
+      request,
+      paths,
+      paths_count,
+      callback,
+      user_data,
+      id,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">tizen_6_0_tizen_capi_appfw_package_manager</a></li>
+    <li class="self-crumb">package_manager_request_install_packages_with_cb function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_appfw_package_manager library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

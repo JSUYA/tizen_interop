@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the csr_cs_scan_dirs_async function from the tizen_6_0_tizen_csr_client library, for the Dart programming language.">
+  <title>csr_cs_scan_dirs_async function - tizen_6_0_tizen_csr_client library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_csr_client/">module_docs&#47;6_0&#47;modules&#47;tizen_csr_client.dart</a></li>
+    <li class="self-crumb">csr_cs_scan_dirs_async function</li>
+  </ol>
+  <div class="self-name">csr_cs_scan_dirs_async</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_csr_client&#47;tizen_6_0_tizen_csr_client-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">csr_cs_scan_dirs_async</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">csr_cs_scan_dirs_async</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="csr_cs_scan_dirs_async-param-handle"><span class="type-annotation">csr_cs_context_h</span> <span class="parameter-name">handle</span>, </span></li>
+<li><span class="parameter" id="csr_cs_scan_dirs_async-param-dir_paths"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">dir_paths</span>, </span></li>
+<li><span class="parameter" id="csr_cs_scan_dirs_async-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span>, </span></li>
+<li><span class="parameter" id="csr_cs_scan_dirs_async-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@partner
+@brief Scan directories specified by an array of directory paths for malware.
+@details If scanning of the single file is done without detected malware,
+csr_cs_file_scanned_cb() is called and else if malware detected
+csr_cs_detected_cb() is called. If scanning is cancelled by
+csr_cs_cancel_scanning(), csr_cs_cancelled_cb() is called. If scanning is failed
+with error, csr_cs_error_cb() is called. If scanning is completed without
+error, csr_cs_completed_cb(). Every callbacks are registered by callback
+setter methods to @a handle and if callback is not registered, it will just be skipped to be called.
+@since_tizen 3.0
+@privlevel partner
+@privilege %http://tizen.org/privilege/antivirus.scan
+@remarks Asynchronous function.
+@remarks The caller should set callback functions before calls this method.
+@remarks Detected malware which is provided to the callback will be released when
+@a handle is released using csr_cs_context_destroy().
+@remarks If multiple malwares exists in a file, the malware with the highest
+severity will be returned for the file via csr_cs_set_detected_cb().
+Parameter handle CSR CS context handle returned by csr_cs_context_create()
+Parameter dir_paths An array of scan target directories
+Parameter count A number of scan target directories
+Parameter user_data The pointer of a user data. It can be null. It is used on
+the callback functions which are registered to @a handle
+@return #CSR_ERROR_NONE on success,
+otherwise a negative error value
+@retval #CSR_ERROR_NONE Successful
+@retval #CSR_ERROR_INVALID_HANDLE Invalid handle
+@retval #CSR_ERROR_OUT_OF_MEMORY Not enough memory
+@retval #CSR_ERROR_INVALID_PARAMETER @a dir_paths is invalid
+@retval #CSR_ERROR_PERMISSION_DENIED Access denied
+@retval #CSR_ERROR_NOT_SUPPORTED Device needed to run API is not supported
+@retval #CSR_ERROR_BUSY Busy for processing another request
+@retval #CSR_ERROR_FILE_DO_NOT_EXIST File not found
+@retval #CSR_ERROR_FILE_SYSTEM File type is invalid. It should be directory
+@retval #CSR_ERROR_SOCKET Socket error between client and server
+@retval #CSR_ERROR_SERVER Server has been failed for some reason
+@retval #CSR_ERROR_DB DB transaction error
+@retval #CSR_ERROR_ENGINE_PERMISSION Insufficient permission of engine
+@retval #CSR_ERROR_ENGINE_NOT_EXIST No engine exists
+@retval #CSR_ERROR_ENGINE_DISABLED Engine is in disabled state
+@retval #CSR_ERROR_ENGINE_NOT_ACTIVATED Engine is not activated
+@retval #CSR_ERROR_ENGINE_INTERNAL Engine Internal error
+@retval #CSR_ERROR_SYSTEM System error
+@pre It is required to set callbacks, csr_cs_completed_cb, csr_cs_error_cb(),
+csr_cs_cancel_scanning(), csr_cs_detected_cb(), and/or csr_cs_file_scanned_cb().
+@see csr_cs_set_file_scanned_cb()
+@see csr_cs_set_detected_cb()
+@see csr_cs_set_completed_cb()
+@see csr_cs_set_cancelled_cb()
+@see csr_cs_set_error_cb()
+@see csr_cs_cancel_scanning()</p>
+<p>Module getter: <code>tizenCsrClient</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int csr_cs_scan_dirs_async(
+  csr_cs_context_h handle,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; dir_paths,
+  int count,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenCsrClient.csr_cs_scan_dirs_async(
+      handle,
+      dir_paths,
+      count,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_csr_client/">tizen_6_0_tizen_csr_client</a></li>
+    <li class="self-crumb">csr_cs_scan_dirs_async function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_csr_client library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

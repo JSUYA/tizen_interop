@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_context library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_context library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_context.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_context</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_context&#47;tizen_6_0_tizen_capi_context-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_context</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiContext</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiContext</code>.
+Module symbol map: <code>capiContextSymbols</code>.
+Shared object(s): <code>libcapi-context.so.1</code>.</p>
+<p>Context / Contextual History, Contextual Trigger.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="context_history_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_create.html">context_history_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_create-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_history_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates a context history handle.
+@since_tizen 2.4
+@remarks		The @c handle must be released using context_history_destroy().
+  
+
+</dd>
+
+          <dt id="context_history_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_destroy.html">context_history_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_destroy-param-handle"><span class="type-annotation">context_history_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Releases the resources occupied by a handle.
+@details		This releases the memory allocated for the @c handle.
+  
+
+</dd>
+
+          <dt id="context_history_filter_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_filter_create.html">context_history_filter_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_filter_create-param-filter"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_history_filter_h</span>&gt;</span></span> <span class="parameter-name">filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates a history filter.
+@since_tizen 2.4
+@remarks		The @c filter must be released using context_history_filter_destroy().
+  
+
+</dd>
+
+          <dt id="context_history_filter_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_filter_destroy.html">context_history_filter_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_filter_destroy-param-filter"><span class="type-annotation">context_history_filter_h</span> <span class="parameter-name">filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Releases the resources occupied by a filter.
+@details		This releases the memory allocated for the @c filter.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_filter_set_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_filter_set_int.html">context_history_filter_set_int</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_filter_set_int-param-filter"><span class="type-annotation">context_history_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="context_history_filter_set_int-param-filter_type"><span class="type-annotation">int</span> <span class="parameter-name">filter_type</span>, </span><span class="parameter" id="context_history_filter_set_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Sets an integer value to a filter.
+@details		This sets the value to a filter.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_filter_set_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_filter_set_string.html">context_history_filter_set_string</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_filter_set_string-param-filter"><span class="type-annotation">context_history_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="context_history_filter_set_string-param-filter_type"><span class="type-annotation">int</span> <span class="parameter-name">filter_type</span>, </span><span class="parameter" id="context_history_filter_set_string-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated	Deprecated since 4.0.
+@brief		Sets a string to a filter.
+@details		This sets the value to a filter.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_get_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_get_list.html">context_history_get_list</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_get_list-param-handle"><span class="type-annotation">context_history_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="context_history_get_list-param-data_type"><span class="type-annotation">int</span> <span class="parameter-name">data_type</span>, </span><span class="parameter" id="context_history_get_list-param-filter"><span class="type-annotation">context_history_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="context_history_get_list-param-list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_history_list_h</span>&gt;</span></span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Reads context statistics or patterns.
+@details		Retrieves a given type of context statistics or patterns list.
+See the programming guide to find available filter type #context_history_filter_e@n
+for each context data type #context_history_data_e.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_is_supported.html">context_history_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_is_supported-param-data_type"><span class="type-annotation">int</span> <span class="parameter-name">data_type</span>, </span><span class="parameter" id="context_history_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Checks whether a history data type is supported in the current device.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="context_history_list_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_list_destroy.html">context_history_list_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_list_destroy-param-list"><span class="type-annotation">context_history_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Destroys a history list handle and release all its resources.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_list_get_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_list_get_count.html">context_history_list_get_count</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_list_get_count-param-list"><span class="type-annotation">context_history_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="context_history_list_get_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Retrieves the number of records in a list.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_list_get_current" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_list_get_current.html">context_history_list_get_current</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_list_get_current-param-list"><span class="type-annotation">context_history_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="context_history_list_get_current-param-record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_history_record_h</span>&gt;</span></span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Retrieves the current record from the history list.
+@details		The default current record is the first record.
+@since_tizen 2.4
+@remarks		The @c record must be released using context_history_record_destroy().
+  
+
+</dd>
+
+          <dt id="context_history_list_move_first" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_list_move_first.html">context_history_list_move_first</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_list_move_first-param-list"><span class="type-annotation">context_history_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Moves a history data list to the first position.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_list_move_next" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_list_move_next.html">context_history_list_move_next</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_list_move_next-param-list"><span class="type-annotation">context_history_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Moves a history data list to the next position.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_record_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_record_destroy.html">context_history_record_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_record_destroy-param-record"><span class="type-annotation">context_history_record_h</span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Destroys a record handle and releases all its resources.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_record_get_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_record_get_double.html">context_history_record_get_double</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_record_get_double-param-record"><span class="type-annotation">context_history_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="context_history_record_get_double-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_history_record_get_double-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets a double-precision value from a record.
+@details		See the programming guide to find available attribute keys@n
+for each context data #context_history_data_e.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_history_record_get_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_record_get_int.html">context_history_record_get_int</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_record_get_int-param-record"><span class="type-annotation">context_history_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="context_history_record_get_int-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_history_record_get_int-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets an integer value from a record.
+@details		See the programming guide to find available attribute keys@n
+for each context data #context_history_data_e.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_history_record_get_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_history_record_get_string.html">context_history_record_get_string</a></span><span class="signature">(<wbr><span class="parameter" id="context_history_record_get_string-param-record"><span class="type-annotation">context_history_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="context_history_record_get_string-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_history_record_get_string-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets a string from a record.
+@details		See the programming guide to find available attribute keys@n
+for each context data #context_history_data_e.
+@since_tizen 2.4
+@remarks		@c value must be released using free().
+  
+
+</dd>
+
+          <dt id="context_trigger_add_rule" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_add_rule.html">context_trigger_add_rule</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_add_rule-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_add_rule-param-rule_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">rule_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Registers a rule.
+@details		Using this, applications can register a rule and get the ID of the registered rule.@n
+A rule can only be enabled, disabled, or removed by the application that has registered the rule.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_custom_publish" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_custom_publish.html">context_trigger_custom_publish</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_custom_publish-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="context_trigger_custom_publish-param-fact"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">fact</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Publishes an instance of a defined custom contextual data.
+@details		Using this, an application can publish the latest value of a custom data defined by the same application.
+The published data instance triggers the evaluation process of the trigger rules that use the data in their event part.
+If a rule uses the custom data as a condition, the last known value is referenced.
+See the programming guide to find the JSON format for the @a fact.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_trigger_custom_register" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_custom_register.html">context_trigger_custom_register</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_custom_register-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="context_trigger_custom_register-param-attr_template"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">attr_template</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Defines a custom contextual data item with its template.
+@details		A contextual data item can be used as an event or a condition of other applications' trigger rules,
+in addition to predefined #context_trigger_event_e and #context_trigger_condition_e.
+See the programming guide to find the JSON format for the @a attr_template.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_trigger_custom_unregister" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_custom_unregister.html">context_trigger_custom_unregister</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_custom_unregister-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Removes a defined custom contextual data item.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_trigger_disable_rule" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_disable_rule.html">context_trigger_disable_rule</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_disable_rule-param-rule_id"><span class="type-annotation">int</span> <span class="parameter-name">rule_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Disables a rule.
+@details		This deactivates the rule designated by the @a rule_id, which is owned by the application.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_enable_rule" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_enable_rule.html">context_trigger_enable_rule</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_enable_rule-param-rule_id"><span class="type-annotation">int</span> <span class="parameter-name">rule_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Enables a rule.
+@details		This activates the rule designated by the @a rule_id, which is owned by the application.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_get_own_rule_ids" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_get_own_rule_ids.html">context_trigger_get_own_rule_ids</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_get_own_rule_ids-param-enabled_rule_ids"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">enabled_rule_ids</span>, </span><span class="parameter" id="context_trigger_get_own_rule_ids-param-enabled_rule_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">enabled_rule_count</span>, </span><span class="parameter" id="context_trigger_get_own_rule_ids-param-disabled_rule_ids"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">disabled_rule_ids</span>, </span><span class="parameter" id="context_trigger_get_own_rule_ids-param-disabled_rule_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">disabled_rule_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets the IDs of the rules owned by the current application.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_get_rule_by_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_get_rule_by_id.html">context_trigger_get_rule_by_id</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_get_rule_by_id-param-rule_id"><span class="type-annotation">int</span> <span class="parameter-name">rule_id</span>, </span><span class="parameter" id="context_trigger_get_rule_by_id-param-rule"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_h</span>&gt;</span></span> <span class="parameter-name">rule</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets a rule stored in the system by rule ID.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_remove_rule" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_remove_rule.html">context_trigger_remove_rule</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_remove_rule-param-rule_id"><span class="type-annotation">int</span> <span class="parameter-name">rule_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Removes a rule.
+@details		This removes the rule designated by the @a rule_id, which is owned by the application.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_add_entry" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_add_entry.html">context_trigger_rule_add_entry</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_add_entry-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_rule_add_entry-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Adds an event or a condition to a rule.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_condition_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_condition_create.html">context_trigger_rule_condition_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_condition_create-param-condition_item"><span class="type-annotation">int</span> <span class="parameter-name">condition_item</span>, </span><span class="parameter" id="context_trigger_rule_condition_create-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_condition_create-param-entry"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_entry_h</span>&gt;</span></span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates a condition entry.
+@details		A condition of a contextual condition item is created.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_condition_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_condition_is_supported.html">context_trigger_rule_condition_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_condition_is_supported-param-condition_item"><span class="type-annotation">int</span> <span class="parameter-name">condition_item</span>, </span><span class="parameter" id="context_trigger_rule_condition_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Checks whether a contextual condition is supported in the current device.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_create.html">context_trigger_rule_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_create-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_create-param-rule"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_h</span>&gt;</span></span> <span class="parameter-name">rule</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates an empty rule.
+@details		An empty rule container is created. When using this,
+a logical operator, one of #context_trigger_logical_type_e, needs to be designated.@n
+In case of #CONTEXT_TRIGGER_LOGICAL_CONJUNCTION,
+the rule can be satisfied only if all conditions are true.
+Otherwise, in case of #CONTEXT_TRIGGER_LOGICAL_DISJUNCTION,
+the rule can be satisfied if at least one is true.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_custom_condition_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_custom_condition_create.html">context_trigger_rule_custom_condition_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_custom_condition_create-param-condition_item"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">condition_item</span>, </span><span class="parameter" id="context_trigger_rule_custom_condition_create-param-provider"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="context_trigger_rule_custom_condition_create-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_custom_condition_create-param-entry"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_entry_h</span>&gt;</span></span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates a condition entry with custom condition, instead of predefined condition item #context_trigger_condition_e.
+@details		A condition of a custom contextual condition item, which is registered and will be provided by provider application/system, is created.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_custom_event_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_custom_event_create.html">context_trigger_rule_custom_event_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_custom_event_create-param-event_item"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">event_item</span>, </span><span class="parameter" id="context_trigger_rule_custom_event_create-param-provider"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="context_trigger_rule_custom_event_create-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_custom_event_create-param-entry"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_entry_h</span>&gt;</span></span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates an event entry with custom event, instead of predefined event item #context_trigger_event_e.
+@details		An event of a custom contextual event item, which is registered and will be provided by an application/system, is created.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_destroy.html">context_trigger_rule_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_destroy-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Releases the resources occupied by a rule handle.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_comparison" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_comparison.html">context_trigger_rule_entry_add_comparison</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_comparison-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison-param-comp_operator"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">comp_operator</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison-param-event_data_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">event_data_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated	Deprecated since 4.0.
+@brief		Adds a comparison between an attribute of a condition and an attribute extracted from the event.
+@details		The key needs to be registered in advance, via context_trigger_rule_entry_add_key().
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_comparison_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_comparison_int.html">context_trigger_rule_entry_add_comparison_int</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_comparison_int-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_int-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_int-param-comp_operator"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">comp_operator</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Adds a comparison between an attribute key and an integer.
+@details		The key needs to be registered in advance, via context_trigger_rule_entry_add_key().
+As the comparison operator, one of the following operators is allowed:
+#CONTEXT_TRIGGER_EQUAL_TO, #CONTEXT_TRIGGER_NOT_EQUAL_TO, #CONTEXT_TRIGGER_LESS_THAN,
+#CONTEXT_TRIGGER_GREATER_THAN, #CONTEXT_TRIGGER_LESS_THAN_OR_EQUAL_TO
+and #CONTEXT_TRIGGER_GREATER_THAN_OR_EQUAL_TO.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_comparison_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_comparison_string.html">context_trigger_rule_entry_add_comparison_string</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_comparison_string-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_string-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_string-param-comp_operator"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">comp_operator</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_comparison_string-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Adds a comparison between an attribute key and a string.
+@details		The key needs to be registered in advance, via context_trigger_rule_entry_add_key().
+As the comparison operator, one of the following operators is allowed:
+#CONTEXT_TRIGGER_EQUAL_TO and #CONTEXT_TRIGGER_NOT_EQUAL_TO.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_key" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_key.html">context_trigger_rule_entry_add_key</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_key-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_key-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_key-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Adds an attribute key to an entry.
+@details		The key will be used as the left operand of comparisons.
+See the programming guide to find available attribute keys for each event/condition item.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_option.html">context_trigger_rule_entry_add_option</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_option-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option-param-option_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">option_key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option-param-event_data_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">event_data_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated	Deprecated since 4.0.
+@brief		Sets an option to a condition entry, which references an attribute that will be extracted from the event.
+@details		See the programming guide to find available option keys for each condition item.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_option_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_option_int.html">context_trigger_rule_entry_add_option_int</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_option_int-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option_int-param-option_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">option_key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Sets an integer type option to an event or condition entry.
+@details		See the programming guide to find available option keys for each event/condition item.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_add_option_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_add_option_string.html">context_trigger_rule_entry_add_option_string</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_add_option_string-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option_string-param-option_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">option_key</span>, </span><span class="parameter" id="context_trigger_rule_entry_add_option_string-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated	Deprecated since 4.0.
+@brief		Sets a string type option to an event or condition entry.
+@details		See the programming guide to find available option keys for each event/condition item.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_entry_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_entry_destroy.html">context_trigger_rule_entry_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_entry_destroy-param-entry"><span class="type-annotation">context_trigger_rule_entry_h</span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Releases the resource occupied by an entry.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_event_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_event_create.html">context_trigger_rule_event_create</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_event_create-param-event_item"><span class="type-annotation">int</span> <span class="parameter-name">event_item</span>, </span><span class="parameter" id="context_trigger_rule_event_create-param-logical_type"><span class="type-annotation">int</span> <span class="parameter-name">logical_type</span>, </span><span class="parameter" id="context_trigger_rule_event_create-param-entry"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">context_trigger_rule_entry_h</span>&gt;</span></span> <span class="parameter-name">entry</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Creates an event entry.
+@details		An event of a contextual event item, which will be monitored by the system, is created.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_event_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_event_is_supported.html">context_trigger_rule_event_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_event_is_supported-param-event_item"><span class="type-annotation">int</span> <span class="parameter-name">event_item</span>, </span><span class="parameter" id="context_trigger_rule_event_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Checks whether a contextual event is supported in the current device.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_get_description" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_get_description.html">context_trigger_rule_get_description</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_get_description-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_rule_get_description-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">description</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Gets the description of a rule.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_set_action_app_control" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_set_action_app_control.html">context_trigger_rule_set_action_app_control</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_set_action_app_control-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_rule_set_action_app_control-param-app_control"><span class="type-annotation">app_control_h</span> <span class="parameter-name">app_control</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Sets a app launching request as the action of a rule.
+@details		Contextual Trigger accepts an App Control as the action of a rule,
+an application thus can be launched when the rule is satisfied.@n
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_set_action_notification" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_set_action_notification.html">context_trigger_rule_set_action_notification</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_set_action_notification-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_rule_set_action_notification-param-title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">title</span>, </span><span class="parameter" id="context_trigger_rule_set_action_notification-param-content"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">content</span>, </span><span class="parameter" id="context_trigger_rule_set_action_notification-param-icon_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">icon_path</span>, </span><span class="parameter" id="context_trigger_rule_set_action_notification-param-app_control"><span class="type-annotation">app_control_h</span> <span class="parameter-name">app_control</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Sets a notification posting request as the action of a rule.
+@details		A basic notification can be posted when the rule is satisfied,
+which consists of the title, a content body text, an icon, and an App Control.
+@since_tizen 2.4
+  
+
+</dd>
+
+          <dt id="context_trigger_rule_set_description" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_context/context_trigger_rule_set_description.html">context_trigger_rule_set_description</a></span><span class="signature">(<wbr><span class="parameter" id="context_trigger_rule_set_description-param-rule"><span class="type-annotation">context_trigger_rule_h</span> <span class="parameter-name">rule</span>, </span><span class="parameter" id="context_trigger_rule_set_description-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">description</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief		Sets the description of a rule.
+@since_tizen 2.4
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_context.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_context library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

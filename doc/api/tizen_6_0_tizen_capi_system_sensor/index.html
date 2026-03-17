@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_system_sensor library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_system_sensor library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_system_sensor.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_system_sensor</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_system_sensor&#47;tizen_6_0_tizen_capi_system_sensor-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_system_sensor</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiSystemSensor</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiSystemSensor</code>.
+Module symbol map: <code>capiSystemSensorSymbols</code>.
+Shared object(s): <code>libcapi-system-sensor.so.0</code>.</p>
+<p>System / Sensor.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="sensor_add_provider" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_add_provider.html">sensor_add_provider</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_add_provider-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Registers the sensor provider.
+@details  A sensor provider is created via sensor_create_provider(),
+and the three callback functions sensor_provider_start_cb(), sensor_provider_stop_cb(),
+and sensor_provider_set_interval_changed_cb() should be set in advance.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_add_sensor_added_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_add_sensor_added_cb.html">sensor_add_sensor_added_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_add_sensor_added_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_added_cb.html">sensor_added_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_add_sensor_added_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Adds a callback function to be invoked when a new sensor is added.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_add_sensor_removed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_add_sensor_removed_cb.html">sensor_add_sensor_removed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_add_sensor_removed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cb.html">sensor_removed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_add_sensor_removed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Adds a callback function to be invoked when a sensor is removed.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_create_listener" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_create_listener.html">sensor_create_listener</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_create_listener-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_create_listener-param-listener"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_listener_h</span>&gt;</span></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Creates a sensor listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_create_provider" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_create_provider.html">sensor_create_provider</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_create_provider-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri</span>, </span><span class="parameter" id="sensor_create_provider-param-provider"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_provider_h</span>&gt;</span></span> <span class="parameter-name">provider</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Creates a sensor provider.
+@details This function creates a sensor provider handle with a given URI.
+The URI should be in the valid form described in \ref CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI.
+In addition, it is not allowed to set the vendor in the URI to @"tizen.org@",
+as it is pre-assigned to the platform-defined sensors.\n
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_destroy_listener" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_destroy_listener.html">sensor_destroy_listener</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_destroy_listener-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Releases all the resources allocated for a listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_destroy_provider" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_destroy_provider.html">sensor_destroy_provider</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_destroy_provider-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Releases all the resources allocated for the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_get_default_sensor" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_default_sensor.html">sensor_get_default_sensor</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_default_sensor-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_get_default_sensor-param-sensor"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_h</span>&gt;</span></span> <span class="parameter-name">sensor</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the handle for the default sensor of a given type.
+@details This function returns the handle for the sensor of a given type.
+If the device has more than one sensor of the given type,
+this function returns the default sensor of the given type,
+which is designated by the device.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_default_sensor_by_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_default_sensor_by_uri.html">sensor_get_default_sensor_by_uri</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_default_sensor_by_uri-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri</span>, </span><span class="parameter" id="sensor_get_default_sensor_by_uri-param-sensor"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_h</span>&gt;</span></span> <span class="parameter-name">sensor</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the handle for the default sensor of a given sensor URI.
+@details This function returns the handle for the sensor of a given URI.
+If the device has more than one sensor of the given URI,
+this function returns the default sensor of the URI, which is designated by the device.\n
+See \ref CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI for more details about the URI format.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_get_fifo_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_fifo_count.html">sensor_get_fifo_count</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_fifo_count-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_fifo_count-param-fifo_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">fifo_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the size of the hardware FIFO of a sensor.
+@details This function returns the size of the hardware FIFO that may be used by
+a specific sensor to support batching.
+However, regarding the underlying hardware configuration,
+the returned count may not mean the maximum number of sensor data that can be batched.
+See sensor_get_max_batch_count() for such purpose, finding out the
+possible maximum number of batched data.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_max_batch_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_max_batch_count.html">sensor_get_max_batch_count</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_max_batch_count-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_max_batch_count-param-max_batch_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">max_batch_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the maximum batch count of a sensor.
+@details This function returns the maximum number of sensor data events
+that can be possibly delivered when the batched data are flushed.
+Therefore, this count can be used to check whether the sensor supports
+batching or not.@n
+If this returns a positive count, i.e., the sensor supports batching,
+the count also can be used to guess the possible longest batch latency
+of the sensor, with respect to the update interval to use.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_max_range" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_max_range.html">sensor_get_max_range</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_max_range-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_max_range-param-max_range"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">max_range</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the upper bound of the sensor readings of a sensor.
+@details This function returns the upper bound of the range of possible sensor values,
+which are generated by the corresponding sensor denoted by a sensor handle.@n
+If all sensor values are in the same unit, e.g., \f$\mbox{m/s}^2\f$ or degrees,
+the upper bound of all sensor values is returned.
+Otherwise, the upper bound of the representative sensor value, e.g.,
+the step count of #SENSOR_HUMAN_PEDOMETER, is returned.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_min_interval" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_min_interval.html">sensor_get_min_interval</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_min_interval-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_min_interval-param-min_interval"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">min_interval</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the possible shorted update interval of a sensor.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_min_range" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_min_range.html">sensor_get_min_range</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_min_range-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_min_range-param-min_range"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">min_range</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the lower bound of the sensor reading of a sensor.
+@details This function returns the lower bound of the range of possible sensor values,
+which are generated by the corresponding sensor denoted by a sensor handle.@n
+If all sensor values are in the same unit, e.g., \f$\mbox{m/s}^2\f$ or degrees,
+the lower bound of all sensor values is returned.
+Otherwise, the lower bound of the representative sensor value, e.g.,
+the step count of #SENSOR_HUMAN_PEDOMETER, is returned.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_name.html">sensor_get_name</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_name-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_name-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the name of a sensor.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_resolution.html">sensor_get_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_resolution-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_resolution-param-resolution"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">resolution</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the resolution of the sensor readings of a sensor.
+@details This function returns the resolution of the sensor readings.
+The resolution denotes the smallest difference between sensor readings,
+each of which is in the range that can be verified by
+sensor_get_min_range() and sensor_get_max_range().
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_sensor_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_sensor_list.html">sensor_get_sensor_list</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_sensor_list-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_get_sensor_list-param-list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_h</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">list</span>, </span><span class="parameter" id="sensor_get_sensor_list-param-sensor_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">sensor_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the handle list of the sensors of a given type.
+@details A device may have more than one sensors of the given type.
+In such case, this function can be used to get the handles of all sensors of the type.@n
+The first element of the @a list denotes the default sensor,
+which can be retrieved by sensor_get_default_sensor().
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_sensor_list_by_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_sensor_list_by_uri.html">sensor_get_sensor_list_by_uri</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_sensor_list_by_uri-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri</span>, </span><span class="parameter" id="sensor_get_sensor_list_by_uri-param-list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_h</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">list</span>, </span><span class="parameter" id="sensor_get_sensor_list_by_uri-param-sensor_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">sensor_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the handle list of the sensors of a given URI.
+@details A device may have more than one sensor of the given URI.
+In such case, this function can be used to get the handles of all sensors of the given URI.\n
+See \ref CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI for more details about the URI format.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_type.html">sensor_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_type-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the type of a sensor, if it belongs to the known types defined in #sensor_type_e.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_get_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_uri.html">sensor_get_uri</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_uri-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_uri-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the URI of a sensor.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_get_vendor" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_get_vendor.html">sensor_get_vendor</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_get_vendor-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_get_vendor-param-vendor"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">vendor</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the vendor of a sensor.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_is_supported.html">sensor_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_is_supported-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Checks whether a given sensor type is supported in the current device.
+@details If the given sensor type is not supported, sensor_get_default_sensor() will return an error.
+It is thus recommended to check the availability of the sensor before actually acquiring #sensor_h.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_is_supported_by_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_is_supported_by_uri.html">sensor_is_supported_by_uri</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_is_supported_by_uri-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri</span>, </span><span class="parameter" id="sensor_is_supported_by_uri-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Checks whether a sensor corresponding to a given URI is supported in the current device.
+@details To correctly check the availability of a sensor, a valid URI should be provided.
+The valid form of URIs is explained in \ref CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI.\n
+If a URI with the sensor's name is given, for example, %http://tizen.org/sensor/general/light/front,
+the availability of the @"front@" light sensor is checked.
+Otherwise, if a URI without the name, %http://tizen.org/sensor/general/light, is given,
+this function checks the availability of any light sensor in the device.\n
+It is recommended to check the availability of the sensors corresponding to the URI
+before actually acquiring #sensor_h.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_is_wake_up" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_is_wake_up.html">sensor_is_wake_up</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_is_wake_up-param-sensor"><span class="type-annotation">sensor_h</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="sensor_is_wake_up-param-wakeup"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">wakeup</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Checks whether a given sensor is a wake-up sensor or not.
+@details If a sensor is a wake-up sensor, the sensor is able to wake-up the system
+to report its sensor data even if the system is in sleep mode.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_flush" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_flush.html">sensor_listener_flush</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_flush-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Flushes stored data of a sensor.
+@details  Flushes all data of a sensor as if the max batch latency has expired.
+Data is delivered in the usual way through the event callback function. @n
+In case of non-batching sensors, this function does nothing and returns #SENSOR_ERROR_NONE.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="sensor_listener_read_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_read_data.html">sensor_listener_read_data</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_read_data-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_read_data-param-event"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_event_s</span>&gt;</span></span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use sensor_listener_read_data_list() instead.
+@brief   Reads the current sensor data via a given sensor listener.
+@details This function synchronously reads the sensor reading of the corresponding sensor, if available.
+Otherwise, if the sensor is not ready to report its values, this function fails and returns
+#SENSOR_ERROR_OPERATION_FAILED.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_read_data_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_read_data_list.html">sensor_listener_read_data_list</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_read_data_list-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_read_data_list-param-events"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_event_s</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">events</span>, </span><span class="parameter" id="sensor_listener_read_data_list-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Reads the current sensor data list via a given sensor listener.
+@details This function synchronously reads the sensor reading of the corresponding sensor, if available.
+Otherwise, if the sensor is not ready to report its values, this function fails and returns
+#SENSOR_ERROR_OPERATION_FAILED.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_accuracy_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_accuracy_cb.html">sensor_listener_set_accuracy_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_accuracy_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_accuracy_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cb.html">sensor_accuracy_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_listener_set_accuracy_cb-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Registers the callback function to be invoked when the accuracy of a sensor changes.
+@details In addition to sensor_event_cb(), sensor_accuracy_changed_cb() also can be attached
+to sensor listeners. With this accuracy callback function, applications can be notified
+the changes of the corresponding sensors separately.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_attribute_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_attribute_int.html">sensor_listener_set_attribute_int</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_attribute_int-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_attribute_int-param-attribute"><span class="type-annotation">int</span> <span class="parameter-name">attribute</span>, </span><span class="parameter" id="sensor_listener_set_attribute_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets an attribute to control the behavior of a sensor listener.
+@details Applications can change the behavior of a sensor listener, for example,
+what is the reference coordinate of the sensor values,
+and when the system is allowed to turn off the sensor implicitly to reduce the power consumption.
+See #sensor_attribute_e for more details about the available control parameters.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_event_cb.html">sensor_listener_set_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_event_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_event_cb-param-interval_ms"><span class="type-annotation">int</span> <span class="parameter-name">interval_ms</span>, </span><span class="parameter" id="sensor_listener_set_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_event_cb.html">sensor_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_listener_set_event_cb-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use sensor_listener_set_events_cb() instead.
+@brief   Registers the callback function to be invoked when sensor events are delivered via a sensor listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_events_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_events_cb.html">sensor_listener_set_events_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_events_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_events_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_events_cb.html">sensor_events_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_listener_set_events_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the callback function to be invoked when sensor events are delivered via a sensor listener.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_interval" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_interval.html">sensor_listener_set_interval</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_interval-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_interval-param-interval_ms"><span class="type-annotation">int</span> <span class="parameter-name">interval_ms</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Changes the update interval of a sensor.
+@details The specified interval is only a suggested interval between sensor measurements.
+You will get at least one sensor measurement within the interval you specify,
+but the actual interval between sensor measurements can be affected by other applications and the system.
+To reduce the system overhead, it is recommended to set the longest interval that you can,
+because the system usually chooses the shortest interval among all intervals specified.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_max_batch_latency" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_max_batch_latency.html">sensor_listener_set_max_batch_latency</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_max_batch_latency-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_max_batch_latency-param-max_batch_latency"><span class="type-annotation">int</span> <span class="parameter-name">max_batch_latency</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the desired max batch latency of a sensor.
+@details Sensors that support batching may allow applications to change their maximum batch latencies.
+For example, if you set the latency as 10,000 ms, the sensor may store its data
+up to 10,000 ms, before delivering the data through the HAL.@n
+In case of non-batching sensors, this function returns #SENSOR_ERROR_NONE,
+but nothing is affected by the input latency value.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_set_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_set_option.html">sensor_listener_set_option</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_set_option-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span>, </span><span class="parameter" id="sensor_listener_set_option-param-option"><span class="type-annotation">int</span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Changes the power-saving behavior of a sensor listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_start.html">sensor_listener_start</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_start-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Starts observing the sensor events regarding a given sensor listener.
+@details If a sensor listener is started, its event callback function starts to be called
+whenever the corresponding sensor events occur.@n
+For example, #SENSOR_ACCELEROMETER reports its sensor readings repeatedly,
+with a specific update interval.
+Note that, unlike the accelerometer, sensors like #SENSOR_PROXIMITY emit events
+only if their states change.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_stop" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_stop.html">sensor_listener_stop</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_stop-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Stops observing the sensor events regarding a given sensor listener.
+@details The listener's event callback function stops being called.
+But the sensor itself may not be stopped if there are other listeners
+that are using the same sensor.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_unset_accuracy_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_accuracy_cb.html">sensor_listener_unset_accuracy_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_unset_accuracy_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Unregisters the sensor accuracy change callback function attached to a given sensor listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_unset_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_event_cb.html">sensor_listener_unset_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_unset_event_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use sensor_listener_unset_events_cb() instead.
+@brief   Unregisters the sensor event callback function attached to a given sensor listener.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_listener_unset_events_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_listener_unset_events_cb.html">sensor_listener_unset_events_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_listener_unset_events_cb-param-listener"><span class="type-annotation">sensor_listener_h</span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Unsets the sensor events callback function attached to a given sensor listener.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="sensor_provider_publish" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_publish.html">sensor_provider_publish</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_publish-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_publish-param-event"><span class="type-annotation">sensor_event_s</span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use sensor_provider_publish_events() instead.
+@brief   Publishes a sensor event through the declared sensor.
+@details This function publishes a sensor's data to its listeners.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_publish_events" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_publish_events.html">sensor_provider_publish_events</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_publish_events-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_publish_events-param-events"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_event_s</span>&gt;</span></span> <span class="parameter-name">events</span>, </span><span class="parameter" id="sensor_provider_publish_events-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Publishes sensor events through the declared sensor.
+@details This function publishes a sensor's data to its listeners.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_interval_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_interval_changed_cb.html">sensor_provider_set_interval_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_interval_changed_cb-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_interval_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cb.html">sensor_provider_interval_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_provider_set_interval_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Registers the callback function to be invoked when the interval is changed.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_name.html">sensor_provider_set_name</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_name-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_name-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the name to the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_range" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_range.html">sensor_provider_set_range</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_range-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_range-param-min_range"><span class="type-annotation">double</span> <span class="parameter-name">min_range</span>, </span><span class="parameter" id="sensor_provider_set_range-param-max_range"><span class="type-annotation">double</span> <span class="parameter-name">max_range</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the range of possible sensor values to the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_resolution.html">sensor_provider_set_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_resolution-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_resolution-param-resolution"><span class="type-annotation">double</span> <span class="parameter-name">resolution</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the resolution of sensor values to the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_start_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_start_cb.html">sensor_provider_set_start_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_start_cb-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_start_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cb.html">sensor_provider_start_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_provider_set_start_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Registers the callback function to be invoked when a listener starts the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_stop_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_stop_cb.html">sensor_provider_set_stop_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_stop_cb-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_stop_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cb.html">sensor_provider_stop_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="sensor_provider_set_stop_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Registers the callback function to be invoked when a sensor listener stops the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_provider_set_vendor" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_set_vendor.html">sensor_provider_set_vendor</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_provider_set_vendor-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span>, </span><span class="parameter" id="sensor_provider_set_vendor-param-vendor"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">vendor</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets the vendor to the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_recorder_create_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_create_option.html">sensor_recorder_create_option</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_create_option-param-option"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_recorder_option_h</span>&gt;</span></span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Creates a recorder option handle.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_create_query" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_create_query.html">sensor_recorder_create_query</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_create_query-param-query"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sensor_recorder_query_h</span>&gt;</span></span> <span class="parameter-name">query</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Creates a recorder query handle.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_data_get_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_double.html">sensor_recorder_data_get_double</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_data_get_double-param-data"><span class="type-annotation">sensor_recorder_data_h</span> <span class="parameter-name">data</span>, </span><span class="parameter" id="sensor_recorder_data_get_double-param-key"><span class="type-annotation">int</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="sensor_recorder_data_get_double-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Gets a double value from a record data.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_data_get_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_int.html">sensor_recorder_data_get_int</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_data_get_int-param-data"><span class="type-annotation">sensor_recorder_data_h</span> <span class="parameter-name">data</span>, </span><span class="parameter" id="sensor_recorder_data_get_int-param-key"><span class="type-annotation">int</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="sensor_recorder_data_get_int-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Gets an integer value from a record data.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_data_get_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_get_time.html">sensor_recorder_data_get_time</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_data_get_time-param-data"><span class="type-annotation">sensor_recorder_data_h</span> <span class="parameter-name">data</span>, </span><span class="parameter" id="sensor_recorder_data_get_time-param-start_time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">time_t</span>&gt;</span></span> <span class="parameter-name">start_time</span>, </span><span class="parameter" id="sensor_recorder_data_get_time-param-end_time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">time_t</span>&gt;</span></span> <span class="parameter-name">end_time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Gets the start and the end time of the time period of a given record data.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_destroy_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_destroy_option.html">sensor_recorder_destroy_option</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_destroy_option-param-option"><span class="type-annotation">sensor_recorder_option_h</span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Destroys a recorder option handle.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_destroy_query" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_destroy_query.html">sensor_recorder_destroy_query</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_destroy_query-param-query"><span class="type-annotation">sensor_recorder_query_h</span> <span class="parameter-name">query</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Destroys a recorder query handle.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_is_supported.html">sensor_recorder_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_is_supported-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_recorder_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Checks whether it is supported to record a given sensor type.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_option_set_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_option_set_int.html">sensor_recorder_option_set_int</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_option_set_int-param-option"><span class="type-annotation">sensor_recorder_option_h</span> <span class="parameter-name">option</span>, </span><span class="parameter" id="sensor_recorder_option_set_int-param-param"><span class="type-annotation">int</span> <span class="parameter-name">param</span>, </span><span class="parameter" id="sensor_recorder_option_set_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets a recording option parameter.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_query_set_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_query_set_int.html">sensor_recorder_query_set_int</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_query_set_int-param-query"><span class="type-annotation">sensor_recorder_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="sensor_recorder_query_set_int-param-param"><span class="type-annotation">int</span> <span class="parameter-name">param</span>, </span><span class="parameter" id="sensor_recorder_query_set_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets an integer-type query parameter
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_query_set_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_query_set_time.html">sensor_recorder_query_set_time</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_query_set_time-param-query"><span class="type-annotation">sensor_recorder_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="sensor_recorder_query_set_time-param-param"><span class="type-annotation">int</span> <span class="parameter-name">param</span>, </span><span class="parameter" id="sensor_recorder_query_set_time-param-t"><span class="type-annotation">int</span> <span class="parameter-name">t</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Sets a time-type query parameter.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_read" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_read.html">sensor_recorder_read</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_read-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_recorder_read-param-query"><span class="type-annotation">sensor_recorder_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="sensor_recorder_read-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cb.html">sensor_recorder_data_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="sensor_recorder_read-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Queries the recorded data asynchronously.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_read_sync" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_read_sync.html">sensor_recorder_read_sync</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_read_sync-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_recorder_read_sync-param-query"><span class="type-annotation">sensor_recorder_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="sensor_recorder_read_sync-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cb.html">sensor_recorder_data_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="sensor_recorder_read_sync-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Queries the recorded data synchronously.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_start.html">sensor_recorder_start</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_start-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="sensor_recorder_start-param-option"><span class="type-annotation">sensor_recorder_option_h</span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Starts to record a given sensor type.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_recorder_stop" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_stop.html">sensor_recorder_stop</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_recorder_stop-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Stops recording a given sensor type.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+          <dt id="sensor_remove_provider" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_remove_provider.html">sensor_remove_provider</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_remove_provider-param-provider"><span class="type-annotation">sensor_provider_h</span> <span class="parameter-name">provider</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Unregisters the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_remove_sensor_added_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_remove_sensor_added_cb.html">sensor_remove_sensor_added_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_remove_sensor_added_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_added_cb.html">sensor_added_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Removes a callback function added using sensor_add_sensor_added_cb().
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_remove_sensor_removed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_remove_sensor_removed_cb.html">sensor_remove_sensor_removed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_remove_sensor_removed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cb.html">sensor_removed_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Removes a callback function added using sensor_add_sensor_removed_cb().
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_util_get_altitude" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_altitude.html">sensor_util_get_altitude</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_altitude-param-pressure"><span class="type-annotation">double</span> <span class="parameter-name">pressure</span>, </span><span class="parameter" id="sensor_util_get_altitude-param-sea_level_pressure"><span class="type-annotation">double</span> <span class="parameter-name">sea_level_pressure</span>, </span><span class="parameter" id="sensor_util_get_altitude-param-temperature"><span class="type-annotation">double</span> <span class="parameter-name">temperature</span>, </span><span class="parameter" id="sensor_util_get_altitude-param-altitude"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">altitude</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the altitude from the atmospheric pressure, the pressure at sea level and temperature, in meters.
+@since_tizen 4.0
+  
+
+</dd>
+
+          <dt id="sensor_util_get_angle_change" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_angle_change.html">sensor_util_get_angle_change</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_angle_change-param-R"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">R</span>, </span><span class="parameter" id="sensor_util_get_angle_change-param-prevR"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">prevR</span>, </span><span class="parameter" id="sensor_util_get_angle_change-param-angleChange"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">angleChange</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Computes the angle change between two rotation matrices.
+  
+
+</dd>
+
+          <dt id="sensor_util_get_declination" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_declination.html">sensor_util_get_declination</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_declination-param-latitude"><span class="type-annotation">double</span> <span class="parameter-name">latitude</span>, </span><span class="parameter" id="sensor_util_get_declination-param-longitude"><span class="type-annotation">double</span> <span class="parameter-name">longitude</span>, </span><span class="parameter" id="sensor_util_get_declination-param-altitude"><span class="type-annotation">double</span> <span class="parameter-name">altitude</span>, </span><span class="parameter" id="sensor_util_get_declination-param-declination"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">declination</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the declination of the horizontal component of the magnetic field from true north, in degrees.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_util_get_inclination" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_inclination.html">sensor_util_get_inclination</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_inclination-param-I"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">I</span>, </span><span class="parameter" id="sensor_util_get_inclination-param-inclination"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">inclination</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Computes the geomagnetic inclination angle in radians from the inclination matrix I returned by sensor_util_get_rotation_matrix().
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="sensor_util_get_orientation" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_orientation.html">sensor_util_get_orientation</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_orientation-param-R"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">R</span>, </span><span class="parameter" id="sensor_util_get_orientation-param-values"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">values</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Computes the device's orientation based on the rotation matrix.
+  
+
+</dd>
+
+          <dt id="sensor_util_get_rotation_matrix" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_rotation_matrix.html">sensor_util_get_rotation_matrix</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_rotation_matrix-param-Gx"><span class="type-annotation">double</span> <span class="parameter-name">Gx</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-Gy"><span class="type-annotation">double</span> <span class="parameter-name">Gy</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-Gz"><span class="type-annotation">double</span> <span class="parameter-name">Gz</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-Mx"><span class="type-annotation">double</span> <span class="parameter-name">Mx</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-My"><span class="type-annotation">double</span> <span class="parameter-name">My</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-Mz"><span class="type-annotation">double</span> <span class="parameter-name">Mz</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-R"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">R</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix-param-I"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">I</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Gets the inclination matrix @"I@" and rotation matrix @"R@" transforming a vector from the device coordinate to the world's coordinate.
+  
+
+</dd>
+
+          <dt id="sensor_util_get_rotation_matrix_from_vector" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_get_rotation_matrix_from_vector.html">sensor_util_get_rotation_matrix_from_vector</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_get_rotation_matrix_from_vector-param-Vx"><span class="type-annotation">double</span> <span class="parameter-name">Vx</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix_from_vector-param-Vy"><span class="type-annotation">double</span> <span class="parameter-name">Vy</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix_from_vector-param-Vz"><span class="type-annotation">double</span> <span class="parameter-name">Vz</span>, </span><span class="parameter" id="sensor_util_get_rotation_matrix_from_vector-param-R"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">R</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Converts a rotation vector to a rotation matrix.
+  
+
+</dd>
+
+          <dt id="sensor_util_remap_coordinate_system" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_util_remap_coordinate_system.html">sensor_util_remap_coordinate_system</a></span><span class="signature">(<wbr><span class="parameter" id="sensor_util_remap_coordinate_system-param-inR"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">inR</span>, </span><span class="parameter" id="sensor_util_remap_coordinate_system-param-x"><span class="type-annotation">int</span> <span class="parameter-name">x</span>, </span><span class="parameter" id="sensor_util_remap_coordinate_system-param-y"><span class="type-annotation">int</span> <span class="parameter-name">y</span>, </span><span class="parameter" id="sensor_util_remap_coordinate_system-param-outR"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">outR</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Rotates the supplied rotation matrix so that it is expressed in a different coordinate system.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartsensor_accuracy_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_accuracy_changed_cbFunction.html">Dartsensor_accuracy_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_accuracy_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cbFunction.html">sensor_accuracy_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_added_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_added_cbFunction.html">Dartsensor_added_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_added_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_added_cbFunction.html">sensor_added_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_event_cbFunction.html">Dartsensor_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_event_cbFunction.html">sensor_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_events_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_events_cbFunction.html">Dartsensor_events_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_events_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_events_cbFunction.html">sensor_events_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_provider_interval_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_interval_changed_cbFunction.html">Dartsensor_provider_interval_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_provider_interval_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cbFunction.html">sensor_provider_interval_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_provider_start_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_start_cbFunction.html">Dartsensor_provider_start_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_provider_start_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cbFunction.html">sensor_provider_start_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_provider_stop_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_provider_stop_cbFunction.html">Dartsensor_provider_stop_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_provider_stop_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cbFunction.html">sensor_provider_stop_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_recorder_data_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_recorder_data_cbFunction.html">Dartsensor_recorder_data_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_recorder_data_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cbFunction.html">sensor_recorder_data_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartsensor_removed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/Dartsensor_removed_cbFunction.html">Dartsensor_removed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartsensor_removed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cbFunction.html">sensor_removed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_accuracy_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cb.html">sensor_accuracy_changed_cb</a></span>
+    = sensor_accuracy_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Called when the accuracy of a sensor changes.
+@details Sensors can be affected by the environment.
+For example, #SENSOR_MAGNETIC is sensitive to any surrounding objects that can influence
+electromagnetic fields. This function is called if the accuracy of the corresponding sensor is changed.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_accuracy_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_accuracy_changed_cbFunction.html">sensor_accuracy_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_accuracy_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_accuracy_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_added_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_added_cb.html">sensor_added_cb</a></span>
+    = sensor_added_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called when a new sensor is added.
+@since_tizen 4.0
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_added_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_added_cbFunction.html">sensor_added_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_added_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_added_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_event_cb.html">sensor_event_cb</a></span>
+    = sensor_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use sensor_events_cb() instead.
+@brief   Called when a sensor event occurs.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_event_cbFunction.html">sensor_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_events_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_events_cb.html">sensor_events_cb</a></span>
+    = sensor_events_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Called when sensor events occur.
+@since_tizen 5.5
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_events_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_events_cbFunction.html">sensor_events_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_events_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_events_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_provider_interval_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cb.html">sensor_provider_interval_changed_cb</a></span>
+    = sensor_provider_interval_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Called when the interval of the sensor provider is changed.
+@since_tizen 4.0
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_provider_interval_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_interval_changed_cbFunction.html">sensor_provider_interval_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_provider_interval_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_provider_interval_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_provider_start_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cb.html">sensor_provider_start_cb</a></span>
+    = sensor_provider_start_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Called when a sensor listener starts the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_provider_start_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_start_cbFunction.html">sensor_provider_start_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_provider_start_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_provider_start_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_provider_stop_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cb.html">sensor_provider_stop_cb</a></span>
+    = sensor_provider_stop_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Called when a sensor listener stops the sensor provider.
+@since_tizen 4.0
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_provider_stop_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_provider_stop_cbFunction.html">sensor_provider_stop_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_provider_stop_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_provider_stop_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_recorder_data_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cb.html">sensor_recorder_data_cb</a></span>
+    = sensor_recorder_data_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Called when the query results are retrieved.
+@details One of the following errors can be delivered.\n
+#SENSOR_ERROR_NONE, Successful\n
+#SENSOR_ERROR_OPERATION_FAILED, Operation failed\n
+#SENSOR_ERROR_NO_DATA, No data retrieved.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_recorder_data_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_recorder_data_cbFunction.html">sensor_recorder_data_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_recorder_data_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_recorder_data_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="sensor_removed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cb.html">sensor_removed_cb</a></span>
+    = sensor_removed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called when a sensor is removed.
+@since_tizen 4.0
+  
+
+</dd>
+
+
+          
+  <dt id="sensor_removed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_system_sensor/sensor_removed_cbFunction.html">sensor_removed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= sensor_removed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;sensor_removed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_system_sensor.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_system_sensor library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

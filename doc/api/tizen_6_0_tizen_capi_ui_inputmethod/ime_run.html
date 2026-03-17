@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ime_run function from the tizen_6_0_tizen_capi_ui_inputmethod library, for the Dart programming language.">
+  <title>ime_run function - tizen_6_0_tizen_capi_ui_inputmethod library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_ui_inputmethod.dart</a></li>
+    <li class="self-crumb">ime_run function</li>
+  </ol>
+  <div class="self-name">ime_run</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_ui_inputmethod&#47;tizen_6_0_tizen_capi_ui_inputmethod-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">ime_run</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">ime_run</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="ime_run-param-basic_cb"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">ime_callback_s</span>&gt;</span></span> <span class="parameter-name">basic_cb</span>, </span></li>
+<li><span class="parameter" id="ime_run-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Runs the main loop of IME application.</p>
+<p>@details This function starts to run IME application's main loop. The ime_create_cb()
+callback function is called to initialize IME application before the main loop starts up. And
+the ime_terminate_cb() callback function is called when IME application is terminated.</p>
+<p>@since_tizen @if MOBILE 2.4 @else 3.0 @endif</p>
+<p>@privlevel public</p>
+<p>@privilege %http://tizen.org/privilege/ime</p>
+<p>@remarks IME application MUST implement ime_app_main() function which is the main
+entry point of IME application. In ime_app_main() function, the ime_run()
+function MUST be called with the necessary callback functions; ime_create_cb(),
+ime_terminate_cb(), ime_show_cb(), and ime_hide_cb() callback functions
+are mandatory for IME application.</p>
+<p>Parameter basic_cb The structure pointer of the essential callback functions
+Parameter user_data User data to be passed to the callback functions</p>
+<p>@return 0 if IME application ends successfully, otherwise a negative error value
+@retval #IME_ERROR_NONE No error
+@retval #IME_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function.
+@retval #IME_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #IME_ERROR_NO_CALLBACK_FUNCTION Necessary callback function is not set
+@retval #IME_ERROR_OPERATION_FAILED Operation failed</p>
+<p>@pre The ime_event_set_***() functions can be called to set the event handling callback functions.</p>
+<p>@see ime_callback_s()
+@see ime_event_set_focus_in_cb()
+@see ime_event_set_focus_out_cb()
+@see ime_event_set_surrounding_text_updated_cb()
+@see ime_event_set_input_context_reset_cb()
+@see ime_event_set_cursor_position_updated_cb()
+@see ime_event_set_language_requested_cb()
+@see ime_event_set_language_set_cb()
+@see ime_event_set_imdata_set_cb()
+@see ime_event_set_layout_set_cb()
+@see ime_event_set_return_key_type_set_cb()
+@see ime_event_set_return_key_state_set_cb()
+@see ime_event_set_geometry_requested_cb()
+@see ime_event_set_display_language_changed_cb()
+@see ime_event_set_rotation_degree_changed_cb()
+@see ime_event_set_accessibility_state_changed_cb()
+@see ime_event_set_option_window_created_cb()
+@see ime_event_set_option_window_destroyed_cb()
+@see ime_event_set_prediction_hint_set_cb()</p>
+<p>@code
+static void inputmethod_create_cb(void *user_data);
+static void inputmethod_terminate_cb(void *user_data);
+static void inputmethod_show_cb(int context_id, ime_context_h context, void *user_data);
+static void inputmethod_hide_cb(int context_id, void *user_data);
+static void inputmethod_focus_in_cb(int context_id, void *user_data);
+static void inputmethod_focus_out_cb(int context_id, void *user_data);
+static void inputmethod_cursor_position_updated_cb(int cursor_pos, void *user_data);</p>
+<p>static void inputmethod_create_cb(void *user_data)
+{
+Evas_Object *ime_win = NULL;</p>
+<p>ime_set_size(480, 400, 800, 400);
+ime_win = ime_get_main_window();
+if (ime_win) {
+// Prepare before showing IME window.
+}
+}</p>
+<p>static void inputmethod_show_cb(int context_id, ime_context_h context, void *user_data)
+{
+Ecore_IMF_Input_Panel_Layout layout;
+ime_layout_variation_e layout_variation;
+Evas_Object *ime_win;</p>
+<p>ime_context_get_layout(context, &amp;layout);
+ime_context_get_layout_variation(context, &amp;layout_variation);</p>
+<p>ime_win = ime_get_main_window();
+if (ime_win) {
+// Compose IME UI properly with the context information and show.</p>
+<p>evas_object_show(ime_win);
+}
+}</p>
+<p>static void inputmethod_hide_cb(int context_id, void *user_data)
+{
+Evas_Object *ime_win = ime_get_main_window();
+if (ime_win) {
+evas_object_hide(ime_win);
+}
+}</p>
+<p>void ime_app_main(int argc, char **argv)
+{
+ime_callback_s basic_callback = {
+inputmethod_create_cb,
+inputmethod_terminate_cb,
+inputmethod_show_cb,
+inputmethod_hide_cb,
+};</p>
+<p>ime_event_set_focus_in_cb(inputmethod_focus_in_cb, NULL);
+ime_event_set_focus_out_cb(inputmethod_focus_out_cb, NULL);
+ime_event_set_cursor_position_updated_cb(inputmethod_cursor_position_updated_cb, NULL);</p>
+<p>ime_run(&amp;basic_callback, NULL);
+}
+@endcode</p>
+<p>Module getter: <code>tizenCapiUiInputmethod</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int ime_run(
+  ffi.Pointer&lt;ime_callback_s&gt; basic_cb,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenCapiUiInputmethod.ime_run(
+      basic_cb,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">tizen_6_0_tizen_capi_ui_inputmethod</a></li>
+    <li class="self-crumb">ime_run function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_ui_inputmethod library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

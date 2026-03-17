@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_rpc_port library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_rpc_port library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_rpc_port.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_rpc_port</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_rpc_port&#47;tizen_6_0_tizen_rpc_port-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_rpc_port</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenRpcPort</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenRpcPort</code>.
+Module symbol map: <code>rpcPortSymbols</code>.
+Shared object(s): <code>librpc-port.so.1</code>.</p>
+<p>Application Framework / RPC Port.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="rpc_port_parcel_burst_read" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_burst_read.html">rpc_port_parcel_burst_read</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_burst_read-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_burst_read-param-buf"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedChar</span>&gt;</span></span> <span class="parameter-name">buf</span>, </span><span class="parameter" id="rpc_port_parcel_burst_read-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads bytes from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter buf The array buffer to read
+Parameter size Bytes to read
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_bool()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_burst_write" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_burst_write.html">rpc_port_parcel_burst_write</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_burst_write-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_burst_write-param-buf"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedChar</span>&gt;</span></span> <span class="parameter-name">buf</span>, </span><span class="parameter" id="rpc_port_parcel_burst_write-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes bytes to rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter buf The array buffer to write
+Parameter size Bytes to write
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_bool()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_create.html">rpc_port_parcel_create</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_create-param-h"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_parcel_h</span>&gt;</span></span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks You must release @a h using rpc_port_parcel_destroy().
+Output parameter h The rpc port parcel handle that is newly created
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER Invalid parameter
+@see rpc_port_parcel_destroy()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_create_from_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_create_from_port.html">rpc_port_parcel_create_from_port</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_create_from_port-param-h"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_parcel_h</span>&gt;</span></span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_create_from_port-param-port"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a rpc port parcel handle from port.
+@details Creates a rpc port parcel handle using read data from the port.
+It calls rpc_port_read() internally.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks You must release @a h using rpc_port_parcel_destroy().
+Output parameter h The rpc port parcel handle that is newly created
+Parameter port The rpc port handle for creating handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a port is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR Internal I/O error
+@see rpc_port_parcel_destroy()
+@see rpc_port_parcel_send()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_destroy.html">rpc_port_parcel_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_destroy-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_create()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read.html">rpc_port_parcel_read</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read-param-parcelable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_parcelable_t</span>&gt;</span></span> <span class="parameter-name">parcelable</span>, </span><span class="parameter" id="rpc_port_parcel_read-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a parcel from the data using @a parcelable.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter parcelable The interface to get data from parcel handle
+Parameter data Data which get from parcel
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_array_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_array_count.html">rpc_port_parcel_read_array_count</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_array_count-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_array_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a count for array from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter count Array count
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_array_count()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_bool" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_bool.html">rpc_port_parcel_read_bool</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_bool-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_bool-param-b"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a boolean value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter b boolean data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_bool()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_bundle" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_bundle.html">rpc_port_parcel_read_bundle</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_bundle-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_bundle-param-b"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a bundle data from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a b should be released using bundle_free().
+Parameter h The rpc port parcel handle
+Output parameter b Bundle data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_bundle()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_byte" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_byte.html">rpc_port_parcel_read_byte</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_byte-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_byte-param-b"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a byte value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter b Byte data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_byte()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_double.html">rpc_port_parcel_read_double</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_double-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_double-param-d"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">d</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a double precision floating point value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter d double data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_double()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_float" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_float.html">rpc_port_parcel_read_float</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_float-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_float-param-f"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">f</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a floating point value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter f float data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_float()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_int16" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_int16.html">rpc_port_parcel_read_int16</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_int16-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_int16-param-i"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Short</span>&gt;</span></span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a short value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter i short data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_int16()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_int32" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_int32.html">rpc_port_parcel_read_int32</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_int32-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_int32-param-i"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a integer value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter i int data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_int32()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_int64" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_int64.html">rpc_port_parcel_read_int64</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_int64-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_int64-param-i"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a long long integer value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Output parameter i long long data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_int64()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_read_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_read_string.html">rpc_port_parcel_read_string</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_read_string-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_read_string-param-str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">str</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads a string value from rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a str should be released using free().
+Parameter h The rpc port parcel handle
+Output parameter str string data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_write_string()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_send" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_send.html">rpc_port_parcel_send</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_send-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_send-param-port"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends parcel data through the port.
+@details Sends parcel data through the port. It calls rpc_port_write()
+internally.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle that is newly created
+Parameter port The rpc port handle for writing data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR Internal I/O error
+@see rpc_port_parcel_create_from_port()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write.html">rpc_port_parcel_write</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write-param-parcelable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_parcelable_t</span>&gt;</span></span> <span class="parameter-name">parcelable</span>, </span><span class="parameter" id="rpc_port_parcel_write-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes the data into parcel handle using @a parcelable.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter parcelable The interface to write the data into parcel handle
+Parameter data Data which write into parcel
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_array_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_array_count.html">rpc_port_parcel_write_array_count</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_array_count-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_array_count-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a count for array into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter count Array count
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_array_count()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_bool" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_bool.html">rpc_port_parcel_write_bool</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_bool-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_bool-param-b"><span class="type-annotation">bool</span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a boolean value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter b boolean data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_bool()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_bundle" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_bundle.html">rpc_port_parcel_write_bundle</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_bundle-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_bundle-param-b"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a bundle data into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter b Bundle data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_bundle()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_byte" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_byte.html">rpc_port_parcel_write_byte</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_byte-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_byte-param-b"><span class="type-annotation">int</span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a byte value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter b Byte data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_byte()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_double.html">rpc_port_parcel_write_double</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_double-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_double-param-d"><span class="type-annotation">double</span> <span class="parameter-name">d</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a double precision floating point value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter d double data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_double()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_float" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_float.html">rpc_port_parcel_write_float</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_float-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_float-param-f"><span class="type-annotation">double</span> <span class="parameter-name">f</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a floating point value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter f float data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_float()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_int16" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_int16.html">rpc_port_parcel_write_int16</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_int16-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_int16-param-i"><span class="type-annotation">int</span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a short value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter i short data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_int16()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_int32" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_int32.html">rpc_port_parcel_write_int32</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_int32-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_int32-param-i"><span class="type-annotation">int</span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a integer value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter i int data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_int32()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_int64" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_int64.html">rpc_port_parcel_write_int64</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_int64-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_int64-param-i"><span class="type-annotation">int</span> <span class="parameter-name">i</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a long long integer value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter i long long data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_int64()
+  
+
+</dd>
+
+          <dt id="rpc_port_parcel_write_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_parcel_write_string.html">rpc_port_parcel_write_string</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_parcel_write_string-param-h"><span class="type-annotation">rpc_port_parcel_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_parcel_write_string-param-str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">str</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes a string value into rpc port parcel handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port parcel handle
+Parameter str string data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_parcel_read_string()
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_add_connected_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_add_connected_event_cb.html">rpc_port_proxy_add_connected_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_add_connected_event_cb-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_add_connected_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connected_event_cb.html">rpc_port_proxy_connected_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_proxy_add_connected_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a proxy connected callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port proxy handle
+Parameter cb The callback function to be called when proxy is connected
+Parameter user_data The user data to be passed to
+the rpc_port_proxy_connected_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_add_disconnected_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_add_disconnected_event_cb.html">rpc_port_proxy_add_disconnected_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_add_disconnected_event_cb-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_add_disconnected_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_disconnected_event_cb.html">rpc_port_proxy_disconnected_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_proxy_add_disconnected_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a proxy disconnected callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port proxy handle
+Parameter cb The callback function to be called when proxy is disconnected
+Parameter user_data The user data to be passed to
+the rpc_port_proxy_disconnected_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_add_received_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_add_received_event_cb.html">rpc_port_proxy_add_received_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_add_received_event_cb-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_add_received_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_received_event_cb.html">rpc_port_proxy_received_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_proxy_add_received_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a proxy received callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port proxy handle
+Parameter cb The callback function to be called when proxy received data
+Parameter user_data The user data to be passed to
+the rpc_port_proxy_received_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_add_rejected_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_add_rejected_event_cb.html">rpc_port_proxy_add_rejected_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_add_rejected_event_cb-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_add_rejected_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_rejected_event_cb.html">rpc_port_proxy_rejected_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_proxy_add_rejected_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a proxy rejected callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port proxy handle
+Parameter cb The callback function to be called when proxy is rejected
+Parameter user_data The user data to be passed to
+the rpc_port_proxy_rejected_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_connect" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connect.html">rpc_port_proxy_connect</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_connect-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_connect-param-appid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">appid</span>, </span><span class="parameter" id="rpc_port_proxy_connect-param-port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects to @a port of @a appid.
+@details To send and receive data, the proxy should connect to port of stub
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/appmanager.launch \n
+%http://tizen.org/privilege/datasharing
+@remarks If you want to use this function, you must add privileges.
+Parameter h The rpc port proxy handle
+Parameter appid The target stub appid
+Parameter port The name of rpc port
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_PERMISSION_DENIED Permission denied
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR Internal I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_connect_sync" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connect_sync.html">rpc_port_proxy_connect_sync</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_connect_sync-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_connect_sync-param-appid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">appid</span>, </span><span class="parameter" id="rpc_port_proxy_connect_sync-param-port_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">port_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects to @a port_name of @a appid synchronously.
+@details To send and receive data, the proxy should connect to port of stub.
+@since_tizen 6.0
+@privlevel public
+@privilege %http://tizen.org/privilege/appmanager.launch \n
+%http://tizen.org/privilege/datasharing
+Parameter h The rpc port proxy handle
+Parameter appid The application ID of the target stub
+Parameter port_name The name of rpc port
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_PERMISSION_DENIED Permission denied
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #RPC_PORT_ERROR_IO_ERROR I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_create.html">rpc_port_proxy_create</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_create-param-h"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_proxy_h</span>&gt;</span></span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a rpc port proxy handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks You must release @a h using rpc_port_proxy_destroy().
+Output parameter h The rpc port proxy handle that is newly created
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_proxy_destroy()
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_destroy.html">rpc_port_proxy_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_destroy-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a rpc port proxy handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port proxy handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_proxy_create()
+  
+
+</dd>
+
+          <dt id="rpc_port_proxy_get_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_get_port.html">rpc_port_proxy_get_port</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_proxy_get_port-param-h"><span class="type-annotation">rpc_port_proxy_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_proxy_get_port-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="rpc_port_proxy_get_port-param-port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_h</span>&gt;</span></span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a port from proxy handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks This handle @a port will not be valid if the proxy was disconnected or destroyed.
+Parameter h The rpc port proxy handle
+Parameter type The type of port
+Output parameter port The port to communicate
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR No available ports
+@see rpc_port_write()
+@see rpc_port_read()
+@see rpc_port_parcel_create_from_port()
+@see rpc_port_parcel_send();
+  
+
+</dd>
+
+          <dt id="rpc_port_read" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_read.html">rpc_port_read</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_read-param-h"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_read-param-buf"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">buf</span>, </span><span class="parameter" id="rpc_port_read-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Reads data from an RPC port.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="rpc_port_set_private_sharing" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_set_private_sharing.html">rpc_port_set_private_sharing</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_set_private_sharing-param-port"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">port</span>, </span><span class="parameter" id="rpc_port_set_private_sharing-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the path of the private sharing file.
+@details See the description of rpc_port_set_private_sharing_array() for details.
+@since_tizen 6.0
+Parameter port The rpc port handle
+Parameter path The path of the file
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #RPC_PORT_ERROR_IO_ERROR I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_set_private_sharing_array" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_set_private_sharing_array.html">rpc_port_set_private_sharing_array</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_set_private_sharing_array-param-port"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">port</span>, </span><span class="parameter" id="rpc_port_set_private_sharing_array-param-paths"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">paths</span>, </span><span class="parameter" id="rpc_port_set_private_sharing_array-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the paths of private sharing files.
+@details If all added paths are under the caller application's data path which can be obtained by calling app_get_data_path() function,
+those will be shared to the target application. Platform will grant a temporary permission to the target application for those files and revoke it when the target application is terminated or rpc_port_unset_private_sharing() is called.
+Paths should be regular files. The target application can just read them.
+Note that the target application doesn't have read permission of the directory that is obtained by caller's app_get_data_path(),
+You should open the file path with read only mode directly. For example, access() call to the file path will return error because access() needs the read permission of the directory.
+The target application can call open() with O_RDONLY mode for the passed file path, because platform grants read permission to the passed file path.
+@since_tizen 6.0
+Parameter port The rpc port handle
+Parameter paths The array of paths of files
+Parameter size The size of the array of the paths
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #RPC_PORT_ERROR_IO_ERROR I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_add_connected_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_add_connected_event_cb.html">rpc_port_stub_add_connected_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_add_connected_event_cb-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_add_connected_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_connected_event_cb.html">rpc_port_stub_connected_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_stub_add_connected_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a stub connected callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc stub stub handle
+Parameter cb The callback function to be called when proxy is connected
+with the stub
+Parameter user_data The user data to be passed to
+the rpc_port_stub_connected_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_add_disconnected_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_add_disconnected_event_cb.html">rpc_port_stub_add_disconnected_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_add_disconnected_event_cb-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_add_disconnected_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_disconnected_event_cb.html">rpc_port_stub_disconnected_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_stub_add_disconnected_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a stub disconnected callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+Parameter cb The callback function to be called when proxy is disconnected
+with the stub
+Parameter user_data The user data to be passed to
+the rpc_port_stub_disconnected_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_add_privilege" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_add_privilege.html">rpc_port_stub_add_privilege</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_add_privilege-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_add_privilege-param-privilege"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">privilege</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a privilege to the stub.
+@details The stub can control access to the port using tizen privilege.
+It allows connections only if the proxy which have the privileges.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+Parameter privilege The privilege to access this stub
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_add_received_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_add_received_event_cb.html">rpc_port_stub_add_received_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_add_received_event_cb-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_add_received_event_cb-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_received_event_cb.html">rpc_port_stub_received_event_cb</a></span> <span class="parameter-name">cb</span>, </span><span class="parameter" id="rpc_port_stub_add_received_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a stub received callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+Parameter cb The callback function to be called when stub received data
+Parameter user_data The user data to be passed to
+the rpc_port_stub_received_event_cb() function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_create.html">rpc_port_stub_create</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_create-param-h"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_stub_h</span>&gt;</span></span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_create-param-port_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">port_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a rpc port stub handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks You must release @a h using rpc_port_stub_destroy().
+Output parameter h The rpc port stub handle that is newly created
+Parameter port_name The name of the port which want to listen
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_stub_destroy()
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_destroy.html">rpc_port_stub_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_destroy-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a rpc port stub handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@see rpc_port_stub_create()
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_get_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_get_port.html">rpc_port_stub_get_port</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_get_port-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_get_port-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="rpc_port_stub_get_port-param-instance"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">instance</span>, </span><span class="parameter" id="rpc_port_stub_get_port-param-port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">rpc_port_h</span>&gt;</span></span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a port from stub handle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks This handle @a port will not be valid if the instance of the stub was disconnected or destroyed.
+Parameter h The rpc port stub handle
+Parameter type The type of port
+Parameter instance The ID of the instance which is connected
+Output parameter port The port to communicate
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR No available ports
+@see rpc_port_write()
+@see rpc_port_read()
+@see rpc_port_parcel_create_from_port()
+@see rpc_port_parcel_send();
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_listen" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_listen.html">rpc_port_stub_listen</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_listen-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Listens to the requests for connections.
+@details The stub listens requests to connect by port
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+@retval #RPC_PORT_ERROR_IO_ERROR Internal I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_stub_set_trusted" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_set_trusted.html">rpc_port_stub_set_trusted</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_stub_set_trusted-param-h"><span class="type-annotation">rpc_port_stub_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_stub_set_trusted-param-trusted"><span class="type-annotation">bool</span> <span class="parameter-name">trusted</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets trusted to the stub.
+@details The stub can control access to the port using tizen certificate.
+It allows connections only if the proxy is signed with the same
+certificate.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter h The rpc port stub handle
+Parameter trusted Whether stub allows only trusted proxy or not
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER The specified @a h is NULL
+  
+
+</dd>
+
+          <dt id="rpc_port_unset_private_sharing" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_unset_private_sharing.html">rpc_port_unset_private_sharing</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_unset_private_sharing-param-port"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">port</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the private sharing.
+@since_tizen 6.0
+Parameter port The rpc port handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #RPC_PORT_ERROR_NONE Successful
+@retval #RPC_PORT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #RPC_PORT_ERROR_IO_ERROR I/O error
+  
+
+</dd>
+
+          <dt id="rpc_port_write" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_write.html">rpc_port_write</a></span><span class="signature">(<wbr><span class="parameter" id="rpc_port_write-param-h"><span class="type-annotation">rpc_port_h</span> <span class="parameter-name">h</span>, </span><span class="parameter" id="rpc_port_write-param-buf"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">buf</span>, </span><span class="parameter" id="rpc_port_write-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes data to an RPC port.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartrpc_port_proxy_connected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_proxy_connected_event_cbFunction.html">Dartrpc_port_proxy_connected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_proxy_connected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connected_event_cbFunction.html">rpc_port_proxy_connected_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_proxy_disconnected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_proxy_disconnected_event_cbFunction.html">Dartrpc_port_proxy_disconnected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_proxy_disconnected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_disconnected_event_cbFunction.html">rpc_port_proxy_disconnected_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_proxy_received_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_proxy_received_event_cbFunction.html">Dartrpc_port_proxy_received_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_proxy_received_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_received_event_cbFunction.html">rpc_port_proxy_received_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_proxy_rejected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_proxy_rejected_event_cbFunction.html">Dartrpc_port_proxy_rejected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_proxy_rejected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_rejected_event_cbFunction.html">rpc_port_proxy_rejected_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_stub_connected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_stub_connected_event_cbFunction.html">Dartrpc_port_stub_connected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_stub_connected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_connected_event_cbFunction.html">rpc_port_stub_connected_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_stub_disconnected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_stub_disconnected_event_cbFunction.html">Dartrpc_port_stub_disconnected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_stub_disconnected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_disconnected_event_cbFunction.html">rpc_port_stub_disconnected_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartrpc_port_stub_received_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/Dartrpc_port_stub_received_event_cbFunction.html">Dartrpc_port_stub_received_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartrpc_port_stub_received_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_received_event_cbFunction.html">rpc_port_stub_received_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_proxy_connected_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connected_event_cb.html">rpc_port_proxy_connected_event_cb</a></span>
+    = rpc_port_proxy_connected_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy is connected.
+@details The function is called when the proxy is connected with stub by port.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter receiver The target stub app id
+Parameter port_name The name of the port
+Parameter port The rpc port handle for reading and writing
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_proxy_connected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_connected_event_cbFunction.html">rpc_port_proxy_connected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_proxy_connected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_proxy_connected_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_proxy_disconnected_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_disconnected_event_cb.html">rpc_port_proxy_disconnected_event_cb</a></span>
+    = rpc_port_proxy_disconnected_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy is disconnected.
+@details The function is called when the proxy is disconnected from stub.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter receiver The target stub app id
+Parameter port_name The name of the port
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_proxy_disconnected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_disconnected_event_cbFunction.html">rpc_port_proxy_disconnected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_proxy_disconnected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_proxy_disconnected_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_proxy_received_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_received_event_cb.html">rpc_port_proxy_received_event_cb</a></span>
+    = rpc_port_proxy_received_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy received data.
+@details The function is called when the proxy received data from stub.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter receiver The target stub app id
+Parameter port_name The name of the port
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_proxy_received_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_received_event_cbFunction.html">rpc_port_proxy_received_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_proxy_received_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_proxy_received_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_proxy_rejected_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_rejected_event_cb.html">rpc_port_proxy_rejected_event_cb</a></span>
+    = rpc_port_proxy_rejected_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy is rejected.
+@details The function is called when the proxy is rejected to connect stub.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter receiver The target stub app id
+Parameter port_name The name of the port
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_proxy_rejected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_proxy_rejected_event_cbFunction.html">rpc_port_proxy_rejected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_proxy_rejected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_proxy_rejected_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_stub_connected_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_connected_event_cb.html">rpc_port_stub_connected_event_cb</a></span>
+    = rpc_port_stub_connected_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy is connected with stub.
+@details The function is called when the proxy is connected with stub.
+When a proxy connects to stub several times with new port,
+you can handle each request by using @a instance.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter sender The target proxy app id
+Parameter instance The information of the request
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_stub_connected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_connected_event_cbFunction.html">rpc_port_stub_connected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_stub_connected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_stub_connected_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_stub_disconnected_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_disconnected_event_cb.html">rpc_port_stub_disconnected_event_cb</a></span>
+    = rpc_port_stub_disconnected_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the proxy is disconnected from stub.
+@details The function is called when the proxy is disconnected from stub.
+When a proxy is disconnected, you can check the request
+by using @a instance.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter sender The target proxy app id
+Parameter instance The information of the request
+Parameter user_data The user data passed from the register function
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_stub_disconnected_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_disconnected_event_cbFunction.html">rpc_port_stub_disconnected_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_stub_disconnected_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_stub_disconnected_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="rpc_port_stub_received_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_received_event_cb.html">rpc_port_stub_received_event_cb</a></span>
+    = rpc_port_stub_received_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the stub received data from proxy.
+@details The function is called when the stub received data from stub.
+When a stub received data from several ports, you can handle
+each request by using @a instance. If the function returns non zero
+value, the stub is disconnected.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter sender The target proxy app id
+Parameter instance The information of the request
+Parameter port The rpc port handle for reading and writing
+Parameter user_data The user data passed from the register function
+@return @c zero to continue receive data with the sender,
+otherwise @c nonzero to disconnect from the port
+  
+
+</dd>
+
+
+          
+  <dt id="rpc_port_stub_received_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_rpc_port/rpc_port_stub_received_event_cbFunction.html">rpc_port_stub_received_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= rpc_port_stub_received_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;rpc_port_stub_received_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_rpc_port.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_rpc_port library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

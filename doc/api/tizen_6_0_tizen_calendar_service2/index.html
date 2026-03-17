@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_calendar_service2 library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_calendar_service2 library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_calendar_service2.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_calendar_service2</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_calendar_service2&#47;tizen_6_0_tizen_calendar_service2-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_calendar_service2</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCalendarService2</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCalendarService2</code>.
+Module symbol map: <code>calendarService2Symbols</code>.
+Shared object(s): <code>libcalendar-service2.so.0</code>.</p>
+<p>Social / Calendar.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="calendar_connect" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_connect.html">calendar_connect</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects to the calendar service.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks Opening the connection is necessary to access the calendar database and perform operations such as fetching, inserting, or updating records.\n
+The execution of calendar_connect() and calendar_disconnect() could slow down your application, so you are recommended not to call them frequently.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see  calendar_disconnect()
+  
+
+</dd>
+
+          <dt id="calendar_connect_on_thread" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_connect_on_thread.html">calendar_connect_on_thread</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects to the calendar service on a thread.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks Opening a connection is necessary to access the calendar database and perform operations such as fetching, inserting, or updating records.\n
+On a thread environment with calendar_connect(), request in one thread could fail, while another request connection is working in the other thread.
+To prevent request failure, calendar_connect_on_thread() is recommended.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see  calendar_disconnect_on_thread()
+  
+
+</dd>
+
+          <dt id="calendar_connect_with_flags" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_connect_with_flags.html">calendar_connect_with_flags</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_connect_with_flags-param-flags"><span class="type-annotation">int</span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects to the calendar service.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks Opening a connection is necessary to access the calendar database and perform operations such as fetching, inserting, or updating records.\n
+Before the calendar-service daemon is ready, if you call calendar_connect(), it could fail.
+It is recommended to call this API with #CALENDAR_CONNECT_FLAG_RETRY flags in such a situation.
+Parameter flags calendar_connect_flag
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see  calendar_disconnect(), CALENDAR_CONNECT_FLAG_RETRY
+  
+
+</dd>
+
+          <dt id="calendar_db_add_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_add_changed_cb.html">calendar_db_add_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_add_changed_cb-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_add_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_changed_cb.html">calendar_db_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="calendar_db_add_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when a record changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks If successive change notification produced on the view_uri are identical,
+then they are coalesced into a single notification if the older notification has not yet been called
+because default main loop is doing something.
+But it means that a callback function is not called to reliably count of change.
+This API supports only @ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_book view, @ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event view,
+@ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo view.
+Parameter view_uri The view URI of the record to subscribe for change notifications
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@post calendar_db_changed_cb() will be invoked when the designated view changes.
+@see calendar_connect()
+@see calendar_db_changed_cb()
+@see calendar_db_remove_changed_cb()
+  
+
+</dd>
+
+          <dt id="calendar_db_clean_after_sync" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_clean_after_sync.html">calendar_db_clean_after_sync</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_clean_after_sync-param-calendar_book_id"><span class="type-annotation">int</span> <span class="parameter-name">calendar_book_id</span>, </span><span class="parameter" id="calendar_db_clean_after_sync-param-calendar_db_version"><span class="type-annotation">int</span> <span class="parameter-name">calendar_db_version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cleans the data after sync.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter calendar_book_id The calendar book ID
+Parameter calendar_db_version The calendar database version
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_delete_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_delete_record.html">calendar_db_delete_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_delete_record-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_delete_record-param-record_id"><span class="type-annotation">int</span> <span class="parameter-name">record_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deletes a record from the calendar database with related child records.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter view_uri The view URI of a record
+Parameter record_id The record ID to be deleted
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_insert_record()
+  
+
+</dd>
+
+          <dt id="calendar_db_delete_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_delete_records.html">calendar_db_delete_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_delete_records-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_delete_records-param-record_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">record_id_array</span>, </span><span class="parameter" id="calendar_db_delete_records-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deletes multiple records with related child records from the calendar database as a batch operation.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter view_uri The view URI of the records to delete
+Parameter record_id_array The record IDs to delete
+Parameter count The number of records
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_insert_records()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_all_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_all_records.html">calendar_db_get_all_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_all_records-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_get_all_records-param-offset"><span class="type-annotation">int</span> <span class="parameter-name">offset</span>, </span><span class="parameter" id="calendar_db_get_all_records-param-limit"><span class="type-annotation">int</span> <span class="parameter-name">limit</span>, </span><span class="parameter" id="calendar_db_get_all_records-param-record_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">record_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all records as a list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks You must release @a record_list using calendar_list_destroy().
+Parameter view_uri The view URI to get records from
+Parameter offset The index from which results are received
+Parameter limit The maximum number of results(value 0 is used for all records)
+Output parameter record_list The record list
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_changes_by_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_changes_by_version.html">calendar_db_get_changes_by_version</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_changes_by_version-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_get_changes_by_version-param-calendar_book_id"><span class="type-annotation">int</span> <span class="parameter-name">calendar_book_id</span>, </span><span class="parameter" id="calendar_db_get_changes_by_version-param-calendar_db_version"><span class="type-annotation">int</span> <span class="parameter-name">calendar_db_version</span>, </span><span class="parameter" id="calendar_db_get_changes_by_version-param-record_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">record_list</span>, </span><span class="parameter" id="calendar_db_get_changes_by_version-param-current_calendar_db_version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">current_calendar_db_version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves records with the given calendar database version.
+@details This function finds all the changed records since the given @a calendar_db_version.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks You must release @a change_record_list using calendar_list_destroy().
+Parameter view_uri The view URI to get records from
+Parameter calendar_book_id The calendar book ID to filter
+Parameter calendar_db_version The calendar database version
+Output parameter record_list The record list
+Output parameter current_calendar_db_version The current calendar database version
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_changes_exception_by_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_changes_exception_by_version.html">calendar_db_get_changes_exception_by_version</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_changes_exception_by_version-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_get_changes_exception_by_version-param-original_event_id"><span class="type-annotation">int</span> <span class="parameter-name">original_event_id</span>, </span><span class="parameter" id="calendar_db_get_changes_exception_by_version-param-calendar_db_version"><span class="type-annotation">int</span> <span class="parameter-name">calendar_db_version</span>, </span><span class="parameter" id="calendar_db_get_changes_exception_by_version-param-list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves changed exception records since the given calendar database version.
+Exceptions are the modified or deleted instances in a recurring event.
+@details This function finds all the changed records since the given @a calendar_db_version.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks You must release @a change_record_list using calendar_list_destroy().
+Parameter view_uri The view URI to get records from
+Parameter original_event_id The original event ID
+Parameter calendar_db_version The calendar database version starting from which to get records
+Output parameter list The record list
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_count.html">calendar_db_get_count</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_count-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_get_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the record count of a specific view.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Parameter view_uri The view URI to get records from
+Output parameter count The number of records
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_count_with_query" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_count_with_query.html">calendar_db_get_count_with_query</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_count_with_query-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_db_get_count_with_query-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the record count with a query handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Parameter query The query handle used for filtering the results
+Output parameter count The number of records
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_current_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_current_version.html">calendar_db_get_current_version</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_current_version-param-calendar_db_version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">calendar_db_version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the current calendar database version.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Output parameter calendar_db_version The calendar database version
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@see calendar_connect()
+@see calendar_db_get_changes_by_version()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_last_change_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_last_change_version.html">calendar_db_get_last_change_version</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_last_change_version-param-last_change_version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">last_change_version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the last successful change version of the database on the current connection.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Output parameter last_change_version The calendar database version on the current connection
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@see calendar_connect()
+@see calendar_db_get_current_version()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_record.html">calendar_db_get_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_record-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_get_record-param-record_id"><span class="type-annotation">int</span> <span class="parameter-name">record_id</span>, </span><span class="parameter" id="calendar_db_get_record-param-record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_record_h</span>&gt;</span></span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a record from the calendar database.
+@details This function creates a new record handle from the calendar database by the given @a record_id. \n
+@a record will be created and filled with record information.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks You must release @a record using calendar_record_destroy().
+Parameter view_uri The view URI of a record
+Parameter record_id The record ID
+Output parameter record The record handle associated with the record ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_record_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_db_get_records_with_query" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_get_records_with_query.html">calendar_db_get_records_with_query</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_get_records_with_query-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_db_get_records_with_query-param-offset"><span class="type-annotation">int</span> <span class="parameter-name">offset</span>, </span><span class="parameter" id="calendar_db_get_records_with_query-param-limit"><span class="type-annotation">int</span> <span class="parameter-name">limit</span>, </span><span class="parameter" id="calendar_db_get_records_with_query-param-record_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">record_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves records using a query handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+@remarks You must release @a record_list using calendar_list_destroy().
+Parameter query The query handle used to filter results
+Parameter offset The index from which results are received
+Parameter limit The maximum number of results(value 0 is used for all records)
+Output parameter record_list The record list
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_db_insert_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_insert_record.html">calendar_db_insert_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_insert_record-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_db_insert_record-param-record_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">record_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Inserts a record into the calendar database.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record The record handle
+Output parameter record_id The record ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_update_record()
+@see calendar_db_delete_record()
+@see calendar_db_get_record()
+  
+
+</dd>
+
+          <dt id="calendar_db_insert_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_insert_records.html">calendar_db_insert_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_insert_records-param-record_list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">record_list</span>, </span><span class="parameter" id="calendar_db_insert_records-param-record_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">record_id_array</span>, </span><span class="parameter" id="calendar_db_insert_records-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Inserts multiple records into the calendar database as a batch operation.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record_list The record list handle
+Output parameter record_id_array The array of record IDs
+Output parameter count The number of record IDs
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_update_records()
+@see calendar_db_delete_records()
+  
+
+</dd>
+
+          <dt id="calendar_db_insert_vcalendars" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_insert_vcalendars.html">calendar_db_insert_vcalendars</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_insert_vcalendars-param-vcalendar_stream"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">vcalendar_stream</span>, </span><span class="parameter" id="calendar_db_insert_vcalendars-param-record_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">record_id_array</span>, </span><span class="parameter" id="calendar_db_insert_vcalendars-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Inserts a vcalendar stream into the calendar database.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter vcalendar_stream The vcalendar stream
+Output parameter record_id_array The record IDs to delete
+Output parameter count The number of record ID arrays
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_replace_vcalendars()
+  
+
+</dd>
+
+          <dt id="calendar_db_link_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_link_record.html">calendar_db_link_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_link_record-param-base_id"><span class="type-annotation">int</span> <span class="parameter-name">base_id</span>, </span><span class="parameter" id="calendar_db_link_record-param-record_id"><span class="type-annotation">int</span> <span class="parameter-name">record_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Links a record to another record.
+@since_tizen 4.0
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter base_id The base record ID
+Parameter record_id The record ID to link to
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_remove_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_remove_changed_cb.html">calendar_db_remove_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_remove_changed_cb-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_db_remove_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_changed_cb.html">calendar_db_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="calendar_db_remove_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters a callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Parameter view_uri The view URI of the record to subscribe for change notifications
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service using calendar_connect().
+@see calendar_connect()
+@see calendar_db_changed_cb()
+@see calendar_db_add_changed_cb()
+  
+
+</dd>
+
+          <dt id="calendar_db_replace_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_replace_record.html">calendar_db_replace_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_replace_record-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_db_replace_record-param-record_id"><span class="type-annotation">int</span> <span class="parameter-name">record_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Replaces a record in the calendar database.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record The record handle
+Parameter record_id The record ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_update_record()
+@see calendar_db_delete_record()
+@see calendar_db_get_record()
+  
+
+</dd>
+
+          <dt id="calendar_db_replace_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_replace_records.html">calendar_db_replace_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_replace_records-param-record_list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">record_list</span>, </span><span class="parameter" id="calendar_db_replace_records-param-record_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">record_id_array</span>, </span><span class="parameter" id="calendar_db_replace_records-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Replaces multiple records in the calendar database as a batch operation.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record_list The record list handle
+Parameter record_id_array The record IDs
+Parameter count The number of record ID arrays
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_update_records()
+@see calendar_db_delete_records()
+@see calendar_db_replace_record()
+  
+
+</dd>
+
+          <dt id="calendar_db_replace_vcalendars" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_replace_vcalendars.html">calendar_db_replace_vcalendars</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_replace_vcalendars-param-vcalendar_stream"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">vcalendar_stream</span>, </span><span class="parameter" id="calendar_db_replace_vcalendars-param-record_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">record_id_array</span>, </span><span class="parameter" id="calendar_db_replace_vcalendars-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Replaces a vcalendar stream in the calendar database.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter vcalendar_stream The vcalendar stream
+Parameter record_id_array The record IDs to replace
+Parameter count The number of record ID arrays
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre This function requires an open connection to the calendar service by calendar_connect().
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_unlink_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_unlink_record.html">calendar_db_unlink_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_unlink_record-param-record_id"><span class="type-annotation">int</span> <span class="parameter-name">record_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unlinks a record from base record.
+@since_tizen 4.0
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record_id The record ID to unlink
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied
+@retval #CALENDAR_ERROR_FILE_NO_SPACE File system is full
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_db_update_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_update_record.html">calendar_db_update_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_update_record-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates a record in the calendar database.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record The record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_insert_record()
+@see calendar_db_delete_record()
+@see calendar_db_get_record()
+  
+
+</dd>
+
+          <dt id="calendar_db_update_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_update_records.html">calendar_db_update_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_db_update_records-param-record_list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">record_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates multiple records into the calendar database as a batch operation.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.write
+Parameter record_list The record list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_NO_DATA Data does not exist
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_PERMISSION_DENIED Permission denied. This application does not have the privilege to call this method.
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_DB_RECORD_NOT_FOUND Database not found
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to open a connection to the calendar service.
+@see calendar_connect()
+@see calendar_db_insert_records()
+@see calendar_db_delete_records()
+  
+
+</dd>
+
+          <dt id="calendar_disconnect" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_disconnect.html">calendar_disconnect</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Disconnects from the calendar service.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks If there is no open connection, this function returns #CALENDAR_ERROR_DB_FAILED.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_connect()
+  
+
+</dd>
+
+          <dt id="calendar_disconnect_on_thread" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_disconnect_on_thread.html">calendar_disconnect_on_thread</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Disconnects from the calendar service on a thread.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks If there is no open connection, this function returns #CALENDAR_ERROR_DB_FAILED.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_connect_on_thread()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_caltime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_caltime.html">calendar_filter_add_caltime</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_caltime-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_caltime-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_filter_add_caltime-param-match"><span class="type-annotation">int</span> <span class="parameter-name">match</span>, </span><span class="parameter" id="calendar_filter_add_caltime-param-match_value"><span class="type-annotation">calendar_time_s</span> <span class="parameter-name">match_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a condition for the calendar_time_s type property.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter property_id The property ID to add a condition
+Parameter match The match flag
+Parameter match_value The match value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_double.html">calendar_filter_add_double</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_double-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_double-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_filter_add_double-param-match"><span class="type-annotation">int</span> <span class="parameter-name">match</span>, </span><span class="parameter" id="calendar_filter_add_double-param-match_value"><span class="type-annotation">double</span> <span class="parameter-name">match_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a condition for the double type property.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter property_id The property ID to add a condition
+Parameter match The match flag
+Parameter match_value The match value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_filter" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_filter.html">calendar_filter_add_filter</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_filter-param-parent_filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">parent_filter</span>, </span><span class="parameter" id="calendar_filter_add_filter-param-child_filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">child_filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a child filter to a parent filter.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter parent_filter The parent filter handle
+Parameter child_filter The child filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_int.html">calendar_filter_add_int</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_int-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_int-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_filter_add_int-param-match"><span class="type-annotation">int</span> <span class="parameter-name">match</span>, </span><span class="parameter" id="calendar_filter_add_int-param-match_value"><span class="type-annotation">int</span> <span class="parameter-name">match_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a condition for the integer type property.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter property_id The property ID to add a condition
+Parameter match The match flag
+Parameter match_value The match value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_lli" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_lli.html">calendar_filter_add_lli</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_lli-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_lli-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_filter_add_lli-param-match"><span class="type-annotation">int</span> <span class="parameter-name">match</span>, </span><span class="parameter" id="calendar_filter_add_lli-param-match_value"><span class="type-annotation">int</span> <span class="parameter-name">match_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a condition for the long long int type property.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter property_id The property ID to add a condition
+Parameter match The match flag
+Parameter match_value The match value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_operator" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_operator.html">calendar_filter_add_operator</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_operator-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_operator-param-operator_type"><span class="type-annotation">int</span> <span class="parameter-name">operator_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds an operator between conditions.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter operator_type The operator type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_str()
+@see calendar_filter_add_int()
+@see calendar_filter_add_double()
+@see calendar_filter_add_caltime()
+@see calendar_filter_add_filter()
+  
+
+</dd>
+
+          <dt id="calendar_filter_add_str" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_add_str.html">calendar_filter_add_str</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_add_str-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span>, </span><span class="parameter" id="calendar_filter_add_str-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_filter_add_str-param-match"><span class="type-annotation">int</span> <span class="parameter-name">match</span>, </span><span class="parameter" id="calendar_filter_add_str-param-match_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">match_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a condition for the string type property.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+Parameter property_id The property ID to add a condition
+Parameter match The match flag
+Parameter match_value The match value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_add_operator()
+  
+
+</dd>
+
+          <dt id="calendar_filter_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_create.html">calendar_filter_create</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_create-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_filter_create-param-filter"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_filter_h</span>&gt;</span></span> <span class="parameter-name">filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a filter using calendar_filter_destroy().
+Parameter view_uri The view URI of a filter
+Output parameter filter The filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to initialize.
+@see calendar_filter_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_filter_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_filter_destroy.html">calendar_filter_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_filter_destroy-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter filter The filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_filter_create()
+  
+
+</dd>
+
+          <dt id="calendar_list_add" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_add.html">calendar_list_add</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_add-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="calendar_list_add-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a record to the calendar list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+Parameter record The record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_remove()
+  
+
+</dd>
+
+          <dt id="calendar_list_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_create.html">calendar_list_create</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_create-param-out_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">out_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a calendar list handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a calendar_list using calendar_list_destroy().
+Output parameter out_list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_list_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_destroy.html">calendar_list_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_destroy-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="calendar_list_destroy-param-delete_record"><span class="type-annotation">bool</span> <span class="parameter-name">delete_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a calendar list handle and releases all its resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+Parameter delete_record If @c true, child records are destroyed automatically,
+otherwise @c false
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_create()
+  
+
+</dd>
+
+          <dt id="calendar_list_first" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_first.html">calendar_list_first</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_first-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Moves a calendar list to the first position.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_last()
+  
+
+</dd>
+
+          <dt id="calendar_list_get_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_get_count.html">calendar_list_get_count</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_get_count-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="calendar_list_get_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves the number of calendar entities in a calendar list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+Output parameter count The count of the calendar entity
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_add()
+  
+
+</dd>
+
+          <dt id="calendar_list_get_current_record_p" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_get_current_record_p.html">calendar_list_get_current_record_p</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_get_current_record_p-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="calendar_list_get_current_record_p-param-record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_record_h</span>&gt;</span></span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves a record from the calendar list.
+@details The default current record is the first record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You MUST NOT destroy the @a record handle.
+It is destroyed automatically when the @a list is destroyed.
+Parameter list The calendar list handle
+Output parameter record The record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_list_last" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_last.html">calendar_list_last</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_last-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Moves a calendar list to the last position.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_first()
+  
+
+</dd>
+
+          <dt id="calendar_list_next" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_next.html">calendar_list_next</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_next-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Moves a calendar list to the next position.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_prev()
+  
+
+</dd>
+
+          <dt id="calendar_list_prev" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_prev.html">calendar_list_prev</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_prev-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Moves a calendar list to the previous position.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_next()
+  
+
+</dd>
+
+          <dt id="calendar_list_remove" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_list_remove.html">calendar_list_remove</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_list_remove-param-list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">list</span>, </span><span class="parameter" id="calendar_list_remove-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a record from the calendar list.
+@details If the record is the current record, then the current record is changed to the next record.\n
+If the record is the last record then the current record will be @c NULL.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter list The calendar list handle
+Parameter record The record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_add()
+  
+
+</dd>
+
+          <dt id="calendar_query_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_create.html">calendar_query_create</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_create-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_query_create-param-query"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_query_h</span>&gt;</span></span> <span class="parameter-name">query</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a query handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a query using calendar_query_destroy().
+Parameter view_uri The view URI of a query
+Output parameter query The filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to initialize.
+@see calendar_query_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_query_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_destroy.html">calendar_query_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_destroy-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a query handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter query The query handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_query_create()
+  
+
+</dd>
+
+          <dt id="calendar_query_set_distinct" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_set_distinct.html">calendar_query_set_distinct</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_set_distinct-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_query_set_distinct-param-set1"><span class="type-annotation">bool</span> <span class="parameter-name">set1</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the "distinct" option for projection.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter query The query handle
+Parameter set If @c true it is set,
+otherwise if @c false it is unset
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_query_set_filter" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_set_filter.html">calendar_query_set_filter</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_set_filter-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_query_set_filter-param-filter"><span class="type-annotation">calendar_filter_h</span> <span class="parameter-name">filter</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the filter for a query.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter query The query handle
+Parameter filter The filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_query_set_projection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_set_projection.html">calendar_query_set_projection</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_set_projection-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_query_set_projection-param-property_id_array"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">property_id_array</span>, </span><span class="parameter" id="calendar_query_set_projection-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds property IDs for projection.
+@details Property IDs can be of one of the properties of view_uri which is used in calendar_query_create().
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter query The query handle
+Parameter property_id_array The property ID array
+Parameter count The number of property IDs
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_query_set_sort" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_query_set_sort.html">calendar_query_set_sort</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_query_set_sort-param-query"><span class="type-annotation">calendar_query_h</span> <span class="parameter-name">query</span>, </span><span class="parameter" id="calendar_query_set_sort-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_query_set_sort-param-is_ascending"><span class="type-annotation">bool</span> <span class="parameter-name">is_ascending</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the sort mode for a query.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter query The query handle
+Parameter property_id The property ID to sort
+Parameter is_ascending If @c true it sorts in the ascending order,
+otherwise if @c false it sorts in the descending order
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_record_add_child_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_add_child_record.html">calendar_record_add_child_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_add_child_record-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_add_child_record-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_add_child_record-param-child_record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">child_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a child record to the parent record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The parent record handle
+Parameter property_id The property ID
+Parameter child_record The handle of the child record to be added to the parent record
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_remove_child_record()
+  
+
+</dd>
+
+          <dt id="calendar_record_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_clone.html">calendar_record_clone</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_clone-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_clone-param-out_record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_record_h</span>&gt;</span></span> <span class="parameter-name">out_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Makes a clone of a record handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a cloned_record using calendar_record_destroy().
+Parameter record The record handle
+Output parameter out_record The cloned record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_record_clone_child_record_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_clone_child_record_list.html">calendar_record_clone_child_record_list</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_clone_child_record_list-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_clone_child_record_list-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_clone_child_record_list-param-out_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">out_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Makes a clone of a given record's child record list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a out_list using calendar_list_destroy().
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_list The cloned list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_list_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_record_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_create.html">calendar_record_create</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_create-param-view_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">view_uri</span>, </span><span class="parameter" id="calendar_record_create-param-out_record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_record_h</span>&gt;</span></span> <span class="parameter-name">out_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a record handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a record using calendar_record_destroy().
+Parameter view_uri The view URI
+Output parameter out_record The record handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to initialize.
+@see calendar_record_destroy()
+  
+
+</dd>
+
+          <dt id="calendar_record_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_destroy.html">calendar_record_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_destroy-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_destroy-param-delete_child"><span class="type-annotation">bool</span> <span class="parameter-name">delete_child</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a record handle and releases all its resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter delete_child If @c true, child records are destroyed automatically,
+otherwise @c false
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_create()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_caltime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_caltime.html">calendar_record_get_caltime</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_caltime-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_caltime-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_caltime-param-out_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_time_s</span>&gt;</span></span> <span class="parameter-name">out_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a calendar_caltime_s value from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_value The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_set_caltime()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_child_record_at_p" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_child_record_at_p.html">calendar_record_get_child_record_at_p</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_child_record_at_p-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_child_record_at_p-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_child_record_at_p-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="calendar_record_get_child_record_at_p-param-child_record"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_record_h</span>&gt;</span></span> <span class="parameter-name">child_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a child record handle pointer from the parent record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You MUST NOT release @a child_record. \n
+It is released when the parent record handle is destroyed.
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter index The index of the child record
+Output parameter child_record The child record handle pointer
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_add_child_record()
+@see calendar_record_remove_child_record()
+@see calendar_record_get_child_record_count()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_child_record_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_child_record_count.html">calendar_record_get_child_record_count</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_child_record_count-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_child_record_count-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_child_record_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of child records in a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The parent record handle
+Parameter property_id The property ID
+Output parameter count The child record count
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_add_child_record()
+@see calendar_record_remove_child_record()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_double.html">calendar_record_get_double</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_double-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_double-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_double-param-out_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">out_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a double value from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_value The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_set_double()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_int.html">calendar_record_get_int</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_int-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_int-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_int-param-out_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">out_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets an integer value from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_value The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_set_int()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_lli" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_lli.html">calendar_record_get_lli</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_lli-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_lli-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_lli-param-out_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">out_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a long long integer value from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_value The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_set_lli()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_str" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_str.html">calendar_record_get_str</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_str-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_str-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_str-param-out_str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">out_str</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a string from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You must release @a value using free().
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_str The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_str_p()
+@see calendar_record_set_str()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_str_p" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_str_p.html">calendar_record_get_str_p</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_str_p-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_str_p-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_get_str_p-param-out_str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">out_str</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a string pointer from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@remarks You MUST NOT release @a value.
+Parameter record The record handle
+Parameter property_id The property ID
+Output parameter out_str The result value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_str()
+@see calendar_record_set_str()
+  
+
+</dd>
+
+          <dt id="calendar_record_get_uri_p" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_get_uri_p.html">calendar_record_get_uri_p</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_get_uri_p-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_get_uri_p-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a URI string from a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Output parameter uri The URI of the record
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_record_remove_child_record" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_remove_child_record.html">calendar_record_remove_child_record</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_remove_child_record-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_remove_child_record-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_remove_child_record-param-child_record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">child_record</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a child record from the parent record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The parent record handle
+Parameter property_id The property ID
+Parameter child_record The handle of the child record to be removed from the parent record
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_add_child_record()
+  
+
+</dd>
+
+          <dt id="calendar_record_set_caltime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_set_caltime.html">calendar_record_set_caltime</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_set_caltime-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_set_caltime-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_set_caltime-param-value"><span class="type-annotation">calendar_time_s</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a calendar_time_s value to a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter value The value to be set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_caltime()
+  
+
+</dd>
+
+          <dt id="calendar_record_set_double" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_set_double.html">calendar_record_set_double</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_set_double-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_set_double-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_set_double-param-value"><span class="type-annotation">double</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a double value to a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter value The value to be set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_double()
+  
+
+</dd>
+
+          <dt id="calendar_record_set_int" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_set_int.html">calendar_record_set_int</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_set_int-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_set_int-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_set_int-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an integer value to a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter value The value to be set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_int()
+  
+
+</dd>
+
+          <dt id="calendar_record_set_lli" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_set_lli.html">calendar_record_set_lli</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_set_lli-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_set_lli-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_set_lli-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a long long integer value to a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter value The value to be set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_lli()
+  
+
+</dd>
+
+          <dt id="calendar_record_set_str" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_record_set_str.html">calendar_record_set_str</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_record_set_str-param-record"><span class="type-annotation">calendar_record_h</span> <span class="parameter-name">record</span>, </span><span class="parameter" id="calendar_record_set_str-param-property_id"><span class="type-annotation">int</span> <span class="parameter-name">property_id</span>, </span><span class="parameter" id="calendar_record_set_str-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a string to a record.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle
+Parameter property_id The property ID
+Parameter value The value to be set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_record_get_str()
+@see calendar_record_get_str_p()
+  
+
+</dd>
+
+          <dt id="calendar_reminder_add_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_add_cb.html">calendar_reminder_add_cb</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_reminder_add_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_cb.html">calendar_reminder_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="calendar_reminder_add_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a callback to get a notification when an alarm gives an alert.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/calendar.read
+Parameter callback The callback to be added
+Parameter user_data The user data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_NOT_PERMITTED Operation not permitted
+@retval #CALENDAR_ERROR_IPC Unknown IPC error
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_reminder_remove_cb()
+  
+
+</dd>
+
+          <dt id="calendar_reminder_remove_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_remove_cb.html">calendar_reminder_remove_cb</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_reminder_remove_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_cb.html">calendar_reminder_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="calendar_reminder_remove_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a callback to get a notification when an alarm gives an alert.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter callback The callback to be removed
+Parameter user_data The user data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_DB_FAILED Database operation failure
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@see calendar_reminder_add_cb()
+  
+
+</dd>
+
+          <dt id="calendar_vcalendar_make_from_records" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_make_from_records.html">calendar_vcalendar_make_from_records</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_vcalendar_make_from_records-param-calendar_list"><span class="type-annotation">calendar_list_h</span> <span class="parameter-name">calendar_list</span>, </span><span class="parameter" id="calendar_vcalendar_make_from_records-param-vcalendar_stream"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">vcalendar_stream</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves a vcalendar stream from a calendar list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter calendar_list The calendar list handle
+Output parameter vcalendar_stream The vcalendar stream
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="calendar_vcalendar_parse_to_calendar" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_to_calendar.html">calendar_vcalendar_parse_to_calendar</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_vcalendar_parse_to_calendar-param-vcalendar_stream"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">vcalendar_stream</span>, </span><span class="parameter" id="calendar_vcalendar_parse_to_calendar-param-calendar_list"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">calendar_list_h</span>&gt;</span></span> <span class="parameter-name">calendar_list</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all calendars from a vcalendar stream.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter vcalendar_stream The vcalendar stream
+Output parameter calendar_list The calendar list handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_NO_DATA Requested data does not exist
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to initialize.
+  
+
+</dd>
+
+          <dt id="calendar_vcalendar_parse_to_calendar_foreach" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_to_calendar_foreach.html">calendar_vcalendar_parse_to_calendar_foreach</a></span><span class="signature">(<wbr><span class="parameter" id="calendar_vcalendar_parse_to_calendar_foreach-param-vcalendar_file_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">vcalendar_file_path</span>, </span><span class="parameter" id="calendar_vcalendar_parse_to_calendar_foreach-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_cb.html">calendar_vcalendar_parse_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="calendar_vcalendar_parse_to_calendar_foreach-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all events or to-dos
+(\ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event or \ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo) from a vCalendar file.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter vcalendar_file_path The file path of the vCalendar stream file
+Parameter callback The callback function to be invoked
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CALENDAR_ERROR_NONE Successful
+@retval #CALENDAR_ERROR_OUT_OF_MEMORY Out of memory
+@retval #CALENDAR_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #CALENDAR_ERROR_SYSTEM Internal system module error
+@retval #CALENDAR_ERROR_NOT_SUPPORTED Not supported
+@pre calendar_connect() should be called to initialize.
+@post This function invokes calendar_vcalendar_parse_cb().
+@see  calendar_vcalendar_parse_cb()
+@see  calendar_record_get_uri_p()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="calendar_db_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_changed_cb.html">calendar_db_changed_cb</a></span>
+    = calendar_db_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a designated view changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter view_uri The view URI
+Parameter user_data The user data passed from the callback registration function
+@see calendar_db_add_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="calendar_db_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_db_changed_cbFunction.html">calendar_db_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= calendar_db_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;calendar_db_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="calendar_reminder_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_cb.html">calendar_reminder_cb</a></span>
+    = calendar_reminder_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when an alarm is alerted.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter param Value string like id=value&amp;time=value&amp;tick=value&amp;unit=value&amp;type=value
+Parameter user_data The user data passed from the callback registration function
+@see calendar_reminder_add_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="calendar_reminder_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_cbFunction.html">calendar_reminder_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= calendar_reminder_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;calendar_reminder_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="calendar_vcalendar_parse_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_cb.html">calendar_vcalendar_parse_cb</a></span>
+    = calendar_vcalendar_parse_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to get a record handle of
+\ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event or \ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 3.0 @elseif TV 4.0 @endif
+Parameter record The record handle (\ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event or \ref CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo)
+Parameter user_data The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre calendar_vcalendar_parse_to_calendar_foreach() will invoke this callback.
+@see calendar_vcalendar_parse_to_calendar_foreach()
+@see calendar_record_get_uri_p()
+  
+
+</dd>
+
+
+          
+  <dt id="calendar_vcalendar_parse_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_cbFunction.html">calendar_vcalendar_parse_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= calendar_vcalendar_parse_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;calendar_vcalendar_parse_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartcalendar_db_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/Dartcalendar_db_changed_cbFunction.html">Dartcalendar_db_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartcalendar_db_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_calendar_service2/calendar_db_changed_cbFunction.html">calendar_db_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartcalendar_reminder_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/Dartcalendar_reminder_cbFunction.html">Dartcalendar_reminder_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartcalendar_reminder_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_calendar_service2/calendar_reminder_cbFunction.html">calendar_reminder_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartcalendar_vcalendar_parse_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_calendar_service2/Dartcalendar_vcalendar_parse_cbFunction.html">Dartcalendar_vcalendar_parse_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartcalendar_vcalendar_parse_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_calendar_service2/calendar_vcalendar_parse_cbFunction.html">calendar_vcalendar_parse_cbFunction</a>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_calendar_service2.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_calendar_service2 library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

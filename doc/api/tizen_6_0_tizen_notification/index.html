@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_notification library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_notification library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_notification.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_notification</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_notification&#47;tizen_6_0_tizen_notification-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_notification</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenNotification</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenNotification</code>.
+Module symbol map: <code>notificationSymbols</code>.
+Shared object(s): <code>libnotification.so.0</code>.</p>
+<p>Application Framework / Notification.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="notification_add_button" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_add_button.html">notification_add_button</a></span><span class="signature">(<wbr><span class="parameter" id="notification_add_button-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_add_button-param-button_index"><span class="type-annotation">int</span> <span class="parameter-name">button_index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a button on the notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter noti Notification handle
+Parameter button_index Button index
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise a negative error value
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_clone.html">notification_clone</a></span><span class="signature">(<wbr><span class="parameter" id="notification_clone-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_clone-param-clone"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">notification_h</span>&gt;</span></span> <span class="parameter-name">clone</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a notification clone.
+@details Newly created notification handle is returned.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks This cloned notification handle should be freed using notification_free().
+Parameter noti The notification handle
+Output parameter clone The newly created notification handle that has same with input @a noti
+@return #NOTIFICATION_ERROR_NONE if success,
+otherwise any other value if failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see #notification_type_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_create.html">notification_create</a></span><span class="signature">(<wbr><span class="parameter" id="notification_create-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; notification_h</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates internal structure data and returns a notification handle.
+@details Available type is #NOTIFICATION_TYPE_NOTI and #NOTIFICATION_TYPE_ONGOING.
+#NOTIFICATION_TYPE_NOTI is remaining notification data even if device is restarted.
+#NOTIFICATION_TYPE_ONGOING can display progress on a notification with #NOTIFICATION_LY_ONGOING_PROGRESS layout.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+The returned value should be released using notification_free().
+Parameter type The notification type
+@return Notification handle(#notification_h) on success,
+otherwise @c NULL on failure
+@exception #NOTIFICATION_ERROR_NONE Success
+@exception #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@exception #NOTIFICATION_ERROR_OUT_OF_MEMORY Out of memory
+@exception #NOTIFICATION_ERROR_IO_ERROR I/O error
+@see #notification_type_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_create_from_template" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_create_from_template.html">notification_create_from_template</a></span><span class="signature">(<wbr><span class="parameter" id="notification_create_from_template-param-template_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">template_name</span></span>)
+    <span class="returntype parameter">&#8594; notification_h</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Loads a notification template from the notification database.
+@details An application can load a saved template and post it.
+An application can load only templates that it has saved.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+@remarks The returned handle should be destroyed using notification_free().
+The specific error code can be obtained using get_last_result().
+Error codes are described in the Exception section.
+If an invalid template name is given, the result will be set to #NOTIFICATION_ERROR_FROM_DB.
+Parameter template_name Template name
+@return Notification handle on success, NULL on failure
+@exception #NOTIFICATION_ERROR_NONE Success
+@exception #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@exception #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@exception #NOTIFICATION_ERROR_OUT_OF_MEMORY Out of memory
+@exception #NOTIFICATION_ERROR_FROM_DB Error from DB query
+@see #notification_h
+@see notification_save_as_template()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_delete" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_delete.html">notification_delete</a></span><span class="signature">(<wbr><span class="parameter" id="notification_delete-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deletes a notification with the given handle.
+@details notification_delete() removes notification data from database and notification_free() releases memory of notification data.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+Parameter noti The notification handle
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_delete_all" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_delete_all.html">notification_delete_all</a></span><span class="signature">(<wbr><span class="parameter" id="notification_delete_all-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deletes all notifications of the given type.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+Parameter type Notification type
+@return #NOTIFICATION_ERROR_NONE if success,
+other value if failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_free" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_free.html">notification_free</a></span><span class="signature">(<wbr><span class="parameter" id="notification_free-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Frees the internal structure data of a notification handle.
+@details Internal data of a notification handle is released. Data of the inserted notification is not deleted.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_auto_remove" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_auto_remove.html">notification_get_auto_remove</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_auto_remove-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_auto_remove-param-auto_remove"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">auto_remove</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the 'auto remove' option of the active notification.
+@details The 'auto remove' option lets the active notification be removed several seconds after it shows. Default value is true.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter noti Notification handle
+Output parameter auto_remove Auto remove option
+@return #NOTIFICATION_ERROR_NONE On success, other value on failure
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see #notification_h
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_display_applist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_display_applist.html">notification_get_display_applist</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_display_applist-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_display_applist-param-applist"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">applist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the application list displaying the notification from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter applist The display application list
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_event_handler" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_event_handler.html">notification_get_event_handler</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_event_handler-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_event_handler-param-event_type"><span class="type-annotation">int</span> <span class="parameter-name">event_type</span>, </span><span class="parameter" id="notification_get_event_handler-param-event_handler"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_control_h</span>&gt;</span></span> <span class="parameter-name">event_handler</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the event handler of a specific event.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks You must release @a event_handler using app_control_destroy().
+Parameter noti The notification handle
+Parameter event_type Launching option type
+Output parameter event_handler The handler of App Control
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see #notification_event_type_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_extension_image_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_extension_image_size.html">notification_get_extension_image_size</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_extension_image_size-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_extension_image_size-param-height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the image height for the extended notification.
+@since_tizen 4.0
+Parameter noti The notification handle
+Output parameter height The image height
+@return #NOTIFICATION_ERROR_NONE On success, otherwise a negative error value
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see notification_set_extension_image_size()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_image" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_image.html">notification_get_image</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_image-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_image-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_image-param-image_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">image_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the absolute path of an image file.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks Do not free @a image_path. It will be freed when notification_free() is called.
+Parameter noti Notification handle
+Parameter type Notification image type
+Output parameter image_path Image file full path
+@return #NOTIFICATION_ERROR_NONE on success,
+other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@see #notification_image_type_e
+@see notification_create()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_insert_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_insert_time.html">notification_get_insert_time</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_insert_time-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_insert_time-param-ret_time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">time_t</span>&gt;</span></span> <span class="parameter-name">ret_time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets an insertion timestamp of the notification.
+@details If ret_time is @c 0, this notification data is not inserted before.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter ret_time The return time value
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_launch_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_launch_option.html">notification_get_launch_option</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_launch_option-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_launch_option-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_launch_option-param-option"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the launch option from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks You must release @a option using app_control_destroy().
+Parameter noti The notification handle
+Parameter type Launching option type
+Output parameter option The pointer of App Control handler
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_layout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_layout.html">notification_get_layout</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_layout-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_layout-param-layout"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">layout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the layout of the notification view from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter layout The type of layout
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@see #notification_ly_type_e
+  
+
+</dd>
+
+          <dt id="notification_get_led" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_led.html">notification_get_led</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_led-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_led-param-operation"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">operation</span>, </span><span class="parameter" id="notification_get_led-param-led_argb"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">led_argb</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the LED displaying option from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter operation The LED notification operation
+Output parameter led_argb The notification LED color
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_led_time_period" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_led_time_period.html">notification_get_led_time_period</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_led_time_period-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_led_time_period-param-on_ms"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">on_ms</span>, </span><span class="parameter" id="notification_get_led_time_period-param-off_ms"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">off_ms</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the time period of flashing the LED from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter on_ms The time for turning on the LED
+Output parameter off_ms The time for turning on the LED
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_noti_block_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_noti_block_state.html">notification_get_noti_block_state</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_noti_block_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets notification block state.
+@details The user can set the notification block state in settings.
+The block state indicates whether or not notifications can be posted.
+Additionally only notifications to the notification panel are
+allowed in "Do not disturb mode". Sound, Vibrate and
+Active/Instant notifications are blocked.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+Output parameter state Notification block state
+@return #NOTIFICATION_ERROR_NONE On success, other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #NOTIFICATION_ERROR_OUT_OF_MEMORY out of memory
+@retval #NOTIFICATION_ERROR_IO_ERROR I/O Error
+@retval #NOTIFICATION_ERROR_SERVICE_NOT_READY No response from notification service
+@see #notification_block_state_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_pkgname" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_pkgname.html">notification_get_pkgname</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_pkgname-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_pkgname-param-pkgname"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pkgname</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package name of the notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks Do not free @a pkgname. It will be freed when notification_free() is called.
+Parameter noti Notification handle
+Output parameter pkgname The package name of the notification
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise a negative error value
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_progress" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_progress.html">notification_get_progress</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_progress-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_progress-param-percentage"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">percentage</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the progress from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks At the end of the operation, the progress should be @c 1.0.
+Parameter noti The notification handle
+Output parameter percentage The progress percentage
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_property" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_property.html">notification_get_property</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_property-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_property-param-flags"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the property of the notification from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter flags The notification property
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_size.html">notification_get_size</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_size-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_size-param-size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the progress size.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter size The progress size
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_sound.html">notification_get_sound</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_sound-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_sound-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_sound-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the sound type from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks Do not free @a path. It will be freed when notification_free() is called.
+Parameter noti The notification handle
+Output parameter type The notification sound type
+Output parameter path The user sound file path
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_tag" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_tag.html">notification_get_tag</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_tag-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_tag-param-tag"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">tag</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the tag of the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks Do not free @a tag. It will be freed when notification_free() is called.
+Parameter noti Notification handle
+Output parameter tag Tag for loading notification handle
+@return #NOTIFICATION_ERROR_NONE on success,
+other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see notification_set_tag()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_text.html">notification_get_text</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_text-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_text-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_text-param-text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">text</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the text from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks Do not free @a text. It will be freed when notification_free() is called.
+Parameter noti The notification handle
+Parameter type The notification text type
+Output parameter text The notification text
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_time.html">notification_get_time</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_time-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_time-param-ret_time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">time_t</span>&gt;</span></span> <span class="parameter-name">ret_time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a timestamp.
+@details If ret_time is @c 0, time information is not set before.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter ret_time The return time value
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@see notification_create()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_time_from_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_time_from_text.html">notification_get_time_from_text</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_time_from_text-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_time_from_text-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_time_from_text-param-time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">time_t</span>&gt;</span></span> <span class="parameter-name">time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the timestamp from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter type The notification text type
+Parameter time The pointer of time stamp
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+  
+
+</dd>
+
+          <dt id="notification_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_type.html">notification_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_type-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the type of a notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Output parameter type The notification type
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_get_vibration" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_get_vibration.html">notification_get_vibration</a></span><span class="signature">(<wbr><span class="parameter" id="notification_get_vibration-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_get_vibration-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_get_vibration-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the vibrate type from the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@remarks Do not free @a path. It will be freed when notification_free() is called.
+Parameter noti The notification handle
+Output parameter type The notification sound type
+Output parameter path The user vibration file path
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_load_by_tag" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_load_by_tag.html">notification_load_by_tag</a></span><span class="signature">(<wbr><span class="parameter" id="notification_load_by_tag-param-tag"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">tag</span></span>)
+    <span class="returntype parameter">&#8594; notification_h</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Loads a notification from the notification's database with the tag.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+@remarks The specific error code can be obtained using the get_last_result() method. Error codes are described in Exception section.
+The returned value should be released using notification_free().
+Parameter tag Tag for loading notification handle
+@return Notification handle(#notification_h) on success,
+NULL on failure
+@exception #NOTIFICATION_ERROR_NONE Success
+@exception #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@exception #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@exception #NOTIFICATION_ERROR_OUT_OF_MEMORY Out of memory
+@see #notification_type_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_post" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_post.html">notification_post</a></span><span class="signature">(<wbr><span class="parameter" id="notification_post-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Posts a notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+Parameter noti Notification handle
+@return #NOTIFICATION_ERROR_NONE if success,
+other value if failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@post notification_free().
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_remove_button" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_remove_button.html">notification_remove_button</a></span><span class="signature">(<wbr><span class="parameter" id="notification_remove_button-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_remove_button-param-button_index"><span class="type-annotation">int</span> <span class="parameter-name">button_index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a button on the notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter noti Notification handle
+Parameter button_index Button index
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise a negative error value
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_save_as_template" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_save_as_template.html">notification_save_as_template</a></span><span class="signature">(<wbr><span class="parameter" id="notification_save_as_template-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_save_as_template-param-template_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">template_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Saves a notification template to the notification database.
+@details An application can save the created notification as a template for later reuse.
+If the template has the same name as a saved one, the saved template will be overwritten.
+A saved template can be loaded only by the application which saved it.
+All templates are removed when the application package is uninstalled.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+@remarks The number of templates is limited to 10.
+When you try to add more than 10 templates, #NOTIFICATION_ERROR_MAX_EXCEEDED will be returned.
+Parameter noti Notification handle
+Parameter template_name Template name
+@return #NOTIFICATION_ERROR_NONE On success, other value on failure
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #NOTIFICATION_ERROR_IO_ERROR I/O error
+@retval #NOTIFICATION_ERROR_OUT_OF_MEMORY Out of memory
+@retval #NOTIFICATION_ERROR_MAX_EXCEEDED Max notification count exceeded
+@see #notification_h
+@see notification_create_from_template()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_auto_remove" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_auto_remove.html">notification_set_auto_remove</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_auto_remove-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_auto_remove-param-auto_remove"><span class="type-annotation">bool</span> <span class="parameter-name">auto_remove</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the 'auto remove' option of the active notification.
+@details The 'auto remove' option lets the active notification be removed several seconds after it shows. Default value is true.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks When 'auto_remove' is set as false, the active notification will not be removed
+as long as the user removes the active notification or the app which posted the active notification removes the active notification.
+Parameter noti Notification handle
+Parameter auto_remove Auto remove option
+@return #NOTIFICATION_ERROR_NONE On success,
+other value if failure
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see #notification_h
+@see #notification_get_auto_remove
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_display_applist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_display_applist.html">notification_set_display_applist</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_display_applist-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_display_applist-param-applist"><span class="type-annotation">int</span> <span class="parameter-name">applist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets applications to display the notification.
+@details All display application is enabled(#NOTIFICATION_DISPLAY_APP_ALL) if you do not call this function.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter applist The with | operation
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_event_handler" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_event_handler.html">notification_set_event_handler</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_event_handler-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_event_handler-param-event_type"><span class="type-annotation">int</span> <span class="parameter-name">event_type</span>, </span><span class="parameter" id="notification_set_event_handler-param-event_handler"><span class="type-annotation">app_control_h</span> <span class="parameter-name">event_handler</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the handler for a specific event.
+@details When some event occurs on notification, application launched by app_control_send_launch_request with app_control handle. \n
+Setting event handler of a button means that the notification will show the button.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel public
+@privilege <a href="http://tizen.org/privilege/appmanager.launch">http://tizen.org/privilege/appmanager.launch</a>
+@remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege is additionally required.
+Parameter noti The notification handle
+Parameter event_type Event type
+Parameter event_handler App control handle
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see #notification_event_type_e
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_extension_image_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_extension_image_size.html">notification_set_extension_image_size</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_extension_image_size-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_extension_image_size-param-height"><span class="type-annotation">int</span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the image height for the extended notification.
+@details The image is shown under the notification's text. The application can set the image height.
+The image is modified to fit into the height set by this function.
+The image can be scaled down and/or cropped.
+If @a height is 0, the default value is used. The default height depends on the screen size.
+@since_tizen 4.0
+Parameter noti   The notification handle
+Parameter height The image height
+@return #NOTIFICATION_ERROR_NONE On success,
+otherwise a negative error value
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see notification_get_extension_image_size()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_image" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_image.html">notification_set_image</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_image-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_image-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_image-param-image_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">image_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an absolute path for an image file to display on the notification view.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter type The notification image type
+Parameter image_path The image file full path
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@see #notification_image_type_e
+@see notification_create()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_launch_option" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_launch_option.html">notification_set_launch_option</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_launch_option-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_launch_option-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_launch_option-param-option"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">option</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the launch option for a notification.
+@details When notification data selected in display application, application launched by app_control_send_launch_request with app_control handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege <a href="http://tizen.org/privilege/appmanager.launch">http://tizen.org/privilege/appmanager.launch</a>
+@remarks Since 4.0, %http://tizen.org/privilege/appmanager.launch privilege is additionally required.
+Parameter noti The notification handle
+Parameter type Launching option type
+Parameter option App Control handler
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_layout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_layout.html">notification_set_layout</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_layout-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_layout-param-layout"><span class="type-annotation">int</span> <span class="parameter-name">layout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the layout of the notification view.
+@details Caller can set displaying layout of notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter layout The type of layout
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@see #notification_ly_type_e
+  
+
+</dd>
+
+          <dt id="notification_set_led" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_led.html">notification_set_led</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_led-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_led-param-operation"><span class="type-annotation">int</span> <span class="parameter-name">operation</span>, </span><span class="parameter" id="notification_set_led-param-led_argb"><span class="type-annotation">int</span> <span class="parameter-name">led_argb</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the LED displaying option.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter operation The LED notification operation
+Parameter led_argb The notification LED color
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_led_time_period" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_led_time_period.html">notification_set_led_time_period</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_led_time_period-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_led_time_period-param-on_ms"><span class="type-annotation">int</span> <span class="parameter-name">on_ms</span>, </span><span class="parameter" id="notification_set_led_time_period-param-off_ms"><span class="type-annotation">int</span> <span class="parameter-name">off_ms</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the time period of flashing the LED.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter on_ms The time for turning on the LED
+Parameter off_ms The time for turning off the LED
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_progress" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_progress.html">notification_set_progress</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_progress-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_progress-param-percentage"><span class="type-annotation">double</span> <span class="parameter-name">percentage</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the initial progress for the ongoing type.
+@details After the notification_post() call, the progress is not updated.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter percentage The progress percentage
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_property" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_property.html">notification_set_property</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_property-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_property-param-flags"><span class="type-annotation">int</span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the property of the notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter flags The property with | operation
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_size.html">notification_set_size</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_size-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_size-param-size"><span class="type-annotation">double</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the initial size for the ongoing type.
+@details After notification_post() call, the size is not updated.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter size The double type size
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_sound.html">notification_set_sound</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_sound-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_sound-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_sound-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the sound type for the notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter type The notification sound type
+Parameter path The user sound file path
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_tag" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_tag.html">notification_set_tag</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_tag-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_tag-param-tag"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">tag</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the tag of the notification handle.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti Notification handle
+Parameter tag Tag for loading notification handle
+@return #NOTIFICATION_ERROR_NONE on success,
+other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@see notification_get_tag()
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_text.html">notification_set_text</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_text-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_text-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_text-param-text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">text</span>, </span><span class="parameter" id="notification_set_text-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="notification_set_text-param-args_type"><span class="type-annotation">int</span> <span class="parameter-name">args_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the text to display on the notification view.
+@details Sets title, content string. If the text is formatted data (only %d, %f, %s are supported), type - value pair should be set.
+If %d, the type #NOTIFICATION_VARIABLE_TYPE_INT and the value is an integer.
+If %f, the type #NOTIFICATION_VARIABLE_TYPE_DOUBLE and the value is a double.
+If %s, the type #NOTIFICATION_VARIABLE_TYPE_STRING and the value is a string.
+If the type is #NOTIFICATION_VARIABLE_TYPE_COUNT, notification count is displaying with text.
+If the value is #NOTIFICATION_COUNT_POS_LEFT, count is displayed at the left of the text.
+If the value is #NOTIFICATION_COUNT_POS_IN, count is displayed in the text when text has %d format.
+If the value is #NOTIFICATION_COUNT_POS_RIGHT, count is displayed at the right of the text.
+Variable parameters should be terminated #NOTIFICATION_VARIABLE_TYPE_NONE.
+  
+
+</dd>
+
+          <dt id="notification_set_text_input" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_text_input.html">notification_set_text_input</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_text_input-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_text_input-param-text_input_max_length"><span class="type-annotation">int</span> <span class="parameter-name">text_input_max_length</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a text input box to reply directly on the notification.
+@details When you add a text input to the active notification, the notification UI will show a text input with a button.
+So, the user can enter any text and press the button to confirm the text as a input.
+You can edit some UI component that is related to the text input.
+First, you can add placeholder text to guide the user using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER type.
+You also can edit button for the text input.
+For setting just a text to the button, you can set the text using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON type.
+If you want to show image button, you can set an image for the button using notification_set_image() with #NOTIFICATION_IMAGE_TYPE_TEXT_INPUT_BUTTON type.
+  
+
+</dd>
+
+          <dt id="notification_set_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_time.html">notification_set_time</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_time-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_time-param-input_time"><span class="type-annotation">int</span> <span class="parameter-name">input_time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a timestamp.
+@details If input_time is @c 0, time information is taken from the current time.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter input_time The input time. If you want the time stamp to not be shown, set this as #NOTIFICATION_DO_NOT_SHOW_TIME_STAMP
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+@see notification_create()
+@see #NOTIFICATION_DO_NOT_SHOW_TIME_STAMP
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_set_time_to_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_time_to_text.html">notification_set_time_to_text</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_time_to_text-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_time_to_text-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_time_to_text-param-time"><span class="type-annotation">int</span> <span class="parameter-name">time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the timestamp to display on the notification view.
+@details The timestamp will be converted to a formatted string and it will be displayed on the set text area.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter type The notification text type
+Parameter time The timestamp
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Notification handle should be created by notification_create().
+  
+
+</dd>
+
+          <dt id="notification_set_vibration" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_set_vibration.html">notification_set_vibration</a></span><span class="signature">(<wbr><span class="parameter" id="notification_set_vibration-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span><span class="parameter" id="notification_set_vibration-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="notification_set_vibration-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the vibration type for the notification.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter noti The notification handle
+Parameter type The notification vibration type
+Parameter path The user vibration file path
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+          <dt id="notification_status_message_post" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_status_message_post.html">notification_status_message_post</a></span><span class="signature">(<wbr><span class="parameter" id="notification_status_message_post-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Shows a toast popup window with given message.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+Parameter message The messages to be posted
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #NOTIFICATION_ERROR_FROM_DBUS Error from DBus
+@see #notification_error_e
+  
+
+</dd>
+
+          <dt id="notification_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_notification/notification_update.html">notification_update</a></span><span class="signature">(<wbr><span class="parameter" id="notification_update-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates notification data.
+@details The updated notification will appear in the notification area.
+@since_tizen @if WEARABLE 2.3.1 @elseif MOBILE 2.3 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/notification
+Parameter noti The notification handle that is created by notification_create()
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE Success
+@retval #NOTIFICATION_ERROR_PERMISSION_DENIED The Permission denied
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid input value
+@retval #NOTIFICATION_ERROR_NOT_EXIST_ID Priv ID does not exist
+@par Sample code:
+@code
+#include &lt;notification.h&gt;
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_notification.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_notification library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

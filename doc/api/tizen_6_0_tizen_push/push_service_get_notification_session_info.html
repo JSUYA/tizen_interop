@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the push_service_get_notification_session_info function from the tizen_6_0_tizen_push library, for the Dart programming language.">
+  <title>push_service_get_notification_session_info function - tizen_6_0_tizen_push library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_push/">module_docs&#47;6_0&#47;modules&#47;tizen_push.dart</a></li>
+    <li class="self-crumb">push_service_get_notification_session_info function</li>
+  </ol>
+  <div class="self-name">push_service_get_notification_session_info</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_push&#47;tizen_6_0_tizen_push-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">push_service_get_notification_session_info</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">push_service_get_notification_session_info</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="push_service_get_notification_session_info-param-notification"><span class="type-annotation">push_service_notification_h</span> <span class="parameter-name">notification</span>, </span></li>
+<li><span class="parameter" id="push_service_get_notification_session_info-param-session_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">session_info</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Gets the session ID of the notification.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You must release @a session_info using free().
+Parameter notification The notification handle
+Output parameter session_info The session ID\n
+Set @c NULL if error but #PUSH_SERVICE_ERROR_INVALID_PARAMETER
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PUSH_SERVICE_ERROR_NONE Successful
+@retval #PUSH_SERVICE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PUSH_SERVICE_ERROR_OUT_OF_MEMORY Out of memory
+@retval #PUSH_SERVICE_ERROR_NO_DATA No data available
+@retval #PUSH_SERVICE_ERROR_NOT_SUPPORTED Not supported feature
+@see push_service_notify_cb()
+@see push_service_request_unread_notification()</p>
+<p>Module getter: <code>tizenPush</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int push_service_get_notification_session_info(
+  push_service_notification_h notification,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; session_info,
+) =&gt;
+    tizenPush.push_service_get_notification_session_info(
+      notification,
+      session_info,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_push/">tizen_6_0_tizen_push</a></li>
+    <li class="self-crumb">push_service_get_notification_session_info function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_push library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the media_packet_create function from the tizen_6_0_tizen_capi_media_tool library, for the Dart programming language.">
+  <title>media_packet_create function - tizen_6_0_tizen_capi_media_tool library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_media_tool.dart</a></li>
+    <li class="self-crumb">media_packet_create function</li>
+  </ol>
+  <div class="self-name">media_packet_create</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_tool&#47;tizen_6_0_tizen_capi_media_tool-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">media_packet_create</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">media_packet_create</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="media_packet_create-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span></li>
+<li><span class="parameter" id="media_packet_create-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span></li>
+<li><span class="parameter" id="media_packet_create-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span></li>
+<li><span class="parameter" id="media_packet_create-param-packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">packet</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief    Creates a media packet handle.
+@details  It creates only media packet handle without allocated buffer.</p>
+<p>@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif</p>
+<p>@remarks The @c packet must be released by using media_packet_destroy().
+Parameter fmt       The allocated #media_format_h by caller
+Parameter fcb       The media_packet_finalize_cb() to register
+Parameter fcb_data  The user data to be passed to the media_packet_finalize_cb() function
+Output parameter packet   A new handle for media packet</p>
+<p>@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_PACKET_ERROR_NONE              Successful
+@retval #MEDIA_PACKET_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_PACKET_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #MEDIA_PACKET_ERROR_INVALID_OPERATION Invalid operation</p>
+<p>@pre Must have media_format_h instance by media_format_create()
+@post Must do media_format_unref()</p>
+<p>@see media_packet_destroy()
+@see media_packet_finalize_cb()
+@see media_format_unref()
+@par Example
+@code
+#include &lt;media_packet.h&gt;</p>
+<p>{
+media_format_h fmt;
+media_packet_h packet;</p>
+<p>media_format_create(&amp;fmt);
+media_format_set_video_mime(fmt, MEDIA_FORMAT_H264_HP);
+media_format_set_video_width(fmt, 640);
+media_format_set_video_height(fmt, 480);
+media_format_set_video_avg_bps(fmt, 10000000);
+media_format_set_video_max_bps(fmt, 15000000);</p>
+<p>media_packet_create (fmt, _finalize_callback, fcb_data, &amp;packet);
+media_format_unref(fmt);</p>
+<p>...
+media_packet_destroy(packet);
+}</p>
+<p>int _finalize_callback(media_packet_h packet, int err, void* userdata)
+{
+...
+return MEDIA_PACKET_FINALIZE;
+}</p>
+<p>@endcode</p>
+<p>Module getter: <code>tizenCapiMediaTool</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int media_packet_create(
+  media_format_h fmt,
+  media_packet_finalize_cb fcb,
+  ffi.Pointer&lt;ffi.Void&gt; fcb_data,
+  ffi.Pointer&lt;media_packet_h&gt; packet,
+) =&gt;
+    tizenCapiMediaTool.media_packet_create(
+      fmt,
+      fcb,
+      fcb_data,
+      packet,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_tool/">tizen_6_0_tizen_capi_media_tool</a></li>
+    <li class="self-crumb">media_packet_create function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_tool library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

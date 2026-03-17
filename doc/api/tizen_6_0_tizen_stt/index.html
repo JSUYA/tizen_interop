@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_stt library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_stt library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_stt.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_stt</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_stt&#47;tizen_6_0_tizen_stt-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_stt</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenStt</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenStt</code>.
+Module symbol map: <code>sttSymbols</code>.
+Shared object(s): <code>libstt.so</code>.</p>
+<p>UIX / STT.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="stt_cancel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_cancel.html">stt_cancel</a></span><span class="signature">(<wbr><span class="parameter" id="stt_cancel-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels processing recognition and recording asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks This function cancels recording and engine cancels recognition processing.
+After successful cancel, stt_state_changed_cb() is called otherwise if error is occurred, stt_error_cb() is called.
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@retval #STT_ERROR_IN_PROGRESS_TO_READY Progress to ready is not finished
+@retval #STT_ERROR_IN_PROGRESS_TO_RECORDING Progress to recording is not finished
+@retval #STT_ERROR_IN_PROGRESS_TO_PROCESSING Progress to processing is not finished
+@pre The state should be #STT_STATE_RECORDING or #STT_STATE_PROCESSING.
+@post It will invoke stt_state_changed_cb(), if you register a callback with stt_state_changed_cb().
+If this function succeeds, the STT state will be #STT_STATE_READY.
+If you call this function again before state changes, you will receive #STT_ERROR_IN_PROGRESS_TO_READY.
+@see stt_start()
+@see stt_stop()
+@see stt_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_create.html">stt_create</a></span><span class="signature">(<wbr><span class="parameter" id="stt_create-param-stt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">stt_h</span>&gt;</span></span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a STT handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks If the function succeeds, @a stt handle must be released with stt_destroy().
+Output parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@post If this function is called, the STT state will be #STT_STATE_CREATED.
+@see stt_destroy()
+  
+
+</dd>
+
+          <dt id="stt_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_destroy.html">stt_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="stt_destroy-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a STT handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@see stt_create()
+  
+
+</dd>
+
+          <dt id="stt_foreach_detailed_result" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_foreach_detailed_result.html">stt_foreach_detailed_result</a></span><span class="signature">(<wbr><span class="parameter" id="stt_foreach_detailed_result-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_foreach_detailed_result-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_result_time_cb.html">stt_result_time_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_foreach_detailed_result-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves the time stamp of the current recognition result using the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks This function should be called in stt_recognition_result_cb().
+After stt_recognition_result_cb(), result data is NOT valid.
+Parameter stt The STT handle
+Parameter callback The callback function to invoke
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre This function should be called in stt_recognition_result_cb().
+@post This function invokes stt_result_time_cb() repeatedly for getting time information.
+@see stt_result_time_cb()
+@see stt_recognition_result_cb()
+  
+
+</dd>
+
+          <dt id="stt_foreach_supported_engines" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_foreach_supported_engines.html">stt_foreach_supported_engines</a></span><span class="signature">(<wbr><span class="parameter" id="stt_foreach_supported_engines-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_foreach_supported_engines-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_supported_engine_cb.html">stt_supported_engine_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_foreach_supported_engines-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves supported engine information using a callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to invoke
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Success
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE STT Not initialized
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@post This function invokes stt_supported_engine_cb() repeatedly for getting engine information.
+@see stt_supported_engine_cb()
+  
+
+</dd>
+
+          <dt id="stt_foreach_supported_languages" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_foreach_supported_languages.html">stt_foreach_supported_languages</a></span><span class="signature">(<wbr><span class="parameter" id="stt_foreach_supported_languages-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_foreach_supported_languages-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_supported_language_cb.html">stt_supported_language_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_foreach_supported_languages-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all supported languages of current engine using callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to invoke
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_ENGINE_NOT_FOUND No available engine
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@post This function invokes stt_supported_language_cb() repeatedly for getting languages.
+@see stt_supported_language_cb()
+@see stt_get_default_language()
+  
+
+</dd>
+
+          <dt id="stt_get_default_language" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_default_language.html">stt_get_default_language</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_default_language-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_default_language-param-language"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">language</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the default language set by the user.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The language is specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code.
+For example, "ko_KR" for Korean, "en_US" for American English.
+If the function succeeds, @a language must be released using free() when it is no longer required.
+Parameter stt The STT handle
+Output parameter language The language
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@see stt_foreach_supported_languages()
+  
+
+</dd>
+
+          <dt id="stt_get_engine" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_engine.html">stt_get_engine</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_engine-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_engine-param-engine_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">engine_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the current engine ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks If the function is success, @a engine_id must be released using free().
+Parameter stt The STT handle
+Output parameter engine_id Engine ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Success
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE STT Not initialized
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_engine()
+  
+
+</dd>
+
+          <dt id="stt_get_error_message" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_error_message.html">stt_get_error_message</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_error_message-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_error_message-param-err_msg"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">err_msg</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the current error message.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+@remarks This function should be called during an stt error callback. If not, the error as operation failure will be returned.
+If the function succeeds, @a err_msg must be released using free() when it is no longer required.
+Parameter stt The STT handle
+Output parameter err_msg The current error message
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@see stt_set_error_cb()
+@see stt_unset_error_cb()
+  
+
+</dd>
+
+          <dt id="stt_get_private_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_private_data.html">stt_get_private_data</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_private_data-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_private_data-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="stt_get_private_data-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the private data from stt engine.
+@details The private data is the information provided by the engine.
+Using this API, the application can get the private data which corresponds to the key from the engine.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+@remarks If the engine is replaced with the other engine, the key may be ignored.
+@remarks The @a data must be released using free() when it is no longer required.
+Parameter stt The STT handle
+Parameter key The field name of private data
+Output parameter data The data field of private data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_TIMED_OUT No answer from the STT service
+@pre The state should be #STT_STATE_READY.
+@see stt_set_private_data()
+  
+
+</dd>
+
+          <dt id="stt_get_recording_volume" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_recording_volume.html">stt_get_recording_volume</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_recording_volume-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_recording_volume-param-volume"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Float</span>&gt;</span></span> <span class="parameter-name">volume</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the microphone volume during recording.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Output parameter volume Recording volume
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_RECORDING.
+@see stt_start()
+  
+
+</dd>
+
+          <dt id="stt_get_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_get_state.html">stt_get_state</a></span><span class="signature">(<wbr><span class="parameter" id="stt_get_state-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_get_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the current STT state.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Output parameter state The current STT state
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@see stt_start()
+@see stt_stop()
+@see stt_cancel()
+@see stt_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_is_recognition_type_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_is_recognition_type_supported.html">stt_is_recognition_type_supported</a></span><span class="signature">(<wbr><span class="parameter" id="stt_is_recognition_type_supported-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_is_recognition_type_supported-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="stt_is_recognition_type_supported-param-support"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the recognition type is supported.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter type The type for recognition (e.g. #STT_RECOGNITION_TYPE_FREE, #STT_RECOGNITION_TYPE_FREE_PARTIAL)
+Output parameter support The result status @c true = supported,
+@c false = not supported
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+          <dt id="stt_prepare" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_prepare.html">stt_prepare</a></span><span class="signature">(<wbr><span class="parameter" id="stt_prepare-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Connects the STT service asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@post If this function is successful, the STT state will be #STT_STATE_READY.
+If this function is failed, the error callback is called. (e.g. #STT_ERROR_ENGINE_NOT_FOUND)
+@see stt_unprepare()
+  
+
+</dd>
+
+          <dt id="stt_set_credential" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_credential.html">stt_set_credential</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_credential-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_credential-param-credential"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">credential</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the app credential.
+@details Using this API, the application can set a credential.
+The credential is a key to verify the authorization about using the engine.
+If the application sets the credential, it will be able to use functions of the engine entirely.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+@remarks The necessity of the credential depends on the engine. In case of the engine which is basically embedded in Tizen, the credential is not necessary so far.
+However, if the user wants to apply the 3rd party's engine, the credential may be necessary. In that case, please follow the policy provided by the corresponding engine.
+Parameter stt The STT handle
+Parameter credential The app credential
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Success
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@pre The state should be #STT_STATE_CREATED or #STT_STATE_READY.
+@see stt_start()
+  
+
+</dd>
+
+          <dt id="stt_set_default_language_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_default_language_changed_cb.html">stt_set_default_language_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_default_language_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_default_language_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_default_language_changed_cb.html">stt_default_language_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_default_language_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to detect the default language change.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_default_language_changed_cb()
+@see stt_unset_default_language_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_engine" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_engine.html">stt_set_engine</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_engine-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_engine-param-engine_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">engine_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the engine ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@privilege %http://tizen.org/privilege/appmanager.launch
+@remarks A privilege (%http://tizen.org/privilege/appmanager.launch) is necessary since 3.0.
+Parameter stt The STT handle
+Parameter engine_id Engine ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Success
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE STT Not initialized
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_get_engine()
+  
+
+</dd>
+
+          <dt id="stt_set_engine_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_engine_changed_cb.html">stt_set_engine_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_engine_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_engine_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_engine_changed_cb.html">stt_engine_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_engine_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to detect the engine change.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@pre The state should be #STT_STATE_CREATED.
+@see stt_engine_changed_cb()
+@see stt_unset_engine_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_error_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_error_cb.html">stt_set_error_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_error_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_error_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_error_cb.html">stt_error_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_error_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to be called when an error occurred.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_error_cb()
+@see stt_unset_error_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_private_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_private_data.html">stt_set_private_data</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_private_data-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_private_data-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="stt_set_private_data-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the private data to stt engine.
+@details The private data is the setting parameter for applying keys provided by the engine.
+Using this API, the application can set the private data and use the corresponding key of the engine.
+For example, if the engine provides 'partial recognition' as a recognition type, the application can set the private data as the following.
+int ret = stt_set_private_data(stt_h, "recognition_type", "PARTIAL");
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+@remarks If the engine is replaced with the other engine, the key may be ignored.
+Parameter stt The STT handle
+Parameter key The field name of private data
+Parameter data The data for set
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_TIMED_OUT No answer from the STT service
+@pre The state should be #STT_STATE_READY.
+@see stt_get_private_data()
+  
+
+</dd>
+
+          <dt id="stt_set_recognition_result_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_recognition_result_cb.html">stt_set_recognition_result_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_recognition_result_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_recognition_result_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_recognition_result_cb.html">stt_recognition_result_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_recognition_result_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to get the recognition result.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_recognition_result_cb()
+@see stt_unset_recognition_result_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_silence_detection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_silence_detection.html">stt_set_silence_detection</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_silence_detection-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_silence_detection-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the silence detection.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter type The option type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED_FEATURE Not supported feature of current engine
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+          <dt id="stt_set_speech_status_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_speech_status_cb.html">stt_set_speech_status_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_speech_status_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_speech_status_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_speech_status_cb.html">stt_speech_status_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_speech_status_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to detect the speech status is changed.
+@since_tizen 5.5
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@pre The state should be #STT_STATE_CREATED.
+@see stt_speech_status_cb()
+@see stt_unset_speech_status_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_start_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_start_sound.html">stt_set_start_sound</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_start_sound-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_start_sound-param-filename"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">filename</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the sound to start recording.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks Sound file type should be wav type.
+Parameter stt The STT handle
+Parameter filename The sound file path
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+          <dt id="stt_set_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_state_changed_cb.html">stt_set_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_state_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_state_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_stt/stt_state_changed_cb.html">stt_state_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="stt_set_state_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to be called when STT state changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_state_changed_cb()
+@see stt_unset_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_set_stop_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_set_stop_sound.html">stt_set_stop_sound</a></span><span class="signature">(<wbr><span class="parameter" id="stt_set_stop_sound-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_set_stop_sound-param-filename"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">filename</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the sound to stop recording.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks Sound file type should be wav type.
+Parameter stt The STT handle
+Parameter filename The sound file path
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+          <dt id="stt_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_start.html">stt_start</a></span><span class="signature">(<wbr><span class="parameter" id="stt_start-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span>, </span><span class="parameter" id="stt_start-param-language"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">language</span>, </span><span class="parameter" id="stt_start-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts recording and recognition asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks This function starts recording in the STT service and sending recording data to engine.
+This work continues until stt_stop(), stt_cancel() or silence detected by engine.
+Parameter stt The STT handle
+Parameter language The language selected from stt_foreach_supported_languages()
+Parameter type The type for recognition (e.g. #STT_RECOGNITION_TYPE_FREE, #STT_RECOGNITION_TYPE_FREE_PARTIAL)
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_RECORDER_BUSY Recorder busy
+@retval #STT_ERROR_INVALID_LANGUAGE Invalid language
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@retval #STT_ERROR_IN_PROGRESS_TO_RECORDING Progress to recording is not finished
+@pre The state should be #STT_STATE_READY.
+@post It will invoke stt_state_changed_cb(), if you register a callback with stt_state_changed_cb().
+If this function succeeds, the STT state will be #STT_STATE_RECORDING.
+If you call this function again before state changes, you will receive #STT_ERROR_IN_PROGRESS_TO_RECORDING.
+@see stt_stop()
+@see stt_cancel()
+@see stt_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_stop" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_stop.html">stt_stop</a></span><span class="signature">(<wbr><span class="parameter" id="stt_stop-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Finishes the recording and starts recognition processing in engine asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@retval #STT_ERROR_IN_PROGRESS_TO_READY Progress to ready is not finished
+@retval #STT_ERROR_IN_PROGRESS_TO_RECORDING Progress to recording is not finished
+@retval #STT_ERROR_IN_PROGRESS_TO_PROCESSING Progress to processing is not finished
+@pre The state should be #STT_STATE_RECORDING.
+@post It will invoke stt_state_changed_cb(), if you register a callback with stt_state_changed_cb().
+If this function succeeds, the STT state will be #STT_STATE_PROCESSING.
+If you call this function again before state changes, you will receive #STT_ERROR_IN_PROGRESS_TO_PROCESSING.
+After processing of engine, stt_result_cb() is called.
+@see stt_start()
+@see stt_cancel()
+@see stt_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_unprepare" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unprepare.html">stt_unprepare</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unprepare-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Disconnects the STT service.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+@post If this function is called, the STT state will be #STT_STATE_CREATED.
+@see stt_prepare()
+  
+
+</dd>
+
+          <dt id="stt_unset_default_language_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_default_language_changed_cb.html">stt_unset_default_language_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_default_language_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_default_language_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_engine_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_engine_changed_cb.html">stt_unset_engine_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_engine_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_engine_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_error_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_error_cb.html">stt_unset_error_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_error_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_error_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_recognition_result_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_recognition_result_cb.html">stt_unset_recognition_result_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_recognition_result_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_recognition_result_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_speech_status_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_speech_status_cb.html">stt_unset_speech_status_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_speech_status_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function to detect the speech status is changed.
+@since_tizen 5.5
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_speech_status_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_start_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_start_sound.html">stt_unset_start_sound</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_start_sound-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the sound to start recording.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+          <dt id="stt_unset_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_state_changed_cb.html">stt_unset_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_state_changed_cb-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_CREATED.
+@see stt_set_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="stt_unset_stop_sound" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_unset_stop_sound.html">stt_unset_stop_sound</a></span><span class="signature">(<wbr><span class="parameter" id="stt_unset_stop_sound-param-stt"><span class="type-annotation">stt_h</span> <span class="parameter-name">stt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the sound to stop recording.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter stt The STT handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STT_ERROR_NONE Successful
+@retval #STT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STT_ERROR_INVALID_STATE Invalid state
+@retval #STT_ERROR_OPERATION_FAILED Operation failure
+@retval #STT_ERROR_NOT_SUPPORTED STT NOT supported
+@retval #STT_ERROR_PERMISSION_DENIED Permission denied
+@pre The state should be #STT_STATE_READY.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartstt_default_language_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_default_language_changed_cbFunction.html">Dartstt_default_language_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_default_language_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_default_language_changed_cbFunction.html">stt_default_language_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_engine_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_engine_changed_cbFunction.html">Dartstt_engine_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_engine_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_engine_changed_cbFunction.html">stt_engine_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_error_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_error_cbFunction.html">Dartstt_error_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_error_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_error_cbFunction.html">stt_error_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_recognition_result_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_recognition_result_cbFunction.html">Dartstt_recognition_result_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_recognition_result_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_recognition_result_cbFunction.html">stt_recognition_result_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_result_time_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_result_time_cbFunction.html">Dartstt_result_time_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_result_time_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_result_time_cbFunction.html">stt_result_time_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_speech_status_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_speech_status_cbFunction.html">Dartstt_speech_status_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_speech_status_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_speech_status_cbFunction.html">stt_speech_status_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_state_changed_cbFunction.html">Dartstt_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_state_changed_cbFunction.html">stt_state_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_supported_engine_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_supported_engine_cbFunction.html">Dartstt_supported_engine_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_supported_engine_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_supported_engine_cbFunction.html">stt_supported_engine_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartstt_supported_language_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/Dartstt_supported_language_cbFunction.html">Dartstt_supported_language_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartstt_supported_language_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_stt/stt_supported_language_cbFunction.html">stt_supported_language_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_default_language_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_default_language_changed_cb.html">stt_default_language_changed_cb</a></span>
+    = stt_default_language_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the default language is changed.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter stt The STT handle
+Parameter previous_language A previous language
+Parameter current_language A current language
+Parameter user_data The user data passed from the callback registration function
+@see stt_set_default_language_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_default_language_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_default_language_changed_cbFunction.html">stt_default_language_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_default_language_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_default_language_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_engine_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_engine_changed_cb.html">stt_engine_changed_cb</a></span>
+    = stt_engine_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine is changed.
+@since_tizen @if MOBILE 3.0 @elseif WEARABLE 2.3.2 @endif
+@remarks The language is specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code. For example, "ko_KR" for Korean, "en_US" for American English.
+Parameter stt The STT handle
+Parameter engine_id Engine ID
+Parameter language The default language
+Parameter support_silence Whether the silence detection is supported or not
+Parameter need_credential The necessity of credential
+Parameter user_data The user data passed from the callback registration function
+@see stt_set_engine_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_engine_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_engine_changed_cbFunction.html">stt_engine_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_engine_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_engine_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_error_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_error_cb.html">stt_error_cb</a></span>
+    = stt_error_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when an error occurs.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter stt The STT handle
+Parameter reason The error type (e.g. #STT_ERROR_OUT_OF_NETWORK, #STT_ERROR_IO_ERROR)
+Parameter user_data The user data passed from the callback registration function
+@pre An application registers this callback using stt_set_error_cb() to detect error.
+@see stt_set_error_cb()
+@see stt_unset_error_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_error_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_error_cbFunction.html">stt_error_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_error_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_error_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_recognition_result_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_recognition_result_cb.html">stt_recognition_result_cb</a></span>
+    = stt_recognition_result_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when STT gets the recognition result from the engine.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks After stt_stop() is called, silence is detected from recording, or partial result is occurred, this function is called.
+Parameter stt The STT handle
+Parameter event The result event
+Parameter data Result texts
+Parameter data_count Result text count
+Parameter msg Engine message (e.g. #STT_RESULT_MESSAGE_NONE, #STT_RESULT_MESSAGE_ERROR_TOO_SHORT)
+Parameter user_data The user data passed from the callback registration function
+@pre stt_stop() will invoke this callback if you register it using stt_set_result_cb().
+@post If this function is called and event is #STT_RESULT_EVENT_FINAL_RESULT, the STT state will be #STT_STATE_READY.
+@see stt_stop()
+@see stt_set_recognition_result_cb()
+@see stt_unset_recognition_result_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_recognition_result_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_recognition_result_cbFunction.html">stt_recognition_result_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_recognition_result_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_recognition_result_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_result_time_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_result_time_cb.html">stt_result_time_cb</a></span>
+    = stt_result_time_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when STT get the result time stamp in free partial type.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter stt The STT handle
+Parameter index The result index
+Parameter event The token event
+Parameter text The result text
+Parameter start_time The start time of result text
+Parameter end_time The end time of result text
+Parameter user_data The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop
+otherwise @c false to break out of the loop
+@pre stt_recognition_result_cb() should be called.
+@see stt_recognition_result_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_result_time_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_result_time_cbFunction.html">stt_result_time_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_result_time_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_result_time_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_speech_status_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_speech_status_cb.html">stt_speech_status_cb</a></span>
+    = stt_speech_status_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when STT engine detects the beginning or end of the speech.
+@since_tizen 5.5
+Parameter stt The STT handle
+Parameter status The speech status
+Parameter user_data The user data passed from the callback registration function
+@see stt_set_speech_status_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_speech_status_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_speech_status_cbFunction.html">stt_speech_status_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_speech_status_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_speech_status_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_state_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_state_changed_cb.html">stt_state_changed_cb</a></span>
+    = stt_state_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the state of STT is changed.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter stt The STT handle
+Parameter previous A previous state
+Parameter current A current state
+Parameter user_data The user data passed from the callback registration function
+@pre An application registers this callback using stt_set_state_changed_cb() to detect changing state.
+@see stt_set_state_changed_cb()
+@see stt_unset_state_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_state_changed_cbFunction.html">stt_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_state_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_supported_engine_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_supported_engine_cb.html">stt_supported_engine_cb</a></span>
+    = stt_supported_engine_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to get the engine information.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter stt The STT handle
+Parameter engine_id Engine ID
+Parameter engine_name Engine name
+Parameter user_data User data passed from the stt_setting_foreach_supported_engines()
+@return @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre stt_foreach_supported_engines() will invoke this callback.
+@see stt_foreach_supported_engines()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_supported_engine_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_supported_engine_cbFunction.html">stt_supported_engine_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_supported_engine_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_supported_engine_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="stt_supported_language_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_stt/stt_supported_language_cb.html">stt_supported_language_cb</a></span>
+    = stt_supported_language_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to retrieve the supported languages.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The language is specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code. For example, "ko_KR" for Korean, "en_US" for American English.
+Parameter stt The STT handle
+Parameter language The language
+Parameter user_data The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop,
+@c false to break out of the loop
+@pre stt_foreach_supported_languages() will invoke this callback.
+@see stt_foreach_supported_languages()
+  
+
+</dd>
+
+
+          
+  <dt id="stt_supported_language_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_stt/stt_supported_language_cbFunction.html">stt_supported_language_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= stt_supported_language_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;stt_supported_language_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_stt.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_stt library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

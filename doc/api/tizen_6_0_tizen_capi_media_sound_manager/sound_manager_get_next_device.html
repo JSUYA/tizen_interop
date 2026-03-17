@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the sound_manager_get_next_device function from the tizen_6_0_tizen_capi_media_sound_manager library, for the Dart programming language.">
+  <title>sound_manager_get_next_device function - tizen_6_0_tizen_capi_media_sound_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_media_sound_manager.dart</a></li>
+    <li class="self-crumb">sound_manager_get_next_device function</li>
+  </ol>
+  <div class="self-name">sound_manager_get_next_device</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_sound_manager&#47;tizen_6_0_tizen_capi_media_sound_manager-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">sound_manager_get_next_device</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">sound_manager_get_next_device</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="sound_manager_get_next_device-param-device_list"><span class="type-annotation">sound_device_list_h</span> <span class="parameter-name">device_list</span>, </span></li>
+<li><span class="parameter" id="sound_manager_get_next_device-param-device"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">sound_device_h</span>&gt;</span></span> <span class="parameter-name">device</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Gets the next item of the device list.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter	device_list	The list of connected devices
+Output parameter	device	The device item
+@return @c 0 on success,
+otherwise a negative error value
+@retval #SOUND_MANAGER_ERROR_NONE Success
+@retval #SOUND_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #SOUND_MANAGER_ERROR_NO_DATA No data
+@see sound_manager_get_device_list()
+@see sound_manager_get_prev_device()
+@see sound_manager_get_device_type()
+@see sound_manager_get_device_io_direction()
+@see sound_manager_get_device_id()
+@see sound_manager_get_device_name()
+@see sound_manager_is_device_running()
+@see sound_manager_free_device_list()</p>
+<p>Module getter: <code>tizenCapiMediaSoundManager</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int sound_manager_get_next_device(
+  sound_device_list_h device_list,
+  ffi.Pointer&lt;sound_device_h&gt; device,
+) =&gt;
+    tizenCapiMediaSoundManager.sound_manager_get_next_device(
+      device_list,
+      device,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">tizen_6_0_tizen_capi_media_sound_manager</a></li>
+    <li class="self-crumb">sound_manager_get_next_device function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_sound_manager library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

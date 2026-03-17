@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the iotcon_lite_resource_create function from the tizen_6_0_tizen_iotcon library, for the Dart programming language.">
+  <title>iotcon_lite_resource_create function - tizen_6_0_tizen_iotcon library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_iotcon/">module_docs&#47;6_0&#47;modules&#47;tizen_iotcon.dart</a></li>
+    <li class="self-crumb">iotcon_lite_resource_create function</li>
+  </ol>
+  <div class="self-name">iotcon_lite_resource_create</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_iotcon&#47;tizen_6_0_tizen_iotcon-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">iotcon_lite_resource_create</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">iotcon_lite_resource_create</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="iotcon_lite_resource_create-param-uri_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri_path</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-res_types"><span class="type-annotation">iotcon_resource_types_h</span> <span class="parameter-name">res_types</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-policies"><span class="type-annotation">int</span> <span class="parameter-name">policies</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-attributes"><span class="type-annotation">iotcon_attributes_h</span> <span class="parameter-name">attributes</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_iotcon/iotcon_lite_resource_post_request_cb.html">iotcon_lite_resource_post_request_cb</a></span> <span class="parameter-name">cb</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+<li><span class="parameter" id="iotcon_lite_resource_create-param-resource_handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">iotcon_lite_resource_h</span>&gt;</span></span> <span class="parameter-name">resource_handle</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Creates a lite resource handle and registers the resource in server.
+@details Registers a resource specified by @a uri_path, @a res_types, @a attributes which have @a properties in IoTCon server. \n
+When client requests some operations, it send a response to client, automatically.\n
+The @a policies can contain multiple policies like #IOTCON_RESOURCE_DISCOVERABLE | #IOTCON_RESOURCE_OBSERVABLE.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/internet
+@remarks @a uri_path length must be less than 128. \n
+You must destroy @a resource_handle by calling iotcon_lite_resource_destroy() if @a remote_handle is no longer needed.
+Parameter uri_path The URI path of the resource
+Parameter res_types The list of type of the resource
+Parameter policies The policies of the resource \n
+Set of #iotcon_resource_policy_e
+Parameter attributes The attributes handle to set
+Parameter cb The callback function to add into callback list
+Parameter user_data The user data to pass to the callback function
+Output parameter resource_handle The handle of the resource
+@return @c 0 on success,
+otherwise a negative error value
+@retval #IOTCON_ERROR_NONE Successful
+@retval #IOTCON_ERROR_NOT_SUPPORTED Not supported
+@retval #IOTCON_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #IOTCON_ERROR_IOTIVITY IoTivity errors
+@retval #IOTCON_ERROR_OUT_OF_MEMORY Out of memory
+@retval #IOTCON_ERROR_PERMISSION_DENIED Permission denied
+@pre iotcon_initialize() should be called to initialize.
+@see iotcon_lite_resource_destroy()</p>
+<p>Module getter: <code>tizenIotcon</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int iotcon_lite_resource_create(
+  ffi.Pointer&lt;ffi.Char&gt; uri_path,
+  iotcon_resource_types_h res_types,
+  int policies,
+  iotcon_attributes_h attributes,
+  iotcon_lite_resource_post_request_cb cb,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+  ffi.Pointer&lt;iotcon_lite_resource_h&gt; resource_handle,
+) =&gt;
+    tizenIotcon.iotcon_lite_resource_create(
+      uri_path,
+      res_types,
+      policies,
+      attributes,
+      cb,
+      user_data,
+      resource_handle,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_iotcon/">tizen_6_0_tizen_iotcon</a></li>
+    <li class="self-crumb">iotcon_lite_resource_create function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_iotcon library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

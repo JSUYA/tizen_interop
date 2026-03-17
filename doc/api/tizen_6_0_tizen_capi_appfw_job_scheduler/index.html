@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_appfw_job_scheduler library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_appfw_job_scheduler library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_appfw_job_scheduler</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_appfw_job_scheduler&#47;tizen_6_0_tizen_capi_appfw_job_scheduler-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiAppfwJobScheduler</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiAppfwJobScheduler</code>.
+Module symbol map: <code>capiAppfwJobSchedulerSymbols</code>.
+Shared object(s): <code>libcapi-appfw-job-scheduler.so.0</code>.</p>
+<p>Application Framework / Application / Job scheduler.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="job_info_add_trigger_event" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_add_trigger_event.html">job_info_add_trigger_event</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_add_trigger_event-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_add_trigger_event-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds the trigger event to the job info handle.
+@since_tizen 4.0
+@remarks The periodic interval of the job info handle must be 0.
+If the interval of the job info handle is not 0, this function returns a negative error value.
+Regarding the @a event, the application may require the following privilege:
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a> @n
+If the application does not have the necessary privilege, this function returns #JOB_ERROR_PERMISSION_DENIED.
+See #job_trigger_event_e to find the corresponding privilege of each event.
+Parameter   job_info        The job info handle
+Parameter   event           The job trigger event
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NOT_SUPPORTED     Not supported
+@retval #JOB_ERROR_ALREADY_EXIST     Already exist
+@retval #JOB_ERROR_PERMISSION_DENIED Permission denied
+@pre    job_scheduler_init() must be called.
+@see    job_scheduler_init()
+@see    job_info_remove_trigger_event()
+@see    job_trigger_event_e
+  
+
+</dd>
+
+          <dt id="job_info_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_clone.html">job_info_clone</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_clone-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_clone-param-clone"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">job_info_h</span>&gt;</span></span> <span class="parameter-name">clone</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones the given job_info handle.
+@since_tizen 4.0
+@remarks The newly created job_info handle must be released by using job_info_destroy().
+Parameter   job_info        The job info handle
+Output parameter  clone           If successful, a newly created job info handle will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@see    job_info_destroy()
+  
+
+</dd>
+
+          <dt id="job_info_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_create.html">job_info_create</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_create-param-job_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">job_info_h</span>&gt;</span></span> <span class="parameter-name">job_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates the job info handle.
+@since_tizen 4.0
+@remarks The @a job_info must be released by using job_info_destroy().
+The job will be started by the periodic interval or the trigger events.
+Output parameter  job_info        The job info handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@see    job_info_destroy()
+@see    job_info_set_periodic()
+@see    job_info_add_trigger_event()
+  
+
+</dd>
+
+          <dt id="job_info_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_destroy.html">job_info_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_destroy-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the job info handle and releases all its resources.
+@since_tizen 4.0
+Parameter   job_info        The job info handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@see    job_info_create()
+  
+
+</dd>
+
+          <dt id="job_info_get_job_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_get_job_id.html">job_info_get_job_id</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_get_job_id-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_get_job_id-param-job_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">job_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the ID of the job.
+@since_tizen 4.0
+@remarks The @a job_info must be scheduled by using job_scheduler_schedule().
+If the job_info is not scheduled, this function returns a negative error value.
+The @a job_id must be released by using free().
+Parameter   job_info        The job info handle
+Output parameter  job_id          The ID of the job
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@see    job_scheduler_schedule()
+  
+
+</dd>
+
+          <dt id="job_info_remove_trigger_event" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_remove_trigger_event.html">job_info_remove_trigger_event</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_remove_trigger_event-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_remove_trigger_event-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes the trigger event from the job info handle.
+@since_tizen 4.0
+@remarks The periodic interval of the job info handle must be 0.
+If the interval of the job info handle is not 0, this function returns a negative error value.
+Parameter   job_info        The job info handle
+Parameter   event           The job trigger event
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@see    job_info_add_trigger_event()
+@see    job_trigger_event_e
+  
+
+</dd>
+
+          <dt id="job_info_set_once" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_once.html">job_info_set_once</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_once-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_once-param-once"><span class="type-annotation">bool</span> <span class="parameter-name">once</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the job not to be repeated.
+@since_tizen 4.0
+@remarks If it's a persistent job, setting it to a one-time job returns
+a negative error value on scheduling by using job_scheduler_schedule().
+Parameter   job_info        The job info handle
+Parameter   once            @c true, if the job does not need to be repeated
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@see    job_info_set_persistent()
+@see    job_scheduler_schedule()
+  
+
+</dd>
+
+          <dt id="job_info_set_periodic" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_periodic.html">job_info_set_periodic</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_periodic-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_periodic-param-interval"><span class="type-annotation">int</span> <span class="parameter-name">interval</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the periodic interval of the job.
+@since_tizen 4.0
+@remarks The platform does not guarantee the accuracy of the given interval for minimizing the wakeups of the device.
+Thus you should not rely on it for timing.
+If this function is called after adding the job trigger events by using job_info_add_trigger_event(),
+the function returns a negative error value.
+Parameter   job_info        The job info handle
+Parameter   interval        The periodic interval (in minutes)
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@see    job_info_destroy()
+  
+
+</dd>
+
+          <dt id="job_info_set_persistent" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_persistent.html">job_info_set_persistent</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_persistent-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_persistent-param-persistent"><span class="type-annotation">bool</span> <span class="parameter-name">persistent</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the job to be automatically scheduled after the device reboots.
+@since_tizen 4.0
+@remarks If it's a one-time job, setting it to a persistent job returns
+a negative error value on scheduling by using job_scheduler_schedule().
+Parameter   job_info        The job info handle
+Parameter   persistent      @c true, if the job needs to be automatically scheduled
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@see    job_info_set_once()
+@see    job_scheduler_schedule()
+  
+
+</dd>
+
+          <dt id="job_info_set_requirement_timeout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_requirement_timeout.html">job_info_set_requirement_timeout</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_requirement_timeout-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_requirement_timeout-param-timeout"><span class="type-annotation">int</span> <span class="parameter-name">timeout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the timeout interval of the requirements.
+@since_tizen 4.0
+@remarks If the requirements are not satisfied within the timeout value,
+the job does not start.
+Parameter   job_info        The job info handle
+Parameter   timeout         The timeout interval (ms)
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="job_info_set_requires_battery_not_low" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_requires_battery_not_low.html">job_info_set_requires_battery_not_low</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_requires_battery_not_low-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_requires_battery_not_low-param-battery_not_low"><span class="type-annotation">bool</span> <span class="parameter-name">battery_not_low</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets that the battery level must not be low to run the job.
+@since_tizen 4.0
+Parameter   job_info        The job info handle
+Parameter   battery_not_low @c true, the battery level must not be low.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NOT_SUPPORTED     Not supported
+@pre    job_scheduler_init() must be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_info_set_requires_charging" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_requires_charging.html">job_info_set_requires_charging</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_requires_charging-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_requires_charging-param-charging"><span class="type-annotation">bool</span> <span class="parameter-name">charging</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets that the battery must be charging to run the job.
+@since_tizen 4.0
+Parameter   job_info        The job info handle
+Parameter   charging        @c true, the battery must be charging.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NOT_SUPPORTED     Not supported
+@pre    job_scheduler_init() must be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_info_set_requires_wifi_connection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_info_set_requires_wifi_connection.html">job_info_set_requires_wifi_connection</a></span><span class="signature">(<wbr><span class="parameter" id="job_info_set_requires_wifi_connection-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_info_set_requires_wifi_connection-param-wifi_connection"><span class="type-annotation">bool</span> <span class="parameter-name">wifi_connection</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets that the WiFi must be connected to run the job.
+@since_tizen 4.0
+@privlevel   public
+@privilege   %http://tizen.org/privilege/network.get
+Parameter   job_info        The job info handle
+Parameter   wifi_connection @c true, the WiFi must be connected.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NOT_SUPPORTED     Not supported
+@retval #JOB_ERROR_PERMISSION_DENIED Permission denied
+@pre    job_scheduler_init() must be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_cancel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_cancel.html">job_scheduler_cancel</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_cancel-param-job_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">job_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels the scheduled job.
+@since_tizen 4.0
+Parameter   job_id          The ID of the scheduled job
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_NO_SUCH_JOB       No such job
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_cancel_all" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_cancel_all.html">job_scheduler_cancel_all</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels all scheduled jobs.
+@since_tizen 4.0
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_IO_ERROR          IO error
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_finish" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_finish.html">job_scheduler_finish</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Finalizes the job scheduler.
+@since_tizen 4.0
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_foreach_job" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_foreach_job.html">job_scheduler_foreach_job</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_foreach_job-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_foreach_job_cb.html">job_scheduler_foreach_job_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="job_scheduler_foreach_job-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all scheduled jobs.
+@since_tizen 4.0
+Parameter   callback        The iteration callback function
+Parameter   user_data       The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NO_SUCH_JOB       No scheduled jobs
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_init" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_init.html">job_scheduler_init</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes the job scheduler.
+@since_tizen 4.0
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@see    job_scheduler_finish()
+  
+
+</dd>
+
+          <dt id="job_scheduler_notify_job_finished" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_notify_job_finished.html">job_scheduler_notify_job_finished</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_notify_job_finished-param-job_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">job_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Notifies that the job is finished.
+@since_tizen 4.0
+@remarks If the job has been launched, the system kept awake for a while.
+It is highly recommended to notify that the job is done,
+the system thus knows it does not need to be kept awake.
+Parameter   job_id          The ID of the scheduled job
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_NO_SUCH_JOB       No such job
+@retval #JOB_ERROR_IO_ERROR          IO error
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+  
+
+</dd>
+
+          <dt id="job_scheduler_schedule" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_schedule.html">job_scheduler_schedule</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_schedule-param-job_info"><span class="type-annotation">job_info_h</span> <span class="parameter-name">job_info</span>, </span><span class="parameter" id="job_scheduler_schedule-param-job_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">job_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Schedules the job.
+@since_tizen 4.0
+@privlevel   public
+@privilege   %http://tizen.org/privilege/appmanager.launch
+Parameter   job_info        The job info handle
+Parameter   job_id          The ID of the job
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_IO_ERROR          IO error
+@retval #JOB_ERROR_ALREADY_EXIST     Already exist
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #JOB_ERROR_PERMISSION_DENIED Permission denied
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+@see    job_info_create()
+  
+
+</dd>
+
+          <dt id="job_scheduler_service_add" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_service_add.html">job_scheduler_service_add</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_service_add-param-job_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">job_id</span>, </span><span class="parameter" id="job_scheduler_service_add-param-callback"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">job_service_callback_s</span>&gt;</span></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="job_scheduler_service_add-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="job_scheduler_service_add-param-job_service"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">job_service_h</span>&gt;</span></span> <span class="parameter-name">job_service</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds job service handler for receiving the information of the scheduled job.
+@since_tizen 4.0
+@remarks The @a job_service handle should be released using job_scheduler_service_remove().
+Parameter   job_id          The ID of the job
+Parameter   callback        The set of callback functions to handle jobs
+Parameter   user_data       The user data to be passed to the callback function
+Output parameter  job_service     The job service handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@retval #JOB_ERROR_OUT_OF_MEMORY     Out of memory
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+@see    job_scheduler_service_remove()
+@see    job_service_start_cb()
+@see    job_service_stop_cb()
+@see    job_scheduler_notify_job_finished()
+@see    #job_service_callback_s
+  
+
+</dd>
+
+          <dt id="job_scheduler_service_remove" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_service_remove.html">job_scheduler_service_remove</a></span><span class="signature">(<wbr><span class="parameter" id="job_scheduler_service_remove-param-job_service"><span class="type-annotation">job_service_h</span> <span class="parameter-name">job_service</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes registered job service handler.
+@since_tizen 4.0
+Parameter   job_service     The job service handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #JOB_ERROR_NONE              Successful
+@retval #JOB_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #JOB_ERROR_NOT_INITIALIZED   Not initialized
+@pre    job_scheduler_init() MUST be called.
+@see    job_scheduler_init()
+@see    job_scheduler_service_add()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartjob_scheduler_foreach_job_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/Dartjob_scheduler_foreach_job_cbFunction.html">Dartjob_scheduler_foreach_job_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartjob_scheduler_foreach_job_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_foreach_job_cbFunction.html">job_scheduler_foreach_job_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="job_scheduler_foreach_job_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_foreach_job_cb.html">job_scheduler_foreach_job_cb</a></span>
+    = job_scheduler_foreach_job_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to retrieve the job information.
+@since_tizen 4.0
+@remarks The @a job_info must not be deallocated by the application.
+Parameter   job_info        The job_info handle
+Parameter   user_data       The user data passed from the foreach function
+@return @c true continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre    job_scheduler_foreach_job() will invoke this callback.
+@see    job_scheduler_foreach_job()
+  
+
+</dd>
+
+
+          
+  <dt id="job_scheduler_foreach_job_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/job_scheduler_foreach_job_cbFunction.html">job_scheduler_foreach_job_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= job_scheduler_foreach_job_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;job_scheduler_foreach_job_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_appfw_job_scheduler library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

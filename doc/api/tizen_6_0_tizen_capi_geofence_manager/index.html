@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_geofence_manager library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_geofence_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_geofence_manager.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_geofence_manager</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_geofence_manager&#47;tizen_6_0_tizen_capi_geofence_manager-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_geofence_manager</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiGeofenceManager</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiGeofenceManager</code>.
+Module symbol map: <code>capiGeofenceManagerSymbols</code>.
+Shared object(s): <code>libcapi-geofence-manager.so.0</code>.</p>
+<p>Location / Geofence Manager.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="geofence_create_bluetooth" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_create_bluetooth.html">geofence_create_bluetooth</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_create_bluetooth-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_create_bluetooth-param-bssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">bssid</span>, </span><span class="parameter" id="geofence_create_bluetooth-param-ssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ssid</span>, </span><span class="parameter" id="geofence_create_bluetooth-param-fence"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">geofence_h</span>&gt;</span></span> <span class="parameter-name">fence</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a bluetooth type of new geofence.
+@since_tizen 2.4
+@remarks The fence must be released using geofence_destroy().\n
+Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Parameter place_id The current place ID
+Parameter bssid Specifies the value of BSSID of BT MAC address
+Parameter ssid Specifies the value of SSID of BT Device
+Output parameter fence A geofence handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@see geofence_create_geopoint()
+@see geofence_create_wifi()
+@see geofence_destroy()
+  
+
+</dd>
+
+          <dt id="geofence_create_geopoint" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_create_geopoint.html">geofence_create_geopoint</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_create_geopoint-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_create_geopoint-param-latitude"><span class="type-annotation">double</span> <span class="parameter-name">latitude</span>, </span><span class="parameter" id="geofence_create_geopoint-param-longitude"><span class="type-annotation">double</span> <span class="parameter-name">longitude</span>, </span><span class="parameter" id="geofence_create_geopoint-param-radius"><span class="type-annotation">int</span> <span class="parameter-name">radius</span>, </span><span class="parameter" id="geofence_create_geopoint-param-address"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">address</span>, </span><span class="parameter" id="geofence_create_geopoint-param-fence"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">geofence_h</span>&gt;</span></span> <span class="parameter-name">fence</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a geopoint type of new geofence.
+@since_tizen 2.4
+@remarks The fence must be released using geofence_destroy().\n
+Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Parameter place_id The current place ID
+Parameter latitude Specifies the value of latitude of geofence <code>-90.0 ~ 90.0</code> (degrees)
+Parameter longitude Specifies the value of longitude of geofence <code>-180.0 ~ 180.0</code> (degrees)
+Parameter radius Specifies the value of radius of geofence <a href="meter">100 ~ 500</a>
+Parameter address Specifies the value of address
+Output parameter fence A geofence handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+@see geofence_destroy()
+  
+
+</dd>
+
+          <dt id="geofence_create_wifi" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_create_wifi.html">geofence_create_wifi</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_create_wifi-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_create_wifi-param-bssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">bssid</span>, </span><span class="parameter" id="geofence_create_wifi-param-ssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ssid</span>, </span><span class="parameter" id="geofence_create_wifi-param-fence"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">geofence_h</span>&gt;</span></span> <span class="parameter-name">fence</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a Wi-Fi type of new geofence.
+@since_tizen 2.4
+@remarks The fence must be released using geofence_destroy().\n
+Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Parameter place_id The current place ID
+Parameter bssid Specifies the value of BSSID of Wi-Fi MAC address
+Parameter ssid Specifies the value of SSID of Wi-Fi Device
+Output parameter fence A geofence handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@see geofence_create_geopoint()
+@see geofence_create_bluetooth()
+@see geofence_destroy()
+  
+
+</dd>
+
+          <dt id="geofence_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_destroy.html">geofence_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_destroy-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Releases the geofence.
+@since_tizen 2.4
+@remarks Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Parameter fence The geofence handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@see geofence_create_geopoint()
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+  
+
+</dd>
+
+          <dt id="geofence_get_address" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_address.html">geofence_get_address</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_address-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_address-param-address"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">address</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the address of geofence
+@since_tizen 2.4
+@remarks The geofence has address only when geofence_type_e is GEOFENCE_TYPE_GEOPOINT. The address must be released using free().
+Parameter fence The geofence handle
+Output parameter address Specifies the value of address
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_latitude()
+@see geofence_get_longitude()
+@see geofence_get_radius()
+@see geofence_get_type()
+@see geofence_create_geopoint()
+  
+
+</dd>
+
+          <dt id="geofence_get_bssid" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_bssid.html">geofence_get_bssid</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_bssid-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_bssid-param-bssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">bssid</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the bssid of geofence
+@since_tizen 2.4
+@remarks The geofence has bssid only when geofence_type_e is GEOFENCE_TYPE_BLUETOOTH or GEOFENCE_TYPE_WIFI. The bssid must be released using free().
+Parameter fence The geofence handle
+Output parameter bssid The bssid of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_type()
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+@see geofence_get_ssid()
+  
+
+</dd>
+
+          <dt id="geofence_get_latitude" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_latitude.html">geofence_get_latitude</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_latitude-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_latitude-param-latitude"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">latitude</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latitude of geofence.
+@since_tizen 2.4
+@remarks The geofence has latitude only when geofence_type_e is GEOFENCE_TYPE_GEOPOINT.
+Parameter fence The geofence handle
+Output parameter latitude The latitude of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument.
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_longitude()
+@see geofence_get_radius()
+@see geofence_get_address()
+@see geofence_get_type()
+@see geofence_create_geopoint()
+  
+
+</dd>
+
+          <dt id="geofence_get_longitude" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_longitude.html">geofence_get_longitude</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_longitude-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_longitude-param-longitude"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">longitude</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the longitude of geofence.
+@since_tizen 2.4
+@remarks The geofence has longitude only when geofence_type_e is GEOFENCE_TYPE_GEOPOINT.
+Parameter fence The geofence handle
+Output parameter longitude The longitude of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_latitude()
+@see geofence_get_radius()
+@see geofence_get_address()
+@see geofence_get_type()
+@see geofence_create_geopoint()
+  
+
+</dd>
+
+          <dt id="geofence_get_place_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_place_id.html">geofence_get_place_id</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_place_id-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_place_id-param-place_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">place_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the ID of place.
+@since_tizen 2.4
+Parameter fence The geofence handle
+Output parameter place_id The ID of the place
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_create_geopoint()
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+  
+
+</dd>
+
+          <dt id="geofence_get_radius" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_radius.html">geofence_get_radius</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_radius-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_radius-param-radius"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">radius</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the radius of geofence.
+@since_tizen 2.4
+@remarks The geofence has radius only when geofence_type_e is GEOFENCE_TYPE_GEOPOINT.
+Parameter fence The geofence handle
+Output parameter radius The radius of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_latitude()
+@see geofence_get_longitude()
+@see geofence_get_address()
+@see geofence_get_type()
+@see geofence_create_geopoint()
+  
+
+</dd>
+
+          <dt id="geofence_get_ssid" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_ssid.html">geofence_get_ssid</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_ssid-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_ssid-param-ssid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">ssid</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the ssid of geofence
+@since_tizen 2.4
+@remarks The geofence has ssid only when geofence_type_e is GEOFENCE_TYPE_BLUETOOTH or GEOFENCE_TYPE_WIFI. The ssid must be released using free().
+Parameter fence The geofence handle
+Output parameter ssid The ssid of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_type()
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+@see geofence_get_bssid()
+  
+
+</dd>
+
+          <dt id="geofence_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_get_type.html">geofence_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_get_type-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the type of geofence.
+@since_tizen 2.4
+Parameter fence The geofence handle
+Output parameter type The type of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_get_geopoint()
+@see geofence_get_radius()
+@see geofence_get_bssid()
+  
+
+</dd>
+
+          <dt id="geofence_manager_add_fence" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_add_fence.html">geofence_manager_add_fence</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_add_fence-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_add_fence-param-fence"><span class="type-annotation">geofence_h</span> <span class="parameter-name">fence</span>, </span><span class="parameter" id="geofence_manager_add_fence-param-geofence_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">geofence_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a geofence for a given geofence manager.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter fence The geofence handle
+Output parameter geofence_id The geofence ID handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@see geofence_manager_remove_fence()
+@see geofence_create_geopoint()
+@see geofence_create_bluetooth()
+@see geofence_create_wifi()
+@see geofence_manager_start()
+  
+
+</dd>
+
+          <dt id="geofence_manager_add_place" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_add_place.html">geofence_manager_add_place</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_add_place-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_add_place-param-place_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">place_name</span>, </span><span class="parameter" id="geofence_manager_add_place-param-place_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">place_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a new place for geofencing service.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter place_name A place name to be created
+Output parameter place_id The place ID to be newly created on success
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@see geofence_manager_update_place()
+@see geofence_manager_remove_place()
+  
+
+</dd>
+
+          <dt id="geofence_manager_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_create.html">geofence_manager_create</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_create-param-manager"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">geofence_manager_h</span>&gt;</span></span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a new geofence manager.
+@since_tizen 2.4
+@remarks The manager must be released using geofence_manager_destroy().\n
+Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Output parameter manager A geofence manager handle to be newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_OUT_OF_MEMORY Out of memory
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@see geofence_manager_destroy()
+  
+
+</dd>
+
+          <dt id="geofence_manager_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_destroy.html">geofence_manager_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_destroy-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Releases the geofence manager.
+@since_tizen 2.4
+@remarks Since 3.0, <a href="http://tizen.org/privilege/location">http://tizen.org/privilege/location</a> privilege is not required.
+Parameter manager The geofence manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@pre geofence_manager_stop() is called before.
+@see geofence_manager_create()
+@see geofence_manager_stop()
+  
+
+</dd>
+
+          <dt id="geofence_manager_foreach_geofence_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_foreach_geofence_list.html">geofence_manager_foreach_geofence_list</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_foreach_geofence_list-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_foreach_geofence_list-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_fence_cb.html">geofence_manager_fence_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_foreach_geofence_list-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves a list of fences registered in the specified geofence manager.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter callback The callback function to deliver each fence
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_DATABASE Database error
+@post This function invokes geofence_manager_fence_cb().
+@see geofence_manager_fence_cb()
+@see geofence_manager_add_fence()
+  
+
+</dd>
+
+          <dt id="geofence_manager_foreach_place_geofence_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_foreach_place_geofence_list.html">geofence_manager_foreach_place_geofence_list</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_foreach_place_geofence_list-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_foreach_place_geofence_list-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_manager_foreach_place_geofence_list-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_fence_cb.html">geofence_manager_fence_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_foreach_place_geofence_list-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves a list of fences registered in the specified place.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter place_id The place ID
+Parameter callback The callback function to deliver each fence of the specified place
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_DATABASE Database error
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@post This function invokes geofence_manager_fence_cb().
+@see geofence_manager_fence_cb()
+@see geofence_manager_add_place()
+  
+
+</dd>
+
+          <dt id="geofence_manager_foreach_place_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_foreach_place_list.html">geofence_manager_foreach_place_list</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_foreach_place_list-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_foreach_place_list-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_place_cb.html">geofence_manager_place_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_foreach_place_list-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves a list of places registered in the specified geofence manager.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter callback The callback function to deliver each place of the specified geofence manager
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_DATABASE Database error
+@post This function invokes geofence_manager_place_cb().
+@see geofence_manager_place_cb()
+@see geofence_manager_add_place()
+  
+
+</dd>
+
+          <dt id="geofence_manager_get_place_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_get_place_name.html">geofence_manager_get_place_name</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_get_place_name-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_get_place_name-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_manager_get_place_name-param-place_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">place_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the name of place.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+@remarks The place_name must be released using free().
+Parameter manager The geofence manager handle
+Parameter place_id The place ID
+Output parameter place_name The name of the place
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_ID Invalid geofence ID
+@retval #GEOFENCE_MANAGER_ERROR_DATABASE Database error
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@see geofence_manager_add_place()
+@see geofence_manager_update_place()
+  
+
+</dd>
+
+          <dt id="geofence_manager_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_is_supported.html">geofence_manager_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the geofence manager is available or not.
+@since_tizen 2.4
+Output parameter supported @c true if geofence service is supported,
+otherwise @c false
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_manager_create()
+  
+
+</dd>
+
+          <dt id="geofence_manager_remove_fence" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_remove_fence.html">geofence_manager_remove_fence</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_remove_fence-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_remove_fence-param-geofence_id"><span class="type-annotation">int</span> <span class="parameter-name">geofence_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a geofence with a given geofence ID
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter geofence_id The specified geofence ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_GEOFENCE_ACCESS_DENIED Access to specified geofence is denied
+@pre geofence_manager_stop() is called before.
+@see geofence_manager_add_fence()
+  
+
+</dd>
+
+          <dt id="geofence_manager_remove_place" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_remove_place.html">geofence_manager_remove_place</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_remove_place-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_remove_place-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes the specific place for geofencing service.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+@remarks The place must have no geofences.
+Parameter manager The geofence manager handle
+Parameter place_id The specified place ID
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@pre geofence_manager_remove_fence() in all geofence is called before.
+@see geofence_manager_add_place()
+@see geofence_manager_update_place()
+  
+
+</dd>
+
+          <dt id="geofence_manager_set_geofence_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_set_geofence_event_cb.html">geofence_manager_set_geofence_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_set_geofence_event_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_set_geofence_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_event_cb.html">geofence_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_set_geofence_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when a response comes.
+@since_tizen 2.4
+Parameter manager The geofence manager handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@post This function invokes geofence_event_cb().
+@see geofence_manager_unset_geofence_event_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_set_geofence_proximity_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_set_geofence_proximity_state_changed_cb.html">geofence_manager_set_geofence_proximity_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_set_geofence_proximity_state_changed_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_set_geofence_proximity_state_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_proximity_state_changed_cb.html">geofence_proximity_state_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_set_geofence_proximity_state_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when a proximity state of device is changed.
+@details The proximity state is measured from registered position regardless of the geofence boundary.
+@since_tizen 3.0
+Parameter manager The geofence manager handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@post This function invokes geofence_proximity_state_changed_cb().
+@see geofence_manager_unset_geofence_proximity_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_set_geofence_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_set_geofence_state_changed_cb.html">geofence_manager_set_geofence_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_set_geofence_state_changed_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_set_geofence_state_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_state_changed_cb.html">geofence_state_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="geofence_manager_set_geofence_state_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when a device enters or exits the specific geofence.
+@since_tizen 2.4
+Parameter manager The geofence manager handle
+Parameter callback The callback function to register
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@post This function invokes geofence_state_changed_cb().
+@see geofence_manager_unset_geofence_state_changed_cb()
+@see geofence_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_start.html">geofence_manager_start</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_start-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_start-param-geofence_id"><span class="type-annotation">int</span> <span class="parameter-name">geofence_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts the geofencing service.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+@remarks There is no limit on number of geofence managers for which this function called
+Calling this function invokes a location service event. When the location service is enabled, the service state change callback
+(set using #geofence_manager_set_geofence_state_changed_cb()) notifies the user with geofence ID as the 1st argument,
+geofence zone state(#GEOFENCE_STATE_IN and #GEOFENCE_STATE_OUT) as the 2nd argument, and the service starts.
+Parameter manager The geofence manager handle
+Parameter geofence_id The specified geofence ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_GEOFENCE_ACCESS_DENIED Access to specified geofence is denied
+@see geofence_manager_stop()
+@see geofence_manager_add_fence()
+@see geofence_manager_set_geofence_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_stop" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_stop.html">geofence_manager_stop</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_stop-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_stop-param-geofence_id"><span class="type-annotation">int</span> <span class="parameter-name">geofence_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Stops the geofencing service.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+@remarks This function initiates the process of stopping the service.
+You can stop and start the geofence manager as needed.
+Parameter manager The geofence manager handle
+Parameter geofence_id The specified geofence ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_GEOFENCE_ACCESS_DENIED Access to specified geofence is denied
+@see geofence_manager_start()
+  
+
+</dd>
+
+          <dt id="geofence_manager_unset_geofence_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_unset_geofence_event_cb.html">geofence_manager_unset_geofence_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_unset_geofence_event_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 2.4
+Parameter manager The geofence manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_event_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_unset_geofence_proximity_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_unset_geofence_proximity_state_changed_cb.html">geofence_manager_unset_geofence_proximity_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_unset_geofence_proximity_state_changed_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter manager The geofence manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_manager_set_geofence_proximity_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_unset_geofence_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_unset_geofence_state_changed_cb.html">geofence_manager_unset_geofence_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_unset_geofence_state_changed_cb-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 2.4
+Parameter manager The geofence manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_state_changed_cb()
+  
+
+</dd>
+
+          <dt id="geofence_manager_update_place" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_update_place.html">geofence_manager_update_place</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_manager_update_place-param-manager"><span class="type-annotation">geofence_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="geofence_manager_update_place-param-place_id"><span class="type-annotation">int</span> <span class="parameter-name">place_id</span>, </span><span class="parameter" id="geofence_manager_update_place-param-place_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">place_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the place name of a given place ID.
+@since_tizen 2.4
+@privlevel public
+@privilege %http://tizen.org/privilege/location
+Parameter manager The geofence manager handle
+Parameter place_id The specified place ID
+Parameter place_name A new place name of the place ID
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_NOT_INITIALIZED Not initialized
+@retval #GEOFENCE_MANAGER_ERROR_EXCEPTION Exception occurred
+@retval #GEOFENCE_MANAGER_ERROR_PLACE_ACCESS_DENIED Access to specified place is denied
+@see geofence_manager_add_place()
+@see geofence_manager_remove_place()
+  
+
+</dd>
+
+          <dt id="geofence_status_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_status_create.html">geofence_status_create</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_status_create-param-geofence_id"><span class="type-annotation">int</span> <span class="parameter-name">geofence_id</span>, </span><span class="parameter" id="geofence_status_create-param-status"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">geofence_status_h</span>&gt;</span></span> <span class="parameter-name">status</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Returns The geofence status of specified geofence.
+@since_tizen 2.4
+@remarks A status must be released using geofence_status_destroy()
+Parameter geofence_id The geofence ID
+Output parameter status The status handle of a specified geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_PERMISSION_DENIED The application does not have the privilege to call this function
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@retval #GEOFENCE_MANAGER_ERROR_GEOFENCE_ACCESS_DENIED Access to specified geofence is denied
+@see geofence_status_destroy()
+@see geofence_manager_start()
+@see geofence_manager_stop()
+  
+
+</dd>
+
+          <dt id="geofence_status_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_status_destroy.html">geofence_status_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_status_destroy-param-status"><span class="type-annotation">geofence_status_h</span> <span class="parameter-name">status</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Releases the memory, used by the status data.
+@since_tizen 2.4
+Parameter status The status handle of a specified geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_status_create()
+@see geofence_status_get_state()
+@see geofence_status_get_duration()
+  
+
+</dd>
+
+          <dt id="geofence_status_get_duration" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_status_get_duration.html">geofence_status_get_duration</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_status_get_duration-param-status"><span class="type-annotation">geofence_status_h</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="geofence_status_get_duration-param-seconds"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">seconds</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the amount of seconds geofence is in the current state.
+@since_tizen 2.4
+Parameter status The geofence status handle
+Output parameter seconds The amount of seconds geofence is in the current state
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_status_get_state()
+  
+
+</dd>
+
+          <dt id="geofence_status_get_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_status_get_state.html">geofence_status_get_state</a></span><span class="signature">(<wbr><span class="parameter" id="geofence_status_get_state-param-status"><span class="type-annotation">geofence_status_h</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="geofence_status_get_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the state of geofence.
+@since_tizen 2.4
+Parameter status The geofence status handle
+Output parameter state The state of geofence
+@return @c 0 on success,
+otherwise a negative error value
+@retval #GEOFENCE_MANAGER_ERROR_NONE Successful
+@retval #GEOFENCE_MANAGER_ERROR_INVALID_PARAMETER Illegal argument
+@retval #GEOFENCE_MANAGER_ERROR_NOT_SUPPORTED Not supported
+@see geofence_status_get_duration()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartgeofence_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/Dartgeofence_event_cbFunction.html">Dartgeofence_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartgeofence_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_event_cbFunction.html">geofence_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartgeofence_manager_fence_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/Dartgeofence_manager_fence_cbFunction.html">Dartgeofence_manager_fence_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartgeofence_manager_fence_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_fence_cbFunction.html">geofence_manager_fence_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartgeofence_manager_place_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/Dartgeofence_manager_place_cbFunction.html">Dartgeofence_manager_place_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartgeofence_manager_place_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_place_cbFunction.html">geofence_manager_place_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartgeofence_proximity_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/Dartgeofence_proximity_state_changed_cbFunction.html">Dartgeofence_proximity_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartgeofence_proximity_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_proximity_state_changed_cbFunction.html">geofence_proximity_state_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartgeofence_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/Dartgeofence_state_changed_cbFunction.html">Dartgeofence_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartgeofence_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_state_changed_cbFunction.html">geofence_state_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="geofence_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_event_cb.html">geofence_event_cb</a></span>
+    = geofence_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the some event occurs in geofence and place such as add, update, etc..
+@details The events of public geofence is also received if there are public geofences.
+@since_tizen 2.4
+@remarks The value of place_id or geofence_id is -1 when the place ID or geofence ID is not assigned.
+Parameter place_id The place ID
+Parameter geofence_id The specified geofence ID
+Parameter error The error code for the particular action
+Parameter manage The result code for the particular place and geofence management
+Parameter user_data The user data passed from callback registration function
+@pre geofence_manager_start() will invoke this callback if you register this callback using geofence_manager_set_geofence_event_cb()
+@see geofence_manage_e
+@see geofence_manager_start()
+@see geofence_manager_set_geofence_event_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="geofence_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_event_cbFunction.html">geofence_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= geofence_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;geofence_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="geofence_manager_fence_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_fence_cb.html">geofence_manager_fence_cb</a></span>
+    = geofence_manager_fence_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the fence list is requested.
+@since_tizen 2.4
+Parameter geofence_id The geofence ID
+Parameter fence The fence handle
+Parameter fence_index The index number of the fences in the list
+Parameter fence_cnt The total number of fences that exists for the requester
+Parameter user_data The user data passed from callback registration function
+@return @c true to continue iterating,
+otherwise @c false
+@pre geofence_manager_foreach_geofence_list() and geofence_manager_foreach_place_geofence_list() will invoke this callback if you specify this callback using geofence_manager_foreach_geofence_list().
+@see geofence_manager_foreach_geofence_list()
+@see geofence_manager_foreach_place_geofence_list()
+@see geofence_manager_add_fence()
+  
+
+</dd>
+
+
+          
+  <dt id="geofence_manager_fence_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_fence_cbFunction.html">geofence_manager_fence_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= geofence_manager_fence_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;geofence_manager_fence_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="geofence_manager_place_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_place_cb.html">geofence_manager_place_cb</a></span>
+    = geofence_manager_place_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the place list is requested.
+@since_tizen 2.4
+Parameter place_id The current place ID
+Parameter place_name The current place name
+Parameter place_index The index number of the places in the list
+Parameter place_cnt The total number of places that exists for the requester
+Parameter user_data The user data passed from callback registration function
+@return @c true to continue iterating,
+otherwise @c false
+@pre geofence_manager_foreach_place_list() will invoke this callback if you specify this callback using geofence_manager_foreach_place_list().
+@see geofence_manager_foreach_place_list()
+@see geofence_manager_add_place()
+  
+
+</dd>
+
+
+          
+  <dt id="geofence_manager_place_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_manager_place_cbFunction.html">geofence_manager_place_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= geofence_manager_place_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;geofence_manager_place_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="geofence_proximity_state_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_proximity_state_changed_cb.html">geofence_proximity_state_changed_cb</a></span>
+    = geofence_proximity_state_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a proximity state of device is changed.
+@since_tizen 3.0
+Parameter geofence_id The specified geofence ID
+Parameter state The proximity state
+Parameter provider The proximity provider
+Parameter user_data The user data passed from callback registration function
+@pre geofence_manager_start() will invoke this callback if you register this callback using geofence_manager_set_geofence_proximity_state_changed_cb().
+@see geofence_proximity_state_e
+@see geofence_proximity_provider_e
+@see geofence_manager_start()
+@see geofence_manager_set_geofence_proximity_state_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="geofence_proximity_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_proximity_state_changed_cbFunction.html">geofence_proximity_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= geofence_proximity_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;geofence_proximity_state_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="geofence_state_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_state_changed_cb.html">geofence_state_changed_cb</a></span>
+    = geofence_state_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a device enters or exits the given geofence.
+@since_tizen 2.4
+Parameter geofence_id The specified geofence ID
+Parameter state The geofence state
+Parameter user_data The user data passed from callback registration function
+@pre geofence_manager_start() will invoke this callback if you register this callback using geofence_manager_set_geofence_state_changed_cb().
+@see geofence_state_e
+@see geofence_manager_start()
+@see geofence_manager_set_geofence_state_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="geofence_state_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_geofence_manager/geofence_state_changed_cbFunction.html">geofence_state_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= geofence_state_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;geofence_state_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_geofence_manager.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_geofence_manager library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

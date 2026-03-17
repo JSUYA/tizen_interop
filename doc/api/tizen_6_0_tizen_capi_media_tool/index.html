@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_media_tool library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_media_tool library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_media_tool.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_media_tool</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_media_tool&#47;tizen_6_0_tizen_capi_media_tool-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_media_tool</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiMediaTool</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiMediaTool</code>.
+Module symbol map: <code>capiMediaToolSymbols</code>.
+Shared object(s): <code>libcapi-media-tool.so.0</code>.</p>
+<p>Multimedia / Media Tool.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="media_format_channel_positions_from_mask" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_channel_positions_from_mask.html">media_format_channel_positions_from_mask</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_channel_positions_from_mask-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_channel_positions_from_mask-param-channel_mask"><span class="type-annotation">int</span> <span class="parameter-name">channel_mask</span>, </span><span class="parameter" id="media_format_channel_positions_from_mask-param-positions"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">positions</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Converts the channels in the @a channel_mask to a positions array.
+@details The size of the position array is equal to the number of channels,
+that can be obtained with media_format_get_audio_info().
+@since_tizen 5.5
+@remarks  A @a channel_mask with fewer bits set than the number of channels is considered valid.
+The @a positions should be released with free().
+Parameter  fmt    The media format handle
+Parameter  channel_mask    The input channel_mask
+Output parameter positions    The channel positions array, its length is equal to the number of channels
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_FORMAT_ERROR_INVALID_OPERATION Invalid operation
+@pre The number of channels must be set with media_format_set_audio_channel().
+@pre The channel should be set before calling media_format_channel_positions_from_mask().
+@see media_format_set_audio_channel()
+@see media_format_get_audio_info()
+@par Example
+@code
+int channels;
+uint64_t channel_mask;
+media_format_channel_position_e *positions;
+  
+
+</dd>
+
+          <dt id="media_format_channel_positions_to_mask" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_channel_positions_to_mask.html">media_format_channel_positions_to_mask</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_channel_positions_to_mask-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_channel_positions_to_mask-param-positions"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">positions</span>, </span><span class="parameter" id="media_format_channel_positions_to_mask-param-channel_mask_out"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">channel_mask_out</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Converts the @a positions array to a bitmask.
+@since_tizen 5.5
+@remarks  A @a channel_mask_out with fewer bits set than the number of channels is considered valid.
+Parameter  fmt    The media format handle
+Parameter  positions    The channel positions array, its lengh is equal to the number of channels
+Output parameter channel_mask_out    the output channel mask
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_FORMAT_ERROR_INVALID_OPERATION Invalid operation
+@pre The number of channels must be set with media_format_set_audio_channel().
+@pre The channel should be set before calling media_format_channel_positions_to_mask().
+@see media_format_set_audio_channel()
+  
+
+</dd>
+
+          <dt id="media_format_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_create.html">media_format_create</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_create-param-fmt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_format_h</span>&gt;</span></span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@details	It creates media format. and reference count will be set to 1
+For destroying #media_format_h handle, use media_format_unref().
+Output parameter fmt allocated #media_format_h
+  
+
+</dd>
+
+          <dt id="media_format_get_audio_aac_header_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_audio_aac_header_type.html">media_format_get_audio_aac_header_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_audio_aac_header_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_audio_aac_header_type-param-aac_header_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">aac_header_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets audio aac header type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get audio information
+Output parameter aac_header_type The #media_format_aac_header_type_e, ex) #MEDIA_FORMAT_AAC_HEADER_ADTS
+  
+
+</dd>
+
+          <dt id="media_format_get_audio_aac_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_audio_aac_type.html">media_format_get_audio_aac_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_audio_aac_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_audio_aac_type-param-is_adts"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_adts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets audio aac type of media format.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter fmt #media_format_h to get audio information
+Output parameter is_adts AAC ADTS flag of the audio
+  
+
+</dd>
+
+          <dt id="media_format_get_audio_bit_depth" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_audio_bit_depth.html">media_format_get_audio_bit_depth</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_audio_bit_depth-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_audio_bit_depth-param-bit_depth"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">bit_depth</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of bits of information in digital audio using pulse-code modulation (PCM).
+@since_tizen 5.5
+Parameter fmt The media format handle
+Output parameter bit_depth The number of bits of information in each sample
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_FORMAT_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_set_audio_aac_header_type()
+  
+
+</dd>
+
+          <dt id="media_format_get_audio_channel_mask" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_audio_channel_mask.html">media_format_get_audio_channel_mask</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_audio_channel_mask-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_audio_channel_mask-param-channel_mask"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">channel_mask</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets audio channel mask of media format.
+@since_tizen 5.5
+Parameter fmt The media format handle
+Output parameter channel_mask The output channel mask
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_PACKET_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_set_audio_channel_mask()
+@see media_format_channel_positions_from_mask()
+@par Example
+@code
+int channels;
+uint64_t channel_mask;
+media_format_channel_position_e *positions;
+  
+
+</dd>
+
+          <dt id="media_format_get_audio_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_audio_info.html">media_format_get_audio_info</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_audio_info-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_audio_info-param-mimetype"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mimetype</span>, </span><span class="parameter" id="media_format_get_audio_info-param-channel"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="media_format_get_audio_info-param-samplerate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">samplerate</span>, </span><span class="parameter" id="media_format_get_audio_info-param-bit"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">bit</span>, </span><span class="parameter" id="media_format_get_audio_info-param-avg_bps"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">avg_bps</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets audio information of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@details   returns mimetype, channels, height, samplerate bps, max bps of this media format.
+Parameter fmt #media_format_h to get audio information
+Output parameter mimetype #media_format_mimetype_e , ex) #MEDIA_FORMAT_PCM
+Output parameter channel channel of the audio
+Output parameter samplerate sampling rate of the audio
+Output parameter bit bit resolution of the audio
+Output parameter avg_bps average bps of the audio
+  
+
+</dd>
+
+          <dt id="media_format_get_container_mime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_container_mime.html">media_format_get_container_mime</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_container_mime-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_container_mime-param-mimetype"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mimetype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets container MIME type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get container mime type
+Output parameter mimetype The #media_format_mimetype_e, ex) #MEDIA_FORMAT_CONTAINER_MP4
+  
+
+</dd>
+
+          <dt id="media_format_get_extra" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_extra.html">media_format_get_extra</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_extra-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_extra-param-extra_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">extra_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets extra data of media format.
+@details	The user can get extra data which user sets value via media_format_set_extra().
+@since_tizen 4.0
+@remarks The application is responsible for freeing @a extra_data.
+For description of extra data behavior upon making an object writable,
+see the description of media_format_make_writable().
+Parameter  fmt   The media format handle
+Output parameter extra_data    The extra data to get
+  
+
+</dd>
+
+          <dt id="media_format_get_text_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_text_info.html">media_format_get_text_info</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_text_info-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_text_info-param-mimetype"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mimetype</span>, </span><span class="parameter" id="media_format_get_text_info-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets text track information of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get text information
+Output parameter mimetype The #media_format_mimetype_e, ex) #MEDIA_FORMAT_TEXT_MP4
+Output parameter type The #media_format_text_type_e
+  
+
+</dd>
+
+          <dt id="media_format_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_type.html">media_format_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_type-param-formattype"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">formattype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets format type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get format type
+Output parameter formattype The #media_format_type_e, ex) #MEDIA_FORMAT_AUDIO
+  
+
+</dd>
+
+          <dt id="media_format_get_video_frame_rate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_video_frame_rate.html">media_format_get_video_frame_rate</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_video_frame_rate-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_video_frame_rate-param-frame_rate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">frame_rate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets video frame rate of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get
+Output parameter frame_rate The video frame rate
+  
+
+</dd>
+
+          <dt id="media_format_get_video_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_get_video_info.html">media_format_get_video_info</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_get_video_info-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_get_video_info-param-mimetype"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mimetype</span>, </span><span class="parameter" id="media_format_get_video_info-param-width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="media_format_get_video_info-param-height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">height</span>, </span><span class="parameter" id="media_format_get_video_info-param-avg_bps"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">avg_bps</span>, </span><span class="parameter" id="media_format_get_video_info-param-max_bps"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">max_bps</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets video information of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@details   returns mimetype, width, height, average bps, max bps of this media format.
+Parameter fmt #media_format_h to get video information
+Output parameter mimetype #media_format_mimetype_e , ex) #MEDIA_FORMAT_H264_HP
+Output parameter width width of the video
+Output parameter height height of the video
+Output parameter avg_bps average bps of the video
+Output parameter max_bps max bps of the video
+  
+
+</dd>
+
+          <dt id="media_format_is_little_endian" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_is_little_endian.html">media_format_is_little_endian</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_is_little_endian-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_is_little_endian-param-is_little_endian"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_little_endian</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media format is little endian.
+@since_tizen 5.5
+Parameter  fmt    The media format  handle
+Output parameter is_little_endian  @c true if the given media format is little endian,
+@c false if the given media format is big endian
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_PACKET_ERROR_NONE              Successful
+@retval #MEDIA_PACKET_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_PACKET_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_mimetype_e
+@see media_format_type_e
+  
+
+</dd>
+
+          <dt id="media_format_is_writable" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_is_writable.html">media_format_is_writable</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_is_writable-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_is_writable-param-is_writable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_writable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the #media_format_h is writable or not.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt exist #media_format_h
+Output parameter is_writable if ref_count is 1, return true. if not, return false
+  
+
+</dd>
+
+          <dt id="media_format_make_writable" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_make_writable.html">media_format_make_writable</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_make_writable-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_make_writable-param-out_fmt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_format_h</span>&gt;</span></span> <span class="parameter-name">out_fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Returns a writable copy of #media_format_h.
+@details If there is only one reference count on fmt, the caller must be the owner,
+and so this function will return the object unchanged.
+while, if there is more than one reference count on the object, a new object will be returned.
+The caller will own a reference to the returned object.
+In a nutshell, this function unrefs the fmt and refs the out_fmt returned.
+Don't access fmt after calling this function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks If a new object is returned, it will not have its own copy of extra data.
+The new object's extra data object will be the original object's extra data.
+Parameter fmt exist #media_format_h , don't access it after calling this function
+Output parameter out_fmt new copied #media_format_h, the caller is owner of this object
+  
+
+</dd>
+
+          <dt id="media_format_ref" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_ref.html">media_format_ref</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_ref-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Increases reference count of #media_format_h object.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@details    increase ref_count of #media_format_h
+Parameter fmt exist #media_format_h
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_aac_header_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_aac_header_type.html">media_format_set_audio_aac_header_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_aac_header_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_aac_header_type-param-aac_header_type"><span class="type-annotation">int</span> <span class="parameter-name">aac_header_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio aac header type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to get audio information
+Parameter aac_header_type The #media_format_aac_header_type_e, ex) #MEDIA_FORMAT_AAC_HEADER_ADTS
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_aac_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_aac_type.html">media_format_set_audio_aac_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_aac_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_aac_type-param-is_adts"><span class="type-annotation">bool</span> <span class="parameter-name">is_adts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio aac type of media format.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@details   Sets audio aac data type of this media format
+Parameter fmt #media_format_h to set
+Parameter is_adts aac adts flag of the audio
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_avg_bps" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_avg_bps.html">media_format_set_audio_avg_bps</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_avg_bps-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_avg_bps-param-avg_bps"><span class="type-annotation">int</span> <span class="parameter-name">avg_bps</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio avg_bps of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter avg_bps average bit per second of the audio
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_bit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_bit.html">media_format_set_audio_bit</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_bit-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_bit-param-bit"><span class="type-annotation">int</span> <span class="parameter-name">bit</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio bit of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@details   Sets audio bit resolution of this media format
+Parameter fmt #media_format_h to set
+Parameter bit bit of the audio
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_channel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_channel.html">media_format_set_audio_channel</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_channel-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_channel-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio channel of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set audio information
+Parameter channel channel of the audio
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_channel_mask" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_channel_mask.html">media_format_set_audio_channel_mask</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_channel_mask-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_channel_mask-param-channel_mask"><span class="type-annotation">int</span> <span class="parameter-name">channel_mask</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio channel mask of media format.
+@since_tizen 5.5
+Parameter fmt The media format handle
+Parameter channel_mask The input channel mask
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_PACKET_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_get_audio_channel_mask()
+@see media_format_channel_positions_to_mask()
+@par Example
+@code
+uint64_t channel_mask;
+media_format_channel_position_e position<code>2</code>;
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_mime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_mime.html">media_format_set_audio_mime</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_mime-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_mime-param-mimetype"><span class="type-annotation">int</span> <span class="parameter-name">mimetype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio MIME type of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set audio information
+Parameter mimetype #media_format_mimetype_e , ex) #MEDIA_FORMAT_PCM
+  
+
+</dd>
+
+          <dt id="media_format_set_audio_samplerate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_audio_samplerate.html">media_format_set_audio_samplerate</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_audio_samplerate-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_audio_samplerate-param-samplerate"><span class="type-annotation">int</span> <span class="parameter-name">samplerate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets audio samplerate of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter samplerate sampling rate of the audio
+@pre must set audio MIME type by media_format_set_audio_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_container_mime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_container_mime.html">media_format_set_container_mime</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_container_mime-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_container_mime-param-mimetype"><span class="type-annotation">int</span> <span class="parameter-name">mimetype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets container MIME type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to set
+Parameter mimetype The #media_format_mimetype_e, ex) #MEDIA_FORMAT_CONTAINER_MP4
+  
+
+</dd>
+
+          <dt id="media_format_set_extra" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_extra.html">media_format_set_extra</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_extra-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_extra-param-extra_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">extra_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets extra data of media format.
+@details	The user can set data that media format does not support.
+@since_tizen 4.0
+@remarks The application is responsible for freeing @a extra_data.
+For description of extra data behavior upon making an object writable,
+see the description of media_format_make_writable().
+Parameter fmt   The media format handle
+Parameter extra_data  The extra data to set
+  
+
+</dd>
+
+          <dt id="media_format_set_text_mime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_text_mime.html">media_format_set_text_mime</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_text_mime-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_text_mime-param-mimetype"><span class="type-annotation">int</span> <span class="parameter-name">mimetype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets text MIME type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to set
+Parameter mimetype The #media_format_mimetype_e, ex) #MEDIA_FORMAT_TEXT
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_FORMAT_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_get_text_info()
+  
+
+</dd>
+
+          <dt id="media_format_set_text_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_text_type.html">media_format_set_text_type</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_text_type-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_text_type-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets text type of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to set
+Parameter type The text type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_FORMAT_ERROR_NONE Successful
+@retval #MEDIA_FORMAT_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_FORMAT_ERROR_INVALID_OPERATION Invalid operation
+@see media_format_get_text_info()
+  
+
+</dd>
+
+          <dt id="media_format_set_video_avg_bps" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_avg_bps.html">media_format_set_video_avg_bps</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_avg_bps-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_avg_bps-param-avg_bps"><span class="type-annotation">int</span> <span class="parameter-name">avg_bps</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video avg_bps of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter avg_bps average bps of the video
+@pre must set video MIME type by media_format_set_video_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_video_frame_rate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_frame_rate.html">media_format_set_video_frame_rate</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_frame_rate-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_frame_rate-param-frame_rate"><span class="type-annotation">int</span> <span class="parameter-name">frame_rate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video frame rate of media format.
+@since_tizen 3.0
+Parameter fmt The #media_format_h to set
+Parameter frame_rate The video frame rate
+@pre must set video MIME type by media_format_set_video_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_video_height" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_height.html">media_format_set_video_height</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_height-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_height-param-height"><span class="type-annotation">int</span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video height of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter height height of the video
+@pre must set video MIME type by media_format_set_video_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_video_max_bps" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_max_bps.html">media_format_set_video_max_bps</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_max_bps-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_max_bps-param-max_bps"><span class="type-annotation">int</span> <span class="parameter-name">max_bps</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video max_bps of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter max_bps max bps of the video
+@pre must set video MIME type by media_format_set_video_mime()
+  
+
+</dd>
+
+          <dt id="media_format_set_video_mime" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_mime.html">media_format_set_video_mime</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_mime-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_mime-param-mimetype"><span class="type-annotation">int</span> <span class="parameter-name">mimetype</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video MIME type of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter mimetype #media_format_mimetype_e , ex) #MEDIA_FORMAT_H264_HP
+  
+
+</dd>
+
+          <dt id="media_format_set_video_width" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_set_video_width.html">media_format_set_video_width</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_set_video_width-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_format_set_video_width-param-width"><span class="type-annotation">int</span> <span class="parameter-name">width</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets video width of media format.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt #media_format_h to set
+Parameter width width of the video
+@pre must set video MIME type by media_format_set_video_mime()
+  
+
+</dd>
+
+          <dt id="media_format_unref" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_format_unref.html">media_format_unref</a></span><span class="signature">(<wbr><span class="parameter" id="media_format_unref-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decreases reference count of #media_format_h object.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter fmt exist #media_format_h
+  
+
+</dd>
+
+          <dt id="media_packet_alloc" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_alloc.html">media_packet_alloc</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_alloc-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Allocates buffer with media packet handle.
+@details  Before using media_packet_alloc(), media packet handle must be exist.
+  
+
+</dd>
+
+          <dt id="media_packet_copy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_copy.html">media_packet_copy</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_copy-param-org_packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">org_packet</span>, </span><span class="parameter" id="media_packet_copy-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span><span class="parameter" id="media_packet_copy-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span><span class="parameter" id="media_packet_copy-param-new_packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">new_packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Copies a media packet handle.
+@details  It re-creates only media packet handle with exist media packet handle.
+  
+
+</dd>
+
+          <dt id="media_packet_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_create.html">media_packet_create</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_create-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_packet_create-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span><span class="parameter" id="media_packet_create-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span><span class="parameter" id="media_packet_create-param-packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Creates a media packet handle.
+@details  It creates only media packet handle without allocated buffer.
+  
+
+</dd>
+
+          <dt id="media_packet_create_alloc" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_create_alloc.html">media_packet_create_alloc</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_create_alloc-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_packet_create_alloc-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span><span class="parameter" id="media_packet_create_alloc-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span><span class="parameter" id="media_packet_create_alloc-param-packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Creates a media packet handle and allocates buffer.
+@details  The buffer will be allocated to heap or tbm_surface.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a packet should be released using media_packet_destroy().
+Parameter  fmt       The allocated #media_format_h by caller
+Parameter  fcb       The media_packet_finalize_cb() to register
+Parameter  fcb_data  The user data to be passed to the media_packet_finalize_cb() function
+Output parameter packet    A new handle for media packet
+  
+
+</dd>
+
+          <dt id="media_packet_create_from_external_memory" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_create_from_external_memory.html">media_packet_create_from_external_memory</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_create_from_external_memory-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_packet_create_from_external_memory-param-mem_ptr"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">mem_ptr</span>, </span><span class="parameter" id="media_packet_create_from_external_memory-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span>, </span><span class="parameter" id="media_packet_create_from_external_memory-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span><span class="parameter" id="media_packet_create_from_external_memory-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span><span class="parameter" id="media_packet_create_from_external_memory-param-packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Creates media packet handle with already allocated external buffer.
+@details It does not support video's #MEDIA_FORMAT_RAW type.
+  
+
+</dd>
+
+          <dt id="media_packet_create_from_tbm_surface" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_create_from_tbm_surface.html">media_packet_create_from_tbm_surface</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_create_from_tbm_surface-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span>, </span><span class="parameter" id="media_packet_create_from_tbm_surface-param-surface"><span class="type-annotation">tbm_surface_h</span> <span class="parameter-name">surface</span>, </span><span class="parameter" id="media_packet_create_from_tbm_surface-param-fcb"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span> <span class="parameter-name">fcb</span>, </span><span class="parameter" id="media_packet_create_from_tbm_surface-param-fcb_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">fcb_data</span>, </span><span class="parameter" id="media_packet_create_from_tbm_surface-param-packet"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Creates media packet handle and allocates buffer with #tbm_surface_h.
+  
+
+</dd>
+
+          <dt id="media_packet_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_destroy.html">media_packet_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_destroy-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the media packet handle.
+@details  The registered finalize_callback() function will be invoked to destroy the media packet handle.
+  
+
+</dd>
+
+          <dt id="media_packet_get_buffer_data_ptr" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_buffer_data_ptr.html">media_packet_get_buffer_data_ptr</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_buffer_data_ptr-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_buffer_data_ptr-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets buffer data pointer of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_buffer_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_buffer_size.html">media_packet_get_buffer_size</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_buffer_size-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_buffer_size-param-size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets buffer size of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_codec_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_codec_data.html">media_packet_get_codec_data</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_codec_data-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_codec_data-param-codec_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">codec_data</span>, </span><span class="parameter" id="media_packet_get_codec_data-param-codec_data_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">codec_data_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets codec data and the codec data size of media packet.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks The @a codec_data should be released using free().
+Parameter packet   The media packet handle
+Output parameter codec_data    The codec data to get
+Output parameter codec_data_size    The codec data size to get
+  
+
+</dd>
+
+          <dt id="media_packet_get_dts" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_dts.html">media_packet_get_dts</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_dts-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_dts-param-dts"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">dts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets decoding timestamp(dts) of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_duration" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_duration.html">media_packet_get_duration</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_duration-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_duration-param-duration"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">duration</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets duration of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_extra" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_extra.html">media_packet_get_extra</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_extra-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_extra-param-extra"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">extra</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets extra data of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_flags" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_flags.html">media_packet_get_flags</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_flags-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_flags-param-flags"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets #media_buffer_flags_e of media packet.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="media_packet_get_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_format.html">media_packet_get_format</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_format-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_format-param-fmt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_format_h</span>&gt;</span></span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets #media_format_h of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_number_of_video_planes" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_number_of_video_planes.html">media_packet_get_number_of_video_planes</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_number_of_video_planes-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_number_of_video_planes-param-num"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint32</span>&gt;</span></span> <span class="parameter-name">num</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of planes from tbm surface in the given media packet.
+@details Use only if the media_format_h is #MEDIA_FORMAT_RAW and #MEDIA_FORMAT_VIDEO.
+It means that media_packet_h's buffer is allocated on tbm_surface.
+If not sure of that, use media_packet_is_video() and media_packet_is_raw() or media_packet_has_tbm_surface_buffer().
+  
+
+</dd>
+
+          <dt id="media_packet_get_pts" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_pts.html">media_packet_get_pts</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_pts-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_pts-param-pts"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Uint64</span>&gt;</span></span> <span class="parameter-name">pts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets presentation timestamp(pts) of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_rotate_method" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_rotate_method.html">media_packet_get_rotate_method</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_rotate_method-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_rotate_method-param-method"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">method</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the rotation method.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="media_packet_get_tbm_surface" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_tbm_surface.html">media_packet_get_tbm_surface</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_tbm_surface-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_tbm_surface-param-surface"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">tbm_surface_h</span>&gt;</span></span> <span class="parameter-name">surface</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets TBM surface data of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_get_video_plane_data_ptr" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_video_plane_data_ptr.html">media_packet_get_video_plane_data_ptr</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_video_plane_data_ptr-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_video_plane_data_ptr-param-plane_idx"><span class="type-annotation">int</span> <span class="parameter-name">plane_idx</span>, </span><span class="parameter" id="media_packet_get_video_plane_data_ptr-param-plane_data_ptr"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">plane_data_ptr</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets plane data pointer from tbm surface in the given media packet.
+@details Use only if the media_format_h is #MEDIA_FORMAT_RAW and #MEDIA_FORMAT_VIDEO.
+It means that media_packet_h's buffer is allocated on tbm_surface.
+If not sure of that, use media_packet_is_video() and media_packet_is_raw() or media_packet_has_tbm_surface_buffer().
+  
+
+</dd>
+
+          <dt id="media_packet_get_video_stride_height" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_video_stride_height.html">media_packet_get_video_stride_height</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_video_stride_height-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_video_stride_height-param-plane_idx"><span class="type-annotation">int</span> <span class="parameter-name">plane_idx</span>, </span><span class="parameter" id="media_packet_get_video_stride_height-param-stride_height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">stride_height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets stride height from tbm surface in the given media packet.
+@details Use only if the media_format_h is #MEDIA_FORMAT_RAW and #MEDIA_FORMAT_VIDEO.
+It means that media_packet_h's buffer is allocated on tbm_surface.
+If not sure of that, use media_packet_is_video() and media_packet_is_raw() or media_packet_has_tbm_surface_buffer().
+  
+
+</dd>
+
+          <dt id="media_packet_get_video_stride_width" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_get_video_stride_width.html">media_packet_get_video_stride_width</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_get_video_stride_width-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_get_video_stride_width-param-plane_idx"><span class="type-annotation">int</span> <span class="parameter-name">plane_idx</span>, </span><span class="parameter" id="media_packet_get_video_stride_width-param-stride_width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">stride_width</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets stride width from tbm surface in the given media packet.
+@details Use only if the media_format_h is #MEDIA_FORMAT_RAW and #MEDIA_FORMAT_VIDEO.
+It means that media_packet_h's buffer is allocated on tbm_surface.
+If not sure of that, use media_packet_is_video() and media_packet_is_raw() or media_packet_has_tbm_surface_buffer().
+  
+
+</dd>
+
+          <dt id="media_packet_has_tbm_surface_buffer" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_has_tbm_surface_buffer.html">media_packet_has_tbm_surface_buffer</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_has_tbm_surface_buffer-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_has_tbm_surface_buffer-param-has_tbm_surface"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">has_tbm_surface</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the allocated buffer is tbm surface or not.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_audio" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_audio.html">media_packet_is_audio</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_audio-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_audio-param-is_audio"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_audio</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is for audio.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_codec_config" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_codec_config.html">media_packet_is_codec_config</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_codec_config-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_codec_config-param-is_codec_config"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_codec_config</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is codec data.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_encoded" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_encoded.html">media_packet_is_encoded</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_encoded-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_encoded-param-is_encoded"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_encoded</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is encoded type.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_end_of_stream" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_end_of_stream.html">media_packet_is_end_of_stream</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_end_of_stream-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_end_of_stream-param-is_eos"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_eos</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is eos.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_raw" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_raw.html">media_packet_is_raw</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_raw-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_raw-param-is_raw"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_raw</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is raw type.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_sync_frame" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_sync_frame.html">media_packet_is_sync_frame</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_sync_frame-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_sync_frame-param-is_sync"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_sync</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is sync frame.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_is_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_text.html">media_packet_is_text</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_text-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_text-param-is_text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_text</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is for text.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="media_packet_is_video" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_is_video.html">media_packet_is_video</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_is_video-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_is_video-param-is_video"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_video</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the given media packet is for video.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_pool_acquire_packet" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_acquire_packet.html">media_packet_pool_acquire_packet</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_acquire_packet-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span>, </span><span class="parameter" id="media_packet_pool_acquire_packet-param-pkt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_h</span>&gt;</span></span> <span class="parameter-name">pkt</span>, </span><span class="parameter" id="media_packet_pool_acquire_packet-param-timeout"><span class="type-annotation">int</span> <span class="parameter-name">timeout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Acquires a media packet from the media packet pool.
+@details	It will take a media packet from the queue and block until media packet is released into the pool again.
+When there are no media packets available, it will be increased to @a max_buffers of given parameter.
+  
+
+</dd>
+
+          <dt id="media_packet_pool_allocate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_allocate.html">media_packet_pool_allocate</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_allocate-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Allocates the media packet pool.
+@details It will allocate media packets with @a min_buffers which given to media_packet_pool_set_size().
+  
+
+</dd>
+
+          <dt id="media_packet_pool_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_create.html">media_packet_pool_create</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_create-param-pool"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">media_packet_pool_h</span>&gt;</span></span> <span class="parameter-name">pool</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Creates a media packet pool to handle the media packets.
+@details	It creates a media packet pool instance
+  
+
+</dd>
+
+          <dt id="media_packet_pool_deallocate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_deallocate.html">media_packet_pool_deallocate</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_deallocate-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Deallocates all the media packets.
+@details	Deallocates the packets allocated with media_packet_pool_allocate().
+  
+
+</dd>
+
+          <dt id="media_packet_pool_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_destroy.html">media_packet_pool_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_destroy-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Destroys the media packet pool.
+@details	Destroys the media packet pool handle and releases all its resources.
+  
+
+</dd>
+
+          <dt id="media_packet_pool_get_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_get_size.html">media_packet_pool_get_size</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_get_size-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span>, </span><span class="parameter" id="media_packet_pool_get_size-param-min_buffers"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">min_buffers</span>, </span><span class="parameter" id="media_packet_pool_get_size-param-max_buffers"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">max_buffers</span>, </span><span class="parameter" id="media_packet_pool_get_size-param-curr_buffers"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">curr_buffers</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Gets the media packet pool size.
+@details	Gets the configuration values from the pool.
+  
+
+</dd>
+
+          <dt id="media_packet_pool_release_packet" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_release_packet.html">media_packet_pool_release_packet</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_release_packet-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span>, </span><span class="parameter" id="media_packet_pool_release_packet-param-pkt"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">pkt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Releases the media packet to pool.
+@details	Rlease a packet back in the pool. It will put the packet back in the queue.
+  
+
+</dd>
+
+          <dt id="media_packet_pool_set_media_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_set_media_format.html">media_packet_pool_set_media_format</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_set_media_format-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span>, </span><span class="parameter" id="media_packet_pool_set_media_format-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Sets the media format for the media packet pool.
+  
+
+</dd>
+
+          <dt id="media_packet_pool_set_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_pool_set_size.html">media_packet_pool_set_size</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_pool_set_size-param-pool"><span class="type-annotation">media_packet_pool_h</span> <span class="parameter-name">pool</span>, </span><span class="parameter" id="media_packet_pool_set_size-param-min_buffers"><span class="type-annotation">int</span> <span class="parameter-name">min_buffers</span>, </span><span class="parameter" id="media_packet_pool_set_size-param-max_buffers"><span class="type-annotation">int</span> <span class="parameter-name">max_buffers</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief	Sets the media packet pool size.
+@details	Sets the number of packets to allocate with given parameters.
+The media packet pool will be allocated with @a min_buffers when media_packet_pool_allocate() is called.
+When there are no media packets available, it will be increased to @a max_buffers of given parameter.
+  
+
+</dd>
+
+          <dt id="media_packet_set_buffer_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_buffer_size.html">media_packet_set_buffer_size</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_buffer_size-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_buffer_size-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets buffer size of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_dts" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_dts.html">media_packet_set_dts</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_dts-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_dts-param-dts"><span class="type-annotation">int</span> <span class="parameter-name">dts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets decoding timestamp(dts) of media packet handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_duration" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_duration.html">media_packet_set_duration</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_duration-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_duration-param-duration"><span class="type-annotation">int</span> <span class="parameter-name">duration</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets duration of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_extra" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_extra.html">media_packet_set_extra</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_extra-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_extra-param-extra"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">extra</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets extra data of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_flags" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_flags.html">media_packet_set_flags</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_flags-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_flags-param-flags"><span class="type-annotation">int</span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets #media_buffer_flags_e of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_format.html">media_packet_set_format</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_format-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_format-param-fmt"><span class="type-annotation">media_format_h</span> <span class="parameter-name">fmt</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets #media_format_h of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_pts" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_pts.html">media_packet_set_pts</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_pts-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_pts-param-pts"><span class="type-annotation">int</span> <span class="parameter-name">pts</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets presentation timestamp(pts) of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+          <dt id="media_packet_set_rotate_method" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_set_rotate_method.html">media_packet_set_rotate_method</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_set_rotate_method-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_set_rotate_method-param-method"><span class="type-annotation">int</span> <span class="parameter-name">method</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the rotation method.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="media_packet_unset_flags" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_unset_flags.html">media_packet_unset_flags</a></span><span class="signature">(<wbr><span class="parameter" id="media_packet_unset_flags-param-packet"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">packet</span>, </span><span class="parameter" id="media_packet_unset_flags-param-flags"><span class="type-annotation">int</span> <span class="parameter-name">flags</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets #media_buffer_flags_e of media packet.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartmedia_packet_finalize_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/Dartmedia_packet_finalize_cbFunction.html">Dartmedia_packet_finalize_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartmedia_packet_finalize_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cbFunction.html">media_packet_finalize_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="media_packet_finalize_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cb.html">media_packet_finalize_cb</a></span>
+    = media_packet_finalize_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief   Called when the media packet is destroyed.
+@details It will be invoked when media_packet_destroy() is called.
+  
+
+</dd>
+
+
+          
+  <dt id="media_packet_finalize_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_media_tool/media_packet_finalize_cbFunction.html">media_packet_finalize_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= media_packet_finalize_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;media_packet_finalize_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_media_tool.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_media_tool library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

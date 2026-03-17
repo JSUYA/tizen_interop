@@ -1,0 +1,2984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_appfw_package_manager library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_appfw_package_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_package_manager.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_appfw_package_manager</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_appfw_package_manager&#47;tizen_6_0_tizen_capi_appfw_package_manager-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_appfw_package_manager</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiAppfwPackageManager</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiAppfwPackageManager</code>.
+Module symbol map: <code>capiAppfwPackageManagerSymbols</code>.
+Shared object(s): <code>libcapi-appfw-package-manager.so.0</code>.</p>
+<p>Application Framework / Package Manager.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="package_archive_info_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_create.html">package_archive_info_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_create-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="package_archive_info_create-param-archive_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_archive_info_h</span>&gt;</span></span> <span class="parameter-name">archive_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates the package archive information for the given package.
+@since_tizen 4.0
+@remarks If the given path is relevant to media storage, the privilege
+<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed.
+@remarks If the given path is relevant to external storage, the privilege
+<a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed.
+@remarks You must release @a archive_info
+using package_archive_info_destroy().
+Parameter  path         The path of the package
+Output parameter archive_info The package archive information for
+the given package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error
+@see package_archive_info_destroy()
+  
+
+</dd>
+
+          <dt id="package_archive_info_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_destroy.html">package_archive_info_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_destroy-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package archive information handle.
+@since_tizen 4.0
+Parameter archive_info The package archive information handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_archive_info_create()
+  
+
+</dd>
+
+          <dt id="package_archive_info_foreach_direct_dependency" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_foreach_direct_dependency.html">package_archive_info_foreach_direct_dependency</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_foreach_direct_dependency-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_foreach_direct_dependency-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cb.html">package_info_dependency_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_archive_info_foreach_direct_dependency-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves direct dependencies of the given package.
+@details package_info_dependency_info_cb() is called for each direct dependency of the given package.
+For example, if there are packages having the following relationship:
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_api_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_api_version.html">package_archive_info_get_api_version</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_api_version-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_api_version-param-api_version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">api_version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the API version of the package.
+@since_tizen 4.0
+@remarks You must release @a api_version using free().
+Parameter  archive_info The package archive information
+Output parameter api_version  The API version of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_author" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_author.html">package_archive_info_get_author</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_author-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_author-param-author"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">author</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the author of the package.
+@since_tizen 4.0
+@remarks You must release @a author using free().
+Parameter  archive_info The package archive information
+Output parameter author       The author of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_description" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_description.html">package_archive_info_get_description</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_description-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_description-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">description</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the description of the package.
+@since_tizen 4.0
+@remarks You must release @a description using free().
+Parameter  archive_info The package archive information
+Output parameter description  The description of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_icon.html">package_archive_info_get_icon</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_icon-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_icon-param-icon"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedChar</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">icon</span>, </span><span class="parameter" id="package_archive_info_get_icon-param-icon_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">icon_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the raw icon of the package.
+@since_tizen 4.0
+@remarks You must release @a icon using free().
+Parameter  archive_info The package archive information
+Output parameter icon         The raw icon of the package
+Output parameter icon_size    The size of the icon
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_label" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_label.html">package_archive_info_get_label</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_label-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_label-param-label"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">label</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the label of the package.
+@since_tizen 4.0
+@remarks You must release @a label using free().
+Parameter  archive_info The package archive information
+Output parameter label        The label of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_package.html">package_archive_info_get_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_package-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_package-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package name.
+@since_tizen 4.0
+@remarks You must release @a package using free().
+Parameter  archive_info The package archive information
+Output parameter package      The package name
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_type.html">package_archive_info_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_type-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the type of the package.
+@since_tizen 4.0
+@remarks You must release @a type using free().
+Parameter  archive_info The package archive information
+Output parameter type         The type of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_archive_info_get_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_archive_info_get_version.html">package_archive_info_get_version</a></span><span class="signature">(<wbr><span class="parameter" id="package_archive_info_get_version-param-archive_info"><span class="type-annotation">package_archive_info_h</span> <span class="parameter-name">archive_info</span>, </span><span class="parameter" id="package_archive_info_get_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the version of the package.
+@since_tizen 4.0
+@remarks You must release @a version using free().
+Parameter  archive_info The package archive information
+Output parameter version      The version of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_info_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_clone.html">package_info_clone</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_clone-param-clone"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_info_h</span>&gt;</span></span> <span class="parameter-name">clone</span>, </span><span class="parameter" id="package_info_clone-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones the package information handle.
+@since_tizen 2.3
+@remarks The @a clone should be released using package_info_destroy().
+Output parameter clone          The newly created package information handle
+Parameter  package_info   The package information
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   The package is not installed
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_info_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_create.html">package_info_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_create-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">package</span>, </span><span class="parameter" id="package_info_create-param-package_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_info_h</span>&gt;</span></span> <span class="parameter-name">package_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package information for the given package.
+@since_tizen 2.3
+@remarks You must release @a package_info using package_info_destroy().
+Parameter  package      The ID of the package
+Output parameter package_info The package information for the given package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   The package is not installed
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_info_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_destroy.html">package_info_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_destroy-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package information handle and releases all its resources.
+@since_tizen 2.3
+Parameter package_info The package information handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_foreach_package_info()
+@see package_manager_get_package_info()
+  
+
+</dd>
+
+          <dt id="package_info_foreach_app_from_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_app_from_package.html">package_info_foreach_app_from_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_foreach_app_from_package-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_foreach_app_from_package-param-comp_type"><span class="type-annotation">int</span> <span class="parameter-name">comp_type</span>, </span><span class="parameter" id="package_info_foreach_app_from_package-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cb.html">package_info_app_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_foreach_app_from_package-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all application IDs of each package.
+@since_tizen 2.3
+Parameter package_info  The package info handle
+Parameter comp_type     The application component type
+Parameter callback      The callback function to invoke
+Parameter user_data     The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@post This function invokes package_info_app_cb() repeatedly for each package.
+@see package_info_app_cb()
+  
+
+</dd>
+
+          <dt id="package_info_foreach_cert_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_cert_info.html">package_info_foreach_cert_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_foreach_cert_info-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_foreach_cert_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cb.html">package_info_cert_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_foreach_cert_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves certification information of the package.
+@since_tizen 2.3
+Parameter package_info The package information
+Parameter callback     The iteration callback function
+Parameter user_data    The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_foreach_dependency_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_dependency_info.html">package_info_foreach_dependency_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_foreach_dependency_info-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_foreach_dependency_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cb.html">package_info_dependency_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_foreach_dependency_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves dependencies between packages.
+@details @a callback is called whenever there is package dependency. The callback includes packages that are only directly required by the given package.
+For example, if there are packages having the following relationship:
+  
+
+</dd>
+
+          <dt id="package_info_foreach_dependency_info_depends_on" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_dependency_info_depends_on.html">package_info_foreach_dependency_info_depends_on</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_foreach_dependency_info_depends_on-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_foreach_dependency_info_depends_on-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cb.html">package_info_dependency_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_foreach_dependency_info_depends_on-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves which packages depend on the given package.
+@details @a callback is called whenever there is package dependency. The callback includes packages that are both directly and indirectly depend on the given package.
+For example, if there are packages having the following relationship:
+  
+
+</dd>
+
+          <dt id="package_info_foreach_privilege_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_foreach_privilege_info.html">package_info_foreach_privilege_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_foreach_privilege_info-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_foreach_privilege_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cb.html">package_info_privilege_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_foreach_privilege_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves privilege information of the package.
+@since_tizen 2.3
+Parameter package_info The package information
+Parameter callback     The iteration callback function
+Parameter user_data    The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_icon.html">package_info_get_icon</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_icon-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_icon-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the absolute path to the icon image.
+@since_tizen 2.3
+@remarks You must release @a path using free().
+Parameter  package_info The package information
+Output parameter path         The path of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_installed_storage" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_installed_storage.html">package_info_get_installed_storage</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_installed_storage-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_installed_storage-param-storage"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">storage</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the installed storage for the given package.
+@since_tizen 2.3
+Parameter  package_info The package information
+Output parameter storage      The installed storage
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_info_get_installed_time" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_installed_time.html">package_info_get_installed_time</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_installed_time-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_installed_time-param-installed_time"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">installed_time</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the installed time for the given package.
+@details If the package was updated, the @a installed_time represents updated time.
+So, the meaning of 'installed time' corresponds with 'last modified time'.
+@since_tizen 4.0
+Parameter  package_info   The package information
+Output parameter installed_time The integer value of time_t type for installed time
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Database error occurred
+  
+
+</dd>
+
+          <dt id="package_info_get_label" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_label.html">package_info_get_label</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_label-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_label-param-label"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">label</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the label of the package.
+@since_tizen 2.3
+@remarks You must release @a label using free().
+Parameter  package_info The package information
+Output parameter label        The label of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_main_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_main_app_id.html">package_info_get_main_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_main_app_id-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_main_app_id-param-main_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">main_app_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the main application ID of the package.
+@since_tizen 4.0
+@remarks You must release @a main_app_id using free().
+Parameter  package_info     The package information
+Output parameter main_app_id      The main application ID of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_package.html">package_info_get_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_package-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_package-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package name.
+@since_tizen 2.3
+@remarks You must release @a package using free().
+Parameter  package_info The package information
+Output parameter package      The package name
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_info_get_root_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_root_path.html">package_info_get_root_path</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_root_path-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_root_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the root path of the package.
+@since_tizen 2.3
+@remarks You must release @a path using free().
+Parameter  package_info The package information
+Output parameter path         The root path of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_tep_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_tep_name.html">package_info_get_tep_name</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_tep_name-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_tep_name-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Gets the name of the TEP (Tizen Expansion Package).
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+@remarks Name must be released using free().
+Parameter package_info The package information
+Output parameter name The name of the tep
+@return 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY Out of memory
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR Severe system error
+  
+
+</dd>
+
+          <dt id="package_info_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_type.html">package_info_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_type-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the type of the package.
+@since_tizen 2.3
+@remarks You must release @a type using free().
+Parameter  package_info The package information
+Output parameter type         The type of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_get_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_get_version.html">package_info_get_version</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_get_version-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_get_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the version of the package.
+@since_tizen 2.3
+@remarks You must release @a version using free().
+Parameter  package_info The package information
+Output parameter version      The version of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_is_accessible" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_accessible.html">package_info_is_accessible</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_is_accessible-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_is_accessible-param-accessible"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">accessible</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the package info is accessible for the given package.
+@since_tizen 2.3
+Parameter  package_info The package information
+Output parameter accessible   @c true if the package info is accessible,
+otherwise @c false if the package info is not accessible
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_info_is_equal" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_equal.html">package_info_is_equal</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_is_equal-param-lhs"><span class="type-annotation">package_info_h</span> <span class="parameter-name">lhs</span>, </span><span class="parameter" id="package_info_is_equal-param-rhs"><span class="type-annotation">package_info_h</span> <span class="parameter-name">rhs</span>, </span><span class="parameter" id="package_info_is_equal-param-equal"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">equal</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether two package information is equal.
+@since_tizen 2.3
+Parameter  lhs    The first package information to be compared
+Parameter  rhs    The second package information to be compared
+Output parameter equal  @c true if the package information are equal,
+otherwise @c false if package information are not equal
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Database error occurred
+  
+
+</dd>
+
+          <dt id="package_info_is_preload_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_preload_package.html">package_info_is_preload_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_is_preload_package-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_is_preload_package-param-preload"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">preload</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the package is preloaded.
+@since_tizen 2.3
+Parameter  package_info The package information
+Output parameter preload      The preload info of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_is_removable_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_removable_package.html">package_info_is_removable_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_is_removable_package-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_is_removable_package-param-removable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">removable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the package is removable.
+@since_tizen 2.3
+Parameter  package_info The package information
+Output parameter removable    The removable info of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR IO error
+  
+
+</dd>
+
+          <dt id="package_info_is_system_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_is_system_package.html">package_info_is_system_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_is_system_package-param-package_info"><span class="type-annotation">package_info_h</span> <span class="parameter-name">package_info</span>, </span><span class="parameter" id="package_info_is_system_package-param-system"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">system</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the package is system package.
+@since_tizen 2.3
+Parameter  package_info The package information
+Output parameter system       @c true if the package is system package,
+otherwise @c false if the package is not system package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_create.html">package_info_updateinfo_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_create-param-pkgid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">pkgid</span>, </span><span class="parameter" id="package_info_updateinfo_create-param-info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_updateinfo_h</span>&gt;</span></span> <span class="parameter-name">info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package update information for the given package.
+@since_tizen 4.0
+@remarks You must release @a info using package_info_updateinfo_destroy().
+Parameter  pkgid       The ID of the package
+Output parameter info        The package update information for the given package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   The package is not installed
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Database error occurred
+@see package_info_updateinfo_destroy()
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_destroy.html">package_info_updateinfo_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_destroy-param-info"><span class="type-annotation">package_updateinfo_h</span> <span class="parameter-name">info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package update information handle and releases all its resources.
+@since_tizen 4.0
+Parameter info         The package update information handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_info_updateinfo_create()
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_foreach_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_foreach_info.html">package_info_updateinfo_foreach_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_foreach_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cb.html">package_info_updateinfo_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_info_updateinfo_foreach_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves update information of all packages and invoke callback for each of it.
+@since_tizen 4.0
+Parameter callback     The iteration callback function
+Parameter user_data    The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_get_pkgid" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_pkgid.html">package_info_updateinfo_get_pkgid</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_get_pkgid-param-info"><span class="type-annotation">package_updateinfo_h</span> <span class="parameter-name">info</span>, </span><span class="parameter" id="package_info_updateinfo_get_pkgid-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package name.
+@since_tizen 4.0
+@remarks You must release @a package using free().
+Parameter  info        The package update information
+Output parameter package     The package name
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error occurred
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_type.html">package_info_updateinfo_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_get_type-param-info"><span class="type-annotation">package_updateinfo_h</span> <span class="parameter-name">info</span>, </span><span class="parameter" id="package_info_updateinfo_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the update type of package.
+@since_tizen 4.0
+Parameter  info        The package update information
+Output parameter type        The package update type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error occurred
+  
+
+</dd>
+
+          <dt id="package_info_updateinfo_get_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_get_version.html">package_info_updateinfo_get_version</a></span><span class="signature">(<wbr><span class="parameter" id="package_info_updateinfo_get_version-param-info"><span class="type-annotation">package_updateinfo_h</span> <span class="parameter-name">info</span>, </span><span class="parameter" id="package_info_updateinfo_get_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the update version of package.
+@since_tizen 4.0
+@remarks You must release @a version using free().
+Parameter  info        The package update information
+Output parameter version     The package update version
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error occurred
+  
+
+</dd>
+
+          <dt id="package_manager_clear_all_cache_dir" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_all_cache_dir.html">package_manager_clear_all_cache_dir</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief  Clears all applications' internal and external cache directory, asynchronously.
+@details All files stored in the cache directory of each application are removed.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_clear_cache_dir" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_cache_dir.html">package_manager_clear_cache_dir</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_clear_cache_dir-param-package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">package_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clears the application's internal and external cache directory, asynchronously.
+@details All files stored in the cache directory of the application specified with the package ID are removed.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.clearcache
+Parameter package_id  The package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_clear_data_dir" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_clear_data_dir.html">package_manager_clear_data_dir</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_clear_data_dir-param-package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">package_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Clears internal and external data directories used by applications in the given package.
+@details All files stored in data directories used by applications in the package specified with the @a package_id are removed.
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter package_id  The package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_compare_app_cert_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_compare_app_cert_info.html">package_manager_compare_app_cert_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_compare_app_cert_info-param-lhs_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">lhs_app_id</span>, </span><span class="parameter" id="package_manager_compare_app_cert_info-param-rhs_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">rhs_app_id</span>, </span><span class="parameter" id="package_manager_compare_app_cert_info-param-compare_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">compare_result</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Compares whether two app certifications are matched.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  lhs_app_id     The first app ID to compare
+Parameter  rhs_app_id     The second app ID to compare
+Output parameter compare_result @c 0 if the certification information are matched,
+otherwise the compared result
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Database error occurred
+  
+
+</dd>
+
+          <dt id="package_manager_compare_package_cert_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_compare_package_cert_info.html">package_manager_compare_package_cert_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_compare_package_cert_info-param-lhs_package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">lhs_package_id</span>, </span><span class="parameter" id="package_manager_compare_package_cert_info-param-rhs_package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">rhs_package_id</span>, </span><span class="parameter" id="package_manager_compare_package_cert_info-param-compare_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">compare_result</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Compares whether two package certifications are matched.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  lhs_package_id The first package ID to compare
+Parameter  rhs_package_id The second package ID to compare
+Output parameter compare_result @c 0 if the certification information are matched,
+otherwise the compared result
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Database error occurred
+  
+
+</dd>
+
+          <dt id="package_manager_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_create.html">package_manager_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_create-param-manager"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_manager_h</span>&gt;</span></span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a package manager handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+@remarks You must release @a manager using package_manager_destroy().
+Output parameter manager The package manager handle that is newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error
+@see package_manager_destroy()
+  
+
+</dd>
+
+          <dt id="package_manager_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_destroy.html">package_manager_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_destroy-param-manager"><span class="type-annotation">package_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package manager handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter manager The package manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_create()
+  
+
+</dd>
+
+          <dt id="package_manager_drm_decrypt_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_decrypt_package.html">package_manager_drm_decrypt_package</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_drm_decrypt_package-param-drm_file_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">drm_file_path</span>, </span><span class="parameter" id="package_manager_drm_decrypt_package-param-decrypted_file_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">decrypted_file_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Decrypts contents which is encrypted, asynchronously.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter drm_file_path DRM file path
+Parameter decrypted_file_path Decrypted file path
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR Internal I/O error
+  
+
+</dd>
+
+          <dt id="package_manager_drm_generate_license_request" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_generate_license_request.html">package_manager_drm_generate_license_request</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_drm_generate_license_request-param-resp_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">resp_data</span>, </span><span class="parameter" id="package_manager_drm_generate_license_request-param-req_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">req_data</span>, </span><span class="parameter" id="package_manager_drm_generate_license_request-param-license_url"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">license_url</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Generates request for getting License, asynchronously.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+@remarks You must release @a req_data and @a license_url by yourself.
+Parameter resp_data The response data string of the purchase request
+Output parameter req_data	License request data
+Output parameter license_url License acquisition url data
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR Internal I/O error
+@post package_manager_drm_register_license()
+  
+
+</dd>
+
+          <dt id="package_manager_drm_register_license" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_drm_register_license.html">package_manager_drm_register_license</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_drm_register_license-param-resp_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">resp_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Registers encrypted license, asynchronously.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter resp_data The response data string of the rights request
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR Internal I/O error
+@pre package_manager_drm_generate_license_request()
+  
+
+</dd>
+
+          <dt id="package_manager_filter_add_bool" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_add_bool.html">package_manager_filter_add_bool</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_filter_add_bool-param-handle"><span class="type-annotation">package_manager_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_manager_filter_add_bool-param-property"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">property</span>, </span><span class="parameter" id="package_manager_filter_add_bool-param-value"><span class="type-annotation">bool</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a boolean filter property to the filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter handle Pointer to the package info filter handle
+Parameter property boolean property name
+Parameter value value corresponding to the property
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR I/O error
+@pre package_manager_filter_create()
+@post package_manager_filter_destroy()
+@see package_manager_filter_count()
+@see package_manager_filter_foreach_package_info()
+  
+
+</dd>
+
+          <dt id="package_manager_filter_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_count.html">package_manager_filter_count</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_filter_count-param-handle"><span class="type-annotation">package_manager_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_manager_filter_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Counts the package that satisfy the filter conditions.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter handle Pointer to the package info filter handle
+Output parameter count Pointer to store the count value
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR I/O error
+@pre package_manager_filter_create()
+@post package_manager_filter_destroy()
+@see package_manager_filter_foreach_package_info()
+  
+
+</dd>
+
+          <dt id="package_manager_filter_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_create.html">package_manager_filter_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_filter_create-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_manager_filter_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates the package information filter handle from db.
+@details The filtered result will be based on AND operation of all added filter properties.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+@remarks The @a handle should be released using package_manager_filter_destroy().
+Output parameter handle Pointer to the package info filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR I/O error
+@post package_manager_filter_destroy()
+@see package_manager_filter_add_bool()
+@see package_manager_filter_foreach_package_info()
+  
+
+</dd>
+
+          <dt id="package_manager_filter_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_destroy.html">package_manager_filter_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_filter_destroy-param-handle"><span class="type-annotation">package_manager_filter_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package information filter handle freeing up all the resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter handle Pointer to the package info filter handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR I/O error
+@pre package_manager_filter_create()
+@see package_manager_filter_count()
+@see package_manager_filter_foreach_package_info()
+  
+
+</dd>
+
+          <dt id="package_manager_filter_foreach_package_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_filter_foreach_package_info.html">package_manager_filter_foreach_package_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_filter_foreach_package_info-param-handle"><span class="type-annotation">package_manager_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_manager_filter_foreach_package_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cb.html">package_manager_package_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_filter_foreach_package_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Executes the user supplied callback function for each package that satisfy the filter conditions.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter handle Pointer to the package info filter handle
+Parameter callback callback function
+Parameter user_data user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR I/O error
+@pre package_manager_filter_create()
+@post package_manager_filter_destroy()
+@post This function invokes package_manager_package_info_cb() repeatedly for each package information.
+@see package_manager_package_info_cb()
+@see package_manager_filter_count()
+  
+
+</dd>
+
+          <dt id="package_manager_foreach_package_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_foreach_package_info.html">package_manager_foreach_package_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_foreach_package_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cb.html">package_manager_package_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_foreach_package_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all package information of installed packages.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter callback  The callback function to be invoked
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@post This function invokes package_manager_package_info_cb() repeatedly for each package information.
+@see package_manager_package_info_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_get_package_id_by_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_id_by_app_id.html">package_manager_get_package_id_by_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_get_package_id_by_app_id-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="package_manager_get_package_id_by_app_id-param-package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package ID for the given app ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+@remarks The @a package_id should be released using free().
+Parameter  app_id     The ID of the application
+Output parameter package_id The ID of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+  
+
+</dd>
+
+          <dt id="package_manager_get_package_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_info.html">package_manager_get_package_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_get_package_info-param-package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">package_id</span>, </span><span class="parameter" id="package_manager_get_package_info-param-package_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_info_h</span>&gt;</span></span> <span class="parameter-name">package_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package information for the given package.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+@remarks You must release @a package_info using package_info_destroy().
+Parameter  package_id   The ID of the package
+Output parameter package_info The package information for the given package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR Database error occurred
+  
+
+</dd>
+
+          <dt id="package_manager_get_package_size_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_package_size_info.html">package_manager_get_package_size_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_get_package_size_info-param-package_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">package_id</span>, </span><span class="parameter" id="package_manager_get_package_size_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cb.html">package_manager_size_info_receive_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_get_package_size_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package size information, asynchronously.
+@details The package size info is asynchronously obtained by the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter package_id  The package ID
+Parameter callback    The asynchronous callback function to get the package size information
+Parameter user_data   The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_get_permission_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_permission_type.html">package_manager_get_permission_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_get_permission_type-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="package_manager_get_permission_type-param-permission_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">permission_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the package permission type by @a app_id.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter  app_id          The ID of the application
+Output parameter permission_type The package permission type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_manager_get_total_package_size_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_get_total_package_size_info.html">package_manager_get_total_package_size_info</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_get_total_package_size_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cb.html">package_manager_total_size_info_receive_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_get_total_package_size_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the total package size information, asynchronously.
+@details The total package size info is asynchronously obtained by the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter callback  The asynchronous callback function to get the total package size information
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_is_preload_package_by_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_is_preload_package_by_app_id.html">package_manager_is_preload_package_by_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_is_preload_package_by_app_id-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="package_manager_is_preload_package_by_app_id-param-preload"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">preload</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the package is preloaded by @a app_id.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter  app_id   The ID of the application
+Output parameter preload  The preload info of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+  
+
+</dd>
+
+          <dt id="package_manager_request_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_create.html">package_manager_request_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_create-param-request"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_manager_request_h</span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Creates a request handle to the package manager.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You must release @a request using package_manager_request_destroy().
+Output parameter request The request handle that is newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error
+@see package_manager_request_destroy()
+  
+
+</dd>
+
+          <dt id="package_manager_request_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_destroy.html">package_manager_request_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_destroy-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Destroys the request handle to the package manager.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter request The request handle to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_request_create()
+  
+
+</dd>
+
+          <dt id="package_manager_request_install" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install.html">package_manager_request_install</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_install-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_install-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="package_manager_request_install-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Installs the package located at the given path, asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request The request handle
+Parameter  path    The absolute path to the package to be installed
+Output parameter id      The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_request_uninstall()
+  
+
+</dd>
+
+          <dt id="package_manager_request_install_packages" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_packages.html">package_manager_request_install_packages</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_install_packages-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_install_packages-param-paths"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">paths</span>, </span><span class="parameter" id="package_manager_request_install_packages-param-paths_count"><span class="type-annotation">int</span> <span class="parameter-name">paths_count</span>, </span><span class="parameter" id="package_manager_request_install_packages-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Installs the packages located at the given paths, asynchronously.
+@since_tizen 6.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request The request handle
+Parameter  paths       The array of absolute paths to the packages to be installed
+Parameter  paths_count The number of paths in array
+Output parameter id          The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_request_install_packages_with_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_packages_with_cb.html">package_manager_request_install_packages_with_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_install_packages_with_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_install_packages_with_cb-param-paths"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">paths</span>, </span><span class="parameter" id="package_manager_request_install_packages_with_cb-param-paths_count"><span class="type-annotation">int</span> <span class="parameter-name">paths_count</span>, </span><span class="parameter" id="package_manager_request_install_packages_with_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_request_install_packages_with_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="package_manager_request_install_packages_with_cb-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Installs the packages located at the given paths, asynchronously.
+@details The progress of the request is asynchronously received by the callback function.
+The @a callback is the individual callback only called for the current API call.
+The @a callback is the only callback called, even if another callback was set for this request
+with package_manager_request_set_event_cb().
+@since_tizen 6.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request       The request handle
+Parameter  paths         The array of absolute paths to the packages to be installed
+Parameter  paths_count   The number of paths in array
+Parameter  callback      The callback function to be invoked
+Parameter  user_data     The user data to be passed to the callback function
+Output parameter id            The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE   No such package
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_request_install_with_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_install_with_cb.html">package_manager_request_install_with_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_install_with_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_install_with_cb-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="package_manager_request_install_with_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_request_install_with_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="package_manager_request_install_with_cb-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Installs the package located at the given path, asynchronously.
+@details The progress of the request is asynchronously received by the callback function.
+The @a callback is the individual callback only called for the current API call.
+The @a callback is the only callback called, even if another callback was set for this request
+with package_manager_request_set_event_cb().
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request   The request handle
+Parameter  path      The absolute path to the package to be installed
+Parameter  callback  The callback function to be invoked
+Parameter  user_data The user data to be passed to the callback function
+Output parameter id        The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_move" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_move.html">package_manager_request_move</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_move-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_move-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="package_manager_request_move-param-move_type"><span class="type-annotation">int</span> <span class="parameter-name">move_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Moves the package from SD card to the internal memory and vice versa, asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter request   The request handle
+Parameter name      The name of the package to be moved
+Parameter move_type The move type <code>#package_manager_move_type_e</code>, <code>external to internal/internal to external</code>
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_move_with_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_move_with_cb.html">package_manager_request_move_with_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_move_with_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_move_with_cb-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="package_manager_request_move_with_cb-param-move_type"><span class="type-annotation">int</span> <span class="parameter-name">move_type</span>, </span><span class="parameter" id="package_manager_request_move_with_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_request_move_with_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="package_manager_request_move_with_cb-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Moves the package from SD card to the internal memory and vice versa, asynchronously.
+@details The progress of the request is asynchronously received by the callback function.
+The @a callback is the individual callback only called for the current API call.
+The @a callback is the only callback called, even if another callback was set for this request
+with package_manager_request_set_event_cb().
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request   The request handle
+Parameter  name      The name of the package to be moved
+Parameter  move_type The move type <code>#package_manager_move_type_e</code>, <code>external to internal/internal to external</code>
+Parameter  callback  The callback function to be invoked
+Parameter  user_data The user data to be passed to the callback function
+Output parameter id        The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_set_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_event_cb.html">package_manager_request_set_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_set_event_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_set_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_request_set_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Registers a callback function to be invoked when the progress of the request changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter request The request handle
+Parameter callback The callback function to be registered
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@post package_manager_request_event_cb() will be invoked.
+@see package_manager_request_event_cb()
+@see package_manager_request_unset_event_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_request_set_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_mode.html">package_manager_request_set_mode</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_set_mode-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_set_mode-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Sets the mode of the request.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter request The request handle
+Parameter mode    The mode of the request
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_set_tep" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_tep.html">package_manager_request_set_tep</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_set_tep-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_set_tep-param-tep_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">tep_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Sets the path of TEP file to the request. The TEP file that is set will be installed when the package is installed.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter request The request handle
+Parameter tep_path The TEP path to set. If this is NULL on update, installed TEP will be removed.
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR		 Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_request_set_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_set_type.html">package_manager_request_set_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_set_type-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_set_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Sets the type of the package to install, uninstall, or update.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter request The request handle
+Parameter type    The type of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_uninstall" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_uninstall.html">package_manager_request_uninstall</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_uninstall-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_uninstall-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="package_manager_request_uninstall-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Uninstalls the package with the given name, asynchronously.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request The request handle
+Parameter  name    The name of the package to be uninstalled
+Output parameter id      The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_uninstall_with_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_uninstall_with_cb.html">package_manager_request_uninstall_with_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_uninstall_with_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="package_manager_request_uninstall_with_cb-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="package_manager_request_uninstall_with_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_request_uninstall_with_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="package_manager_request_uninstall_with_cb-param-id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Uninstalls the package with the given name, asynchronously.
+@details The progress of the request is asynchronously received by the callback function.
+The @a callback is the individual callback only called for the current API call.
+The @a callback is the only callback called, even if another callback was set for this request
+with package_manager_request_set_event_cb().
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  request   The request handle
+Parameter  name      The name of the package to be uninstalled
+Parameter  callback  The callback function to be invoked
+Parameter  user_data The user data to be passed to the callback function
+Output parameter id        The ID of the request to the package manager
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_manager_request_unset_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_unset_event_cb.html">package_manager_request_unset_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_request_unset_event_cb-param-request"><span class="type-annotation">package_manager_request_h</span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter request The request handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_request_event_cb()
+@see package_manager_request_set_event_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_set_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_set_event_cb.html">package_manager_set_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_set_event_cb-param-manager"><span class="type-annotation">package_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="package_manager_set_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cb.html">package_manager_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="package_manager_set_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when the package is installed, uninstalled, or updated.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/packagemanager.info
+Parameter manager    The package manager handle
+Parameter callback   The callback function to be registered
+Parameter user_data  The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@post package_manager_event_cb() will be invoked.
+@see package_manager_set_event_status()
+@see package_manager_event_cb()
+@see package_manager_unset_event_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_set_event_status" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_set_event_status.html">package_manager_set_event_status</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_set_event_status-param-manager"><span class="type-annotation">package_manager_h</span> <span class="parameter-name">manager</span>, </span><span class="parameter" id="package_manager_set_event_status-param-status_type"><span class="type-annotation">int</span> <span class="parameter-name">status_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the event status of the package when the package is installed, uninstalled, or updated.
+@details You can combine multiple status using OR operation which you want to listen.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter manager     The package manager handle
+Parameter status_type The status of the package
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          Internal I/O error
+@see package_manager_status_type_e
+@see package_manager_set_event_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_unset_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_unset_event_cb.html">package_manager_unset_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_unset_event_cb-param-manager"><span class="type-annotation">package_manager_h</span> <span class="parameter-name">manager</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter manager The package manager handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_event_cb()
+@see package_manager_set_event_cb()
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_request_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_create.html">package_manager_updateinfo_request_create</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_request_create-param-pkg_updateinfo_req"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">package_updateinfo_request_h</span>&gt;</span></span> <span class="parameter-name">pkg_updateinfo_req</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Creates a package update info request.
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+@remarks You must release @a pkg_updateinfo_req using package_manager_updateinfo_request_destroy().
+Output parameter pkg_updateinfo_req The package update info request handle that is newly created on success
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@see package_manager_updateinfo_request_destroy()
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_request_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_destroy.html">package_manager_updateinfo_request_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_request_destroy-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the package update info request.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req    The update info request handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_updateinfo_request_create()
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_request_register" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_register.html">package_manager_updateinfo_request_register</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_request_register-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to register package update info in platform.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req    The update info request handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+@see package_manager_updateinfo_request_create()
+@see package_manager_updateinfo_request_destroy()
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_request_unregister" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_unregister.html">package_manager_updateinfo_request_unregister</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_request_unregister-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span>, </span><span class="parameter" id="package_manager_updateinfo_request_unregister-param-pkgid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">pkgid</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to unregister update info in platform for given package id.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req   The update info request handle
+Parameter pkgid                The package id to request unregister update info
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_request_unregister_all" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_request_unregister_all.html">package_manager_updateinfo_request_unregister_all</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_request_unregister_all-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Request to unregister update info of all packages in platform.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req    The update info request handle
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_IO_ERROR          I/O error
+@retval #PACKAGE_MANAGER_ERROR_SYSTEM_ERROR      Severe system error
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_set_pkgid" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_pkgid.html">package_manager_updateinfo_set_pkgid</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_set_pkgid-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span>, </span><span class="parameter" id="package_manager_updateinfo_set_pkgid-param-pkgid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">pkgid</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the package ID to the package update info request.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req   The update info request handle
+Parameter pkgid                The package ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@see package_manager_updateinfo_request_create()
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_set_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_type.html">package_manager_updateinfo_set_type</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_set_type-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span>, </span><span class="parameter" id="package_manager_updateinfo_set_type-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the package update type to the package update info request.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req   The update info request handle
+Parameter type                 The package update type
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@see package_manager_updateinfo_request_create()
+@see package_updateinfo_type_e
+  
+
+</dd>
+
+          <dt id="package_manager_updateinfo_set_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_updateinfo_set_version.html">package_manager_updateinfo_set_version</a></span><span class="signature">(<wbr><span class="parameter" id="package_manager_updateinfo_set_version-param-pkg_updateinfo_req"><span class="type-annotation">package_updateinfo_request_h</span> <span class="parameter-name">pkg_updateinfo_req</span>, </span><span class="parameter" id="package_manager_updateinfo_set_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the package version to the package update info request.
+@since_tizen 4.0
+Parameter pkg_updateinfo_req   The update info request handle
+Parameter version              The package version
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY     Out of memory
+@see package_manager_updateinfo_request_create()
+  
+
+</dd>
+
+          <dt id="package_size_info_get_app_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_app_size.html">package_size_info_get_app_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_app_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_app_size-param-app_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">app_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves application size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle Package size info handle
+Output parameter app_size App size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_size_info_get_cache_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_cache_size.html">package_size_info_get_cache_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_cache_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_cache_size-param-cache_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">cache_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves cache size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle  Package size info handle
+Output parameter cache_size Cache size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_size_info_get_data_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_data_size.html">package_size_info_get_data_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_data_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_data_size-param-data_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">data_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves data size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle Package size info handle
+Output parameter data_size Data size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_size_info_get_external_app_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_app_size.html">package_size_info_get_external_app_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_external_app_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_external_app_size-param-ext_app_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">ext_app_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves external application size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle Package size info handle
+Output parameter ext_app_size External app size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_size_info_get_external_cache_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_cache_size.html">package_size_info_get_external_cache_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_external_cache_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_external_cache_size-param-ext_cache_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">ext_cache_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves external cache size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle Package size info handle
+Output parameter ext_cache_size External cache size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+          <dt id="package_size_info_get_external_data_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_size_info_get_external_data_size.html">package_size_info_get_external_data_size</a></span><span class="signature">(<wbr><span class="parameter" id="package_size_info_get_external_data_size-param-handle"><span class="type-annotation">package_size_info_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="package_size_info_get_external_data_size-param-ext_data_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">LongLong</span>&gt;</span></span> <span class="parameter-name">ext_data_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves external data size from given handle.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter handle  Package size info handle
+Output parameter ext_data_size External data size will be returned
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PACKAGE_MANAGER_ERROR_NONE              Successful
+@retval #PACKAGE_MANAGER_ERROR_INVALID_PARAMETER Invalid parameter
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartpackage_info_app_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_app_cbFunction.html">Dartpackage_info_app_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_info_app_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cbFunction.html">package_info_app_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_info_cert_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_cert_info_cbFunction.html">Dartpackage_info_cert_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_info_cert_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cbFunction.html">package_info_cert_info_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_info_dependency_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_dependency_info_cbFunction.html">Dartpackage_info_dependency_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_info_dependency_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cbFunction.html">package_info_dependency_info_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_info_privilege_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_privilege_info_cbFunction.html">Dartpackage_info_privilege_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_info_privilege_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cbFunction.html">package_info_privilege_info_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_info_updateinfo_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_info_updateinfo_cbFunction.html">Dartpackage_info_updateinfo_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_info_updateinfo_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cbFunction.html">package_info_updateinfo_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_manager_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_event_cbFunction.html">Dartpackage_manager_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_manager_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cbFunction.html">package_manager_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_manager_package_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_package_info_cbFunction.html">Dartpackage_manager_package_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_manager_package_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cbFunction.html">package_manager_package_info_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_manager_request_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_request_event_cbFunction.html">Dartpackage_manager_request_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_manager_request_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cbFunction.html">package_manager_request_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_manager_size_info_receive_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_size_info_receive_cbFunction.html">Dartpackage_manager_size_info_receive_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_manager_size_info_receive_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cbFunction.html">package_manager_size_info_receive_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartpackage_manager_total_size_info_receive_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/Dartpackage_manager_total_size_info_receive_cbFunction.html">Dartpackage_manager_total_size_info_receive_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartpackage_manager_total_size_info_receive_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cbFunction.html">package_manager_total_size_info_receive_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="package_info_app_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cb.html">package_info_app_cb</a></span>
+    = package_info_app_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to get the application ID once for each installed package.
+@since_tizen 2.3
+Parameter comp_type The application component type
+Parameter app_id    The application ID.
+Parameter user_data The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre package_info_foreach_app_from_package() will invoke this callback.
+@see package_info_foreach_app_from_package()
+  
+
+</dd>
+
+
+          
+  <dt id="package_info_app_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_app_cbFunction.html">package_info_app_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_info_app_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_info_app_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_info_cert_info_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cb.html">package_info_cert_info_cb</a></span>
+    = package_info_cert_info_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to get the certification information.
+@since_tizen 2.3
+Parameter handle       The package info handle
+Parameter cert_type    The certificate type
+Parameter cert_value   The certificate value of corresponding certificate key \n
+This value is base64 encoded data.
+Parameter user_data    The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre package_info_foreach_cert_info() will invoke this callback.
+@see package_info_foreach_cert_info()
+  
+
+</dd>
+
+
+          
+  <dt id="package_info_cert_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_cert_info_cbFunction.html">package_info_cert_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_info_cert_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_info_cert_info_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_info_dependency_info_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cb.html">package_info_dependency_info_cb</a></span>
+    = package_info_dependency_info_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when dependency information between packages is retrieved.
+@since_tizen 5.5
+@remarks @a from, @a to, @a type and @a required_version are managed by the platform and will be released after the callback exits.
+Parameter from             The ID of package that depends on another
+Parameter to               The ID of package that is required by another
+Parameter type             The type of dependency
+Parameter required_version The required version
+Parameter user_data        The user data passed from the foreach function
+@return  @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre package_info_foreach_dependency_info() will invoke this callback.
+@pre package_info_foreach_dependency_info_depends_on() will invoke this callback.
+@see package_info_foreach_dependency_info()
+@see package_info_foreach_dependency_info_depends_on()
+  
+
+</dd>
+
+
+          
+  <dt id="package_info_dependency_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_dependency_info_cbFunction.html">package_info_dependency_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_info_dependency_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_info_dependency_info_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_info_privilege_info_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cb.html">package_info_privilege_info_cb</a></span>
+    = package_info_privilege_info_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to get the privilege information.
+@since_tizen 2.3
+Parameter privilege_name the name of the privilege
+Parameter user_data    The user data passed from the foreach function
+@return  @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre package_info_foreach_privilege_info() will invoke this callback.
+@see package_info_foreach_privilege_info()
+  
+
+</dd>
+
+
+          
+  <dt id="package_info_privilege_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_privilege_info_cbFunction.html">package_info_privilege_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_info_privilege_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_info_privilege_info_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_info_updateinfo_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cb.html">package_info_updateinfo_cb</a></span>
+    = package_info_updateinfo_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called for each update information of all packages.
+@since_tizen 4.0
+@remarks @a info should not be freed and can be used only in the callback.
+Parameter info       The package update information handle
+Parameter user_data  The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@pre package_info_updateinfo_foreach_info() will invoke this callback.
+@see package_info_updateinfo_foreach_info()
+  
+
+</dd>
+
+
+          
+  <dt id="package_info_updateinfo_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_info_updateinfo_cbFunction.html">package_info_updateinfo_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_info_updateinfo_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_info_updateinfo_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_manager_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cb.html">package_manager_event_cb</a></span>
+    = package_manager_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the package is installed, uninstalled, or updated, and the progress of the request to the package manager changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter type The type of the package to be installed, uninstalled, or updated
+Parameter package The name of the package to be installed, uninstalled, or updated
+Parameter event_type The type of the request to the package manager
+Parameter event_state The current state of the request to the package manager
+Parameter progress    The progress for the request that is being processed by the package manager \n
+The range of progress is from @c 0 to @c 100
+Parameter error       The error code when the package manager failed to process the request
+Parameter user_data   The user data passed from package_manager_set_event_cb()
+@see package_manager_set_event_cb()
+@see package_manager_unset_event_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="package_manager_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_event_cbFunction.html">package_manager_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_manager_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_manager_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_manager_package_info_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cb.html">package_manager_package_info_cb</a></span>
+    = package_manager_package_info_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to retrieve all packages.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter package_info The package information
+Parameter user_data    The user data passed from the foreach function
+@return  @c true to continue with the next iteration of the loop,
+otherwise @c false to break out of the loop
+@see package_manager_foreach_package_info()
+  
+
+</dd>
+
+
+          
+  <dt id="package_manager_package_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_package_info_cbFunction.html">package_manager_package_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_manager_package_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_manager_package_info_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_manager_request_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cb.html">package_manager_request_event_cb</a></span>
+    = package_manager_request_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Called when the progress of the request to the package manager changes.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter id          The ID of the request to the package manager
+Parameter type        The type of the package to install, uninstall or update
+Parameter package     The name of the package to install, uninstall or update
+Parameter event_type  The type of the request to the package manager
+Parameter event_state The current state of the request to the package manager
+Parameter progress    The progress for the request that is being processed by the package manager \n
+The range of progress is from @c 0 to @c 100.
+Parameter error       The error code when the package manager failed to process the request
+Parameter user_data   The user data passed from package_manager_request_set_event_cb()
+@see package_manager_request_set_event_cb()
+@see package_manager_request_unset_event_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="package_manager_request_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_request_event_cbFunction.html">package_manager_request_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_manager_request_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_manager_request_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_manager_size_info_receive_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cb.html">package_manager_size_info_receive_cb</a></span>
+    = package_manager_size_info_receive_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the package size information is obtained.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter package_id  The package ID
+Parameter size_info   The pointer to the structure including the package size information
+Parameter user_data   The user data to be passed to the callback function
+  
+
+</dd>
+
+
+          
+  <dt id="package_manager_size_info_receive_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_size_info_receive_cbFunction.html">package_manager_size_info_receive_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_manager_size_info_receive_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_manager_size_info_receive_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="package_manager_total_size_info_receive_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cb.html">package_manager_total_size_info_receive_cb</a></span>
+    = package_manager_total_size_info_receive_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Called when the total package size information is obtained.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter size_info  The pointer to the structure including the package size information
+Parameter user_data  The user data to be passed to the callback function
+  
+
+</dd>
+
+
+          
+  <dt id="package_manager_total_size_info_receive_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_package_manager/package_manager_total_size_info_receive_cbFunction.html">package_manager_total_size_info_receive_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= package_manager_total_size_info_receive_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;package_manager_total_size_info_receive_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_package_manager.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_appfw_package_manager library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

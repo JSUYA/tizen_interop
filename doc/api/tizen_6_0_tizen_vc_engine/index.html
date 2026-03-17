@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_vc_engine library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_vc_engine library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_vc_engine.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_vc_engine</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_vc_engine&#47;tizen_6_0_tizen_vc_engine-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_vc_engine</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenVcEngine</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenVcEngine</code>.
+Module symbol map: <code>vc_engineSymbols</code>.
+Shared object(s): <code>libvc_engine.so</code>.</p>
+<p>UIX / Voice control engine.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+<p>Symbols declared in <code>generated_symbols.dart</code> but not found in <code>generated_bindings.dart</code>:</p>
+<ul>
+<li><code>vc_cmd_create</code></li>
+<li><code>vc_cmd_destroy</code></li>
+<li><code>vc_cmd_get_command</code></li>
+<li><code>vc_cmd_get_format</code></li>
+<li><code>vc_cmd_get_type</code></li>
+<li><code>vc_cmd_get_unfixed_command</code></li>
+<li><code>vc_cmd_list_add</code></li>
+<li><code>vc_cmd_list_create</code></li>
+<li><code>vc_cmd_list_destroy</code></li>
+<li><code>vc_cmd_list_first</code></li>
+<li><code>vc_cmd_list_foreach_commands</code></li>
+<li><code>vc_cmd_list_get_count</code></li>
+<li><code>vc_cmd_list_get_current</code></li>
+<li><code>vc_cmd_list_last</code></li>
+<li><code>vc_cmd_list_next</code></li>
+<li><code>vc_cmd_list_prev</code></li>
+<li><code>vc_cmd_list_remove</code></li>
+<li><code>vc_cmd_set_command</code></li>
+<li><code>vc_cmd_set_format</code></li>
+<li><code>vc_cmd_set_type</code></li>
+</ul>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="vce_get_audio_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_get_audio_type.html">vce_get_audio_type</a></span><span class="signature">(<wbr><span class="parameter" id="vce_get_audio_type-param-audio_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">audio_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets current audio type.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The @a audio_type must be released using free() when it is no longer required.
+Parameter audio_type Current audio type (e.g. #VCE_AUDIO_ID_BLUETOOTH or #VCE_AUDIO_ID_WIFI)
+@return the value greater than 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+  
+
+</dd>
+
+          <dt id="vce_get_command_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_get_command_count.html">vce_get_command_count</a></span><span class="signature">(<wbr><span class="parameter" id="vce_get_command_count-param-vce_command"><span class="type-annotation">vce_cmd_h</span> <span class="parameter-name">vce_command</span>, </span><span class="parameter" id="vce_get_command_count-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets command length.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_get_foreach_command" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_get_foreach_command.html">vce_get_foreach_command</a></span><span class="signature">(<wbr><span class="parameter" id="vce_get_foreach_command-param-vce_command"><span class="type-annotation">vce_cmd_h</span> <span class="parameter-name">vce_command</span>, </span><span class="parameter" id="vce_get_foreach_command-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_command_cb.html">vce_command_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="vce_get_foreach_command-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all commands using callback function.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_get_private_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_get_private_data.html">vce_get_private_data</a></span><span class="signature">(<wbr><span class="parameter" id="vce_get_private_data-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="vce_get_private_data-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets private data from a voice manager client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The @a data must be released using free() when it is no longer required.
+Parameter key Private key
+Output parameter data Private data
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_INVALID_STATE Invalid state
+@retval #VCE_ERROR_OPERATION_FAILED Operation failed
+  
+
+</dd>
+
+          <dt id="vce_main" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_main.html">vce_main</a></span><span class="signature">(<wbr><span class="parameter" id="vce_main-param-argc"><span class="type-annotation">int</span> <span class="parameter-name">argc</span>, </span><span class="parameter" id="vce_main-param-argv"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">argv</span>, </span><span class="parameter" id="vce_main-param-callback"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">vce_request_callback_s</span>&gt;</span></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts the main function for Voice Control (VC) engine.
+@details This function is the main function for operating VC engine.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The service_app_main() should be used for working the engine after this function.
+Parameter argc The argument count(original)
+Parameter argv The argument(original)
+Parameter callback The structure of engine request callback function
+@return This function returns @c zero on success, or negative with error code on failure
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failed
+@pre The vce_get_engine_info() should be successful.
+@see vce_get_engine_info()
+@see vce_unload_engine()
+@see vce_request_callback_s
+@code
+#include &lt;vce.h&gt;
+  
+
+</dd>
+
+          <dt id="vce_send_asr_result" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_asr_result.html">vce_send_asr_result</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_asr_result-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span>, </span><span class="parameter" id="vce_send_asr_result-param-asr_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">asr_result</span>, </span><span class="parameter" id="vce_send_asr_result-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the ASR result to the engine service user.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter event A asr result event
+Parameter asr_result A asr result text
+Parameter user_data The user data passed from the start
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@pre The vce_main() function should be invoked before this function is called.
+@see vce_start_cb()
+  
+
+</dd>
+
+          <dt id="vce_send_error" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_error.html">vce_send_error</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_error-param-error"><span class="type-annotation">int</span> <span class="parameter-name">error</span>, </span><span class="parameter" id="vce_send_error-param-msg"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">msg</span>, </span><span class="parameter" id="vce_send_error-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the error to the engine service user.
+@details The following error codes can be delivered. \n
+#VCE_ERROR_NONE, \n
+#VCE_ERROR_OUT_OF_MEMORY, \n
+#VCE_ERROR_IO_ERROR, \n
+#VCE_ERROR_INVALID_PARAMETER, \n
+#VCE_ERROR_OUT_OF_NETWORK, \n
+#VCE_ERROR_RECORDER_BUSY, \n
+#VCE_ERROR_NOT_SUPPORTED, \n
+#VCE_ERROR_INVALID_STATE, \n
+#VCE_ERROR_INVALID_LANGUAGE, \n
+#VCE_ERROR_OPERATION_FAILED, \n
+#VCE_ERROR_PERMISSION_DENIED, \n
+#VCE_ERROR_NOT_SUPPORTED_FEATURE.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter error Error type
+Parameter msg Error message
+Parameter user_data The user data passed from set callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@pre The vce_main() function should be invoked before this function is called.
+  
+
+</dd>
+
+          <dt id="vce_send_feedback_audio_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_feedback_audio_format.html">vce_send_feedback_audio_format</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_feedback_audio_format-param-rate"><span class="type-annotation">int</span> <span class="parameter-name">rate</span>, </span><span class="parameter" id="vce_send_feedback_audio_format-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="vce_send_feedback_audio_format-param-audio_type"><span class="type-annotation">int</span> <span class="parameter-name">audio_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends audio formats necessary for playing TTS feedback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_send_feedback_streaming" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_feedback_streaming.html">vce_send_feedback_streaming</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_feedback_streaming-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span>, </span><span class="parameter" id="vce_send_feedback_streaming-param-buffer"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">buffer</span>, </span><span class="parameter" id="vce_send_feedback_streaming-param-len"><span class="type-annotation">int</span> <span class="parameter-name">len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends audio streaming necessary for playing TTS feedback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_send_nlg_result" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_nlg_result.html">vce_send_nlg_result</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_nlg_result-param-nlg_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">nlg_result</span>, </span><span class="parameter" id="vce_send_nlg_result-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the NLG (Natural Language Generation) result to the engine service user.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter nlg_result A nlg result
+Parameter user_data The user data passed from the start
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@pre The vce_main() function should be invoked before this function is called.
+@see vce_start_cb()
+  
+
+</dd>
+
+          <dt id="vce_send_result" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_result.html">vce_send_result</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_result-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span>, </span><span class="parameter" id="vce_send_result-param-result_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">result_id</span>, </span><span class="parameter" id="vce_send_result-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span>, </span><span class="parameter" id="vce_send_result-param-all_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">all_result</span>, </span><span class="parameter" id="vce_send_result-param-non_fixed_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">non_fixed_result</span>, </span><span class="parameter" id="vce_send_result-param-nlu_result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">nlu_result</span>, </span><span class="parameter" id="vce_send_result-param-msg"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">msg</span>, </span><span class="parameter" id="vce_send_result-param-user_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">user_info</span>, </span><span class="parameter" id="vce_send_result-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the results to the engine service user.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+Parameter event A result event
+Parameter result_id Result ids
+Parameter count Result count
+Parameter all_result All result text
+Parameter non_fixed_result Non-fixed command result text
+Parameter nlu_result NLU result text
+Parameter msg Engine message (e.g. #VC_RESULT_MESSAGE_NONE, #VC_RESULT_MESSAGE_ERROR_TOO_LOUD)
+Output parameter user_info A user info (e.g. If ASR result is consumed, the value is 0x01. If not, the value is 0x00.)
+Parameter user_data The user data passed from set callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_INVALID_STATE Invalid state
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@pre The vce_main() function should be invoked before this function is called.
+vce_stop_cb() will invoke this callback.
+@see vce_stop_cb()
+  
+
+</dd>
+
+          <dt id="vce_send_specific_engine_result" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_send_specific_engine_result.html">vce_send_specific_engine_result</a></span><span class="signature">(<wbr><span class="parameter" id="vce_send_specific_engine_result-param-engine_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">engine_app_id</span>, </span><span class="parameter" id="vce_send_specific_engine_result-param-event"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">event</span>, </span><span class="parameter" id="vce_send_specific_engine_result-param-result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">result</span>, </span><span class="parameter" id="vce_send_specific_engine_result-param-user_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the specific engine result to the engine service user.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_set_cancel_tts_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_cancel_tts_cb.html">vce_set_cancel_tts_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_cancel_tts_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_cancel_tts_cb.html">vce_cancel_tts_cb</a></span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="vce_set_cancel_tts_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for getting the request of canceling TTS feedback from the engine service user.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_set_nlu_base_info_requested_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_nlu_base_info_requested_cb.html">vce_set_nlu_base_info_requested_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_nlu_base_info_requested_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_nlu_base_info_requested_cb.html">vce_nlu_base_info_requested_cb</a></span> <span class="parameter-name">callback_func</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for requesting the NLU base information to the engine service.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The vce_nlu_base_info_requested_cb() function is called when the engine service user requests the NLU base information to the engine service.
+Parameter callback_func vce_nlu_base_info_requested event callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@retval #VCE_ERROR_NOT_SUPPORTED_FEATURE Not supported feature
+@see vce_nlu_base_info_requested_cb()
+  
+
+</dd>
+
+          <dt id="vce_set_private_data" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_private_data.html">vce_set_private_data</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_private_data-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="vce_set_private_data-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets private data to a voice manager client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+Parameter key Private key
+Parameter data Private data
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_INVALID_STATE Invalid state
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failed
+  
+
+</dd>
+
+          <dt id="vce_set_private_data_requested_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_private_data_requested_cb.html">vce_set_private_data_requested_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_private_data_requested_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_requested_cb.html">vce_private_data_requested_cb</a></span> <span class="parameter-name">callback_func</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for requesting the private data to the engine service.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The vce_private_data_requested_cb() function is called when the engine service user requests the private data to the engine service.
+Parameter callback_func vce_private_data_requested event callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@see vce_private_data_requested_cb()
+  
+
+</dd>
+
+          <dt id="vce_set_private_data_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_private_data_set_cb.html">vce_set_private_data_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_private_data_set_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_set_cb.html">vce_private_data_set_cb</a></span> <span class="parameter-name">callback_func</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for setting the private data to the engine service.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The vce_private_data_set_cb() function is called when the engine service user sets the private data to the engine service.
+Parameter callback_func vce_private_data_set event callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@retval #VCE_ERROR_NOT_SUPPORTED_FEATURE Not supported feature
+@pre The vce_main() function should be invoked before this function is called.
+@see vce_private_data_set_cb()
+  
+
+</dd>
+
+          <dt id="vce_set_request_tts_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_request_tts_cb.html">vce_set_request_tts_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_request_tts_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_request_tts_cb.html">vce_request_tts_cb</a></span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="vce_set_request_tts_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for getting the request of sending TTS feedback from the engine service user.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_set_specific_engine_request_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_specific_engine_request_cb.html">vce_set_specific_engine_request_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_specific_engine_request_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_specific_engine_request_cb.html">vce_specific_engine_request_cb</a></span> <span class="parameter-name">callback_func</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for getting the engine service request.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="vce_set_tts_audio_format_request_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_set_tts_audio_format_request_cb.html">vce_set_tts_audio_format_request_cb</a></span><span class="signature">(<wbr><span class="parameter" id="vce_set_tts_audio_format_request_cb-param-callback_func"><span class="type-annotation"><a href="../tizen_6_0_tizen_vc_engine/vce_tts_audio_format_request_cb.html">vce_tts_audio_format_request_cb</a></span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="vce_set_tts_audio_format_request_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function for sending TTS audio format to the engine service user.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_start_recording" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_start_recording.html">vce_start_recording</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts recording voice.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+@retval #VCE_ERROR_RECORDER_BUSY Busy recorder
+  
+
+</dd>
+
+          <dt id="vce_stop_recording" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_stop_recording.html">vce_stop_recording</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Stops recording voice.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failure
+  
+
+</dd>
+
+          <dt id="vce_unset_cancel_tts_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_unset_cancel_tts_cb.html">vce_unset_cancel_tts_cb</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the TTS feedback cancellation callback function.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_unset_get_tts_audio_format_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_unset_get_tts_audio_format_cb.html">vce_unset_get_tts_audio_format_cb</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the TTS audio format request callback function.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_unset_request_tts_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_unset_request_tts_cb.html">vce_unset_request_tts_cb</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the TTS feedback request callback function.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="vce_unset_specific_engine_request_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_unset_specific_engine_request_cb.html">vce_unset_specific_engine_request_cb</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the engine service request callback function.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartvce_cancel_tts_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_cancel_tts_cbFunction.html">Dartvce_cancel_tts_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_cancel_tts_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_cancel_tts_cbFunction.html">vce_cancel_tts_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_command_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_command_cbFunction.html">Dartvce_command_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_command_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_command_cbFunction.html">vce_command_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_nlu_base_info_requested_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_nlu_base_info_requested_cbFunction.html">Dartvce_nlu_base_info_requested_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_nlu_base_info_requested_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_nlu_base_info_requested_cbFunction.html">vce_nlu_base_info_requested_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_private_data_requested_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_private_data_requested_cbFunction.html">Dartvce_private_data_requested_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_private_data_requested_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_private_data_requested_cbFunction.html">vce_private_data_requested_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_private_data_set_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_private_data_set_cbFunction.html">Dartvce_private_data_set_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_private_data_set_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_private_data_set_cbFunction.html">vce_private_data_set_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_request_tts_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_request_tts_cbFunction.html">Dartvce_request_tts_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_request_tts_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_request_tts_cbFunction.html">vce_request_tts_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_specific_engine_request_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_specific_engine_request_cbFunction.html">Dartvce_specific_engine_request_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_specific_engine_request_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_specific_engine_request_cbFunction.html">vce_specific_engine_request_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartvce_tts_audio_format_request_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/Dartvce_tts_audio_format_request_cbFunction.html">Dartvce_tts_audio_format_request_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartvce_tts_audio_format_request_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_vc_engine/vce_tts_audio_format_request_cbFunction.html">vce_tts_audio_format_request_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_cancel_tts_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_cancel_tts_cb.html">vce_cancel_tts_cb</a></span>
+    = vce_cancel_tts_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user cancels TTS feedback.
+@since_tizen 5.0
+  
+
+</dd>
+
+
+          
+  <dt id="vce_cancel_tts_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_cancel_tts_cbFunction.html">vce_cancel_tts_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_cancel_tts_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_cancel_tts_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_command_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_command_cb.html">vce_command_cb</a></span>
+    = vce_command_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called to retrieve the commands.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a command, @a param can be used only in the callback. To use outside, make a copy.
+Parameter id command id
+Parameter type command type
+Parameter format command format
+Parameter command command text
+Parameter param parameter text
+Parameter domain command domain
+Parameter user_data The user data passed from the foreach function
+@return @c true to continue with the next iteration of the loop, \n @c false to break out of the loop.
+@pre vce_get_foreach_command() will invoke this callback.
+@see vce_get_foreach_command()
+  
+
+</dd>
+
+
+          
+  <dt id="vce_command_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_command_cbFunction.html">vce_command_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_command_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_command_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_nlu_base_info_requested_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_nlu_base_info_requested_cb.html">vce_nlu_base_info_requested_cb</a></span>
+    = vce_nlu_base_info_requested_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user requests essential value from NLU result.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a key can be used only in the callback. To use outside, make a copy.
+The @a value is managed by the platform and will be released when this callback function is completed.
+Parameter key NLU base info key.
+Output parameter value NLU base info value.
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful.
+@retval #VCE_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_nlu_base_info_requested_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_nlu_base_info_requested_cbFunction.html">vce_nlu_base_info_requested_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_nlu_base_info_requested_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_nlu_base_info_requested_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_private_data_requested_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_requested_cb.html">vce_private_data_requested_cb</a></span>
+    = vce_private_data_requested_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user requests private data between app and engine.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a key can be used only in the callback. To use outside, make a copy.
+The @a data is managed by the platform and will be released when this callback function is completed.
+Parameter key Private key.
+Output parameter data Private data.
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful.
+@retval #VCE_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_private_data_requested_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_requested_cbFunction.html">vce_private_data_requested_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_private_data_requested_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_private_data_requested_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_private_data_set_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_set_cb.html">vce_private_data_set_cb</a></span>
+    = vce_private_data_set_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user sets private data between app and engine.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a key, @a data can be used only in the callback. To use outside, make a copy.
+Parameter key Private key.
+Parameter data Private data.
+@return 0 on success, otherwise a negative error value.
+@retval #VCE_ERROR_NONE Successful.
+@retval #VCE_ERROR_NOT_SUPPORTED_FEATURE Not supported feature.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_private_data_set_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_private_data_set_cbFunction.html">vce_private_data_set_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_private_data_set_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_private_data_set_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_request_tts_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_request_tts_cb.html">vce_request_tts_cb</a></span>
+    = vce_request_tts_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user (voice control client) requests to send TTS feedback.
+@since_tizen 5.0
+@remarks The @a text and @a language can be used only in the callback. To use outside, make a copy.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_request_tts_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_request_tts_cbFunction.html">vce_request_tts_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_request_tts_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_request_tts_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_specific_engine_request_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_specific_engine_request_cb.html">vce_specific_engine_request_cb</a></span>
+    = vce_specific_engine_request_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when client gets the specific engine's request from the engine service user.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@remarks The @a engine_app_id is managed by the platform and will be released when this callback function is completed.
+The @a event is managed by the platform and will be released when this callback function is completed.
+The @a request is managed by the platform and will be released when this callback function is completed.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_specific_engine_request_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_specific_engine_request_cbFunction.html">vce_specific_engine_request_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_specific_engine_request_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_specific_engine_request_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="vce_tts_audio_format_request_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_tts_audio_format_request_cb.html">vce_tts_audio_format_request_cb</a></span>
+    = vce_tts_audio_format_request_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the engine service user requests TTS audio format.
+@since_tizen 5.0
+@remarks The @a rate, @a channel, and @a audio_type should not be released.
+The @a rate, @a channel, and @a audio_type are managed by the platform and will be released after the audio format is transferred to the VC client.
+  
+
+</dd>
+
+
+          
+  <dt id="vce_tts_audio_format_request_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_vc_engine/vce_tts_audio_format_request_cbFunction.html">vce_tts_audio_format_request_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= vce_tts_audio_format_request_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;vce_tts_audio_format_request_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_vc_engine.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_vc_engine library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

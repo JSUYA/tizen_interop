@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_appfw_app_manager library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_appfw_app_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_app_manager.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_appfw_app_manager</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_appfw_app_manager&#47;tizen_6_0_tizen_capi_appfw_app_manager-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_capi_appfw_app_manager</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiAppfwAppManager</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenCapiAppfwAppManager</code>.
+Module symbol map: <code>capiAppfwAppManagerSymbols</code>.
+Shared object(s): <code>libcapi-appfw-app-manager.so.0</code>.</p>
+<p>Application Framework / Application Manager.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="app_context_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_clone.html">app_context_clone</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_clone-param-clone"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_context_h</span>&gt;</span></span> <span class="parameter-name">clone</span>, </span><span class="parameter" id="app_context_clone-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Clones the application context handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a clone should be released using app_context_destroy()
+Output parameter  clone        The newly created application context handle, if cloning is successful
+Parameter   app_context  The application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_context_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_destroy.html">app_context_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_destroy-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Destroys the application context handle and releases all its resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_context  The application context handle
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@see app_manager_foreach_app_context()
+@see app_manager_get_app_context()
+  
+
+</dd>
+
+          <dt id="app_context_get_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_get_app_id.html">app_context_get_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_get_app_id-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_get_app_id-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">app_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief    Gets the application ID with the given application context.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a app_id using free().
+Parameter   app_context  The application context
+Output parameter  app_id       The application ID of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_context_get_app_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_get_app_state.html">app_context_get_app_state</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_get_app_state-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_get_app_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the application state with the given application context.
+@since_tizen 3.0
+@remarks Note that application's state might be changed after you get app_context.
+This function just returns the state of application when you get the app_context.
+Parameter   app_context  The application context
+Output parameter  state        The application state of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_context_get_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_get_package.html">app_context_get_package</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_get_package-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_get_package-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 2.3.1. Use app_context_get_app_id() instead.
+@brief    Gets the application ID with the given application context.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You must release @a package using free().
+Parameter   app_context  The application context
+Output parameter  package      The application ID of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_context_get_package_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_get_package_id.html">app_context_get_package_id</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_get_package_id-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_get_package_id-param-pkg_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pkg_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the package id with the given application context.
+@since_tizen 3.0
+@remarks     You must release @a pkg_id using free().
+Parameter   app_context  The application context
+Output parameter  pkg_id   The package ID of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_context_get_pid" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_get_pid.html">app_context_get_pid</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_get_pid-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_get_pid-param-pid"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">pid_t</span>&gt;</span></span> <span class="parameter-name">pid</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the process ID with the given application context.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_context  The application context
+Output parameter  pid          The process ID of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_context_is_equal" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_is_equal.html">app_context_is_equal</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_is_equal-param-lhs"><span class="type-annotation">app_context_h</span> <span class="parameter-name">lhs</span>, </span><span class="parameter" id="app_context_is_equal-param-rhs"><span class="type-annotation">app_context_h</span> <span class="parameter-name">rhs</span>, </span><span class="parameter" id="app_context_is_equal-param-equal"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">equal</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether two application contexts are equal.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   lhs    The first application context to compare
+Parameter   rhs    The second application context to compare
+Output parameter  equal  @c true if the application contexts are equal, \n
+otherwise @c false if they are not equal
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_context_is_sub_app" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_is_sub_app.html">app_context_is_sub_app</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_is_sub_app-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_is_sub_app-param-is_sub_app"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">is_sub_app</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether the application is running as a sub application of the application group.
+@since_tizen 3.0
+Parameter   app_context  The application context
+Output parameter  is_sub_app @c true if the sub application of the group, \n
+otherwise @c false if the main application of the group
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_context_is_terminated" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_context_is_terminated.html">app_context_is_terminated</a></span><span class="signature">(<wbr><span class="parameter" id="app_context_is_terminated-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span>, </span><span class="parameter" id="app_context_is_terminated-param-terminated"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">terminated</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether the application with the given application context is terminated.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_context  The application context
+Output parameter  terminated   @c true if the application is terminated, \n
+otherwise @c false if the application is running
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_clone.html">app_info_clone</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_clone-param-clone"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_info_h</span>&gt;</span></span> <span class="parameter-name">clone</span>, </span><span class="parameter" id="app_info_clone-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Clones the application information handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a clone should be released using app_info_destroy().
+Output parameter  clone     A newly created application information handle, if successfully cloned
+Parameter   app_info  The application information
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_NO_SUCH_APP        The app is not installed
+  
+
+</dd>
+
+          <dt id="app_info_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_create.html">app_info_create</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_create-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_info_create-param-app_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_info_h</span>&gt;</span></span> <span class="parameter-name">app_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Creates the application information handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a app_info should be released using app_info_destroy().
+Parameter   app_id    The application ID
+Output parameter  app_info  The application information handle
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_NO_SUCH_APP        The app is not installed
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@see app_manager_foreach_app_info()
+@see app_manager_get_app_info()
+  
+
+</dd>
+
+          <dt id="app_info_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_destroy.html">app_info_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_destroy-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Destroys the application information handle and releases all its resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info  The application information handle
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@see app_manager_foreach_app_info()
+@see app_manager_get_app_info()
+  
+
+</dd>
+
+          <dt id="app_info_filter_add_bool" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_add_bool.html">app_info_filter_add_bool</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_add_bool-param-handle"><span class="type-annotation">app_info_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_filter_add_bool-param-property"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">property</span>, </span><span class="parameter" id="app_info_filter_add_bool-param-value"><span class="type-annotation">bool</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Adds a boolean filter property to the filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle    The pointer to the application info filter handle
+Parameter  property  The integer property name
+Parameter  value     The value corresponding to the property
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_filter_add_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_add_string.html">app_info_filter_add_string</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_add_string-param-handle"><span class="type-annotation">app_info_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_filter_add_string-param-property"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">property</span>, </span><span class="parameter" id="app_info_filter_add_string-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Adds a string filter property to the filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle    The pointer to the application info filter handle
+Parameter  property  The integer property name
+Parameter  value     The value corresponding to the property
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_filter_count_appinfo" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_count_appinfo.html">app_info_filter_count_appinfo</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_count_appinfo-param-handle"><span class="type-annotation">app_info_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_filter_count_appinfo-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the count of filtered apps.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   handle  The pointer to the application info filter handle
+Output parameter  count   The pointer to the variable for count
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_filter_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_create.html">app_info_filter_create</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_create-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_info_filter_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Creates the application information filter handle from DB.
+All filter properties will be ANDed.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a handle should be released using app_info_filter_destroy().
+Output parameter  handle  The pointer to the application info filter handle
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_filter_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_destroy.html">app_info_filter_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_destroy-param-handle"><span class="type-annotation">app_info_filter_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Destroys the application information filter handle, freeing up all the resources.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle  The pointer to the application info filter handle
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_filter_foreach_appinfo" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_foreach_appinfo.html">app_info_filter_foreach_appinfo</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_filter_foreach_appinfo-param-handle"><span class="type-annotation">app_info_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_filter_foreach_appinfo-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_cb.html">app_info_filter_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_info_filter_foreach_appinfo-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Executes the user supplied callback function for each application that satisfy the filter conditions.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle     The pointer to the application info filter handle
+Parameter  callback   The callback function
+Parameter  user_data  The user data to be passed to the callback function
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_foreach_category" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_foreach_category.html">app_info_foreach_category</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_foreach_category-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_foreach_category-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_category_cb.html">app_info_category_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_info_foreach_category-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief  Runs a callback for each category which the given application belongs to.
+@since_tizen 4.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+Parameter  app_info   The application information
+Parameter  callback   The callback function
+Parameter  user_data  The user data to be passed to the callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_PERMISSION_DENIED  Permission denied
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+@see app_info_create()
+  
+
+</dd>
+
+          <dt id="app_info_foreach_metadata" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_foreach_metadata.html">app_info_foreach_metadata</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_foreach_metadata-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_foreach_metadata-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_cb.html">app_info_metadata_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_info_foreach_metadata-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the list of metadata for a particular application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  app_info   The application information
+Parameter  callback   The callback function for list
+Parameter  user_data  The user data to be passed to callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_get_app_component_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_app_component_type.html">app_info_get_app_component_type</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_app_component_type-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_app_component_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the application component type.
+@since_tizen 4.0
+Parameter   app_info  The application information
+Output parameter  type      The application component type
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+@see #PACKAGE_INFO_PROP_APP_COMPONENT_TYPE
+@see #app_info_app_component_type_e
+  
+
+</dd>
+
+          <dt id="app_info_get_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_app_id.html">app_info_get_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_app_id-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_app_id-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">app_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the application ID with the given application context.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a app_id using free().
+Parameter   app_info  The application information
+Output parameter  app_id    The application ID of the given application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_exec" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_exec.html">app_info_get_exec</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_exec-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_exec-param-exec"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">exec</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the executable path of the application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a exec path using free().
+Parameter   app_info The application information
+Output parameter  exec     The executable path of the application
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_icon.html">app_info_get_icon</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_icon-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_icon-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the absolute path to the icon image.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a path using free().
+Parameter   app_info  The application information
+Output parameter  path      The absolute path to the icon
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_label" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_label.html">app_info_get_label</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_label-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_label-param-label"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">label</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the label of the application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a label using free().
+Parameter   app_info  The application information
+Output parameter  label     The label of the application
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_localed_label" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_localed_label.html">app_info_get_localed_label</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_localed_label-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_info_get_localed_label-param-locale"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">locale</span>, </span><span class="parameter" id="app_info_get_localed_label-param-label"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">label</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the localed name of the application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release localed name using free().
+Parameter   app_id  The application ID
+Parameter   locale  The locale information
+Output parameter  label   The localed name of the application
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_package" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_package.html">app_info_get_package</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_package-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_package-param-package"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">package</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the package name.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a package name using free().
+Parameter   app_info  The application information
+Output parameter  package   The package name
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_get_type.html">app_info_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_get_type-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_get_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the package type name.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release package @a type name using free().
+Parameter   app_info The application information
+Output parameter  type     The package type
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_info_is_enabled" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_enabled.html">app_info_is_enabled</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_enabled-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_is_enabled-param-enabled"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">enabled</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether application is enabled.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info  The application information
+Output parameter  enabled   @c true if the application is enabled, \n
+otherwise @c false
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_is_equal" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_equal.html">app_info_is_equal</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_equal-param-lhs"><span class="type-annotation">app_info_h</span> <span class="parameter-name">lhs</span>, </span><span class="parameter" id="app_info_is_equal-param-rhs"><span class="type-annotation">app_info_h</span> <span class="parameter-name">rhs</span>, </span><span class="parameter" id="app_info_is_equal-param-equal"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">equal</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether two application information are equal.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   lhs    The first application information to compare
+Parameter   rhs    The second application information to compare
+Output parameter  equal  @c true if the application information are equal, \n
+otherwise @c false
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_is_nodisplay" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_nodisplay.html">app_info_is_nodisplay</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_nodisplay-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_is_nodisplay-param-nodisplay"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">nodisplay</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether application information is nodisplay.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info   The application information
+Output parameter  nodisplay  @c true if the application is nodisplay, \n
+otherwise @c false
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_is_onboot" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_onboot.html">app_info_is_onboot</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_onboot-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_is_onboot-param-onboot"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">onboot</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether application is launched on booting time.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info  The application information
+Output parameter  onboot    @c true if the application is launched on booting time, \n
+otherwise @c false
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_is_preload" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_preload.html">app_info_is_preload</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_preload-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_is_preload-param-preload"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">preload</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether application is preloaded.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info  The application information
+Output parameter  preload   @c true if the application is preloaded, \n
+otherwise @c false
+@return        @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_is_support_ambient" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_is_support_ambient.html">app_info_is_support_ambient</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_is_support_ambient-param-app_info"><span class="type-annotation">app_info_h</span> <span class="parameter-name">app_info</span>, </span><span class="parameter" id="app_info_is_support_ambient-param-ambient_supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">ambient_supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether the application supports ambient mode.
+@since_tizen 5.5
+Parameter   app_info         The application information
+Output parameter  ambient_supported  @c true if the application supports ambient mode, \n
+otherwise @c false
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_info_metadata_filter_add" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_filter_add.html">app_info_metadata_filter_add</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_metadata_filter_add-param-handle"><span class="type-annotation">app_info_metadata_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_metadata_filter_add-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="app_info_metadata_filter_add-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Adds filter condition for the query API.
+@details  The query will search the entire application metadata information collected from
+the manifest file of all the installed packages. You can specify value as @c NULL to search based on key only.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle  The pointer to the application metadata info filter handle
+Parameter  key     The pointer to metadata key
+Parameter  value   The pointer to metadata value
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_metadata_filter_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_filter_create.html">app_info_metadata_filter_create</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_metadata_filter_create-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_info_metadata_filter_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Creates the application's metadata information filter handle from DB.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The @a handle should be released using app_info_metadata_filter_destroy().
+Output parameter  handle  The pointer to the application metadata info filter handle
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_metadata_filter_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_filter_destroy.html">app_info_metadata_filter_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_metadata_filter_destroy-param-handle"><span class="type-annotation">app_info_metadata_filter_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Destroys the application's metadata information filter handle.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle  The pointer to the application info filter handle
+@return  @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_info_metadata_filter_foreach" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_filter_foreach.html">app_info_metadata_filter_foreach</a></span><span class="signature">(<wbr><span class="parameter" id="app_info_metadata_filter_foreach-param-handle"><span class="type-annotation">app_info_metadata_filter_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_info_metadata_filter_foreach-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_cb.html">app_info_filter_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_info_metadata_filter_foreach-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Executes the filter query.
+@details  The query will search the entire application metadata information collected from
+the manifest file of all the installed packages. For each application returned by the query, the callback will be called. If callback returns
+negative value, no more callbacks will be called and API will return.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  handle     The pointer to the application metadata info filter handle
+Parameter  callback   The function pointer to callback
+Parameter  user_data  The pointer to user data
+@return     @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           I/O error
+  
+
+</dd>
+
+          <dt id="app_manager_event_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_create.html">app_manager_event_create</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_event_create-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_manager_event_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a app manager event handle.
+@since_tizen 3.0
+@remarks You must release @a handle using app_manager_event_destroy().
+  
+
+</dd>
+
+          <dt id="app_manager_event_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_destroy.html">app_manager_event_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_event_destroy-param-handle"><span class="type-annotation">app_manager_event_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the app manager event handle.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="app_manager_event_set_status" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_set_status.html">app_manager_event_set_status</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_event_set_status-param-handle"><span class="type-annotation">app_manager_event_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_manager_event_set_status-param-status_type"><span class="type-annotation">int</span> <span class="parameter-name">status_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the event to handle to listen.
+You can combine multiple status using OR operation which you want to listen.
+@since_tizen 3.0
+  
+
+</dd>
+
+          <dt id="app_manager_foreach_app_context" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_foreach_app_context.html">app_manager_foreach_app_context</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_foreach_app_context-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_cb.html">app_manager_app_context_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_manager_foreach_app_context-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Retrieves all application contexts of running applications.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks  In case of ui applications, sub apps in application groups will not be shown.
+Parameter   callback   The callback function to invoke
+Parameter   user_data  The user data to be passed to the callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           Internal I/O error
+@post   This function invokes app_manager_app_context_cb() for each application context.
+@see app_manager_app_context_cb()
+  
+
+</dd>
+
+          <dt id="app_manager_foreach_app_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_foreach_app_info.html">app_manager_foreach_app_info</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_foreach_app_info-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_info_cb.html">app_manager_app_info_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_manager_foreach_app_info-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Retrieves all installed applications information.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   callback   The callback function to invoke
+Parameter   user_data  The user data to be passed to the callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@post    This function invokes app_manager_app_info_cb() for each application information.
+@see app_manager_app_info_cb()
+  
+
+</dd>
+
+          <dt id="app_manager_foreach_running_app_context" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_foreach_running_app_context.html">app_manager_foreach_running_app_context</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_foreach_running_app_context-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_cb.html">app_manager_app_context_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_manager_foreach_running_app_context-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Retrieves all application contexts of running applications including sub apps.
+@details You can iterate all the running application contexts using this function.
+This function is similar to app_manager_foreach_app_context() except that this function iterates application contexts including sub apps in application groups.
+@since_tizen 3.0
+Parameter   callback   The callback function to invoke
+Parameter   user_data  The user data to be passed to the callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_IO_ERROR           Internal I/O error
+@post   This function invokes app_manager_app_context_cb() for each application context.
+@see app_manager_app_context_cb()
+  
+
+</dd>
+
+          <dt id="app_manager_get_app_context" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_app_context.html">app_manager_get_app_context</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_app_context-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_app_context-param-app_context"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_context_h</span>&gt;</span></span> <span class="parameter-name">app_context</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the application context for the given ID of the application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks  This function returns #APP_MANAGER_ERROR_NO_SUCH_APP if the application with the given application ID is not running. \n
+You must release @a app_context using app_context_destroy().
+Parameter   app_id       The ID of the application
+Output parameter  app_context  The application context of the given application ID
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_NO_SUCH_APP        No such application
+  
+
+</dd>
+
+          <dt id="app_manager_get_app_id" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_app_id.html">app_manager_get_app_id</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_app_id-param-pid"><span class="type-annotation">int</span> <span class="parameter-name">pid</span>, </span><span class="parameter" id="app_manager_get_app_id-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">app_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the ID of the application for the given process ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks  This function returns #APP_MANAGER_ERROR_NO_SUCH_APP if the application with the given process ID is not valid. \n
+You must release @a app_id using free().
+Parameter   pid     The process ID of the application
+Output parameter  app_id  The ID of the application
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+  
+
+</dd>
+
+          <dt id="app_manager_get_app_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_app_info.html">app_manager_get_app_info</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_app_info-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_app_info-param-app_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_info_h</span>&gt;</span></span> <span class="parameter-name">app_info</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the application information for the given application ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     You must release @a app_info using app_info_destroy().
+Parameter   app_id    The ID of the application
+Output parameter  app_info  The application information for the given application ID
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_NO_SUCH_APP        No such application
+  
+
+</dd>
+
+          <dt id="app_manager_get_external_shared_data_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_external_shared_data_path.html">app_manager_get_external_shared_data_path</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_external_shared_data_path-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_external_shared_data_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif.
+@brief  Gets the absolute path to the shared data directory of the application specified
+with an application ID.
+@details     An application can only read the files of other application's shared data directory.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     The specified @a path should be released with free().
+@remarks     To access the path returned by this function may not work as intended in certain devices due to some implementation issues.
+  
+
+</dd>
+
+          <dt id="app_manager_get_shared_data_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_shared_data_path.html">app_manager_get_shared_data_path</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_shared_data_path-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_shared_data_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the absolute path to the shared data directory of the application specified
+with an application ID.
+@details     An application can only read the files of other application's shared data directory.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     The specified @a path should be released with free().\n
+Since Tizen 3.0, the shared/data directory is supported only for the applications that declare the <a href="http://tizen.org/privilege/appdir.shareddata">http://tizen.org/privilege/appdir.shareddata</a> privilege.
+The function will fail with #APP_MANAGER_ERROR_NOT_SUPPORTED if the privilege is not declared.
+  
+
+</dd>
+
+          <dt id="app_manager_get_shared_resource_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_shared_resource_path.html">app_manager_get_shared_resource_path</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_shared_resource_path-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_shared_resource_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the absolute path to the shared resource directory of the application specified
+with an application ID.
+@details     An application can only read the files of other application's shared resource directory.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     The specified @a path should be released with free().
+  
+
+</dd>
+
+          <dt id="app_manager_get_shared_trusted_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_get_shared_trusted_path.html">app_manager_get_shared_trusted_path</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_get_shared_trusted_path-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_get_shared_trusted_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Gets the absolute path to the shared trusted directory of the application specified
+with an application ID.
+@details     An application signed with the same certificate can read and write the files of
+other application's shared trusted directory.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks     The specified @a path should be released with free().
+  
+
+</dd>
+
+          <dt id="app_manager_is_running" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_is_running.html">app_manager_is_running</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_is_running-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_is_running-param-running"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">running</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Checks whether the application with the given ID of the application is running.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_id   The ID of the application
+Output parameter  running  @c true if the application is running, \n
+otherwise @c false if not running
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+  
+
+</dd>
+
+          <dt id="app_manager_request_terminate_bg_app" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_request_terminate_bg_app.html">app_manager_request_terminate_bg_app</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_request_terminate_bg_app-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Terminates the back ground application.\n
+UI applications that are in paused state or some service applications could be required to terminate by this function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/appmanager.kill.bgapp
+@remarks This function returns after it just sends a request for terminating a background application.\n
+Platform will decide if the target application could be terminated or not according to the state of the target application.
+Parameter   app_context  The application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_PERMISSION_DENIED Permission denied
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_REQUEST_FAILED  Failed to send terminate request
+  
+
+</dd>
+
+          <dt id="app_manager_resume_app" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_resume_app.html">app_manager_resume_app</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_resume_app-param-app_context"><span class="type-annotation">app_context_h</span> <span class="parameter-name">app_context</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Resumes the application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/appmanager.launch
+Parameter   app_context  The application context
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_PERMISSION_DENIED  Permission denied
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_APP_NO_RUNNING     App is not running
+@retval  #APP_MANAGER_ERROR_REQUEST_FAILED     Internal resume error
+  
+
+</dd>
+
+          <dt id="app_manager_set_app_context_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_set_app_context_event_cb.html">app_manager_set_app_context_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_set_app_context_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_event_cb.html">app_manager_app_context_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_manager_set_app_context_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Registers a callback function to be invoked when the applications get launched or terminated.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter   callback   The callback function to register
+Parameter   user_data  The user data to be passed to the callback function
+@return      @c 0 on success,
+otherwise a negative error value
+@retval  #APP_MANAGER_ERROR_NONE               Successful
+@retval  #APP_MANAGER_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval  #APP_MANAGER_ERROR_OUT_OF_MEMORY      Out of memory
+@retval  #APP_MANAGER_ERROR_IO_ERROR           Internal I/O error
+@post It will invoke app_manager_app_context_event_cb() when the application is launched or terminated.
+@see app_manager_unset_app_context_event_cb()
+@see app_manager_app_context_event_cb()
+  
+
+</dd>
+
+          <dt id="app_manager_set_app_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_set_app_icon.html">app_manager_set_app_icon</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_set_app_icon-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="app_manager_set_app_icon-param-icon_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">icon_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @platform
+@brief Sets the application's icon path into given path.
+@since_tizen 5.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/packagemanager.admin
+@remarks   The icon file should be included in package which the applications belongs to.
+Parameter app_id    The ID of the application
+Parameter icon_path The path of icon file
+  
+
+</dd>
+
+          <dt id="app_manager_set_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_set_event_cb.html">app_manager_set_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_set_event_cb-param-handle"><span class="type-annotation">app_manager_event_h</span> <span class="parameter-name">handle</span>, </span><span class="parameter" id="app_manager_set_event_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_cb.html">app_manager_event_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="app_manager_set_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when the app is event has occurred.
+@since_tizen 3.0
+Parameter handle    The app manager event handle
+Parameter callback   The callback function to be registered
+Parameter user_data  The user data to be passed to the callback function
+  
+
+</dd>
+
+          <dt id="app_manager_unset_app_context_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_unset_app_context_event_cb.html">app_manager_unset_app_context_event_cb</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Unregisters the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@see app_manager_app_context_event_cb()
+  
+
+</dd>
+
+          <dt id="app_manager_unset_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_unset_event_cb.html">app_manager_unset_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="app_manager_unset_event_cb-param-handle"><span class="type-annotation">app_manager_event_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="app_info_category_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_category_cb.html">app_info_category_cb</a></span>
+    = app_info_category_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called for each application category in app_info_foreach_category().
+@since_tizen 4.0
+@remarks     @a category will be freed when the application information handle is destroyed
+using app_info_destroy()
+Parameter   category        The name of the category
+Parameter   user_data       The user data passed to app_info_foreach_category()
+@return      @c true to continue with the next iteration of the loop, \n
+otherwise @c false to break out of the loop
+@pre app_info_foreach_category() will invoke this callback.
+@see app_info_foreach_category()
+  
+
+</dd>
+
+
+          
+  <dt id="app_info_category_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_category_cbFunction.html">app_info_category_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_info_category_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_info_category_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_info_filter_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_cb.html">app_info_filter_cb</a></span>
+    = app_info_filter_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called to get the application information once for each installed application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info   The application information of each installed application
+Parameter   user_data  The user data passed from the foreach function
+@return      @c true to continue with the next iteration of the loop, \n
+otherwise @c false to break out of the loop
+@pre app_manager_foreach_app_info() will invoke this callback.
+@see app_manager_foreach_app_info()
+  
+
+</dd>
+
+
+          
+  <dt id="app_info_filter_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_cbFunction.html">app_info_filter_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_info_filter_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_info_filter_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_info_metadata_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_cb.html">app_info_metadata_cb</a></span>
+    = app_info_metadata_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called to get application metadata in app_info_foreach_metadata().
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   metadata_key   The key of the metadata
+Parameter   metadata_value  The value of the metadata
+Parameter   user_data       The user data passed to app_info_foreach_metadata()
+@return      @c true to continue with the next iteration of the loop, \n
+otherwise @c false to break out of the loop
+@pre app_info_foreach_metadata() will invoke this callback.
+@see app_info_foreach_metadata()
+  
+
+</dd>
+
+
+          
+  <dt id="app_info_metadata_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_cbFunction.html">app_info_metadata_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_info_metadata_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_info_metadata_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_manager_app_context_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_cb.html">app_manager_app_context_cb</a></span>
+    = app_manager_app_context_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called to get the application context once for each running application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_context  The application context of each running application
+Parameter   user_data    The user data passed from the foreach function
+@return      @c true to continue with the next iteration of the loop, \n
+otherwise @c false to break out of the loop
+@pre app_manager_foreach_app_context() will invoke this callback.
+@see app_manager_foreach_app_context()
+  
+
+</dd>
+
+
+          
+  <dt id="app_manager_app_context_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_cbFunction.html">app_manager_app_context_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_manager_app_context_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_manager_app_context_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_manager_app_context_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_event_cb.html">app_manager_app_context_event_cb</a></span>
+    = app_manager_app_context_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called when an application is launched or terminated.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks  Please don't try to free the handle of app_context, because it is managed by the framework.
+Parameter   app_context  The application context of the application launched or terminated
+Parameter   event        The application context event
+Parameter   user_data    The user data passed from the foreach function
+@pre  This function is called when an application gets launched or terminated, after you register this callback using app_manager_set_app_context_event_cb().
+@see app_manager_set_app_context_event_cb()
+@see app_manager_unset_app_context_event_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="app_manager_app_context_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_event_cbFunction.html">app_manager_app_context_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_manager_app_context_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_manager_app_context_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_manager_app_info_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_info_cb.html">app_manager_app_info_cb</a></span>
+    = app_manager_app_info_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief  Called to get the application information once for each installed application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter   app_info   The application information of each installed application
+Parameter   user_data  The user data passed from the foreach function
+@return      @c true to continue with the next iteration of the loop, \n
+otherwise @c false to break out of the loop
+@pre app_manager_foreach_app_info() will invoke this callback.
+@see app_manager_foreach_app_info()
+  
+
+</dd>
+
+
+          
+  <dt id="app_manager_app_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_info_cbFunction.html">app_manager_app_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_manager_app_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_manager_app_info_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="app_manager_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_cb.html">app_manager_event_cb</a></span>
+    = app_manager_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when the application is enabled or disabled.
+@since_tizen 3.0
+  
+
+</dd>
+
+
+          
+  <dt id="app_manager_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_cbFunction.html">app_manager_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= app_manager_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;app_manager_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_info_category_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_info_category_cbFunction.html">Dartapp_info_category_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_info_category_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_category_cbFunction.html">app_info_category_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_info_filter_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_info_filter_cbFunction.html">Dartapp_info_filter_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_info_filter_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_filter_cbFunction.html">app_info_filter_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_info_metadata_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_info_metadata_cbFunction.html">Dartapp_info_metadata_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_info_metadata_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_info_metadata_cbFunction.html">app_info_metadata_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_manager_app_context_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_manager_app_context_cbFunction.html">Dartapp_manager_app_context_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_manager_app_context_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_cbFunction.html">app_manager_app_context_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_manager_app_context_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_manager_app_context_event_cbFunction.html">Dartapp_manager_app_context_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_manager_app_context_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_context_event_cbFunction.html">app_manager_app_context_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_manager_app_info_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_manager_app_info_cbFunction.html">Dartapp_manager_app_info_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_manager_app_info_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_app_info_cbFunction.html">app_manager_app_info_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartapp_manager_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_capi_appfw_app_manager/Dartapp_manager_event_cbFunction.html">Dartapp_manager_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartapp_manager_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_capi_appfw_app_manager/app_manager_event_cbFunction.html">app_manager_event_cbFunction</a>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_capi_appfw_app_manager.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_appfw_app_manager library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

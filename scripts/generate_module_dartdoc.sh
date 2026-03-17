@@ -3,13 +3,15 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-set -e
+set -euo pipefail
 
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-ROOT_DIR=$(readlink -f "$SCRIPT_DIR/..")
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
 
 version="${1:-6.0}"
-shift $(( $# > 0 ? 1 : 0 ))
+if [ "$#" -gt 0 ]; then
+  shift
+fi
 
 cd "$ROOT_DIR"
 dart run tool/generate_module_dartdoc.dart --version "$version" "$@"

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the vpnsvc_block_networks function from the tizen_6_0_tizen_capi_vpnsvc library, for the Dart programming language.">
+  <title>vpnsvc_block_networks function - tizen_6_0_tizen_capi_vpnsvc library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_vpnsvc.dart</a></li>
+    <li class="self-crumb">vpnsvc_block_networks function</li>
+  </ol>
+  <div class="self-name">vpnsvc_block_networks</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_vpnsvc&#47;tizen_6_0_tizen_capi_vpnsvc-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">vpnsvc_block_networks</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">vpnsvc_block_networks</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="vpnsvc_block_networks-param-handle"><span class="type-annotation">vpnsvc_h</span> <span class="parameter-name">handle</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-routes_dest_vpn_addr"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">routes_dest_vpn_addr</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-routes_vpn_prefix"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">routes_vpn_prefix</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-num_allow_routes_vpn"><span class="type-annotation">int</span> <span class="parameter-name">num_allow_routes_vpn</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-routes_dest_orig_addr"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">routes_dest_orig_addr</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-routes_orig_prefix"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">routes_orig_prefix</span>, </span></li>
+<li><span class="parameter" id="vpnsvc_block_networks-param-num_allow_routes_orig"><span class="type-annotation">int</span> <span class="parameter-name">num_allow_routes_orig</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Blocks all traffics except specified allowing networks.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/vpnservice \n
+%http://tizen.org/privilege/internet
+Parameter handle                  The VPN interface handle
+Parameter routes_dest_vpn_addr    Destination address of the routes, the list of allowing networks over VPN interface (e.g., VPN interface such as tun0, etc).
+Parameter routes_vpn_prefix       The prefix of VPN interface, netmask length (also called a prefix, e.g. 8, 16, 24, 32).
+Parameter num_allow_routes_vpn    The number of allowing networks over VPN interface. Up to 255 addresses can be allowed.
+Parameter routes_dest_orig_addr   Destination address of the routes, the list of allowing networks over the original interface (e.g., original interface such as eth0, wlan0, etc).
+Parameter routes_orig_prefix      The prefix of Original interface, netmask length (also called a prefix, e.g. 8, 16, 24, 32).
+Parameter num_allow_routes_orig   The number of allowing networks over the original interface. Up to 255addresses can be allowed.
+@return 0 on success. otherwise, a negative error value.
+@retval #VPNSVC_ERROR_NONE                  Success
+@retval #VPNSVC_ERROR_INVALID_PARAMETER     Invalid parameter
+@retval #VPNSVC_ERROR_IPC_FAILED            Cannot connect to service daemon
+@retval #VPNSVC_ERROR_PERMISSION_DENIED     Permission Denied
+@retval #VPNSVC_ERROR_NOT_SUPPORTED         Not Supported
+@post Please call vpnsvc_unblock_networks() if you want to allow all traffics.
+@see vpnsvc_unblock_networks()</p>
+<p>Module getter: <code>tizenCapiVpnsvc</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int vpnsvc_block_networks(
+  vpnsvc_h handle,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; routes_dest_vpn_addr,
+  ffi.Pointer&lt;ffi.Int&gt; routes_vpn_prefix,
+  int num_allow_routes_vpn,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; routes_dest_orig_addr,
+  ffi.Pointer&lt;ffi.Int&gt; routes_orig_prefix,
+  int num_allow_routes_orig,
+) =&gt;
+    tizenCapiVpnsvc.vpnsvc_block_networks(
+      handle,
+      routes_dest_vpn_addr,
+      routes_vpn_prefix,
+      num_allow_routes_vpn,
+      routes_dest_orig_addr,
+      routes_orig_prefix,
+      num_allow_routes_orig,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">tizen_6_0_tizen_capi_vpnsvc</a></li>
+    <li class="self-crumb">vpnsvc_block_networks function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_vpnsvc library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

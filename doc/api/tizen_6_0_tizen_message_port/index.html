@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_message_port library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_message_port library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_message_port.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_message_port</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_message_port&#47;tizen_6_0_tizen_message_port-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_message_port</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenMessagePort</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenMessagePort</code>.
+Module symbol map: <code>messagePortSymbols</code>.
+Shared object(s): <code>libmessage-port.so.1</code>.</p>
+<p>Application Framework / Message Port.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="message_port_add_registered_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_add_registered_cb.html">message_port_add_registered_cb</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_add_registered_cb-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_add_registered_cb-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_add_registered_cb-param-trusted_remote_port"><span class="type-annotation">bool</span> <span class="parameter-name">trusted_remote_port</span>, </span><span class="parameter" id="message_port_add_registered_cb-param-registered_cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_message_port/message_port_registration_event_cb.html">message_port_registration_event_cb</a></span> <span class="parameter-name">registered_cb</span>, </span><span class="parameter" id="message_port_add_registered_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="message_port_add_registered_cb-param-watcher_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">watcher_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a callback called when a remote port is registered.
+@details When remote port is registered, @a registered_cb function is called.
+Each added callback has its own separate watcher.
+@since_tizen 4.0
+@remarks The specified callback is called only in the main thread.
+Parameter remote_app_id        The ID of the remote application
+Parameter remote_port          The name of the remote message port
+Parameter trusted_remote_port  Indicates whether remote port is trusted
+Parameter registered_cb        The callback function to be called
+when remote port is registered
+Parameter user_data            The user data to be passed to the callback function
+Output parameter watcher_id          The ID of the watcher which is monitoring the remote port
+registration events
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER  The specified @a remote_app_id or @a remote_port
+or @a registered_cb is NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR          Internal I/O error
+@see message_port_registration_event_cb()
+@see message_port_add_unregistered_cb()
+@see message_port_remove_registration_event_cb()
+  
+
+</dd>
+
+          <dt id="message_port_add_unregistered_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_add_unregistered_cb.html">message_port_add_unregistered_cb</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_add_unregistered_cb-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_add_unregistered_cb-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_add_unregistered_cb-param-trusted_remote_port"><span class="type-annotation">bool</span> <span class="parameter-name">trusted_remote_port</span>, </span><span class="parameter" id="message_port_add_unregistered_cb-param-unregistered_cb"><span class="type-annotation"><a href="../tizen_6_0_tizen_message_port/message_port_registration_event_cb.html">message_port_registration_event_cb</a></span> <span class="parameter-name">unregistered_cb</span>, </span><span class="parameter" id="message_port_add_unregistered_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span><span class="parameter" id="message_port_add_unregistered_cb-param-watcher_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">watcher_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a callback called when a remote port is unregistered.
+@details When the remote port is unregistered, @a unregistered_cb function is called.
+Each added callback has its own separate watcher.
+@since_tizen 4.0
+@remarks The specified callback is called only in the main thread.
+Parameter remote_app_id        The ID of the remote application
+Parameter remote_port          The name of the remote message port
+Parameter trusted_remote_port  Indicates whether remote port is trusted
+Parameter unregistered_cb      The callback function to be called
+when remote port is unregistered
+Parameter user_data            The user data to be passed to the callback function
+Output parameter watcher_id          The ID of the watcher which is monitoring the remote port
+unregistration events
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id or @a remote_port
+or @a unregistered_cb is NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY     Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR          Internal I/O error
+@see message_port_registration_event_cb()
+@see message_port_add_registered_cb()
+@see message_port_remove_registration_event_cb()
+  
+
+</dd>
+
+          <dt id="message_port_check_remote_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_check_remote_port.html">message_port_check_remote_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_check_remote_port-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_check_remote_port-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_check_remote_port-param-exist"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">exist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the message port of a remote application is registered.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks If this function returns a negative error value, the out parameter @a exist will not be changed.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Output parameter exist If @c true, the message port of the remote application exists;
+otherwise @c false
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id or @a remote_port is NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+  
+
+</dd>
+
+          <dt id="message_port_check_trusted_remote_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_check_trusted_remote_port.html">message_port_check_trusted_remote_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_check_trusted_remote_port-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_check_trusted_remote_port-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_check_trusted_remote_port-param-exist"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">exist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether the trusted message port of a remote application is registered.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks If this function returns a negative error value, the out parameter @a exist will not be changed.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Output parameter exist If @c true, the message port of the remote application exists;
+otherwise @c false
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id or @a remote_port is @c NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_CERTIFICATE_NOT_MATCH The remote application is not signed with the same certificate
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+  
+
+</dd>
+
+          <dt id="message_port_register_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_register_local_port.html">message_port_register_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_register_local_port-param-local_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">local_port</span>, </span><span class="parameter" id="message_port_register_local_port-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_message_port/message_port_message_cb.html">message_port_message_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="message_port_register_local_port-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers the local message port.
+@details If the message port name is already registered, the previous local message port ID returns and the callback function is changed. \n
+Multiple message ports can be registered.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The specified callback is called only in the main thread.
+Parameter local_port The name of the local message port
+Parameter callback The callback function to be called when a message is received
+Parameter user_data The user data to be passed to the callback function
+@return A local message port ID on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a local_port or @a callback is NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@see message_port_unregister_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_register_trusted_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_register_trusted_local_port.html">message_port_register_trusted_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_register_trusted_local_port-param-trusted_local_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">trusted_local_port</span>, </span><span class="parameter" id="message_port_register_trusted_local_port-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_message_port/message_port_trusted_message_cb.html">message_port_trusted_message_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="message_port_register_trusted_local_port-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers the trusted local message port.
+@details If the message port name is already registered, the previous local message port ID returns and the callback function is changed. @n
+It allows communications only if the applications are signed with the same certificate, which is uniquely assigned to the developer. @n
+Multiple message ports can be registered.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks The specified callback is called only in the main thread.
+Parameter trusted_local_port The name of the trusted local message port
+Parameter callback The callback function to be called when a trusted message is received
+Parameter user_data The user data to be passed to the callback function
+@return A trusted local message port ID on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a trusted_local_port or @a callback is NULL
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@see message_port_unregister_trusted_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_remove_registration_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_remove_registration_event_cb.html">message_port_remove_registration_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_remove_registration_event_cb-param-watcher_id"><span class="type-annotation">int</span> <span class="parameter-name">watcher_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes the registration/unregistration callback associated with the given watcher.
+@since_tizen 4.0
+Parameter watcher_id  The ID of watcher which is monitoring remote port
+registration/unregistration events
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER  The specified @a watcher_id is not correct
+@retval #MESSAGE_PORT_ERROR_IO_ERROR           Internal I/O error
+@see message_port_registration_event_cb()
+@see message_port_add_registered_cb()
+@see message_port_add_unregistered_cb()
+  
+
+</dd>
+
+          <dt id="message_port_send_message" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_send_message.html">message_port_send_message</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_send_message-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_send_message-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_send_message-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">message</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a message to the message port of a remote application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks @a message must be released with bundle_free() after sending the message.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Parameter message The message to be passed to the remote application, the recommended message size is under 4KB
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id, @a remote_port or @a message is NULL
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The message port of the remote application cannot be found
+@retval #MESSAGE_PORT_ERROR_MAX_EXCEEDED The size of message has exceeded the maximum limit
+@retval #MESSAGE_PORT_ERROR_RESOURCE_UNAVAILABLE Resource temporarily unavailable
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@post It invokes message_port_message_cb() on the remote application.
+@see message_port_message_cb()
+@see message_port_register_local_port()
+@see message_port_unregister_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_send_message_with_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_send_message_with_local_port.html">message_port_send_message_with_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_send_message_with_local_port-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_send_message_with_local_port-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_send_message_with_local_port-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="message_port_send_message_with_local_port-param-local_port_id"><span class="type-annotation">int</span> <span class="parameter-name">local_port_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a message with local port information to the message port of a remote application.
+@details This method is used for bidirectional communication.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You must release @a message using bundle_free() after sending the message.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Parameter message The message to be passed to the remote application, the recommended message size is under 4KB
+Parameter local_port_id The message port ID returned by message_port_register_local_port() or message_port_register_trusted_local_port()
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id, @a remote_port or @a message is @c NULL and
+The specified @a local_port_id is not positive
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The port of the local or remote application cannot be found
+@retval #MESSAGE_PORT_ERROR_MAX_EXCEEDED The size of the message has exceeded the maximum limit
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@post It invokes message_port_message_cb() on the remote application.
+@see message_port_message_cb()
+@see message_port_register_local_port()
+@see message_port_unregister_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_send_trusted_message" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_send_trusted_message.html">message_port_send_trusted_message</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_send_trusted_message-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_send_trusted_message-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_send_trusted_message-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">message</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a trusted message to the message port of a remote application.
+@details This method allows communication only if the applications are signed with the same certificate, which is uniquely assigned to the developer.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You must release @a message using bundle_free() after sending the message.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Parameter message The message to be passed to the remote application, the recommended message size is under 4KB
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id, @a remote_port or @a message is @c NULL
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The message port of the remote application cannot be found
+@retval #MESSAGE_PORT_ERROR_CERTIFICATE_NOT_MATCH The remote application is not signed with the same certificate
+@retval #MESSAGE_PORT_ERROR_MAX_EXCEEDED The size of the message has exceeded the maximum limit
+@retval #MESSAGE_PORT_ERROR_RESOURCE_UNAVAILABLE Resource is temporarily unavailable
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@post It invokes message_port_trusted_message_cb() on the remote application.
+@see message_port_trusted_message_cb()
+@see message_port_register_trusted_local_port()
+@see message_port_unregister_trusted_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_send_trusted_message_with_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_send_trusted_message_with_local_port.html">message_port_send_trusted_message_with_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_send_trusted_message_with_local_port-param-remote_app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_app_id</span>, </span><span class="parameter" id="message_port_send_trusted_message_with_local_port-param-remote_port"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">remote_port</span>, </span><span class="parameter" id="message_port_send_trusted_message_with_local_port-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="message_port_send_trusted_message_with_local_port-param-local_port_id"><span class="type-annotation">int</span> <span class="parameter-name">local_port_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a trusted message with local port information to the message port of a remote application.
+@details This method is used for bidirectional communication. @n
+It allows communications only if the applications are signed with the same certificate, which is uniquely assigned to the developer.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You muse release @a message using bundle_free() after sending the message.
+Parameter remote_app_id The ID of the remote application
+Parameter remote_port The name of the remote message port
+Parameter message The message to be passed to the remote application, the recommended message size is under 4KB
+Parameter local_port_id The message port ID returned by message_port_register_local_port() or message_port_register_trusted_local_port()
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a remote_app_id, @a remote_port or @a message is @c NULL and
+specified @a local_port_id is not positive
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The port of the local or remote application cannot be found
+@retval #MESSAGE_PORT_ERROR_CERTIFICATE_NOT_MATCH The remote application is not signed with the same certificate
+@retval #MESSAGE_PORT_ERROR_MAX_EXCEEDED The size of the message has exceeded the maximum limit
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@post It invokes message_port_trusted_message_cb() on the remote application.
+@see message_port_trusted_message_cb()
+@see message_port_register_trusted_local_port()
+@see message_port_unregister_trusted_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_unregister_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_unregister_local_port.html">message_port_unregister_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_unregister_local_port-param-local_port_id"><span class="type-annotation">int</span> <span class="parameter-name">local_port_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the local message port.
+@details This method unregisters the callback function with the specified local port ID.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter local_port_id The local message port ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a local_port_id is not positive
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The specified @a local_port_id cannot be found
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@see message_port_register_local_port()
+  
+
+</dd>
+
+          <dt id="message_port_unregister_trusted_local_port" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_unregister_trusted_local_port.html">message_port_unregister_trusted_local_port</a></span><span class="signature">(<wbr><span class="parameter" id="message_port_unregister_trusted_local_port-param-trusted_local_port_id"><span class="type-annotation">int</span> <span class="parameter-name">trusted_local_port_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the trusted local message port.
+@details This method unregisters the callback function with the specified local port ID. @n
+It allows communications only if the applications are signed with the same certificate, which is uniquely assigned to the developer.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter trusted_local_port_id The trusted local message port ID
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MESSAGE_PORT_ERROR_NONE	Successful
+@retval #MESSAGE_PORT_ERROR_INVALID_PARAMETER The specified @a trusted_local_port_id is not positive
+@retval #MESSAGE_PORT_ERROR_PORT_NOT_FOUND The specified @a trusted_local_port_id cannot be found
+@retval #MESSAGE_PORT_ERROR_OUT_OF_MEMORY Out of memory
+@retval #MESSAGE_PORT_ERROR_IO_ERROR Internal I/O error
+@see message_port_register_trusted_local_port()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dartmessage_port_message_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/Dartmessage_port_message_cbFunction.html">Dartmessage_port_message_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartmessage_port_message_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_message_port/message_port_message_cbFunction.html">message_port_message_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartmessage_port_registration_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/Dartmessage_port_registration_event_cbFunction.html">Dartmessage_port_registration_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartmessage_port_registration_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_message_port/message_port_registration_event_cbFunction.html">message_port_registration_event_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Dartmessage_port_trusted_message_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/Dartmessage_port_trusted_message_cbFunction.html">Dartmessage_port_trusted_message_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Dartmessage_port_trusted_message_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_message_port/message_port_trusted_message_cbFunction.html">message_port_trusted_message_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="message_port_message_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_message_cb.html">message_port_message_cb</a></span>
+    = message_port_message_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a message is received.
+@details The function is called when a message is received from the remote application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks @a message is automatically freed by framework when callback returned, you can keep @a message using bundle_dup() @n
+@a remote_port will be set only if the remote application sends a message with its port information using message_port_send_message_with_local_port(), otherwise it is @c NULL @n
+When message is sent from remote application by message_port_send_message_with_local_port() in bidirectional communication, trusted_remote_port is used to check whether remote port is trusted port or not
+This callback is called only in the main thread.
+Parameter local_port_id The local message port ID returned by message_port_register_local_port()
+Parameter remote_app_id The ID of the remote application that sent this message
+Parameter remote_port The name of the remote message port
+Parameter trusted_remote_port If @c true, the remote port is a trusted port; otherwise if @c false, it is not
+Parameter message The message passed from the remote application
+Parameter user_data The user data passed from the register function
+@pre Either message_port_send_message() or message_port_send_message_with_local_port() from the remote application will invoke this function if you register it using message_port_register_local_port()
+@see message_port_register_local_port()
+@see message_port_unregister_local_port()
+@see message_port_send_message()
+@see message_port_send_message_with_local_port()
+  
+
+</dd>
+
+
+          
+  <dt id="message_port_message_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_message_cbFunction.html">message_port_message_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= message_port_message_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;message_port_message_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="message_port_registration_event_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_registration_event_cb.html">message_port_registration_event_cb</a></span>
+    = message_port_registration_event_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a remote port is registered or unregistered.
+@details The function is called when a remote port is registered or unregistered
+from the remote application.
+@since_tizen 4.0
+@remarks @a remote_app_id and @a remote_port can be used until
+message_port_remove_registration_event_cb() is called for the watcher which reported
+the event.
+Parameter remote_app_id        The ID of the remote application that sent this message
+Parameter remote_port          The name of the remote message port
+Parameter trusted_remote_port  Indicates whether remote port is trusted
+Parameter user_data            The user data passed from the register function
+@pre Called when a remote port is registered or unregistered if you add it using
+message_port_add_registered_cb() or message_port_add_unregistered_cb() respectively.
+@see message_port_add_registered_cb()
+@see message_port_add_unregistered_cb()
+@see message_port_remove_registration_event_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="message_port_registration_event_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_registration_event_cbFunction.html">message_port_registration_event_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= message_port_registration_event_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;message_port_registration_event_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="message_port_trusted_message_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_trusted_message_cb.html">message_port_trusted_message_cb</a></span>
+    = message_port_trusted_message_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when a trusted message is received.
+@details This function is called when a trusted message is received from the remote application.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+@remarks You can keep @a message using bundle_dup(). @n
+@a remote_port will be set only if the remote application sends a message with its port information using message_port_send_trusted_message_with_local_port(), otherwise it is @c NULL. @n
+When message is sent from remote application by message_port_send_trusted_message_with_local_port() in bidirectional communication, trusted_remote_port is used to check whether remote port is trusted port or not.
+This callback is called only in the main thread.
+Parameter trusted_local_port_id The message port ID returned by message_port_register_trusted_local_port()
+Parameter remote_app_id The ID of the remote application that sent this message
+Parameter remote_port The name of the remote message port
+Parameter trusted_remote_port If @c true, the remote port is a trusted port; otherwise if @c false, it is not
+Parameter message The message passed from the remote application
+Parameter user_data The user data passed from the register function
+@pre Either message_port_send_trusted_message() or message_port_send_trusted_message_with_local_port() from the remote application will invoke this function if you register it using message_port_register_trusted_local_port().
+@see message_port_register_trusted_local_port()
+@see message_port_unregister_trusted_local_port()
+@see message_port_send_trusted_message()
+@see message_port_send_trusted_message_with_local_port()
+  
+
+</dd>
+
+
+          
+  <dt id="message_port_trusted_message_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_message_port/message_port_trusted_message_cbFunction.html">message_port_trusted_message_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= message_port_trusted_message_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;message_port_trusted_message_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_message_port.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_message_port library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

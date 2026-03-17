@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_eom library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_eom library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_eom.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_eom</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_eom&#47;tizen_6_0_tizen_eom-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">module_docs/6_0/modules/tizen_eom</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenEom</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Module getter: <code>tizenEom</code>.
+Module symbol map: <code>eomSymbols</code>.
+Shared object(s): <code>libeom.so.0</code>.</p>
+<p>UI / External Output Manager.</p>
+<p>Generated from <code>generated_symbols.dart</code> and <code>generated_bindings.dart</code> in <code>package:tizen_interop</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="eom_deinit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_deinit.html">eom_deinit</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Finalizes External Output Manager (EOM).
+@details User should call this function after using EOM to release all
+resources of EOM.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@see eom_init()
+  
+
+</dd>
+
+          <dt id="eom_get_eom_output_ids" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_eom_output_ids.html">eom_get_eom_output_ids</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_eom_output_ids-param-count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; Pointer<span class="signature">&lt;<wbr><span class="type-parameter">eom_output_id</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the IDs and count of external output.
+@details This function returns the IDs of external output which are
+available to connect to target device, and the count of them
+also. User can get the id of external output.
+which user want to watch.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks User should free return value by using free().
+The specific error code can be obtained using the get_last_result() method.
+Error codes are described in Exception section.
+Output parameter count  The count of the eom_output_id supported by system
+@return The array of the eom_output_id if this function succeeds, otherwise
+NULL
+@retval The pointer of #eom_output_id
+@exception #EOM_ERROR_NONE Successful
+@exception #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@exception #EOM_ERROR_OUT_OF_MEMORY Memory allocation failure
+@pre eom_init()
+@see #eom_output_id
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_attribute" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_attribute.html">eom_get_output_attribute</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_attribute-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_attribute-param-attribute"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">attribute</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets attribute of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks The specific error code can be obtained using the get_last_result()
+method. Error codes are described in Exception section.
+Parameter output_id  The id of external output device
+Output parameter attribute  The attribute of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+@see #eom_output_attribute_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_attribute_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_attribute_state.html">eom_get_output_attribute_state</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_attribute_state-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_attribute_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets attribute state of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks The specific error code can be obtained using the get_last_result()
+method. Error codes are described in Exception section.
+Parameter output_id  The id of external output device
+Output parameter state  The attribute state of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+@see #eom_output_attribute_state_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_mode.html">eom_get_output_mode</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_mode-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_mode-param-mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets mode of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks The specific error code can be obtained using the get_last_result()
+method. Error codes are described in Exception section.
+Parameter output_id  The id of external output device
+Output parameter mode  The mode of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+@see #eom_output_mode_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_physical_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_physical_size.html">eom_get_output_physical_size</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_physical_size-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_physical_size-param-phy_width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">phy_width</span>, </span><span class="parameter" id="eom_get_output_physical_size-param-phy_height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">phy_height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets physical width/height (millimeters) of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The id of external output device
+Output parameter phy_width  The physical mm width of external output instance
+Output parameter phy_height  The physical mm height of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_resolution.html">eom_get_output_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_resolution-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_resolution-param-width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="eom_get_output_resolution-param-height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets resolution of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The id of external output device
+Output parameter width  The width of external output instance
+Output parameter height  The height of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_get_output_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_get_output_type.html">eom_get_output_type</a></span><span class="signature">(<wbr><span class="parameter" id="eom_get_output_type-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_get_output_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets type of external output.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks The specific error code can be obtained using the get_last_result()
+method. Error codes are described in Exception section.
+Parameter output_id  The id of external output device
+Output parameter type  The type of external output instance
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+@see #eom_output_type_e
+  
+
+</dd>
+
+          <dt id="eom_init" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_init.html">eom_init</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes External Output Manager (EOM).
+@details User should call this function previously for using EOM.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+@remarks After all using, call eom_deinit() function for resource returning.
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_CONNECTION_FAILURE The EOM connection failure
+@see eom_deinit()
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_set_attribute_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_attribute_changed_cb.html">eom_set_attribute_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_attribute_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_attribute_changed_cb.html">eom_attribute_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="eom_set_attribute_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to get output attribute changing
+notification from External Output Manager (EOM) module.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_attribute_changed_cb()
+callback function
+Parameter user_data  The pointer of user data which is passed to
+eom_attribute_changed_cb() function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_OUT_OF_MEMORY Memory allocation failure
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_unset_attribute_changed_cb()
+@see #eom_attribute_changed_cb
+  
+
+</dd>
+
+          <dt id="eom_set_mode_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_mode_changed_cb.html">eom_set_mode_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_mode_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_mode_changed_cb.html">eom_mode_changed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="eom_set_mode_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to get output mode changing
+notification from External Output Manager (EOM) module.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_mode_changed_cb() callback
+function
+Parameter user_data  The pointer of user data which is passed to
+eom_mode_changed_cb() function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_OUT_OF_MEMORY Memory allocation failure
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_unset_mode_changed_cb()
+@see #eom_mode_changed_cb
+  
+
+</dd>
+
+          <dt id="eom_set_output_added_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_output_added_cb.html">eom_set_output_added_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_output_added_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_output_added_cb.html">eom_output_added_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="eom_set_output_added_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to get output connection notification
+from External Output Manager (EOM) module.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_output_added_cb() callback
+function
+Parameter user_data  The pointer of user data which is passed to
+eom_output_added_cb() function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_OUT_OF_MEMORY Memory allocation failure
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_unset_output_added_cb()
+@see #eom_output_added_cb
+  
+
+</dd>
+
+          <dt id="eom_set_output_attribute" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_output_attribute.html">eom_set_output_attribute</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_output_attribute-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_set_output_attribute-param-attr"><span class="type-annotation">int</span> <span class="parameter-name">attr</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the attribute of the external output ID.
+@details The application can set the External Output Manager (EOM) attribute
+to the external output ID.
+The EOM module manages the windows to display on external output and
+control the policy of external output. The application can recognize
+the attribute state and manage the resources when the application receives
+several notification callback from EOM module.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The id of external output device
+Parameter attr  The attribute of the external output
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@retval #EOM_ERROR_MESSAGE_SENDING_FAILURE Communication failure with EOM
+module
+@retval #EOM_ERROR_MESSAGE_OPERATION_FAILURE Operation failure
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_set_output_removed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_output_removed_cb.html">eom_set_output_removed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_output_removed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_output_removed_cb.html">eom_output_removed_cb</a></span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="eom_set_output_removed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to get output disconnection
+notification from External Output Manager (EOM) module.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_output_removed_cb() callback
+function
+Parameter user_data  The pointer of user data which is passed to
+eom_output_removed_cb() function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_OUT_OF_MEMORY Memory allocation failure
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_unset_output_removed_cb()
+@see #eom_output_removed_cb
+  
+
+</dd>
+
+          <dt id="eom_set_output_window" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_set_output_window.html">eom_set_output_window</a></span><span class="signature">(<wbr><span class="parameter" id="eom_set_output_window-param-output_id"><span class="type-annotation">int</span> <span class="parameter-name">output_id</span>, </span><span class="parameter" id="eom_set_output_window-param-win"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Evas_Object</span>&gt;</span></span> <span class="parameter-name">win</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets window to the external output best resolution of external output
+device.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The id of external output device
+Parameter win  The pointer of evas object
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #EOM_ERROR_NO_SUCH_DEVICE Invalid external output instance
+@retval #EOM_ERROR_MESSAGE_SENDING_FAILURE Communication failure with EOM
+module
+@retval #EOM_ERROR_MESSAGE_OPERATION_FAILURE Operation failure
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see #eom_output_id
+@see #eom_error_e
+  
+
+</dd>
+
+          <dt id="eom_unset_attribute_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_unset_attribute_changed_cb.html">eom_unset_attribute_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_unset_attribute_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_attribute_changed_cb.html">eom_attribute_changed_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_attribute_changed_cb()
+callback function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_set_attribute_changed_cb()
+@see #eom_attribute_changed_cb
+  
+
+</dd>
+
+          <dt id="eom_unset_mode_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_unset_mode_changed_cb.html">eom_unset_mode_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_unset_mode_changed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_mode_changed_cb.html">eom_mode_changed_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_mode_changed_cb() callback
+function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_set_mode_changed_cb()
+@see #eom_mode_changed_cb
+  
+
+</dd>
+
+          <dt id="eom_unset_output_added_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_unset_output_added_cb.html">eom_unset_output_added_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_unset_output_added_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_output_added_cb.html">eom_output_added_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_output_added_cb() callback
+function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_set_output_added_cb()
+@see #eom_output_added_cb
+  
+
+</dd>
+
+          <dt id="eom_unset_output_removed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_unset_output_removed_cb.html">eom_unset_output_removed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="eom_unset_output_removed_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_eom/eom_output_removed_cb.html">eom_output_removed_cb</a></span> <span class="parameter-name">callback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter callback  The function pointer of eom_output_removed_cb() callback
+function
+@return 0 on success, otherwise a negative error value
+@retval #EOM_ERROR_NONE Successful
+@retval #EOM_ERROR_INVALID_PARAMETER Invalid parameter
+@pre eom_init()
+@pre eom_get_eom_output_ids()
+@see eom_set_output_removed_cb()
+@see #eom_output_removed_cb
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Darteom_attribute_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/Darteom_attribute_changed_cbFunction.html">Darteom_attribute_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Darteom_attribute_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_eom/eom_attribute_changed_cbFunction.html">eom_attribute_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Darteom_mode_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/Darteom_mode_changed_cbFunction.html">Darteom_mode_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Darteom_mode_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_eom/eom_mode_changed_cbFunction.html">eom_mode_changed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Darteom_output_added_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/Darteom_output_added_cbFunction.html">Darteom_output_added_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Darteom_output_added_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_eom/eom_output_added_cbFunction.html">eom_output_added_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="Darteom_output_removed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/Darteom_output_removed_cbFunction.html">Darteom_output_removed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= Darteom_output_removed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Dart-side callback signature paired with <a href="../tizen_6_0_tizen_eom/eom_output_removed_cbFunction.html">eom_output_removed_cbFunction</a>.
+    
+
+  </dd>
+
+          
+  <dt id="eom_attribute_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_attribute_changed_cb.html">eom_attribute_changed_cb</a></span>
+    = eom_attribute_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when External Output Manager (EOM) module sends output
+attribute changing notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The output id which is connected output
+Parameter user_data  The pointer of user data which is passed to
+eom_attribute_changed_cb() function
+@see eom_set_attribute_changed_cb()
+@see eom_unset_attribute_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="eom_attribute_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/eom_attribute_changed_cbFunction.html">eom_attribute_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= eom_attribute_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;eom_attribute_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="eom_mode_changed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_mode_changed_cb.html">eom_mode_changed_cb</a></span>
+    = eom_mode_changed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when External Output Manager (EOM) module sends output
+mode changing notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The output id which is connected output
+Parameter user_data  The pointer of user data which is passed to
+eom_mode_changed_cb() function
+@see eom_set_mode_changed_cb()
+@see eom_unset_mode_changed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="eom_mode_changed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/eom_mode_changed_cbFunction.html">eom_mode_changed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= eom_mode_changed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;eom_mode_changed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="eom_output_added_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_output_added_cb.html">eom_output_added_cb</a></span>
+    = eom_output_added_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when External Output Manager (EOM) module sends output
+connection notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The output id which is connected output
+Parameter user_data  The pointer of user data which is passed to
+eom_output_added_cb() function
+@see eom_set_output_added_cb()
+@see eom_unset_output_added_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="eom_output_added_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/eom_output_added_cbFunction.html">eom_output_added_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= eom_output_added_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;eom_output_added_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+          
+  <dt id="eom_output_removed_cb" class="">
+  <span class="name"><a href="../tizen_6_0_tizen_eom/eom_output_removed_cb.html">eom_output_removed_cb</a></span>
+    = eom_output_removed_cb
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Called when External Output Manager (EOM) module sends output
+disconnection notification.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter output_id  The output id which is connected output
+Parameter user_data  The pointer of user data which is passed to
+eom_output_removed_cb() function
+@see eom_set_output_removed_cb()
+@see eom_unset_output_removed_cb()
+  
+
+</dd>
+
+
+          
+  <dt id="eom_output_removed_cbFunction" class="callable">
+    <span class="name"><a href="../tizen_6_0_tizen_eom/eom_output_removed_cbFunction.html">eom_output_removed_cbFunction</a></span><span class="signature">
+      <span class="returntype parameter">= eom_output_removed_cbFunction</span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Native callback signature used with <code>TizenInteropCallbacks.register&lt;eom_output_removed_cbFunction&gt;()</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li class="self-crumb">module_docs/6_0/modules/tizen_eom.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">module_docs/6_0/modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">module_docs/6_0/modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">module_docs/6_0/modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">module_docs/6_0/modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">module_docs/6_0/modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">module_docs/6_0/modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">module_docs/6_0/modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">module_docs/6_0/modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">module_docs/6_0/modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">module_docs/6_0/modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">module_docs/6_0/modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">module_docs/6_0/modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">module_docs/6_0/modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">module_docs/6_0/modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">module_docs/6_0/modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">module_docs/6_0/modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">module_docs/6_0/modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">module_docs/6_0/modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">module_docs/6_0/modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">module_docs/6_0/modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">module_docs/6_0/modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">module_docs/6_0/modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">module_docs/6_0/modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">module_docs/6_0/modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs/6_0/modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">module_docs/6_0/modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">module_docs/6_0/modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">module_docs/6_0/modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">module_docs/6_0/modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs/6_0/modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">module_docs/6_0/modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">module_docs/6_0/modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">module_docs/6_0/modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">module_docs/6_0/modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">module_docs/6_0/modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">module_docs/6_0/modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">module_docs/6_0/modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">module_docs/6_0/modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">module_docs/6_0/modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">module_docs/6_0/modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">module_docs/6_0/modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">module_docs/6_0/modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">module_docs/6_0/modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">module_docs/6_0/modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs/6_0/modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">module_docs/6_0/modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">module_docs/6_0/modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">module_docs/6_0/modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">module_docs/6_0/modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">module_docs/6_0/modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">module_docs/6_0/modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">module_docs/6_0/modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">module_docs/6_0/modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">module_docs/6_0/modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">module_docs/6_0/modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">module_docs/6_0/modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">module_docs/6_0/modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">module_docs/6_0/modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">module_docs/6_0/modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">module_docs/6_0/modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">module_docs/6_0/modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">module_docs/6_0/modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">module_docs/6_0/modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">module_docs/6_0/modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">module_docs/6_0/modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">module_docs/6_0/modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">module_docs/6_0/modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">module_docs/6_0/modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">module_docs/6_0/modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">module_docs/6_0/modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">module_docs/6_0/modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">module_docs/6_0/modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">module_docs/6_0/modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">module_docs/6_0/modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs/6_0/modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">module_docs/6_0/modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">module_docs/6_0/modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">module_docs/6_0/modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">module_docs/6_0/modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">module_docs/6_0/modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">module_docs/6_0/modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">module_docs/6_0/modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">module_docs/6_0/modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">module_docs/6_0/modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">module_docs/6_0/modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">module_docs/6_0/modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">module_docs/6_0/modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">module_docs/6_0/modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">module_docs/6_0/modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">module_docs/6_0/modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">module_docs/6_0/modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">module_docs/6_0/modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">module_docs/6_0/modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">module_docs/6_0/modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">module_docs/6_0/modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">module_docs/6_0/modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">module_docs/6_0/modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">module_docs/6_0/modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">module_docs/6_0/modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">module_docs/6_0/modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">module_docs/6_0/modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">module_docs/6_0/modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">module_docs/6_0/modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">module_docs/6_0/modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">module_docs/6_0/modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">module_docs/6_0/modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">module_docs/6_0/modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">module_docs/6_0/modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">module_docs/6_0/modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">module_docs/6_0/modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">module_docs/6_0/modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">module_docs/6_0/modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">module_docs/6_0/modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">module_docs/6_0/modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">module_docs/6_0/modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_eom library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

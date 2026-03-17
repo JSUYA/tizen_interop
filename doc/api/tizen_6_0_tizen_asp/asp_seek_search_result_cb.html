@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the asp_seek_search_result_cb typedef from the tizen_6_0_tizen_asp library, for the Dart programming language.">
+  <title>asp_seek_search_result_cb typedef - tizen_6_0_tizen_asp library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_asp/">module_docs&#47;6_0&#47;modules&#47;tizen_asp.dart</a></li>
+    <li class="self-crumb">asp_seek_search_result_cb typedef</li>
+  </ol>
+  <div class="self-name">asp_seek_search_result_cb</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_asp&#47;tizen_6_0_tizen_asp-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-typedef">asp_seek_search_result_cb</span> typedef 
+ 
+</h1></div>
+    <section class="multi-line-signature">
+        
+  
+<span class="name ">asp_seek_search_result_cb</span> = asp_seek_search_result_cb</span>
+
+
+    </section>
+
+    
+<section class="desc markdown">
+  <p>@brief Called when the Application Service Platform (ASP) Service is found.
+@since_tizen 4.0
+@remarks @a service_mac, @a instance_name and @a service_info are valid only in the callback.
+To use outside the callback, make a copy.
+Parameter error_code     The error code. \n
+#ASP_ERROR_NONE              Successful\n
+#ASP_ERROR_OUT_OF_MEMORY     Out of memory\n
+#ASP_ERROR_OPERATION_FAILED  Operation failed\n
+Parameter seek_service   The seek service which found the current result;
+the handle to the same object for which the search was started
+Parameter service_mac    The P2P device address of the device which provides the service;
+NULL if not available
+Parameter adv_id         The service advertisement ID defined by remote P2P device
+Parameter config_method  The preferred Wi-Fi Simple Config (WSC) configuration method
+Parameter instance_name  The advertised service name defined by the remote P2P device;
+NULL if not available
+Parameter service_info   The advertised service information defined by the remote P2P device;
+NULL if not available
+Parameter info_size      The advertised service information payload size;
+if the information is not available, this is set to -1
+Parameter status         The status of the service
+Parameter user_data      The user data passed from the callback registration function
+@pre The callback must be registered using asp_seek_set_search_result_cb().\n
+asp_seek_start() must be called to invoke this callback.
+@see asp_seek_set_search_result_cb()
+@see asp_seek_unset_search_result_cb()
+@see asp_seek_start()</p>
+<p>Register this callback with <code>TizenInteropCallbacks.register&lt;asp_seek_search_result_cbFunction&gt;()</code> from <code>package:tizen_interop_callbacks</code>.
+Pass <code>RegisteredCallback.interopCallback</code> and <code>RegisteredCallback.interopUserData</code> to the native API.
+Used by: <a href="../tizen_6_0_tizen_asp/asp_seek_set_search_result_cb.html">asp_seek_set_search_result_cb</a>.</p>
+</section>
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">typedef asp_seek_search_result_cb = bindings.asp_seek_search_result_cb;</code></pre>
+</section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_asp/">tizen_6_0_tizen_asp</a></li>
+    <li class="self-crumb">asp_seek_search_result_cb typedef</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_asp library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

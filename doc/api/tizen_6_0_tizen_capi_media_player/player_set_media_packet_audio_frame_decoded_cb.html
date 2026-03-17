@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the player_set_media_packet_audio_frame_decoded_cb function from the tizen_6_0_tizen_capi_media_player library, for the Dart programming language.">
+  <title>player_set_media_packet_audio_frame_decoded_cb function - tizen_6_0_tizen_capi_media_player library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_media_player.dart</a></li>
+    <li class="self-crumb">player_set_media_packet_audio_frame_decoded_cb function</li>
+  </ol>
+  <div class="self-name">player_set_media_packet_audio_frame_decoded_cb</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_player&#47;tizen_6_0_tizen_capi_media_player-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">player_set_media_packet_audio_frame_decoded_cb</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">player_set_media_packet_audio_frame_decoded_cb</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="player_set_media_packet_audio_frame_decoded_cb-param-player"><span class="type-annotation">player_h</span> <span class="parameter-name">player</span>, </span></li>
+<li><span class="parameter" id="player_set_media_packet_audio_frame_decoded_cb-param-format"><span class="type-annotation">media_format_h</span> <span class="parameter-name">format</span>, </span></li>
+<li><span class="parameter" id="player_set_media_packet_audio_frame_decoded_cb-param-opt"><span class="type-annotation">int</span> <span class="parameter-name">opt</span>, </span></li>
+<li><span class="parameter" id="player_set_media_packet_audio_frame_decoded_cb-param-callback"><span class="type-annotation"><a href="../tizen_6_0_tizen_capi_media_player/player_media_packet_audio_decoded_cb.html">player_media_packet_audio_decoded_cb</a></span> <span class="parameter-name">callback</span>, </span></li>
+<li><span class="parameter" id="player_set_media_packet_audio_frame_decoded_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sets a callback function for getting the decoded audio data.
+@details This function is used to get audio PCM data of input media content via registered callback.\n
+An application can specify the output PCM format by @ref CAPI_MEDIA_TOOL_MEDIA_FORMAT_MODULE API.
+@since_tizen 5.5
+@remarks This function must be called before calling player_prepare() or player_prepare_async().\n
+A registered callback is called in a separate thread (not in the main loop).\n
+The audio PCM data can be retrieved using a registered callback as a media packet
+and it is available until it's destroyed by media_packet_destroy().\n
+The packet has to be destroyed as quickly as possible after rendering the data\n
+and all the packets have to be destroyed before player_unprepare() is called.\n
+@remarks If audio offload is enabled by calling player_audio_offload_set_enabled(),
+this function will return #PLAYER_ERROR_NOT_AVAILABLE and
+this will not work at all even if this was called before enabling offload.
+@remarks This function could be unavailable depending on the audio codec type and
+this will return #PLAYER_ERROR_NOT_AVAILABLE.
+@remarks If the content is encrypted or there are copyright issues with it,
+this function could be unsupported depending on the DRM policy.
+Parameter player     The handle to the media player
+Parameter format     The media format handle about required audio PCM specification.
+This format has to include PCM MIME type, audio channel and sampling rate.
+If the format is NULL, the original PCM format or platform default PCM format will be applied.
+Parameter opt        The audio extract option
+Parameter callback   The callback function to be registered
+Parameter user_data  The user data to be passed to the callback function
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PLAYER_ERROR_NONE Successful
+@retval #PLAYER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PLAYER_ERROR_INVALID_STATE Invalid state
+@retval #PLAYER_ERROR_INVALID_OPERATION Invalid operation
+@retval #PLAYER_ERROR_NOT_AVAILABLE Not available
+@pre The player's state must be #PLAYER_STATE_IDLE.
+@see player_unset_media_packet_audio_frame_decoded_cb()
+@see player_audio_offload_set_enabled()
+@see player_audio_offload_is_enabled()
+@see player_set_audio_codec_type()
+@see player_get_audio_codec_type()
+@par Example
+@code
+#include &lt;player.h&gt;
+#include &lt;media_format.h&gt;
+...
+player_h player = NULL;
+media_format_h a_format = NULL;
+...
+media_format_create(&amp;a_format);
+media_format_set_audio_mime(a_format, MEDIA_FORMAT_PCM_F32LE);
+media_format_set_audio_channel(a_format, 2);
+media_format_set_audio_samplerate(a_format, 44100);</p>
+<p>player_set_media_packet_audio_frame_decoded_cb(player, a_format, PLAYER_AUDIO_EXTRACT_DEFAULT, _audio_pcm_cb, udata);</p>
+<p>media_format_unref(a_format);
+...
+@endcode</p>
+<p>Module getter: <code>tizenCapiMediaPlayer</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int player_set_media_packet_audio_frame_decoded_cb(
+  player_h player,
+  media_format_h format,
+  int opt,
+  player_media_packet_audio_decoded_cb callback,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenCapiMediaPlayer.player_set_media_packet_audio_frame_decoded_cb(
+      player,
+      format,
+      opt,
+      callback,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">tizen_6_0_tizen_capi_media_player</a></li>
+    <li class="self-crumb">player_set_media_packet_audio_frame_decoded_cb function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_player library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

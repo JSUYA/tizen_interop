@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the yaca_key_export function from the tizen_6_0_tizen_yaca library, for the Dart programming language.">
+  <title>yaca_key_export function - tizen_6_0_tizen_yaca library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_yaca/">module_docs&#47;6_0&#47;modules&#47;tizen_yaca.dart</a></li>
+    <li class="self-crumb">yaca_key_export function</li>
+  </ol>
+  <div class="self-name">yaca_key_export</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_yaca&#47;tizen_6_0_tizen_yaca-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">yaca_key_export</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">yaca_key_export</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="yaca_key_export-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="yaca_key_export-param-key_fmt"><span class="type-annotation">int</span> <span class="parameter-name">key_fmt</span>, </span></li>
+<li><span class="parameter" id="yaca_key_export-param-key_file_fmt"><span class="type-annotation">int</span> <span class="parameter-name">key_file_fmt</span>, </span></li>
+<li><span class="parameter" id="yaca_key_export-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span>, </span></li>
+<li><span class="parameter" id="yaca_key_export-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">data</span>, </span></li>
+<li><span class="parameter" id="yaca_key_export-param-data_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">data_len</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Exports a key or key generation parameters to arbitrary format.
+@since_tizen 3.0
+@remarks Everywhere where either a key (of any type) or an asymmetric key is referred
+in the documentation of this function key generator parameters are also included.
+@remarks This function exports the key to an arbitrary key format and key file format.
+@remarks For key formats two values are allowed:</p>
+<ul>
+<li>#YACA_KEY_FORMAT_DEFAULT: this is the only option possible in case of symmetric keys
+(or Initialization Vector), for asymmetric keys it will
+export to their default ASN1 structure format
+(e.g. PKCS#1, SSLeay, PKCS#3).</li>
+<li>#YACA_KEY_FORMAT_PKCS8: this will only work for private asymmetric keys.
+@remarks The following file formats are supported:</li>
+<li>#YACA_KEY_FILE_FORMAT_RAW: used only for symmetric, raw binary format</li>
+<li>#YACA_KEY_FILE_FORMAT_BASE64: used only for symmetric, BASE64 encoded binary form</li>
+<li>#YACA_KEY_FILE_FORMAT_PEM: used only for asymmetric, PEM file format</li>
+<li>#YACA_KEY_FILE_FORMAT_DER: used only for asymmetric, DER file format
+@remarks Encryption is supported and optional for RSA/DSA private keys in the
+#YACA_KEY_FORMAT_DEFAULT with #YACA_KEY_FILE_FORMAT_PEM format. If no password is
+provided the exported key will be unencrypted. The encryption algorithm used
+in this case is AES-256-CBC.
+@remarks Encryption is obligatory for #YACA_KEY_FORMAT_PKCS8 format (for both, PEM and DER
+file formats). If no password is provided the #YACA_ERROR_INVALID_PARAMETER will
+be returned. The encryption algorithm used in this case is AES-256-CBC. The key is
+generated from password using PBKDF2 with HMAC-SHA1 function and 2048 iterations.
+@remarks Encryption is not supported for the symmetric, public keys and key generation
+parameters in all their supported formats. If a password is provided in such
+case the #YACA_ERROR_INVALID_PARAMETER will be returned.
+Parameter key Key to be exported
+Parameter key_fmt Format of the key
+Parameter key_file_fmt Format of the key file
+Parameter password Password used for the encryption (can be NULL)
+Output parameter data Data, allocated by the library, containing exported key
+(must be freed with yaca_free())
+Output parameter data_len Size of the output data
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a key_fmt, @a key_file_fmt or @a data_len too big)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_format_e
+@see #yaca_key_file_format_e
+@see yaca_key_import()
+@see yaca_key_destroy()</li>
+</ul>
+<p>Module getter: <code>tizenYaca</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int yaca_key_export(
+  yaca_key_h key,
+  int key_fmt,
+  int key_file_fmt,
+  ffi.Pointer&lt;ffi.Char&gt; password,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; data,
+  ffi.Pointer&lt;ffi.Size&gt; data_len,
+) =&gt;
+    tizenYaca.yaca_key_export(
+      key,
+      key_fmt,
+      key_file_fmt,
+      password,
+      data,
+      data_len,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_yaca/">tizen_6_0_tizen_yaca</a></li>
+    <li class="self-crumb">yaca_key_export function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_yaca library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

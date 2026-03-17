@@ -43,10 +43,9 @@ python3 scripts/generate_doc_script.py
 
 ## Generating module-scoped Dart docs
 
-The `generate_module_dartdoc.sh` script creates a dedicated dartdoc package for a
-specific Tizen version, generates module-scoped wrapper libraries based on
-`generated_symbols.dart`, and builds HTML docs where each module has its own
-library page.
+The `generate_module_dartdoc.sh` script generates HTML docs for the main
+`tizen_interop` package, but splits the output by module getter for a specific
+Tizen version.
 
 For Tizen 6.0:
 
@@ -54,5 +53,15 @@ For Tizen 6.0:
 scripts/generate_module_dartdoc.sh 6.0
 ```
 
-The generated package is written to `packages/tizen_interop_docs_6_0/` and the
-HTML docs are written to `packages/tizen_interop_docs_6_0/doc/api/`.
+The script:
+
+1. Reads `generated_symbols.dart`, `generated_bindings.dart`, `lib/<version>/tizen.dart`,
+   and `packages/tizen_interop_callbacks/lib/tizen_interop_callbacks.dart`.
+2. Creates temporary module wrapper libraries under `lib/module_docs/<version>/modules/`.
+3. Generates `doc/api/` with `dart doc`, where each module has its own library page.
+4. Deletes the temporary wrapper libraries and restores `dartdoc_options.yaml`.
+
+If a symbol listed in `generated_symbols.dart` is missing from
+`generated_bindings.dart` and looks callback-related, the generated module
+library includes a note pointing to the callback registration interface from
+`tizen_interop_callbacks`.

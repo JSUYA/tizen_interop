@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the mv_image_tracked_cb typedef from the tizen_6_0_tizen_mv_image library, for the Dart programming language.">
+  <title>mv_image_tracked_cb typedef - tizen_6_0_tizen_mv_image library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_image/">module_docs&#47;6_0&#47;modules&#47;tizen_mv_image.dart</a></li>
+    <li class="self-crumb">mv_image_tracked_cb typedef</li>
+  </ol>
+  <div class="self-name">mv_image_tracked_cb</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_mv_image&#47;tizen_6_0_tizen_mv_image-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-typedef">mv_image_tracked_cb</span> typedef 
+ 
+</h1></div>
+    <section class="multi-line-signature">
+        
+  
+<span class="name ">mv_image_tracked_cb</span> = mv_image_tracked_cb</span>
+
+
+    </section>
+
+    
+<section class="desc markdown">
+  <p>@brief Called when image tracking result received from mv_image_track()
+@details Image tracking on a sequence of frames assumes calling
+mv_image_track() function for each frame in the correct order.
+This type of callback will be called after each mv_image_track()
+call for processing result data.</p>
+<p>@since_tizen 3.0
+@remarks If image object is not tracked then the callback will be invoked,
+but @a location will be NULL.
+@remarks Handles @a image_tracking_model, @a source and @a engine_cfg the
+same as input parameters of mv_image_track().
+@remarks @a location pointer is valid only inside callback
+@param in source                 The handle to the source image on which
+the tracking was carried out
+@param in image_tracking_model   The handle to the image tracking model
+which processed as target of tracking
+@param in engine_cfg             The handle to the configuration of engine
+that was used to image tracking, or
+NULL if default settings were applied
+@param in location               The image object location on the source
+image or NULL if objects is not tracked
+@param in user_data              The user data passed from the
+mv_image_track() function</p>
+<p>@pre Call mv_image_track() function to perform tracking of the image
+object on the current image from the sequence and invoke this callback
+as a result</p>
+<p>@see mv_image_track()
+@see mv_source_h
+@see mv_image_tracking_model_h
+@see mv_engine_config_h
+@see mv_quadrangle_s</p>
+<p>Register this callback with <code>TizenInteropCallbacks.register&lt;mv_image_tracked_cbFunction&gt;()</code> from <code>package:tizen_interop_callbacks</code>.
+Pass <code>RegisteredCallback.interopCallback</code> and <code>RegisteredCallback.interopUserData</code> to the native API.
+Used by: <a href="../tizen_6_0_tizen_mv_image/mv_image_track.html">mv_image_track</a>.</p>
+</section>
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">typedef mv_image_tracked_cb = bindings.mv_image_tracked_cb;</code></pre>
+</section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_image/">tizen_6_0_tizen_mv_image</a></li>
+    <li class="self-crumb">mv_image_tracked_cb typedef</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_mv_image library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

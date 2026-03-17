@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the mediacodec_configure_from_media_format function from the tizen_6_0_tizen_capi_media_codec library, for the Dart programming language.">
+  <title>mediacodec_configure_from_media_format function - tizen_6_0_tizen_capi_media_codec library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_codec/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_media_codec.dart</a></li>
+    <li class="self-crumb">mediacodec_configure_from_media_format function</li>
+  </ol>
+  <div class="self-name">mediacodec_configure_from_media_format</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_codec&#47;tizen_6_0_tizen_capi_media_codec-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">mediacodec_configure_from_media_format</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">mediacodec_configure_from_media_format</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="mediacodec_configure_from_media_format-param-mediacodec"><span class="type-annotation">mediacodec_h</span> <span class="parameter-name">mediacodec</span>, </span></li>
+<li><span class="parameter" id="mediacodec_configure_from_media_format-param-format"><span class="type-annotation">media_format_h</span> <span class="parameter-name">format</span>, </span></li>
+<li><span class="parameter" id="mediacodec_configure_from_media_format-param-flags"><span class="type-annotation">int</span> <span class="parameter-name">flags</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sets the codec type and codec default info via media format.
+@details Sets the value via media format instead of mediacodec_set_codec(), mediacodec_set_venc_info(),
+mediacodec_set_vdec_info(), mediacodec_set_aenc_info(), and mediacodec_set_adec_info().
+@since_tizen 4.0
+@remarks When using the @a format parameter from the output of the media demuxer, you can use media format via media_packet_get_format().
+Otherwise, you must set the following values after creating media format.
+Set the audio or video codec type via media_format_set_video_mime() or media_format_set_audio_mime().
+For video decoding, width, height must be set via media_format_set_video_width() and media_format_set_video_height().
+For video encoding, width, height, target bitrate, and frame rate must be set via media_format_set_video_avg_bps() and media_format_set_video_frame_rate().
+For audio decoding, samplerate, channel, and bit must be set via media_format_set_audio_samplerate(), media_format_set_audio_channel() and media_format_set_audio_bit().
+For audio encoding, samplerate, channel, bit, and bitrate must be set via media_format_set_audio_avg_bps().\n
+If this codec is to be used as a decoder, pass the #MEDIACODEC_DECODER flag.
+If this codec is to be used as an encoder, pass the #MEDIACODEC_ENCODER flag.\n
+The software codec is used as default setting (#MEDIACODEC_SUPPORT_TYPE_SW) if user doesn't set hardware flag.
+If you wants to use h/w decoder, you needs to pass the #MEDIACODEC_DECODER | #MEDIACODEC_SUPPORT_TYPE_HW.
+Parameter mediacodec The mediacodec handle
+Parameter format     The #media_format_h of input data
+Parameter flags      The encoding/decoding scheme,
+values of #mediacodec_support_type_e combined with bitwise 'or'
+@return @c 0 on success, otherwise a negative error value
+@retval #MEDIACODEC_ERROR_NONE Successful
+@retval #MEDIACODEC_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIACODEC_ERROR_CODEC_NOT_FOUND Unsupported codec
+@retval #MEDIACODEC_ERROR_NOT_SUPPORTED_ON_DEVICE Not supported on device (Since 4.0)
+@pre The media format has been created and the required values for configuration have been set.
+@see media_format_set_video_mime()
+@see media_format_set_audio_mime()
+@see media_format_set_video_width()
+@see media_format_set_video_height()
+@see media_format_set_video_avg_bps()
+@see media_format_set_video_frame_rate()
+@see media_format_set_audio_channel()
+@see media_format_set_audio_samplerate()
+@see media_format_set_audio_bit()
+@see media_format_set_audio_avg_bps()</p>
+<p>Module getter: <code>tizenCapiMediaCodec</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int mediacodec_configure_from_media_format(
+  mediacodec_h mediacodec,
+  media_format_h format,
+  int flags,
+) =&gt;
+    tizenCapiMediaCodec.mediacodec_configure_from_media_format(
+      mediacodec,
+      format,
+      flags,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_codec/">tizen_6_0_tizen_capi_media_codec</a></li>
+    <li class="self-crumb">mediacodec_configure_from_media_format function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_codec library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

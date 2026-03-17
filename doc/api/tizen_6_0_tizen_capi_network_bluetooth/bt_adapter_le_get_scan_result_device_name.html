@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the bt_adapter_le_get_scan_result_device_name function from the tizen_6_0_tizen_capi_network_bluetooth library, for the Dart programming language.">
+  <title>bt_adapter_le_get_scan_result_device_name function - tizen_6_0_tizen_capi_network_bluetooth library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">module_docs&#47;6_0&#47;modules&#47;tizen_capi_network_bluetooth.dart</a></li>
+    <li class="self-crumb">bt_adapter_le_get_scan_result_device_name function</li>
+  </ol>
+  <div class="self-name">bt_adapter_le_get_scan_result_device_name</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_network_bluetooth&#47;tizen_6_0_tizen_capi_network_bluetooth-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">bt_adapter_le_get_scan_result_device_name</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">bt_adapter_le_get_scan_result_device_name</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="bt_adapter_le_get_scan_result_device_name-param-info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bt_adapter_le_device_scan_result_info_s</span>&gt;</span></span> <span class="parameter-name">info</span>, </span></li>
+<li><span class="parameter" id="bt_adapter_le_get_scan_result_device_name-param-pkt_type"><span class="type-annotation">int</span> <span class="parameter-name">pkt_type</span>, </span></li>
+<li><span class="parameter" id="bt_adapter_le_get_scan_result_device_name-param-name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">name</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@ingroup CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
+@brief Gets the device name from the scan result information.
+@since_tizen 2.3.1</p>
+<p>@remarks The @a name must be released with free() by you.</p>
+<p>Parameter info The scan result information
+Parameter pkt_type The packet type
+Output parameter name The device name</p>
+<p>@return 0 on success, otherwise a negative error value.
+@retval #BT_ERROR_NONE  Successful
+@retval #BT_ERROR_NOT_INITIALIZED  Not initialized
+@retval #BT_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval #BT_ERROR_NO_DATA  No data available
+@retval #BT_ERROR_NOT_SUPPORTED  Not supported</p>
+<p>@pre The Bluetooth service must be initialized with bt_initialize().</p>
+<p>@see bt_adapter_le_scan_result_cb()</p>
+<p>Module getter: <code>tizenCapiNetworkBluetooth</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int bt_adapter_le_get_scan_result_device_name(
+  ffi.Pointer&lt;bt_adapter_le_device_scan_result_info_s&gt; info,
+  int pkt_type,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; name,
+) =&gt;
+    tizenCapiNetworkBluetooth.bt_adapter_le_get_scan_result_device_name(
+      info,
+      pkt_type,
+      name,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">tizen_6_0_tizen_capi_network_bluetooth</a></li>
+    <li class="self-crumb">bt_adapter_le_get_scan_result_device_name function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_network_bluetooth library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

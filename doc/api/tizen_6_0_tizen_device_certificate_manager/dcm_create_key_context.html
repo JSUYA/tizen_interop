@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the dcm_create_key_context function from the tizen_6_0_tizen_device_certificate_manager library, for the Dart programming language.">
+  <title>dcm_create_key_context function - tizen_6_0_tizen_device_certificate_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_device_certificate_manager/">module_docs&#47;6_0&#47;modules&#47;tizen_device_certificate_manager.dart</a></li>
+    <li class="self-crumb">dcm_create_key_context function</li>
+  </ol>
+  <div class="self-name">dcm_create_key_context</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_device_certificate_manager&#47;tizen_6_0_tizen_device_certificate_manager-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">dcm_create_key_context</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">dcm_create_key_context</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="dcm_create_key_context-param-service"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">service</span>, </span></li>
+<li><span class="parameter" id="dcm_create_key_context-param-usage"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">usage</span>, </span></li>
+<li><span class="parameter" id="dcm_create_key_context-param-key_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key_type</span>, </span></li>
+<li><span class="parameter" id="dcm_create_key_context-param-key_ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">key_ctx</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@platform
+@brief Creates a new key context based on specific name indication (service name, key usage, key type).
+@since_tizen 5.0
+@privlevel platform
+@privilege %http://tizen.org/privilege/devicecertificate</p>
+<p>@remarks The @a key_ctx should be freed with dcm_free_key_context() after use.</p>
+<p>Parameter service  Service name indicates first category name (if null, default value is used)
+Parameter usage  Usage name indicates sub-category name (if null, default value is used)
+Parameter key_type  Key type name indication (if null, default value is used)
+Output parameter key_ctx  Newly created key context
+@return #DCM_ERROR_NONE on success,
+otherwise a negative error value</p>
+<p>@retval #DCM_ERROR_NONE Successful
+@retval #DCM_ERROR_INVALID_PARAMETER Input parameter is invalid
+@retval #DCM_ERROR_OUT_OF_MEMORY Out of memory during processing
+@retval #DCM_ERROR_PERMISSION_DENIED Failed to access device certificate manager
+@retval #DCM_ERROR_NOT_SUPPORTED Feature needed to run API is not supported
+@retval #DCM_ERROR_SOCKET Socket error between client and server
+@retval #DCM_ERROR_UNKNOWN Unknown error</p>
+<p>@see dcm_free_key_context()</p>
+<p>Module getter: <code>tizenDeviceCertificateManager</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int dcm_create_key_context(
+  ffi.Pointer&lt;ffi.Char&gt; service,
+  ffi.Pointer&lt;ffi.Char&gt; usage,
+  ffi.Pointer&lt;ffi.Char&gt; key_type,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Void&gt;&gt; key_ctx,
+) =&gt;
+    tizenDeviceCertificateManager.dcm_create_key_context(
+      service,
+      usage,
+      key_type,
+      key_ctx,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop</a></li>
+    <li><a href="../tizen_6_0_tizen_device_certificate_manager/">tizen_6_0_tizen_device_certificate_manager</a></li>
+    <li class="self-crumb">dcm_create_key_context function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_device_certificate_manager library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop
+      0.5.1
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
