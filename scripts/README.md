@@ -41,33 +41,53 @@ Run the script with:
 python3 scripts/generate_doc_script.py
 ```
 
-## Generating module-scoped Dart docs
+## Preparing module-scoped pub.dev docs
 
-The `generate_module_dartdoc.sh` script generates HTML docs for the main
-`tizen_interop` package, but splits the output by module getter for a specific
-Tizen version.
+`pub.dev` generates API docs only from the uploaded package contents, so local
+HTML post-processing is not enough. To split the published docs by module, the
+package must contain public wrapper libraries under `lib/` and a root
+`dartdoc_options.yaml` at publish time.
+
+Use `prepare_pubdev_module_docs.sh` for that workflow.
 
 For Tizen 6.0:
 
 ```sh
-scripts/generate_module_dartdoc.sh 6.0
+scripts/prepare_pubdev_module_docs.sh prepare 6.0
 ```
 
-The script:
+This command generates:
 
-1. Reads `generated_symbols.dart`, `generated_bindings.dart`, `lib/<version>/tizen.dart`,
-   and `packages/tizen_interop_callbacks/lib/tizen_interop_callbacks.dart`.
-2. Creates temporary module wrapper libraries under `lib/module_docs/<version>/modules/`.
-3. Generates `doc/api/` with `dart doc`, then writes a custom navigation layer:
-   `doc/api/index.html -> doc/api/<version>/index.html -> doc/api/<version>/tizen/index.html ->
-   doc/api/<version>/tizen/<module>/index.html`.
-4. Deletes the temporary wrapper libraries and restores `dartdoc_options.yaml`.
+1. Public wrapper libraries under `lib/6.0/tizen/`.
+2. A small landing library at `lib/6.0/tizen/index.dart`.
+3. A category markdown file at `doc/dartdoc/tizen_6_0.md`.
+4. A publish-time `dartdoc_options.yaml` that includes only the generated
+   wrapper libraries and groups them under `Tizen 6.0 / tizen`.
+
+To verify the exact publish-time setup:
+
+```sh
+scripts/prepare_pubdev_module_docs.sh verify 6.0
+```
+
+`verify` prepares the generated libraries, runs `dart doc --validate-links`,
+runs `dart pub publish --dry-run`, and then removes the generated files again.
+Pass `--keep-generated` if you want to publish immediately after verification.
+
+To remove the generated publish-time files:
+
+```sh
+scripts/prepare_pubdev_module_docs.sh clean 6.0
+```
 
 If a symbol listed in `generated_symbols.dart` is missing from
-`generated_bindings.dart` and looks callback-related, the generated module
-page includes the callback registration interface from
+`generated_bindings.dart` and looks callback-related, the generated wrapper
+library still points to the callback registration interface from
 `tizen_interop_callbacks`, so unresolved callback APIs can be checked against
 `TizenInteropCallbacks.register()`, `RegisteredCallback.interopCallback`, and
 `RegisteredCallback.interopUserData`.
 
-The original dartdoc landing page is preserved as `doc/api/dartdoc-index.html`.
+## Generating local preview docs
+
+`generate_module_dartdoc.sh` is still available when you want a local HTML
+preview, but that output is not used by `pub.dev`.
