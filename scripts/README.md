@@ -57,16 +57,15 @@ scripts/prepare_pubdev_module_docs.sh prepare 6.0
 This generates:
 
 1. A docs-only library at `lib/6.0/tizen_docs.dart`
-2. Module topic metadata under `doc/dartdoc/tizen_6_0/`
-3. A publish-time `dartdoc_options.yaml`
+2. A publish-time `dartdoc_options.yaml`
 
-The generated `dartdoc_options.yaml` is intentionally scoped to the wrapper
-docs library:
+The generated `dartdoc_options.yaml` is intentionally scoped to the docs-only
+library:
 
 * groups APIs under version/module topic pages such as `Tizen 6.0 / accounts_svc`
 * excludes the original monolithic `tizen_interop` library
-* adds a generated footer
 * includes only the generated docs library
+* reuses the shared topic markdown at `doc/dartdoc/module_topic.md`
 
 Running `prepare` again for another version updates the same root
 `dartdoc_options.yaml` so it covers all currently prepared versions. For
