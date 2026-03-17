@@ -73,10 +73,17 @@ Future<void> main(List<String> args) async {
       return;
     case 'verify':
       await _prepare(rootDir, config);
+      final versionId = config.version.replaceAll('.', '_');
       try {
         await _run(
           'dart',
-          ['doc', '--validate-links', '-o', 'build/pubdev_doc_preview', '.'],
+          [
+            'doc',
+            '--validate-links',
+            '-o',
+            '.dart_tool/pubdev_module_docs/$versionId/preview',
+            '.',
+          ],
           workingDirectory: rootDir.path,
         );
         await _run(
