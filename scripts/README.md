@@ -40,3 +40,19 @@ Run the script with:
 ```sh
 python3 scripts/generate_doc_script.py
 ```
+
+## Generating module-scoped Dart docs
+
+The `generate_module_dartdoc.sh` script creates a dedicated dartdoc package for a
+specific Tizen version, generates module-scoped wrapper libraries based on
+`generated_symbols.dart`, and builds HTML docs where each module has its own
+library page.
+
+For Tizen 6.0:
+
+```sh
+scripts/generate_module_dartdoc.sh 6.0
+```
+
+The generated package is written to `packages/tizen_interop_docs_6_0/` and the
+HTML docs are written to `packages/tizen_interop_docs_6_0/doc/api/`.
