@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the mv_barcode_detect function from the tizen_6_0_tizen_mv_barcode_detector library, for the Dart programming language.">
+  <title>mv_barcode_detect function - tizen_6_0_tizen_mv_barcode_detector library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules&#47;tizen_mv_barcode_detector.dart</a></li>
+    <li class="self-crumb">mv_barcode_detect function</li>
+  </ol>
+  <div class="self-name">mv_barcode_detect</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_mv_barcode_detector&#47;tizen_6_0_tizen_mv_barcode_detector-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">mv_barcode_detect</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">mv_barcode_detect</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="mv_barcode_detect-param-source"><span class="type-annotation">mv_source_h</span> <span class="parameter-name">source</span>, </span></li>
+<li><span class="parameter" id="mv_barcode_detect-param-engine_cfg"><span class="type-annotation">mv_engine_config_h</span> <span class="parameter-name">engine_cfg</span>, </span></li>
+<li><span class="parameter" id="mv_barcode_detect-param-roi"><span class="type-annotation">mv_rectangle_s</span> <span class="parameter-name">roi</span>, </span></li>
+<li><span class="parameter" id="mv_barcode_detect-param-detect_cb"><span class="type-annotation">mv_barcode_detected_cb</span> <span class="parameter-name">detect_cb</span>, </span></li>
+<li><span class="parameter" id="mv_barcode_detect-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Detects barcode(s) on source and reads message from it.</p>
+<p>@since_tizen @if MOBILE 2.4 @else 3.0 @endif
+@param in source            The media source handle
+@param in engine_cfg        The handle to the configuration of the engine
+@param in roi               Region of interest - rectangular area on the
+@a source which will be used for barcode detection
+Note that @a roi should be inside area on the
+@a source.
+@param in detect_cb         The callback for result handling
+@param in user_data    The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #MEDIA_VISION_ERROR_NONE Successful
+@retval #MEDIA_VISION_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_VISION_ERROR_NOT_SUPPORTED Not supported
+@retval #MEDIA_VISION_ERROR_NOT_SUPPORTED_FORMAT Not supported format
+@retval #MEDIA_VISION_ERROR_INTERNAL Internal error</p>
+<p>@pre Create a source handle by calling mv_create_source()
+@pre Create an engine configuration handle by calling
+mv_create_engine_config(), otherwise use NULL</p>
+<p>@see mv_barcode_detected_cb()</p>
+<p>Module getter: <code>tizenMvBarcodeDetector</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int mv_barcode_detect(
+  mv_source_h source,
+  mv_engine_config_h engine_cfg,
+  mv_rectangle_s roi,
+  mv_barcode_detected_cb detect_cb,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenMvBarcodeDetector.mv_barcode_detect(
+      source,
+      engine_cfg,
+      roi,
+      detect_cb,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">tizen_6_0_tizen_mv_barcode_detector</a></li>
+    <li class="self-crumb">mv_barcode_detect function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_mv_barcode_detector library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

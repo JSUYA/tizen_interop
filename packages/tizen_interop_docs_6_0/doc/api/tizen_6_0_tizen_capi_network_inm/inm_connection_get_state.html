@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the inm_connection_get_state function from the tizen_6_0_tizen_capi_network_inm library, for the Dart programming language.">
+  <title>inm_connection_get_state function - tizen_6_0_tizen_capi_network_inm library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules&#47;tizen_capi_network_inm.dart</a></li>
+    <li class="self-crumb">inm_connection_get_state function</li>
+  </ol>
+  <div class="self-name">inm_connection_get_state</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_network_inm&#47;tizen_6_0_tizen_capi_network_inm-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">inm_connection_get_state</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">inm_connection_get_state</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="inm_connection_get_state-param-connection"><span class="type-annotation">inm_connection_h</span> <span class="parameter-name">connection</span>, </span></li>
+<li><span class="parameter" id="inm_connection_get_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Gets the network state.
+@since_tizen 5.0
+Parameter connection  The connection handle
+Output parameter state      The state of the connection
+@return @c 0 on success,
+otherwise a negative error value
+@retval #INM_ERROR_NONE               Successful
+@retval #INM_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval #INM_ERROR_NOT_SUPPORTED      Not supported
+@retval #INM_ERROR_NOT_INITIALIZED    Not initialized
+@retval #INM_ERROR_OPERATION_FAILED   Operation failed</p>
+<p>Module getter: <code>tizenCapiNetworkInm</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int inm_connection_get_state(
+  inm_connection_h connection,
+  ffi.Pointer&lt;ffi.Int32&gt; state,
+) =&gt;
+    tizenCapiNetworkInm.inm_connection_get_state(
+      connection,
+      state,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_network_inm/">tizen_6_0_tizen_capi_network_inm</a></li>
+    <li class="self-crumb">inm_connection_get_state function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_network_inm library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

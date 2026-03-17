@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_yaca library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_yaca library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_yaca.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_yaca</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_yaca&#47;tizen_6_0_tizen_yaca-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_yaca</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenYaca</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libyaca.so.0</code>.</p>
+<p>Security / YACA.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="yaca_cleanup" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_cleanup.html">yaca_cleanup</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cleans up the library. Must be called before exiting the thread that called yaca_initialize().
+@since_tizen 3.0
+@see yaca_initialize()
+  
+
+</dd>
+
+          <dt id="yaca_context_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_context_destroy.html">yaca_context_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_context_destroy-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the crypto context. Must be called on all contexts that are no longer used.
+Passing #YACA_CONTEXT_NULL is allowed.
+@since_tizen 3.0
+Parameter ctx  Crypto context
+@see #yaca_context_h
+  
+
+</dd>
+
+          <dt id="yaca_context_get_output_length" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_context_get_output_length.html">yaca_context_get_output_length</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_context_get_output_length-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_context_get_output_length-param-input_len"><span class="type-annotation">int</span> <span class="parameter-name">input_len</span>, </span><span class="parameter" id="yaca_context_get_output_length-param-output_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">output_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Returns the minimum required size of the output buffer for a single crypto function call.
+@since_tizen 3.0
+@remarks This function should be used to learn the required size of the output buffer
+for a single function call (eg. *_update or *_finalize). The actual output length
+(number of bytes that has been used) will be returned by the function call itself.
+@remarks In case the function call has no output (e.g. yaca_sign_update(),
+yaca_digest_update()), there is no need to use this function.
+@remarks In case the function call has no input (eg. *_finalize), the value of
+@a input_len has to be set to 0.
+Parameter ctx Previously initialized crypto context
+Parameter input_len Length of the input data to be processed
+Output parameter output_len Required length of the output
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx or too big @a input_len)
+@retval #YACA_ERROR_INTERNAL Internal error
+  
+
+</dd>
+
+          <dt id="yaca_context_get_property" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_context_get_property.html">yaca_context_get_property</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_context_get_property-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_context_get_property-param-property"><span class="type-annotation">int</span> <span class="parameter-name">property</span>, </span><span class="parameter" id="yaca_context_get_property-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">value</span>, </span><span class="parameter" id="yaca_context_get_property-param-value_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">value_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Returns the non-standard context properties. Can only be called on an initialized context.
+@since_tizen 3.0
+@remarks The @a value should be freed using yaca_free().
+@remarks The @a value has to be of type appropriate for given property. See #yaca_property_e
+for details on corresponding types.
+@remarks The @a value_len can be NULL if returned @a value is a single object (i.e. not an array/buffer).
+Parameter ctx Previously initialized crypto context
+Parameter property Property to be read
+Output parameter value Copy of the property value
+Output parameter value_len Length of the property value will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx or @a property)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_property_e
+@see yaca_context_set_property()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_context_set_property" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_context_set_property.html">yaca_context_set_property</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_context_set_property-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_context_set_property-param-property"><span class="type-annotation">int</span> <span class="parameter-name">property</span>, </span><span class="parameter" id="yaca_context_set_property-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">value</span>, </span><span class="parameter" id="yaca_context_set_property-param-value_len"><span class="type-annotation">int</span> <span class="parameter-name">value_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the non-standard context properties. Can only be called on an initialized context.
+@since_tizen 3.0
+@remarks The @a value has to be of type appropriate for given property. See #yaca_property_e
+for details on corresponding types.
+Parameter ctx Previously initialized crypto context
+Parameter property Property to be set
+Parameter value Property value
+Parameter value_len Length of the property value
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx or @a property)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_property_e
+@see yaca_context_get_property()
+  
+
+</dd>
+
+          <dt id="yaca_decrypt_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_decrypt_finalize.html">yaca_decrypt_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_decrypt_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_decrypt_finalize-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_decrypt_finalize-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts the final chunk of the data.
+@since_tizen 3.0
+@remarks Skipping yaca_decrypt_update() and calling only yaca_decrypt_finalize() will produce a decryption of an empty ciphertext.
+Parameter ctx A valid decrypt context
+Output parameter plaintext Final piece of the decrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter plaintext_len Length of the final piece,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx), wrong #YACA_PROPERTY_GCM_AAD or
+wrong #YACA_PROPERTY_GCM_TAG was used
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_decrypt_initialize()
+@see yaca_decrypt_update()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_decrypt_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_decrypt_initialize.html">yaca_decrypt_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_decrypt_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_decrypt_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_decrypt_initialize-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_decrypt_initialize-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_decrypt_initialize-param-iv"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">iv</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes an decryption context.
+@since_tizen 3.0
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Encryption algorithm that was used to encrypt the data
+Parameter bcm Chaining mode that was used to encrypt the data
+Parameter sym_key Symmetric key that was used to encrypt the data
+Parameter iv Initialization Vector that was used to encrypt the data
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo, @a bcm, @a sym_key or @a iv)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see yaca_decrypt_update()
+@see yaca_decrypt_finalize()
+@see yaca_context_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_decrypt_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_decrypt_update.html">yaca_decrypt_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_decrypt_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_decrypt_update-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_decrypt_update-param-ciphertext_len"><span class="type-annotation">int</span> <span class="parameter-name">ciphertext_len</span>, </span><span class="parameter" id="yaca_decrypt_update-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_decrypt_update-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts chunk of the data.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_decrypt_initialize()
+Parameter ciphertext Ciphertext to be decrypted
+Parameter ciphertext_len Length of the ciphertext
+Output parameter plaintext Buffer for the decrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter plaintext_len Length of the decrypted data,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx), wrong #YACA_PROPERTY_CCM_AAD or
+wrong #YACA_PROPERTY_CCM_TAG was used
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_decrypt_initialize()
+@see yaca_decrypt_finalize()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_digest_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_digest_finalize.html">yaca_digest_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_digest_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_digest_finalize-param-digest"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">digest</span>, </span><span class="parameter" id="yaca_digest_finalize-param-digest_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">digest_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Calculates the final digest.
+@since_tizen 3.0
+@remarks Skipping yaca_digest_update() and calling only yaca_digest_finalize() will produce an empty message digest.
+Parameter ctx A valid digest context
+Output parameter digest Buffer for the message digest
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter digest_len Length of the digest,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_digest_initialize()
+@see yaca_digest_update()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_digest_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_digest_initialize.html">yaca_digest_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_digest_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_digest_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes a digest context.
+@since_tizen 3.0
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Digest algorithm that will be used
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_digest_algorithm_e
+@see yaca_digest_update()
+@see yaca_digest_finalize()
+@see yaca_context_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_digest_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_digest_update.html">yaca_digest_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_digest_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_digest_update-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_digest_update-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Feeds the message into the message digest algorithm.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_digest_initialize()
+Parameter message Message from which the digest is to be calculated
+Parameter message_len Length of the message
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_digest_initialize()
+@see yaca_digest_finalize()
+  
+
+</dd>
+
+          <dt id="yaca_encrypt_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_encrypt_finalize.html">yaca_encrypt_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_encrypt_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_encrypt_finalize-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_encrypt_finalize-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts the final chunk of the data.
+@since_tizen 3.0
+@remarks Skipping yaca_encrypt_update() and calling only yaca_encrypt_finalize() will produce an encryption of an empty message.
+Parameter ctx A valid encrypt context
+Output parameter ciphertext Final piece of the encrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter ciphertext_len Length of the final piece,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_encrypt_initialize()
+@see yaca_encrypt_update()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_encrypt_get_iv_bit_length" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_encrypt_get_iv_bit_length.html">yaca_encrypt_get_iv_bit_length</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_encrypt_get_iv_bit_length-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_encrypt_get_iv_bit_length-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_encrypt_get_iv_bit_length-param-key_bit_len"><span class="type-annotation">int</span> <span class="parameter-name">key_bit_len</span>, </span><span class="parameter" id="yaca_encrypt_get_iv_bit_length-param-iv_bit_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">iv_bit_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Returns the recommended/default length of the Initialization Vector for a given encryption configuration.
+@since_tizen 3.0
+@remarks If returned @a iv_bit_len equals 0 that means that for this
+specific algorithm and its parameters Initialization Vector is not used.
+Parameter algo Encryption algorithm
+Parameter bcm Chain mode
+Parameter key_bit_len Key length in bits
+Output parameter iv_bit_len Recommended Initialization Vector length in bits
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo, @a bcm or @a key_bit_len not
+divisible by 8)
+@retval #YACA_ERROR_INTERNAL Internal error
+  
+
+</dd>
+
+          <dt id="yaca_encrypt_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_encrypt_initialize.html">yaca_encrypt_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_encrypt_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_encrypt_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_encrypt_initialize-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_encrypt_initialize-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_encrypt_initialize-param-iv"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">iv</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes an encryption context.
+@since_tizen 3.0
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Encryption algorithm that will be used
+Parameter bcm Chaining mode that will be used
+Parameter sym_key Symmetric key that will be used
+Parameter iv Initialization Vector that will be used
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo, @a bcm, @a sym_key or @a iv)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see yaca_encrypt_update()
+@see yaca_encrypt_finalize()
+@see yaca_context_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_encrypt_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_encrypt_update.html">yaca_encrypt_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_encrypt_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_encrypt_update-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_encrypt_update-param-plaintext_len"><span class="type-annotation">int</span> <span class="parameter-name">plaintext_len</span>, </span><span class="parameter" id="yaca_encrypt_update-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_encrypt_update-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts chunk of the data.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_encrypt_initialize()
+Parameter plaintext Plaintext to be encrypted
+Parameter plaintext_len Length of the plaintext
+Output parameter ciphertext Buffer for the encrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter ciphertext_len Length of the encrypted data,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_encrypt_initialize()
+@see yaca_encrypt_finalize()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_free" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_free.html">yaca_free</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_free-param-memory"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">memory</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Frees the memory allocated by yaca_malloc(), yaca_zalloc(),
+yaca_realloc() or one of the cryptographic operations.
+@since_tizen 3.0
+Parameter memory Pointer to the memory to be freed
+@see yaca_malloc()
+@see yaca_zalloc()
+@see yaca_realloc()
+  
+
+</dd>
+
+          <dt id="yaca_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_initialize.html">yaca_initialize</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes the library. Must be called before any other crypto
+function. Should be called once in each thread that uses yaca.
+@since_tizen 3.0
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_cleanup()
+  
+
+</dd>
+
+          <dt id="yaca_key_derive_dh" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_derive_dh.html">yaca_key_derive_dh</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_derive_dh-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_key_derive_dh-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span>, </span><span class="parameter" id="yaca_key_derive_dh-param-secret"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">secret</span>, </span><span class="parameter" id="yaca_key_derive_dh-param-secret_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">secret_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Derives a shared secret using Diffie-Helmann or EC Diffie-Helmann key exchange protocol.
+@since_tizen 3.0
+@remarks The @a secret should not be used as a symmetric key.
+To produce a symmetric key pass the secret to a key derivation function (KDF)
+or a message digest function.
+@remarks Both the keys passed should be of DH or EC type.
+@remarks The @a secret should be freed with yaca_free().
+Parameter prv_key Our private key
+Parameter pub_key Peer public key
+Output parameter secret Generated shared secret
+Output parameter secret_len Size of the shared secret
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values
+(invalid @a prv_key or @a pub_key)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_key_derive_kdf()
+@see yaca_simple_calculate_digest()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_key_derive_kdf" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_derive_kdf.html">yaca_key_derive_kdf</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_derive_kdf-param-kdf"><span class="type-annotation">int</span> <span class="parameter-name">kdf</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-secret"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">secret</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-secret_len"><span class="type-annotation">int</span> <span class="parameter-name">secret_len</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">info</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-info_len"><span class="type-annotation">int</span> <span class="parameter-name">info_len</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-key_material_len"><span class="type-annotation">int</span> <span class="parameter-name">key_material_len</span>, </span><span class="parameter" id="yaca_key_derive_kdf-param-key_material"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">key_material</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Derives a key material from shared secret.
+@since_tizen 3.0
+@remarks The @a info parameter is ANSI X9.42 OtherInfo or ANSI X9.62 SharedInfo structure,
+more information can be found in ANSI X9.42/62 standard specification.
+@remarks The @a key_material or separate parts of it can be used to import a symmetric key
+with yaca_key_import().
+@remarks The @a key_material should be freed using yaca_free().
+Parameter kdf Key derivation function
+Parameter algo Digest algorithm that should be used in key derivation
+Parameter secret Shared secret
+Parameter secret_len Size of the shared secret
+Parameter info Optional additional info, use NULL if not appending extra info
+Parameter info_len Length of additional info, use 0 if not using additional info
+Parameter key_material_len Length of a key material to be generated
+Output parameter key_material Newly generated key material
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a algo or @a kdf)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_kdf_e
+@see #yaca_digest_algorithm_e
+@see yaca_key_derive_dh()
+@see yaca_key_import()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_key_derive_pbkdf2" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_derive_pbkdf2.html">yaca_key_derive_pbkdf2</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_derive_pbkdf2-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-salt"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">salt</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-salt_len"><span class="type-annotation">int</span> <span class="parameter-name">salt_len</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-iterations"><span class="type-annotation">int</span> <span class="parameter-name">iterations</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-key_bit_len"><span class="type-annotation">int</span> <span class="parameter-name">key_bit_len</span>, </span><span class="parameter" id="yaca_key_derive_pbkdf2-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Derives a key from user password (PKCS #5 a.k.a. pbkdf2 algorithm).
+@since_tizen 3.0
+@remarks The @a key should be released using yaca_key_destroy().
+Parameter password User password as a null-terminated string
+Parameter salt Salt, should be a non-empty string
+Parameter salt_len Length of the salt
+Parameter iterations Number of iterations
+Parameter algo Digest algorithm that should be used in key generation
+Parameter key_bit_len Length of a key (in bits) to be generated
+Output parameter key Newly generated key
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a algo or @a key_bit_len not divisible by 8)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_digest_algorithm_e
+@see yaca_key_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_key_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_destroy.html">yaca_key_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_destroy-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Releases the key created by the library. Passing YACA_KEY_NULL is allowed.
+@since_tizen 3.0
+Parameter key Key to be released
+@see yaca_key_import()
+@see yaca_key_export()
+@see yaca_key_generate()
+  
+
+</dd>
+
+          <dt id="yaca_key_export" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_export.html">yaca_key_export</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_export-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="yaca_key_export-param-key_fmt"><span class="type-annotation">int</span> <span class="parameter-name">key_fmt</span>, </span><span class="parameter" id="yaca_key_export-param-key_file_fmt"><span class="type-annotation">int</span> <span class="parameter-name">key_file_fmt</span>, </span><span class="parameter" id="yaca_key_export-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="yaca_key_export-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">data</span>, </span><span class="parameter" id="yaca_key_export-param-data_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">data_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Exports a key or key generation parameters to arbitrary format.
+@since_tizen 3.0
+@remarks Everywhere where either a key (of any type) or an asymmetric key is referred
+in the documentation of this function key generator parameters are also included.
+@remarks This function exports the key to an arbitrary key format and key file format.
+@remarks For key formats two values are allowed:
+  
+
+</dd>
+
+          <dt id="yaca_key_extract_parameters" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_extract_parameters.html">yaca_key_extract_parameters</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_extract_parameters-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="yaca_key_extract_parameters-param-params"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">params</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Extracts parameters from a private or a public key.
+@since_tizen 3.0
+@remarks The @a params should be released using yaca_key_destroy().
+@remarks This function does not support RSA keys.
+Parameter key A key to extract the parameters from
+Output parameter params Extracted parameters
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER @a key is of invalid type or @a params is NULL
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_key_generate()
+@see yaca_key_generate_from_parameters()
+@see yaca_key_import()
+@see yaca_key_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_key_extract_public" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_extract_public.html">yaca_key_extract_public</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_extract_public-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_key_extract_public-param-pub_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">pub_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Extracts public key from a private one.
+@since_tizen 3.0
+@remarks The @a pub_key should be released using yaca_key_destroy().
+Parameter prv_key Private key to extract the public one from
+Output parameter pub_key Extracted public key
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER @a prv_key is of invalid type or @a pub_key is NULL
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_key_generate()
+@see yaca_key_import()
+@see yaca_key_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_key_generate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_generate.html">yaca_key_generate</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_generate-param-key_type"><span class="type-annotation">int</span> <span class="parameter-name">key_type</span>, </span><span class="parameter" id="yaca_key_generate-param-key_bit_len"><span class="type-annotation">int</span> <span class="parameter-name">key_bit_len</span>, </span><span class="parameter" id="yaca_key_generate-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Generates a secure key or key generation parameters (or an Initialization Vector).
+@since_tizen 3.0
+@remarks This function is used to generate symmetric keys, private asymmetric keys
+or key generation parameters for key types that support them (DSA, DH and EC).
+@remarks Supported key lengths:
+  
+
+</dd>
+
+          <dt id="yaca_key_generate_from_parameters" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_generate_from_parameters.html">yaca_key_generate_from_parameters</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_generate_from_parameters-param-params"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">params</span>, </span><span class="parameter" id="yaca_key_generate_from_parameters-param-prv_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">prv_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Generates a secure private asymmetric key from parameters.
+@since_tizen 3.0
+@remarks This function is used to generate private asymmetric keys
+based on pre-generated parameters.
+@remarks This function does not support RSA keys, as it's not possible
+to extract parameters from them.
+@remarks The @a key should be released using yaca_key_destroy().
+Parameter params Pre-generated parameters
+Output parameter prv_key Newly generated private key
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER @a prv_key is NULL or incorrect @a params
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_key_destroy()
+@see yaca_key_generate()
+@see yaca_key_extract_parameters()
+  
+
+</dd>
+
+          <dt id="yaca_key_get_bit_length" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_get_bit_length.html">yaca_key_get_bit_length</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_get_bit_length-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="yaca_key_get_bit_length-param-key_bit_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">key_bit_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets key's length (in bits).
+@since_tizen 3.0
+@remarks The @a key can be any symmetric (including an Initialization Vector) or
+asymmetric key (including key generation parameters).
+@remarks For Diffie-Helmann @a key_bit_len returns prime length in bits. Values
+used to generate the key/parameters in yaca_key_generate() are not
+restored. Neither generator number nor values from #yaca_key_bit_length_dh_rfc_e.
+@remarks For Elliptic Curves @a key_bit_len returns values from #yaca_key_bit_length_ec_e.
+Parameter key Key which length we return
+Output parameter key_bit_len Key length in bits
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Either of the params is NULL
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_bit_length_e
+@see #yaca_key_bit_length_dh_rfc_e
+@see #yaca_key_bit_length_ec_e
+  
+
+</dd>
+
+          <dt id="yaca_key_get_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_get_type.html">yaca_key_get_type</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_get_type-param-key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="yaca_key_get_type-param-key_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">key_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets key's type.
+@since_tizen 3.0
+Parameter key Key which type we return
+Output parameter key_type Key type
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Either of the params is NULL
+@see #yaca_key_type_e
+  
+
+</dd>
+
+          <dt id="yaca_key_import" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_key_import.html">yaca_key_import</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_key_import-param-key_type"><span class="type-annotation">int</span> <span class="parameter-name">key_type</span>, </span><span class="parameter" id="yaca_key_import-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="yaca_key_import-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">data</span>, </span><span class="parameter" id="yaca_key_import-param-data_len"><span class="type-annotation">int</span> <span class="parameter-name">data_len</span>, </span><span class="parameter" id="yaca_key_import-param-key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Imports a key or key generation parameters.
+@since_tizen 3.0
+@remarks Everywhere where either a key (of any type) or an asymmetric key is referred
+in the documentation of this function key generator parameters are also included.
+@remarks This function imports a key trying to match it to the @a key_type specified.
+It should autodetect both the key format and the file format.
+@remarks For symmetric, Initialization Vector and DES keys RAW binary format and BASE64 encoded
+binary format are supported.
+For asymmetric keys PEM and DER file formats are supported.
+@remarks Asymmetric keys can be in their default ASN1 structure formats (like
+PKCS#1, SSleay or PKCS#3). Private asymmetric keys can also be in
+PKCS#8 format. Additionally it is possible to import public RSA/DSA/EC
+keys from X509 certificate.
+@remarks If the key is encrypted the algorithm will be autodetected and password
+used. If it's not known if the key is encrypted one should pass NULL as
+password and check for the #YACA_ERROR_INVALID_PASSWORD return code.
+@remarks If the imported key will be detected as a format that does not support
+encryption and password was passed #YACA_ERROR_INVALID_PARAMETER will
+be returned. For a list of keys and formats that do support encryption
+see yaca_key_export() documentation.
+@remarks The @a key should be released using yaca_key_destroy().
+Parameter key_type Type of the key
+Parameter password Null-terminated password for the key (can be NULL)
+Parameter data Blob containing the key
+Parameter data_len Size of the blob
+Output parameter key Returned key
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a key_type or @a data_len too big)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@retval #YACA_ERROR_INVALID_PASSWORD Invalid @a password given or @a password was required
+and none was given
+@see #yaca_key_type_e
+@see yaca_key_export()
+@see yaca_key_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_malloc" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_malloc.html">yaca_malloc</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_malloc-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span>, </span><span class="parameter" id="yaca_malloc-param-memory"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">memory</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Allocates the memory.
+@since_tizen 3.0
+@remarks The @a memory should be freed using yaca_free().
+Parameter size Size of the allocation (bytes)
+Output parameter memory Allocated memory
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@see yaca_zalloc()
+@see yaca_realloc()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_memcmp" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_memcmp.html">yaca_memcmp</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_memcmp-param-first"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">first</span>, </span><span class="parameter" id="yaca_memcmp-param-second"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">second</span>, </span><span class="parameter" id="yaca_memcmp-param-len"><span class="type-annotation">int</span> <span class="parameter-name">len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Safely compares first @a len bytes of two buffers.
+@since_tizen 3.0
+Parameter first Pointer to the first buffer
+Parameter second Pointer to the second buffer
+Parameter len Length to compare
+@return #YACA_ERROR_NONE when buffers are equal,
+otherwise #YACA_ERROR_DATA_MISMATCH
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0)
+@retval #YACA_ERROR_DATA_MISMATCH Buffers are different
+  
+
+</dd>
+
+          <dt id="yaca_open_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_open_finalize.html">yaca_open_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_open_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_open_finalize-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_open_finalize-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts last chunk of sealed message.
+@since_tizen 3.0
+@remarks Skipping yaca_open_update() and calling only yaca_open_finalize() will produce a
+decryption of an empty ciphertext.
+Parameter ctx A valid open context
+Output parameter plaintext Final piece of the decrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter plaintext_len Length of the final piece,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx), wrong #YACA_PROPERTY_GCM_AAD or
+wrong #YACA_PROPERTY_GCM_TAG was used
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_open_initialize()
+@see yaca_open_update()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_open_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_open_initialize.html">yaca_open_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_open_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_open_initialize-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_open_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_open_initialize-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_open_initialize-param-sym_key_bit_len"><span class="type-annotation">int</span> <span class="parameter-name">sym_key_bit_len</span>, </span><span class="parameter" id="yaca_open_initialize-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_open_initialize-param-iv"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">iv</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes an asymmetric decryption context.
+@since_tizen 3.0
+@remarks The @a ctx should be released using yaca_context_destroy().
+@remarks The @a prv_key must be #YACA_KEY_TYPE_RSA_PRIV.
+Output parameter ctx Newly created context
+Parameter prv_key Private key, part of the pair that was used for the encryption
+Parameter algo Symmetric algorithm that was used for the encryption
+Parameter bcm Block chaining mode for the symmetric algorithm
+Parameter sym_key_bit_len Symmetric key length (in bits) that was used for the encryption
+Parameter sym_key Symmetric key, encrypted with the public key,
+that was used to encrypt the data
+Parameter iv Initialization Vector that was used for the encryption
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, invalid
+@a algo, @a bcm, @a sym_key_bit_len, @a prv_key,
+@a sym_key or @a iv)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see #yaca_key_bit_length_e
+@see yaca_open_update()
+@see yaca_open_finalize()
+@see yaca_context_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_open_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_open_update.html">yaca_open_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_open_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_open_update-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_open_update-param-ciphertext_len"><span class="type-annotation">int</span> <span class="parameter-name">ciphertext_len</span>, </span><span class="parameter" id="yaca_open_update-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_open_update-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts piece of the data.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_open_initialize()
+Parameter ciphertext Ciphertext to be decrypted
+Parameter ciphertext_len Length of the ciphertext
+Output parameter plaintext Buffer for the decrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter plaintext_len Length of the decrypted data,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx), wrong #YACA_PROPERTY_CCM_AAD or
+wrong #YACA_PROPERTY_CCM_TAG was used
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_open_initialize()
+@see yaca_open_finalize()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_randomize_bytes" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_randomize_bytes.html">yaca_randomize_bytes</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_randomize_bytes-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">data</span>, </span><span class="parameter" id="yaca_randomize_bytes-param-data_len"><span class="type-annotation">int</span> <span class="parameter-name">data_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Generates random data.
+@since_tizen 3.0
+Parameter data Pointer to the memory to be randomized
+Parameter data_len Length of the memory to be randomized
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0)
+@retval #YACA_ERROR_INTERNAL Internal error
+  
+
+</dd>
+
+          <dt id="yaca_realloc" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_realloc.html">yaca_realloc</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_realloc-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span>, </span><span class="parameter" id="yaca_realloc-param-memory"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">memory</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Re-allocates the memory.
+@since_tizen 3.0
+@remarks In case of failure the function doesn't free the memory pointed by @a memory.
+@remarks If @a memory is NULL then the call is equivalent to yaca_malloc().
+@remarks If the function fails the contents of @a memory will be left unchanged.
+@remarks The @a memory should be freed using yaca_free().
+Parameter size Size of the new allocation (bytes)
+Parameter memory  Memory to be reallocated
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@see yaca_malloc()
+@see yaca_zalloc()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_rsa_private_decrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_rsa_private_decrypt.html">yaca_rsa_private_decrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_rsa_private_decrypt-param-padding"><span class="type-annotation">int</span> <span class="parameter-name">padding</span>, </span><span class="parameter" id="yaca_rsa_private_decrypt-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_rsa_private_decrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_rsa_private_decrypt-param-ciphertext_len"><span class="type-annotation">int</span> <span class="parameter-name">ciphertext_len</span>, </span><span class="parameter" id="yaca_rsa_private_decrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_rsa_private_decrypt-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts data using a RSA private key (low-level decrypt equivalent).
+@since_tizen 3.0
+@remarks The @a plaintext should be freed using yaca_free().
+@remarks The @a prv_key used has to be of a #YACA_KEY_TYPE_RSA_PRIV type.
+Parameter padding Padding method
+Parameter prv_key Private RSA key matching the public one used to encrypt the data
+Parameter ciphertext Ciphertext to be decrypted
+Parameter ciphertext_len Length of ciphertext
+Output parameter plaintext Decrypted data, will be allocated by the library
+Output parameter plaintext_len Length of the decrypted data
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a padding or @a prv_key), padding check failed
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_type_e
+@see #yaca_padding_e
+@see yaca_rsa_public_encrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_rsa_private_encrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_rsa_private_encrypt.html">yaca_rsa_private_encrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_rsa_private_encrypt-param-padding"><span class="type-annotation">int</span> <span class="parameter-name">padding</span>, </span><span class="parameter" id="yaca_rsa_private_encrypt-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_rsa_private_encrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_rsa_private_encrypt-param-plaintext_len"><span class="type-annotation">int</span> <span class="parameter-name">plaintext_len</span>, </span><span class="parameter" id="yaca_rsa_private_encrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_rsa_private_encrypt-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts data using a RSA private key (low-level sign equivalent).
+@since_tizen 3.0
+@remarks The @a ciphertext should be freed using yaca_free().
+@remarks The @a prv_key used has to be of a #YACA_KEY_TYPE_RSA_PRIV type.
+@remarks The maximum length of plaintext depends on the key length and padding method,
+see #yaca_padding_e for details.
+@remarks The @a plaintext can be NULL but then the @a plaintext_len must be 0.
+Parameter padding Padding method
+Parameter prv_key Private RSA key (see yaca_key.h for key generation functions)
+Parameter plaintext Plaintext to be encrypted
+Parameter plaintext_len Length of the plaintext
+Output parameter ciphertext Encrypted data, will be allocated by the library
+Output parameter ciphertext_len Length of the encrypted data (may be larger than decrypted)
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a padding, @a prv_key or @a plaintext_len)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_type_e
+@see #yaca_padding_e
+@see yaca_rsa_public_decrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_rsa_public_decrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_rsa_public_decrypt.html">yaca_rsa_public_decrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_rsa_public_decrypt-param-padding"><span class="type-annotation">int</span> <span class="parameter-name">padding</span>, </span><span class="parameter" id="yaca_rsa_public_decrypt-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span>, </span><span class="parameter" id="yaca_rsa_public_decrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_rsa_public_decrypt-param-ciphertext_len"><span class="type-annotation">int</span> <span class="parameter-name">ciphertext_len</span>, </span><span class="parameter" id="yaca_rsa_public_decrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_rsa_public_decrypt-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts data using a RSA public key (low-level verify equivalent).
+@since_tizen 3.0
+@remarks The @a plaintext should be freed using yaca_free().
+@remarks The @a pub_key used has to be of a #YACA_KEY_TYPE_RSA_PUB type.
+Parameter padding Padding method
+Parameter pub_key Public RSA key matching the private one used to encrypt the data
+Parameter ciphertext Ciphertext to be decrypted
+Parameter ciphertext_len Length of ciphertext
+Output parameter plaintext Decrypted data, will be allocated by the library
+Output parameter plaintext_len Length of the decrypted data
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a padding or @a pub_key), padding check failed
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_type_e
+@see #yaca_padding_e
+@see yaca_rsa_private_encrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_rsa_public_encrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_rsa_public_encrypt.html">yaca_rsa_public_encrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_rsa_public_encrypt-param-padding"><span class="type-annotation">int</span> <span class="parameter-name">padding</span>, </span><span class="parameter" id="yaca_rsa_public_encrypt-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span>, </span><span class="parameter" id="yaca_rsa_public_encrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_rsa_public_encrypt-param-plaintext_len"><span class="type-annotation">int</span> <span class="parameter-name">plaintext_len</span>, </span><span class="parameter" id="yaca_rsa_public_encrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_rsa_public_encrypt-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts data using a RSA public key (low-level encrypt equivalent).
+@since_tizen 3.0
+@remarks The @a ciphertext should be freed using yaca_free().
+@remarks The @a pub_key used has to be of a #YACA_KEY_TYPE_RSA_PUB type.
+@remarks The maximum length of plaintext depends on the key length and padding method.
+See #yaca_padding_e for details.
+@remarks The @a plaintext can be NULL but then the @a plaintext_len must be 0.
+Parameter padding Padding method
+Parameter pub_key Public RSA key (see yaca_key.h for key generation functions)
+Parameter plaintext Plaintext to be encrypted
+Parameter plaintext_len Length of the plaintext
+Output parameter ciphertext Encrypted data, will be allocated by the library
+Output parameter ciphertext_len Length of the encrypted data (may be larger than decrypted)
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a padding, @a pub_key or @a plaintext_len)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_key_type_e
+@see #yaca_padding_e
+@see yaca_rsa_private_decrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_seal_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_seal_finalize.html">yaca_seal_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_seal_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_seal_finalize-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_seal_finalize-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts the final piece of the data.
+@since_tizen 3.0
+@remarks Skipping yaca_seal_update() and calling only yaca_seal_finalize() will produce an
+encryption of an empty message.
+Parameter ctx A valid seal context
+Output parameter ciphertext Final piece of the encrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter ciphertext_len Length of the final piece,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_seal_initialize()
+@see yaca_seal_update()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_seal_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_seal_initialize.html">yaca_seal_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_seal_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_seal_initialize-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span>, </span><span class="parameter" id="yaca_seal_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_seal_initialize-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_seal_initialize-param-sym_key_bit_len"><span class="type-annotation">int</span> <span class="parameter-name">sym_key_bit_len</span>, </span><span class="parameter" id="yaca_seal_initialize-param-sym_key"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_seal_initialize-param-iv"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_key_h</span>&gt;</span></span> <span class="parameter-name">iv</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes an asymmetric encryption context and generates symmetric key and Initialization Vector.
+@since_tizen 3.0
+@remarks Generated symmetric key is encrypted with public key,
+so can be only used with yaca_open_initialize(). It can be exported,
+but after import it can be only used with yaca_open_initialize() as well.
+@remarks The @a ctx should be released using yaca_context_destroy().
+@remarks The @a pub_key must be #YACA_KEY_TYPE_RSA_PUB.
+@remarks The @a sym_key_bit_len must be at least 88 bits shorter than the @a pub_key bit length.
+@remarks The @a sym_key should be released using yaca_key_destroy().
+@remarks The @a iv should be released using yaca_key_destroy().
+Output parameter ctx Newly created context
+Parameter pub_key Public key of the peer that will receive the encrypted data
+Parameter algo Symmetric algorithm that will be used
+Parameter bcm Block chaining mode for the symmetric algorithm
+Parameter sym_key_bit_len Symmetric key length (in bits) that will be generated
+Output parameter sym_key Generated symmetric key that will be used,
+it is encrypted with peer's public key
+Output parameter iv Generated Initialization Vector that will be used
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo, @a bcm, @a sym_key_bit_len or @a pub_key)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see #yaca_key_bit_length_e
+@see yaca_seal_update()
+@see yaca_seal_finalize()
+@see yaca_open_initialize()
+@see yaca_key_destroy()
+@see yaca_context_destroy()
+  
+
+</dd>
+
+          <dt id="yaca_seal_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_seal_update.html">yaca_seal_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_seal_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_seal_update-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_seal_update-param-plaintext_len"><span class="type-annotation">int</span> <span class="parameter-name">plaintext_len</span>, </span><span class="parameter" id="yaca_seal_update-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_seal_update-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts piece of the data.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_seal_initialize()
+Parameter plaintext Plaintext to be encrypted
+Parameter plaintext_len Length of the plaintext
+Output parameter ciphertext Buffer for the encrypted data
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter ciphertext_len Length of the encrypted data,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_seal_initialize()
+@see yaca_seal_finalize()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_sign_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_sign_finalize.html">yaca_sign_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_sign_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_sign_finalize-param-signature"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">signature</span>, </span><span class="parameter" id="yaca_sign_finalize-param-signature_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">signature_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Calculates the final signature or MAC.
+@since_tizen 3.0
+@remarks Skipping yaca_sign_update() and calling only yaca_sign_finalize() will produce a
+signature or MAC of an empty message.
+Parameter ctx A valid sign context
+Output parameter signature Buffer for the MAC or the message signature
+(must be allocated by client, see yaca_context_get_output_length())
+Output parameter signature_len Length of the MAC or the signature,
+actual number of bytes written will be returned here
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_sign_initialize()
+@see yaca_sign_update()
+@see yaca_sign_initialize_hmac()
+@see yaca_sign_initialize_cmac()
+@see yaca_context_get_output_length()
+  
+
+</dd>
+
+          <dt id="yaca_sign_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_sign_initialize.html">yaca_sign_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_sign_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_sign_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_sign_initialize-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes a signature context for asymmetric signatures.
+@since_tizen 3.0
+@remarks For verification use yaca_verify_initialize(), yaca_verify_update() and
+yaca_verify_finalize() functions with matching public key.
+@remarks For RSA operations the default padding used is #YACA_PADDING_PKCS1. It can be
+changed using yaca_context_set_property() with #YACA_PROPERTY_PADDING.
+@remarks For #YACA_DIGEST_SHA384 and #YACA_DIGEST_SHA512 the RSA key size must be bigger than
+#YACA_KEY_LENGTH_512BIT.
+@remarks Using of #YACA_DIGEST_MD5 algorithm for DSA and ECDSA operations is prohibited.
+@remarks Using of #YACA_DIGEST_MD5 or #YACA_DIGEST_SHA224 with #YACA_PADDING_X931 is prohibited.
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Digest algorithm that will be used
+Parameter prv_key Private key that will be used, algorithm is deduced based
+on key type, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_sign_initialize_cmac" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_sign_initialize_cmac.html">yaca_sign_initialize_cmac</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_sign_initialize_cmac-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_sign_initialize_cmac-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_sign_initialize_cmac-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes a signature context for CMAC.
+@since_tizen 3.0
+@remarks For verification, calculate message CMAC and compare with received MAC using yaca_memcmp().
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Encryption algorithm that will be used
+Parameter sym_key Symmetric key that will be used, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_sign_initialize_hmac" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_sign_initialize_hmac.html">yaca_sign_initialize_hmac</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_sign_initialize_hmac-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_sign_initialize_hmac-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_sign_initialize_hmac-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes a signature context for HMAC.
+@since_tizen 3.0
+@remarks For verification, calculate message HMAC and compare with received MAC using yaca_memcmp().
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Digest algorithm that will be used
+Parameter sym_key Symmetric key that will be used, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_sign_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_sign_update.html">yaca_sign_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_sign_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_sign_update-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_sign_update-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Feeds the message into the digital signature or MAC algorithm.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_sign_initialize(),
+yaca_sign_initialize_hmac() or yaca_sign_initialize_cmac()
+Parameter message Message to be signed
+Parameter message_len Length of the message
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_sign_initialize()
+@see yaca_sign_finalize()
+@see yaca_sign_initialize_hmac()
+@see yaca_sign_initialize_cmac()
+  
+
+</dd>
+
+          <dt id="yaca_simple_calculate_cmac" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_calculate_cmac.html">yaca_simple_calculate_cmac</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_calculate_cmac-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_calculate_cmac-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_simple_calculate_cmac-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_simple_calculate_cmac-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span>, </span><span class="parameter" id="yaca_simple_calculate_cmac-param-mac"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">mac</span>, </span><span class="parameter" id="yaca_simple_calculate_cmac-param-mac_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">mac_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Calculates a CMAC of given message using symmetric key.
+@since_tizen 3.0
+@remarks For verification, calculate message CMAC and compare with received MAC using yaca_memcmp().
+@remarks The @a mac should be freed using yaca_free().
+@remarks The @a message can be NULL but then @a message_len must be 0.
+Parameter algo Encryption algorithm that will be used
+Parameter sym_key Key that will be used, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_simple_calculate_digest" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_calculate_digest.html">yaca_simple_calculate_digest</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_calculate_digest-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_calculate_digest-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_simple_calculate_digest-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span>, </span><span class="parameter" id="yaca_simple_calculate_digest-param-digest"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">digest</span>, </span><span class="parameter" id="yaca_simple_calculate_digest-param-digest_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">digest_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Calculates a digest of a message.
+@since_tizen 3.0
+@remarks The @a digest should be freed using yaca_free().
+@remarks The @a message can be NULL but then @a message_len must be 0.
+Parameter algo Digest algorithm (select #YACA_DIGEST_SHA256 if unsure)
+Parameter message Message from which the digest is to be calculated
+Parameter message_len Length of the message
+Output parameter digest Message digest, will be allocated by the library
+Output parameter digest_len Length of message digest (depends on algorithm)
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a algo)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_digest_algorithm_e
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_simple_calculate_hmac" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_calculate_hmac.html">yaca_simple_calculate_hmac</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_calculate_hmac-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_calculate_hmac-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_simple_calculate_hmac-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_simple_calculate_hmac-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span>, </span><span class="parameter" id="yaca_simple_calculate_hmac-param-mac"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">mac</span>, </span><span class="parameter" id="yaca_simple_calculate_hmac-param-mac_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">mac_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Calculates a HMAC of given message using symmetric key.
+@since_tizen 3.0
+@remarks For verification, calculate message HMAC and compare with received MAC using yaca_memcmp().
+@remarks The @a mac should be freed using yaca_free().
+@remarks The @a message can be NULL but then @a message_len must be 0.
+Parameter algo Digest algorithm that will be used
+Parameter sym_key Key that will be used, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_simple_calculate_signature" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_calculate_signature.html">yaca_simple_calculate_signature</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_calculate_signature-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_calculate_signature-param-prv_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">prv_key</span>, </span><span class="parameter" id="yaca_simple_calculate_signature-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_simple_calculate_signature-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span>, </span><span class="parameter" id="yaca_simple_calculate_signature-param-signature"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">signature</span>, </span><span class="parameter" id="yaca_simple_calculate_signature-param-signature_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">signature_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a signature using asymmetric private key.
+@since_tizen 3.0
+@remarks For #YACA_DIGEST_SHA384 and #YACA_DIGEST_SHA512 the RSA key size must be bigger than
+#YACA_KEY_LENGTH_512BIT.
+@remarks Using of #YACA_DIGEST_MD5 algorithm for DSA and ECDSA operations is prohibited.
+@remarks The @a signature should be freed using yaca_free().
+@remarks The @a message can be NULL but then @a message_len must be 0.
+Parameter algo Digest algorithm that will be used
+Parameter prv_key Private key that will be used, algorithm is
+deduced based on key type, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_simple_decrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_decrypt.html">yaca_simple_decrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_decrypt-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-iv"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">iv</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-ciphertext_len"><span class="type-annotation">int</span> <span class="parameter-name">ciphertext_len</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_simple_decrypt-param-plaintext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">plaintext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decrypts data using a symmetric cipher.
+@since_tizen 3.0
+@remarks yaca_simple_decrypt() doesn't support #YACA_BCM_GCM and #YACA_BCM_CCM.
+@remarks The @a plaintext should be freed using yaca_free().
+@remarks The @a ciphertext can be NULL but then @a ciphertext_len must be 0.
+Parameter algo Decryption algorithm that was used to encrypt the data
+Parameter bcm Chaining mode that was used to encrypt the data
+Parameter sym_key Symmetric encryption key that was used to encrypt the data
+Parameter iv Initialization Vector that was used to encrypt the data
+Parameter ciphertext Ciphertext to be decrypted
+Parameter ciphertext_len Length of ciphertext
+Output parameter plaintext Decrypted data, will be allocated by the library
+Output parameter plaintext_len Length of the decrypted data
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a algo, @a bcm, @a sym_key or @a iv)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see yaca_simple_encrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_simple_encrypt" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_encrypt.html">yaca_simple_encrypt</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_encrypt-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-bcm"><span class="type-annotation">int</span> <span class="parameter-name">bcm</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-sym_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">sym_key</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-iv"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">iv</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-plaintext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">plaintext</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-plaintext_len"><span class="type-annotation">int</span> <span class="parameter-name">plaintext_len</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-ciphertext"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">ciphertext</span>, </span><span class="parameter" id="yaca_simple_encrypt-param-ciphertext_len"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Size</span>&gt;</span></span> <span class="parameter-name">ciphertext_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encrypts data using a symmetric cipher.
+@since_tizen 3.0
+@remarks yaca_simple_encrypt() doesn't support #YACA_BCM_GCM and #YACA_BCM_CCM.
+@remarks The @a ciphertext should be freed using yaca_free().
+@remarks The @a plaintext can be NULL but then @a plaintext_len must be 0.
+Parameter algo Encryption algorithm (select #YACA_ENCRYPT_AES if unsure)
+Parameter bcm Chaining mode (select #YACA_BCM_CBC if unsure)
+Parameter sym_key Symmetric encryption key (see yaca_key.h for key generation functions)
+Parameter iv Initialization Vector
+Parameter plaintext Plaintext to be encrypted
+Parameter plaintext_len Length of the plaintext
+Output parameter ciphertext Encrypted data, will be allocated by the library
+Output parameter ciphertext_len Length of the encrypted data (may be larger than decrypted)
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0
+invalid @a algo, @a bcm, @a sym_key or @a iv)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@retval #YACA_ERROR_INTERNAL Internal error
+@see #yaca_encrypt_algorithm_e
+@see #yaca_block_cipher_mode_e
+@see yaca_simple_decrypt()
+@see yaca_free()
+  
+
+</dd>
+
+          <dt id="yaca_simple_verify_signature" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_simple_verify_signature.html">yaca_simple_verify_signature</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_simple_verify_signature-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_simple_verify_signature-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span>, </span><span class="parameter" id="yaca_simple_verify_signature-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_simple_verify_signature-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span>, </span><span class="parameter" id="yaca_simple_verify_signature-param-signature"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">signature</span>, </span><span class="parameter" id="yaca_simple_verify_signature-param-signature_len"><span class="type-annotation">int</span> <span class="parameter-name">signature_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Verifies a signature using asymmetric public key.
+@since_tizen 3.0
+@remarks The @a message can be NULL but then @a message_len must be 0.
+Parameter algo Digest algorithm that will be used
+Parameter pub_key Public key that will be used, algorithm is
+deduced based on key type, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_verify_finalize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_verify_finalize.html">yaca_verify_finalize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_verify_finalize-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_verify_finalize-param-signature"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">signature</span>, </span><span class="parameter" id="yaca_verify_finalize-param-signature_len"><span class="type-annotation">int</span> <span class="parameter-name">signature_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Performs the verification.
+@since_tizen 3.0
+@remarks Skipping yaca_verify_update() and calling only yaca_verify_finalize() will verify
+the signature of an empty message.
+Parameter ctx A valid verify context
+Parameter signature Message signature to be verified
+Parameter signature_len Length of the signature
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@retval #YACA_ERROR_DATA_MISMATCH The verification failed
+@see yaca_verify_initialize()
+@see yaca_verify_update()
+@see yaca_sign_finalize()
+  
+
+</dd>
+
+          <dt id="yaca_verify_initialize" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_verify_initialize.html">yaca_verify_initialize</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_verify_initialize-param-ctx"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">yaca_context_h</span>&gt;</span></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_verify_initialize-param-algo"><span class="type-annotation">int</span> <span class="parameter-name">algo</span>, </span><span class="parameter" id="yaca_verify_initialize-param-pub_key"><span class="type-annotation">yaca_key_h</span> <span class="parameter-name">pub_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes a signature verification context for asymmetric signatures.
+@since_tizen 3.0
+@remarks For RSA operations the default padding used is #YACA_PADDING_PKCS1. It can be
+changed using yaca_context_set_property() with #YACA_PROPERTY_PADDING.
+For verify to succeed it has to be set to the same value it was signed with.
+@remarks The @a ctx should be released using yaca_context_destroy().
+Output parameter ctx Newly created context
+Parameter algo Digest algorithm that will be used
+Parameter pub_key Public key that will be used, algorithm is deduced based on
+key type, supported key types:
+  
+
+</dd>
+
+          <dt id="yaca_verify_update" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_verify_update.html">yaca_verify_update</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_verify_update-param-ctx"><span class="type-annotation">yaca_context_h</span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="yaca_verify_update-param-message"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="yaca_verify_update-param-message_len"><span class="type-annotation">int</span> <span class="parameter-name">message_len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Feeds the message into the digital signature verification algorithm.
+@since_tizen 3.0
+Parameter ctx Context created by yaca_verify_initialize()
+Parameter message Message
+Parameter message_len Length of the message
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0,
+invalid @a ctx)
+@retval #YACA_ERROR_INTERNAL Internal error
+@see yaca_verify_initialize()
+@see yaca_verify_finalize()
+  
+
+</dd>
+
+          <dt id="yaca_zalloc" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_yaca/yaca_zalloc.html">yaca_zalloc</a></span><span class="signature">(<wbr><span class="parameter" id="yaca_zalloc-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span>, </span><span class="parameter" id="yaca_zalloc-param-memory"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">memory</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Allocates the zeroed memory.
+@since_tizen 3.0
+@remarks The @a memory should be freed using yaca_free().
+Parameter size Size of the allocation (bytes)
+Output parameter memory Allocated memory
+@return #YACA_ERROR_NONE on success,
+negative on error
+@retval #YACA_ERROR_NONE Successful
+@retval #YACA_ERROR_INVALID_PARAMETER Required parameters have incorrect values (NULL, 0)
+@retval #YACA_ERROR_OUT_OF_MEMORY Out of memory error
+@see yaca_malloc()
+@see yaca_realloc()
+@see yaca_free()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_yaca.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_yaca library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

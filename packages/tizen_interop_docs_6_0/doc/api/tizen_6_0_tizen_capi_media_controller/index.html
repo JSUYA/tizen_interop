@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_media_controller library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_media_controller library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_media_controller.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_media_controller</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_media_controller&#47;tizen_6_0_tizen_capi_media_controller-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_capi_media_controller</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiMediaController</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libcapi-media-controller.so.0</code>.</p>
+<p>Multimedia / Media Controller.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="mc_client_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_create.html">mc_client_create</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_create-param-client"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_client_h</span>&gt;</span></span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a media controller client.
+@details The media controller client binds the latest media controller server when handlers are created.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_destroy.html">mc_client_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_destroy-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys client.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+Parameter client The handle of the media controller client
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_CONTROLLER_ERROR_NONE Successful
+@retval #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_CONTROLLER_ERROR_INVALID_OPERATION Invalid operation
+  
+
+</dd>
+
+          <dt id="mc_client_destroy_playback" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_destroy_playback.html">mc_client_destroy_playback</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_destroy_playback-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys playback.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_foreach_server" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_foreach_server.html">mc_client_foreach_server</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_foreach_server-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_foreach_server-param-callback"><span class="type-annotation">mc_activated_server_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_foreach_server-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all created servers.
+@details This function gets all created media controller servers.
+The callback function will be invoked for every created media controller server.
+If there are no media controller servers, the callback will not be invoked.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_foreach_server_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_foreach_server_playlist.html">mc_client_foreach_server_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_foreach_server_playlist-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_foreach_server_playlist-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_foreach_server_playlist-param-callback"><span class="type-annotation">mc_playlist_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_foreach_server_playlist-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_playlist_foreach_playlist() instead.
+@brief Retrieves all playlists of the media controller server.
+@details This function gets all playlists of the media controller server.
+The callback function will be invoked for every retrieved playlist.
+If there are no playlists, the callback will not be invoked.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_foreach_server_subscribed" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_foreach_server_subscribed.html">mc_client_foreach_server_subscribed</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_foreach_server_subscribed-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_foreach_server_subscribed-param-subscription_type"><span class="type-annotation">int</span> <span class="parameter-name">subscription_type</span>, </span><span class="parameter" id="mc_client_foreach_server_subscribed-param-callback"><span class="type-annotation">mc_subscribed_server_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_foreach_server_subscribed-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all subscribed Server.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_age_rating" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_age_rating.html">mc_client_get_age_rating</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_age_rating-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_age_rating-param-age_rating"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">age_rating</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the age rating of the content.
+@details Gets the age rating of the current playing media.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_latest_server_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_latest_server_info.html">mc_client_get_latest_server_info</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_latest_server_info-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_latest_server_info-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_latest_server_info-param-server_state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">server_state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest media controller server info.
+@details The media controller client will get the most recently updated information by the server.
+  
+
+</dd>
+
+          <dt id="mc_client_get_playback_content_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_playback_content_type.html">mc_client_get_playback_content_type</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_playback_content_type-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_playback_content_type-param-content_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">content_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playback content type.
+@details Gets the content type of the current playing media. If there is no content type info, result value is #MC_CONTENT_TYPE_UNDECIDED.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_playback_position" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_playback_position.html">mc_client_get_playback_position</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_playback_position-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_playback_position-param-position"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedLongLong</span>&gt;</span></span> <span class="parameter-name">position</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playback position.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_playback_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_playback_state.html">mc_client_get_playback_state</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_playback_state-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_playback_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playback state.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_playlist_item_index" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_playlist_item_index.html">mc_client_get_playlist_item_index</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_playlist_item_index-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_playlist_item_index-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.0. Use mc_client_get_playlist_item_info() instead.
+@brief Gets the index of the media in playlist.
+@details Gets the index of the current playing media in a playlist. If the media controller server didn't set the index, the value is NULL.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_playlist_item_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_playlist_item_info.html">mc_client_get_playlist_item_info</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_playlist_item_info-param-playback"><span class="type-annotation">mc_playback_h</span> <span class="parameter-name">playback</span>, </span><span class="parameter" id="mc_client_get_playlist_item_info-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">playlist_name</span>, </span><span class="parameter" id="mc_client_get_playlist_item_info-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playlist name and index of the media in playlist.
+@details Gets the playlist name and index of the current playing media in a playlist. \n
+If the media controller server didn't set the info, @a playlist_name and @a index will be set to NULL.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_360_mode_enabled" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_360_mode_enabled.html">mc_client_get_server_360_mode_enabled</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_360_mode_enabled-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_360_mode_enabled-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_360_mode_enabled-param-enabled"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">enabled</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest 360 mode display status.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_ability_support" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_ability_support.html">mc_client_get_server_ability_support</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_ability_support-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_ability_support-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_ability_support-param-ability"><span class="type-annotation">int</span> <span class="parameter-name">ability</span>, </span><span class="parameter" id="mc_client_get_server_ability_support-param-support"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the ability support of the media controller server.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_display_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_display_mode.html">mc_client_get_server_display_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_display_mode-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_display_mode-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_display_mode-param-mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest display mode.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_display_mode_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_display_mode_ability.html">mc_client_get_server_display_mode_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_display_mode_ability-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_display_mode_ability-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_display_mode_ability-param-supported_modes"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">supported_modes</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the supported display mode of the updated media controller server.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_display_rotation" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_display_rotation.html">mc_client_get_server_display_rotation</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_display_rotation-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_display_rotation-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_display_rotation-param-rotation"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">rotation</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest display rotation.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_display_rotation_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_display_rotation_ability.html">mc_client_get_server_display_rotation_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_display_rotation_ability-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_display_rotation_ability-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_display_rotation_ability-param-supported_rotations"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">supported_rotations</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the supported display rotation of the updated media controller server.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_icon.html">mc_client_get_server_icon</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_icon-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_icon-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_icon-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the icon URI of the media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_metadata" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_metadata.html">mc_client_get_server_metadata</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_metadata-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_metadata-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_metadata-param-metadata"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_metadata_h</span>&gt;</span></span> <span class="parameter-name">metadata</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest metadata.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_playback_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_playback_ability.html">mc_client_get_server_playback_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_playback_ability-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_playback_ability-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_playback_ability-param-ability"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playback_ability_h</span>&gt;</span></span> <span class="parameter-name">ability</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playback ability of the media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_playback_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_playback_info.html">mc_client_get_server_playback_info</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_playback_info-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_playback_info-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_playback_info-param-playback"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playback_h</span>&gt;</span></span> <span class="parameter-name">playback</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest playback info.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_repeat_ability_support" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_repeat_ability_support.html">mc_client_get_server_repeat_ability_support</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_repeat_ability_support-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_repeat_ability_support-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_repeat_ability_support-param-support"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_get_server_ability_support() instead.
+@brief Gets the support value of the repeat ability of the updated media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_repeat_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_repeat_mode.html">mc_client_get_server_repeat_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_repeat_mode-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_repeat_mode-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_repeat_mode-param-mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest repeat mode.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_shuffle_ability_support" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_shuffle_ability_support.html">mc_client_get_server_shuffle_ability_support</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_shuffle_ability_support-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_shuffle_ability_support-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_shuffle_ability_support-param-support"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_get_server_ability_support() instead.
+@brief Gets the support value of the shuffle ability of the updated media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_shuffle_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_shuffle_mode.html">mc_client_get_server_shuffle_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_shuffle_mode-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_shuffle_mode-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_shuffle_mode-param-mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest shuffle mode.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_get_server_subtitles_enabled" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_get_server_subtitles_enabled.html">mc_client_get_server_subtitles_enabled</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_get_server_subtitles_enabled-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_get_server_subtitles_enabled-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_get_server_subtitles_enabled-param-enabled"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">enabled</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the latest subtitles display status.
+@details The media controller client will get the most recently updated information from @a server_name.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_send_360_mode_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_360_mode_cmd.html">mc_client_send_360_mode_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_360_mode_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_360_mode_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_360_mode_cmd-param-enable"><span class="type-annotation">bool</span> <span class="parameter-name">enable</span>, </span><span class="parameter" id="mc_client_send_360_mode_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the 360 mode command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the 360 mode command by mc_cmd_reply_received_cb() callback.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_send_custom_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_custom_cmd.html">mc_client_send_custom_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_custom_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_custom_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_custom_cmd-param-command"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">command</span>, </span><span class="parameter" id="mc_client_send_custom_cmd-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">data</span>, </span><span class="parameter" id="mc_client_send_custom_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the custom command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the custom command by mc_cmd_reply_received_cb() callback.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_display_mode_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_display_mode_cmd.html">mc_client_send_display_mode_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_display_mode_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_display_mode_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_display_mode_cmd-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span>, </span><span class="parameter" id="mc_client_send_display_mode_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the display mode command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the display mode command by mc_cmd_reply_received_cb() callback.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_send_display_rotation_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_display_rotation_cmd.html">mc_client_send_display_rotation_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_display_rotation_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_display_rotation_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_display_rotation_cmd-param-rotation"><span class="type-annotation">int</span> <span class="parameter-name">rotation</span>, </span><span class="parameter" id="mc_client_send_display_rotation_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the display rotation command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the display rotation command by mc_cmd_reply_received_cb() callback.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_send_event_reply" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_event_reply.html">mc_client_send_event_reply</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_event_reply-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_event_reply-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_event_reply-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">request_id</span>, </span><span class="parameter" id="mc_client_send_event_reply-param-result_code"><span class="type-annotation">int</span> <span class="parameter-name">result_code</span>, </span><span class="parameter" id="mc_client_send_event_reply-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Replies with the result of the requested event to the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_playback_action_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_playback_action_cmd.html">mc_client_send_playback_action_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_playback_action_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_playback_action_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_playback_action_cmd-param-action"><span class="type-annotation">int</span> <span class="parameter-name">action</span>, </span><span class="parameter" id="mc_client_send_playback_action_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the playback action command to server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_playback_position_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_playback_position_cmd.html">mc_client_send_playback_position_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_playback_position_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_playback_position_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_playback_position_cmd-param-position"><span class="type-annotation">int</span> <span class="parameter-name">position</span>, </span><span class="parameter" id="mc_client_send_playback_position_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the playback position command to server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_playlist_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_playlist_cmd.html">mc_client_send_playlist_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_playlist_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">playlist_name</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-action"><span class="type-annotation">int</span> <span class="parameter-name">action</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-position"><span class="type-annotation">int</span> <span class="parameter-name">position</span>, </span><span class="parameter" id="mc_client_send_playlist_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the playlist command to server.
+@details The media controller client can send "index" of the playlist to the media controller server with playback action and position.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_repeat_mode_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_repeat_mode_cmd.html">mc_client_send_repeat_mode_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_repeat_mode_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_repeat_mode_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_repeat_mode_cmd-param-repeat_mode"><span class="type-annotation">int</span> <span class="parameter-name">repeat_mode</span>, </span><span class="parameter" id="mc_client_send_repeat_mode_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the repeat mode command to server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_search_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_search_cmd.html">mc_client_send_search_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_search_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_search_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_search_cmd-param-search"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">search</span>, </span><span class="parameter" id="mc_client_send_search_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the search command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the search command by mc_cmd_reply_received_cb() callback.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_send_shuffle_mode_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_shuffle_mode_cmd.html">mc_client_send_shuffle_mode_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_shuffle_mode_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_shuffle_mode_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_shuffle_mode_cmd-param-shuffle_mode"><span class="type-annotation">int</span> <span class="parameter-name">shuffle_mode</span>, </span><span class="parameter" id="mc_client_send_shuffle_mode_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the shuffle mode command to server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_send_subtitles_cmd" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_send_subtitles_cmd.html">mc_client_send_subtitles_cmd</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_send_subtitles_cmd-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_send_subtitles_cmd-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span>, </span><span class="parameter" id="mc_client_send_subtitles_cmd-param-enable"><span class="type-annotation">bool</span> <span class="parameter-name">enable</span>, </span><span class="parameter" id="mc_client_send_subtitles_cmd-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the subtitles command to server.
+@details If the server sends the result of the command, the media controller client will get the result of the subtitles command by mc_cmd_reply_received_cb() callback.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_360_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_360_mode_updated_cb.html">mc_client_set_360_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_360_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_360_mode_updated_cb-param-callback"><span class="type-annotation">mc_bool_attribute_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_360_mode_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the media controller server's 360 mode display.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_ability_support_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_ability_support_updated_cb.html">mc_client_set_ability_support_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_ability_support_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_ability_support_updated_cb-param-callback"><span class="type-annotation">mc_ability_support_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_ability_support_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the media controller server's support for an ability.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+This function can be used to monitor the following abilities:\n
+#MC_ABILITY_SHUFFLE, \n
+#MC_ABILITY_REPEAT, \n
+#MC_ABILITY_PLAYBACK_POSITION, \n
+#MC_ABILITY_PLAYLIST, \n
+#MC_ABILITY_CLIENT_CUSTOM, \n
+#MC_ABILITY_SEARCH, \n
+#MC_ABILITY_SUBTITLES, \n
+#MC_ABILITY_360_MODE, \n
+To monitor the media controller server's support for other abilities, use corresponding function. \n
+For a playback ability, use mc_client_set_playback_ability_updated_cb(). \n
+For a display mode ability, use mc_client_set_display_mode_ability_updated_cb(). \n
+For a display rotation ability, use mc_client_set_display_rotation_ability_updated_cb(). \n
+  
+
+</dd>
+
+          <dt id="mc_client_set_cmd_reply_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_cmd_reply_received_cb.html">mc_client_set_cmd_reply_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_cmd_reply_received_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_cmd_reply_received_cb-param-callback"><span class="type-annotation">mc_cmd_reply_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_cmd_reply_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving the result of the command from the media controller server.
+@details The media controller client which calls this function will receives the result of the command from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_custom_event_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_custom_event_received_cb.html">mc_client_set_custom_event_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_custom_event_received_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_custom_event_received_cb-param-callback"><span class="type-annotation">mc_client_custom_event_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_custom_event_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving the custom event from a media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_display_mode_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_display_mode_ability_updated_cb.html">mc_client_set_display_mode_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_display_mode_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_display_mode_ability_updated_cb-param-callback"><span class="type-annotation">mc_ability_supported_items_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_display_mode_ability_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the display mode ability of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_display_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_display_mode_updated_cb.html">mc_client_set_display_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_display_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_display_mode_updated_cb-param-callback"><span class="type-annotation">mc_display_mode_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_display_mode_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the media controller server's display mode.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_display_rotation_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_display_rotation_ability_updated_cb.html">mc_client_set_display_rotation_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_display_rotation_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_display_rotation_ability_updated_cb-param-callback"><span class="type-annotation">mc_ability_supported_items_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_display_rotation_ability_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the display rotation ability of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_display_rotation_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_display_rotation_updated_cb.html">mc_client_set_display_rotation_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_display_rotation_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_display_rotation_updated_cb-param-callback"><span class="type-annotation">mc_display_rotation_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_display_rotation_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the media controller server's display rotation.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_set_metadata_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_metadata_updated_cb.html">mc_client_set_metadata_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_metadata_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_metadata_updated_cb-param-callback"><span class="type-annotation">mc_metadata_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_metadata_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring metadata status of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_playback_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_playback_ability_updated_cb.html">mc_client_set_playback_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_playback_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_playback_ability_updated_cb-param-callback"><span class="type-annotation">mc_playback_ability_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_playback_ability_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the playback ability of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_set_playback_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_playback_updated_cb.html">mc_client_set_playback_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_playback_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_playback_updated_cb-param-callback"><span class="type-annotation">mc_playback_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_playback_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring playback status of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_playlist_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_playlist_updated_cb.html">mc_client_set_playlist_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_playlist_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_playlist_updated_cb-param-callback"><span class="type-annotation">mc_playlist_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_playlist_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring playlist status of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_repeat_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_repeat_ability_updated_cb.html">mc_client_set_repeat_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_repeat_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_repeat_ability_updated_cb-param-callback"><span class="type-annotation">mc_repeat_ability_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_repeat_ability_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_set_ability_support_updated_cb() instead.
+@brief Sets the callback for monitoring the repeat ability of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_set_repeat_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_repeat_mode_updated_cb.html">mc_client_set_repeat_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_repeat_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_repeat_mode_updated_cb-param-callback"><span class="type-annotation">mc_repeat_mode_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_repeat_mode_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring repeat mode of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_server_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_server_updated_cb.html">mc_client_set_server_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_server_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_server_updated_cb-param-callback"><span class="type-annotation">mc_server_state_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_server_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring status of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_shuffle_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_shuffle_ability_updated_cb.html">mc_client_set_shuffle_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_shuffle_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_shuffle_ability_updated_cb-param-callback"><span class="type-annotation">mc_shuffle_ability_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_shuffle_ability_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_set_ability_support_updated_cb() instead.
+@brief Sets the callback for monitoring the shuffle ability of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_set_shuffle_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_shuffle_mode_updated_cb.html">mc_client_set_shuffle_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_shuffle_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_shuffle_mode_updated_cb-param-callback"><span class="type-annotation">mc_shuffle_mode_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_shuffle_mode_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring shuffle mode of the media controller server.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_set_subtitles_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_set_subtitles_updated_cb.html">mc_client_set_subtitles_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_set_subtitles_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_set_subtitles_updated_cb-param-callback"><span class="type-annotation">mc_bool_attribute_updated_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_client_set_subtitles_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for monitoring the media controller server's subtitles display.
+@details The media controller client which calls this function will receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_subscribe" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_subscribe.html">mc_client_subscribe</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_subscribe-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_subscribe-param-subscription_type"><span class="type-annotation">int</span> <span class="parameter-name">subscription_type</span>, </span><span class="parameter" id="mc_client_subscribe-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Subscribes media controller server for monitoring status.
+@details If media controller client subscribe media controller server,
+the media controller client receive callback from subscribed media controller server. \n
+If media controller client subscribe media controller server one or more,
+the media controller client can receive callback from only subscribed media controller server. \n
+If you want to subscribe for the all media controller server again,
+unset mode update callback and set the callback for the monitoring status again.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_360_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_360_mode_updated_cb.html">mc_client_unset_360_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_360_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the media controller server's 360 mode display.
+@details The media controller client which calls this function will not receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unset_ability_support_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_ability_support_updated_cb.html">mc_client_unset_ability_support_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_ability_support_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the media controller server's support for an ability.
+@details The media controller client which calls this function will not receive notifications from all media controller servers.
+This function can be used for the following abilities:\n
+#MC_ABILITY_SHUFFLE, \n
+#MC_ABILITY_REPEAT, \n
+#MC_ABILITY_PLAYBACK_POSITION, \n
+#MC_ABILITY_PLAYLIST, \n
+#MC_ABILITY_CLIENT_CUSTOM, \n
+#MC_ABILITY_SEARCH, \n
+#MC_ABILITY_SUBTITLES, \n
+#MC_ABILITY_360_MODE, \n
+To stop monitoring the media controller server's support for other abilities, use corresponding function. \n
+For a playback ability, use mc_client_unset_playback_ability_updated_cb(). \n
+For a display mode ability, use mc_client_unset_display_mode_ability_updated_cb(). \n
+For a display rotation ability, use mc_client_unset_display_rotation_ability_updated_cb(). \n
+  
+
+</dd>
+
+          <dt id="mc_client_unset_cmd_reply_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_cmd_reply_received_cb.html">mc_client_unset_cmd_reply_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_cmd_reply_received_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving common reply of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_custom_event_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_custom_event_received_cb.html">mc_client_unset_custom_event_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_custom_event_received_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving the custom event from a media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_display_mode_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_display_mode_ability_updated_cb.html">mc_client_unset_display_mode_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_display_mode_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the display mode ability of the media controller server.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unset_display_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_display_mode_updated_cb.html">mc_client_unset_display_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_display_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the media controller server's display mode.
+@details The media controller client which calls this function will not receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unset_display_rotation_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_display_rotation_ability_updated_cb.html">mc_client_unset_display_rotation_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_display_rotation_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the display rotation ability of the media controller server.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unset_display_rotation_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_display_rotation_updated_cb.html">mc_client_unset_display_rotation_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_display_rotation_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the media controller server's display rotation.
+@details The media controller client which calls this function will not receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unset_metadata_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_metadata_updated_cb.html">mc_client_unset_metadata_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_metadata_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring metadata status of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_playback_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_playback_ability_updated_cb.html">mc_client_unset_playback_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_playback_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the playback ability of the media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_unset_playback_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_playback_updated_cb.html">mc_client_unset_playback_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_playback_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring playback status of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_playlist_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_playlist_updated_cb.html">mc_client_unset_playlist_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_playlist_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring playlist status of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_repeat_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_repeat_ability_updated_cb.html">mc_client_unset_repeat_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_repeat_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_unset_ability_support_updated_cb() instead.
+@brief Unsets the callback for monitoring the repeat ability of the media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_unset_repeat_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_repeat_mode_updated_cb.html">mc_client_unset_repeat_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_repeat_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring repeat mode of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_server_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_server_updated_cb.html">mc_client_unset_server_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_server_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring status of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_shuffle_ability_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_shuffle_ability_updated_cb.html">mc_client_unset_shuffle_ability_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_shuffle_ability_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_client_unset_ability_support_updated_cb() instead.
+@brief Unsets the callback for monitoring the shuffle ability of the media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_client_unset_shuffle_mode_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_shuffle_mode_updated_cb.html">mc_client_unset_shuffle_mode_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_shuffle_mode_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring shuffle mode of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_client_unset_subtitles_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unset_subtitles_updated_cb.html">mc_client_unset_subtitles_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unset_subtitles_updated_cb-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for monitoring the media controller server's subtitles display.
+@details The media controller client which calls this function will not receive notifications from all media controller servers.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_client_unsubscribe" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_client_unsubscribe.html">mc_client_unsubscribe</a></span><span class="signature">(<wbr><span class="parameter" id="mc_client_unsubscribe-param-client"><span class="type-annotation">mc_client_h</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="mc_client_unsubscribe-param-subscription_type"><span class="type-annotation">int</span> <span class="parameter-name">subscription_type</span>, </span><span class="parameter" id="mc_client_unsubscribe-param-server_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">server_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsubscribes media controller server for monitoring status.
+@details If media controller client unsubscribe media controller server, \n
+the media controller client don't receive callback from unsubscribed media controller server. \n
+If media controller client unsubscribe all subscribed media controller server,
+the media controller client don't receive callback from all media controller server. \n
+After unset and set update callback function is called again, the media controller client can receive callback from all media controller servers.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_metadata_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_clone.html">mc_metadata_clone</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_clone-param-src"><span class="type-annotation">mc_metadata_h</span> <span class="parameter-name">src</span>, </span><span class="parameter" id="mc_metadata_clone-param-dst"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_metadata_h</span>&gt;</span></span> <span class="parameter-name">dst</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones the metadata handle of media.
+@details This function copies the metadata handle from one to another.
+The #mc_metadata_h is created internally and therefore available through the functions of media controller metadata.
+  
+
+</dd>
+
+          <dt id="mc_metadata_decode_episode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_decode_episode.html">mc_metadata_decode_episode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_decode_episode-param-encoded_episode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">encoded_episode</span>, </span><span class="parameter" id="mc_metadata_decode_episode-param-episode_num"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">episode_num</span>, </span><span class="parameter" id="mc_metadata_decode_episode-param-episode_title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">episode_title</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decodes the episode of the media.
+@details You can get various metadata using mc_metadata_get().
+If you want to get the proper episode number and episode title,\n
+you should decode the metadata values gotten by mc_metadata_get() with this function.\n
+Otherwise, the values are illegible. \n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_decode_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_decode_resolution.html">mc_metadata_decode_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_decode_resolution-param-encoded_resolution"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">encoded_resolution</span>, </span><span class="parameter" id="mc_metadata_decode_resolution-param-width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="mc_metadata_decode_resolution-param-height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decodes the resolution of the media.
+@details You can get various metadata using mc_metadata_get().
+If you want to get the proper resolution, \n
+you should decode the metadata values gotten by mc_metadata_get() with this function.\n
+Otherwise, the values are illegible. \n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_decode_season" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_decode_season.html">mc_metadata_decode_season</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_decode_season-param-encoded_season"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">encoded_season</span>, </span><span class="parameter" id="mc_metadata_decode_season-param-season_num"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">season_num</span>, </span><span class="parameter" id="mc_metadata_decode_season-param-season_title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">season_title</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Decodes the season of the media.
+@details You can get various metadata using mc_metadata_get().
+If you want to get the proper season number and season title,\n
+you should decode the metadata values gotten by mc_metadata_get() with this function.\n
+Otherwise, the values are illegible. \n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_destroy.html">mc_metadata_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_destroy-param-metadata"><span class="type-annotation">mc_metadata_h</span> <span class="parameter-name">metadata</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a media controller metadata handle.
+@details This function frees all resources related to the media controller metadata handle. This
+handle no longer can be used to perform any operations. A new handle has to
+be created before next usage.
+  
+
+</dd>
+
+          <dt id="mc_metadata_encode_episode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_encode_episode.html">mc_metadata_encode_episode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_encode_episode-param-episode_num"><span class="type-annotation">int</span> <span class="parameter-name">episode_num</span>, </span><span class="parameter" id="mc_metadata_encode_episode-param-episode_title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">episode_title</span>, </span><span class="parameter" id="mc_metadata_encode_episode-param-encoded_episode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">encoded_episode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encodes the episode metadata of the media.
+@details You can set various metadata with functions such as mc_server_set_metadata() and mc_server_add_item_to_playlist().
+If you want to set the episode,\n
+you should encode the episode with this function and then set the encoded data.\n
+Otherwise, the setting function returns an error. \n
+@a episode_title can be NULL. If it is NULL, the decoded episode title will also be NULL.\n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_encode_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_encode_resolution.html">mc_metadata_encode_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_encode_resolution-param-width"><span class="type-annotation">int</span> <span class="parameter-name">width</span>, </span><span class="parameter" id="mc_metadata_encode_resolution-param-height"><span class="type-annotation">int</span> <span class="parameter-name">height</span>, </span><span class="parameter" id="mc_metadata_encode_resolution-param-encoded_resolution"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">encoded_resolution</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encodes the resolution metadata of the media.
+@details You can set various metadata with functions such as mc_server_set_metadata() and mc_server_add_item_to_playlist().
+If you want to set the resolution,\n
+you should encode the resolution with this function and then set the encoded data.\n
+Otherwise, the setting function returns an error. \n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_encode_season" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_encode_season.html">mc_metadata_encode_season</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_encode_season-param-season_num"><span class="type-annotation">int</span> <span class="parameter-name">season_num</span>, </span><span class="parameter" id="mc_metadata_encode_season-param-season_title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">season_title</span>, </span><span class="parameter" id="mc_metadata_encode_season-param-encoded_season"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">encoded_season</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Encodes the season metadata of the media.
+@details You can set various metadata with functions such as mc_server_set_metadata() and mc_server_add_item_to_playlist().
+If you want to set the season,\n
+you should encode the season with this function and then set the encoded data.\n
+Otherwise, the setting function returns an error. \n
+@a season_title can be NULL. If it is NULL, the decoded season title will also be NULL.\n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_metadata_get" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_metadata_get.html">mc_metadata_get</a></span><span class="signature">(<wbr><span class="parameter" id="mc_metadata_get-param-metadata"><span class="type-annotation">mc_metadata_h</span> <span class="parameter-name">metadata</span>, </span><span class="parameter" id="mc_metadata_get-param-attribute"><span class="type-annotation">int</span> <span class="parameter-name">attribute</span>, </span><span class="parameter" id="mc_metadata_get-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the metadata.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_playback_ability_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playback_ability_clone.html">mc_playback_ability_clone</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playback_ability_clone-param-src"><span class="type-annotation">mc_playback_ability_h</span> <span class="parameter-name">src</span>, </span><span class="parameter" id="mc_playback_ability_clone-param-dst"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playback_ability_h</span>&gt;</span></span> <span class="parameter-name">dst</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones a playback ability handle.
+@details This function copies the playback ability handle from a source to
+destination. The #mc_playback_ability_h is created internally and available through playback ability functions.
+  
+
+</dd>
+
+          <dt id="mc_playback_ability_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playback_ability_destroy.html">mc_playback_ability_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playback_ability_destroy-param-ability"><span class="type-annotation">mc_playback_ability_h</span> <span class="parameter-name">ability</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a playback ability handle.
+@details This function frees all resources related to the playback ability handle. This
+handle no longer can be used to perform any operations. A new handle has to
+be created before next use.
+  
+
+</dd>
+
+          <dt id="mc_playback_action_is_supported" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playback_action_is_supported.html">mc_playback_action_is_supported</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playback_action_is_supported-param-ability"><span class="type-annotation">mc_playback_ability_h</span> <span class="parameter-name">ability</span>, </span><span class="parameter" id="mc_playback_action_is_supported-param-action"><span class="type-annotation">int</span> <span class="parameter-name">action</span>, </span><span class="parameter" id="mc_playback_action_is_supported-param-supported"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">supported</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the support value of the playback ability.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_playlist_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_clone.html">mc_playlist_clone</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_clone-param-src"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">src</span>, </span><span class="parameter" id="mc_playlist_clone-param-dst"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playlist_h</span>&gt;</span></span> <span class="parameter-name">dst</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones a media controller playlist handle.
+@details This function copies the media controller playlist handle from a source to
+destination. The #mc_playlist_h is created internally and available through media controller playlist functions.
+  
+
+</dd>
+
+          <dt id="mc_playlist_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_destroy.html">mc_playlist_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_destroy-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys a media controller playlist handle.
+@details This function frees all resources related to the media controller playlist handle. This
+handle no longer can be used to perform any operations. A new handle has to
+be created before next usage.
+  
+
+</dd>
+
+          <dt id="mc_playlist_foreach_item" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_foreach_item.html">mc_playlist_foreach_item</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_foreach_item-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span>, </span><span class="parameter" id="mc_playlist_foreach_item-param-callback"><span class="type-annotation">mc_playlist_item_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_playlist_foreach_item-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Iterates through media items in a playlist.
+@details This function iterates through all items in the playlist.
+The callback function will be invoked for every retrieved playlist item.
+If there are no items on the playlist, the callback will not be invoked.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_playlist_foreach_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_foreach_playlist.html">mc_playlist_foreach_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_foreach_playlist-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="mc_playlist_foreach_playlist-param-callback"><span class="type-annotation">mc_playlist_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_playlist_foreach_playlist-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Iterates over playlists of the media controller server.
+@details This function iterates through all playlists of the given @a app_id.
+The media controller server can have several playlists. You can get playlists only for the activated media controller server.
+If @a app_id is not an ID of an activated media controller server, this function will return #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER.
+The callback function will be invoked for every retrieved playlist.
+If there are no playlists, the callback will not be invoked.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_playlist_get_item_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_get_item_count.html">mc_playlist_get_item_count</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_get_item_count-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span>, </span><span class="parameter" id="mc_playlist_get_item_count-param-item_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">item_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of the media item in a playlist.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_playlist_get_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_get_name.html">mc_playlist_get_name</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_get_name-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span>, </span><span class="parameter" id="mc_playlist_get_name-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">playlist_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the name of the playlist.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_playlist_get_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_get_playlist.html">mc_playlist_get_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_get_playlist-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="mc_playlist_get_playlist-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">playlist_name</span>, </span><span class="parameter" id="mc_playlist_get_playlist-param-playlist"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playlist_h</span>&gt;</span></span> <span class="parameter-name">playlist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the playlist handle.
+@details This function creates a new playlist handle for the given @a app_id and @a playlist_name.
+You can get the playlist only for the activated media controller server.
+If @a app_id is not an ID of an activated media controller server, or if @a playlist_name is invalid, \n
+this function will return #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_playlist_get_playlist_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_playlist_get_playlist_count.html">mc_playlist_get_playlist_count</a></span><span class="signature">(<wbr><span class="parameter" id="mc_playlist_get_playlist_count-param-app_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">app_id</span>, </span><span class="parameter" id="mc_playlist_get_playlist_count-param-playlist_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">playlist_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of playlists for the given @a app_id.
+@details The media controller server can have several playlists. You can get a count of playlists only for the activated media controller server.
+If @a app_id is not the ID of an activated media controller server, this function returns #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_search_clone" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_clone.html">mc_search_clone</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_clone-param-src"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">src</span>, </span><span class="parameter" id="mc_search_clone-param-dst"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_search_h</span>&gt;</span></span> <span class="parameter-name">dst</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Clones a media controller search handle.
+@details This function copies the media controller search handle from a source to
+destination. The #mc_search_h is created internally and available through media controller search functions.
+  
+
+</dd>
+
+          <dt id="mc_search_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_create.html">mc_search_create</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_create-param-search"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_search_h</span>&gt;</span></span> <span class="parameter-name">search</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a handle for searching media.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_search_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_destroy.html">mc_search_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_destroy-param-search"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">search</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys search.
+@since_tizen 5.0
+Parameter search The handle of the media controller search
+@return @c 0 on success,
+otherwise a negative error value
+@retval #MEDIA_CONTROLLER_ERROR_NONE Successful
+@retval #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_CONTROLLER_ERROR_INVALID_OPERATION Invalid operation
+@pre Create a media controller search handle by calling mc_search_create().
+@see mc_search_create()
+  
+
+</dd>
+
+          <dt id="mc_search_foreach_condition" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_foreach_condition.html">mc_search_foreach_condition</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_foreach_condition-param-search"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">search</span>, </span><span class="parameter" id="mc_search_foreach_condition-param-callback"><span class="type-annotation">mc_search_condition_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_search_foreach_condition-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all search conditions.
+@details This function gets all search conditions set.
+The callback function will be invoked for every retrieved search condition.
+If there were no search conditions set with mc_search_set_condition(), this function will return #MEDIA_CONTROLLER_ERROR_NONE, and the callback will not be invoked.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_search_get_condition_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_get_condition_count.html">mc_search_get_condition_count</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_get_condition_count-param-search"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">search</span>, </span><span class="parameter" id="mc_search_get_condition_count-param-condition_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">condition_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of conditions to search.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_search_set_condition" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_search_set_condition.html">mc_search_set_condition</a></span><span class="signature">(<wbr><span class="parameter" id="mc_search_set_condition-param-search"><span class="type-annotation">mc_search_h</span> <span class="parameter-name">search</span>, </span><span class="parameter" id="mc_search_set_condition-param-content_type"><span class="type-annotation">int</span> <span class="parameter-name">content_type</span>, </span><span class="parameter" id="mc_search_set_condition-param-category"><span class="type-annotation">int</span> <span class="parameter-name">category</span>, </span><span class="parameter" id="mc_search_set_condition-param-search_keyword"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">search_keyword</span>, </span><span class="parameter" id="mc_search_set_condition-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the information to search.
+@details Sets the information to search. You can set various search condition by calling this function for the same search handle. \n
+But it's not allowed to set more than 20 conditions. If you try to set more than 20 conditions, this function will return #MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_add_item_to_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_add_item_to_playlist.html">mc_server_add_item_to_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_add_item_to_playlist-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_add_item_to_playlist-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span>, </span><span class="parameter" id="mc_server_add_item_to_playlist-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="mc_server_add_item_to_playlist-param-attribute"><span class="type-annotation">int</span> <span class="parameter-name">attribute</span>, </span><span class="parameter" id="mc_server_add_item_to_playlist-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a new item to the playlist.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_create.html">mc_server_create</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_create-param-server"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_server_h</span>&gt;</span></span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a media controller server.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_create_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_create_playlist.html">mc_server_create_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_create_playlist-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_create_playlist-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">playlist_name</span>, </span><span class="parameter" id="mc_server_create_playlist-param-playlist"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">mc_playlist_h</span>&gt;</span></span> <span class="parameter-name">playlist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a new playlist with the given name.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_delete_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_delete_playlist.html">mc_server_delete_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_delete_playlist-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_delete_playlist-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deletes the playlist of the media controller server.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_destroy.html">mc_server_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_destroy-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys media controller server.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_foreach_client" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_foreach_client.html">mc_server_foreach_client</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_foreach_client-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_foreach_client-param-callback"><span class="type-annotation">mc_activated_client_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_foreach_client-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all created clients.
+@details This function gets all created media controller clients.
+The callback function will be invoked for every created media controller client.
+If there are no media controller clients, the callback will not be invoked.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_foreach_playlist" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_foreach_playlist.html">mc_server_foreach_playlist</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_foreach_playlist-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_foreach_playlist-param-callback"><span class="type-annotation">mc_playlist_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_foreach_playlist-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_playlist_foreach_playlist() instead.
+@brief Retrieves all playlists of the media controller server.
+@details This function gets all playlists of the media controller server.
+The callback function will be invoked for every retrieved playlist.
+If there are no playlists, callback will not be invoked.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_send_cmd_reply" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_send_cmd_reply.html">mc_server_send_cmd_reply</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_send_cmd_reply-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_send_cmd_reply-param-client_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">client_name</span>, </span><span class="parameter" id="mc_server_send_cmd_reply-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">request_id</span>, </span><span class="parameter" id="mc_server_send_cmd_reply-param-result_code"><span class="type-annotation">int</span> <span class="parameter-name">result_code</span>, </span><span class="parameter" id="mc_server_send_cmd_reply-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Replies the result of the requested command to the client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_send_custom_event" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_send_custom_event.html">mc_server_send_custom_event</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_send_custom_event-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_send_custom_event-param-client_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">client_name</span>, </span><span class="parameter" id="mc_server_send_custom_event-param-event"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">event</span>, </span><span class="parameter" id="mc_server_send_custom_event-param-data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">bundle</span>&gt;</span></span> <span class="parameter-name">data</span>, </span><span class="parameter" id="mc_server_send_custom_event-param-request_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">request_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the customized event with the bundle data.
+@details If the event is needed in the client, this function should be called. @a data is a bundle.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_360_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_360_mode_cmd_received_cb.html">mc_server_set_360_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_360_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_360_mode_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_enable_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_360_mode_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving 360 mode command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_ability_support" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_ability_support.html">mc_server_set_ability_support</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_ability_support-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_ability_support-param-ability"><span class="type-annotation">int</span> <span class="parameter-name">ability</span>, </span><span class="parameter" id="mc_server_set_ability_support-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the ability's support of the media controller.
+@details This function allows setting the support for the following abilities:
+#MC_ABILITY_SHUFFLE, \n
+#MC_ABILITY_REPEAT, \n
+#MC_ABILITY_PLAYBACK_POSITION, \n
+#MC_ABILITY_PLAYLIST, \n
+#MC_ABILITY_CLIENT_CUSTOM, \n
+#MC_ABILITY_SEARCH, \n
+#MC_ABILITY_SUBTITLES, \n
+#MC_ABILITY_360_MODE, \n
+To set the support for other abilities, use corresponding function. \n
+For a playback ability, use mc_server_set_playback_ability() and mc_server_update_playback_ability(). \n
+For a display mode ability, use mc_server_set_display_mode_ability(). \n
+For a display rotation ability, use mc_server_set_display_rotation_ability(). \n
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_content_age_rating" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_content_age_rating.html">mc_server_set_content_age_rating</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_content_age_rating-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_content_age_rating-param-age_rating"><span class="type-annotation">int</span> <span class="parameter-name">age_rating</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the content age rating to update the latest playback info.
+@details If this function is called, the updated age rating information will be sent to all clients. Default value is #MC_CONTENT_RATING_ALL.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_custom_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_custom_cmd_received_cb.html">mc_server_set_custom_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_custom_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_custom_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_custom_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_custom_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving custom command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_display_mode_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_display_mode_ability.html">mc_server_set_display_mode_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_display_mode_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_display_mode_ability-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span>, </span><span class="parameter" id="mc_server_set_display_mode_ability-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the display mode ability of the media controller.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_display_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_display_mode_cmd_received_cb.html">mc_server_set_display_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_display_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_display_mode_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_display_mode_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_display_mode_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving display mode command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_display_rotation_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_display_rotation_ability.html">mc_server_set_display_rotation_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_display_rotation_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_display_rotation_ability-param-rotation"><span class="type-annotation">int</span> <span class="parameter-name">rotation</span>, </span><span class="parameter" id="mc_server_set_display_rotation_ability-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the display rotation ability of the media controller.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_display_rotation_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_display_rotation_cmd_received_cb.html">mc_server_set_display_rotation_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_display_rotation_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_display_rotation_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_display_rotation_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_display_rotation_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving display rotation command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_set_event_reply_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_event_reply_received_cb.html">mc_server_set_event_reply_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_event_reply_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_event_reply_received_cb-param-callback"><span class="type-annotation">mc_server_event_reply_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_event_reply_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving the result of the event from the media controller client.
+@details The media controller server which calls this function will receive the result of the event from all media controller clients.\n
+The media controller server can send event by using mc_server_send_custom_event().
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_icon" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_icon.html">mc_server_set_icon</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_icon-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_icon-param-uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the icon URI of media controller server.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_metadata" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_metadata.html">mc_server_set_metadata</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_metadata-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_metadata-param-attribute"><span class="type-annotation">int</span> <span class="parameter-name">attribute</span>, </span><span class="parameter" id="mc_server_set_metadata-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the metadata to update the latest metadata info.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_ability.html">mc_server_set_playback_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_ability-param-action"><span class="type-annotation">int</span> <span class="parameter-name">action</span>, </span><span class="parameter" id="mc_server_set_playback_ability-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the playback ability's support of the media controller.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_action_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_action_cmd_received_cb.html">mc_server_set_playback_action_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_action_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_action_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_playback_action_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_playback_action_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving playback action command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_content_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_content_type.html">mc_server_set_playback_content_type</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_content_type-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_content_type-param-content_type"><span class="type-annotation">int</span> <span class="parameter-name">content_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the playback content type to update the latest playback info.
+@details If this function is called, the updated content type information will be sent to all clients.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_position" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_position.html">mc_server_set_playback_position</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_position-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_position-param-position"><span class="type-annotation">int</span> <span class="parameter-name">position</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the playback position to update the latest playback info.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_position_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_position_cmd_received_cb.html">mc_server_set_playback_position_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_position_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_position_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_playback_position_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_playback_position_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving playback position command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playback_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playback_state.html">mc_server_set_playback_state</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playback_state-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playback_state-param-state"><span class="type-annotation">int</span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the playback state to update the latest state info.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playlist_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playlist_cmd_received_cb.html">mc_server_set_playlist_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playlist_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playlist_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_playlist_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_playlist_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving playlist command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playlist_item_index" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playlist_item_index.html">mc_server_set_playlist_item_index</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playlist_item_index-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playlist_item_index-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.0. Use mc_server_set_playlist_item_info() instead.
+@brief Sets the index of the current playing media in the playlist to update the latest playback info.
+@details If a media controller server has a playlist, the server can register and share it with media controller client.
+A playlist is a set of "index" and "media metadata".\n
+The media controller server can let media controller clients know the index of current playing media by using this function.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_playlist_item_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_playlist_item_info.html">mc_server_set_playlist_item_info</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_playlist_item_info-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_playlist_item_info-param-playlist_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">playlist_name</span>, </span><span class="parameter" id="mc_server_set_playlist_item_info-param-index"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the playlist name and index of the current playing media in the playlist to update the latest playback info.
+@details If a media controller server has a playlist, the server can register and share it with media controller client.
+A playlist is a set of "index" and "media metadata".\n
+The media controller server can let media controller clients know the playlist name and index of current playing media by using this function.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_repeat_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_repeat_ability.html">mc_server_set_repeat_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_repeat_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_repeat_ability-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_server_set_ability_support() instead.
+@brief Sets the repeat ability's support of the media controller.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_repeat_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_repeat_mode_cmd_received_cb.html">mc_server_set_repeat_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_repeat_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_repeat_mode_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_repeat_mode_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_repeat_mode_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving repeat mode command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_search_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_search_cmd_received_cb.html">mc_server_set_search_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_search_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_search_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_search_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_search_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving search command from client.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_shuffle_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_shuffle_ability.html">mc_server_set_shuffle_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_shuffle_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_shuffle_ability-param-support"><span class="type-annotation">int</span> <span class="parameter-name">support</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @deprecated Deprecated since 5.5. Use mc_server_set_ability_support() instead.
+@brief Sets the shuffle ability's support of the media controller.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_set_shuffle_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_shuffle_mode_cmd_received_cb.html">mc_server_set_shuffle_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_shuffle_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_shuffle_mode_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_shuffle_mode_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_shuffle_mode_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving shuffle mode command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_set_subtitles_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_set_subtitles_cmd_received_cb.html">mc_server_set_subtitles_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_set_subtitles_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_set_subtitles_cmd_received_cb-param-callback"><span class="type-annotation">mc_server_enable_cmd_received_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="mc_server_set_subtitles_cmd_received_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the callback for receiving subtitles command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_unset_360_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_360_mode_cmd_received_cb.html">mc_server_unset_360_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_360_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving 360 mode command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_unset_custom_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_custom_cmd_received_cb.html">mc_server_unset_custom_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_custom_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving custom command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_display_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_display_mode_cmd_received_cb.html">mc_server_unset_display_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_display_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving display mode command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_unset_display_rotation_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_display_rotation_cmd_received_cb.html">mc_server_unset_display_rotation_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_display_rotation_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving display rotation command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_unset_event_reply_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_event_reply_received_cb.html">mc_server_unset_event_reply_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_event_reply_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving event reply of the media controller client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_playback_action_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_playback_action_cmd_received_cb.html">mc_server_unset_playback_action_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_playback_action_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving playback action command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_playback_position_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_playback_position_cmd_received_cb.html">mc_server_unset_playback_position_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_playback_position_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving playback position command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_playlist_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_playlist_cmd_received_cb.html">mc_server_unset_playlist_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_playlist_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving playlist command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_repeat_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_repeat_mode_cmd_received_cb.html">mc_server_unset_repeat_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_repeat_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving repeat mode command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_search_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_search_cmd_received_cb.html">mc_server_unset_search_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_search_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving search command from client.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_unset_shuffle_mode_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_shuffle_mode_cmd_received_cb.html">mc_server_unset_shuffle_mode_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_shuffle_mode_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving shuffle mode command from client.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_unset_subtitles_cmd_received_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_unset_subtitles_cmd_received_cb.html">mc_server_unset_subtitles_cmd_received_cb</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_unset_subtitles_cmd_received_cb-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unsets the callback for receiving subtitles command from client.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_update_360_mode_enabled" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_360_mode_enabled.html">mc_server_update_360_mode_enabled</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_360_mode_enabled-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_360_mode_enabled-param-enabled"><span class="type-annotation">bool</span> <span class="parameter-name">enabled</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified 360 mode display status.
+@details If this function is called, the updated 360 mode display status will be sent to all clients.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_update_display_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_display_mode.html">mc_server_update_display_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_display_mode-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_display_mode-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified display mode.
+@details If this function is called, the updated display mode information will be sent to all clients.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_update_display_rotation" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_display_rotation.html">mc_server_update_display_rotation</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_display_rotation-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_display_rotation-param-rotation"><span class="type-annotation">int</span> <span class="parameter-name">rotation</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified display rotation.
+@details If this function is called, the updated display rotation information will be sent to all clients.
+@since_tizen 5.5
+  
+
+</dd>
+
+          <dt id="mc_server_update_metadata" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_metadata.html">mc_server_update_metadata</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_metadata-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified metadata info.
+@details If this function is called, the updated metadata will be sent to all clients.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_update_playback_ability" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_playback_ability.html">mc_server_update_playback_ability</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_playback_ability-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified ability info.
+@details If this function is called, the updated ability will be sent to all clients.
+@since_tizen 5.0
+  
+
+</dd>
+
+          <dt id="mc_server_update_playback_info" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_playback_info.html">mc_server_update_playback_info</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_playback_info-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified playback info.
+@details If this function is called, the updated playback information will be sent to the controller.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_update_playlist_done" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_playlist_done.html">mc_server_update_playlist_done</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_playlist_done-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_playlist_done-param-playlist"><span class="type-annotation">mc_playlist_h</span> <span class="parameter-name">playlist</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers items to the playlist.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_update_repeat_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_repeat_mode.html">mc_server_update_repeat_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_repeat_mode-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_repeat_mode-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified repeat mode.
+@details If this function is called, the updated mode information will be sent to all clients.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_update_shuffle_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_shuffle_mode.html">mc_server_update_shuffle_mode</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_shuffle_mode-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_shuffle_mode-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified shuffle mode.
+@details If this function is called, the updated mode information will be sent to all clients.
+@since_tizen @if MOBILE 2.4 @elseif WEARABLE 3.0 @endif
+  
+
+</dd>
+
+          <dt id="mc_server_update_subtitles_enabled" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_controller/mc_server_update_subtitles_enabled.html">mc_server_update_subtitles_enabled</a></span><span class="signature">(<wbr><span class="parameter" id="mc_server_update_subtitles_enabled-param-server"><span class="type-annotation">mc_server_h</span> <span class="parameter-name">server</span>, </span><span class="parameter" id="mc_server_update_subtitles_enabled-param-enabled"><span class="type-annotation">bool</span> <span class="parameter-name">enabled</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the modified subtitles display status.
+@details If this function is called, the updated subtitles display status will be sent to all clients.
+@since_tizen 5.5
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_media_controller.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_media_controller library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_media_streamrecorder library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_media_streamrecorder library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_media_streamrecorder.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_media_streamrecorder</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_media_streamrecorder&#47;tizen_6_0_tizen_capi_media_streamrecorder-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_capi_media_streamrecorder</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiMediaStreamrecorder</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libcapi-media-streamrecorder.so.0</code>.</p>
+<p>Multimedia / StreamRecorder.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="streamrecorder_cancel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_cancel.html">streamrecorder_cancel</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_cancel-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels the recording.
+@details The recording data is discarded and not written in the recording file.
+@since_tizen 3.0
+@remarks When you want to record audio or video file, you need to add privilege according to rules below additionally. \n
+%http://tizen.org/privilege/mediastorage is needed if input or output path are relevant to media storage.\n
+%http://tizen.org/privilege/externalstorage is needed if input or output path are relevant to external storage.
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@retval #STREAMRECORDER_ERROR_PERMISSION_DENIED The access to the resources can not be granted
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_RECORDING set by streamrecorder_start() or #STREAMRECORDER_STATE_PAUSED by streamrecorder_pause().
+@post The streamrecorder state will be #STREAMRECORDER_STATE_PREPARED.
+@see streamrecorder_create()
+@see streamrecorder_pause()
+@see streamrecorder_commit()
+@see streamrecorder_start()
+  
+
+</dd>
+
+          <dt id="streamrecorder_commit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_commit.html">streamrecorder_commit</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_commit-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Stops recording and saves the result.
+@since_tizen 3.0
+@remarks When you want to record audio or video file, you need to add privilege according to rules below additionally. \n
+%http://tizen.org/privilege/mediastorage is needed if input or output path are relevant to media storage.\n
+%http://tizen.org/privilege/externalstorage is needed if input or output path are relevant to external storage.
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@retval #STREAMRECORDER_ERROR_PERMISSION_DENIED The access to the resources can not be granted
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_RECORDING set by streamrecorder_start() or #STREAMRECORDER_STATE_PAUSED by streamrecorder_pause().
+@post The streamrecorder state will be #STREAMRECORDER_STATE_PREPARED.
+@see streamrecorder_create()
+@see streamrecorder_pause()
+@see streamrecorder_cancel()
+@see streamrecorder_set_filename()
+@see streamrecorder_start()
+  
+
+</dd>
+
+          <dt id="streamrecorder_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_create.html">streamrecorder_create</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_create-param-recorder"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">streamrecorder_h</span>&gt;</span></span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a streamrecorder handle to record a video or audio.
+@since_tizen 3.0
+@remarks You must release @a recorder using streamrecorder_destroy().
+Output parameter  recorder	A handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_OUT_OF_MEMORY Out of memory
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+  
+
+</dd>
+
+          <dt id="streamrecorder_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_destroy.html">streamrecorder_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_destroy-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the streamrecorder handle.
+@since_tizen 3.0
+Parameter	recorder    The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre  The recorder state should be #STREAMRECORDER_STATE_CREATED.
+@post The recorder state will be #STREAMRECORDER_STATE_NONE.
+@see streamrecorder_create()
+  
+
+</dd>
+
+          <dt id="streamrecorder_enable_source_buffer" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_enable_source_buffer.html">streamrecorder_enable_source_buffer</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_enable_source_buffer-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_enable_source_buffer-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the video source as live buffer to be used for recording.
+@since_tizen 3.0
+@remarks if you want to enable video or audio or both recording, call before streamrecorder_prepare()
+Parameter  recorder  A handle to the streamrecorder
+Parameter  type The type of source input
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be only #STREAMRECORDER_STATE_CREATED
+@see streamrecorder_create()
+  
+
+</dd>
+
+          <dt id="streamrecorder_foreach_supported_audio_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_foreach_supported_audio_encoder.html">streamrecorder_foreach_supported_audio_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_foreach_supported_audio_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_audio_encoder-param-callback"><span class="type-annotation">streamrecorder_supported_audio_encoder_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_audio_encoder-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all supported audio encoders by invoking a specific callback for each supported audio encoder.
+@since_tizen 3.0
+Parameter recorder  The handle to the streamrecorder
+Parameter callback	The iteration callback
+Parameter user_data	The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_supported_audio_encoder_cb() will be invoked.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_encoder()
+@see	streamrecorder_get_audio_encoder()
+@see	streamrecorder_supported_audio_encoder_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_foreach_supported_file_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_foreach_supported_file_format.html">streamrecorder_foreach_supported_file_format</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_foreach_supported_file_format-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_file_format-param-callback"><span class="type-annotation">streamrecorder_supported_file_format_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_file_format-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all supported file formats by invoking a specific callback for each supported file format.
+@since_tizen 3.0
+Parameter recorder  The handle to the streamrecorder
+Parameter callback The iteration callback
+Parameter user_data	The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_supported_file_format_cb() will be invoked.
+@see streamrecorder_create()
+@see streamrecorder_get_file_format()
+@see streamrecorder_set_file_format()
+@see streamrecorder_supported_file_format_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_foreach_supported_video_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_foreach_supported_video_encoder.html">streamrecorder_foreach_supported_video_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_foreach_supported_video_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_video_encoder-param-callback"><span class="type-annotation">streamrecorder_supported_video_encoder_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_video_encoder-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all supported video encoders by invoking a specific callback for each supported video encoder.
+@since_tizen 3.0
+Parameter recorder	The handle to the streamrecorder
+Parameter callback	The iteration callback
+Parameter user_data	The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_supported_video_encoder_cb() will be invoked.
+@see streamrecorder_create()
+@see streamrecorder_set_video_encoder()
+@see streamrecorder_get_video_encoder()
+@see	streamrecorder_supported_video_encoder_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_foreach_supported_video_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_foreach_supported_video_resolution.html">streamrecorder_foreach_supported_video_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_foreach_supported_video_resolution-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_video_resolution-param-foreach_cb"><span class="type-annotation">streamrecorder_supported_video_resolution_cb</span> <span class="parameter-name">foreach_cb</span>, </span><span class="parameter" id="streamrecorder_foreach_supported_video_resolution-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Retrieves all supported video resolutions by invoking callback function once for each supported video resolution.
+@since_tizen 3.0
+Parameter recorder	The handle to the streamrecorder
+Parameter foreach_cb	The callback function to be invoked
+Parameter user_data	The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post	This function invokes streamrecorder_supported_video_resolution_cb() repeatedly to retrieve each supported video resolution.
+@see streamrecorder_create()
+@see	streamrecorder_set_video_resolution()
+@see	streamrecorder_get_video_resolution()
+@see	streamrecorder_supported_video_resolution_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_audio_channel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_audio_channel.html">streamrecorder_get_audio_channel</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_audio_channel-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_audio_channel-param-channel_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">channel_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of the audio channel.
+@since_tizen 3.0
+Parameter recorder  The handle to the streamrecorder
+Output parameter channel_count  The number of the audio channel
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_channel()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_audio_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_audio_encoder.html">streamrecorder_get_audio_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_audio_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_audio_encoder-param-codec"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">codec</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the audio codec for encoding an audio stream.
+@since_tizen 3.0
+Parameter recorder The handle to the streamrecorder
+Output parameter codec   The audio codec
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_encoder()
+@see streamrecorder_foreach_supported_audio_encoder()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_audio_encoder_bitrate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_audio_encoder_bitrate.html">streamrecorder_get_audio_encoder_bitrate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_audio_encoder_bitrate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_audio_encoder_bitrate-param-bitrate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">bitrate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the bitrate of an audio encoder.
+@since_tizen 3.0
+Parameter  recorder  The handle to the streamrecorder
+Output parameter bitrate   The bitrate in bits per second
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_encoder_bitrate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_audio_samplerate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_audio_samplerate.html">streamrecorder_get_audio_samplerate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_audio_samplerate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_audio_samplerate-param-samplerate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">samplerate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the sampling rate of an audio stream.
+@since_tizen 3.0
+Parameter  recorder    The handle to the streamrecorder
+Output parameter samplerate  The sample rate in Hertz
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_samplerate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_file_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_file_format.html">streamrecorder_get_file_format</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_file_format-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_file_format-param-format"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">format</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the file format for recording media stream.
+@since_tizen 3.0
+Parameter recorder The handle to the streamrecorder
+Output parameter format   The media file format
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see streamrecorder_set_file_format()
+@see streamrecorder_foreach_supported_file_format()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_filename" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_filename.html">streamrecorder_get_filename</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_filename-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_filename-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the file path to record.
+@since_tizen 3.0
+@remarks You must release @a path using free().
+Parameter	recorder    The handle to the streamrecorder
+Output parameter	path    The recording file path
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see	streamrecorder_set_filename()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_mode.html">streamrecorder_get_mode</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_mode-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_mode-param-mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the recording mode.
+@since_tizen 6.0
+@remarks #STREAMRECORDER_MODE_STREAM_BUFFER indicates recording with media buffer. \n
+#STREAMRECORDER_MODE_DEVICE_LOOPBACK indicates recording the device's own screen (display) and audio.
+Parameter recorder       The handle to the streamrecorder
+Output parameter mode  The recording mode
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED.\n
+@see streamrecorder_create()
+@see streamrecorder_set_mode()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_recording_limit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_recording_limit.html">streamrecorder_get_recording_limit</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_recording_limit-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_recording_limit-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="streamrecorder_get_recording_limit-param-limit"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">limit</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the maximum size of a recording file.
+@since_tizen 3.0
+Parameter recorder The handle to the streamrecorder
+Parameter type The recording limit type
+Output parameter limit If limit type is #STREAMRECORDER_RECORDING_LIMIT_TYPE_SIZE, the limit value is the maximum size of the recording file(KB), \n
+otherwise limit value is the maximum time of the recording file (in seconds) \n
+@c 0 means unlimited recording size or time.
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_recording_limit()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_state.html">streamrecorder_get_state</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_state-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the streamrecorder's current state.
+@since_tizen 3.0
+Parameter  recorder The handle to the streamrecorder
+Output parameter	state  The current state of the streamrecorder
+@return  @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_video_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_video_encoder.html">streamrecorder_get_video_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_video_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_video_encoder-param-codec"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">codec</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the video codec for encoding video stream.
+@since_tizen 3.0
+Parameter recorder The handle to the streamrecorder
+Output parameter codec   The video codec
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see streamrecorder_set_video_encoder()
+@see streamrecorder_foreach_supported_video_encoder()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_video_encoder_bitrate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_video_encoder_bitrate.html">streamrecorder_get_video_encoder_bitrate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_video_encoder_bitrate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_video_encoder_bitrate-param-bitrate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">bitrate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the bitrate of a video encoder.
+@since_tizen 3.0
+Parameter  recorder  The handle to the streamrecorder
+Output parameter bitrate   The bitrate in bits per second
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_audio_encoder_bitrate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_video_framerate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_video_framerate.html">streamrecorder_get_video_framerate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_video_framerate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_video_framerate-param-framerate"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">framerate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the recording frame rate.
+@since_tizen 3.0
+Parameter recorder The handle to the camera
+Output parameter framerate The frame rate for recording that already is set
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see streamrecorder_set_video_framerate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_video_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_video_resolution.html">streamrecorder_get_video_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_video_resolution-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_video_resolution-param-width"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="streamrecorder_get_video_resolution-param-height"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the resolution of the video recording.
+@since_tizen 3.0
+Parameter recorder	The handle to the streamrecorder
+Output parameter width	The video width
+Output parameter height	The video height
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_set_video_resolution()
+@see	streamrecorder_foreach_supported_video_resolution()
+  
+
+</dd>
+
+          <dt id="streamrecorder_get_video_source_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_get_video_source_format.html">streamrecorder_get_video_source_format</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_get_video_source_format-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_get_video_source_format-param-format"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">format</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the video source format.
+@since_tizen 3.0
+@remarks This function should be called before prepared state.
+Parameter recorder The handle to the streamrecorder
+Output parameter format The color type of video source that already is set
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see streamrecorder_set_video_source_format()
+  
+
+</dd>
+
+          <dt id="streamrecorder_pause" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_pause.html">streamrecorder_pause</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_pause-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Pauses the recording.
+@since_tizen 3.0
+@remarks Recording can be resumed with streamrecorder_start().
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_RECORDING.
+@post The streamrecorder state will be #STREAMRECORDER_STATE_PAUSED.
+@see streamrecorder_create()
+@see streamrecorder_commit()
+@see streamrecorder_cancel()
+  
+
+</dd>
+
+          <dt id="streamrecorder_prepare" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_prepare.html">streamrecorder_prepare</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_prepare-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Prepares the streamrecorder for recording.
+@since_tizen 3.0
+@remarks Before calling the function, it is required to properly set streamrecorder_enable_source_buffer(),
+audio encoder (streamrecorder_set_audio_encoder()),
+video encoder(streamrecorder_set_video_encoder()) and file format (streamrecorder_set_file_format()).
+Parameter	recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre  The recorder state should be #STREAMRECORDER_STATE_CREATED. \n
+The streamrecorder_enable_source_buffer() should be invoked before this function.
+@post The streamrecorder state will be #STREAMRECORDER_STATE_PREPARED
+@see streamrecorder_create()
+@see	streamrecorder_unprepare()
+@see	streamrecorder_set_audio_encoder()
+@see	streamrecorder_set_video_encoder()
+@see	streamrecorder_set_file_format()
+  
+
+</dd>
+
+          <dt id="streamrecorder_push_stream_buffer" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_push_stream_buffer.html">streamrecorder_push_stream_buffer</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_push_stream_buffer-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_push_stream_buffer-param-inbuf"><span class="type-annotation">media_packet_h</span> <span class="parameter-name">inbuf</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Pushes buffer to StreamRecorder to record audio/video.
+@since_tizen 3.0
+@remarks When you want to record audio or video file, you need to add privilege according to rules below additionally. \n
+%http://tizen.org/privilege/mediastorage is needed if input or output path are relevant to media storage.\n
+%http://tizen.org/privilege/externalstorage is needed if input or output path are relevant to external storage.
+Parameter	recorder	The handle to the streamrecorder
+Parameter	inbuf The media packet containing buffer and other associated values
+@return  @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_PERMISSION_DENIED The access to the resources can not be granted
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_audio_channel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_audio_channel.html">streamrecorder_set_audio_channel</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_audio_channel-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_audio_channel-param-channel_count"><span class="type-annotation">int</span> <span class="parameter-name">channel_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the number of the audio channel.
+@since_tizen 3.0
+@remarks This attribute is applied only in #STREAMRECORDER_STATE_CREATED state. \n
+For mono recording, setting channel to @c 1. \n
+For stereo recording, setting channel to @c 2.
+Parameter recorder       The handle to the streamrecorder
+Parameter channel_count  The number of the audio channel
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED.\n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_audio_channel()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_audio_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_audio_encoder.html">streamrecorder_set_audio_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_audio_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_audio_encoder-param-codec"><span class="type-annotation">int</span> <span class="parameter-name">codec</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the audio codec for encoding an audio stream.
+@since_tizen 3.0
+@remarks You can get available audio encoders by using streamrecorder_foreach_supported_audio_encoder(). \n
+Parameter recorder The handle to the streamrecorder
+Parameter codec    The audio codec
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_audio_encoder()
+@see streamrecorder_foreach_supported_audio_encoder()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_audio_encoder_bitrate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_audio_encoder_bitrate.html">streamrecorder_set_audio_encoder_bitrate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_audio_encoder_bitrate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_audio_encoder_bitrate-param-bitrate"><span class="type-annotation">int</span> <span class="parameter-name">bitrate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the bitrate of an audio encoder.
+@since_tizen 3.0
+Parameter recorder  The handle to the streamrecorder
+Parameter bitrate   The bitrate (for mms : 12200<code>bps</code>, normal : 288000<code>bps</code>)
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_audio_encoder_bitrate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_audio_samplerate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_audio_samplerate.html">streamrecorder_set_audio_samplerate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_audio_samplerate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_audio_samplerate-param-samplerate"><span class="type-annotation">int</span> <span class="parameter-name">samplerate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the sampling rate of an audio stream.
+@since_tizen 3.0
+Parameter recorder    The handle to the streamrecorder
+Parameter samplerate The sample rate in Hertz
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_audio_samplerate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_buffer_consume_completed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_buffer_consume_completed_cb.html">streamrecorder_set_buffer_consume_completed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_buffer_consume_completed_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_buffer_consume_completed_cb-param-callback"><span class="type-annotation">streamrecorder_consume_completed_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_set_buffer_consume_completed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be called when asynchronous buffers are consumed.
+@since_tizen 3.0
+@remarks This callback informs to user dealloc buffer.\n
+When this callback is invoked, user should release the buffer or media packet. \n
+Parameter	recorder	The handle to the streamrecorder
+Parameter	callback	The callback function to register
+Parameter	user_data	The user data to be passed to the callback function
+@return  @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see	streamrecorder_unset_buffer_consume_completed_cb()
+@see	streamrecorder_push_stream_buffer()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_error_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_error_cb.html">streamrecorder_set_error_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_error_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_error_cb-param-callback"><span class="type-annotation">streamrecorder_error_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_set_error_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be called when an asynchronous operation error occurred.
+@since_tizen 3.0
+@remarks This callback informs critical error situation.\n
+When this callback is invoked, user should release the resource and terminate the application. \n
+These error codes will occur. \n
+#STREAMRECORDER_ERROR_INVALID_OPERATION \n
+#STREAMRECORDER_ERROR_OUT_OF_MEMORY
+Parameter	recorder	The handle to the streamrecorder
+Parameter	callback	The callback function to register
+Parameter	user_data	The user data to be passed to the callback function
+@return  @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post	This function will invoke streamrecorder_error_cb() when an asynchronous operation error occur.
+@see streamrecorder_create()
+@see	streamrecorder_unset_error_cb()
+@see	streamrecorder_error_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_file_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_file_format.html">streamrecorder_set_file_format</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_file_format-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_file_format-param-format"><span class="type-annotation">int</span> <span class="parameter-name">format</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the file format for recording media stream.
+@since_tizen 3.0
+Parameter recorder The handle to the streamrecorder
+Parameter format   The media file format
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see streamrecorder_get_file_format()
+@see streamrecorder_foreach_supported_file_format()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_filename" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_filename.html">streamrecorder_set_filename</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_filename-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_filename-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the file path to record.
+@details This function sets file path which defines where newly recorded data should be stored.
+@since_tizen 3.0
+@remarks If the same file already exists in the file system, then old file will be overwritten.
+Parameter	recorder	The handle to the streamrecorder
+Parameter	path The recording file path
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see streamrecorder_get_filename()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_mode.html">streamrecorder_set_mode</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_mode-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_mode-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the recording mode.
+@since_tizen 6.0
+@remarks This attribute can be set only in the #STREAMRECORDER_STATE_CREATED state. \n
+To record with media buffer, set the mode to #STREAMRECORDER_MODE_STREAM_BUFFER. \n
+To record with the device's own screen (display) and audio, set the mode to #STREAMRECORDER_MODE_DEVICE_LOOPBACK.
+Parameter recorder       The handle to the streamrecorder
+Parameter mode  The recording mode
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED.\n
+@see streamrecorder_create()
+@see streamrecorder_get_mode()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_notify_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_notify_cb.html">streamrecorder_set_notify_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_notify_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_notify_cb-param-callback"><span class="type-annotation">streamrecorder_notify_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_set_notify_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers the callback function that will be invoked when the streamrecorder get some notification.
+@since_tizen 3.0
+Parameter recorder	The handle to the streamrecorder
+Parameter callback	The function pointer of user callback
+Parameter user_data The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_notify_cb() will be invoked.
+@see streamrecorder_create()
+@see streamrecorder_unset_notify_cb()
+@see streamrecorder_notify_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_recording_limit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_recording_limit.html">streamrecorder_set_recording_limit</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_recording_limit-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_recording_limit-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="streamrecorder_set_recording_limit-param-limit"><span class="type-annotation">int</span> <span class="parameter-name">limit</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the maximum size of a recording file.
+@since_tizen 3.0
+@remarks After reaching the limitation, the recording data is discarded and not written in the recording file.
+Parameter recorder The handle to the streamrecorder
+Parameter type The recording limit type
+Parameter limit If limit type is #STREAMRECORDER_RECORDING_LIMIT_TYPE_SIZE, the limit value is the maximum size of the recording file(KB), \n
+otherwise limit value is the maximum time of the recording file (in seconds) \n
+@c 0 means unlimited recording size or time.
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_recording_limit()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_recording_limit_reached_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_recording_limit_reached_cb.html">streamrecorder_set_recording_limit_reached_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_recording_limit_reached_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_recording_limit_reached_cb-param-callback"><span class="type-annotation">streamrecorder_recording_limit_reached_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_set_recording_limit_reached_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers the callback function to be run when reached the recording limit.
+@since_tizen 3.0
+Parameter	recorder	The handle to streamrecorder
+Parameter	callback	The function pointer of user callback
+Parameter	user_data	The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_recording_limit_reached_cb() will be invoked.
+@see streamrecorder_create()
+@see	streamrecorder_unset_recording_limit_reached_cb()
+@see	streamrecorder_recording_limit_reached_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_recording_status_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_recording_status_cb.html">streamrecorder_set_recording_status_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_recording_status_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_recording_status_cb-param-callback"><span class="type-annotation">streamrecorder_recording_status_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="streamrecorder_set_recording_status_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when the recording information changes.
+@since_tizen 3.0
+Parameter  recorder   The handle to the streamrecorder
+Parameter  callback   The function pointer of user callback
+Parameter  user_data  The user data to be passed to the callback function
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@post  streamrecorder_recording_status_cb() will be invoked.
+@see streamrecorder_create()
+@see	streamrecorder_unset_recording_status_cb()
+@see	streamrecorder_recording_status_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_video_encoder" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_video_encoder.html">streamrecorder_set_video_encoder</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_video_encoder-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_video_encoder-param-codec"><span class="type-annotation">int</span> <span class="parameter-name">codec</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the video codec for encoding video stream.
+@since_tizen 3.0
+@remarks You can get available video encoders by using recorder_foreach_supported_video_encoder().
+Parameter recorder The handle to the streamrecorder
+Parameter codec    The video codec
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see streamrecorder_get_video_encoder()
+@see streamrecorder_foreach_supported_video_encoder()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_video_encoder_bitrate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_video_encoder_bitrate.html">streamrecorder_set_video_encoder_bitrate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_video_encoder_bitrate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_video_encoder_bitrate-param-bitrate"><span class="type-annotation">int</span> <span class="parameter-name">bitrate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the bitrate of a video encoder.
+@since_tizen 3.0
+Parameter recorder  The handle to the streamrecorder
+Parameter bitrate   The bitrate in bits per second
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_get_video_encoder_bitrate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_video_framerate" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_video_framerate.html">streamrecorder_set_video_framerate</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_video_framerate-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_video_framerate-param-framerate"><span class="type-annotation">int</span> <span class="parameter-name">framerate</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the recording frame rate.
+@since_tizen 3.0
+@remarks This function should be called before prepared state.
+Parameter recorder The handle to the streamrecorder
+Parameter framerate The frame rate for recording
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see streamrecorder_get_video_framerate()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_video_resolution" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_video_resolution.html">streamrecorder_set_video_resolution</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_video_resolution-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_video_resolution-param-width"><span class="type-annotation">int</span> <span class="parameter-name">width</span>, </span><span class="parameter" id="streamrecorder_set_video_resolution-param-height"><span class="type-annotation">int</span> <span class="parameter-name">height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the resolution of the video recording.
+@since_tizen 3.0
+@remarks This function should be called before recording (streamrecorder_start()).
+Parameter recorder	The handle to the streamrecorder
+Parameter width	The input width
+Parameter height	The input height
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre    The streamrecorder state must be #STREAMRECORDER_STATE_CREATED. \n
+streamrecorder_enable_source_buffer() should be invoked before this function.
+@see streamrecorder_create()
+@see	streamrecorder_start()
+@see	streamrecorder_get_video_resolution()
+@see	streamrecorder_foreach_supported_video_resolution()
+  
+
+</dd>
+
+          <dt id="streamrecorder_set_video_source_format" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_set_video_source_format.html">streamrecorder_set_video_source_format</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_set_video_source_format-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span>, </span><span class="parameter" id="streamrecorder_set_video_source_format-param-format"><span class="type-annotation">int</span> <span class="parameter-name">format</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the video source format.
+@since_tizen 3.0
+@remarks This function should be called before prepared state.
+Parameter recorder The handle to the streamrecorder
+Parameter format The color type of video source
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see streamrecorder_get_video_source_format()
+  
+
+</dd>
+
+          <dt id="streamrecorder_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_start.html">streamrecorder_start</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_start-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts the recording.
+@since_tizen 3.0
+@remarks If file path has been set to an existing file, this file is removed automatically and updated by new one. \n
+When you want to record audio or video file, you need to add privilege according to rules below additionally. \n
+%http://tizen.org/privilege/mediastorage is needed if input or output path are relevant to media storage.\n
+%http://tizen.org/privilege/externalstorage is needed if input or output path are relevant to external storage.
+The filename should be set before this function is invoked.
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@retval #STREAMRECORDER_ERROR_PERMISSION_DENIED The access to the resources can not be granted
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre The streamrecorder state must be #STREAMRECORDER_STATE_PREPARED by streamrecorder_prepare() or #STREAMRECORDER_STATE_PAUSED by streamrecorder_pause(). \n
+The filename should be set by streamrecorder_set_filename().
+@post The recorder state will be #STREAMRECORDER_STATE_RECORDING.
+@see streamrecorder_create()
+@see	streamrecorder_pause()
+@see	streamrecorder_commit()
+@see	streamrecorder_cancel()
+@see	streamrecorder_set_audio_encoder()
+@see	streamrecorder_set_filename()
+@see	streamrecorder_set_file_format()
+@see	streamrecorder_recording_status_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unprepare" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unprepare.html">streamrecorder_unprepare</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unprepare-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Resets the streamrecorder.
+@since_tizen 3.0
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STREAMRECORDER_ERROR_INVALID_OPERATION Invalid operation
+@retval #STREAMRECORDER_ERROR_INVALID_STATE Invalid state
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@pre  The streamrecorder state should be #STREAMRECORDER_STATE_PREPARED set by streamrecorder_prepare(), streamrecorder_cancel() or streamrecorder_commit().
+@post The streamrecorder state will be #STREAMRECORDER_STATE_CREATED.
+@see streamrecorder_create()
+@see	streamrecorder_prepare()
+@see	streamrecorder_cancel()
+@see	streamrecorder_commit()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unset_buffer_consume_completed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unset_buffer_consume_completed_cb.html">streamrecorder_unset_buffer_consume_completed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unset_buffer_consume_completed_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter	recorder	The handle to the streamrecorder
+@return  @c on success, otherwise a negative error value
+@retval    #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval    #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see	streamrecorder_set_buffer_consume_completed_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unset_error_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unset_error_cb.html">streamrecorder_unset_error_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unset_error_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter	recorder	The handle to the streamrecorder
+@return  @c on success, otherwise a negative error value
+@retval    #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval    #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see	streamrecorder_set_error_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unset_notify_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unset_notify_cb.html">streamrecorder_unset_notify_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unset_notify_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter  recorder The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see streamrecorder_set_notify_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unset_recording_limit_reached_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unset_recording_limit_reached_cb.html">streamrecorder_unset_recording_limit_reached_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unset_recording_limit_reached_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter  recorder  The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see streamrecorder_create()
+@see	streamrecorder_set_recording_limit_reached_cb()
+  
+
+</dd>
+
+          <dt id="streamrecorder_unset_recording_status_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_media_streamrecorder/streamrecorder_unset_recording_status_cb.html">streamrecorder_unset_recording_status_cb</a></span><span class="signature">(<wbr><span class="parameter" id="streamrecorder_unset_recording_status_cb-param-recorder"><span class="type-annotation">streamrecorder_h</span> <span class="parameter-name">recorder</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the callback function.
+@since_tizen 3.0
+Parameter  recorder    The handle to the streamrecorder
+@return @c 0 on success, otherwise a negative error value
+@retval #STREAMRECORDER_ERROR_NONE Successful
+@retval #STREAMRECORDER_ERROR_NOT_SUPPORTED Not supported
+@retval #STREAMRECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@pre Create a stream recorder handle by calling streamrecorder_create().
+@see	streamrecorder_set_recording_status_cb()
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_media_streamrecorder.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_media_streamrecorder library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

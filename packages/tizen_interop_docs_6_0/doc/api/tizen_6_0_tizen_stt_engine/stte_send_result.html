@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the stte_send_result function from the tizen_6_0_tizen_stt_engine library, for the Dart programming language.">
+  <title>stte_send_result function - tizen_6_0_tizen_stt_engine library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_stt_engine/">modules&#47;tizen_stt_engine.dart</a></li>
+    <li class="self-crumb">stte_send_result function</li>
+  </ol>
+  <div class="self-name">stte_send_result</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_stt_engine&#47;tizen_6_0_tizen_stt_engine-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">stte_send_result</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">stte_send_result</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="stte_send_result-param-event"><span class="type-annotation">int</span> <span class="parameter-name">event</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">type</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-result"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">result</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-result_count"><span class="type-annotation">int</span> <span class="parameter-name">result_count</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-msg"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">msg</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-time_info"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">time_info</span>, </span></li>
+<li><span class="parameter" id="stte_send_result-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sends the recognition result to the engine service user.
+@since_tizen 3.0
+@remarks This API is used in stte_set_recording_data_cb() and stte_stop_cb(), when STT engine sends the recognition result to the engine service user.
+This function is called in the following situations; 1) after stte_stop_cb() is called, 2) the end point of speech is detected from recording, or 3) partial result is occurred.
+The recognition result and @a user_data must be transferred to the engine service user through this function.
+Also, @a time_info must be transferred to stte_foreach_result_time_cb(). The type of @a time_info is up to the STT engine developer.
+Parameter event The result event
+Parameter type The recognition type (e.g. #STTE_RECOGNITION_TYPE_FREE, #STTE_RECOGNITION_TYPE_FREE_PARTIAL)
+Parameter result Result texts
+Parameter result_count Result text count
+Parameter msg Engine message (e.g. #STTE_RESULT_MESSAGE_NONE, #STTE_RESULT_MESSAGE_ERROR_TOO_SHORT)
+Parameter time_info The time information
+Parameter user_data The user data passed from stte_start_cb()
+@return @c 0 on success,
+otherwise a negative error value
+@retval #STTE_ERROR_NONE Successful
+@retval #STTE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #STTE_ERROR_PERMISSION_DENIED Permission denied
+@retval #STTE_ERROR_NOT_SUPPORTED Not supported
+@retval #STTE_ERROR_OPERATION_FAILED Operation failure
+@pre The stte_main() function should be invoked before this function is called.
+stte_stop_cb() will invoke this function.
+@post This function invokes stte_foreach_result_time_cb().
+@see stte_start_cb()
+@see stte_set_recording_data_cb()
+@see stte_stop_cb()
+@see stte_foreach_result_time_cb()</p>
+<p>Module getter: <code>tizenSttEngine</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int stte_send_result(
+  int event,
+  ffi.Pointer&lt;ffi.Char&gt; type,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; result,
+  int result_count,
+  ffi.Pointer&lt;ffi.Char&gt; msg,
+  ffi.Pointer&lt;ffi.Void&gt; time_info,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenSttEngine.stte_send_result(
+      event,
+      type,
+      result,
+      result_count,
+      msg,
+      time_info,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_stt_engine/">tizen_6_0_tizen_stt_engine</a></li>
+    <li class="self-crumb">stte_send_result function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_stt_engine library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

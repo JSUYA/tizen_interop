@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_ui_inputmethod library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_ui_inputmethod library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_ui_inputmethod.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_ui_inputmethod</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_ui_inputmethod&#47;tizen_6_0_tizen_capi_ui_inputmethod-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_capi_ui_inputmethod</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiUiInputmethod</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libcapi-ui-inputmethod.so.0</code>.</p>
+<p>UIX / Input Method.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="ime_commit_content" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_commit_content.html">ime_commit_content</a></span><span class="signature">(<wbr><span class="parameter" id="ime_commit_content-param-content"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">content</span>, </span><span class="parameter" id="ime_commit_content-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">description</span>, </span><span class="parameter" id="ime_commit_content-param-mime_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">mime_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Commits contents such as image to the associated text input UI control.
+  
+
+</dd>
+
+          <dt id="ime_commit_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_commit_string.html">ime_commit_string</a></span><span class="signature">(<wbr><span class="parameter" id="ime_commit_string-param-str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">str</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the text to the associated text input UI control.
+  
+
+</dd>
+
+          <dt id="ime_context_get_autocapital_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_autocapital_type.html">ime_context_get_autocapital_type</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_autocapital_type-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_autocapital_type-param-autocapital_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">autocapital_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the autocapital type information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_bidi_direction" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_bidi_direction.html">ime_context_get_bidi_direction</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_bidi_direction-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_bidi_direction-param-bidi"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">bidi</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the text bidirectional information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_cursor_position" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_cursor_position.html">ime_context_get_cursor_position</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_cursor_position-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_cursor_position-param-cursor_pos"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">cursor_pos</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the cursor position information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_input_hint" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_input_hint.html">ime_context_get_input_hint</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_input_hint-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_input_hint-param-input_hint"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">input_hint</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the input hint information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_language" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_language.html">ime_context_get_language</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_language-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_language-param-language"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">language</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the preferred language information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_layout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_layout.html">ime_context_get_layout</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_layout-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_layout-param-layout"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">layout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the layout information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_layout_variation" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_layout_variation.html">ime_context_get_layout_variation</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_layout_variation-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_layout_variation-param-layout_variation"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">layout_variation</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the layout variation information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_password_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_password_mode.html">ime_context_get_password_mode</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_password_mode-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_password_mode-param-password_mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">password_mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the password mode information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_prediction_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_prediction_mode.html">ime_context_get_prediction_mode</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_prediction_mode-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_prediction_mode-param-prediction_mode"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">prediction_mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the prediction mode information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_return_key_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_return_key_state.html">ime_context_get_return_key_state</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_return_key_state-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_return_key_state-param-return_key_state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">return_key_state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the @c Return key state information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_context_get_return_key_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_context_get_return_key_type.html">ime_context_get_return_key_type</a></span><span class="signature">(<wbr><span class="parameter" id="ime_context_get_return_key_type-param-context"><span class="type-annotation">ime_context_h</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="ime_context_get_return_key_type-param-return_key_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">return_key_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the @c Return key label type information from the given input context.
+  
+
+</dd>
+
+          <dt id="ime_create_option_window" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_create_option_window.html">ime_create_option_window</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to create an option window from the input panel.
+  
+
+</dd>
+
+          <dt id="ime_delete_surrounding_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_delete_surrounding_text.html">ime_delete_surrounding_text</a></span><span class="signature">(<wbr><span class="parameter" id="ime_delete_surrounding_text-param-offset"><span class="type-annotation">int</span> <span class="parameter-name">offset</span>, </span><span class="parameter" id="ime_delete_surrounding_text-param-len"><span class="type-annotation">int</span> <span class="parameter-name">len</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to delete surrounding text.
+  
+
+</dd>
+
+          <dt id="ime_destroy_option_window" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_destroy_option_window.html">ime_destroy_option_window</a></span><span class="signature">(<wbr><span class="parameter" id="ime_destroy_option_window-param-window"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Evas_Object</span>&gt;</span></span> <span class="parameter-name">window</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to destroy an option window.
+  
+
+</dd>
+
+          <dt id="ime_device_info_get_class" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_class.html">ime_device_info_get_class</a></span><span class="signature">(<wbr><span class="parameter" id="ime_device_info_get_class-param-dev_info"><span class="type-annotation">ime_device_info_h</span> <span class="parameter-name">dev_info</span>, </span><span class="parameter" id="ime_device_info_get_class-param-dev_class"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">dev_class</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the device class of the key event.
+  
+
+</dd>
+
+          <dt id="ime_device_info_get_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_name.html">ime_device_info_get_name</a></span><span class="signature">(<wbr><span class="parameter" id="ime_device_info_get_name-param-dev_info"><span class="type-annotation">ime_device_info_h</span> <span class="parameter-name">dev_info</span>, </span><span class="parameter" id="ime_device_info_get_name-param-dev_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">dev_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the device name of the key event.
+  
+
+</dd>
+
+          <dt id="ime_device_info_get_subclass" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_device_info_get_subclass.html">ime_device_info_get_subclass</a></span><span class="signature">(<wbr><span class="parameter" id="ime_device_info_get_subclass-param-dev_info"><span class="type-annotation">ime_device_info_h</span> <span class="parameter-name">dev_info</span>, </span><span class="parameter" id="ime_device_info_get_subclass-param-dev_subclass"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">dev_subclass</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the device subclass of the key event.
+  
+
+</dd>
+
+          <dt id="ime_event_set_accessibility_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_accessibility_state_changed_cb.html">ime_event_set_accessibility_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_accessibility_state_changed_cb-param-callback_func"><span class="type-annotation">ime_accessibility_state_changed_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_accessibility_state_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c accessibility_state_changed event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_cursor_position_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_cursor_position_updated_cb.html">ime_event_set_cursor_position_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_cursor_position_updated_cb-param-callback_func"><span class="type-annotation">ime_cursor_position_updated_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_cursor_position_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c cursor_position_updated event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_display_language_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_display_language_changed_cb.html">ime_event_set_display_language_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_display_language_changed_cb-param-callback_func"><span class="type-annotation">ime_display_language_changed_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_display_language_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c display_language_changed event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_focus_in_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_focus_in_cb.html">ime_event_set_focus_in_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_focus_in_cb-param-callback_func"><span class="type-annotation">ime_focus_in_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_focus_in_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c focus_in event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_focus_out_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_focus_out_cb.html">ime_event_set_focus_out_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_focus_out_cb-param-callback_func"><span class="type-annotation">ime_focus_out_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_focus_out_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c focus_out event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_geometry_requested_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_geometry_requested_cb.html">ime_event_set_geometry_requested_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_geometry_requested_cb-param-callback_func"><span class="type-annotation">ime_geometry_requested_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_geometry_requested_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c geometry_requested event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_imdata_requested_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_imdata_requested_cb.html">ime_event_set_imdata_requested_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_imdata_requested_cb-param-callback_func"><span class="type-annotation">ime_imdata_requested_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_imdata_requested_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c imdata_requested event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_imdata_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_imdata_set_cb.html">ime_event_set_imdata_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_imdata_set_cb-param-callback_func"><span class="type-annotation">ime_imdata_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_imdata_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c imdata_set event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_input_context_reset_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_input_context_reset_cb.html">ime_event_set_input_context_reset_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_input_context_reset_cb-param-callback_func"><span class="type-annotation">ime_input_context_reset_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_input_context_reset_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c input_context_reset event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_language_requested_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_language_requested_cb.html">ime_event_set_language_requested_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_language_requested_cb-param-callback_func"><span class="type-annotation">ime_language_requested_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_language_requested_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c language_requested event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_language_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_language_set_cb.html">ime_event_set_language_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_language_set_cb-param-callback_func"><span class="type-annotation">ime_language_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_language_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c language_set event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_layout_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_layout_set_cb.html">ime_event_set_layout_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_layout_set_cb-param-callback_func"><span class="type-annotation">ime_layout_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_layout_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c layout_set event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_mime_type_set_request_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_mime_type_set_request_cb.html">ime_event_set_mime_type_set_request_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_mime_type_set_request_cb-param-callback_func"><span class="type-annotation">ime_mime_type_set_request_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_mime_type_set_request_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets MIME type event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_option_window_created_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_option_window_created_cb.html">ime_event_set_option_window_created_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_option_window_created_cb-param-callback_func"><span class="type-annotation">ime_option_window_created_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_option_window_created_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c option_window_created event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_option_window_destroyed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_option_window_destroyed_cb.html">ime_event_set_option_window_destroyed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_option_window_destroyed_cb-param-callback_func"><span class="type-annotation">ime_option_window_destroyed_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_option_window_destroyed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c option_window_destroyed event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_prediction_hint_data_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_prediction_hint_data_set_cb.html">ime_event_set_prediction_hint_data_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_prediction_hint_data_set_cb-param-callback_func"><span class="type-annotation">ime_prediction_hint_data_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_prediction_hint_data_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a callback function to give a hint about predicted words.
+  
+
+</dd>
+
+          <dt id="ime_event_set_prediction_hint_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_prediction_hint_set_cb.html">ime_event_set_prediction_hint_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_prediction_hint_set_cb-param-callback_func"><span class="type-annotation">ime_prediction_hint_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_prediction_hint_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets prediction hint event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_process_key_event_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_process_key_event_cb.html">ime_event_set_process_key_event_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_process_key_event_cb-param-callback_func"><span class="type-annotation">ime_process_key_event_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_process_key_event_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c process_key_event event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_process_key_event_with_keycode_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_process_key_event_with_keycode_cb.html">ime_event_set_process_key_event_with_keycode_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_process_key_event_with_keycode_cb-param-callback_func"><span class="type-annotation">ime_process_key_event_with_keycode_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_process_key_event_with_keycode_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c process_key_event_with_keycode callback function to handle the key event with a keycode.
+  
+
+</dd>
+
+          <dt id="ime_event_set_return_key_state_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_return_key_state_set_cb.html">ime_event_set_return_key_state_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_return_key_state_set_cb-param-callback_func"><span class="type-annotation">ime_return_key_state_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_return_key_state_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c return_key_state_set event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_return_key_type_set_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_return_key_type_set_cb.html">ime_event_set_return_key_type_set_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_return_key_type_set_cb-param-callback_func"><span class="type-annotation">ime_return_key_type_set_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_return_key_type_set_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c return_key_type_set event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_rotation_degree_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_rotation_degree_changed_cb.html">ime_event_set_rotation_degree_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_rotation_degree_changed_cb-param-callback_func"><span class="type-annotation">ime_rotation_degree_changed_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_rotation_degree_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c rotation_degree_changed event callback function.
+  
+
+</dd>
+
+          <dt id="ime_event_set_surrounding_text_updated_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_event_set_surrounding_text_updated_cb.html">ime_event_set_surrounding_text_updated_cb</a></span><span class="signature">(<wbr><span class="parameter" id="ime_event_set_surrounding_text_updated_cb-param-callback_func"><span class="type-annotation">ime_surrounding_text_updated_cb</span> <span class="parameter-name">callback_func</span>, </span><span class="parameter" id="ime_event_set_surrounding_text_updated_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets @c surrounding_text_updated event callback function.
+  
+
+</dd>
+
+          <dt id="ime_get_main_window" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_main_window.html">ime_get_main_window</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Evas_Object</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the pointer of input panel main window.
+  
+
+</dd>
+
+          <dt id="ime_get_selected_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_selected_text.html">ime_get_selected_text</a></span><span class="signature">(<wbr><span class="parameter" id="ime_get_selected_text-param-text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">text</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the selected text synchronously.
+  
+
+</dd>
+
+          <dt id="ime_get_surrounding_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_get_surrounding_text.html">ime_get_surrounding_text</a></span><span class="signature">(<wbr><span class="parameter" id="ime_get_surrounding_text-param-maxlen_before"><span class="type-annotation">int</span> <span class="parameter-name">maxlen_before</span>, </span><span class="parameter" id="ime_get_surrounding_text-param-maxlen_after"><span class="type-annotation">int</span> <span class="parameter-name">maxlen_after</span>, </span><span class="parameter" id="ime_get_surrounding_text-param-text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">text</span>, </span><span class="parameter" id="ime_get_surrounding_text-param-cursor_pos"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">cursor_pos</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the surrounding text from the position of the cursor, synchronously.
+  
+
+</dd>
+
+          <dt id="ime_hide_preedit_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_hide_preedit_string.html">ime_hide_preedit_string</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to hide preedit string.
+  
+
+</dd>
+
+          <dt id="ime_request_hide" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_request_hide.html">ime_request_hide</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends the request to hide IME.
+  
+
+</dd>
+
+          <dt id="ime_request_surrounding_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_request_surrounding_text.html">ime_request_surrounding_text</a></span><span class="signature">(<wbr><span class="parameter" id="ime_request_surrounding_text-param-maxlen_before"><span class="type-annotation">int</span> <span class="parameter-name">maxlen_before</span>, </span><span class="parameter" id="ime_request_surrounding_text-param-maxlen_after"><span class="type-annotation">int</span> <span class="parameter-name">maxlen_after</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests the surrounding text from the position of the cursor, asynchronously.
+  
+
+</dd>
+
+          <dt id="ime_run" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_run.html">ime_run</a></span><span class="signature">(<wbr><span class="parameter" id="ime_run-param-basic_cb"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">ime_callback_s</span>&gt;</span></span> <span class="parameter-name">basic_cb</span>, </span><span class="parameter" id="ime_run-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Runs the main loop of IME application.
+  
+
+</dd>
+
+          <dt id="ime_send_key_event" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_send_key_event.html">ime_send_key_event</a></span><span class="signature">(<wbr><span class="parameter" id="ime_send_key_event-param-keycode"><span class="type-annotation">int</span> <span class="parameter-name">keycode</span>, </span><span class="parameter" id="ime_send_key_event-param-keymask"><span class="type-annotation">int</span> <span class="parameter-name">keymask</span>, </span><span class="parameter" id="ime_send_key_event-param-forward_key"><span class="type-annotation">bool</span> <span class="parameter-name">forward_key</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a key event to the associated text input UI control.
+  
+
+</dd>
+
+          <dt id="ime_send_private_command" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_send_private_command.html">ime_send_private_command</a></span><span class="signature">(<wbr><span class="parameter" id="ime_send_private_command-param-command"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">command</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sends a private command to the associated text input UI control.
+  
+
+</dd>
+
+          <dt id="ime_set_candidate_visibility_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_candidate_visibility_state.html">ime_set_candidate_visibility_state</a></span><span class="signature">(<wbr><span class="parameter" id="ime_set_candidate_visibility_state-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Enables whether candidate strings show or not.
+  
+
+</dd>
+
+          <dt id="ime_set_floating_drag_end" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_drag_end.html">ime_set_floating_drag_end</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Disallows the movement of the floating input panel window with the mouse pointer when the mouse is pressed.
+  
+
+</dd>
+
+          <dt id="ime_set_floating_drag_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_drag_start.html">ime_set_floating_drag_start</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Allows the floating input panel window to move along with the mouse pointer when the mouse is pressed.
+  
+
+</dd>
+
+          <dt id="ime_set_floating_mode" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_floating_mode.html">ime_set_floating_mode</a></span><span class="signature">(<wbr><span class="parameter" id="ime_set_floating_mode-param-floating_mode"><span class="type-annotation">bool</span> <span class="parameter-name">floating_mode</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the floating mode or not.
+  
+
+</dd>
+
+          <dt id="ime_set_selection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_selection.html">ime_set_selection</a></span><span class="signature">(<wbr><span class="parameter" id="ime_set_selection-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="ime_set_selection-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to set selection.
+  
+
+</dd>
+
+          <dt id="ime_set_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_set_size.html">ime_set_size</a></span><span class="signature">(<wbr><span class="parameter" id="ime_set_size-param-portrait_width"><span class="type-annotation">int</span> <span class="parameter-name">portrait_width</span>, </span><span class="parameter" id="ime_set_size-param-portrait_height"><span class="type-annotation">int</span> <span class="parameter-name">portrait_height</span>, </span><span class="parameter" id="ime_set_size-param-landscape_width"><span class="type-annotation">int</span> <span class="parameter-name">landscape_width</span>, </span><span class="parameter" id="ime_set_size-param-landscape_height"><span class="type-annotation">int</span> <span class="parameter-name">landscape_height</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the input panel window's size information.
+  
+
+</dd>
+
+          <dt id="ime_show_preedit_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_show_preedit_string.html">ime_show_preedit_string</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Requests to show preedit string.
+  
+
+</dd>
+
+          <dt id="ime_update_input_panel_event" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_update_input_panel_event.html">ime_update_input_panel_event</a></span><span class="signature">(<wbr><span class="parameter" id="ime_update_input_panel_event-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="ime_update_input_panel_event-param-value"><span class="type-annotation">int</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates the state of input panel event.
+  
+
+</dd>
+
+          <dt id="ime_update_preedit_string" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_ui_inputmethod/ime_update_preedit_string.html">ime_update_preedit_string</a></span><span class="signature">(<wbr><span class="parameter" id="ime_update_preedit_string-param-str"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">str</span>, </span><span class="parameter" id="ime_update_preedit_string-param-attrs"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Eina_List</span>&gt;</span></span> <span class="parameter-name">attrs</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Updates a new preedit string.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_ui_inputmethod.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_ui_inputmethod library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ppm_request_permissions function from the tizen_6_0_tizen_capi_privacy_privilege_manager library, for the Dart programming language.">
+  <title>ppm_request_permissions function - tizen_6_0_tizen_capi_privacy_privilege_manager library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules&#47;tizen_capi_privacy_privilege_manager.dart</a></li>
+    <li class="self-crumb">ppm_request_permissions function</li>
+  </ol>
+  <div class="self-name">ppm_request_permissions</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_privacy_privilege_manager&#47;tizen_6_0_tizen_capi_privacy_privilege_manager-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">ppm_request_permissions</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">ppm_request_permissions</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="ppm_request_permissions-param-privileges"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">privileges</span>, </span></li>
+<li><span class="parameter" id="ppm_request_permissions-param-privileges_count"><span class="type-annotation">int</span> <span class="parameter-name">privileges_count</span>, </span></li>
+<li><span class="parameter" id="ppm_request_permissions-param-callback"><span class="type-annotation">ppm_request_multiple_response_cb</span> <span class="parameter-name">callback</span>, </span></li>
+<li><span class="parameter" id="ppm_request_permissions-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Requests a user's response to obtain permission for using the given privileges.</p>
+<p>@details When this function is called, an underlying service may show an appropriate
+UI dialogue box (pop-up) with a question about granting the application access
+to the given privileges. Once a user makes a decision, the service may modify
+the privacy policy (when it is a definitive decision). After that, the service
+sends the response back to the application. The possible response values are as follows:\n
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER\n
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER\n
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE\n
+The application receives #PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE value after
+pressing 'Deny' button while not having selected the 'Don't ask again?' checkbox. If the device
+has the home and back buttons, pressing either of them gives the
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE response.
+The application is informed about the user's decision by invoking ppm_request_multiple_response_cb().
+When a privacy policy for the given privileges has already been resolved, no pop-up will
+be shown and the service will reply immediately with an appropriate results:\n
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER\n
+#PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER\n</p>
+<p>@since_tizen 5.0</p>
+<p>@remarks Before calling this function, call ppm_check_permission() or ppm_check_permissions()
+to check if the application has permission to use the given privileges.
+This function should be called for each privilege with result
+#PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK returned from ppm_check_permission() or ppm_check_permissions().</p>
+<p>Parameter   privileges        The given privileges array for which a pop-up must be shown.
+Parameter   privileges_count  The number of elements in the privileges array.
+Parameter   callback          The given callback function which will be invoked
+when the API receives a response.
+Parameter   user_data         User specific data which will be passed to
+the given callback.</p>
+<p>@return 0 on success, otherwise a negative error value
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE                Successful
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_IO_ERROR            I/O error
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_INVALID_PARAMETER   Non unique privileges passed
+in first argument, privileges_count is more than 100 or other invalid parameter
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_OUT_OF_MEMORY       Out of memory
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_ALREADY_IN_PROGRESS Operation already in progress
+@retval #PRIVACY_PRIVILEGE_MANAGER_ERROR_UNKNOWN             Unknown error</p>
+<p>@post ppm_request_multiple_response_cb() will be invoked.
+@see ppm_request_multiple_response_cb()</p>
+<p>Module getter: <code>tizenCapiPrivacyPrivilegeManager</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int ppm_request_permissions(
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; privileges,
+  int privileges_count,
+  ppm_request_multiple_response_cb callback,
+  ffi.Pointer&lt;ffi.Void&gt; user_data,
+) =&gt;
+    tizenCapiPrivacyPrivilegeManager.ppm_request_permissions(
+      privileges,
+      privileges_count,
+      callback,
+      user_data,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">tizen_6_0_tizen_capi_privacy_privilege_manager</a></li>
+    <li class="self-crumb">ppm_request_permissions function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_privacy_privilege_manager library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

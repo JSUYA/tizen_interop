@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the mv_face_recognition_model_query_labels function from the tizen_6_0_tizen_mv_face library, for the Dart programming language.">
+  <title>mv_face_recognition_model_query_labels function - tizen_6_0_tizen_mv_face library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_face/">modules&#47;tizen_mv_face.dart</a></li>
+    <li class="self-crumb">mv_face_recognition_model_query_labels function</li>
+  </ol>
+  <div class="self-name">mv_face_recognition_model_query_labels</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_mv_face&#47;tizen_6_0_tizen_mv_face-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">mv_face_recognition_model_query_labels</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">mv_face_recognition_model_query_labels</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="mv_face_recognition_model_query_labels-param-recognition_model"><span class="type-annotation">mv_face_recognition_model_h</span> <span class="parameter-name">recognition_model</span>, </span></li>
+<li><span class="parameter" id="mv_face_recognition_model_query_labels-param-labels"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">labels</span>, </span></li>
+<li><span class="parameter" id="mv_face_recognition_model_query_labels-param-number_of_labels"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedInt</span>&gt;</span></span> <span class="parameter-name">number_of_labels</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Queries labels list and number of labels had been learned by the model.</p>
+<p>@since_tizen 3.0
+@remarks @a labels array has to be released using free().
+@param in  recognition_model    The handle to the recognition model for
+which set of the learned labels will be
+queried
+@param out labels               The array which will be filled with labels
+had been learned by the model
+@param out number_of_labels     The number of labels in @a labels array
+@return @c 0 on success, otherwise a negative error value
+@retval #MEDIA_VISION_ERROR_NONE Successful
+@retval #MEDIA_VISION_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #MEDIA_VISION_ERROR_NOT_SUPPORTED Not supported</p>
+<p>@pre Add face image examples with labels to the @a recognition_model by
+calling the mv_face_recognition_model_add() function
+@pre Learn the @a recognition_model by labeled examples using
+mv_face_recognition_model_learn() function
+@post @a labels array has to be freed in the function invoking code</p>
+<p>@see mv_face_recognition_model_add()
+@see mv_face_recognition_model_reset()
+@see mv_face_recognition_model_learn()</p>
+<p>Module getter: <code>tizenMvFace</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int mv_face_recognition_model_query_labels(
+  mv_face_recognition_model_h recognition_model,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Int&gt;&gt; labels,
+  ffi.Pointer&lt;ffi.UnsignedInt&gt; number_of_labels,
+) =&gt;
+    tizenMvFace.mv_face_recognition_model_query_labels(
+      recognition_model,
+      labels,
+      number_of_labels,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_mv_face/">tizen_6_0_tizen_mv_face</a></li>
+    <li class="self-crumb">mv_face_recognition_model_query_labels function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_mv_face library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

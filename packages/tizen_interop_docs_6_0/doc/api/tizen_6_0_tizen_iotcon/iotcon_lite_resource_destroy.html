@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the iotcon_lite_resource_destroy function from the tizen_6_0_tizen_iotcon library, for the Dart programming language.">
+  <title>iotcon_lite_resource_destroy function - tizen_6_0_tizen_iotcon library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_iotcon/">modules&#47;tizen_iotcon.dart</a></li>
+    <li class="self-crumb">iotcon_lite_resource_destroy function</li>
+  </ol>
+  <div class="self-name">iotcon_lite_resource_destroy</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_iotcon&#47;tizen_6_0_tizen_iotcon-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">iotcon_lite_resource_destroy</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">iotcon_lite_resource_destroy</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="iotcon_lite_resource_destroy-param-resource"><span class="type-annotation">iotcon_lite_resource_h</span> <span class="parameter-name">resource</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Destroys the resource and releases its data.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/internet
+@remarks When a normal variable is used, there is only permission denied error.
+If the errors of this API are not handled, then you must check an application having the privileges for the API.
+Parameter resource The handle of the lite resource to be unregistered
+@return @c 0 on success,
+otherwise a negative error value
+@retval #IOTCON_ERROR_NONE Successful
+@retval #IOTCON_ERROR_NOT_SUPPORTED Not supported
+@retval #IOTCON_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #IOTCON_ERROR_PERMISSION_DENIED Permission denied
+@pre iotcon_initialize() should be called to initialize.
+@see iotcon_lite_resource_create()</p>
+<p>Module getter: <code>tizenIotcon</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int iotcon_lite_resource_destroy(
+  iotcon_lite_resource_h resource,
+) =&gt;
+    tizenIotcon.iotcon_lite_resource_destroy(
+      resource,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_iotcon/">tizen_6_0_tizen_iotcon</a></li>
+    <li class="self-crumb">iotcon_lite_resource_destroy function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_iotcon library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

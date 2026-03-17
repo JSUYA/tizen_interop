@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the vce_main function from the tizen_6_0_tizen_vc_engine library, for the Dart programming language.">
+  <title>vce_main function - tizen_6_0_tizen_vc_engine library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_vc_engine/">modules&#47;tizen_vc_engine.dart</a></li>
+    <li class="self-crumb">vce_main function</li>
+  </ol>
+  <div class="self-name">vce_main</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_vc_engine&#47;tizen_6_0_tizen_vc_engine-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">vce_main</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">vce_main</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="vce_main-param-argc"><span class="type-annotation">int</span> <span class="parameter-name">argc</span>, </span></li>
+<li><span class="parameter" id="vce_main-param-argv"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">argv</span>, </span></li>
+<li><span class="parameter" id="vce_main-param-callback"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">vce_request_callback_s</span>&gt;</span></span> <span class="parameter-name">callback</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Starts the main function for Voice Control (VC) engine.
+@details This function is the main function for operating VC engine.
+@since_tizen @if MOBILE 4.0 @elseif WEARABLE 5.0 @endif
+@privlevel public
+@privilege %http://tizen.org/privilege/recorder
+@remarks The service_app_main() should be used for working the engine after this function.
+Parameter argc The argument count(original)
+Parameter argv The argument(original)
+Parameter callback The structure of engine request callback function
+@return This function returns @c zero on success, or negative with error code on failure
+@retval #VCE_ERROR_NONE Successful
+@retval #VCE_ERROR_OUT_OF_MEMORY Out of Memory
+@retval #VCE_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VCE_ERROR_PERMISSION_DENIED Permission denied
+@retval #VCE_ERROR_NOT_SUPPORTED Not supported
+@retval #VCE_ERROR_OPERATION_FAILED Operation failed
+@pre The vce_get_engine_info() should be successful.
+@see vce_get_engine_info()
+@see vce_unload_engine()
+@see vce_request_callback_s
+@code
+#include &lt;vce.h&gt;</p>
+<p>// Required callback functions - MUST BE IMPLEMENTED
+static int vce_default_initialize();
+static int vce_default_deinitialize(void);</p>
+<p>static int vce_default_get_info(char** engine_uuid, char** engine_name, char** engine_setting, bool* use_network);
+static int vce_default_get_recording_format(const char* audio_id, vce_audio_type_e* types, int* rate, int* channels);
+static int vce_default_foreach_langs(vce_supported_language_cb callback, void* user_data);
+static bool vce_default_is_lang_supported(const char* lang);</p>
+<p>static int vce_default_set_language(const char* language);
+static int vce_default_set_commands(vce_cmd_h vc_command);
+static int vce_default_unset_commands();</p>
+<p>static int vce_default_start(bool stop_by_silence);
+static int vce_default_set_recording(const void* data, unsigned int length, vce_speech_detect_e* silence_detected);
+static int vce_default_stop();
+static int vce_default_cancel(void);</p>
+<p>static int vce_default_set_audio_type(const char* audio_type);
+static int vce_default_set_domain(const char* domain);
+static int vce_default_process_text(const char* text);
+static int vce_default_process_list_event(const char* event);
+static int vce_default_process_haptic_event(const char* event);</p>
+<p>// Optional callback function
+static int vce_default_private_data_set_cb(const char* key, const char* data);</p>
+<p>int main(int argc, char* argv[])
+{
+// 1. Create a structure 'vce_request_callback_s'
+vce_request_callback_s callback = {0,};</p>
+<p>callback.version = 1;</p>
+<p>callback.initialize	= vce_default_initialize;
+callback.deinitialize	= vce_default_deinitialize;</p>
+<p>callback.get_info	= vce_default_get_info;
+callback.get_recording_format	= vce_default_get_recording_format;
+callback.foreach_langs	= vce_default_foreach_langs;
+callback.is_lang_supported	= vce_default_is_lang_supported;</p>
+<p>callback.set_language	= vce_default_set_language;
+callback.set_commands	= vce_default_set_commands;
+callback.unset_commands	= vce_default_unset_commands;</p>
+<p>callback.start		= vce_default_start;
+callback.set_recording	= vce_default_set_recording;
+callback.stop		= vce_default_stop;
+callback.cancel		= vce_default_cancel;</p>
+<p>callback.set_audio_type	= vce_default_set_audio_type;
+callback.set_domain	= vce_default_set_domain;
+callback.process_text	= vce_default_process_text;
+callback.process_list_event	= vce_default_process_list_event;
+callback.process_haptic_event	= vce_default_process_haptic_event;</p>
+<p>// 2. Run 'vce_main()'
+if (0 != vce_main(argc, argv, &amp;callback)) {
+SLOG(LOG_ERROR, TAG_VCE, "<code>ERROR</code> Fail to vce main");
+return -1;
+}</p>
+<p>// Optional
+vce_set_private_data_set_cb(vce_default_private_data_set_cb);</p>
+<p>// 3. Set event callbacks for service app and Run 'service_app_main()'
+char ad<code>50</code> = {0,};
+service_app_lifecycle_callback_s event_callback;
+app_event_handler_h handlers<code>5</code> = {NULL, };</p>
+<p>event_callback.create = service_app_create;
+event_callback.terminate = service_app_terminate;
+event_callback.app_control = service_app_control;</p>
+<p>service_app_add_event_handler(&amp;handlers<code>APP_EVENT_LOW_BATTERY</code>, APP_EVENT_LOW_BATTERY, service_app_low_battery, &amp;ad);
+service_app_add_event_handler(&amp;handlers<code>APP_EVENT_LOW_MEMORY</code>, APP_EVENT_LOW_MEMORY, service_app_low_memory, &amp;ad);
+service_app_add_event_handler(&amp;handlers<code>APP_EVENT_LANGUAGE_CHANGED</code>, APP_EVENT_LANGUAGE_CHANGED, service_app_lang_changed, &amp;ad);
+service_app_add_event_handler(&amp;handlers<code>APP_EVENT_REGION_FORMAT_CHANGED</code>, APP_EVENT_REGION_FORMAT_CHANGED, service_app_region_changed, &amp;ad);</p>
+<p>return service_app_main(argc, argv, &amp;event_callback, ad);
+}</p>
+<p>@endcode</p>
+<p>Module getter: <code>tizenVcEngine</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int vce_main(
+  int argc,
+  ffi.Pointer&lt;ffi.Pointer&lt;ffi.Char&gt;&gt; argv,
+  ffi.Pointer&lt;vce_request_callback_s&gt; callback,
+) =&gt;
+    tizenVcEngine.vce_main(
+      argc,
+      argv,
+      callback,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_vc_engine/">tizen_6_0_tizen_vc_engine</a></li>
+    <li class="self-crumb">vce_main function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_vc_engine library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

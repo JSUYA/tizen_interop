@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the vc_tts_request function from the tizen_6_0_tizen_vc library, for the Dart programming language.">
+  <title>vc_tts_request function - tizen_6_0_tizen_vc library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_vc/">modules&#47;tizen_vc.dart</a></li>
+    <li class="self-crumb">vc_tts_request function</li>
+  </ol>
+  <div class="self-name">vc_tts_request</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_vc&#47;tizen_6_0_tizen_vc-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">vc_tts_request</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">vc_tts_request</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="vc_tts_request-param-text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">text</span>, </span></li>
+<li><span class="parameter" id="vc_tts_request-param-language"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">language</span>, </span></li>
+<li><span class="parameter" id="vc_tts_request-param-to_vc_manager"><span class="type-annotation">bool</span> <span class="parameter-name">to_vc_manager</span>, </span></li>
+<li><span class="parameter" id="vc_tts_request-param-utt_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">utt_id</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@partner
+@brief Requests to send TTS streaming data, asynchronously.
+@details Using this function, the developer can request text to speech to the framework.
+When the developer requests the TTS with @a language, VC engine will send PCM data which is synthesized using VC engine's own persona.
+If @a to_vc_manager is true, the synthesized PCM data will be delivered to the VC manager, otherwise it will be delivered to the VC client
+For example, if @a text is "Alarm is set as 7 PM" and @a to_vc_manager is true, the PCM data corresponding "Alarm is set as 7 PM" will be delivered to VC manager client,
+and then it will be spoken in VC manager. If @a to_vc_manager is false, you will receive PCM data through the vc_tts_streaming_cb() callback function if it was set using vc_tts_set_streaming_cb().
+This function is executed asynchronously, so if there is an error while synthesizing, vc_error_cb() will be called.
+@since_tizen 5.5
+@privlevel partner
+@privilege %http://tizen.org/privilege/voicecontrol.tts
+Parameter text The text to be requested for TTS
+Parameter language The language is specified as an ISO 3166 alpha-2 two-letter country code
+followed by ISO 639-1 for the two-letter language code.
+For example, "ko_KR" for Korean, "en_US" for American English
+Parameter to_vc_manager The value for selection between VC client and VC manager\n
+If @c true, the synthesized PCM data will be delivered to the VC manager, otherwise it will be delivered to the VC client
+Output parameter utt_id The utterance id
+@return @c 0 on success,
+otherwise a negative error value
+@retval #VC_ERROR_NONE Successful
+@retval #VC_ERROR_NOT_SUPPORTED Not supported
+@retval #VC_ERROR_PERMISSION_DENIED Permission denied
+@retval #VC_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #VC_ERROR_INVALID_STATE Invalid state
+@retval #VC_ERROR_OPERATION_FAILED Operation failure
+@pre The state should be #VC_STATE_READY.
+@see vc_tts_cancel()</p>
+<p>Module getter: <code>tizenVc</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int vc_tts_request(
+  ffi.Pointer&lt;ffi.Char&gt; text,
+  ffi.Pointer&lt;ffi.Char&gt; language,
+  bool to_vc_manager,
+  ffi.Pointer&lt;ffi.Int&gt; utt_id,
+) =&gt;
+    tizenVc.vc_tts_request(
+      text,
+      language,
+      to_vc_manager,
+      utt_id,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_vc/">tizen_6_0_tizen_vc</a></li>
+    <li class="self-crumb">vc_tts_request function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_vc library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

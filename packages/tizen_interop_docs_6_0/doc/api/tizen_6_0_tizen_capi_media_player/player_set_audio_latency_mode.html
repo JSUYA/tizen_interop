@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the player_set_audio_latency_mode function from the tizen_6_0_tizen_capi_media_player library, for the Dart programming language.">
+  <title>player_set_audio_latency_mode function - tizen_6_0_tizen_capi_media_player library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">modules&#47;tizen_capi_media_player.dart</a></li>
+    <li class="self-crumb">player_set_audio_latency_mode function</li>
+  </ol>
+  <div class="self-name">player_set_audio_latency_mode</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_player&#47;tizen_6_0_tizen_capi_media_player-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">player_set_audio_latency_mode</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">player_set_audio_latency_mode</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="player_set_audio_latency_mode-param-player"><span class="type-annotation">player_h</span> <span class="parameter-name">player</span>, </span></li>
+<li><span class="parameter" id="player_set_audio_latency_mode-param-latency_mode"><span class="type-annotation">int</span> <span class="parameter-name">latency_mode</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sets the audio latency mode.
+@since_tizen @if WEARABLE 2.3.1 @else 2.3 @endif
+@remarks The default audio latency mode of the player is #AUDIO_LATENCY_MODE_MID.
+To get the current audio latency mode, use player_get_audio_latency_mode().
+If it's high mode, audio output interval can be increased so, it can keep more audio data to play.
+But, state transition like pause or resume can be more slower than default(mid) mode.
+@remarks If audio offload is enabled by calling player_audio_offload_set_enabled(),
+this function will return #PLAYER_ERROR_NOT_AVAILABLE and
+this will not work at all even if it was called before enabling offload. (Since 5.5)
+Parameter player The handle to the media player
+Parameter latency_mode The latency mode to be applied to the audio
+@return @c 0 on success,
+otherwise a negative error value
+@retval #PLAYER_ERROR_NONE Successful
+@retval #PLAYER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #PLAYER_ERROR_INVALID_OPERATION Invalid operation
+@retval #PLAYER_ERROR_NOT_AVAILABLE Not available (Since 5.5)
+@see #audio_latency_mode_e
+@see player_get_audio_latency_mode()
+@see player_audio_offload_set_enabled()
+@see player_audio_offload_is_enabled()</p>
+<p>Module getter: <code>tizenCapiMediaPlayer</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int player_set_audio_latency_mode(
+  player_h player,
+  int latency_mode,
+) =&gt;
+    tizenCapiMediaPlayer.player_set_audio_latency_mode(
+      player,
+      latency_mode,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">tizen_6_0_tizen_capi_media_player</a></li>
+    <li class="self-crumb">player_set_audio_latency_mode function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_player library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

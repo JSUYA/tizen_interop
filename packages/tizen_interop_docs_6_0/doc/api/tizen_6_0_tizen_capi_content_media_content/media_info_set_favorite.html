@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the media_info_set_favorite function from the tizen_6_0_tizen_capi_content_media_content library, for the Dart programming language.">
+  <title>media_info_set_favorite function - tizen_6_0_tizen_capi_content_media_content library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules&#47;tizen_capi_content_media_content.dart</a></li>
+    <li class="self-crumb">media_info_set_favorite function</li>
+  </ol>
+  <div class="self-name">media_info_set_favorite</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_content_media_content&#47;tizen_6_0_tizen_capi_content_media_content-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">media_info_set_favorite</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">media_info_set_favorite</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="media_info_set_favorite-param-media"><span class="type-annotation">media_info_h</span> <span class="parameter-name">media</span>, </span></li>
+<li><span class="parameter" id="media_info_set_favorite-param-favorite"><span class="type-annotation">bool</span> <span class="parameter-name">favorite</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sets the favorite of media info.
+@details This function can mark favorite of the media. If set to @c true, this function record the time of the change moment. \n
+So, If you use it in order parameter, you can sort the order of the time was a favorite. \n
+Or, if you use it in condition parameter, you can get the result of the favorite media.</p>
+<p>@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif</p>
+<p>Parameter media The handle to the media info
+Parameter favorite Set @c true to set the media info as favorite,
+otherwise set @c false to not set the media info as favorite</p>
+<p>@return @c 0 on success,
+otherwise a negative error value</p>
+<p>@retval #MEDIA_CONTENT_ERROR_NONE              Successful
+@retval #MEDIA_CONTENT_ERROR_INVALID_PARAMETER Invalid parameter</p>
+<p>Module getter: <code>tizenCapiContentMediaContent</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int media_info_set_favorite(
+  media_info_h media,
+  bool favorite,
+) =&gt;
+    tizenCapiContentMediaContent.media_info_set_favorite(
+      media,
+      favorite,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_content_media_content/">tizen_6_0_tizen_capi_content_media_content</a></li>
+    <li class="self-crumb">media_info_set_favorite function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_content_media_content library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

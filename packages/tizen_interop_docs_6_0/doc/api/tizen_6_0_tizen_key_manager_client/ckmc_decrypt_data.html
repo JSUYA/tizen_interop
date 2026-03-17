@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ckmc_decrypt_data function from the tizen_6_0_tizen_key_manager_client library, for the Dart programming language.">
+  <title>ckmc_decrypt_data function - tizen_6_0_tizen_key_manager_client library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_key_manager_client/">modules&#47;tizen_key_manager_client.dart</a></li>
+    <li class="self-crumb">ckmc_decrypt_data function</li>
+  </ol>
+  <div class="self-name">ckmc_decrypt_data</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_key_manager_client&#47;tizen_6_0_tizen_key_manager_client-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">ckmc_decrypt_data</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">ckmc_decrypt_data</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="ckmc_decrypt_data-param-params"><span class="type-annotation">ckmc_param_list_h</span> <span class="parameter-name">params</span>, </span></li>
+<li><span class="parameter" id="ckmc_decrypt_data-param-key_alias"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">key_alias</span>, </span></li>
+<li><span class="parameter" id="ckmc_decrypt_data-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span>, </span></li>
+<li><span class="parameter" id="ckmc_decrypt_data-param-encrypted"><span class="type-annotation">ckmc_raw_buffer_s</span> <span class="parameter-name">encrypted</span>, </span></li>
+<li><span class="parameter" id="ckmc_decrypt_data-param-ppdecrypted"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">ckmc_raw_buffer_s</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">ppdecrypted</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Decrypts data using selected key and algorithm.
+@since_tizen 3.0
+@remarks Key identified by @a key_alias should exist.
+Parameter params Algorithm parameter list handle. You should use the same parameters that were used for encryption.
+See #ckmc_param_list_h and #ckmc_algo_type_e for details
+Parameter key_alias Alias of the key to be used for encryption
+Parameter password The password used in decrypting a key value \n
+If password of the policy is provided in ckmc_save_key(), the same password should be provided
+Parameter encrypted Data to be decrypted (some algorithms may require additional information embedded in encrypted data. AES GCM is an example)
+Since Tizen 5.0, on chosen images where module is using TEE backend, data size is limited to at least 500 kB
+(TEE implementation-specific).
+Output parameter ppdecrypted Decrypted data \n
+The caller is responsible for freeing @a decrypted with ckmc_buffer_free()
+@return @c 0 on success,
+otherwise a negative error value
+@retval #CKMC_ERROR_NONE Successful
+@retval #CKMC_ERROR_INVALID_PARAMETER Input parameter is invalid (missing or invalid
+mandatory algorithm parameter, GCM tag authentication failed, key or data is wrong,
+in case of RSA key is wrong or data too long, encrypted = NULL, ppdecrypted = NULL)
+@retval #CKMC_ERROR_DB_LOCKED A user key is not loaded in memory (a user is not logged in)
+@retval #CKMC_ERROR_DB_ERROR Failed due to the error with unknown reason
+@retval #CKMC_ERROR_DB_ALIAS_UNKNOWN Key with given alias does not exist
+@retval #CKMC_ERROR_PERMISSION_DENIED Failed to access key manager
+@retval #CKMC_ERROR_AUTHENTICATION_FAILED Key decryption failed because password is incorrect
+@retval #CKMC_ERROR_SERVER_ERROR Too big data size or unsupported GCM mode (32 and 64 bit tag lengths not supported on TEE backend) or internal error
+@pre User is already logged in and the user key is already loaded into memory in plain text form.
+@see ckmc_buffer_free()
+@see ckmc_param_list_new()
+@see ckmc_param_list_free()
+@see ckmc_param_list_set_integer()
+@see ckmc_param_list_set_buffer()
+@see ckmc_generate_new_params()
+@see #ckmc_param_list_h
+@see #ckmc_param_name_e
+@see #ckmc_algo_type_e</p>
+<p>Module getter: <code>tizenKeyManagerClient</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int ckmc_decrypt_data(
+  ckmc_param_list_h params,
+  ffi.Pointer&lt;ffi.Char&gt; key_alias,
+  ffi.Pointer&lt;ffi.Char&gt; password,
+  ckmc_raw_buffer_s encrypted,
+  ffi.Pointer&lt;ffi.Pointer&lt;ckmc_raw_buffer_s&gt;&gt; ppdecrypted,
+) =&gt;
+    tizenKeyManagerClient.ckmc_decrypt_data(
+      params,
+      key_alias,
+      password,
+      encrypted,
+      ppdecrypted,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_key_manager_client/">tizen_6_0_tizen_key_manager_client</a></li>
+    <li class="self-crumb">ckmc_decrypt_data function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_key_manager_client library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

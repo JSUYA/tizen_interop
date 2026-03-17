@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_web_url_download library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_web_url_download library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_web_url_download.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_web_url_download</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_web_url_download&#47;tizen_6_0_tizen_capi_web_url_download-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_capi_web_url_download</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiWebUrlDownload</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libcapi-web-url-download.so.0</code>.</p>
+<p>Content / Download.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="download_add_http_header_field" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_add_http_header_field.html">download_add_http_header_field</a></span><span class="signature">(<wbr><span class="parameter" id="download_add_http_header_field-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_add_http_header_field-param-field"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field</span>, </span><span class="parameter" id="download_add_http_header_field-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a HTTP header field to the download request.
+  
+
+</dd>
+
+          <dt id="download_cancel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_cancel.html">download_cancel</a></span><span class="signature">(<wbr><span class="parameter" id="download_cancel-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels the download, asynchronously.
+  
+
+</dd>
+
+          <dt id="download_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_create.html">download_create</a></span><span class="signature">(<wbr><span class="parameter" id="download_create-param-download_id"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates a new download request and return its download ID.
+  
+
+</dd>
+
+          <dt id="download_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_destroy.html">download_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="download_destroy-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unloads all data concerning a download ID from memory.
+  
+
+</dd>
+
+          <dt id="download_get_auto_download" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_auto_download.html">download_get_auto_download</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_auto_download-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_auto_download-param-enable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">enable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Checks whether auto download is enabled.
+  
+
+</dd>
+
+          <dt id="download_get_content_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_content_name.html">download_get_content_name</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_content_name-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_content_name-param-content_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">content_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the content name of downloaded file.
+  
+
+</dd>
+
+          <dt id="download_get_content_size" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_content_size.html">download_get_content_size</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_content_size-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_content_size-param-content_size"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">UnsignedLongLong</span>&gt;</span></span> <span class="parameter-name">content_size</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the total size of downloaded content.
+  
+
+</dd>
+
+          <dt id="download_get_destination" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_destination.html">download_get_destination</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_destination-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_destination-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the destination path for the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_get_downloaded_file_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_downloaded_file_path.html">download_get_downloaded_file_path</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_downloaded_file_path-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_downloaded_file_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the absolute path to save the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_get_error" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_error.html">download_get_error</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_error-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_error-param-error"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">error</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets an error value when the download fails.
+  
+
+</dd>
+
+          <dt id="download_get_etag" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_etag.html">download_get_etag</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_etag-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_etag-param-etag"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">etag</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets an etag value from the HTTP response header when making a HTTP request for resume.
+  
+
+</dd>
+
+          <dt id="download_get_file_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_file_name.html">download_get_file_name</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_file_name-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_file_name-param-file_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">file_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the name of the downloaded file set previously by download_set_file_name().
+  
+
+</dd>
+
+          <dt id="download_get_http_header_field" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_http_header_field.html">download_get_http_header_field</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_http_header_field-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_http_header_field-param-field"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field</span>, </span><span class="parameter" id="download_get_http_header_field-param-value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a value associated with a given HTTP header field from the download.
+  
+
+</dd>
+
+          <dt id="download_get_http_header_field_list" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_http_header_field_list.html">download_get_http_header_field_list</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_http_header_field_list-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_http_header_field_list-param-fields"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">fields</span>, </span><span class="parameter" id="download_get_http_header_field_list-param-length"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">length</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets all the HTTP header fields added to the download request.
+  
+
+</dd>
+
+          <dt id="download_get_http_status" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_http_status.html">download_get_http_status</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_http_status-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_http_status-param-HTTP_status"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">HTTP_status</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a HTTP status code when a download error occurs.
+  
+
+</dd>
+
+          <dt id="download_get_mime_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_mime_type.html">download_get_mime_type</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_mime_type-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_mime_type-param-mime_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">mime_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the MIME type of the downloaded content.
+  
+
+</dd>
+
+          <dt id="download_get_network_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_network_type.html">download_get_network_type</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_network_type-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_network_type-param-net_type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">net_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the network type for the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_get_notification_app_control" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_notification_app_control.html">download_get_notification_app_control</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_notification_app_control-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_notification_app_control-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="download_get_notification_app_control-param-handle"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">app_control_h</span>&gt;</span></span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the app control handle (used previously to register notification messages) which is set by download_set_notification_app_control().
+  
+
+</dd>
+
+          <dt id="download_get_notification_description" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_notification_description.html">download_get_notification_description</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_notification_description-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_notification_description-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">description</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the description of a notification set by download_set_notification_description().
+  
+
+</dd>
+
+          <dt id="download_get_notification_title" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_notification_title.html">download_get_notification_title</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_notification_title-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_notification_title-param-title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">title</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the title of the notification set by download_set_notification_title().
+  
+
+</dd>
+
+          <dt id="download_get_notification_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_notification_type.html">download_get_notification_type</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_notification_type-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_notification_type-param-type"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets an option value to register notification messages set by download_set_notification_type().
+  
+
+</dd>
+
+          <dt id="download_get_state" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_state.html">download_get_state</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_state-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_state-param-state"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">state</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the current state of the download.
+  
+
+</dd>
+
+          <dt id="download_get_temp_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_temp_path.html">download_get_temp_path</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_temp_path-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_temp_path-param-temp_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">temp_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the full path of the temporary file to store downloaded content.
+  
+
+</dd>
+
+          <dt id="download_get_url" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_get_url.html">download_get_url</a></span><span class="signature">(<wbr><span class="parameter" id="download_get_url-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_get_url-param-url"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">url</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the URL to download.
+  
+
+</dd>
+
+          <dt id="download_pause" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_pause.html">download_pause</a></span><span class="signature">(<wbr><span class="parameter" id="download_pause-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Pauses the download, asynchronously.
+  
+
+</dd>
+
+          <dt id="download_remove_http_header_field" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_remove_http_header_field.html">download_remove_http_header_field</a></span><span class="signature">(<wbr><span class="parameter" id="download_remove_http_header_field-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_remove_http_header_field-param-field"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes a given HTTP header field from the download.
+  
+
+</dd>
+
+          <dt id="download_set_auto_download" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_auto_download.html">download_set_auto_download</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_auto_download-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_auto_download-param-enable"><span class="type-annotation">bool</span> <span class="parameter-name">enable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Enables or disables auto download.
+@details If this option is enabled,
+the previous downloading item is restarted automatically as soon as the download daemon is restarted.
+The download progress continues after the client process is terminated.
+  
+
+</dd>
+
+          <dt id="download_set_destination" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_destination.html">download_set_destination</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_destination-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_destination-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the destination for the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_set_file_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_file_name.html">download_set_file_name</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_file_name-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_file_name-param-file_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">file_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the name for the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_set_network_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_network_type.html">download_set_network_type</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_network_type-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_network_type-param-net_type"><span class="type-annotation">int</span> <span class="parameter-name">net_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the allowed network type for the downloaded file.
+  
+
+</dd>
+
+          <dt id="download_set_notification_app_control" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_notification_app_control.html">download_set_notification_app_control</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_notification_app_control-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_notification_app_control-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="download_set_notification_app_control-param-handle"><span class="type-annotation">app_control_h</span> <span class="parameter-name">handle</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an app control handle to register notification messages.
+@details Three types of notification message can be posted: completion, failed and ongoing type.
+  
+
+</dd>
+
+          <dt id="download_set_notification_description" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_notification_description.html">download_set_notification_description</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_notification_description-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_notification_description-param-description"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">description</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the description of a notification.
+  
+
+</dd>
+
+          <dt id="download_set_notification_title" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_notification_title.html">download_set_notification_title</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_notification_title-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_notification_title-param-title"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">title</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the title of a notification.
+  
+
+</dd>
+
+          <dt id="download_set_notification_type" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_notification_type.html">download_set_notification_type</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_notification_type-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_notification_type-param-type"><span class="type-annotation">int</span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an option value to register notification messages.
+@details Three types of notification message can be posted: completion, failed and ongoing type.
+  
+
+</dd>
+
+          <dt id="download_set_progress_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_progress_cb.html">download_set_progress_cb</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_progress_cb-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_progress_cb-param-callback"><span class="type-annotation">download_progress_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="download_set_progress_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when progress of the download changes.
+  
+
+</dd>
+
+          <dt id="download_set_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_state_changed_cb.html">download_set_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_state_changed_cb-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_state_changed_cb-param-callback"><span class="type-annotation">download_state_changed_cb</span> <span class="parameter-name">callback</span>, </span><span class="parameter" id="download_set_state_changed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers a callback function to be invoked when a download state is changed.
+  
+
+</dd>
+
+          <dt id="download_set_temp_file_path" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_temp_file_path.html">download_set_temp_file_path</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_temp_file_path-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_temp_file_path-param-path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the directory path of the temporary file used in the previous download request.
+@details This is only useful when resuming download to make HTTP request header at the client side.
+Otherwise, the path should be ignored internally.
+  
+
+</dd>
+
+          <dt id="download_set_url" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_set_url.html">download_set_url</a></span><span class="signature">(<wbr><span class="parameter" id="download_set_url-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span>, </span><span class="parameter" id="download_set_url-param-url"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">url</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the URL to download.
+  
+
+</dd>
+
+          <dt id="download_start" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_start.html">download_start</a></span><span class="signature">(<wbr><span class="parameter" id="download_start-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Starts or resumes the download, asynchronously.
+  
+
+</dd>
+
+          <dt id="download_unset_progress_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_unset_progress_cb.html">download_unset_progress_cb</a></span><span class="signature">(<wbr><span class="parameter" id="download_unset_progress_cb-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the download progress change callback function.
+  
+
+</dd>
+
+          <dt id="download_unset_state_changed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_web_url_download/download_unset_state_changed_cb.html">download_unset_state_changed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="download_unset_state_changed_cb-param-download_id"><span class="type-annotation">int</span> <span class="parameter-name">download_id</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Unregisters the download state change callback function.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_web_url_download.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_web_url_download library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

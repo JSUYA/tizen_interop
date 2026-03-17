@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the notification_set_text_input function from the tizen_6_0_tizen_notification library, for the Dart programming language.">
+  <title>notification_set_text_input function - tizen_6_0_tizen_notification library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_notification/">modules&#47;tizen_notification.dart</a></li>
+    <li class="self-crumb">notification_set_text_input function</li>
+  </ol>
+  <div class="self-name">notification_set_text_input</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_notification&#47;tizen_6_0_tizen_notification-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">notification_set_text_input</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">notification_set_text_input</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="notification_set_text_input-param-noti"><span class="type-annotation">notification_h</span> <span class="parameter-name">noti</span>, </span></li>
+<li><span class="parameter" id="notification_set_text_input-param-text_input_max_length"><span class="type-annotation">int</span> <span class="parameter-name">text_input_max_length</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Sets a text input box to reply directly on the notification.
+@details When you add a text input to the active notification, the notification UI will show a text input with a button.
+So, the user can enter any text and press the button to confirm the text as a input.
+You can edit some UI component that is related to the text input.
+First, you can add placeholder text to guide the user using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER type.
+You also can edit button for the text input.
+For setting just a text to the button, you can set the text using notification_set_text() with #NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON type.
+If you want to show image button, you can set an image for the button using notification_set_image() with #NOTIFICATION_IMAGE_TYPE_TEXT_INPUT_BUTTON type.</p>
+<p>Note that you should set an app_control for handling the event for user input using notification_set_event_handler().
+#NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON is the event type for the text input.
+You can get the text the user enters in the app_control handle that is passed as a result of the event.
+The app_control will contain #APP_CONTROL_DATA_TEXT key, so you can get the text using app_control_get_extra_data() using APP_CONTROL_DATA_TEXT key.
+The value will contain the text user enters.</p>
+<p>Note that you are able to make the switching button to the text input box.
+You have to set the app_control which you will set in a text input box to the switching button.
+Refer to the second sample code.
+@since_tizen 3.0
+Parameter noti Notification handle
+Parameter text_input_max_length The maximum value which can be inputted
+@return #NOTIFICATION_ERROR_NONE on success,
+otherwise any other value on failure
+@retval #NOTIFICATION_ERROR_NONE         Success
+@retval #NOTIFICATION_ERROR_INVALID_PARAMETER Invalid parameter
+@par Sample code:
+@code
+#include &lt;notification.h&gt;</p>
+<p>{
+int noti_err = NOTIFICATION_ERROR_NONE;
+notification_h noti = NULL;
+app_control = NULL;</p>
+<p>noti = notification_create(NOTIFICATION_TYPE_NOTI);
+if (noti == NULL)
+return;</p>
+<p>noti_err = notification_set_text_input(noti, 160);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_text(noti,
+NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER,
+"Text message",
+NULL,
+NOTIFICATION_VARIABLE_TYPE_NONE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_text(noti,
+NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON,
+"SEND",
+NULL,
+NOTIFICATION_VARIABLE_TYPE_NONE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_display_applist(noti,
+NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY | NOTIFICATION_DISPLAY_APP_ACTIVE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>// Do something</p>
+<p>noti_err = app_control_create(&amp;app_control);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_set_app_id(app_control, appid);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_set_operation(app_control, APP_CONTROL_OPERATION_DEFAULT);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_event_handler(noti,
+NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON,
+app_control);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_destroy(app_control);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err  = notification_post(noti);
+if(noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>}</p>
+<p>{
+int noti_err = NOTIFICATION_ERROR_NONE;
+notification_h noti = NULL;
+app_control = NULL;</p>
+<p>noti = notification_create(NOTIFICATION_TYPE_NOTI);
+if (noti == NULL) {
+return;
+}</p>
+<p>noti_err = notification_set_text_input(noti, 160);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_text(noti,
+NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER,
+"Text message",
+NULL,
+NOTIFICATION_VARIABLE_TYPE_NONE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_text(noti,
+NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON,
+"SEND",
+NULL,
+NOTIFICATION_VARIABLE_TYPE_NONE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_add_button(notification, NOTIFICATION_BUTTON_1);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_text(notification,
+NOTIFICATION_TEXT_TYPE_BUTTON_1,
+"reply",
+NULL,
+NOTIFICATION_VARIABLE_TYPE_NONE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_display_applist(noti,
+NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY | NOTIFICATION_DISPLAY_APP_ACTIVE);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>// Do something</p>
+<p>noti_err = app_control_create(&amp;app_control);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_set_app_id(app_control, appid);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_set_operation(app_control, APP_CONTROL_OPERATION_DEFAULT);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_event_handler(notification,
+NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_1,
+app_control);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = notification_set_event_handler(noti,
+NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON,
+app_control);
+if (noti_err != NOTIFICATION_ERROR_NONE)
+return;</p>
+<p>noti_err = app_control_destroy(app_control);
+if (noti_err != APP_CONTROL_ERROR_NONE)
+return;</p>
+<p>noti_err  = notification_post(noti);
+if(noti_err != NOTIFICATION_ERROR_NONE)
+return;
+}
+@endcode</p>
+<p>Module getter: <code>tizenNotification</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int notification_set_text_input(
+  notification_h noti,
+  int text_input_max_length,
+) =&gt;
+    tizenNotification.notification_set_text_input(
+      noti,
+      text_input_max_length,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_notification/">tizen_6_0_tizen_notification</a></li>
+    <li class="self-crumb">notification_set_text_input function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_notification library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

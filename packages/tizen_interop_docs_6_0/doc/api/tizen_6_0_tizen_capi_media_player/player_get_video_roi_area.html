@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the player_get_video_roi_area function from the tizen_6_0_tizen_capi_media_player library, for the Dart programming language.">
+  <title>player_get_video_roi_area function - tizen_6_0_tizen_capi_media_player library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">modules&#47;tizen_capi_media_player.dart</a></li>
+    <li class="self-crumb">player_get_video_roi_area function</li>
+  </ol>
+  <div class="self-name">player_get_video_roi_area</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_player&#47;tizen_6_0_tizen_capi_media_player-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">player_get_video_roi_area</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">player_get_video_roi_area</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="player_get_video_roi_area-param-player"><span class="type-annotation">player_h</span> <span class="parameter-name">player</span>, </span></li>
+<li><span class="parameter" id="player_get_video_roi_area-param-x_scale"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">x_scale</span>, </span></li>
+<li><span class="parameter" id="player_get_video_roi_area-param-y_scale"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">y_scale</span>, </span></li>
+<li><span class="parameter" id="player_get_video_roi_area-param-w_scale"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">w_scale</span>, </span></li>
+<li><span class="parameter" id="player_get_video_roi_area-param-h_scale"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Double</span>&gt;</span></span> <span class="parameter-name">h_scale</span>, </span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Gets the ROI (Region Of Interest) area of the content video source.
+@since_tizen 5.0
+@remarks This function gets the ratio value of the each coordinate and size based on the video resolution size.
+@remarks The ROI area is valid only in #PLAYER_DISPLAY_TYPE_OVERLAY.
+Parameter  player     The handle to the media player
+Output parameter x_scale    The current X coordinate ratio value of the video source area based on the video width size
+Output parameter y_scale    The current Y coordinate ratio value of the video source area based on the video height size
+Output parameter w_scale    The current width ratio value of the video source area based on the video width size
+Output parameter h_scale    The current height ratio value of the video source area based on the video height size
+@return @c 0 on success,
+otherwise a negative error value
+@retval  #PLAYER_ERROR_NONE Successful
+@retval  #PLAYER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval  #PLAYER_ERROR_INVALID_OPERATION Invalid operation
+@see #player_display_type_e
+@see player_set_display()
+@see player_get_video_size()
+@see player_set_video_roi_area()</p>
+<p>Module getter: <code>tizenCapiMediaPlayer</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int player_get_video_roi_area(
+  player_h player,
+  ffi.Pointer&lt;ffi.Double&gt; x_scale,
+  ffi.Pointer&lt;ffi.Double&gt; y_scale,
+  ffi.Pointer&lt;ffi.Double&gt; w_scale,
+  ffi.Pointer&lt;ffi.Double&gt; h_scale,
+) =&gt;
+    tizenCapiMediaPlayer.player_get_video_roi_area(
+      player,
+      x_scale,
+      y_scale,
+      w_scale,
+      h_scale,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_player/">tizen_6_0_tizen_capi_media_player</a></li>
+    <li class="self-crumb">player_get_video_roi_area function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_player library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

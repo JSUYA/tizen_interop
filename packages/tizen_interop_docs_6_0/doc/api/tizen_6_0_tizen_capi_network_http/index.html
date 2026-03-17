@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="tizen_6_0_tizen_capi_network_http library API docs, for the Dart programming language.">
+  <title>tizen_6_0_tizen_capi_network_http library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_network_http.dart</li>
+  </ol>
+  <div class="self-name">tizen_6_0_tizen_capi_network_http</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="tizen_6_0_tizen_capi_network_http&#47;tizen_6_0_tizen_capi_network_http-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">modules/tizen_capi_network_http</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Module-scoped documentation wrappers for <code>tizenCapiNetworkHttp</code>.</p>
+<p>Tizen version: <code>6.0</code>.
+Shared object(s): <code>libcapi-network-http.so.0.1.0</code>.</p>
+<p>Network / HTTP.</p>
+<p>Generated from <code>package:tizen_interop</code> bindings and symbol maps.</p>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="http_deinit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_deinit.html">http_deinit</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Deinitializes the HTTP module.
+@since_tizen 3.0
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_OPERATION_FAILED Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_init()
+  
+
+</dd>
+
+          <dt id="http_init" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_init.html">http_init</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Initializes the HTTP module.
+@since_tizen 3.0
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_OPERATION_FAILED Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_deinit()
+  
+
+</dd>
+
+          <dt id="http_session_create" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_create.html">http_session_create</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_create-param-mode"><span class="type-annotation">int</span> <span class="parameter-name">mode</span>, </span><span class="parameter" id="http_session_create-param-http_session"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">http_session_h</span>&gt;</span></span> <span class="parameter-name">http_session</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Creates the HTTP session handle.
+@since_tizen 3.0
+@remarks The @a http_session should be released using http_session_destroy().
+Opened transactions can't be submitted after destroying session handle.
+Parameter mode The HTTP session mode
+Output parameter http_session The HTTP session handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OUT_OF_MEMORY Out of memory
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_session_destroy()
+  
+
+</dd>
+
+          <dt id="http_session_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_destroy.html">http_session_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_destroy-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys the HTTP session handle.
+@since_tizen 3.0
+@remarks The @a http_session should be set to NULL after using it
+Parameter http_session The HTTP session handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_session_create()
+  
+
+</dd>
+
+          <dt id="http_session_destroy_all_transactions" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_destroy_all_transactions.html">http_session_destroy_all_transactions</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_destroy_all_transactions-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Destroys all transactions.
+@since_tizen 3.0
+@remarks All http_transactions should be set to NULL after using it
+Parameter http_session The HTTP session handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OPERATION_FAILED Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_session_get_active_transaction_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_get_active_transaction_count.html">http_session_get_active_transaction_count</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_get_active_transaction_count-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span>, </span><span class="parameter" id="http_session_get_active_transaction_count-param-active_transaction_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">active_transaction_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the number of active transactions in the current session.
+@since_tizen 3.0
+Parameter http_session The HTTP session handle
+Output parameter active_transaction_count The number of activated transactions
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_session_get_auto_redirection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_get_auto_redirection.html">http_session_get_auto_redirection</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_get_auto_redirection-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span>, </span><span class="parameter" id="http_session_get_auto_redirection-param-auto_redirect"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">auto_redirect</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the auto redirection for the HTTP request.
+@since_tizen 3.0
+Parameter http_session The HTTP session handle
+Output parameter auto_redirect The value of auto redirect
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_session_set_auto_redirection()
+  
+
+</dd>
+
+          <dt id="http_session_get_max_transaction_count" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_get_max_transaction_count.html">http_session_get_max_transaction_count</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_get_max_transaction_count-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span>, </span><span class="parameter" id="http_session_get_max_transaction_count-param-transaction_count"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">transaction_count</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the maximum number of transactions for the current session.
+@since_tizen 3.0
+Parameter http_session The HTTP session handle
+Output parameter transaction_count The maximum transaction count
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_session_open_transaction" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_open_transaction.html">http_session_open_transaction</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_open_transaction-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span>, </span><span class="parameter" id="http_session_open_transaction-param-method"><span class="type-annotation">int</span> <span class="parameter-name">method</span>, </span><span class="parameter" id="http_session_open_transaction-param-http_transaction"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">http_transaction_h</span>&gt;</span></span> <span class="parameter-name">http_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Opens HTTP transaction from the HTTP Session.
+@since_tizen 3.0
+@remarks The @a http_transaction should be released using http_transaction_destroy().
+Parameter http_session The HTTP session handle
+Parameter method The HTTP request method
+Output parameter http_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OUT_OF_MEMORY Out of memory
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_session_set_auto_redirection" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_session_set_auto_redirection.html">http_session_set_auto_redirection</a></span><span class="signature">(<wbr><span class="parameter" id="http_session_set_auto_redirection-param-http_session"><span class="type-annotation">http_session_h</span> <span class="parameter-name">http_session</span>, </span><span class="parameter" id="http_session_set_auto_redirection-param-auto_redirection"><span class="type-annotation">bool</span> <span class="parameter-name">auto_redirection</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the value to redirect the HTTP request automatically.
+@since_tizen 3.0
+Parameter http_session The HTTP session handle
+Parameter auto_redirection The value which determines whether allow redirection or not
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_session_get_auto_redirection()
+  
+
+</dd>
+
+          <dt id="http_transaction_cancel" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_cancel.html">http_transaction_cancel</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_cancel-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Cancels the transaction.
+@details This function cancels the transaction.\n
+The aborted callback is invoked after using it.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE  Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION  Invalid operation
+@retval #HTTP_ERROR_OPERATION_FAILED  Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED  Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_destroy" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_destroy.html">http_transaction_destroy</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_destroy-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Closes the HTTP transaction handle.
+@since_tizen 3.0
+@remarks The @a http_transaction should be set to NULL after using it.
+Parameter http_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@see http_session_open_transaction()
+@see http_transaction_open_authentication()
+  
+
+</dd>
+
+          <dt id="http_transaction_get_credentials" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_credentials.html">http_transaction_get_credentials</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_credentials-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_credentials-param-user_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">user_name</span>, </span><span class="parameter" id="http_transaction_get_credentials-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">password</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the username &amp; password for the HTTP credential.
+@since_tizen 3.0
+@remarks The @a user_name &amp; @a password should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter user_name The HTTP credential user name
+Output parameter password The HTTP credential password
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OUT_OF_MEMORY Out of memory
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_http_auth_scheme" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_http_auth_scheme.html">http_transaction_get_http_auth_scheme</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_http_auth_scheme-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_http_auth_scheme-param-auth_scheme"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">auth_scheme</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP authentication scheme.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter auth_scheme The HTTP auth scheme value
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_interface_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_interface_name.html">http_transaction_get_interface_name</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_interface_name-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_interface_name-param-interface_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">interface_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the interface name.
+@since_tizen 3.0
+@remarks The @a interface_name should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter interface_name The interface name
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_realm" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_realm.html">http_transaction_get_realm</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_realm-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_realm-param-realm"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">realm</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP authentication realm.
+@since_tizen 3.0
+@remarks The @a realm should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter realm The HTTP authentication realm value
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OUT_OF_MEMORY Out of memory
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_server_certificate_verification" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_server_certificate_verification.html">http_transaction_get_server_certificate_verification</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_server_certificate_verification-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_server_certificate_verification-param-verify"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">verify</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the flag to verify a server certificate.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter verify The flag to verify a server certificate; true means verifies; false means it doesn't.
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_tcp_fastopen" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_tcp_fastopen.html">http_transaction_get_tcp_fastopen</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_tcp_fastopen-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_tcp_fastopen-param-enable"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Bool</span>&gt;</span></span> <span class="parameter-name">enable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the flag to allow TCP Fast Open.
+@since_tizen 5.0
+@remarks TCP Fast Open depends on kernel version.\n
+#HTTP_ERROR_NOT_SUPPORTED error will be returned for kernel version less than 3.13.
+Parameter http_transaction The HTTP transaction handle
+Output parameter enable The flag to enable TCP Fast Open
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_get_timeout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_get_timeout.html">http_transaction_get_timeout</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_get_timeout-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_get_timeout-param-timeout"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int</span>&gt;</span></span> <span class="parameter-name">timeout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the timeout in seconds for the transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter timeout The timeout in seconds
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_header_add_field" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_header_add_field.html">http_transaction_header_add_field</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_header_add_field-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_header_add_field-param-field_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field_name</span>, </span><span class="parameter" id="http_transaction_header_add_field-param-field_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Adds a named field to header.
+@details Adds a named field, which is a &lt;@c fieldName, @c fieldValue&gt; pair, to the current instance of HTTP Transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter field_name The HTTP Header Field name
+Parameter field_value The HTTP Header Field value
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_header_get_field_value" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_header_get_field_value.html">http_transaction_header_get_field_value</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_header_get_field_value-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_header_get_field_value-param-field_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field_name</span>, </span><span class="parameter" id="http_transaction_header_get_field_value-param-field_value"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">field_value</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP Header Field value from custom header.
+@since_tizen 3.0
+@remarks The @a field_value should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Parameter field_name The HTTP Header Field name
+Output parameter field_value The HTTP Header Field value
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_header_remove_field" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_header_remove_field.html">http_transaction_header_remove_field</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_header_remove_field-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_header_remove_field-param-field_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">field_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Removes the named field from header.
+@details Remove the named field, which is a &lt;@c fieldName, @c fieldValue&gt; pair, from the current instance of HTTP Transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter field_name The HTTP Header Field name
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_open_authentication" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_open_authentication.html">http_transaction_open_authentication</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_open_authentication-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_open_authentication-param-http_auth_transaction"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">http_transaction_h</span>&gt;</span></span> <span class="parameter-name">http_auth_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Opens HTTP transaction with authentication information.
+@since_tizen 3.0
+@remarks The @a http_auth_transaction should be released using http_transaction_destroy().
+Parameter http_transaction The HTTP transaction handle
+Output parameter http_auth_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OUT_OF_MEMORY Out of memory
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_pause" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_pause.html">http_transaction_pause</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_pause-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_pause-param-pause_type"><span class="type-annotation">int</span> <span class="parameter-name">pause_type</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Pauses the transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter pause_type The pause type of the connection
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OPERATION_FAILED Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_get_accept_encoding" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_get_accept_encoding.html">http_transaction_request_get_accept_encoding</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_get_accept_encoding-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_get_accept_encoding-param-encoding"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">encoding</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the Accept-Encoding header field of HTTP Request.
+@since_tizen 3.0
+@remarks The @a encoding should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter encoding The encoding algorithms
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_get_cookie" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_get_cookie.html">http_transaction_request_get_cookie</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_get_cookie-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_get_cookie-param-cookie"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">cookie</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets a cookie in the HTTP request.
+@since_tizen 3.0
+@remarks The @a cookie should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter cookie The cookie
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_get_method" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_get_method.html">http_transaction_request_get_method</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_get_method-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_get_method-param-method"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">method</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP method from request header.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter method The HTTP method
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_get_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_get_uri.html">http_transaction_request_get_uri</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_get_uri-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_get_uri-param-host_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">host_uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the URI.
+@since_tizen 3.0
+@remarks The @a host_uri should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter host_uri The host URI
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_get_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_get_version.html">http_transaction_request_get_version</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_get_version-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_get_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP version from request header.
+@details Gets the HTTP version.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter version The HTTP version
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_accept_encoding" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_accept_encoding.html">http_transaction_request_set_accept_encoding</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_accept_encoding-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_accept_encoding-param-encoding"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">encoding</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the Accept-Encoding header field of HTTP Request.
+@details The Accept-Encoding header enables automatic decompression of HTTP downloads.
+@since_tizen 3.0
+@remarks If empty string is set, an Accept-Encoding header contains all supported built-in compressions.
+Parameter http_transaction The HTTP transaction handle
+Parameter encoding The encoding algorithms (e.g. gzip, deflate)
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_cookie" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_cookie.html">http_transaction_request_set_cookie</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_cookie-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_cookie-param-cookie"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">cookie</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a cookie in the HTTP request.
+@since_tizen 3.0
+@remarks The format of string should be NME=CONTENTS (e.g. "name1=hello; name2=tizen;")
+Parameter http_transaction The HTTP transaction handle
+Parameter cookie The cookie
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_method" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_method.html">http_transaction_request_set_method</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_method-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_method-param-method"><span class="type-annotation">int</span> <span class="parameter-name">method</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an HTTP method of the request header.
+@details Sets an HTTP method such as GET, POST, PUT and etc.
+@since_tizen 3.0
+@remarks The default method is GET.
+Parameter http_transaction The HTTP transaction handle
+Parameter method The HTTP method
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_upload_file" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_upload_file.html">http_transaction_request_set_upload_file</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_upload_file-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_upload_file-param-file_path"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">file_path</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the file path for uploading a file.
+@since_tizen 3.0
+@remarks It is used with #HTTP_METHOD_PUT. \n
+<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if input or output path are relevant to media storage. \n
+<a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if input or output path are relevant to external storage.
+Parameter http_transaction The HTTP transaction handle
+Parameter file_path The path for file
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE  Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER  Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION  Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED  Not Supported
+@retval #HTTP_ERROR_PERMISSION_DENIED Permission denied
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_uri" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_uri.html">http_transaction_request_set_uri</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_uri-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_uri-param-host_uri"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">host_uri</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets a URI of the request header.
+@details Sets a URI of the request header.
+@since_tizen 3.0
+@remarks It should be used before http_transaction_submit().
+Parameter http_transaction The HTTP transaction handle
+Parameter host_uri The URI to use in the request
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_set_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_set_version.html">http_transaction_request_set_version</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_set_version-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_set_version-param-version"><span class="type-annotation">int</span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an HTTP version of the request header.
+@since_tizen 3.0
+@remarks The default version is HTTP 1.1.
+Parameter http_transaction The HTTP transaction handle
+Parameter version The HTTP version
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_request_write_body" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_request_write_body.html">http_transaction_request_write_body</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_request_write_body-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_request_write_body-param-body"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">body</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Writes the request message body.
+@details This function writes the request message body in the internal queue. \n
+The written queue for request body is uploaded after invoking http_transaction_submit().
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter body The message body data
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_response_get_status_code" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_response_get_status_code.html">http_transaction_response_get_status_code</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_response_get_status_code-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_response_get_status_code-param-status_code"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">status_code</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP status code from HTTP Response.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter status_code The HTTP status code
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_response_get_status_text" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_response_get_status_text.html">http_transaction_response_get_status_text</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_response_get_status_text-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_response_get_status_text-param-status_text"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">status_text</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP status text from HTTP Response.
+@since_tizen 3.0
+@remarks The @a status_text should be freed using free().
+Parameter http_transaction The HTTP transaction handle
+Output parameter status_text The HTTP status text
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_response_get_version" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_response_get_version.html">http_transaction_response_get_version</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_response_get_version-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_response_get_version-param-version"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">version</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Gets the HTTP version from HTTP Response.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter version The HTTP version
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_resume" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_resume.html">http_transaction_resume</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_resume-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Resumes the transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_OPERATION_FAILED Operation failed
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_aborted_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_aborted_cb.html">http_transaction_set_aborted_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_aborted_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_aborted_cb-param-aborted_cb"><span class="type-annotation">http_transaction_aborted_cb</span> <span class="parameter-name">aborted_cb</span>, </span><span class="parameter" id="http_transaction_set_aborted_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers callback called when transaction is aborted.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter aborted_cb The callback function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_completed_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_completed_cb.html">http_transaction_set_completed_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_completed_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_completed_cb-param-completed_cb"><span class="type-annotation">http_transaction_completed_cb</span> <span class="parameter-name">completed_cb</span>, </span><span class="parameter" id="http_transaction_set_completed_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers callback called when transaction is completed.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter completed_cb The callback function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_credentials" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_credentials.html">http_transaction_set_credentials</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_credentials-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_credentials-param-user_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">user_name</span>, </span><span class="parameter" id="http_transaction_set_credentials-param-password"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">password</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an HTTP credentials.
+@details Sets an HTTP authentication scheme such as username and password.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter user_name The HTTP user name
+Parameter password The HTTP password
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_http_auth_scheme" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_http_auth_scheme.html">http_transaction_set_http_auth_scheme</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_http_auth_scheme-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_http_auth_scheme-param-auth_scheme"><span class="type-annotation">int</span> <span class="parameter-name">auth_scheme</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets an HTTP authentication scheme.
+@details Set an HTTP authentication scheme such as BASIC, MD5, NTLM and etc.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter auth_scheme The HTTP authentication scheme
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_interface_name" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_interface_name.html">http_transaction_set_interface_name</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_interface_name-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_interface_name-param-interface_name"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Char</span>&gt;</span></span> <span class="parameter-name">interface_name</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the interface name.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter interface_name The interface name to use as outgoing network interface
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_progress_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_progress_cb.html">http_transaction_set_progress_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_progress_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_progress_cb-param-progress_cb"><span class="type-annotation">http_transaction_progress_cb</span> <span class="parameter-name">progress_cb</span>, </span><span class="parameter" id="http_transaction_set_progress_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers the progress callbacks.
+@details Registers callback that is called when data is uploaded/downloaded.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter progress_cb The callback function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_ready_to_write" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_ready_to_write.html">http_transaction_set_ready_to_write</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_ready_to_write-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_ready_to_write-param-read_to_write"><span class="type-annotation">bool</span> <span class="parameter-name">read_to_write</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets ready to write event for a transaction.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Output parameter read_to_write Enable/disable ready to write
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_received_body_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_received_body_cb.html">http_transaction_set_received_body_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_received_body_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_received_body_cb-param-body_cb"><span class="type-annotation">http_transaction_body_cb</span> <span class="parameter-name">body_cb</span>, </span><span class="parameter" id="http_transaction_set_received_body_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers callback called when receives body.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter body_cb The callback function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_received_header_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_received_header_cb.html">http_transaction_set_received_header_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_received_header_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_received_header_cb-param-header_cb"><span class="type-annotation">http_transaction_header_cb</span> <span class="parameter-name">header_cb</span>, </span><span class="parameter" id="http_transaction_set_received_header_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers callback called when receives header.
+@since_tizen 3.0
+Parameter http_transaction        The HTTP transaction handle
+Parameter header_cb The callback  function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_server_certificate_verification" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_server_certificate_verification.html">http_transaction_set_server_certificate_verification</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_server_certificate_verification-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_server_certificate_verification-param-verify"><span class="type-annotation">bool</span> <span class="parameter-name">verify</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the flag to verify a server certificate.
+@details The verify determines whether verifies the peer's certificate.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter verify The flag to verify a server certificate; true means verifies; false means it doesn't.
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_tcp_fastopen" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_tcp_fastopen.html">http_transaction_set_tcp_fastopen</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_tcp_fastopen-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_tcp_fastopen-param-enable"><span class="type-annotation">bool</span> <span class="parameter-name">enable</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the flag to allow TCP Fast Open.
+@since_tizen 5.0
+@remarks TCP Fast Open depends on kernel version.\n
+#HTTP_ERROR_NOT_SUPPORTED error will be returned for kernel version less than 3.13.
+Parameter http_transaction The HTTP transaction handle
+Parameter enable The flag to enable TCP Fast Open
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_timeout" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_timeout.html">http_transaction_set_timeout</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_timeout-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_timeout-param-timeout"><span class="type-annotation">int</span> <span class="parameter-name">timeout</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Sets the timeout in seconds that is the timeout for waiting the transaction.
+@details Sets the timeout in seconds that is the timeout for waiting the transaction. \n
+A timeout value of zero means an infinite timeout.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter timeout The timeout in seconds
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_set_uploaded_cb" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_set_uploaded_cb.html">http_transaction_set_uploaded_cb</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_set_uploaded_cb-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span>, </span><span class="parameter" id="http_transaction_set_uploaded_cb-param-write_cb"><span class="type-annotation">http_transaction_write_cb</span> <span class="parameter-name">write_cb</span>, </span><span class="parameter" id="http_transaction_set_uploaded_cb-param-user_data"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Void</span>&gt;</span></span> <span class="parameter-name">user_data</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Registers callback called when writes data.
+@since_tizen 3.0
+Parameter http_transaction The HTTP transaction handle
+Parameter write_cb The callback function to be called
+Parameter user_data The user data passed to the callback function
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+  
+
+</dd>
+
+          <dt id="http_transaction_submit" class="callable">
+  <span class="name"><a href="../tizen_6_0_tizen_capi_network_http/http_transaction_submit.html">http_transaction_submit</a></span><span class="signature">(<wbr><span class="parameter" id="http_transaction_submit-param-http_transaction"><span class="type-annotation">http_transaction_h</span> <span class="parameter-name">http_transaction</span></span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  @brief Submits the HTTP request.
+@since_tizen 3.0
+@privlevel public
+@privilege %http://tizen.org/privilege/internet \n
+%http://tizen.org/privilege/network.get
+Parameter http_transaction The HTTP transaction handle
+@return @c 0 on success,
+otherwise negative error value
+@retval #HTTP_ERROR_NONE Successful
+@retval #HTTP_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #HTTP_ERROR_INVALID_OPERATION Invalid operation
+@retval #HTTP_ERROR_NOT_SUPPORTED Not Supported
+@retval #HTTP_ERROR_PERMISSION_DENIED Permission denied
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li class="self-crumb">modules/tizen_capi_network_http.dart</li>
+</ol>
+
+    <h5><span class="package-name">tizen_interop_docs_6_0</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../tizen_6_0_tizen_accounts_svc/">modules/tizen_accounts_svc</a></li>
+      <li><a href="../tizen_6_0_tizen_appcore_agent/">modules/tizen_appcore_agent</a></li>
+      <li><a href="../tizen_6_0_tizen_asp/">modules/tizen_asp</a></li>
+      <li><a href="../tizen_6_0_tizen_badge/">modules/tizen_badge</a></li>
+      <li><a href="../tizen_6_0_tizen_bundle/">modules/tizen_bundle</a></li>
+      <li><a href="../tizen_6_0_tizen_calendar_service2/">modules/tizen_calendar_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_alarm/">modules/tizen_capi_appfw_alarm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_common/">modules/tizen_capi_appfw_app_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_control/">modules/tizen_capi_appfw_app_control</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_app_manager/">modules/tizen_capi_appfw_app_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_application/">modules/tizen_capi_appfw_application</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_event/">modules/tizen_capi_appfw_event</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_job_scheduler/">modules/tizen_capi_appfw_job_scheduler</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_package_manager/">modules/tizen_capi_appfw_package_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_appfw_preference/">modules/tizen_capi_appfw_preference</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_base_common/">modules/tizen_capi_base_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_media_content/">modules/tizen_capi_content_media_content</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_content_mime_type/">modules/tizen_capi_content_mime_type</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context/">modules/tizen_capi_context</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_context_motion/">modules/tizen_capi_context_motion</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_geofence_manager/">modules/tizen_capi_geofence_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_location_manager/">modules/tizen_capi_location_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_audio_io/">modules/tizen_capi_media_audio_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_camera/">modules/tizen_capi_media_camera</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_codec/">modules/tizen_capi_media_codec</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_controller/">modules/tizen_capi_media_controller</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_image_util/">modules/tizen_capi_media_image_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_editor/">modules/tizen_capi_media_metadata_editor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_metadata_extractor/">modules/tizen_capi_media_metadata_extractor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_player/">modules/tizen_capi_media_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_radio/">modules/tizen_capi_media_radio</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules/tizen_capi_media_recorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_screen_mirroring/">modules/tizen_capi_media_screen_mirroring</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_manager/">modules/tizen_capi_media_sound_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_sound_pool/">modules/tizen_capi_media_sound_pool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamer/">modules/tizen_capi_media_streamer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_streamrecorder/">modules/tizen_capi_media_streamrecorder</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_thumbnail_util/">modules/tizen_capi_media_thumbnail_util</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tone_player/">modules/tizen_capi_media_tone_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_tool/">modules/tizen_capi_media_tool</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_media_wav_player/">modules/tizen_capi_media_wav_player</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediademuxer/">modules/tizen_capi_mediademuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_mediamuxer/">modules/tizen_capi_mediamuxer</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_messaging_email/">modules/tizen_capi_messaging_email</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_bluetooth/">modules/tizen_capi_network_bluetooth</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_connection/">modules/tizen_capi_network_connection</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_http/">modules/tizen_capi_network_http</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_inm/">modules/tizen_capi_network_inm</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_mtp/">modules/tizen_capi_network_mtp</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_softap/">modules/tizen_capi_network_softap</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_stc/">modules/tizen_capi_network_stc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_network_wifi_manager/">modules/tizen_capi_network_wifi_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_privacy_privilege_manager/">modules/tizen_capi_privacy_privilege_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_device/">modules/tizen_capi_system_device</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_info/">modules/tizen_capi_system_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_media_key/">modules/tizen_capi_system_media_key</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_peripheral_io/">modules/tizen_capi_system_peripheral_io</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_runtime_info/">modules/tizen_capi_system_runtime_info</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_sensor/">modules/tizen_capi_system_sensor</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_system_settings/">modules/tizen_capi_system_system_settings</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_system_usbhost/">modules/tizen_capi_system_usbhost</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill/">modules/tizen_capi_ui_autofill</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_common/">modules/tizen_capi_ui_autofill_common</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_manager/">modules/tizen_capi_ui_autofill_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_autofill_service/">modules/tizen_capi_ui_autofill_service</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod/">modules/tizen_capi_ui_inputmethod</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_ui_inputmethod_manager/">modules/tizen_capi_ui_inputmethod_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_vpnsvc/">modules/tizen_capi_vpnsvc</a></li>
+      <li><a href="../tizen_6_0_tizen_capi_web_url_download/">modules/tizen_capi_web_url_download</a></li>
+      <li><a href="../tizen_6_0_tizen_cbhm/">modules/tizen_cbhm</a></li>
+      <li><a href="../tizen_6_0_tizen_contacts_service2/">modules/tizen_contacts_service2</a></li>
+      <li><a href="../tizen_6_0_tizen_core_sync_client/">modules/tizen_core_sync_client</a></li>
+      <li><a href="../tizen_6_0_tizen_csr_client/">modules/tizen_csr_client</a></li>
+      <li><a href="../tizen_6_0_tizen_data_control/">modules/tizen_data_control</a></li>
+      <li><a href="../tizen_6_0_tizen_device_certificate_manager/">modules/tizen_device_certificate_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_diagnostics/">modules/tizen_diagnostics</a></li>
+      <li><a href="../tizen_6_0_tizen_dlog/">modules/tizen_dlog</a></li>
+      <li><a href="../tizen_6_0_tizen_dpm/">modules/tizen_dpm</a></li>
+      <li><a href="../tizen_6_0_tizen_eom/">modules/tizen_eom</a></li>
+      <li><a href="../tizen_6_0_tizen_feedback/">modules/tizen_feedback</a></li>
+      <li><a href="../tizen_6_0_tizen_fido_client/">modules/tizen_fido_client</a></li>
+      <li><a href="../tizen_6_0_tizen_iotcon/">modules/tizen_iotcon</a></li>
+      <li><a href="../tizen_6_0_tizen_key_manager_client/">modules/tizen_key_manager_client</a></li>
+      <li><a href="../tizen_6_0_tizen_ma/">modules/tizen_ma</a></li>
+      <li><a href="../tizen_6_0_tizen_message_port/">modules/tizen_message_port</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_detector/">modules/tizen_mv_barcode_detector</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_barcode_generator/">modules/tizen_mv_barcode_generator</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_common/">modules/tizen_mv_common</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_face/">modules/tizen_mv_face</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_image/">modules/tizen_mv_image</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_inference/">modules/tizen_mv_inference</a></li>
+      <li><a href="../tizen_6_0_tizen_mv_surveillance/">modules/tizen_mv_surveillance</a></li>
+      <li><a href="../tizen_6_0_tizen_notification/">modules/tizen_notification</a></li>
+      <li><a href="../tizen_6_0_tizen_notification_ex/">modules/tizen_notification_ex</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_dns_sd/">modules/tizen_nsd_dns_sd</a></li>
+      <li><a href="../tizen_6_0_tizen_nsd_ssdp/">modules/tizen_nsd_ssdp</a></li>
+      <li><a href="../tizen_6_0_tizen_oauth2/">modules/tizen_oauth2</a></li>
+      <li><a href="../tizen_6_0_tizen_phonenumber_utils/">modules/tizen_phonenumber_utils</a></li>
+      <li><a href="../tizen_6_0_tizen_privilege_info/">modules/tizen_privilege_info</a></li>
+      <li><a href="../tizen_6_0_tizen_push/">modules/tizen_push</a></li>
+      <li><a href="../tizen_6_0_tizen_rpc_port/">modules/tizen_rpc_port</a></li>
+      <li><a href="../tizen_6_0_tizen_shortcut/">modules/tizen_shortcut</a></li>
+      <li><a href="../tizen_6_0_tizen_storage/">modules/tizen_storage</a></li>
+      <li><a href="../tizen_6_0_tizen_stt/">modules/tizen_stt</a></li>
+      <li><a href="../tizen_6_0_tizen_stt_engine/">modules/tizen_stt_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_tbm/">modules/tizen_tbm</a></li>
+      <li><a href="../tizen_6_0_tizen_ttrace/">modules/tizen_ttrace</a></li>
+      <li><a href="../tizen_6_0_tizen_tts/">modules/tizen_tts</a></li>
+      <li><a href="../tizen_6_0_tizen_tts_engine/">modules/tizen_tts_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_update_control/">modules/tizen_update_control</a></li>
+      <li><a href="../tizen_6_0_tizen_vc/">modules/tizen_vc</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_engine/">modules/tizen_vc_engine</a></li>
+      <li><a href="../tizen_6_0_tizen_vc_manager/">modules/tizen_vc_manager</a></li>
+      <li><a href="../tizen_6_0_tizen_wifi_direct/">modules/tizen_wifi_direct</a></li>
+      <li><a href="../tizen_6_0_tizen_yaca/">modules/tizen_yaca</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>tizen_6_0_tizen_capi_network_http library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

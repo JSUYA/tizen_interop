@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the recorder_get_video_encoder function from the tizen_6_0_tizen_capi_media_recorder library, for the Dart programming language.">
+  <title>recorder_get_video_encoder function - tizen_6_0_tizen_capi_media_recorder library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_recorder/">modules&#47;tizen_capi_media_recorder.dart</a></li>
+    <li class="self-crumb">recorder_get_video_encoder function</li>
+  </ol>
+  <div class="self-name">recorder_get_video_encoder</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="tizen_6_0_tizen_capi_media_recorder&#47;tizen_6_0_tizen_capi_media_recorder-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">recorder_get_video_encoder</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">int</span>
+<span class="name ">recorder_get_video_encoder</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="recorder_get_video_encoder-param-recorder"><span class="type-annotation">recorder_h</span> <span class="parameter-name">recorder</span>, </span></li>
+<li><span class="parameter" id="recorder_get_video_encoder-param-codec"><span class="type-annotation">Pointer<span class="signature">&lt;<wbr><span class="type-parameter">Int32</span>&gt;</span></span> <span class="parameter-name">codec</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>@brief Gets the video codec for encoding video stream.
+@since_tizen @if MOBILE 2.3 @elseif WEARABLE 2.3.1 @endif
+Parameter  recorder The handle to the media recorder
+Output parameter codec    The video codec
+@return @c 0 on success, otherwise a negative error value
+@retval #RECORDER_ERROR_NONE Successful
+@retval #RECORDER_ERROR_INVALID_PARAMETER Invalid parameter
+@retval #RECORDER_ERROR_PERMISSION_DENIED The access to the resources can not be granted
+@retval #RECORDER_ERROR_NOT_SUPPORTED The feature is not supported
+@retval #RECORDER_ERROR_SERVICE_DISCONNECTED The socket to multimedia server is disconnected
+@see recorder_set_video_encoder()
+@see recorder_foreach_supported_video_encoder()</p>
+<p>Module getter: <code>tizenCapiMediaRecorder</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">int recorder_get_video_encoder(
+  recorder_h recorder,
+  ffi.Pointer&lt;ffi.Int32&gt; codec,
+) =&gt;
+    tizenCapiMediaRecorder.recorder_get_video_encoder(
+      recorder,
+      codec,
+    );</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">tizen_interop_docs_6_0</a></li>
+    <li><a href="../tizen_6_0_tizen_capi_media_recorder/">tizen_6_0_tizen_capi_media_recorder</a></li>
+    <li class="self-crumb">recorder_get_video_encoder function</li>
+</ol>
+
+    <h5>tizen_6_0_tizen_capi_media_recorder library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    tizen_interop_docs_6_0
+      0.0.0-unknown
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
