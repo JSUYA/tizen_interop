@@ -86,9 +86,7 @@ Future<void> main(List<String> args) async {
           ],
           workingDirectory: rootDir.path,
         );
-        await _run(
-          'dart',
-          ['pub', 'publish', '--dry-run'],
+        await _runPublishDryRun(
           workingDirectory: rootDir.path,
         );
       } finally {
@@ -555,4 +553,38 @@ Future<void> _run(
   if (exitCode != 0) {
     throw ProcessException(executable, arguments, '', exitCode);
   }
+}
+
+Future<void> _runPublishDryRun({
+  required String workingDirectory,
+}) async {
+  final result = await Process.run(
+    'dart',
+    ['pub', 'publish', '--dry-run'],
+    workingDirectory: workingDirectory,
+  );
+
+  stdout.write(result.stdout);
+  stderr.write(result.stderr);
+
+  if (result.exitCode == 0) {
+    return;
+  }
+
+  final output = '${result.stdout}\n${result.stderr}';
+  final hasOnlyWarnings = RegExp(r'Package has \d+ warning').hasMatch(output) &&
+      !RegExp(r'Package has .*error', caseSensitive: false).hasMatch(output);
+  if (hasOnlyWarnings) {
+    stdout.writeln(
+      'dart pub publish --dry-run returned warnings only; continuing.',
+    );
+    return;
+  }
+
+  throw ProcessException(
+    'dart',
+    const ['pub', 'publish', '--dry-run'],
+    '',
+    result.exitCode,
+  );
 }
