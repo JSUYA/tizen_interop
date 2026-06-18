@@ -29,6 +29,11 @@ def extract_top_level_names(content):
             names[name] = 'alias'
         else:
             names.setdefault(name, 'real')
+    # Top-level constants (ffigen emits #define macros and unnamed-enum members
+    # as `const <type> NAME = ...;`). Two modules can define the same macro, so
+    # these collide on export too.
+    for m in re.finditer(r'^const\s+\S.*?\s(\w+)\s*=', content, re.M):
+        names.setdefault(m.group(1), 'real')
     # Private identifiers (leading '_') are never exported, so they can neither
     # clash nor be hidden.
     return {n: k for n, k in names.items() if not n.startswith('_')}

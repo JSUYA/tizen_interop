@@ -30,10 +30,12 @@ def main():
     manifest = yaml.safe_load(open(os.path.join(root, 'configs', 'modules.yaml')))
 
     template = manifest.get('template') or {}
-    vinfo = manifest['versions'].get(version)
+    vinfo = (manifest.get('versions') or {}).get(version)
     if not vinfo:
-        print(f'No version {version} in manifest', file=sys.stderr)
-        return 1
+        # Not yet migrated into the manifest: leave the version's existing
+        # committed ffigen_*.yaml in place (generate_bindings.sh uses those).
+        print(f'Version {version} not in manifest; using existing configs.')
+        return 0
 
     gen_dir = os.path.join(root, 'configs', version)
     os.makedirs(gen_dir, exist_ok=True)

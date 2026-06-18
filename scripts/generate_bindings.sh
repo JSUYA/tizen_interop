@@ -56,3 +56,7 @@ else
 
     echo "Completed $count module(s)"
 fi
+
+# Give anonymous structs/unions module-unique names so they never collide across
+# modules when re-exported through tizen.dart (ffigen cannot rename these).
+python3 "$SCRIPT_DIR/rename_unnamed.py" "$version"
