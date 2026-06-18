@@ -7189,32 +7189,32 @@ final class camera_preview_data_s extends ffi.Struct {
   @ffi.UnsignedInt()
   external int timestamp;
 
-  external UnnamedUnion1 data;
+  external CapiMediaCameraUnnamedUnion1 data;
 }
 
 /// @nodoc
-final class UnnamedUnion1 extends ffi.Union {
+final class CapiMediaCameraUnnamedUnion1 extends ffi.Union {
   /// < Single plane frame data
-  external UnnamedStruct1 single_plane;
+  external CapiMediaCameraUnnamedStruct1 single_plane;
 
   /// < Double plane frame data
-  external UnnamedStruct2 double_plane;
+  external CapiMediaCameraUnnamedStruct2 double_plane;
 
   /// < Triple plane frame data
-  external UnnamedStruct3 triple_plane;
+  external CapiMediaCameraUnnamedStruct3 triple_plane;
 
   /// < Encoded plane frame data
-  external UnnamedStruct4 encoded_plane;
+  external CapiMediaCameraUnnamedStruct4 encoded_plane;
 
   /// < Depth plane frame data (Since 5.0)
-  external UnnamedStruct5 depth_plane;
+  external CapiMediaCameraUnnamedStruct5 depth_plane;
 
   /// < RGB plane frame data (Since 5.0)
-  external UnnamedStruct6 rgb_plane;
+  external CapiMediaCameraUnnamedStruct6 rgb_plane;
 }
 
 /// @nodoc
-final class UnnamedStruct1 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct1 extends ffi.Struct {
   /// < The yuv data pointer
   external ffi.Pointer<ffi.UnsignedChar> yuv;
 
@@ -7224,7 +7224,7 @@ final class UnnamedStruct1 extends ffi.Struct {
 }
 
 /// @nodoc
-final class UnnamedStruct2 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct2 extends ffi.Struct {
   /// < The y data pointer
   external ffi.Pointer<ffi.UnsignedChar> y;
 
@@ -7241,7 +7241,7 @@ final class UnnamedStruct2 extends ffi.Struct {
 }
 
 /// @nodoc
-final class UnnamedStruct3 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct3 extends ffi.Struct {
   /// < The y data pointer
   external ffi.Pointer<ffi.UnsignedChar> y;
 
@@ -7265,7 +7265,7 @@ final class UnnamedStruct3 extends ffi.Struct {
 }
 
 /// @nodoc
-final class UnnamedStruct4 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct4 extends ffi.Struct {
   /// < The encoded data pointer
   external ffi.Pointer<ffi.UnsignedChar> data;
 
@@ -7279,7 +7279,7 @@ final class UnnamedStruct4 extends ffi.Struct {
 }
 
 /// @nodoc
-final class UnnamedStruct5 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct5 extends ffi.Struct {
   /// < The depth data pointer
   external ffi.Pointer<ffi.UnsignedChar> data;
 
@@ -7289,7 +7289,7 @@ final class UnnamedStruct5 extends ffi.Struct {
 }
 
 /// @nodoc
-final class UnnamedStruct6 extends ffi.Struct {
+final class CapiMediaCameraUnnamedStruct6 extends ffi.Struct {
   /// < The RGB data pointer
   external ffi.Pointer<ffi.UnsignedChar> data;
 

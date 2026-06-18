@@ -145,8 +145,7 @@ export '../../src/bindings/6.0/generated_bindings_capi_context_motion.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_geofence_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_location_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_audio_io.dart';
-export '../../src/bindings/6.0/generated_bindings_capi_media_camera.dart'
-    hide UnnamedStruct1, UnnamedUnion1;
+export '../../src/bindings/6.0/generated_bindings_capi_media_camera.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_codec.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_controller.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_image_util.dart';
@@ -235,8 +234,7 @@ export '../../src/bindings/6.0/generated_bindings_storage.dart';
 export '../../src/bindings/6.0/generated_bindings_stt.dart';
 export '../../src/bindings/6.0/generated_bindings_stt_engine.dart';
 export '../../src/bindings/6.0/generated_bindings_tbm.dart';
-export '../../src/bindings/6.0/generated_bindings_time.dart'
-    hide UnnamedStruct1, UnnamedUnion1;
+export '../../src/bindings/6.0/generated_bindings_time.dart';
 export '../../src/bindings/6.0/generated_bindings_ttrace.dart';
 export '../../src/bindings/6.0/generated_bindings_tts.dart';
 export '../../src/bindings/6.0/generated_bindings_tts_engine.dart';

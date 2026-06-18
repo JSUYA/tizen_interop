@@ -697,7 +697,7 @@ final class sigevent extends ffi.Struct {
   @ffi.Int()
   external int sigev_notify;
 
-  external UnnamedUnion1 _sigev_un;
+  external TimeUnnamedUnion1 _sigev_un;
 }
 
 /// @nodoc
@@ -712,18 +712,18 @@ final class sigval extends ffi.Union {
 }
 
 /// @nodoc
-final class UnnamedUnion1 extends ffi.Union {
+final class TimeUnnamedUnion1 extends ffi.Union {
   @ffi.Array.multi([13])
   external ffi.Array<ffi.Int> _pad;
 
   @ffi_lib.Int()
   external int _tid;
 
-  external UnnamedStruct1 _sigev_thread;
+  external TimeUnnamedStruct1 _sigev_thread;
 }
 
 /// @nodoc
-final class UnnamedStruct1 extends ffi.Struct {
+final class TimeUnnamedStruct1 extends ffi.Struct {
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(__sigval_t)>>
       _function;
 

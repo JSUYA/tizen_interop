@@ -5384,7 +5384,7 @@ final class calendar_time_s extends ffi.Struct {
   @ffi.Int32()
   external int type;
 
-  external UnnamedUnion1 time;
+  external CalendarService2UnnamedUnion1 time;
 }
 
 /// Enumeration for the time type.
@@ -5401,16 +5401,16 @@ abstract class calendar_time_type_e {
 }
 
 /// @nodoc
-final class UnnamedUnion1 extends ffi.Union {
+final class CalendarService2UnnamedUnion1 extends ffi.Union {
   /// < utime
   @ffi.LongLong()
   external int utime;
 
-  external UnnamedStruct1 date;
+  external CalendarService2UnnamedStruct1 date;
 }
 
 /// @nodoc
-final class UnnamedStruct1 extends ffi.Struct {
+final class CalendarService2UnnamedStruct1 extends ffi.Struct {
   /// < year
   @ffi.Int()
   external int year;
