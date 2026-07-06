@@ -47,16 +47,40 @@
    scripts/generate_bindings.sh <version>
    ```
 
+   This runs the full binding pipeline in order:
+
+   1. `symgen` — emit `generated_symbols.dart` from `symgen.yaml`.
+   2. `gen_ffigen_configs.py` — expand the manifest into
+      `configs/<version>/ffigen_*.yaml`. Any stale generated configs are pruned
+      first, so the directory always matches the manifest. (These files are
+      overwritten on every run — never edit them by hand; edit `modules.yaml`.)
+   3. `ffigen`, run in **topological order** by `scripts/ffigen_order.py` so that
+      a consumer's imported provider symbol files (`import.symbol-files`) already
+      exist when ffigen processes it.
+   4. `rename_unnamed.py` — prefix ffigen's anonymous `UnnamedStruct<N>` /
+      `UnnamedUnion<N>` types with the module stem (e.g.
+      `CapiMediaCameraUnnamedUnion1`) so they are globally unique. ffigen cannot
+      rename these via config, and identical names in different modules are
+      different types, so this prevents export collisions with no `hide` needed.
+
 6. Generate the main `lib/<version>/tizen.dart` file which exports all bindings and initializes module instances:
 
    ```sh
    python3 scripts/generate_tizen.py <version>
    ```
 
-   This script scans `generated_symbols.dart` and all individual binding files to construct the Dart codebase cleanly.
-   If errors occur when running `dart analyze lib/<version>/tizen.dart` after generation, please refer to the **Handling Type Duplication Issues** section below to resolve them.
+   This script scans `generated_symbols.dart` and all individual binding files to construct the Dart codebase cleanly. It also detects symbols exported by more than one module (structs, typedefs, enums, top-level consts), keeps each on its owning module, and adds a `hide` clause on the other modules' `export`s automatically, so cross-module duplicates need no manual handling.
+   If `dart analyze lib/<version>/tizen.dart` still reports issues after generation, see the **Handling Type Duplication Issues** section below.
 
 7. Update callbacks data.
+
+   `generate_callbacks.sh` reads the per-module `configs/<version>/ffigen_*.yaml`
+   for every version under `configs/`. For versions generated from the manifest
+   (their configs are gitignored build artifacts), run
+   `scripts/generate_bindings.sh <version>` first — otherwise that version has no
+   configs on disk and is silently skipped
+   (`WARNING: No ffigen configs found for <version>`), which drops its callbacks
+   from `generated_callbacks.cc`.
 
    * Run `./generate_callbacks.sh verify` to check type substitution.
      Build errors will have to be addressed by editing `gen_callbacks.py`.
@@ -84,61 +108,61 @@ python3 scripts/generate_doc_script.py
 
 ## Handling Type Duplication Issues
 
-When splitting single binding code into library-specific binding codes from version 0.5.2 onwards, type duplication issues may occur between binding codes. Here are common issues and their solutions:
+Bindings are split per module and re-exported through `tizen.dart`, so the same
+declaration appearing in two modules would collide. **Most of this is now handled
+automatically** by the generation pipeline — you rarely need to touch anything by hand.
 
-### 1. Struct Type Duplication
+### Automatic handling
 
-**Issue**: When both `generated_bindings_A.dart` and `generated_bindings_B.dart` define `struct AA {...}` and are exported through `tizen.dart`, a duplication error occurs.
+- **Shared types across modules** (e.g. `bundle`, `media_format_h`, `time_t`, EFL/glib
+  types): the owning ("provider") module emits an ffigen **symbol file**
+  (`output.symbol-file`) and every other ("consumer") module imports it via
+  `import.symbol-files` in `configs/modules.yaml`. ffigen then references the provider's
+  declaration instead of re-emitting it, so no duplicate is produced. `generate_bindings.sh`
+  runs modules in topological order (`ffigen_order.py`) so provider symbol files exist
+  first. This replaces the old hand-written `library-imports` + `type-map` dedup blocks.
+  See `docs/superpowers/specs/2026-06-16-ffigen-symbol-file-bindings-design.md`.
 
-**Solution**: Add the following to the `ffigen_B.yaml` file used to generate `generated_bindings_B.dart`:
+- **Anonymous structs/unions** (ffigen names them `UnnamedStruct<N>` / `UnnamedUnion<N>`
+  per file): `rename_unnamed.py` (run by `generate_bindings.sh`) prefixes them with the
+  module stem (e.g. `CapiMediaCameraUnnamedUnion1`), making them globally unique. No `hide`
+  is required.
 
-```yaml
-library-imports:
-  A_Header: 'generated_bindings_A.dart'
+- **Any remaining duplicate top-level export**: `generate_tizen.py` detects symbols emitted
+  by more than one module (structs, typedefs, enums, top-level consts), keeps each on its
+  owning module, and adds a `hide` clause on the other modules' `export`s in `tizen.dart`
+  automatically.
 
-type-map:
-  structs:
-    'AA':
-      lib: 'A_Header'
-      c-type: 'AA'
-      dart-type: 'AA'
-```
+### Manual escape hatches (rare)
 
-### 2. Typedef Type Duplication
+Edit the module's entry in `configs/modules.yaml` — **not** the generated
+`configs/<version>/ffigen_*.yaml`, which is overwritten on every run.
 
-**Issue**: When both `generated_bindings_A.dart` and `generated_bindings_B.dart` define `typedef AA BB` and are exported through `tizen.dart`, a duplication error occurs.
-
-**Solution**: Add the following to the `ffigen_B.yaml` file used to generate `generated_bindings_B.dart`:
-
-```yaml
-library-imports:
-  A_Header: 'generated_bindings_A.dart'
-
-type-map:
-  typedef:
-    'AA':
-      lib: 'A_Header'
-      c-type: 'AA'
-      dart-type: 'AA'
-```
-
-### 3. Enum Type Duplication
-
-**Issue**: When both `generated_bindings_A.dart` and `generated_bindings_B.dart` define `enum {...} DD;` and are exported through `tizen.dart`, a duplication error occurs.
-
-**Solution**: Add the following to the `ffigen_B.yaml` file used to generate `generated_bindings_B.dart` (rename the enum to make it private by adding '_'):
+**Enum member duplication** — if the same unnamed-enum member name is emitted by two
+modules and symbol-file import does not apply, rename it private in the consumer:
 
 ```yaml
 enums:
   rename:
-    'DD' : '_DD'
+    'DD': '_DD'
 ```
 
-### 4. Unused Callback Definitions
+**Generic/opaque C type that must map to a Dart basic type** (e.g. `typedef __time_t
+time_t;`, which ffigen cannot use as a generic type argument) — map it directly in that
+module:
 
-**Issue**: When a callback is only defined in a header but not actually used, ffigen does not generate it (ffigen does not generate unused functions or types).
+```yaml
+library-imports:
+  ffi_lib: 'dart:ffi'
+type-map:
+  typedef:
+    'time_t':   { lib: 'ffi_lib', c-type: 'Long', dart-type: 'int' }
+    '__time_t': { lib: 'ffi_lib', c-type: 'Long', dart-type: 'int' }
+```
 
-**Solution**: Create a separate header file and define a temporary private function that uses the callback:
+**Unused callback not generated** — ffigen skips callbacks that no function references.
+Force generation with a temporary header that uses the callback, added to that module's
+`headers` (this is how `entrypoints_capi_appfw_app_common.h` etc. are used):
 
 ```c
 // Temp_C.h
@@ -147,45 +171,11 @@ void _force_generate_app_event_cb(app_event_cb callback) {}
 ```
 
 ```yaml
-# ffigen_C.yaml
-entry-points:
-  - 'entrypoints.h'
-  - 'Temp_C.h'
-include-directives:
-  - '**/app_common.h'
-  - '**/app_resource_manager.h'
-  - 'Temp_C.h'
-```
-
-### 5. Generic Type Issues with typedef
-
-**Issue**: When there is code like `typedef __time_t time_t;` in a header file, generic type issues occur (generic types can only use basic types like int, double, or Pointer).
-
-**Solution**: Map directly to basic types as follows:
-
-```yaml
-library-imports:
-  ffi_lib: 'dart:ffi'
-
-type-map:
-  typedef:
-    'time_t':
-      lib: 'ffi_lib'
-      c-type: 'Long'
-      dart-type: 'int'
-    '__time_t':
-      lib: 'ffi_lib'
-      c-type: 'Long'
-      dart-type: 'int'
-```
-
-### 6. Unnamed Union Duplication
-
-**Issue**: When unnamed unions are defined in C code, binding code generation automatically assigns names like `UnnamedUnion1`, causing duplication issues.
-
-**Solution**: Add `hide UnnamedUnion1, UnnamedStruct1` after export:
-
-```dart
-export '../../src/bindings/6.0/generated_bindings_capi_media_camera.dart'
-    hide UnnamedUnion1, UnnamedStruct1;
+headers:
+  entry-points:
+    - 'entrypoints.h'
+    - 'Temp_C.h'
+  include-directives:
+    - '**/app_common.h'
+    - 'Temp_C.h'
 ```
