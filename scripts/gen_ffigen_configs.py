@@ -15,6 +15,7 @@ gitignored.
 Usage: python3 scripts/gen_ffigen_configs.py <version>
 """
 
+import glob
 import os
 import sys
 
@@ -40,6 +41,20 @@ def main():
     gen_dir = os.path.join(root, 'configs', version)
     os.makedirs(gen_dir, exist_ok=True)
 
+    # Prune stale generated configs first, so the directory ends up matching the
+    # manifest exactly. A module removed or renamed in the manifest otherwise
+    # leaves an orphan ffigen_<old>.yaml on disk; ffigen_order.py globs the
+    # directory (not the manifest), so the orphan would still be picked up and
+    # regenerated into a stale binding. Only ffigen_*.yaml is removed -- the
+    # single-config ffigen.yaml and symgen.yaml lack the underscore and never
+    # match this glob. This runs only for manifest-listed (migrated) versions,
+    # whose configs are gitignored build artifacts; unmigrated versions return
+    # early above with their committed configs untouched.
+    pruned = 0
+    for stale in glob.glob(os.path.join(gen_dir, 'ffigen_*.yaml')):
+        os.remove(stale)
+        pruned += 1
+
     for mid in vinfo['modules']:
         entry = manifest['modules'][mid]
         # Shared parts first, then the module's verbatim config, then the shared
@@ -57,7 +72,8 @@ def main():
         with open(os.path.join(gen_dir, f'ffigen_{mid}.yaml'), 'w') as f:
             f.write(text)
 
-    print(f'Generated {len(vinfo["modules"])} configs in {gen_dir}')
+    print(f'Generated {len(vinfo["modules"])} configs in {gen_dir} '
+          f'(pruned {pruned} stale).')
     return 0
 
 
