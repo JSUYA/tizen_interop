@@ -146,7 +146,7 @@ export '../../src/bindings/6.0/generated_bindings_capi_geofence_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_location_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_audio_io.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_camera.dart'
-    hide UnnamedUnion1, UnnamedStruct1;
+    hide UnnamedStruct1, UnnamedUnion1;
 export '../../src/bindings/6.0/generated_bindings_capi_media_codec.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_controller.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_image_util.dart';
@@ -154,7 +154,8 @@ export '../../src/bindings/6.0/generated_bindings_capi_media_metadata_editor.dar
 export '../../src/bindings/6.0/generated_bindings_capi_media_metadata_extractor.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_player.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_radio.dart';
-export '../../src/bindings/6.0/generated_bindings_capi_media_recorder.dart';
+export '../../src/bindings/6.0/generated_bindings_capi_media_recorder.dart'
+    hide camera_preview_data_s;
 export '../../src/bindings/6.0/generated_bindings_capi_media_screen_mirroring.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_sound_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_capi_media_sound_pool.dart';
@@ -208,13 +209,18 @@ export '../../src/bindings/6.0/generated_bindings_iotcon.dart';
 export '../../src/bindings/6.0/generated_bindings_key_manager_client.dart';
 export '../../src/bindings/6.0/generated_bindings_ma.dart';
 export '../../src/bindings/6.0/generated_bindings_message_port.dart';
-export '../../src/bindings/6.0/generated_bindings_mv_barcode_detector.dart';
+export '../../src/bindings/6.0/generated_bindings_mv_barcode_detector.dart'
+    hide mv_quadrangle_s, mv_rectangle_s;
 export '../../src/bindings/6.0/generated_bindings_mv_barcode_generator.dart';
 export '../../src/bindings/6.0/generated_bindings_mv_common.dart';
-export '../../src/bindings/6.0/generated_bindings_mv_face.dart';
-export '../../src/bindings/6.0/generated_bindings_mv_image.dart';
-export '../../src/bindings/6.0/generated_bindings_mv_inference.dart';
-export '../../src/bindings/6.0/generated_bindings_mv_surveillance.dart';
+export '../../src/bindings/6.0/generated_bindings_mv_face.dart'
+    hide mv_quadrangle_s, mv_rectangle_s;
+export '../../src/bindings/6.0/generated_bindings_mv_image.dart'
+    hide mv_quadrangle_s, mv_rectangle_s;
+export '../../src/bindings/6.0/generated_bindings_mv_inference.dart'
+    hide mv_point_s, mv_rectangle_s;
+export '../../src/bindings/6.0/generated_bindings_mv_surveillance.dart'
+    hide mv_point_s;
 export '../../src/bindings/6.0/generated_bindings_notification.dart';
 export '../../src/bindings/6.0/generated_bindings_notification_ex.dart';
 export '../../src/bindings/6.0/generated_bindings_nsd_dns_sd.dart';
@@ -229,6 +235,8 @@ export '../../src/bindings/6.0/generated_bindings_storage.dart';
 export '../../src/bindings/6.0/generated_bindings_stt.dart';
 export '../../src/bindings/6.0/generated_bindings_stt_engine.dart';
 export '../../src/bindings/6.0/generated_bindings_tbm.dart';
+export '../../src/bindings/6.0/generated_bindings_time.dart'
+    hide UnnamedStruct1, UnnamedUnion1;
 export '../../src/bindings/6.0/generated_bindings_ttrace.dart';
 export '../../src/bindings/6.0/generated_bindings_tts.dart';
 export '../../src/bindings/6.0/generated_bindings_tts_engine.dart';
@@ -238,8 +246,6 @@ export '../../src/bindings/6.0/generated_bindings_vc_engine.dart';
 export '../../src/bindings/6.0/generated_bindings_vc_manager.dart';
 export '../../src/bindings/6.0/generated_bindings_wifi_direct.dart';
 export '../../src/bindings/6.0/generated_bindings_yaca.dart';
-export '../../src/bindings/6.0/generated_bindings_time.dart'
-    hide UnnamedUnion1, UnnamedStruct1;
 
 final _lookupProvider = LookupProvider();
 
