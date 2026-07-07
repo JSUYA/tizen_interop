@@ -16,13 +16,30 @@
 
 2. Manually update `entrypoints.h` and `symgen.yaml` by referring to the official [API docs](https://docs.tizen.org/application/native/api/iot-headed/latest) and the rootstrap. (Run `symgen_helper.sh` to find out what to add to `symgen.yaml`. (`scripts/symgen_helper.sh <version>`))
 
-3. The `configs/<version>` directory copied in step 1 contains `ffigen_*.yaml` files from the previous version. To update these to the new version, run:
+3. Per-module ffigen configs are generated from the shared manifest
+   `configs/modules.yaml` by `scripts/gen_ffigen_configs.py` (invoked
+   automatically by `generate_bindings.sh`). The committed sources are the
+   manifest plus each version's `symgen.yaml` and `entrypoints*.h`; the expanded
+   `configs/<version>/ffigen_*.yaml` files are gitignored build artifacts.
+
+   The manifest splits each ffigen config into shared parts (`preamble`,
+   `llvm-path`, and the per-version `compiler-opts` block) and each module's
+   unique part (`name`, `description`, `output`/`symbol-file`, `headers`,
+   `import.symbol-files` for cross-module dedup, `type-map`, `macros`, `enums`).
+
+   For a new version, bootstrap its entry by extracting from per-version configs:
 
    ```sh
-   python3 scripts/generate_ffigens.py <version>
+   python3 scripts/extract_manifest.py <version>
    ```
 
-4. If there are newly created files (`ffigen_*.yaml`), manually update their `include-directives:` by referring to the output of `scripts/ffigen_helper.sh <version>` or `rootstrap/<version>`.
+   (Migrating an older version that still hand-writes module `type-map`/
+   `library-imports` for dedup? Run `python3 scripts/migrate_symbol_files.py
+   <version>` first to convert them to ffigen symbol-file imports, then extract.)
+
+4. Add or adjust per-module `include-directives`, `deps`, `macros`, etc.
+   directly in `configs/modules.yaml`. The `compiler-opts` `-I` list per version
+   comes from `scripts/ffigen_helper.sh <version>` / `rootstrap/<version>`.
 
 5. To generate binding code per target library, run:
 

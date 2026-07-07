@@ -1,0 +1,2040 @@
+template:
+  preamble: '// Copyright 2021 Samsung Electronics Co., Ltd. All rights reserved.
+
+    // Use of this source code is governed by a BSD-style license that can be
+
+    // found in the LICENSE file.
+
+    // ignore_for_file: type=lint, unused_element, unused_field
+
+    '
+  llvm-path:
+  - /usr/lib/llvm-12
+versions:
+  '6.0':
+    modules:
+    - accounts_svc
+    - appcore_agent
+    - asp
+    - badge
+    - bundle
+    - calendar_service2
+    - capi_appfw_alarm
+    - capi_appfw_app_common
+    - capi_appfw_app_control
+    - capi_appfw_app_manager
+    - capi_appfw_application
+    - capi_appfw_event
+    - capi_appfw_job_scheduler
+    - capi_appfw_package_manager
+    - capi_appfw_preference
+    - capi_base_common
+    - capi_content_media_content
+    - capi_content_mime_type
+    - capi_context
+    - capi_context_motion
+    - capi_geofence_manager
+    - capi_location_manager
+    - capi_media_audio_io
+    - capi_media_camera
+    - capi_media_codec
+    - capi_media_controller
+    - capi_media_image_util
+    - capi_media_metadata_editor
+    - capi_media_metadata_extractor
+    - capi_media_player
+    - capi_media_radio
+    - capi_media_recorder
+    - capi_media_screen_mirroring
+    - capi_media_sound_manager
+    - capi_media_sound_pool
+    - capi_media_streamer
+    - capi_media_streamrecorder
+    - capi_media_thumbnail_util
+    - capi_media_tone_player
+    - capi_media_tool
+    - capi_media_wav_player
+    - capi_mediademuxer
+    - capi_mediamuxer
+    - capi_messaging_email
+    - capi_network_bluetooth
+    - capi_network_connection
+    - capi_network_http
+    - capi_network_inm
+    - capi_network_mtp
+    - capi_network_softap
+    - capi_network_stc
+    - capi_network_wifi_manager
+    - capi_privacy_privilege_manager
+    - capi_system_device
+    - capi_system_info
+    - capi_system_media_key
+    - capi_system_peripheral_io
+    - capi_system_runtime_info
+    - capi_system_sensor
+    - capi_system_system_settings
+    - capi_system_usbhost
+    - capi_ui_autofill
+    - capi_ui_autofill_common
+    - capi_ui_autofill_manager
+    - capi_ui_autofill_service
+    - capi_ui_inputmethod
+    - capi_ui_inputmethod_manager
+    - capi_vpnsvc
+    - capi_web_url_download
+    - cbhm
+    - contacts_service2
+    - core_sync_client
+    - csr_client
+    - data_control
+    - device_certificate_manager
+    - diagnostics
+    - dlog
+    - dpm
+    - eom
+    - feedback
+    - fido_client
+    - iotcon
+    - key_manager_client
+    - ma
+    - message_port
+    - mv_barcode_detector
+    - mv_barcode_generator
+    - mv_common
+    - mv_face
+    - mv_image
+    - mv_inference
+    - mv_surveillance
+    - notification
+    - notification_ex
+    - nsd_dns_sd
+    - nsd_ssdp
+    - oauth2
+    - phonenumber_utils
+    - privilege_info
+    - push
+    - rpc_port
+    - shortcut
+    - storage
+    - stt
+    - stt_engine
+    - tbm
+    - time
+    - ttrace
+    - tts
+    - tts_engine
+    - update_control
+    - vc
+    - vc_engine
+    - vc_manager
+    - wifi_direct
+    - yaca
+    compiler-opts:
+    - -m32
+    - -Wno-incomplete-setjmp-declaration
+    - -I./rootstraps/6.0/usr/include/
+    - -I./rootstraps/6.0/usr/include/appcore-agent/
+    - -I./rootstraps/6.0/usr/include/appfw/
+    - -I./rootstraps/6.0/usr/include/asp/
+    - -I./rootstraps/6.0/usr/include/badge/
+    - -I./rootstraps/6.0/usr/include/calendar-service2/
+    - -I./rootstraps/6.0/usr/include/cbhm/
+    - -I./rootstraps/6.0/usr/include/ckm/
+    - -I./rootstraps/6.0/usr/include/contacts-svc/
+    - -I./rootstraps/6.0/usr/include/content/
+    - -I./rootstraps/6.0/usr/include/context-service/
+    - -I./rootstraps/6.0/usr/include/csr/
+    - -I./rootstraps/6.0/usr/include/device-certificate-manager/
+    - -I./rootstraps/6.0/usr/include/dlog/
+    - -I./rootstraps/6.0/usr/include/eom/
+    - -I./rootstraps/6.0/usr/include/feedback/
+    - -I./rootstraps/6.0/usr/include/geofence/
+    - -I./rootstraps/6.0/usr/include/iotcon/
+    - -I./rootstraps/6.0/usr/include/location/
+    - -I./rootstraps/6.0/usr/include/media/
+    - -I./rootstraps/6.0/usr/include/media-content/
+    - -I./rootstraps/6.0/usr/include/messaging/
+    - -I./rootstraps/6.0/usr/include/metadata-editor/
+    - -I./rootstraps/6.0/usr/include/network/
+    - -I./rootstraps/6.0/usr/include/notification/
+    - -I./rootstraps/6.0/usr/include/notification-ex/api/
+    - -I./rootstraps/6.0/usr/include/nsd/
+    - -I./rootstraps/6.0/usr/include/phonenumber-utils/
+    - -I./rootstraps/6.0/usr/include/privacy-privilege-manager/
+    - -I./rootstraps/6.0/usr/include/rpc-port/
+    - -I./rootstraps/6.0/usr/include/sensor/
+    - -I./rootstraps/6.0/usr/include/shortcut/
+    - -I./rootstraps/6.0/usr/include/storage/
+    - -I./rootstraps/6.0/usr/include/system/
+    - -I./rootstraps/6.0/usr/include/web/
+    - -I./rootstraps/6.0/usr/include/wifi-direct/
+    - -I./rootstraps/6.0/usr/include/yaca/
+    - -I./rootstraps/6.0/usr/include/ecore-imf-1/
+    - -I./rootstraps/6.0/usr/include/efl-1/
+    - -I./rootstraps/6.0/usr/include/eina-1/
+    - -I./rootstraps/6.0/usr/include/eina-1/eina/
+    - -I./rootstraps/6.0/usr/include/emile-1/
+    - -I./rootstraps/6.0/usr/include/eo-1/
+    - -I./rootstraps/6.0/usr/include/evas-1/
+    - -I./rootstraps/6.0/usr/include/glib-2.0/
+    - -I./rootstraps/6.0/usr/lib/glib-2.0/include/
+modules:
+  accounts_svc:
+    name: Tizen60AccountsSvc
+    description: Dart bindings for Tizen accounts-svc APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_accounts_svc.dart
+      symbol-file:
+        output: .symbols/accounts_svc.yaml
+        import-path: generated_bindings_accounts_svc.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/account.h'
+    enums:
+      rename:
+        _+(.*): $1
+  appcore_agent:
+    name: Tizen60AppcoreAgent
+    description: Dart bindings for Tizen appcore-agent APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_appcore_agent.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/service_app.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_common.yaml
+      - .symbols/capi_appfw_app_control.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        app_event_type_e: _app_event_type_e
+  asp:
+    name: Tizen60Asp
+    description: Dart bindings for Tizen asp APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_asp.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/asp.h'
+    enums:
+      rename:
+        _+(.*): $1
+  badge:
+    name: Tizen60Badge
+    description: Dart bindings for Tizen badge APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_badge.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/badge.h'
+    enums:
+      rename:
+        _+(.*): $1
+  bundle:
+    name: Tizen60Bundle
+    description: Dart bindings for Tizen bundle APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_bundle.dart
+      symbol-file:
+        output: .symbols/bundle.yaml
+        import-path: generated_bindings_bundle.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/bundle.h'
+    enums:
+      rename:
+        _+(.*): $1
+  calendar_service2:
+    name: Tizen60CalendarService2
+    description: Dart bindings for Tizen calendar-service2 APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_calendar_service2.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/calendar.h'
+      - '**/calendar_errors.h'
+      - '**/calendar_view.h'
+      - '**/calendar_db.h'
+      - '**/calendar_filter.h'
+      - '**/calendar_list.h'
+      - '**/calendar_query.h'
+      - '**/calendar_record.h'
+      - '**/calendar_service.h'
+      - '**/calendar_vcalendar.h'
+      - '**/calendar_reminder.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_alarm:
+    name: Tizen60CapiAppfwAlarm
+    description: Dart bindings for Tizen capi-appfw-alarm APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_alarm.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app_alarm.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_control.yaml
+      - .symbols/notification.yaml
+      - .symbols/time.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_app_common:
+    name: Tizen60CapiAppfwAppCommon
+    description: Dart bindings for Tizen capi-appfw-app-common APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_app_common.dart
+      symbol-file:
+        output: .symbols/capi_appfw_app_common.yaml
+        import-path: generated_bindings_capi_appfw_app_common.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      - entrypoints_capi_appfw_app_common.h
+      include-directives:
+      - '**/app_common.h'
+      - '**/app_resource_manager.h'
+      - entrypoints_capi_appfw_app_common.h
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_app_control:
+    name: Tizen60CapiAppfwAppControl
+    description: Dart bindings for Tizen capi-appfw-app-control APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_app_control.dart
+      symbol-file:
+        output: .symbols/capi_appfw_app_control.yaml
+        import-path: generated_bindings_capi_appfw_app_control.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app_control.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_app_manager:
+    name: Tizen60CapiAppfwAppManager
+    description: Dart bindings for Tizen capi-appfw-app-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_app_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app_context.h'
+      - '**/app_info.h'
+      - '**/app_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_application:
+    name: Tizen60CapiAppfwApplication
+    description: Dart bindings for Tizen capi-appfw-application APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_application.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app.h'
+      - '**/app_i18n.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_common.yaml
+      - .symbols/capi_appfw_app_control.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        app_device_orientation_e: _app_device_orientation_e
+        app_event_type_e: _app_event_type_e
+  capi_appfw_event:
+    name: Tizen60CapiAppfwEvent
+    description: Dart bindings for Tizen capi-appfw-event APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_event.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app_event.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_job_scheduler:
+    name: Tizen60CapiAppfwJobScheduler
+    description: Dart bindings for Tizen capi-appfw-job-scheduler APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_job_scheduler.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/job_error.h'
+      - '**/job_info.h'
+      - '**/job_scheduler.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_package_manager:
+    name: Tizen60CapiAppfwPackageManager
+    description: Dart bindings for Tizen capi-appfw-package-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_package_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/package_archive_info.h'
+      - '**/package_manager.h'
+      - '**/package_info.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_appfw_preference:
+    name: Tizen60CapiAppfwPreference
+    description: Dart bindings for Tizen capi-appfw-preference APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_appfw_preference.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/app_preference.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_base_common:
+    name: Tizen60CapiBaseCommon
+    description: Dart bindings for Tizen capi-base-common APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_base_common.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/tizen.h'
+      - '**/tizen_error.h'
+      - '**tizen_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_content_media_content:
+    name: Tizen60CapiContentMediaContent
+    description: Dart bindings for Tizen capi-content-media-content APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_content_media_content.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_audio.h'
+      - '**/media_bookmark.h'
+      - '**/media_content.h'
+      - '**/media_content_type.h'
+      - '**/media_face.h'
+      - '**/media_filter.h'
+      - '**/media_folder.h'
+      - '**/media_group.h'
+      - '**/media_image.h'
+      - '**/media_info.h'
+      - '**/media_playlist.h'
+      - '**/media_storage.h'
+      - '**/media_tag.h'
+      - '**/media_video.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  capi_content_mime_type:
+    name: Tizen60CapiContentMimeType
+    description: Dart bindings for Tizen capi-content-mime-type APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_content_mime_type.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mime_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_context:
+    name: Tizen60CapiContext
+    description: Dart bindings for Tizen capi-context APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_context.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/context_history.h'
+      - '**/context_trigger.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_control.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_context_motion:
+    name: Tizen60CapiContextMotion
+    description: Dart bindings for Tizen capi-context-motion APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_context_motion.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/activity_recognition.h'
+      - '**/gesture_recognition.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_geofence_manager:
+    name: Tizen60CapiGeofenceManager
+    description: Dart bindings for Tizen capi-geofence-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_geofence_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/geofence_manager.h'
+      - '**/geofence_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_location_manager:
+    name: Tizen60CapiLocationManager
+    description: Dart bindings for Tizen capi-location-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_location_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/locations.h'
+      - '**/location_bounds.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_audio_io:
+    name: Tizen60CapiMediaAudioIo
+    description: Dart bindings for Tizen capi-media-audio-io APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_audio_io.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/audio_io.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_sound_manager.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        sound_type_e: _sound_type_e
+  capi_media_camera:
+    name: Tizen60CapiMediaCamera
+    description: Dart bindings for Tizen capi-media-camera APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_media_camera.dart
+      symbol-file:
+        output: .symbols/capi_media_camera.yaml
+        import-path: generated_bindings_capi_media_camera.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/camera.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_codec:
+    name: Tizen60CapiMediaCodec
+    description: Dart bindings for Tizen capi-media-codec APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_codec.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_codec.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_controller:
+    name: Tizen60CapiMediaController
+    description: Dart bindings for Tizen capi-media-controller APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_controller.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_controller_client.h'
+      - '**/media_controller_metadata.h'
+      - '**/media_controller_playlist.h'
+      - '**/media_controller_server.h'
+      - '**/media_controller_type.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_image_util:
+    name: Tizen60CapiMediaImageUtil
+    description: Dart bindings for Tizen capi-media-image-util APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_image_util.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/image_util.h'
+      - '**/image_util_type.h'
+      - '**/image_util_decode.h'
+      - '**/image_util_encode.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_metadata_editor:
+    name: Tizen60CapiMediaMetadataEditor
+    description: Dart bindings for Tizen capi-media-metadata-editor APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_metadata_editor.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/metadata_editor.h'
+      - '**/metadata_editor_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_metadata_extractor:
+    name: Tizen60CapiMediaMetadataExtractor
+    description: Dart bindings for Tizen capi-media-metadata-extractor APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_metadata_extractor.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/metadata_extractor.h'
+      - '**/metadata_extractor_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_player:
+    name: Tizen60CapiMediaPlayer
+    description: Dart bindings for Tizen capi-media-player APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_player.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/player.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_sound_manager.yaml
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        media_format_mimetype_e: _media_format_mimetype_e
+  capi_media_radio:
+    name: Tizen60CapiMediaRadio
+    description: Dart bindings for Tizen capi-media-radio APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_radio.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/radio.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_recorder:
+    name: Tizen60CapiMediaRecorder
+    description: Dart bindings for Tizen capi-media-recorder APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_recorder.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/recorder.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_camera.yaml
+      - .symbols/capi_media_sound_manager.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        audio_sample_type_e: _audio_sample_type_e
+  capi_media_screen_mirroring:
+    name: Tizen60CapiMediaScreenMirroring
+    description: Dart bindings for Tizen capi-media-screen-mirroring APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_screen_mirroring.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/scmirroring_sink.h'
+      - '**/scmirroring_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_sound_manager:
+    name: Tizen60CapiMediaSoundManager
+    description: Dart bindings for Tizen capi-media-sound-manager APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_media_sound_manager.dart
+      symbol-file:
+        output: .symbols/capi_media_sound_manager.yaml
+        import-path: generated_bindings_capi_media_sound_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/sound_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_sound_pool:
+    name: Tizen60CapiMediaSoundPool
+    description: Dart bindings for Tizen capi-media-sound-pool APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_sound_pool.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/sound_pool.h'
+      - '**/sound_pool_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_streamer:
+    name: Tizen60CapiMediaStreamer
+    description: Dart bindings for Tizen capi-media-streamer APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_streamer.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_streamer.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_streamrecorder:
+    name: Tizen60CapiMediaStreamrecorder
+    description: Dart bindings for Tizen capi-media-streamrecorder APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_streamrecorder.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/streamrecorder.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_thumbnail_util:
+    name: Tizen60CapiMediaThumbnailUtil
+    description: Dart bindings for Tizen capi-media-thumbnail-util APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_thumbnail_util.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/thumbnail_util.h'
+      - '**/thumbnail_util_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_tone_player:
+    name: Tizen60CapiMediaTonePlayer
+    description: Dart bindings for Tizen capi-media-tone-player APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_tone_player.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/tone_player.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_sound_manager.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_tool:
+    name: Tizen60CapiMediaTool
+    description: Dart bindings for Tizen capi-media-tool APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_media_tool.dart
+      symbol-file:
+        output: .symbols/capi_media_tool.yaml
+        import-path: generated_bindings_capi_media_tool.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_format.h'
+      - '**/media_packet.h'
+      - '**/media_packet_pool.h'
+    import:
+      symbol-files:
+      - .symbols/tbm.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_media_wav_player:
+    name: Tizen60CapiMediaWavPlayer
+    description: Dart bindings for Tizen capi-media-wav-player APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_media_wav_player.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/wav_player.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_sound_manager.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_mediademuxer:
+    name: Tizen60CapiMediademuxer
+    description: Dart bindings for Tizen capi-mediademuxer APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_mediademuxer.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mediademuxer.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_mediamuxer:
+    name: Tizen60CapiMediamuxer
+    description: Dart bindings for Tizen capi-mediamuxer APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_mediamuxer.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mediamuxer.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_messaging_email:
+    name: Tizen60CapiMessagingEmail
+    description: Dart bindings for Tizen capi-messaging-email APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_messaging_email.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/email.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_bluetooth:
+    name: Tizen60CapiNetworkBluetooth
+    description: Dart bindings for Tizen capi-network-bluetooth APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_bluetooth.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/bluetooth.h'
+      - '**/bluetooth_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_connection:
+    name: Tizen60CapiNetworkConnection
+    description: Dart bindings for Tizen capi-network-connection APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_connection.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/net_connection.h'
+      - '**/connection_profile.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_http:
+    name: Tizen60CapiNetworkHttp
+    description: Dart bindings for Tizen capi-network-http APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_http.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/http.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_inm:
+    name: Tizen60CapiNetworkInm
+    description: Dart bindings for Tizen capi-network-inm APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_inm.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/inm.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_mtp:
+    name: Tizen60CapiNetworkMtp
+    description: Dart bindings for Tizen capi-network-mtp APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_mtp.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mtp.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_softap:
+    name: Tizen60CapiNetworkSoftap
+    description: Dart bindings for Tizen capi-network-softap APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_softap.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/softap.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_stc:
+    name: Tizen60CapiNetworkStc
+    description: Dart bindings for Tizen capi-network-stc APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_stc.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/stc.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  capi_network_wifi_manager:
+    name: Tizen60CapiNetworkWifiManager
+    description: Dart bindings for Tizen capi-network-wifi-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_network_wifi_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/wifi-manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_privacy_privilege_manager:
+    name: Tizen60CapiPrivacyPrivilegeManager
+    description: Dart bindings for Tizen capi-privacy-privilege-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_privacy_privilege_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/privacy_privilege_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_device:
+    name: Tizen60CapiSystemDevice
+    description: Dart bindings for Tizen capi-system-device APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_device.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/device/*.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_info:
+    name: Tizen60CapiSystemInfo
+    description: Dart bindings for Tizen capi-system-info APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_info.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/system_info.h'
+      - '**/system_info_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_media_key:
+    name: Tizen60CapiSystemMediaKey
+    description: Dart bindings for Tizen capi-system-media-key APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_media_key.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/media_key.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_peripheral_io:
+    name: Tizen60CapiSystemPeripheralIo
+    description: Dart bindings for Tizen capi-system-peripheral-io APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_peripheral_io.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/peripheral_io.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_runtime_info:
+    name: Tizen60CapiSystemRuntimeInfo
+    description: Dart bindings for Tizen capi-system-runtime-info APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_runtime_info.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/runtime_info.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_sensor:
+    name: Tizen60CapiSystemSensor
+    description: Dart bindings for Tizen capi-system-sensor APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_sensor.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/sensor.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_system_settings:
+    name: Tizen60CapiSystemSystemSettings
+    description: Dart bindings for Tizen capi-system-system-settings APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_system_settings.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/system_settings.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_system_usbhost:
+    name: Tizen60CapiSystemUsbhost
+    description: Dart bindings for Tizen capi-system-usbhost APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_system_usbhost.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/usb_host.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_autofill:
+    name: Tizen60CapiUiAutofill
+    description: Dart bindings for Tizen capi-ui-autofill APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_autofill.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/autofill.h'
+    import:
+      symbol-files:
+      - .symbols/capi_ui_autofill_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_autofill_common:
+    name: Tizen60CapiUiAutofillCommon
+    description: Dart bindings for Tizen capi-ui-autofill-common APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_autofill_common.dart
+      symbol-file:
+        output: .symbols/capi_ui_autofill_common.yaml
+        import-path: generated_bindings_capi_ui_autofill_common.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/autofill_common.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_autofill_manager:
+    name: Tizen60CapiUiAutofillManager
+    description: Dart bindings for Tizen capi-ui-autofill-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_autofill_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/autofill_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_autofill_service:
+    name: Tizen60CapiUiAutofillService
+    description: Dart bindings for Tizen capi-ui-autofill-service APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_autofill_service.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/autofill_service.h'
+    import:
+      symbol-files:
+      - .symbols/capi_ui_autofill_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_inputmethod:
+    name: Tizen60CapiUiInputmethod
+    description: Dart bindings for Tizen capi-ui-inputmethod APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_inputmethod.dart
+      symbol-file:
+        output: .symbols/capi_ui_inputmethod.yaml
+        import-path: generated_bindings_capi_ui_inputmethod.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/inputmethod.h'
+      - '**/inputmethod_keydef.h'
+      - '**/inputmethod_device_event.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_ui_inputmethod_manager:
+    name: Tizen60CapiUiInputmethodManager
+    description: Dart bindings for Tizen capi-ui-inputmethod-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_ui_inputmethod_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/inputmethod_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_vpnsvc:
+    name: Tizen60CapiVpnsvc
+    description: Dart bindings for Tizen capi-vpnsvc APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_vpnsvc.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/vpn_service.h'
+    enums:
+      rename:
+        _+(.*): $1
+  capi_web_url_download:
+    name: Tizen60CapiWebUrlDownload
+    description: Dart bindings for Tizen capi-web-url-download APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_capi_web_url_download.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/download.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_control.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  cbhm:
+    name: Tizen60Cbhm
+    description: Dart bindings for Tizen cbhm APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_cbhm.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/cbhm.h'
+    enums:
+      rename:
+        _+(.*): $1
+  contacts_service2:
+    name: Tizen60ContactsService2
+    description: Dart bindings for Tizen contacts-service2 APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_contacts_service2.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/contacts.h'
+      - '**/contacts_errors.h'
+      - '**/contacts_service.h'
+      - '**/contacts_views.h'
+      - '**/contacts_types.h'
+      - '**/contacts_record.h'
+      - '**/contacts_list.h'
+      - '**/contacts_filter.h'
+      - '**/contacts_query.h'
+      - '**/contacts_db.h'
+      - '**/contacts_setting.h'
+      - '**/contacts_person.h'
+      - '**/contacts_group.h'
+      - '**/contacts_sim.h'
+      - '**/contacts_vcard.h'
+      - '**/contacts_activity.h'
+      - '**/contacts_phone_log.h'
+      - '**/contacts_db_status.h'
+    enums:
+      rename:
+        _+(.*): $1
+  core_sync_client:
+    name: Tizen60CoreSyncClient
+    description: Dart bindings for Tizen core-sync-client APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_core_sync_client.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/sync_manager.h'
+      - '**/sync_adapter.h'
+    import:
+      symbol-files:
+      - .symbols/accounts_svc.yaml
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  csr_client:
+    name: Tizen60CsrClient
+    description: Dart bindings for Tizen csr-client APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_csr_client.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/csr/*.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  data_control:
+    name: Tizen60DataControl
+    description: Dart bindings for Tizen data-control APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_data_control.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/data_control.h'
+      - '**/data_control_sql.h'
+      - '**/data_control_map.h'
+      - '**/data_control_provider.h'
+      - '**/data_control_noti.h'
+      - '**/data_control_bulk.h'
+      - '**/data_control_sql_cursor.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  device_certificate_manager:
+    name: Tizen60DeviceCertificateManager
+    description: Dart bindings for Tizen device-certificate-manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_device_certificate_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/device_certificate_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  diagnostics:
+    name: Tizen60Diagnostics
+    description: Dart bindings for Tizen diagnostics APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_diagnostics.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/diagnostics.h'
+    enums:
+      rename:
+        _+(.*): $1
+  dlog:
+    name: Tizen60Dlog
+    description: Dart bindings for Tizen dlog APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_dlog.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/dlog.h'
+    enums:
+      rename:
+        _+(.*): $1
+  dpm:
+    name: Tizen60Dpm
+    description: Dart bindings for Tizen dpm APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_dpm.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/device-policy-manager.h'
+      - '**/password.h'
+      - '**/restriction.h'
+      - '**/security.h'
+      - '**/zone.h'
+    enums:
+      rename:
+        _+(.*): $1
+  eom:
+    name: Tizen60Eom
+    description: Dart bindings for Tizen eom APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_eom.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/eom.h'
+    import:
+      symbol-files:
+      - .symbols/capi_ui_inputmethod.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  feedback:
+    name: Tizen60Feedback
+    description: Dart bindings for Tizen feedback APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_feedback.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/feedback.h'
+    enums:
+      rename:
+        _+(.*): $1
+  fido_client:
+    name: Tizen60FidoClient
+    description: Dart bindings for Tizen fido-client APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_fido_client.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/fido.h'
+      - '**/fido_uaf_authenticator.h'
+      - '**/fido_uaf_client.h'
+    enums:
+      rename:
+        _+(.*): $1
+  iotcon:
+    name: Tizen60Iotcon
+    description: Dart bindings for Tizen iotcon APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_iotcon.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/iotcon.h'
+      - '**/iotcon-types.h'
+      - '**/iotcon-errors.h'
+      - '**/iotcon-server.h'
+      - '**/iotcon-client.h'
+      - '**/iotcon-resource.h'
+      - '**/iotcon-lite-resource.h'
+      - '**/iotcon-response.h'
+      - '**/iotcon-observers.h'
+      - '**/iotcon-request.h'
+      - '**/iotcon-remote-resource.h'
+      - '**/iotcon-list.h'
+      - '**/iotcon-query.h'
+      - '**/iotcon-attributes.h'
+      - '**/iotcon-options.h'
+      - '**/iotcon-representation.h'
+      - '**/iotcon-resource-types.h'
+      - '**/iotcon-resource-interfaces.h'
+    enums:
+      rename:
+        _+(.*): $1
+  key_manager_client:
+    name: Tizen60KeyManagerClient
+    description: Dart bindings for Tizen key-manager-client APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_key_manager_client.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/ckm/ckmc/*.h'
+    enums:
+      rename:
+        _+(.*): $1
+  ma:
+    name: Tizen60Ma
+    description: Dart bindings for Tizen ma APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_ma.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/multi_assistant.h'
+    enums:
+      rename:
+        _+(.*): $1
+  message_port:
+    name: Tizen60MessagePort
+    description: Dart bindings for Tizen message-port APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_message_port.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/message_port.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_barcode_detector:
+    name: Tizen60MvBarcodeDetector
+    description: Dart bindings for Tizen mv_barcode_detector APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_barcode_detector.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_barcode_detect.h'
+      - '**/mv_barcode_type.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_barcode_generator:
+    name: Tizen60MvBarcodeGenerator
+    description: Dart bindings for Tizen mv_barcode_generator APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_barcode_generator.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_barcode_generate.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        mv_barcode_type_e: _mv_barcode_type_e
+        mv_barcode_qr_mode_e: _mv_barcode_qr_mode_e
+        mv_barcode_qr_ecc_e: _mv_barcode_qr_ecc_e
+        mv_barcode_image_format_e: _mv_barcode_image_format_e
+  mv_common:
+    name: Tizen60MvCommon
+    description: Dart bindings for Tizen mv_common APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_mv_common.dart
+      symbol-file:
+        output: .symbols/mv_common.yaml
+        import-path: generated_bindings_mv_common.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_common.h'
+    import:
+      symbol-files:
+      - .symbols/capi_media_tool.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_face:
+    name: Tizen60MvFace
+    description: Dart bindings for Tizen mv_face APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_face.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_face.h'
+      - '**/mv_face_type.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_image:
+    name: Tizen60MvImage
+    description: Dart bindings for Tizen mv_image APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_image.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_image.h'
+      - '**/mv_image_type.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_inference:
+    name: Tizen60MvInference
+    description: Dart bindings for Tizen mv_inference APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_inference.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_inference.h'
+      - '**/mv_inference_type.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  mv_surveillance:
+    name: Tizen60MvSurveillance
+    description: Dart bindings for Tizen mv_surveillance APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_mv_surveillance.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/mv_surveillance.h'
+    import:
+      symbol-files:
+      - .symbols/mv_common.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  notification:
+    name: Tizen60Notification
+    description: Dart bindings for Tizen notification APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_notification.dart
+      symbol-file:
+        output: .symbols/notification.yaml
+        import-path: generated_bindings_notification.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/notification.h'
+      - '**/notification_error.h'
+      - '**/notification_type.h'
+      - '**/notification_status.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_control.yaml
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  notification_ex:
+    name: Tizen60NotificationEx
+    description: Dart bindings for Tizen notification-ex APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_notification_ex.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/notification_ex.h'
+      - '**/notification_ex_app_control_action.h'
+      - '**/notification_ex_button.h'
+      - '**/notification_ex_chat_message.h'
+      - '**/notification_ex_checkbox.h'
+      - '**/notification_ex_entry.h'
+      - '**/notification_ex_error.h'
+      - '**/notification_ex_event_info.h'
+      - '**/notification_ex_group.h'
+      - '**/notification_ex_image.h'
+      - '**/notification_ex_input_selector.h'
+      - '**/notification_ex_progress.h'
+      - '**/notification_ex_manager.h'
+      - '**/notification_ex_reporter.h'
+      - '**/notification_ex_text.h'
+      - '**/notification_ex_time.h'
+      - '**/notification_ex_visibility_action.h'
+      - '**/notification_ex_multi_language.h'
+      - '**/notification_ex_item.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+      - .symbols/capi_appfw_app_control.yaml
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+        __time_t:
+          lib: ffi_lib
+          c-type: Long
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  nsd_dns_sd:
+    name: Tizen60NsdDnsSd
+    description: Dart bindings for Tizen nsd-dns-sd APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_nsd_dns_sd.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/dns-sd.h'
+    enums:
+      rename:
+        _+(.*): $1
+  nsd_ssdp:
+    name: Tizen60NsdSsdp
+    description: Dart bindings for Tizen nsd-ssdp APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_nsd_ssdp.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/ssdp.h'
+    enums:
+      rename:
+        _+(.*): $1
+  oauth2:
+    name: Tizen60Oauth2
+    description: Dart bindings for Tizen oauth2 APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_oauth2.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/oauth2.h'
+      - '**/oauth2_manager.h'
+      - '**/oauth2_request.h'
+      - '**/oauth2_response.h'
+      - '**/oauth2_error.h'
+      - '**/oauth2_types.h'
+    enums:
+      rename:
+        _+(.*): $1
+  phonenumber_utils:
+    name: Tizen60PhonenumberUtils
+    description: Dart bindings for Tizen phonenumber-utils APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_phonenumber_utils.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/phone_number.h'
+      - '**/phone_number_types.h'
+      - '**/phone_number_errors.h'
+      - '**/phone_number_blocking_rule.h'
+    enums:
+      rename:
+        _+(.*): $1
+  privilege_info:
+    name: Tizen60PrivilegeInfo
+    description: Dart bindings for Tizen privilege-info APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_privilege_info.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/privilege_information.h'
+    enums:
+      rename:
+        _+(.*): $1
+  push:
+    name: Tizen60Push
+    description: Dart bindings for Tizen push APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_push.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/push-service.h'
+    import:
+      symbol-files:
+      - .symbols/capi_appfw_app_control.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  rpc_port:
+    name: Tizen60RpcPort
+    description: Dart bindings for Tizen rpc-port APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_rpc_port.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/rpc-port.h'
+      - '**/rpc-port-parcel.h'
+    import:
+      symbol-files:
+      - .symbols/bundle.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  shortcut:
+    name: Tizen60Shortcut
+    description: Dart bindings for Tizen shortcut APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_shortcut.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/shortcut_manager.h'
+    enums:
+      rename:
+        _+(.*): $1
+  storage:
+    name: Tizen60Storage
+    description: Dart bindings for Tizen storage APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_storage.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      - entrypoints_storage.h
+      include-directives:
+      - '**/storage.h'
+      - '**/storage-expand.h'
+      - entrypoints_storage.h
+    enums:
+      rename:
+        _+(.*): $1
+  stt:
+    name: Tizen60Stt
+    description: Dart bindings for Tizen stt APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_stt.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/stt.h'
+    enums:
+      rename:
+        _+(.*): $1
+  stt_engine:
+    name: Tizen60SttEngine
+    description: Dart bindings for Tizen stt_engine APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_stt_engine.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/stte.h'
+    enums:
+      rename:
+        _+(.*): $1
+  tbm:
+    name: Tizen60Tbm
+    description: Dart bindings for Tizen tbm APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_tbm.dart
+      symbol-file:
+        output: .symbols/tbm.yaml
+        import-path: generated_bindings_tbm.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/tbm_surface.h'
+      - '**/tbm_type.h'
+    enums:
+      rename:
+        _+(.*): $1
+  time:
+    name: Tizen60Time
+    description: Dart bindings for Tizen time header.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_time.dart
+      symbol-file:
+        output: .symbols/time.yaml
+        import-path: generated_bindings_time.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/time.h'
+    library-imports:
+      ffi_lib: dart:ffi
+    type-map:
+      typedefs:
+        pid_t:
+          lib: ffi_lib
+          c-type: Int
+          dart-type: int
+        __pid_t:
+          lib: ffi_lib
+          c-type: Int
+          dart-type: int
+    enums:
+      rename:
+        _+(.*): $1
+  ttrace:
+    name: Tizen60Ttrace
+    description: Dart bindings for Tizen ttrace APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_ttrace.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/trace.h'
+    enums:
+      rename:
+        _+(.*): $1
+  tts:
+    name: Tizen60Tts
+    description: Dart bindings for Tizen tts APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_tts.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/tts.h'
+    enums:
+      rename:
+        _+(.*): $1
+  tts_engine:
+    name: Tizen60TtsEngine
+    description: Dart bindings for Tizen tts_engine APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_tts_engine.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/ttse.h'
+    enums:
+      rename:
+        _+(.*): $1
+  update_control:
+    name: Tizen60UpdateControl
+    description: Dart bindings for Tizen update-control APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_update_control.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/update_control.h'
+    import:
+      symbol-files:
+      - .symbols/time.yaml
+    enums:
+      rename:
+        _+(.*): $1
+  vc:
+    name: Tizen60Vc
+    description: Dart bindings for Tizen vc APIs.
+    output:
+      bindings: ../../lib/src/bindings/6.0/generated_bindings_vc.dart
+      symbol-file:
+        output: .symbols/vc.yaml
+        import-path: generated_bindings_vc.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/voice_control.h'
+      - '**/voice_control_command.h'
+      - '**/voice_control_common.h'
+    enums:
+      rename:
+        _+(.*): $1
+  vc_engine:
+    name: Tizen60VcEngine
+    description: Dart bindings for Tizen vc_engine APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_vc_engine.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/vce.h'
+    enums:
+      rename:
+        _+(.*): $1
+  vc_manager:
+    name: Tizen60VcManager
+    description: Dart bindings for Tizen vc_manager APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_vc_manager.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/voice_control_manager.h'
+    import:
+      symbol-files:
+      - .symbols/vc.yaml
+    enums:
+      rename:
+        _+(.*): $1
+        vc_state_e: _vc_state_e
+        vc_service_state_e: _vc_service_state_e
+        vc_result_event_e: _vc_result_event_e
+        vc_audio_channel_e: _vc_audio_channel_e
+        vc_audio_type_e: _vc_audio_type_e
+        vc_feedback_event_e: _vc_feedback_event_e
+        vc_tts_utterance_status_e: _vc_tts_utterance_status_e
+    macros:
+      exclude:
+      - VC_COMMAND_TYPE_FOREGROUND
+      - VC_COMMAND_TYPE_BACKGROUND
+      - VC_RESULT_MESSAGE_NONE
+      - VC_RESULT_MESSAGE_ERROR_TOO_LOUD
+  wifi_direct:
+    name: Tizen60WifiDirect
+    description: Dart bindings for Tizen wifi-direct APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_wifi_direct.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/wifi-direct.h'
+    enums:
+      rename:
+        _+(.*): $1
+  yaca:
+    name: Tizen60Yaca
+    description: Dart bindings for Tizen yaca APIs.
+    output: ../../lib/src/bindings/6.0/generated_bindings_yaca.dart
+    headers:
+      entry-points:
+      - entrypoints.h
+      include-directives:
+      - '**/yaca_crypto.h'
+      - '**/yaca_digest.h'
+      - '**/yaca_encrypt.h'
+      - '**/yaca_error.h'
+      - '**/yaca_key.h'
+      - '**/yaca_rsa.h'
+      - '**/yaca_seal.h'
+      - '**/yaca_sign.h'
+      - '**/yaca_simple.h'
+      - '**/yaca_types.h'
+    enums:
+      rename:
+        _+(.*): $1

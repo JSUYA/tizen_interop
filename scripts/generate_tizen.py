@@ -11,6 +11,52 @@ def to_upper_camel_case(snake_str):
     components = snake_str.split('_')
     return ''.join(x.title() for x in components)
 
+def extract_top_level_names(content):
+    """Return {name: 'real'|'alias'} for top-level exportable declarations.
+
+    A `typedef X = impN.X;` is an alias re-exporting a symbol imported from
+    another module (ffigen's symbol-file dedup); the real declaration lives in
+    the imported module.
+    """
+    names = {}
+    for m in re.finditer(r'^(?:final |base |sealed |abstract )*class (\w+)', content, re.M):
+        names[m.group(1)] = 'real'
+    for m in re.finditer(r'^enum (\w+)', content, re.M):
+        names[m.group(1)] = 'real'
+    for m in re.finditer(r'^typedef (\w+)\s*=\s*([^;]+);', content, re.M):
+        name, rhs = m.group(1), m.group(2)
+        if re.match(r'^\s*imp\d+\.', rhs):
+            names[name] = 'alias'
+        else:
+            names.setdefault(name, 'real')
+    # Private identifiers (leading '_') are never exported, so they can neither
+    # clash nor be hidden.
+    return {n: k for n, k in names.items() if not n.startswith('_')}
+
+def compute_hide_map(bindings_dir, filenames):
+    """Map each binding filename -> sorted list of names to hide on export.
+
+    When the same top-level name is exported by more than one module, keep it on
+    its owning module (a real declaration; alphabetically first if several) and
+    hide it on the rest so `tizen.dart` has no ambiguous exports.
+    """
+    decls = {}  # name -> {filename: 'real'|'alias'}
+    for fn in filenames:
+        with open(os.path.join(bindings_dir, fn), 'r') as f:
+            for name, kind in extract_top_level_names(f.read()).items():
+                decls.setdefault(name, {})[fn] = kind
+
+    hide_map = {}
+    for name, files in decls.items():
+        if len(files) < 2:
+            continue
+        reals = sorted(fn for fn, kind in files.items() if kind == 'real')
+        keep = reals[0] if reals else sorted(files)[0]
+        for fn in files:
+            if fn != keep:
+                hide_map.setdefault(fn, set()).add(name)
+    return {fn: sorted(names) for fn, names in hide_map.items()}
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Generate lib/<version>/tizen.dart')
     parser.add_argument('version', type=str, help='Tizen version (e.g. 6.5, 7.0)')
@@ -111,10 +157,24 @@ def main():
     lines.append("import '../../src/lookup_provider.dart';")
     lines.append("")
     lines.append("export '../../src/extensions.dart';")
-    
-    for b in bindings:
-        lines.append(f"export '../../src/bindings/{version}/{b['filename']}';")
-    lines.append(f"export '../../src/bindings/{version}/generated_bindings_time.dart' hide UnnamedUnion1, UnnamedStruct1;")
+
+    # Export every binding file. When a top-level name is exported by more than
+    # one module (e.g. a struct shared via symbol-file import, re-exported as a
+    # typedef alias, or an independently-named unnamed union), keep it on its
+    # owner and hide it elsewhere to avoid ambiguous exports.
+    all_files = sorted(
+        fn for fn in os.listdir(bindings_dir)
+        if fn.startswith('generated_bindings_') and fn.endswith('.dart')
+    )
+    hide_map = compute_hide_map(bindings_dir, all_files)
+    for fn in all_files:
+        hides = hide_map.get(fn)
+        if hides:
+            lines.append(
+                f"export '../../src/bindings/{version}/{fn}' "
+                f"hide {', '.join(hides)};")
+        else:
+            lines.append(f"export '../../src/bindings/{version}/{fn}';")
 
     lines.append("")
     lines.append("final _lookupProvider = LookupProvider();")
