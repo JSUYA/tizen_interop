@@ -1149,34 +1149,15 @@ typedef mv_inference_h = ffi.Pointer<ffi.Void>;
 typedef mv_inference_supported_engine_cb
     = ffi.Pointer<ffi.NativeFunction<mv_inference_supported_engine_cbFunction>>;
 /// @nodoc
-typedef mv_inference_supported_engine_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<bool>, ffi.Pointer<ffi.Void>);
+typedef mv_inference_supported_engine_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine,
+    ffi.Bool supported,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmv_inference_supported_engine_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<bool>, ffi.Pointer<ffi.Void>);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+typedef Dartmv_inference_supported_engine_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine,
+    bool supported,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.
 ///

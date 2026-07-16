@@ -599,7 +599,7 @@ class Tizen90MvCommon {
   int mv_engine_config_set_bool_attribute(
     mv_engine_config_h engine_cfg,
     ffi.Pointer<ffi.Char> name,
-    imp1.bool value,
+    bool value,
   ) {
     return _mv_engine_config_set_bool_attribute(
       engine_cfg,
@@ -611,10 +611,10 @@ class Tizen90MvCommon {
   late final _mv_engine_config_set_bool_attributePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(mv_engine_config_h, ffi.Pointer<ffi.Char>,
-              imp1.bool)>>('mv_engine_config_set_bool_attribute');
+              ffi.Bool)>>('mv_engine_config_set_bool_attribute');
   late final _mv_engine_config_set_bool_attribute =
       _mv_engine_config_set_bool_attributePtr.asFunction<
-          int Function(mv_engine_config_h, ffi.Pointer<ffi.Char>, imp1.bool)>();
+          int Function(mv_engine_config_h, ffi.Pointer<ffi.Char>, bool)>();
 
   /// Sets the string attribute to the configuration.
   ///
@@ -829,7 +829,7 @@ class Tizen90MvCommon {
   int mv_engine_config_get_bool_attribute(
     mv_engine_config_h engine_cfg,
     ffi.Pointer<ffi.Char> name,
-    ffi.Pointer<imp1.bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _mv_engine_config_get_bool_attribute(
       engine_cfg,
@@ -841,11 +841,11 @@ class Tizen90MvCommon {
   late final _mv_engine_config_get_bool_attributePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(mv_engine_config_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<imp1.bool>)>>('mv_engine_config_get_bool_attribute');
+              ffi.Pointer<ffi.Bool>)>>('mv_engine_config_get_bool_attribute');
   late final _mv_engine_config_get_bool_attribute =
       _mv_engine_config_get_bool_attributePtr.asFunction<
           int Function(mv_engine_config_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<imp1.bool>)>();
+              ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the string attribute from the configuration dictionary.
   ///
@@ -1292,8 +1292,12 @@ typedef mv_engine_config_h = ffi.Pointer<ffi.Void>;
 typedef mv_supported_attribute_cb
     = ffi.Pointer<ffi.NativeFunction<mv_supported_attribute_cbFunction>>;
 /// @nodoc
-typedef mv_supported_attribute_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mv_supported_attribute_cbFunction = ffi.Bool Function(
+    ffi.Int32 attribute_type,
+    ffi.Pointer<ffi.Char> attribute_name,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmv_supported_attribute_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmv_supported_attribute_cbFunction = bool Function(
+    int attribute_type,
+    ffi.Pointer<ffi.Char> attribute_name,
+    ffi.Pointer<ffi.Void> user_data);

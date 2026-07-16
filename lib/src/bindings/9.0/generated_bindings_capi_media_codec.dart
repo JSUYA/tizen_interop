@@ -1043,7 +1043,7 @@ class Tizen90CapiMediaCodec {
   int mediacodec_get_supported_type(
     mediacodec_h mediacodec,
     int codec_type,
-    imp1.bool encoder,
+    bool encoder,
     ffi.Pointer<ffi.Int> support_type,
   ) {
     return _mediacodec_get_supported_type(
@@ -1056,11 +1056,11 @@ class Tizen90CapiMediaCodec {
 
   late final _mediacodec_get_supported_typePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(mediacodec_h, ffi.Int32, imp1.bool,
+          ffi.Int Function(mediacodec_h, ffi.Int32, ffi.Bool,
               ffi.Pointer<ffi.Int>)>>('mediacodec_get_supported_type');
   late final _mediacodec_get_supported_type =
       _mediacodec_get_supported_typePtr.asFunction<
-          int Function(mediacodec_h, int, imp1.bool, ffi.Pointer<ffi.Int>)>();
+          int Function(mediacodec_h, int, bool, ffi.Pointer<ffi.Int>)>();
 
   /// Gets the media packet pool allocated for recycling media packets.
   ///
@@ -1491,8 +1491,8 @@ typedef Dartmediacodec_buffer_status_cbFunction = void Function(
 typedef mediacodec_supported_codec_cb
     = ffi.Pointer<ffi.NativeFunction<mediacodec_supported_codec_cbFunction>>;
 /// @nodoc
-typedef mediacodec_supported_codec_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef mediacodec_supported_codec_cbFunction = ffi.Bool Function(
+    ffi.Int32 codec_type, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmediacodec_supported_codec_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartmediacodec_supported_codec_cbFunction = bool Function(
+    int codec_type, ffi.Pointer<ffi.Void> user_data);

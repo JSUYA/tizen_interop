@@ -95,7 +95,7 @@ class Tizen90Time {
 
   late final _strftimePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int,
+          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size,
               ffi.Pointer<ffi.Char>, ffi.Pointer<tm>)>>('strftime');
   late final _strftime = _strftimePtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,
@@ -119,7 +119,7 @@ class Tizen90Time {
 
   late final _strftime_lPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int,
+          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size,
               ffi.Pointer<ffi.Char>, ffi.Pointer<tm>, locale_t)>>('strftime_l');
   late final _strftime_l = _strftime_lPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,

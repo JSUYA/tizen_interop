@@ -668,7 +668,7 @@ class Tizen90CapiWebUrlDownload {
   /// - `download_get_auto_download()`
   int download_set_auto_download(
     int download_id,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _download_set_auto_download(
       download_id,
@@ -677,10 +677,10 @@ class Tizen90CapiWebUrlDownload {
   }
 
   late final _download_set_auto_downloadPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Bool)>>(
           'download_set_auto_download');
   late final _download_set_auto_download =
-      _download_set_auto_downloadPtr.asFunction<int Function(int, imp1.bool)>();
+      _download_set_auto_downloadPtr.asFunction<int Function(int, bool)>();
 
   /// Checks whether auto download is enabled.
   ///
@@ -711,7 +711,7 @@ class Tizen90CapiWebUrlDownload {
   /// - `download_set_auto_download()`
   int download_get_auto_download(
     int download_id,
-    ffi.Pointer<imp1.bool> enable,
+    ffi.Pointer<ffi.Bool> enable,
   ) {
     return _download_get_auto_download(
       download_id,
@@ -720,11 +720,10 @@ class Tizen90CapiWebUrlDownload {
   }
 
   late final _download_get_auto_downloadPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<imp1.bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
       'download_get_auto_download');
   late final _download_get_auto_download = _download_get_auto_downloadPtr
-      .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Adds a HTTP header field to the download request.
   ///
@@ -2188,7 +2187,7 @@ class Tizen90CapiWebUrlDownload {
   /// - `download_get_cache()`
   int download_set_cache(
     int download_id,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _download_set_cache(
       download_id,
@@ -2197,10 +2196,10 @@ class Tizen90CapiWebUrlDownload {
   }
 
   late final _download_set_cachePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Bool)>>(
           'download_set_cache');
   late final _download_set_cache =
-      _download_set_cachePtr.asFunction<int Function(int, imp1.bool)>();
+      _download_set_cachePtr.asFunction<int Function(int, bool)>();
 
   /// Gets the 'enabled' state of the cache feature.
   ///
@@ -2232,7 +2231,7 @@ class Tizen90CapiWebUrlDownload {
   /// - `download_set_cache()`
   int download_get_cache(
     int download_id,
-    ffi.Pointer<imp1.bool> enable,
+    ffi.Pointer<ffi.Bool> enable,
   ) {
     return _download_get_cache(
       download_id,
@@ -2241,11 +2240,10 @@ class Tizen90CapiWebUrlDownload {
   }
 
   late final _download_get_cachePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<imp1.bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
       'download_get_cache');
   late final _download_get_cache = _download_get_cachePtr
-      .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Clears the cache.
   ///

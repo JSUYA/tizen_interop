@@ -347,7 +347,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_set_audio_aac_type()`
   int media_format_get_audio_aac_type(
     media_format_h fmt,
-    ffi.Pointer<bool> is_adts,
+    ffi.Pointer<ffi.Bool> is_adts,
   ) {
     return _media_format_get_audio_aac_type(
       fmt,
@@ -356,12 +356,12 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_format_get_audio_aac_typePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_format_h, ffi.Pointer<bool>)>>(
-      'media_format_get_audio_aac_type');
+      ffi.NativeFunction<
+          ffi.Int Function(media_format_h,
+              ffi.Pointer<ffi.Bool>)>>('media_format_get_audio_aac_type');
   late final _media_format_get_audio_aac_type =
       _media_format_get_audio_aac_typePtr
-          .asFunction<int Function(media_format_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(media_format_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets audio aac header type of media format.
   ///
@@ -987,7 +987,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_get_audio_aac_type()`
   int media_format_set_audio_aac_type(
     media_format_h fmt,
-    ffi.Pointer<bool> is_adts,
+    bool is_adts,
   ) {
     return _media_format_set_audio_aac_type(
       fmt,
@@ -995,13 +995,12 @@ class Tizen90CapiMediaTool {
     );
   }
 
-  late final _media_format_set_audio_aac_typePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_format_h, ffi.Pointer<bool>)>>(
-      'media_format_set_audio_aac_type');
+  late final _media_format_set_audio_aac_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(media_format_h, ffi.Bool)>>(
+          'media_format_set_audio_aac_type');
   late final _media_format_set_audio_aac_type =
       _media_format_set_audio_aac_typePtr
-          .asFunction<int Function(media_format_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(media_format_h, bool)>();
 
   /// Sets audio aac header type of media format.
   ///
@@ -1132,7 +1131,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_make_writable()`
   int media_format_is_writable(
     media_format_h fmt,
-    ffi.Pointer<bool> is_writable,
+    ffi.Pointer<ffi.Bool> is_writable,
   ) {
     return _media_format_is_writable(
       fmt,
@@ -1141,11 +1140,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_format_is_writablePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_format_h, ffi.Pointer<bool>)>>(
-      'media_format_is_writable');
+      ffi.NativeFunction<
+          ffi.Int Function(media_format_h,
+              ffi.Pointer<ffi.Bool>)>>('media_format_is_writable');
   late final _media_format_is_writable = _media_format_is_writablePtr
-      .asFunction<int Function(media_format_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_format_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Returns a writable copy of `media_format_h`.
   ///
@@ -1399,7 +1398,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_type_e`
   int media_format_is_little_endian(
     media_format_h fmt,
-    ffi.Pointer<bool> is_little_endian,
+    ffi.Pointer<ffi.Bool> is_little_endian,
   ) {
     return _media_format_is_little_endian(
       fmt,
@@ -1408,11 +1407,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_format_is_little_endianPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_format_h, ffi.Pointer<bool>)>>(
-      'media_format_is_little_endian');
+      ffi.NativeFunction<
+          ffi.Int Function(media_format_h,
+              ffi.Pointer<ffi.Bool>)>>('media_format_is_little_endian');
   late final _media_format_is_little_endian = _media_format_is_little_endianPtr
-      .asFunction<int Function(media_format_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_format_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the number of bits of information in digital audio using pulse-code modulation (PCM).
   ///
@@ -2906,7 +2905,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_type_e`
   int media_packet_is_video(
     media_packet_h packet,
-    ffi.Pointer<bool> is_video,
+    ffi.Pointer<ffi.Bool> is_video,
   ) {
     return _media_packet_is_video(
       packet,
@@ -2915,11 +2914,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_videoPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_video');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_packet_h, ffi.Pointer<ffi.Bool>)>>('media_packet_is_video');
   late final _media_packet_is_video = _media_packet_is_videoPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is for audio.
   ///
@@ -2943,7 +2942,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_type_e`
   int media_packet_is_audio(
     media_packet_h packet,
-    ffi.Pointer<bool> is_audio,
+    ffi.Pointer<ffi.Bool> is_audio,
   ) {
     return _media_packet_is_audio(
       packet,
@@ -2952,11 +2951,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_audioPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_audio');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_packet_h, ffi.Pointer<ffi.Bool>)>>('media_packet_is_audio');
   late final _media_packet_is_audio = _media_packet_is_audioPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is for text.
   ///
@@ -2980,7 +2979,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_type_e`
   int media_packet_is_text(
     media_packet_h packet,
-    ffi.Pointer<bool> is_text,
+    ffi.Pointer<ffi.Bool> is_text,
   ) {
     return _media_packet_is_text(
       packet,
@@ -2989,11 +2988,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_textPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_text');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_packet_h, ffi.Pointer<ffi.Bool>)>>('media_packet_is_text');
   late final _media_packet_is_text = _media_packet_is_textPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is encoded type.
   ///
@@ -3017,7 +3016,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_data_type_e`
   int media_packet_is_encoded(
     media_packet_h packet,
-    ffi.Pointer<bool> is_encoded,
+    ffi.Pointer<ffi.Bool> is_encoded,
   ) {
     return _media_packet_is_encoded(
       packet,
@@ -3026,11 +3025,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_encodedPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_encoded');
+      ffi.NativeFunction<
+          ffi.Int Function(media_packet_h,
+              ffi.Pointer<ffi.Bool>)>>('media_packet_is_encoded');
   late final _media_packet_is_encoded = _media_packet_is_encodedPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is raw type.
   ///
@@ -3054,7 +3053,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_data_type_e`
   int media_packet_is_raw(
     media_packet_h packet,
-    ffi.Pointer<bool> is_raw,
+    ffi.Pointer<ffi.Bool> is_raw,
   ) {
     return _media_packet_is_raw(
       packet,
@@ -3063,11 +3062,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_rawPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_raw');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_packet_h, ffi.Pointer<ffi.Bool>)>>('media_packet_is_raw');
   late final _media_packet_is_raw = _media_packet_is_rawPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets `media_buffer_flags_e` of media packet.
   ///
@@ -3200,7 +3199,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_data_type_e`
   int media_packet_is_codec_config(
     media_packet_h packet,
-    ffi.Pointer<bool> is_codec_config,
+    ffi.Pointer<ffi.Bool> is_codec_config,
   ) {
     return _media_packet_is_codec_config(
       packet,
@@ -3209,11 +3208,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_codec_configPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_codec_config');
+      ffi.NativeFunction<
+          ffi.Int Function(media_packet_h,
+              ffi.Pointer<ffi.Bool>)>>('media_packet_is_codec_config');
   late final _media_packet_is_codec_config = _media_packet_is_codec_configPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is eos.
   ///
@@ -3237,7 +3236,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_data_type_e`
   int media_packet_is_end_of_stream(
     media_packet_h packet,
-    ffi.Pointer<bool> is_eos,
+    ffi.Pointer<ffi.Bool> is_eos,
   ) {
     return _media_packet_is_end_of_stream(
       packet,
@@ -3246,11 +3245,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_end_of_streamPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_end_of_stream');
+      ffi.NativeFunction<
+          ffi.Int Function(media_packet_h,
+              ffi.Pointer<ffi.Bool>)>>('media_packet_is_end_of_stream');
   late final _media_packet_is_end_of_stream = _media_packet_is_end_of_streamPtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the given media packet is sync frame.
   ///
@@ -3274,7 +3273,7 @@ class Tizen90CapiMediaTool {
   /// - `media_format_data_type_e`
   int media_packet_is_sync_frame(
     media_packet_h packet,
-    ffi.Pointer<bool> is_sync,
+    ffi.Pointer<ffi.Bool> is_sync,
   ) {
     return _media_packet_is_sync_frame(
       packet,
@@ -3283,11 +3282,11 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_is_sync_framePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_is_sync_frame');
+      ffi.NativeFunction<
+          ffi.Int Function(media_packet_h,
+              ffi.Pointer<ffi.Bool>)>>('media_packet_is_sync_frame');
   late final _media_packet_is_sync_frame = _media_packet_is_sync_framePtr
-      .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the allocated buffer is tbm surface or not.
   ///
@@ -3307,7 +3306,7 @@ class Tizen90CapiMediaTool {
   /// - `MEDIA_PACKET_ERROR_INVALID_OPERATION`: Invalid operation
   int media_packet_has_tbm_surface_buffer(
     media_packet_h packet,
-    ffi.Pointer<bool> has_tbm_surface,
+    ffi.Pointer<ffi.Bool> has_tbm_surface,
   ) {
     return _media_packet_has_tbm_surface_buffer(
       packet,
@@ -3316,12 +3315,12 @@ class Tizen90CapiMediaTool {
   }
 
   late final _media_packet_has_tbm_surface_bufferPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_packet_h, ffi.Pointer<bool>)>>(
-      'media_packet_has_tbm_surface_buffer');
+      ffi.NativeFunction<
+          ffi.Int Function(media_packet_h,
+              ffi.Pointer<ffi.Bool>)>>('media_packet_has_tbm_surface_buffer');
   late final _media_packet_has_tbm_surface_buffer =
       _media_packet_has_tbm_surface_bufferPtr
-          .asFunction<int Function(media_packet_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(media_packet_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the number of planes from tbm surface in the given media packet.
   ///
@@ -4550,29 +4549,6 @@ abstract class media_format_channel_position_e {
 /// - 2.3
 /// @nodoc
 typedef media_format_h = ffi.Pointer<media_format_s>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// @nodoc
 final class media_packet_s extends ffi.Opaque {}

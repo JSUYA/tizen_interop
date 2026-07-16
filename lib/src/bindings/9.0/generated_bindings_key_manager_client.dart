@@ -144,7 +144,7 @@ class Tizen90KeyManagerClient {
   /// - `ckmc_alias_info_s`
   int ckmc_alias_info_is_password_protected(
     ffi.Pointer<ckmc_alias_info_s> info,
-    ffi.Pointer<bool> is_password_protected,
+    ffi.Pointer<ffi.Bool> is_password_protected,
   ) {
     return _ckmc_alias_info_is_password_protected(
       info,
@@ -155,10 +155,11 @@ class Tizen90KeyManagerClient {
   late final _ckmc_alias_info_is_password_protectedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ckmc_alias_info_s>,
-              ffi.Pointer<bool>)>>('ckmc_alias_info_is_password_protected');
+              ffi.Pointer<ffi.Bool>)>>('ckmc_alias_info_is_password_protected');
   late final _ckmc_alias_info_is_password_protected =
       _ckmc_alias_info_is_password_protectedPtr.asFunction<
-          int Function(ffi.Pointer<ckmc_alias_info_s>, ffi.Pointer<bool>)>();
+          int Function(
+              ffi.Pointer<ckmc_alias_info_s>, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the backend identifier from `ckmc_alias_info_s` structure.
   ///
@@ -3540,7 +3541,7 @@ class Tizen90KeyManagerClient {
     ffi.Pointer<ckmc_cert_s> cert,
     ffi.Pointer<ckmc_cert_list_s> untrustedcerts,
     ffi.Pointer<ckmc_cert_list_s> trustedcerts,
-    ffi.Pointer<bool> use_trustedsystemcerts,
+    bool use_trustedsystemcerts,
     ffi.Pointer<ffi.Pointer<ckmc_cert_list_s>> ppcert_chain_list,
   ) {
     return _ckmc_get_cert_chain_with_trustedcert(
@@ -3558,7 +3559,7 @@ class Tizen90KeyManagerClient {
                   ffi.Pointer<ckmc_cert_s>,
                   ffi.Pointer<ckmc_cert_list_s>,
                   ffi.Pointer<ckmc_cert_list_s>,
-                  ffi.Pointer<bool>,
+                  ffi.Bool,
                   ffi.Pointer<ffi.Pointer<ckmc_cert_list_s>>)>>(
       'ckmc_get_cert_chain_with_trustedcert');
   late final _ckmc_get_cert_chain_with_trustedcert =
@@ -3567,7 +3568,7 @@ class Tizen90KeyManagerClient {
               ffi.Pointer<ckmc_cert_s>,
               ffi.Pointer<ckmc_cert_list_s>,
               ffi.Pointer<ckmc_cert_list_s>,
-              ffi.Pointer<bool>,
+              bool,
               ffi.Pointer<ffi.Pointer<ckmc_cert_list_s>>)>();
 
   /// **Deprecated:** Deprecated since 6.5. Use raw OpenSSL instead.
@@ -4293,7 +4294,7 @@ class Tizen90KeyManagerClient {
     ckmc_param_list_h params,
     ffi.Pointer<ffi.Char> key_alias,
     ffi.Pointer<ffi.Char> key_password,
-    ffi.Pointer<bool> encrypt,
+    bool encrypt,
     ffi.Pointer<ckmc_cipher_ctx_h> context,
   ) {
     return _ckmc_cipher_initialize(
@@ -4311,15 +4312,11 @@ class Tizen90KeyManagerClient {
               ckmc_param_list_h,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               ffi.Pointer<ckmc_cipher_ctx_h>)>>('ckmc_cipher_initialize');
   late final _ckmc_cipher_initialize = _ckmc_cipher_initializePtr.asFunction<
-      int Function(
-          ckmc_param_list_h,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<bool>,
-          ffi.Pointer<ckmc_cipher_ctx_h>)>();
+      int Function(ckmc_param_list_h, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>, bool, ffi.Pointer<ckmc_cipher_ctx_h>)>();
 
   /// Performs symmetric encryption or decryption of the input and places the result in the output.
   ///
@@ -4762,31 +4759,9 @@ final class __ckmc_policy extends ffi.Struct {
   external ffi.Pointer<ffi.Char> password;
 
   /// < Flag to decide if the key can be extracted from storage or not
+  @ffi.Bool()
   external bool extractable;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// The structure for key used in key manager CAPI.
 ///

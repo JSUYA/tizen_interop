@@ -437,11 +437,17 @@ class Tizen90CoreSyncClient {
 typedef sync_adapter_start_sync_cb
     = ffi.Pointer<ffi.NativeFunction<sync_adapter_start_sync_cbFunction>>;
 /// @nodoc
-typedef sync_adapter_start_sync_cbFunction = ffi.Int Function(imp1.account_h,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<imp2.bundle>);
+typedef sync_adapter_start_sync_cbFunction = ffi.Bool Function(
+    imp1.account_h account,
+    ffi.Pointer<ffi.Char> sync_job_name,
+    ffi.Pointer<ffi.Char> sync_capability,
+    ffi.Pointer<imp2.bundle> sync_job_user_data);
 /// @nodoc
-typedef Dartsync_adapter_start_sync_cbFunction = int Function(imp1.account_h,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<imp2.bundle>);
+typedef Dartsync_adapter_start_sync_cbFunction = bool Function(
+    imp1.account_h account,
+    ffi.Pointer<ffi.Char> sync_job_name,
+    ffi.Pointer<ffi.Char> sync_capability,
+    ffi.Pointer<imp2.bundle> sync_job_user_data);
 
 /// Callback function for Sync Adapter's cancel sync request.
 ///
@@ -557,21 +563,21 @@ abstract class sync_period_e {
 typedef sync_manager_sync_job_cb
     = ffi.Pointer<ffi.NativeFunction<sync_manager_sync_job_cbFunction>>;
 /// @nodoc
-typedef sync_manager_sync_job_cbFunction = ffi.Int Function(
-    imp1.account_h,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Int,
-    ffi.Pointer<imp2.bundle>,
-    ffi.Pointer<ffi.Void>);
+typedef sync_manager_sync_job_cbFunction = ffi.Bool Function(
+    imp1.account_h account,
+    ffi.Pointer<ffi.Char> sync_job_name,
+    ffi.Pointer<ffi.Char> sync_capability,
+    ffi.Int sync_job_id,
+    ffi.Pointer<imp2.bundle> sync_job_user_data,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartsync_manager_sync_job_cbFunction = int Function(
-    imp1.account_h,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    int,
-    ffi.Pointer<imp2.bundle>,
-    ffi.Pointer<ffi.Void>);
+typedef Dartsync_manager_sync_job_cbFunction = bool Function(
+    imp1.account_h account,
+    ffi.Pointer<ffi.Char> sync_job_name,
+    ffi.Pointer<ffi.Char> sync_capability,
+    int sync_job_id,
+    ffi.Pointer<imp2.bundle> sync_job_user_data,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const String SYNC_SUPPORTS_CAPABILITY_CALENDAR =

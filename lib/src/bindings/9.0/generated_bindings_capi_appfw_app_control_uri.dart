@@ -852,8 +852,12 @@ typedef app_control_uri_query_h = ffi.Pointer<ffi.Void>;
 typedef app_control_uri_query_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<app_control_uri_query_foreach_cbFunction>>;
 /// @nodoc
-typedef app_control_uri_query_foreach_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef app_control_uri_query_foreach_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Char> val,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_control_uri_query_foreach_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartapp_control_uri_query_foreach_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Char> val,
+    ffi.Pointer<ffi.Void> user_data);

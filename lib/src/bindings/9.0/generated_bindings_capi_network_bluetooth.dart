@@ -503,7 +503,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   int bt_adapter_is_discovering(
-    ffi.Pointer<bool> is_discovering,
+    ffi.Pointer<ffi.Bool> is_discovering,
   ) {
     return _bt_adapter_is_discovering(
       is_discovering,
@@ -511,10 +511,10 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_is_discoveringPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_is_discovering');
   late final _bt_adapter_is_discovering = _bt_adapter_is_discoveringPtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the service mask from the UUID list.
   ///
@@ -727,7 +727,7 @@ class Tizen90CapiNetworkBluetooth {
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
   int bt_adapter_is_service_used(
     ffi.Pointer<ffi.Char> service_uuid,
-    ffi.Pointer<bool> used,
+    ffi.Pointer<ffi.Bool> used,
   ) {
     return _bt_adapter_is_service_used(
       service_uuid,
@@ -738,9 +738,9 @@ class Tizen90CapiNetworkBluetooth {
   late final _bt_adapter_is_service_usedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('bt_adapter_is_service_used');
+              ffi.Pointer<ffi.Bool>)>>('bt_adapter_is_service_used');
   late final _bt_adapter_is_service_used = _bt_adapter_is_service_usedPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Registers a callback function to be invoked when the Bluetooth adapter state changes.
   ///
@@ -1561,7 +1561,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   int bt_adapter_le_is_discovering(
-    ffi.Pointer<bool> is_discovering,
+    ffi.Pointer<ffi.Bool> is_discovering,
   ) {
     return _bt_adapter_le_is_discovering(
       is_discovering,
@@ -1569,10 +1569,10 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_is_discoveringPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_le_is_discovering');
   late final _bt_adapter_le_is_discovering = _bt_adapter_le_is_discoveringPtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Starts the LE scan to find LE advertisement.
   ///
@@ -2901,7 +2901,7 @@ class Tizen90CapiNetworkBluetooth {
   int bt_adapter_le_set_advertising_device_name(
     bt_advertiser_h advertiser,
     int pkt_type,
-    ffi.Pointer<bool> include_name,
+    bool include_name,
   ) {
     return _bt_adapter_le_set_advertising_device_name(
       advertiser,
@@ -2913,10 +2913,10 @@ class Tizen90CapiNetworkBluetooth {
   late final _bt_adapter_le_set_advertising_device_namePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(bt_advertiser_h, ffi.Int32,
-              ffi.Pointer<bool>)>>('bt_adapter_le_set_advertising_device_name');
+              ffi.Bool)>>('bt_adapter_le_set_advertising_device_name');
   late final _bt_adapter_le_set_advertising_device_name =
       _bt_adapter_le_set_advertising_device_namePtr
-          .asFunction<int Function(bt_advertiser_h, int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(bt_advertiser_h, int, bool)>();
 
   /// Sets whether the transmission power level should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.
   ///
@@ -2950,7 +2950,7 @@ class Tizen90CapiNetworkBluetooth {
   int bt_adapter_le_set_advertising_tx_power_level(
     bt_advertiser_h advertiser,
     int pkt_type,
-    ffi.Pointer<bool> include_tx_power,
+    bool include_tx_power,
   ) {
     return _bt_adapter_le_set_advertising_tx_power_level(
       advertiser,
@@ -2960,12 +2960,12 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_set_advertising_tx_power_levelPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(bt_advertiser_h, ffi.Int32, ffi.Pointer<bool>)>>(
-      'bt_adapter_le_set_advertising_tx_power_level');
+      ffi.NativeFunction<
+          ffi.Int Function(bt_advertiser_h, ffi.Int32,
+              ffi.Bool)>>('bt_adapter_le_set_advertising_tx_power_level');
   late final _bt_adapter_le_set_advertising_tx_power_level =
       _bt_adapter_le_set_advertising_tx_power_levelPtr
-          .asFunction<int Function(bt_advertiser_h, int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(bt_advertiser_h, int, bool)>();
 
   /// Adds advertising flags.
   ///
@@ -3271,7 +3271,7 @@ class Tizen90CapiNetworkBluetooth {
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_MODULE
   int bt_adapter_le_set_advertising_connectable(
     bt_advertiser_h advertiser,
-    ffi.Pointer<bool> connectable,
+    bool connectable,
   ) {
     return _bt_adapter_le_set_advertising_connectable(
       advertiser,
@@ -3279,13 +3279,12 @@ class Tizen90CapiNetworkBluetooth {
     );
   }
 
-  late final _bt_adapter_le_set_advertising_connectablePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(bt_advertiser_h,
-              ffi.Pointer<bool>)>>('bt_adapter_le_set_advertising_connectable');
+  late final _bt_adapter_le_set_advertising_connectablePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(bt_advertiser_h, ffi.Bool)>>(
+          'bt_adapter_le_set_advertising_connectable');
   late final _bt_adapter_le_set_advertising_connectable =
       _bt_adapter_le_set_advertising_connectablePtr
-          .asFunction<int Function(bt_advertiser_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(bt_advertiser_h, bool)>();
 
   /// Sets Bluetooth LE scan mode.
   ///
@@ -3764,7 +3763,7 @@ class Tizen90CapiNetworkBluetooth {
   int bt_device_is_profile_connected(
     ffi.Pointer<ffi.Char> remote_address,
     int bt_profile,
-    ffi.Pointer<bool> connected_status,
+    ffi.Pointer<ffi.Bool> connected_status,
   ) {
     return _bt_device_is_profile_connected(
       remote_address,
@@ -3776,10 +3775,10 @@ class Tizen90CapiNetworkBluetooth {
   late final _bt_device_is_profile_connectedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int32,
-              ffi.Pointer<bool>)>>('bt_device_is_profile_connected');
+              ffi.Pointer<ffi.Bool>)>>('bt_device_is_profile_connected');
   late final _bt_device_is_profile_connected =
       _bt_device_is_profile_connectedPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<bool>)>();
+          int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Updates a LE connection mode.
   ///
@@ -10182,7 +10181,7 @@ class Tizen90CapiNetworkBluetooth {
   /// - CAPI_NETWORK_BLUETOOTH_GATT_CLIENT_MODULE
   int bt_gatt_connect(
     ffi.Pointer<ffi.Char> address,
-    ffi.Pointer<bool> auto_connect,
+    bool auto_connect,
   ) {
     return _bt_gatt_connect(
       address,
@@ -10191,11 +10190,11 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_gatt_connectPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>>('bt_gatt_connect');
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Bool)>>(
+      'bt_gatt_connect');
   late final _bt_gatt_connect = _bt_gatt_connectPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, bool)>();
 
   /// Disconnects to LE connection with the given remote Bluetooth device address, asynchronously or cancels a LE connection attempt currently in progress.
   ///
@@ -13056,7 +13055,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_50_MODULE
   int bt_adapter_le_is_2m_phy_supported(
-    ffi.Pointer<bool> is_supported,
+    ffi.Pointer<ffi.Bool> is_supported,
   ) {
     return _bt_adapter_le_is_2m_phy_supported(
       is_supported,
@@ -13064,11 +13063,11 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_is_2m_phy_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_le_is_2m_phy_supported');
   late final _bt_adapter_le_is_2m_phy_supported =
       _bt_adapter_le_is_2m_phy_supportedPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Checks if LE CODED PHY feature is supported or not.
   ///
@@ -13098,7 +13097,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_50_MODULE
   int bt_adapter_le_is_coded_phy_supported(
-    ffi.Pointer<bool> is_supported,
+    ffi.Pointer<ffi.Bool> is_supported,
   ) {
     return _bt_adapter_le_is_coded_phy_supported(
       is_supported,
@@ -13106,11 +13105,11 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_is_coded_phy_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_le_is_coded_phy_supported');
   late final _bt_adapter_le_is_coded_phy_supported =
       _bt_adapter_le_is_coded_phy_supportedPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Registers a L2CAP Connection-oriented Channel (CoC) server socket with a specific protocol/service multiplexer (PSM) value.
   ///
@@ -14038,7 +14037,7 @@ class Tizen90CapiNetworkBluetooth {
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
   int bt_adapter_le_set_advertising_legacy_mode(
     bt_advertiser_h advertiser,
-    ffi.Pointer<bool> is_legacy,
+    bool is_legacy,
   ) {
     return _bt_adapter_le_set_advertising_legacy_mode(
       advertiser,
@@ -14046,13 +14045,12 @@ class Tizen90CapiNetworkBluetooth {
     );
   }
 
-  late final _bt_adapter_le_set_advertising_legacy_modePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(bt_advertiser_h,
-              ffi.Pointer<bool>)>>('bt_adapter_le_set_advertising_legacy_mode');
+  late final _bt_adapter_le_set_advertising_legacy_modePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(bt_advertiser_h, ffi.Bool)>>(
+          'bt_adapter_le_set_advertising_legacy_mode');
   late final _bt_adapter_le_set_advertising_legacy_mode =
       _bt_adapter_le_set_advertising_legacy_modePtr
-          .asFunction<int Function(bt_advertiser_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(bt_advertiser_h, bool)>();
 
   /// Sets Bluetooth LE advertising primary phy.
   ///
@@ -14184,7 +14182,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
   int bt_adapter_le_is_extended_advertising_supported(
-    ffi.Pointer<bool> is_supported,
+    ffi.Pointer<ffi.Bool> is_supported,
   ) {
     return _bt_adapter_le_is_extended_advertising_supported(
       is_supported,
@@ -14192,11 +14190,11 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_is_extended_advertising_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_le_is_extended_advertising_supported');
   late final _bt_adapter_le_is_extended_advertising_supported =
       _bt_adapter_le_is_extended_advertising_supportedPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Checks if LE Extended Scan feature is supported or not.
   ///
@@ -14226,7 +14224,7 @@ class Tizen90CapiNetworkBluetooth {
   /// **Group:**
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
   int bt_adapter_le_is_extended_scan_supported(
-    ffi.Pointer<bool> is_supported,
+    ffi.Pointer<ffi.Bool> is_supported,
   ) {
     return _bt_adapter_le_is_extended_scan_supported(
       is_supported,
@@ -14234,11 +14232,11 @@ class Tizen90CapiNetworkBluetooth {
   }
 
   late final _bt_adapter_le_is_extended_scan_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'bt_adapter_le_is_extended_scan_supported');
   late final _bt_adapter_le_is_extended_scan_supported =
       _bt_adapter_le_is_extended_scan_supportedPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Gets maximum advertisement data length supported by controller.
   ///
@@ -14481,7 +14479,7 @@ class Tizen90CapiNetworkBluetooth {
   /// - CAPI_NETWORK_BLUETOOTH_ADAPTER_LE_ADV_EXT_MODULE
   int bt_adapter_le_get_new_scan_result_is_extended(
     bt_new_scan_result_h handle,
-    ffi.Pointer<bool> is_extended,
+    ffi.Pointer<ffi.Bool> is_extended,
   ) {
     return _bt_adapter_le_get_new_scan_result_is_extended(
       handle,
@@ -14491,11 +14489,11 @@ class Tizen90CapiNetworkBluetooth {
 
   late final _bt_adapter_le_get_new_scan_result_is_extendedPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(bt_new_scan_result_h, ffi.Pointer<bool>)>>(
+              ffi.Int Function(bt_new_scan_result_h, ffi.Pointer<ffi.Bool>)>>(
       'bt_adapter_le_get_new_scan_result_is_extended');
   late final _bt_adapter_le_get_new_scan_result_is_extended =
-      _bt_adapter_le_get_new_scan_result_is_extendedPtr
-          .asFunction<int Function(bt_new_scan_result_h, ffi.Pointer<bool>)>();
+      _bt_adapter_le_get_new_scan_result_is_extendedPtr.asFunction<
+          int Function(bt_new_scan_result_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the legacy scan result information from the extended scan result.
   ///
@@ -16149,6 +16147,55 @@ final class bt_class_s extends ffi.Struct {
   external int major_service_class_mask;
 }
 
+/// Structure of device discovery information.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **See also:**
+/// - `bt_class_s`
+/// - `bt_adapter_device_discovery_state_changed_cb()`
+///
+/// **Group:**
+/// - CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
+/// @nodoc
+final class bt_adapter_device_discovery_info_s extends ffi.Struct {
+  /// < The address of remote device
+  external ffi.Pointer<ffi.Char> remote_address;
+
+  /// < The name of remote device
+  external ffi.Pointer<ffi.Char> remote_name;
+
+  /// < The Bluetooth classes
+  external bt_class_s bt_class;
+
+  /// < The strength indicator of received signal
+  @ffi.Int()
+  external int rssi;
+
+  /// < The bonding state
+  @ffi.Bool()
+  external bool is_bonded;
+
+  /// < The UUID list of service
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_uuid;
+
+  /// < The number of services
+  @ffi.Int()
+  external int service_count;
+
+  /// < The Bluetooth appearance
+  @ffi.Int32()
+  external int appearance;
+
+  /// < manufacturer specific data length
+  @ffi.Int()
+  external int manufacturer_data_len;
+
+  /// < manufacturer specific data
+  external ffi.Pointer<ffi.Char> manufacturer_data;
+}
+
 /// Structure of le scan result information.
 ///
 /// **Since Tizen:**
@@ -16244,6 +16291,55 @@ final class bt_adapter_le_service_data_s extends ffi.Struct {
   /// < Service data length
   @ffi.Int()
   external int service_data_len;
+}
+
+/// Device information structure used for identifying pear device.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **See also:**
+/// - `bt_class_s`
+/// - `bt_device_bond_created_cb()`
+///
+/// **Group:**
+/// - CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
+/// @nodoc
+final class bt_device_info_s extends ffi.Struct {
+  /// < The address of remote device
+  external ffi.Pointer<ffi.Char> remote_address;
+
+  /// < The name of remote device
+  external ffi.Pointer<ffi.Char> remote_name;
+
+  /// < The Bluetooth classes
+  external bt_class_s bt_class;
+
+  /// < The UUID list of service
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_uuid;
+
+  /// < The number of services
+  @ffi.Int()
+  external int service_count;
+
+  /// < The bonding state
+  @ffi.Bool()
+  external bool is_bonded;
+
+  /// < The connection state
+  @ffi.Bool()
+  external bool is_connected;
+
+  /// < The authorization state
+  @ffi.Bool()
+  external bool is_authorized;
+
+  /// < manufacturer specific data length
+  @ffi.Int()
+  external int manufacturer_data_len;
+
+  /// < manufacturer specific data
+  external ffi.Pointer<ffi.Char> manufacturer_data;
 }
 
 /// Service Discovery Protocol (SDP) data structure.
@@ -16673,29 +16769,6 @@ abstract class bt_adapter_le_phy_e {
   static const int BT_LE_CODED_PHY = 3;
 }
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// Called when you get bonded devices repeatedly.
 ///
 /// `false` to break out of the loop.
@@ -16722,71 +16795,11 @@ typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 typedef bt_adapter_bonded_device_cb
     = ffi.Pointer<ffi.NativeFunction<bt_adapter_bonded_device_cbFunction>>;
 /// @nodoc
-typedef bt_adapter_bonded_device_cbFunction = ffi.Int Function(
-    ffi.Pointer<bt_device_info_s>, ffi.Pointer<ffi.Void>);
+typedef bt_adapter_bonded_device_cbFunction = ffi.Bool Function(
+    ffi.Pointer<bt_device_info_s> device_info, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartbt_adapter_bonded_device_cbFunction = int Function(
-    ffi.Pointer<bt_device_info_s>, ffi.Pointer<ffi.Void>);
-
-/// Device information structure used for identifying pear device.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **See also:**
-/// - `bt_class_s`
-/// - `bt_device_bond_created_cb()`
-///
-/// **Group:**
-/// - CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-/// @nodoc
-typedef bt_device_info_s = CapiNetworkBluetoothUnnamedStruct1;
-
-/// Device information structure used for identifying pear device.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **See also:**
-/// - `bt_class_s`
-/// - `bt_device_bond_created_cb()`
-///
-/// **Group:**
-/// - CAPI_NETWORK_BLUETOOTH_DEVICE_MODULE
-/// @nodoc
-final class CapiNetworkBluetoothUnnamedStruct1 extends ffi.Struct {
-  /// < The address of remote device
-  external ffi.Pointer<ffi.Char> remote_address;
-
-  /// < The name of remote device
-  external ffi.Pointer<ffi.Char> remote_name;
-
-  /// < The Bluetooth classes
-  external bt_class_s bt_class;
-
-  /// < The UUID list of service
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_uuid;
-
-  /// < The number of services
-  @ffi.Int()
-  external int service_count;
-
-  /// < The bonding state
-  external bool is_bonded;
-
-  /// < The connection state
-  external bool is_connected;
-
-  /// < The authorization state
-  external bool is_authorized;
-
-  /// < manufacturer specific data length
-  @ffi.Int()
-  external int manufacturer_data_len;
-
-  /// < manufacturer specific data
-  external ffi.Pointer<ffi.Char> manufacturer_data;
-}
+typedef Dartbt_adapter_bonded_device_cbFunction = bool Function(
+    ffi.Pointer<bt_device_info_s> device_info, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the Bluetooth adapter state changes.
 ///
@@ -16947,68 +16960,6 @@ typedef Dartbt_adapter_device_discovery_state_changed_cbFunction
         ffi.Pointer<bt_adapter_device_discovery_info_s> discovery_info,
         ffi.Pointer<ffi.Void> user_data);
 
-/// Structure of device discovery information.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **See also:**
-/// - `bt_class_s`
-/// - `bt_adapter_device_discovery_state_changed_cb()`
-///
-/// **Group:**
-/// - CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-/// @nodoc
-typedef bt_adapter_device_discovery_info_s = CapiNetworkBluetoothUnnamedStruct2;
-
-/// Structure of device discovery information.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **See also:**
-/// - `bt_class_s`
-/// - `bt_adapter_device_discovery_state_changed_cb()`
-///
-/// **Group:**
-/// - CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE
-/// @nodoc
-final class CapiNetworkBluetoothUnnamedStruct2 extends ffi.Struct {
-  /// < The address of remote device
-  external ffi.Pointer<ffi.Char> remote_address;
-
-  /// < The name of remote device
-  external ffi.Pointer<ffi.Char> remote_name;
-
-  /// < The Bluetooth classes
-  external bt_class_s bt_class;
-
-  /// < The strength indicator of received signal
-  @ffi.Int()
-  external int rssi;
-
-  /// < The bonding state
-  external bool is_bonded;
-
-  /// < The UUID list of service
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_uuid;
-
-  /// < The number of services
-  @ffi.Int()
-  external int service_count;
-
-  /// < The Bluetooth appearance
-  @ffi.Int32()
-  external int appearance;
-
-  /// < manufacturer specific data length
-  @ffi.Int()
-  external int manufacturer_data_len;
-
-  /// < manufacturer specific data
-  external ffi.Pointer<ffi.Char> manufacturer_data;
-}
-
 /// Called when the LE advertisement has been found.
 ///
 /// **Since Tizen:**
@@ -17069,12 +17020,10 @@ typedef bt_ipsp_init_state_changed_cb
     = ffi.Pointer<ffi.NativeFunction<bt_ipsp_init_state_changed_cbFunction>>;
 /// @nodoc
 typedef bt_ipsp_init_state_changed_cbFunction = ffi.Void Function(
-    ffi.Int result,
-    ffi.Pointer<bool> ipsp_initialized,
-    ffi.Pointer<ffi.Void> user_data);
+    ffi.Int result, ffi.Bool ipsp_initialized, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartbt_ipsp_init_state_changed_cbFunction = void Function(int result,
-    ffi.Pointer<bool> ipsp_initialized, ffi.Pointer<ffi.Void> user_data);
+typedef Dartbt_ipsp_init_state_changed_cbFunction = void Function(
+    int result, bool ipsp_initialized, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the IPSP connection state changes.
 ///
@@ -17100,14 +17049,14 @@ typedef bt_ipsp_connection_state_changed_cb = ffi
 /// @nodoc
 typedef bt_ipsp_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Char> iface_name,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_ipsp_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Char> iface_name,
     ffi.Pointer<ffi.Void> user_data);
@@ -17171,11 +17120,11 @@ typedef Dartbt_adapter_le_advertising_state_changed_cbFunction = void Function(
 typedef bt_device_connected_profile
     = ffi.Pointer<ffi.NativeFunction<bt_device_connected_profileFunction>>;
 /// @nodoc
-typedef bt_device_connected_profileFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef bt_device_connected_profileFunction = ffi.Bool Function(
+    ffi.Int32 profile, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartbt_device_connected_profileFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartbt_device_connected_profileFunction = bool Function(
+    int profile, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the process of creating bond finishes.
 ///
@@ -17334,12 +17283,12 @@ typedef bt_device_connection_state_changed_cb = ffi
     .Pointer<ffi.NativeFunction<bt_device_connection_state_changed_cbFunction>>;
 /// @nodoc
 typedef bt_device_connection_state_changed_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<bt_device_connection_info_s> conn_info,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_device_connection_state_changed_cbFunction = void Function(
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<bt_device_connection_info_s> conn_info,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -17649,13 +17598,13 @@ typedef bt_hid_host_connection_state_changed_cb = ffi.Pointer<
 /// @nodoc
 typedef bt_hid_host_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_hid_host_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -17683,13 +17632,13 @@ typedef bt_hid_device_connection_state_changed_cb = ffi.Pointer<
 /// @nodoc
 typedef bt_hid_device_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_hid_device_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -17747,14 +17696,14 @@ typedef bt_audio_connection_state_changed_cb = ffi
 /// @nodoc
 typedef bt_audio_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Int32 type,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_audio_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     int type,
     ffi.Pointer<ffi.Void> user_data);
@@ -17780,12 +17729,12 @@ typedef bt_avrcp_target_connection_state_changed_cb = ffi.Pointer<
     ffi.NativeFunction<bt_avrcp_target_connection_state_changed_cbFunction>>;
 /// @nodoc
 typedef bt_avrcp_target_connection_state_changed_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_avrcp_target_connection_state_changed_cbFunction = void Function(
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -17987,12 +17936,12 @@ typedef bt_avrcp_control_connection_state_changed_cb = ffi.Pointer<
     ffi.NativeFunction<bt_avrcp_control_connection_state_changed_cbFunction>>;
 /// @nodoc
 typedef bt_avrcp_control_connection_state_changed_cbFunction
-    = ffi.Void Function(ffi.Pointer<bool> connected,
+    = ffi.Void Function(ffi.Bool connected,
         ffi.Pointer<ffi.Char> remote_address, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_avrcp_control_connection_state_changed_cbFunction
-    = void Function(ffi.Pointer<bool> connected,
-        ffi.Pointer<ffi.Char> remote_address, ffi.Pointer<ffi.Void> user_data);
+    = void Function(bool connected, ffi.Pointer<ffi.Char> remote_address,
+        ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 5.0.
 ///
@@ -18154,11 +18103,11 @@ typedef bt_gatt_client_h = ffi.Pointer<ffi.Void>;
 typedef bt_gatt_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<bt_gatt_foreach_cbFunction>>;
 /// @nodoc
-typedef bt_gatt_foreach_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, bt_gatt_h, ffi.Pointer<ffi.Void>);
+typedef bt_gatt_foreach_cbFunction = ffi.Bool Function(ffi.Int total,
+    ffi.Int index, bt_gatt_h gatt_handle, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartbt_gatt_foreach_cbFunction = int Function(
-    int, int, bt_gatt_h, ffi.Pointer<ffi.Void>);
+typedef Dartbt_gatt_foreach_cbFunction = bool Function(int total, int index,
+    bt_gatt_h gatt_handle, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the client request(e.g. read / write) has been completed.
 ///
@@ -18311,13 +18260,13 @@ typedef bt_gatt_connection_state_changed_cb = ffi
 /// @nodoc
 typedef bt_gatt_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_gatt_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -18405,12 +18354,12 @@ typedef bt_gatt_server_characteristic_notification_state_changed_cb = ffi.Pointe
         bt_gatt_server_characteristic_notification_state_changed_cbFunction>>;
 /// @nodoc
 typedef bt_gatt_server_characteristic_notification_state_changed_cbFunction
-    = ffi.Void Function(ffi.Pointer<bool> notify, bt_gatt_server_h server,
+    = ffi.Void Function(ffi.Bool notify, bt_gatt_server_h server,
         bt_gatt_h gatt_handle, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_gatt_server_characteristic_notification_state_changed_cbFunction
-    = void Function(ffi.Pointer<bool> notify, bt_gatt_server_h server,
-        bt_gatt_h gatt_handle, ffi.Pointer<ffi.Void> user_data);
+    = void Function(bool notify, bt_gatt_server_h server, bt_gatt_h gatt_handle,
+        ffi.Pointer<ffi.Void> user_data);
 
 /// Called when a value of a characteristic or descriptor's GATT handle has been changed.
 ///
@@ -18453,7 +18402,7 @@ typedef bt_gatt_server_write_value_requested_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     bt_gatt_server_h server,
     bt_gatt_h gatt_handle,
-    ffi.Pointer<bool> response_needed,
+    ffi.Bool response_needed,
     ffi.Int offset,
     ffi.Pointer<ffi.Char> value,
     ffi.Int len,
@@ -18464,7 +18413,7 @@ typedef Dartbt_gatt_server_write_value_requested_cbFunction = void Function(
     int request_id,
     bt_gatt_server_h server,
     bt_gatt_h gatt_handle,
-    ffi.Pointer<bool> response_needed,
+    bool response_needed,
     int offset,
     ffi.Pointer<ffi.Char> value,
     int len,
@@ -18505,7 +18454,7 @@ typedef bt_gatt_server_notification_sent_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> remote_address,
     bt_gatt_server_h server,
     bt_gatt_h characteristic,
-    ffi.Pointer<bool> completed,
+    ffi.Bool completed,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_gatt_server_notification_sent_cbFunction = void Function(
@@ -18513,7 +18462,7 @@ typedef Dartbt_gatt_server_notification_sent_cbFunction = void Function(
     ffi.Pointer<ffi.Char> remote_address,
     bt_gatt_server_h server,
     bt_gatt_h characteristic,
-    ffi.Pointer<bool> completed,
+    bool completed,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when PBAP is Connected or Disconnected.
@@ -18541,13 +18490,13 @@ typedef bt_pbap_connection_state_changed_cb = ffi
 /// @nodoc
 typedef bt_pbap_connection_state_changed_cbFunction = ffi.Void Function(
     ffi.Int result,
-    ffi.Pointer<bool> connected,
+    ffi.Bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartbt_pbap_connection_state_changed_cbFunction = void Function(
     int result,
-    ffi.Pointer<bool> connected,
+    bool connected,
     ffi.Pointer<ffi.Char> remote_address,
     ffi.Pointer<ffi.Void> user_data);
 

@@ -835,7 +835,7 @@ class Tizen90CapiMediaPlayer {
   int player_set_play_position(
     player_h player,
     int milliseconds,
-    imp2.bool accurate,
+    bool accurate,
     player_seek_completed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -853,12 +853,12 @@ class Tizen90CapiMediaPlayer {
           ffi.Int Function(
               player_h,
               ffi.Int,
-              imp2.bool,
+              ffi.Bool,
               player_seek_completed_cb,
               ffi.Pointer<ffi.Void>)>>('player_set_play_position');
   late final _player_set_play_position =
       _player_set_play_positionPtr.asFunction<
-          int Function(player_h, int, imp2.bool, player_seek_completed_cb,
+          int Function(player_h, int, bool, player_seek_completed_cb,
               ffi.Pointer<ffi.Void>)>();
 
   /// Sets the seek position in nanoseconds for playback, asynchronously.
@@ -909,7 +909,7 @@ class Tizen90CapiMediaPlayer {
   int player_set_play_position_nsec(
     player_h player,
     int nanoseconds,
-    imp2.bool accurate,
+    bool accurate,
     player_seek_completed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -927,12 +927,12 @@ class Tizen90CapiMediaPlayer {
           ffi.Int Function(
               player_h,
               ffi.Int64,
-              imp2.bool,
+              ffi.Bool,
               player_seek_completed_cb,
               ffi.Pointer<ffi.Void>)>>('player_set_play_position_nsec');
   late final _player_set_play_position_nsec =
       _player_set_play_position_nsecPtr.asFunction<
-          int Function(player_h, int, imp2.bool, player_seek_completed_cb,
+          int Function(player_h, int, bool, player_seek_completed_cb,
               ffi.Pointer<ffi.Void>)>();
 
   /// Gets the current position in milliseconds.
@@ -1035,7 +1035,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_is_muted()`
   int player_set_mute(
     player_h player,
-    imp2.bool muted,
+    bool muted,
   ) {
     return _player_set_mute(
       player,
@@ -1044,10 +1044,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_set_mutePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_set_mute');
   late final _player_set_mute =
-      _player_set_mutePtr.asFunction<int Function(player_h, imp2.bool)>();
+      _player_set_mutePtr.asFunction<int Function(player_h, bool)>();
 
   /// Gets the player's mute status.
   ///
@@ -1072,7 +1072,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_set_mute()`
   int player_is_muted(
     player_h player,
-    ffi.Pointer<imp2.bool> muted,
+    ffi.Pointer<ffi.Bool> muted,
   ) {
     return _player_is_muted(
       player,
@@ -1082,10 +1082,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_is_mutedPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_is_muted');
   late final _player_is_muted = _player_is_mutedPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the player's looping status.
   ///
@@ -1110,7 +1110,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_is_looping()`
   int player_set_looping(
     player_h player,
-    imp2.bool looping,
+    bool looping,
   ) {
     return _player_set_looping(
       player,
@@ -1119,10 +1119,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_set_loopingPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_set_looping');
   late final _player_set_looping =
-      _player_set_loopingPtr.asFunction<int Function(player_h, imp2.bool)>();
+      _player_set_loopingPtr.asFunction<int Function(player_h, bool)>();
 
   /// Gets the player's looping status.
   ///
@@ -1147,7 +1147,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_set_looping()`
   int player_is_looping(
     player_h player,
-    ffi.Pointer<imp2.bool> looping,
+    ffi.Pointer<ffi.Bool> looping,
   ) {
     return _player_is_looping(
       player,
@@ -1157,10 +1157,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_is_loopingPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_is_looping');
   late final _player_is_looping = _player_is_loopingPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the video display.
   ///
@@ -2128,7 +2128,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_is_display_visible()`
   int player_set_display_visible(
     player_h player,
-    imp2.bool visible,
+    bool visible,
   ) {
     return _player_set_display_visible(
       player,
@@ -2137,10 +2137,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_set_display_visiblePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_set_display_visible');
-  late final _player_set_display_visible = _player_set_display_visiblePtr
-      .asFunction<int Function(player_h, imp2.bool)>();
+  late final _player_set_display_visible =
+      _player_set_display_visiblePtr.asFunction<int Function(player_h, bool)>();
 
   /// Gets the visibility of the video display.
   ///
@@ -2163,7 +2163,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_set_display_visible()`
   int player_is_display_visible(
     player_h player,
-    ffi.Pointer<imp2.bool> visible,
+    ffi.Pointer<ffi.Bool> visible,
   ) {
     return _player_is_display_visible(
       player,
@@ -2173,10 +2173,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_is_display_visiblePtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_is_display_visible');
   late final _player_is_display_visible = _player_is_display_visiblePtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the rotation settings of the video surface display.
   ///
@@ -3014,7 +3014,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_get_audio_codec_type()`
   int player_audio_effect_equalizer_is_available(
     player_h player,
-    ffi.Pointer<imp2.bool> available,
+    ffi.Pointer<ffi.Bool> available,
   ) {
     return _player_audio_effect_equalizer_is_available(
       player,
@@ -3024,11 +3024,11 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_audio_effect_equalizer_is_availablePtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_audio_effect_equalizer_is_available');
   late final _player_audio_effect_equalizer_is_available =
       _player_audio_effect_equalizer_is_availablePtr
-          .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+          .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Captures the video frame, asynchronously.
   ///
@@ -4204,7 +4204,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_is_audio_only()`
   int player_set_audio_only(
     player_h player,
-    imp2.bool audio_only,
+    bool audio_only,
   ) {
     return _player_set_audio_only(
       player,
@@ -4213,10 +4213,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_set_audio_onlyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_set_audio_only');
   late final _player_set_audio_only =
-      _player_set_audio_onlyPtr.asFunction<int Function(player_h, imp2.bool)>();
+      _player_set_audio_onlyPtr.asFunction<int Function(player_h, bool)>();
 
   /// Gets the audio only mode status.
   ///
@@ -4239,7 +4239,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_set_audio_only()`
   int player_is_audio_only(
     player_h player,
-    ffi.Pointer<imp2.bool> audio_only,
+    ffi.Pointer<ffi.Bool> audio_only,
   ) {
     return _player_is_audio_only(
       player,
@@ -4249,10 +4249,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_is_audio_onlyPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_is_audio_only');
   late final _player_is_audio_only = _player_is_audio_onlyPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the player's replaygain status.
   ///
@@ -4289,7 +4289,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_get_audio_codec_type()`
   int player_set_replaygain_enabled(
     player_h player,
-    imp2.bool enabled,
+    bool enabled,
   ) {
     return _player_set_replaygain_enabled(
       player,
@@ -4298,10 +4298,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_set_replaygain_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_set_replaygain_enabled');
   late final _player_set_replaygain_enabled = _player_set_replaygain_enabledPtr
-      .asFunction<int Function(player_h, imp2.bool)>();
+      .asFunction<int Function(player_h, bool)>();
 
   /// Gets the player's replaygain status.
   ///
@@ -4333,7 +4333,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_get_audio_codec_type()`
   int player_is_replaygain_enabled(
     player_h player,
-    ffi.Pointer<imp2.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _player_is_replaygain_enabled(
       player,
@@ -4343,10 +4343,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_is_replaygain_enabledPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_is_replaygain_enabled');
   late final _player_is_replaygain_enabled = _player_is_replaygain_enabledPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the ROI (Region Of Interest) area of the content video source.
   ///
@@ -4523,7 +4523,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_get_audio_codec_type()`
   int player_audio_pitch_set_enabled(
     player_h player,
-    imp2.bool enabled,
+    bool enabled,
   ) {
     return _player_audio_pitch_set_enabled(
       player,
@@ -4532,11 +4532,11 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_audio_pitch_set_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_audio_pitch_set_enabled');
   late final _player_audio_pitch_set_enabled =
       _player_audio_pitch_set_enabledPtr
-          .asFunction<int Function(player_h, imp2.bool)>();
+          .asFunction<int Function(player_h, bool)>();
 
   /// Gets the status of controlling the pitch of audio.
   ///
@@ -4571,7 +4571,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_get_audio_codec_type()`
   int player_audio_pitch_is_enabled(
     player_h player,
-    ffi.Pointer<imp2.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _player_audio_pitch_is_enabled(
       player,
@@ -4581,10 +4581,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_audio_pitch_is_enabledPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_audio_pitch_is_enabled');
   late final _player_audio_pitch_is_enabled = _player_audio_pitch_is_enabledPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the pitch of audio.
   ///
@@ -4795,7 +4795,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_audio_offload_is_activated()`
   int player_audio_offload_set_enabled(
     player_h player,
-    imp2.bool enabled,
+    bool enabled,
   ) {
     return _player_audio_offload_set_enabled(
       player,
@@ -4804,11 +4804,11 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_audio_offload_set_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_audio_offload_set_enabled');
   late final _player_audio_offload_set_enabled =
       _player_audio_offload_set_enabledPtr
-          .asFunction<int Function(player_h, imp2.bool)>();
+          .asFunction<int Function(player_h, bool)>();
 
   /// Gets the enabling status of audio offload.
   ///
@@ -4838,7 +4838,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_audio_offload_is_activated()`
   int player_audio_offload_is_enabled(
     player_h player,
-    ffi.Pointer<imp2.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _player_audio_offload_is_enabled(
       player,
@@ -4848,11 +4848,11 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_audio_offload_is_enabledPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_audio_offload_is_enabled');
   late final _player_audio_offload_is_enabled =
       _player_audio_offload_is_enabledPtr
-          .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+          .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the activation status of audio offload.
   ///
@@ -4888,7 +4888,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_audio_offload_is_enabled()`
   int player_audio_offload_is_activated(
     player_h player,
-    ffi.Pointer<imp2.bool> activated,
+    ffi.Pointer<ffi.Bool> activated,
   ) {
     return _player_audio_offload_is_activated(
       player,
@@ -4898,11 +4898,11 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_audio_offload_is_activatedPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_audio_offload_is_activated');
   late final _player_audio_offload_is_activated =
       _player_audio_offload_is_activatedPtr
-          .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+          .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the default codec type of the audio decoder.
   ///
@@ -5203,7 +5203,7 @@ class Tizen90CapiMediaPlayer {
   /// - The player state must be one of `PLAYER_STATE_READY`, `PLAYER_STATE_PLAYING` or `PLAYER_STATE_PAUSED`.
   int player_360_is_content_spherical(
     player_h player,
-    ffi.Pointer<imp2.bool> is_spherical,
+    ffi.Pointer<ffi.Bool> is_spherical,
   ) {
     return _player_360_is_content_spherical(
       player,
@@ -5213,11 +5213,11 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_360_is_content_sphericalPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_360_is_content_spherical');
   late final _player_360_is_content_spherical =
       _player_360_is_content_sphericalPtr
-          .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+          .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the 360 video mode.
   ///
@@ -5248,7 +5248,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_360_is_enabled()`
   int player_360_set_enabled(
     player_h player,
-    imp2.bool enabled,
+    bool enabled,
   ) {
     return _player_360_set_enabled(
       player,
@@ -5257,10 +5257,10 @@ class Tizen90CapiMediaPlayer {
   }
 
   late final _player_360_set_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(player_h, ffi.Bool)>>(
           'player_360_set_enabled');
-  late final _player_360_set_enabled = _player_360_set_enabledPtr
-      .asFunction<int Function(player_h, imp2.bool)>();
+  late final _player_360_set_enabled =
+      _player_360_set_enabledPtr.asFunction<int Function(player_h, bool)>();
 
   /// Gets the 360 video display mode.
   ///
@@ -5289,7 +5289,7 @@ class Tizen90CapiMediaPlayer {
   /// - `player_360_set_enabled()`
   int player_360_is_enabled(
     player_h player,
-    ffi.Pointer<imp2.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _player_360_is_enabled(
       player,
@@ -5299,10 +5299,10 @@ class Tizen90CapiMediaPlayer {
 
   late final _player_360_is_enabledPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<imp2.bool>)>>(
+          .NativeFunction<ffi.Int Function(player_h, ffi.Pointer<ffi.Bool>)>>(
       'player_360_is_enabled');
   late final _player_360_is_enabled = _player_360_is_enabledPtr
-      .asFunction<int Function(player_h, ffi.Pointer<imp2.bool>)>();
+      .asFunction<int Function(player_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the 360 video direction of view.
   ///
@@ -6070,11 +6070,11 @@ typedef Dartplayer_media_packet_audio_decoded_cbFunction = void Function(
 typedef player_supported_media_format_cb
     = ffi.Pointer<ffi.NativeFunction<player_supported_media_format_cbFunction>>;
 /// @nodoc
-typedef player_supported_media_format_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef player_supported_media_format_cbFunction = ffi.Bool Function(
+    ffi.Int32 format, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartplayer_supported_media_format_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartplayer_supported_media_format_cbFunction = bool Function(
+    int format, ffi.Pointer<ffi.Void> user_data);
 
 /// Enumeration for media format MIME type.
 ///

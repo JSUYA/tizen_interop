@@ -532,7 +532,7 @@ class Tizen90CapiMediaRadio {
   /// - `radio_is_muted()`
   int radio_set_mute(
     radio_h radio,
-    ffi.Pointer<bool> muted,
+    bool muted,
   ) {
     return _radio_set_mute(
       radio,
@@ -541,10 +541,10 @@ class Tizen90CapiMediaRadio {
   }
 
   late final _radio_set_mutePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(radio_h, ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(radio_h, ffi.Bool)>>(
           'radio_set_mute');
   late final _radio_set_mute =
-      _radio_set_mutePtr.asFunction<int Function(radio_h, ffi.Pointer<bool>)>();
+      _radio_set_mutePtr.asFunction<int Function(radio_h, bool)>();
 
   /// Gets the radio's mute status.
   ///
@@ -570,7 +570,7 @@ class Tizen90CapiMediaRadio {
   /// - `radio_set_mute()`
   int radio_is_muted(
     radio_h radio,
-    ffi.Pointer<bool> muted,
+    ffi.Pointer<ffi.Bool> muted,
   ) {
     return _radio_is_muted(
       radio,
@@ -578,11 +578,11 @@ class Tizen90CapiMediaRadio {
     );
   }
 
-  late final _radio_is_mutedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(radio_h, ffi.Pointer<bool>)>>(
-          'radio_is_muted');
-  late final _radio_is_muted =
-      _radio_is_mutedPtr.asFunction<int Function(radio_h, ffi.Pointer<bool>)>();
+  late final _radio_is_mutedPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(radio_h, ffi.Pointer<ffi.Bool>)>>(
+      'radio_is_muted');
+  late final _radio_is_muted = _radio_is_mutedPtr
+      .asFunction<int Function(radio_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets a callback function to be invoked when the scan finishes.
   ///
@@ -1032,29 +1032,6 @@ typedef radio_scan_stopped_cbFunction = ffi.Void Function(
 /// @nodoc
 typedef Dartradio_scan_stopped_cbFunction = void Function(
     ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the radio scan is completed.
 ///

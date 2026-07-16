@@ -138,7 +138,7 @@ class Tizen90Dlog {
     int prio,
     ffi.Pointer<ffi.Char> tag,
     ffi.Pointer<ffi.Char> fmt,
-    int ap,
+    va_list ap,
   ) {
     return _dlog_vprint(
       prio,
@@ -153,7 +153,8 @@ class Tizen90Dlog {
           ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, va_list)>>('dlog_vprint');
   late final _dlog_vprint = _dlog_vprintPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+      int Function(
+          int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, va_list)>();
 }
 
 /// Enumeration for Dlog Errors, returned by API calls.
@@ -214,9 +215,11 @@ abstract class log_priority {
 }
 
 /// @nodoc
-typedef va_list = ffi.Int;
+typedef va_list = __gnuc_va_list;
 /// @nodoc
-typedef Dartva_list = int;
+typedef __gnuc_va_list = __builtin_va_list;
+/// @nodoc
+typedef __builtin_va_list = ffi.Pointer<ffi.Char>;
 
 /// @nodoc
 const int LOG_TAG = 0;

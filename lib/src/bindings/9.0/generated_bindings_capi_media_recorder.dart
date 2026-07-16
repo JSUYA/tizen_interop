@@ -2650,7 +2650,7 @@ class Tizen90CapiMediaRecorder {
   /// - `recorder_attr_is_muted()`
   int recorder_attr_set_mute(
     recorder_h recorder,
-    imp2.bool enable,
+    bool enable,
   ) {
     return _recorder_attr_set_mute(
       recorder,
@@ -2659,10 +2659,10 @@ class Tizen90CapiMediaRecorder {
   }
 
   late final _recorder_attr_set_mutePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(recorder_h, imp2.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(recorder_h, ffi.Bool)>>(
           'recorder_attr_set_mute');
-  late final _recorder_attr_set_mute = _recorder_attr_set_mutePtr
-      .asFunction<int Function(recorder_h, imp2.bool)>();
+  late final _recorder_attr_set_mute =
+      _recorder_attr_set_mutePtr.asFunction<int Function(recorder_h, bool)>();
 
   /// Gets the mute state of a recorder.
   ///
@@ -2686,7 +2686,7 @@ class Tizen90CapiMediaRecorder {
   ///
   /// **See also:**
   /// - `recorder_attr_set_mute()`
-  int recorder_attr_is_muted(
+  bool recorder_attr_is_muted(
     recorder_h recorder,
   ) {
     return _recorder_attr_is_muted(
@@ -2695,10 +2695,10 @@ class Tizen90CapiMediaRecorder {
   }
 
   late final _recorder_attr_is_mutedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(recorder_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(recorder_h)>>(
           'recorder_attr_is_muted');
   late final _recorder_attr_is_muted =
-      _recorder_attr_is_mutedPtr.asFunction<int Function(recorder_h)>();
+      _recorder_attr_is_mutedPtr.asFunction<bool Function(recorder_h)>();
 
   /// Sets the recording motion rate.
   ///
@@ -3223,11 +3223,11 @@ typedef recorder_h = ffi.Pointer<recorder_s>;
 typedef recorder_supported_file_format_cb = ffi
     .Pointer<ffi.NativeFunction<recorder_supported_file_format_cbFunction>>;
 /// @nodoc
-typedef recorder_supported_file_format_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef recorder_supported_file_format_cbFunction = ffi.Bool Function(
+    ffi.Int32 format, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_supported_file_format_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartrecorder_supported_file_format_cbFunction = bool Function(
+    int format, ffi.Pointer<ffi.Void> user_data);
 
 /// Called iteratively to notify about the supported audio encoders.
 ///
@@ -3250,11 +3250,11 @@ typedef Dartrecorder_supported_file_format_cbFunction = int Function(
 typedef recorder_supported_audio_encoder_cb = ffi
     .Pointer<ffi.NativeFunction<recorder_supported_audio_encoder_cbFunction>>;
 /// @nodoc
-typedef recorder_supported_audio_encoder_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef recorder_supported_audio_encoder_cbFunction = ffi.Bool Function(
+    ffi.Int32 codec, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_supported_audio_encoder_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartrecorder_supported_audio_encoder_cbFunction = bool Function(
+    int codec, ffi.Pointer<ffi.Void> user_data);
 
 /// Called once for each supported video resolution.
 ///
@@ -3278,11 +3278,11 @@ typedef Dartrecorder_supported_audio_encoder_cbFunction = int Function(
 typedef recorder_supported_video_resolution_cb = ffi.Pointer<
     ffi.NativeFunction<recorder_supported_video_resolution_cbFunction>>;
 /// @nodoc
-typedef recorder_supported_video_resolution_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef recorder_supported_video_resolution_cbFunction = ffi.Bool Function(
+    ffi.Int width, ffi.Int height, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_supported_video_resolution_cbFunction = int Function(
-    int, int, ffi.Pointer<ffi.Void>);
+typedef Dartrecorder_supported_video_resolution_cbFunction = bool Function(
+    int width, int height, ffi.Pointer<ffi.Void> user_data);
 
 /// Called iteratively to notify about the supported video encoders.
 ///
@@ -3305,11 +3305,11 @@ typedef Dartrecorder_supported_video_resolution_cbFunction = int Function(
 typedef recorder_supported_video_encoder_cb = ffi
     .Pointer<ffi.NativeFunction<recorder_supported_video_encoder_cbFunction>>;
 /// @nodoc
-typedef recorder_supported_video_encoder_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef recorder_supported_video_encoder_cbFunction = ffi.Bool Function(
+    ffi.Int32 codec, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_supported_video_encoder_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartrecorder_supported_video_encoder_cbFunction = bool Function(
+    int codec, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the record state is changed.
 ///
@@ -3340,11 +3340,11 @@ typedef recorder_state_changed_cb
 typedef recorder_state_changed_cbFunction = ffi.Void Function(
     ffi.Int32 previous,
     ffi.Int32 current,
-    imp2.bool by_policy,
+    ffi.Bool by_policy,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_state_changed_cbFunction = void Function(int previous,
-    int current, imp2.bool by_policy, ffi.Pointer<ffi.Void> user_data);
+typedef Dartrecorder_state_changed_cbFunction = void Function(
+    int previous, int current, bool by_policy, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the recorder is interrupted by a policy.
 ///
@@ -3512,18 +3512,25 @@ typedef Dartrecorder_muxed_stream_cbFunction = void Function(
 typedef recorder_video_encode_decision_cb = ffi
     .Pointer<ffi.NativeFunction<recorder_video_encode_decision_cbFunction>>;
 /// @nodoc
-typedef recorder_video_encode_decision_cbFunction = ffi.Int Function(
-    ffi.Pointer<recorder_video_data_s>, ffi.Pointer<ffi.Void>);
+typedef recorder_video_encode_decision_cbFunction = ffi.Bool Function(
+    ffi.Pointer<recorder_video_data_s> frame, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartrecorder_video_encode_decision_cbFunction = int Function(
-    ffi.Pointer<recorder_video_data_s>, ffi.Pointer<ffi.Void>);
+typedef Dartrecorder_video_encode_decision_cbFunction = bool Function(
+    ffi.Pointer<recorder_video_data_s> frame, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type to contain video stream data.
 ///
 /// **Since Tizen:**
 /// - 6.0
 /// @nodoc
-typedef recorder_video_data_s = imp1.camera_preview_data_s;
+typedef recorder_video_data_s = camera_preview_data_s;
+
+/// The structure type to preview stream data.
+///
+/// **Since Tizen:**
+/// - 2.3
+/// @nodoc
+typedef camera_preview_data_s = imp1.camera_preview_data_s;
 
 /// Called to indicate the recording status.
 ///

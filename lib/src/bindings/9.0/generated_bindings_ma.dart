@@ -1081,7 +1081,7 @@ class Tizen90Ma {
   /// - `MA_ERROR_INVALID_PARAMETER`: Invalid parameter
   int ma_assistant_info_get_enabled_status(
     ma_assistant_info_h handle,
-    ffi.Pointer<bool> status,
+    ffi.Pointer<ffi.Bool> status,
   ) {
     return _ma_assistant_info_get_enabled_status(
       handle,
@@ -1092,10 +1092,10 @@ class Tizen90Ma {
   late final _ma_assistant_info_get_enabled_statusPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ma_assistant_info_h,
-              ffi.Pointer<bool>)>>('ma_assistant_info_get_enabled_status');
+              ffi.Pointer<ffi.Bool>)>>('ma_assistant_info_get_enabled_status');
   late final _ma_assistant_info_get_enabled_status =
-      _ma_assistant_info_get_enabled_statusPtr
-          .asFunction<int Function(ma_assistant_info_h, ffi.Pointer<bool>)>();
+      _ma_assistant_info_get_enabled_statusPtr.asFunction<
+          int Function(ma_assistant_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the recording audio source type.
   ///
@@ -1329,7 +1329,7 @@ class Tizen90Ma {
   /// **Preconditions:**
   /// - The state should be `MA_STATE_READY`.
   int ma_send_preprocessing_result(
-    ffi.Pointer<bool> is_success,
+    bool is_success,
   ) {
     return _ma_send_preprocessing_result(
       is_success,
@@ -1337,10 +1337,10 @@ class Tizen90Ma {
   }
 
   late final _ma_send_preprocessing_resultPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'ma_send_preprocessing_result');
-  late final _ma_send_preprocessing_result = _ma_send_preprocessing_resultPtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+  late final _ma_send_preprocessing_result =
+      _ma_send_preprocessing_resultPtr.asFunction<int Function(bool)>();
 
   /// Sets whether multi-assistant service should send wake word audio data.
   ///
@@ -1364,7 +1364,7 @@ class Tizen90Ma {
   /// **Preconditions:**
   /// - The state should be `MA_STATE_READY`.
   int ma_set_wake_word_audio_require_flag(
-    ffi.Pointer<bool> require,
+    bool require,
   ) {
     return _ma_set_wake_word_audio_require_flag(
       require,
@@ -1372,11 +1372,10 @@ class Tizen90Ma {
   }
 
   late final _ma_set_wake_word_audio_require_flagPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'ma_set_wake_word_audio_require_flag');
   late final _ma_set_wake_word_audio_require_flag =
-      _ma_set_wake_word_audio_require_flagPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+      _ma_set_wake_word_audio_require_flagPtr.asFunction<int Function(bool)>();
 
   /// Sets the section changed callback for audio streaming data.
   ///
@@ -2161,29 +2160,6 @@ typedef Dartma_assistant_info_list_cbFunction = int Function(
 /// - 5.5
 /// @nodoc
 typedef ma_assistant_info_h = ffi.Pointer<ffi.Void>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Enumerations for allowing preprocessing by other voice assistants.
 ///

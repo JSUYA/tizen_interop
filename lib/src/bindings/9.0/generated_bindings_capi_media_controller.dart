@@ -3849,7 +3849,7 @@ class Tizen90CapiMediaController {
   int mc_client_get_server_subtitles_enabled(
     mc_client_h client,
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _mc_client_get_server_subtitles_enabled(
       client,
@@ -3859,13 +3859,14 @@ class Tizen90CapiMediaController {
   }
 
   late final _mc_client_get_server_subtitles_enabledPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('mc_client_get_server_subtitles_enabled');
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>>(
+      'mc_client_get_server_subtitles_enabled');
   late final _mc_client_get_server_subtitles_enabled =
       _mc_client_get_server_subtitles_enabledPtr.asFunction<
           int Function(
-              mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+              mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the latest 360 mode display status of the media controller server.
   ///
@@ -3905,7 +3906,7 @@ class Tizen90CapiMediaController {
   int mc_client_get_server_360_mode_enabled(
     mc_client_h client,
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _mc_client_get_server_360_mode_enabled(
       client,
@@ -3917,11 +3918,11 @@ class Tizen90CapiMediaController {
   late final _mc_client_get_server_360_mode_enabledPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('mc_client_get_server_360_mode_enabled');
+              ffi.Pointer<ffi.Bool>)>>('mc_client_get_server_360_mode_enabled');
   late final _mc_client_get_server_360_mode_enabled =
       _mc_client_get_server_360_mode_enabledPtr.asFunction<
           int Function(
-              mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+              mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the latest display mode of the media controller server.
   ///
@@ -4914,7 +4915,7 @@ class Tizen90CapiMediaController {
   int mc_client_send_subtitles_cmd(
     mc_client_h client,
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enable,
+    bool enable,
     ffi.Pointer<ffi.Pointer<ffi.Char>> request_id,
   ) {
     return _mc_client_send_subtitles_cmd(
@@ -4927,12 +4928,12 @@ class Tizen90CapiMediaController {
 
   late final _mc_client_send_subtitles_cmdPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>,
-                  ffi.Pointer<bool>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+              ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>, ffi.Bool,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
       'mc_client_send_subtitles_cmd');
   late final _mc_client_send_subtitles_cmd =
       _mc_client_send_subtitles_cmdPtr.asFunction<
-          int Function(mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>,
+          int Function(mc_client_h, ffi.Pointer<ffi.Char>, bool,
               ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Sends the 360 mode command to server.
@@ -4981,7 +4982,7 @@ class Tizen90CapiMediaController {
   int mc_client_send_360_mode_cmd(
     mc_client_h client,
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enable,
+    bool enable,
     ffi.Pointer<ffi.Pointer<ffi.Char>> request_id,
   ) {
     return _mc_client_send_360_mode_cmd(
@@ -4994,12 +4995,12 @@ class Tizen90CapiMediaController {
 
   late final _mc_client_send_360_mode_cmdPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>,
-                  ffi.Pointer<bool>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+              ffi.Int Function(mc_client_h, ffi.Pointer<ffi.Char>, ffi.Bool,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
       'mc_client_send_360_mode_cmd');
   late final _mc_client_send_360_mode_cmd =
       _mc_client_send_360_mode_cmdPtr.asFunction<
-          int Function(mc_client_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>,
+          int Function(mc_client_h, ffi.Pointer<ffi.Char>, bool,
               ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Sends the display mode command to server.
@@ -5786,7 +5787,7 @@ class Tizen90CapiMediaController {
   /// - `mc_client_set_subtitles_updated_cb()`
   int mc_server_update_subtitles_enabled(
     mc_server_h server,
-    ffi.Pointer<bool> enabled,
+    bool enabled,
   ) {
     return _mc_server_update_subtitles_enabled(
       server,
@@ -5794,12 +5795,12 @@ class Tizen90CapiMediaController {
     );
   }
 
-  late final _mc_server_update_subtitles_enabledPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(mc_server_h, ffi.Pointer<bool>)>>(
-      'mc_server_update_subtitles_enabled');
+  late final _mc_server_update_subtitles_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(mc_server_h, ffi.Bool)>>(
+          'mc_server_update_subtitles_enabled');
   late final _mc_server_update_subtitles_enabled =
       _mc_server_update_subtitles_enabledPtr
-          .asFunction<int Function(mc_server_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(mc_server_h, bool)>();
 
   /// Updates the modified 360 mode display status.
   ///
@@ -5840,7 +5841,7 @@ class Tizen90CapiMediaController {
   /// - `mc_client_set_360_mode_updated_cb()`
   int mc_server_update_360_mode_enabled(
     mc_server_h server,
-    ffi.Pointer<bool> enabled,
+    bool enabled,
   ) {
     return _mc_server_update_360_mode_enabled(
       server,
@@ -5848,12 +5849,12 @@ class Tizen90CapiMediaController {
     );
   }
 
-  late final _mc_server_update_360_mode_enabledPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(mc_server_h, ffi.Pointer<bool>)>>(
-      'mc_server_update_360_mode_enabled');
+  late final _mc_server_update_360_mode_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(mc_server_h, ffi.Bool)>>(
+          'mc_server_update_360_mode_enabled');
   late final _mc_server_update_360_mode_enabled =
       _mc_server_update_360_mode_enabledPtr
-          .asFunction<int Function(mc_server_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(mc_server_h, bool)>();
 
   /// Updates the modified display mode.
   ///
@@ -8769,11 +8770,15 @@ typedef mc_playlist_h = ffi.Pointer<ffi.Void>;
 typedef mc_playlist_item_cb
     = ffi.Pointer<ffi.NativeFunction<mc_playlist_item_cbFunction>>;
 /// @nodoc
-typedef mc_playlist_item_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, mc_metadata_h, ffi.Pointer<ffi.Void>);
+typedef mc_playlist_item_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> index,
+    mc_metadata_h metadata,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_playlist_item_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, mc_metadata_h, ffi.Pointer<ffi.Void>);
+typedef Dartmc_playlist_item_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> index,
+    mc_metadata_h metadata,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the media controller metadata handle.
 ///
@@ -8811,11 +8816,11 @@ typedef mc_metadata_h = ffi.Pointer<ffi.Void>;
 typedef mc_playlist_cb
     = ffi.Pointer<ffi.NativeFunction<mc_playlist_cbFunction>>;
 /// @nodoc
-typedef mc_playlist_cbFunction = ffi.Int Function(
-    mc_playlist_h, ffi.Pointer<ffi.Void>);
+typedef mc_playlist_cbFunction = ffi.Bool Function(
+    mc_playlist_h playlist, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_playlist_cbFunction = int Function(
-    mc_playlist_h, ffi.Pointer<ffi.Void>);
+typedef Dartmc_playlist_cbFunction = bool Function(
+    mc_playlist_h playlist, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the media controller ability handle.
 ///
@@ -8862,11 +8867,19 @@ typedef mc_search_h = ffi.Pointer<ffi.Void>;
 typedef mc_search_condition_cb
     = ffi.Pointer<ffi.NativeFunction<mc_search_condition_cbFunction>>;
 /// @nodoc
-typedef mc_search_condition_cbFunction = ffi.Int Function(ffi.Int32, ffi.Int32,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<imp1.bundle>, ffi.Pointer<ffi.Void>);
+typedef mc_search_condition_cbFunction = ffi.Bool Function(
+    ffi.Int32 content_type,
+    ffi.Int32 category,
+    ffi.Pointer<ffi.Char> search_keyword,
+    ffi.Pointer<imp1.bundle> data,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_search_condition_cbFunction = int Function(int, int,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<imp1.bundle>, ffi.Pointer<ffi.Void>);
+typedef Dartmc_search_condition_cbFunction = bool Function(
+    int content_type,
+    int category,
+    ffi.Pointer<ffi.Char> search_keyword,
+    ffi.Pointer<imp1.bundle> data,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the media client handle.
 ///
@@ -9273,36 +9286,13 @@ typedef mc_bool_attribute_updated_cb
 /// @nodoc
 typedef mc_bool_attribute_updated_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enabled,
+    ffi.Bool enabled,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartmc_bool_attribute_updated_cbFunction = void Function(
     ffi.Pointer<ffi.Char> server_name,
-    ffi.Pointer<bool> enabled,
+    bool enabled,
     ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when a media controller server's display mode is updated.
 ///
@@ -9437,11 +9427,11 @@ typedef Dartmc_client_custom_event_received_cbFunction = void Function(
 typedef mc_subscribed_server_cb
     = ffi.Pointer<ffi.NativeFunction<mc_subscribed_server_cbFunction>>;
 /// @nodoc
-typedef mc_subscribed_server_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mc_subscribed_server_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> server_name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_subscribed_server_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmc_subscribed_server_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> server_name, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when requesting the list of created servers.
 ///
@@ -9469,11 +9459,11 @@ typedef Dartmc_subscribed_server_cbFunction = int Function(
 typedef mc_activated_server_cb
     = ffi.Pointer<ffi.NativeFunction<mc_activated_server_cbFunction>>;
 /// @nodoc
-typedef mc_activated_server_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mc_activated_server_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> server_name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_activated_server_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmc_activated_server_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> server_name, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the media server handle.
 ///
@@ -9760,13 +9750,13 @@ typedef mc_server_enable_cmd_received_cb
 typedef mc_server_enable_cmd_received_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> client_name,
     ffi.Pointer<ffi.Char> request_id,
-    ffi.Pointer<bool> enabled,
+    ffi.Bool enabled,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartmc_server_enable_cmd_received_cbFunction = void Function(
     ffi.Pointer<ffi.Char> client_name,
     ffi.Pointer<ffi.Char> request_id,
-    ffi.Pointer<bool> enabled,
+    bool enabled,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the server receives the display mode command from the client.
@@ -9873,11 +9863,11 @@ typedef Dartmc_server_display_rotation_cmd_received_cbFunction = void Function(
 typedef mc_activated_client_cb
     = ffi.Pointer<ffi.NativeFunction<mc_activated_client_cbFunction>>;
 /// @nodoc
-typedef mc_activated_client_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mc_activated_client_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> client_name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmc_activated_client_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmc_activated_client_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> client_name, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the result of the event from the client is received.
 ///

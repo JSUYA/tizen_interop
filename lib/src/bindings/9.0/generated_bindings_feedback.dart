@@ -338,7 +338,7 @@ class Tizen90Feedback {
   int feedback_is_supported_pattern(
     int type,
     int pattern,
-    ffi.Pointer<bool> status,
+    ffi.Pointer<ffi.Bool> status,
   ) {
     return _feedback_is_supported_pattern(
       type,
@@ -350,9 +350,9 @@ class Tizen90Feedback {
   late final _feedback_is_supported_patternPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Int32, ffi.Int32,
-              ffi.Pointer<bool>)>>('feedback_is_supported_pattern');
+              ffi.Pointer<ffi.Bool>)>>('feedback_is_supported_pattern');
   late final _feedback_is_supported_pattern = _feedback_is_supported_patternPtr
-      .asFunction<int Function(int, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(int, int, ffi.Pointer<ffi.Bool>)>();
 }
 
 /// Enumeration for the Feedback API error codes.
@@ -543,26 +543,3 @@ abstract class feedback_type_e {
   static const int FEEDBACK_TYPE_VIBRATION = 2;
   static const int FEEDBACK_TYPE_END = 3;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

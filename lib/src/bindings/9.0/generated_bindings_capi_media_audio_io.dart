@@ -1776,15 +1776,11 @@ typedef audio_in_state_changed_cbFunction = ffi.Void Function(
     audio_in_h handle,
     ffi.Int32 previous,
     ffi.Int32 current,
-    imp1.bool by_policy,
+    ffi.Bool by_policy,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartaudio_in_state_changed_cbFunction = void Function(
-    audio_in_h handle,
-    int previous,
-    int current,
-    imp1.bool by_policy,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartaudio_in_state_changed_cbFunction = void Function(audio_in_h handle,
+    int previous, int current, bool by_policy, ffi.Pointer<ffi.Void> user_data);
 
 /// The audio output handle.
 ///
@@ -1872,12 +1868,12 @@ typedef audio_out_state_changed_cbFunction = ffi.Void Function(
     audio_out_h handle,
     ffi.Int32 previous,
     ffi.Int32 current,
-    imp1.bool by_policy,
+    ffi.Bool by_policy,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartaudio_out_state_changed_cbFunction = void Function(
     audio_out_h handle,
     int previous,
     int current,
-    imp1.bool by_policy,
+    bool by_policy,
     ffi.Pointer<ffi.Void> user_data);

@@ -3202,7 +3202,7 @@ class Tizen90CapiContentMediaContent {
   /// - `media_info_set_favorite()`
   int media_info_get_favorite(
     media_info_h media,
-    ffi.Pointer<bool> favorite,
+    ffi.Pointer<ffi.Bool> favorite,
   ) {
     return _media_info_get_favorite(
       media,
@@ -3211,11 +3211,11 @@ class Tizen90CapiContentMediaContent {
   }
 
   late final _media_info_get_favoritePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_info_h, ffi.Pointer<bool>)>>(
-      'media_info_get_favorite');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_info_h, ffi.Pointer<ffi.Bool>)>>('media_info_get_favorite');
   late final _media_info_get_favorite = _media_info_get_favoritePtr
-      .asFunction<int Function(media_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the title of content file.
   ///
@@ -3274,7 +3274,7 @@ class Tizen90CapiContentMediaContent {
   /// - `MEDIA_CONTENT_ERROR_INVALID_PARAMETER`: Invalid parameter
   int media_info_is_drm(
     media_info_h media,
-    ffi.Pointer<bool> is_drm,
+    ffi.Pointer<ffi.Bool> is_drm,
   ) {
     return _media_info_is_drm(
       media,
@@ -3283,11 +3283,11 @@ class Tizen90CapiContentMediaContent {
   }
 
   late final _media_info_is_drmPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_info_h, ffi.Pointer<bool>)>>(
-      'media_info_is_drm');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              media_info_h, ffi.Pointer<ffi.Bool>)>>('media_info_is_drm');
   late final _media_info_is_drm = _media_info_is_drmPtr
-      .asFunction<int Function(media_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0.
   ///
@@ -3308,7 +3308,7 @@ class Tizen90CapiContentMediaContent {
   /// - `MEDIA_CONTENT_ERROR_INVALID_PARAMETER`: Invalid parameter
   int media_info_is_360_content(
     media_info_h media,
-    ffi.Pointer<bool> is_360,
+    ffi.Pointer<ffi.Bool> is_360,
   ) {
     return _media_info_is_360_content(
       media,
@@ -3317,11 +3317,11 @@ class Tizen90CapiContentMediaContent {
   }
 
   late final _media_info_is_360_contentPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_info_h, ffi.Pointer<bool>)>>(
-      'media_info_is_360_content');
+      ffi.NativeFunction<
+          ffi.Int Function(media_info_h,
+              ffi.Pointer<ffi.Bool>)>>('media_info_is_360_content');
   late final _media_info_is_360_content = _media_info_is_360_contentPtr
-      .asFunction<int Function(media_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the media info from the media database.
   ///
@@ -3445,7 +3445,7 @@ class Tizen90CapiContentMediaContent {
   /// - `MEDIA_CONTENT_ERROR_INVALID_PARAMETER`: Invalid parameter
   int media_info_set_favorite(
     media_info_h media,
-    ffi.Pointer<bool> favorite,
+    bool favorite,
   ) {
     return _media_info_set_favorite(
       media,
@@ -3453,12 +3453,11 @@ class Tizen90CapiContentMediaContent {
     );
   }
 
-  late final _media_info_set_favoritePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(media_info_h, ffi.Pointer<bool>)>>(
-      'media_info_set_favorite');
+  late final _media_info_set_favoritePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(media_info_h, ffi.Bool)>>(
+          'media_info_set_favorite');
   late final _media_info_set_favorite = _media_info_set_favoritePtr
-      .asFunction<int Function(media_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(media_info_h, bool)>();
 
   /// **Deprecated:** Deprecated since 9.0.
   ///
@@ -8127,7 +8126,7 @@ class Tizen90CapiContentMediaContent {
   /// - `media_content_connect()`
   int media_content_scan_folder(
     ffi.Pointer<ffi.Char> path,
-    ffi.Pointer<bool> is_recursive,
+    bool is_recursive,
     media_scan_completed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -8143,13 +8142,13 @@ class Tizen90CapiContentMediaContent {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               media_scan_completed_cb,
               ffi.Pointer<ffi.Void>)>>('media_content_scan_folder');
   late final _media_content_scan_folder =
       _media_content_scan_folderPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>,
-              media_scan_completed_cb, ffi.Pointer<ffi.Void>)>();
+          int Function(ffi.Pointer<ffi.Char>, bool, media_scan_completed_cb,
+              ffi.Pointer<ffi.Void>)>();
 
   /// Requests to cancel the media folder scanning.
   ///
@@ -8620,11 +8619,11 @@ typedef filter_h = ffi.Pointer<filter_s>;
 typedef media_folder_cb
     = ffi.Pointer<ffi.NativeFunction<media_folder_cbFunction>>;
 /// @nodoc
-typedef media_folder_cbFunction = ffi.Int Function(
-    media_folder_h, ffi.Pointer<ffi.Void>);
+typedef media_folder_cbFunction = ffi.Bool Function(
+    media_folder_h folder, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_folder_cbFunction = int Function(
-    media_folder_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_folder_cbFunction = bool Function(
+    media_folder_h folder, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the Media folder handle.
 ///
@@ -8668,11 +8667,11 @@ typedef media_folder_h = ffi.Pointer<media_folder_s>;
 /// @nodoc
 typedef media_info_cb = ffi.Pointer<ffi.NativeFunction<media_info_cbFunction>>;
 /// @nodoc
-typedef media_info_cbFunction = ffi.Int Function(
-    media_info_h, ffi.Pointer<ffi.Void>);
+typedef media_info_cbFunction = ffi.Bool Function(
+    media_info_h media, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_info_cbFunction = int Function(
-    media_info_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_info_cbFunction = bool Function(
+    media_info_h media, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the Media info handle.
 ///
@@ -8759,11 +8758,11 @@ typedef Dartmedia_insert_completed_cbFunction = void Function(
 /// @nodoc
 typedef media_tag_cb = ffi.Pointer<ffi.NativeFunction<media_tag_cbFunction>>;
 /// @nodoc
-typedef media_tag_cbFunction = ffi.Int Function(
-    media_tag_h, ffi.Pointer<ffi.Void>);
+typedef media_tag_cbFunction = ffi.Bool Function(
+    media_tag_h tag, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_tag_cbFunction = int Function(
-    media_tag_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_tag_cbFunction = bool Function(
+    media_tag_h tag, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0.
 ///
@@ -8809,11 +8808,11 @@ typedef media_tag_h = ffi.Pointer<media_tag_s>;
 typedef media_bookmark_cb
     = ffi.Pointer<ffi.NativeFunction<media_bookmark_cbFunction>>;
 /// @nodoc
-typedef media_bookmark_cbFunction = ffi.Int Function(
-    media_bookmark_h, ffi.Pointer<ffi.Void>);
+typedef media_bookmark_cbFunction = ffi.Bool Function(
+    media_bookmark_h bookmark, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_bookmark_cbFunction = int Function(
-    media_bookmark_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_bookmark_cbFunction = bool Function(
+    media_bookmark_h bookmark, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0.
 ///
@@ -8858,11 +8857,11 @@ typedef media_bookmark_h = ffi.Pointer<media_bookmark_s>;
 /// @nodoc
 typedef media_face_cb = ffi.Pointer<ffi.NativeFunction<media_face_cbFunction>>;
 /// @nodoc
-typedef media_face_cbFunction = ffi.Int Function(
-    media_face_h, ffi.Pointer<ffi.Void>);
+typedef media_face_cbFunction = ffi.Bool Function(
+    media_face_h face, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_face_cbFunction = int Function(
-    media_face_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_face_cbFunction = bool Function(
+    media_face_h face, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 8.0.
 ///
@@ -8897,29 +8896,6 @@ typedef video_meta_h = ffi.Pointer<video_meta_s>;
 /// - CAPI_CONTENT_MEDIA_BOOK_META_MODULE
 /// @nodoc
 typedef book_meta_h = ffi.Pointer<book_meta_s>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 8.0.
 ///
@@ -8987,11 +8963,11 @@ typedef Dartmedia_face_detection_completed_cbFunction = void Function(
 typedef media_album_cb
     = ffi.Pointer<ffi.NativeFunction<media_album_cbFunction>>;
 /// @nodoc
-typedef media_album_cbFunction = ffi.Int Function(
-    media_album_h, ffi.Pointer<ffi.Void>);
+typedef media_album_cbFunction = ffi.Bool Function(
+    media_album_h album, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_album_cbFunction = int Function(
-    media_album_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_album_cbFunction = bool Function(
+    media_album_h album, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the Media album handle.
 ///
@@ -9033,11 +9009,11 @@ typedef media_album_h = ffi.Pointer<media_album_s>;
 typedef media_group_cb
     = ffi.Pointer<ffi.NativeFunction<media_group_cbFunction>>;
 /// @nodoc
-typedef media_group_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef media_group_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> group_name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_group_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_group_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> group_name, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0.
 ///
@@ -9072,11 +9048,11 @@ typedef Dartmedia_group_cbFunction = int Function(
 typedef media_playlist_cb
     = ffi.Pointer<ffi.NativeFunction<media_playlist_cbFunction>>;
 /// @nodoc
-typedef media_playlist_cbFunction = ffi.Int Function(
-    media_playlist_h, ffi.Pointer<ffi.Void>);
+typedef media_playlist_cbFunction = ffi.Bool Function(
+    media_playlist_h playlist, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmedia_playlist_cbFunction = int Function(
-    media_playlist_h, ffi.Pointer<ffi.Void>);
+typedef Dartmedia_playlist_cbFunction = bool Function(
+    media_playlist_h playlist, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0.
 ///
@@ -9124,11 +9100,13 @@ typedef media_playlist_h = ffi.Pointer<media_playlist_s>;
 typedef playlist_member_cb
     = ffi.Pointer<ffi.NativeFunction<playlist_member_cbFunction>>;
 /// @nodoc
-typedef playlist_member_cbFunction = ffi.Int Function(
-    ffi.Int, media_info_h, ffi.Pointer<ffi.Void>);
+typedef playlist_member_cbFunction = ffi.Bool Function(
+    ffi.Int playlist_member_id,
+    media_info_h media,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartplaylist_member_cbFunction = int Function(
-    int, media_info_h, ffi.Pointer<ffi.Void>);
+typedef Dartplaylist_member_cbFunction = bool Function(int playlist_member_id,
+    media_info_h media, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the media scanning is finished.
 ///

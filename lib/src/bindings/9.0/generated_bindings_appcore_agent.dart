@@ -235,9 +235,11 @@ final class service_app_lifecycle_callback_s extends ffi.Struct {
 typedef service_app_create_cb
     = ffi.Pointer<ffi.NativeFunction<service_app_create_cbFunction>>;
 /// @nodoc
-typedef service_app_create_cbFunction = ffi.Int Function(ffi.Pointer<ffi.Void>);
+typedef service_app_create_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartservice_app_create_cbFunction = int Function(ffi.Pointer<ffi.Void>);
+typedef Dartservice_app_create_cbFunction = bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called once after the main loop of the agent application exits.
 ///

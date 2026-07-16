@@ -3933,7 +3933,7 @@ class Tizen90DataControl {
   /// - `DATA_CONTROL_ERROR_NONE`: Success
   /// - `DATA_CONTROL_ERROR_INVALID_PARAMETER`: Invalid parameter
   /// - `DATA_CONTROL_ERROR_OUT_OF_MEMORY`: Out of memory
-  int data_control_provider_match_provider_id(
+  bool data_control_provider_match_provider_id(
     data_control_h provider,
     ffi.Pointer<ffi.Char> provider_id,
   ) {
@@ -3945,11 +3945,11 @@ class Tizen90DataControl {
 
   late final _data_control_provider_match_provider_idPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(data_control_h, ffi.Pointer<ffi.Char>)>>(
+              ffi.Bool Function(data_control_h, ffi.Pointer<ffi.Char>)>>(
       'data_control_provider_match_provider_id');
   late final _data_control_provider_match_provider_id =
       _data_control_provider_match_provider_idPtr
-          .asFunction<int Function(data_control_h, ffi.Pointer<ffi.Char>)>();
+          .asFunction<bool Function(data_control_h, ffi.Pointer<ffi.Char>)>();
 
   /// Checks whether the given data ID matches the provider handle's data ID.
   ///
@@ -3970,7 +3970,7 @@ class Tizen90DataControl {
   /// - `DATA_CONTROL_ERROR_NONE`: Success
   /// - `DATA_CONTROL_ERROR_INVALID_PARAMETER`: Invalid parameter
   /// - `DATA_CONTROL_ERROR_OUT_OF_MEMORY`: Out of memory
-  int data_control_provider_match_data_id(
+  bool data_control_provider_match_data_id(
     data_control_h provider,
     ffi.Pointer<ffi.Char> data_id,
   ) {
@@ -3982,11 +3982,11 @@ class Tizen90DataControl {
 
   late final _data_control_provider_match_data_idPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(data_control_h,
+          ffi.Bool Function(data_control_h,
               ffi.Pointer<ffi.Char>)>>('data_control_provider_match_data_id');
   late final _data_control_provider_match_data_id =
       _data_control_provider_match_data_idPtr
-          .asFunction<int Function(data_control_h, ffi.Pointer<ffi.Char>)>();
+          .asFunction<bool Function(data_control_h, ffi.Pointer<ffi.Char>)>();
 
   /// Sends a data change notification to consumer applications which have successfully added a data change callback.
   ///
@@ -4611,7 +4611,7 @@ typedef data_control_sql_select_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
     result_set_cursor enumerator,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -4619,7 +4619,7 @@ typedef Dartdata_control_sql_select_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
     result_set_cursor enumerator,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4632,29 +4632,6 @@ typedef data_control_h = ffi.Pointer<data_control_s>;
 
 /// @nodoc
 final class data_control_s extends ffi.Opaque {}
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when a response is received for an insert operation from an application using the SQL-friendly interface based data control.
 ///
@@ -4676,7 +4653,7 @@ typedef data_control_sql_insert_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
     ffi.LongLong inserted_row_id,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -4684,7 +4661,7 @@ typedef Dartdata_control_sql_insert_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
     int inserted_row_id,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4706,14 +4683,14 @@ typedef data_control_sql_update_response_cb = ffi
 typedef data_control_sql_update_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartdata_control_sql_update_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4735,14 +4712,14 @@ typedef data_control_sql_delete_response_cb = ffi
 typedef data_control_sql_delete_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartdata_control_sql_delete_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4770,7 +4747,7 @@ typedef data_control_bulk_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
     data_control_bulk_result_data_h bulk_results,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -4778,7 +4755,7 @@ typedef Dartdata_control_bulk_cbFunction = void Function(
     int request_id,
     data_control_h provider,
     data_control_bulk_result_data_h bulk_results,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4841,7 +4818,7 @@ typedef data_control_map_get_response_cbFunction = ffi.Void Function(
     data_control_h provider,
     ffi.Pointer<ffi.Pointer<ffi.Char>> result_value_list,
     ffi.Int result_value_count,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -4850,7 +4827,7 @@ typedef Dartdata_control_map_get_response_cbFunction = void Function(
     data_control_h provider,
     ffi.Pointer<ffi.Pointer<ffi.Char>> result_value_list,
     int result_value_count,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4872,14 +4849,14 @@ typedef data_control_map_set_response_cb
 typedef data_control_map_set_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartdata_control_map_set_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4901,14 +4878,14 @@ typedef data_control_map_add_response_cb
 typedef data_control_map_add_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartdata_control_map_add_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -4930,14 +4907,14 @@ typedef data_control_map_remove_response_cb = ffi
 typedef data_control_map_remove_response_cbFunction = ffi.Void Function(
     ffi.Int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    ffi.Bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartdata_control_map_remove_response_cbFunction = void Function(
     int request_id,
     data_control_h provider,
-    ffi.Pointer<bool> provider_result,
+    bool provider_result,
     ffi.Pointer<ffi.Char> error,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -5277,11 +5254,13 @@ typedef data_control_provider_data_change_consumer_filter_cb = ffi.Pointer<
     ffi.NativeFunction<
         data_control_provider_data_change_consumer_filter_cbFunction>>;
 /// @nodoc
-typedef data_control_provider_data_change_consumer_filter_cbFunction = ffi.Int
-    Function(data_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef data_control_provider_data_change_consumer_filter_cbFunction
+    = ffi.Bool Function(data_control_h provider,
+        ffi.Pointer<ffi.Char> consumer_appid, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartdata_control_provider_data_change_consumer_filter_cbFunction = int
-    Function(data_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartdata_control_provider_data_change_consumer_filter_cbFunction
+    = bool Function(data_control_h provider,
+        ffi.Pointer<ffi.Char> consumer_appid, ffi.Pointer<ffi.Void> user_data);
 
 /// Called for each application which successfully added a data change callback.
 ///
@@ -5305,11 +5284,13 @@ typedef Dartdata_control_provider_data_change_consumer_filter_cbFunction = int
 typedef data_control_provider_data_change_consumer_cb = ffi.Pointer<
     ffi.NativeFunction<data_control_provider_data_change_consumer_cbFunction>>;
 /// @nodoc
-typedef data_control_provider_data_change_consumer_cbFunction = ffi.Int
-    Function(data_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef data_control_provider_data_change_consumer_cbFunction
+    = ffi.Bool Function(data_control_h provider,
+        ffi.Pointer<ffi.Char> consumer_appid, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartdata_control_provider_data_change_consumer_cbFunction = int
-    Function(data_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartdata_control_provider_data_change_consumer_cbFunction
+    = bool Function(data_control_h provider,
+        ffi.Pointer<ffi.Char> consumer_appid, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the bulk data request is received from an consumer application.
 ///

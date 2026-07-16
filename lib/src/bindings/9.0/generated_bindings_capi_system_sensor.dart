@@ -67,7 +67,7 @@ class Tizen90CapiSystemSensor {
   /// ```
   int sensor_is_supported(
     int type,
-    ffi.Pointer<bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _sensor_is_supported(
       type,
@@ -76,10 +76,11 @@ class Tizen90CapiSystemSensor {
   }
 
   late final _sensor_is_supportedPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'sensor_is_supported');
   late final _sensor_is_supported = _sensor_is_supportedPtr
-      .asFunction<int Function(int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether a sensor corresponding to a given URI is supported in the current device.
   ///
@@ -119,7 +120,7 @@ class Tizen90CapiSystemSensor {
   /// ```
   int sensor_is_supported_by_uri(
     ffi.Pointer<ffi.Char> uri,
-    ffi.Pointer<bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _sensor_is_supported_by_uri(
       uri,
@@ -130,9 +131,9 @@ class Tizen90CapiSystemSensor {
   late final _sensor_is_supported_by_uriPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('sensor_is_supported_by_uri');
+              ffi.Pointer<ffi.Bool>)>>('sensor_is_supported_by_uri');
   late final _sensor_is_supported_by_uri = _sensor_is_supported_by_uriPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether a given sensor is a wake-up sensor or not.
   ///
@@ -163,7 +164,7 @@ class Tizen90CapiSystemSensor {
   /// ```
   int sensor_is_wake_up(
     sensor_h sensor,
-    ffi.Pointer<bool> wakeup,
+    ffi.Pointer<ffi.Bool> wakeup,
   ) {
     return _sensor_is_wake_up(
       sensor,
@@ -172,10 +173,11 @@ class Tizen90CapiSystemSensor {
   }
 
   late final _sensor_is_wake_upPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(sensor_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(sensor_h, ffi.Pointer<ffi.Bool>)>>(
       'sensor_is_wake_up');
   late final _sensor_is_wake_up = _sensor_is_wake_upPtr
-      .asFunction<int Function(sensor_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(sensor_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the handle for the default sensor of a given type.
   ///
@@ -2506,7 +2508,7 @@ class Tizen90CapiSystemSensor {
   /// ```
   int sensor_recorder_is_supported(
     int type,
-    ffi.Pointer<bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _sensor_recorder_is_supported(
       type,
@@ -2515,10 +2517,11 @@ class Tizen90CapiSystemSensor {
   }
 
   late final _sensor_recorder_is_supportedPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'sensor_recorder_is_supported');
   late final _sensor_recorder_is_supported = _sensor_recorder_is_supportedPtr
-      .asFunction<int Function(int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Start to record for a given sensor type with specified option.
   ///
@@ -3851,29 +3854,6 @@ abstract class sensor_type_e {
   static const int SENSOR_CUSTOM = 10000;
 }
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// Sensor handle.
 ///
 /// The handle for controlling a specific sensor can be retrieved using sensor_get_default_sensor(). The function returns the handle of the default sensor of a given type, and usually, a device has one sensor for one type. However, if the device supports multiple sensors of the same type, sensor_get_sensor_list() function can be used to get the list of all the sensors of the type.
@@ -4503,11 +4483,19 @@ typedef sensor_recorder_query_h = ffi.Pointer<ffi.Void>;
 typedef sensor_recorder_data_cb
     = ffi.Pointer<ffi.NativeFunction<sensor_recorder_data_cbFunction>>;
 /// @nodoc
-typedef sensor_recorder_data_cbFunction = ffi.Int Function(ffi.Int32,
-    sensor_recorder_data_h, ffi.Int, ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef sensor_recorder_data_cbFunction = ffi.Bool Function(
+    ffi.Int32 type,
+    sensor_recorder_data_h data,
+    ffi.Int remains,
+    ffi.Int32 error,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartsensor_recorder_data_cbFunction = int Function(
-    int, sensor_recorder_data_h, int, int, ffi.Pointer<ffi.Void>);
+typedef Dartsensor_recorder_data_cbFunction = bool Function(
+    int type,
+    sensor_recorder_data_h data,
+    int remains,
+    int error,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Data handle to contain retrieved sensor records.
 ///

@@ -329,9 +329,11 @@ final class ui_app_lifecycle_callback_s extends ffi.Struct {
 /// @nodoc
 typedef app_create_cb = ffi.Pointer<ffi.NativeFunction<app_create_cbFunction>>;
 /// @nodoc
-typedef app_create_cbFunction = ffi.Int Function(ffi.Pointer<ffi.Void>);
+typedef app_create_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_create_cbFunction = int Function(ffi.Pointer<ffi.Void>);
+typedef Dartapp_create_cbFunction = bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the application's main loop exits.
 ///

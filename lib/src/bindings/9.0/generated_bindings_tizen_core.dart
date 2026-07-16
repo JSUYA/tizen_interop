@@ -1529,14 +1529,14 @@ class Tizen90TizenCore {
   /// **See also:**
   /// - `tizen_core_init()`
   /// - `tizen_core_shutdown()`
-  int tizen_core_ready() {
+  bool tizen_core_ready() {
     return _tizen_core_ready();
   }
 
   late final _tizen_core_readyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('tizen_core_ready');
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('tizen_core_ready');
   late final _tizen_core_ready =
-      _tizen_core_readyPtr.asFunction<int Function()>();
+      _tizen_core_readyPtr.asFunction<bool Function()>();
 
   /// Creates the tizen core task handle.
   ///
@@ -1581,7 +1581,7 @@ class Tizen90TizenCore {
   /// ```
   int tizen_core_task_create(
     ffi.Pointer<ffi.Char> name,
-    ffi.Pointer<bool> use_thread,
+    bool use_thread,
     ffi.Pointer<tizen_core_task_h> task,
   ) {
     return _tizen_core_task_create(
@@ -1593,11 +1593,11 @@ class Tizen90TizenCore {
 
   late final _tizen_core_task_createPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>,
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Bool,
               ffi.Pointer<tizen_core_task_h>)>>('tizen_core_task_create');
   late final _tizen_core_task_create = _tizen_core_task_createPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>,
-          ffi.Pointer<tizen_core_task_h>)>();
+      int Function(
+          ffi.Pointer<ffi.Char>, bool, ffi.Pointer<tizen_core_task_h>)>();
 
   /// Destroys the tizen core task handle.
   ///
@@ -1749,7 +1749,7 @@ class Tizen90TizenCore {
   /// ```
   int tizen_core_task_is_running(
     tizen_core_task_h task,
-    ffi.Pointer<bool> running,
+    ffi.Pointer<ffi.Bool> running,
   ) {
     return _tizen_core_task_is_running(
       task,
@@ -1760,9 +1760,9 @@ class Tizen90TizenCore {
   late final _tizen_core_task_is_runningPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(tizen_core_task_h,
-              ffi.Pointer<bool>)>>('tizen_core_task_is_running');
+              ffi.Pointer<ffi.Bool>)>>('tizen_core_task_is_running');
   late final _tizen_core_task_is_running = _tizen_core_task_is_runningPtr
-      .asFunction<int Function(tizen_core_task_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(tizen_core_task_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Exits the main loop of the tizen core task.
   ///
@@ -3631,11 +3631,11 @@ typedef tizen_core_event_h = ffi.Pointer<ffi.Void>;
 typedef tizen_core_event_handler_cb
     = ffi.Pointer<ffi.NativeFunction<tizen_core_event_handler_cbFunction>>;
 /// @nodoc
-typedef tizen_core_event_handler_cbFunction = ffi.Int Function(
-    tizen_core_event_object_h, ffi.Pointer<ffi.Void>);
+typedef tizen_core_event_handler_cbFunction = ffi.Bool Function(
+    tizen_core_event_object_h object, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttizen_core_event_handler_cbFunction = int Function(
-    tizen_core_event_object_h, ffi.Pointer<ffi.Void>);
+typedef Darttizen_core_event_handler_cbFunction = bool Function(
+    tizen_core_event_object_h object, ffi.Pointer<ffi.Void> user_data);
 
 /// The tizen core event object handle.
 ///
@@ -3748,29 +3748,6 @@ abstract class tizen_core_poll_event_e {
   static const int TIZEN_CORE_POLL_EVENT_NVAL = 32;
 }
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// The tizen core task handle.
 ///
 /// **Since Tizen:**
@@ -3803,9 +3780,11 @@ typedef tizen_core_h = ffi.Pointer<ffi.Void>;
 typedef tizen_core_task_cb
     = ffi.Pointer<ffi.NativeFunction<tizen_core_task_cbFunction>>;
 /// @nodoc
-typedef tizen_core_task_cbFunction = ffi.Int Function(ffi.Pointer<ffi.Void>);
+typedef tizen_core_task_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttizen_core_task_cbFunction = int Function(ffi.Pointer<ffi.Void>);
+typedef Darttizen_core_task_cbFunction = bool Function(
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The tizen core source handle.
 ///
@@ -3872,11 +3851,15 @@ typedef tizen_core_poll_fd_h = ffi.Pointer<ffi.Void>;
 typedef tizen_core_source_prepare_cb
     = ffi.Pointer<ffi.NativeFunction<tizen_core_source_prepare_cbFunction>>;
 /// @nodoc
-typedef tizen_core_source_prepare_cbFunction = ffi.Int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Void>);
+typedef tizen_core_source_prepare_cbFunction = ffi.Bool Function(
+    tizen_core_source_h source,
+    ffi.Pointer<ffi.Int> timeout,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttizen_core_source_prepare_cbFunction = int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Void>);
+typedef Darttizen_core_source_prepare_cbFunction = bool Function(
+    tizen_core_source_h source,
+    ffi.Pointer<ffi.Int> timeout,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when checks whether the source is ready to be processed or not.
 ///
@@ -3903,11 +3886,11 @@ typedef Darttizen_core_source_prepare_cbFunction = int Function(
 typedef tizen_core_source_check_cb
     = ffi.Pointer<ffi.NativeFunction<tizen_core_source_check_cbFunction>>;
 /// @nodoc
-typedef tizen_core_source_check_cbFunction = ffi.Int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Void>);
+typedef tizen_core_source_check_cbFunction = ffi.Bool Function(
+    tizen_core_source_h source, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttizen_core_source_check_cbFunction = int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Void>);
+typedef Darttizen_core_source_check_cbFunction = bool Function(
+    tizen_core_source_h source, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when dispatches events.
 ///
@@ -3932,11 +3915,11 @@ typedef Darttizen_core_source_check_cbFunction = int Function(
 typedef tizen_core_source_dispatch_cb
     = ffi.Pointer<ffi.NativeFunction<tizen_core_source_dispatch_cbFunction>>;
 /// @nodoc
-typedef tizen_core_source_dispatch_cbFunction = ffi.Int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Void>);
+typedef tizen_core_source_dispatch_cbFunction = ffi.Bool Function(
+    tizen_core_source_h source, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttizen_core_source_dispatch_cbFunction = int Function(
-    tizen_core_source_h, ffi.Pointer<ffi.Void>);
+typedef Darttizen_core_source_dispatch_cbFunction = bool Function(
+    tizen_core_source_h source, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the source is finalized.
 ///

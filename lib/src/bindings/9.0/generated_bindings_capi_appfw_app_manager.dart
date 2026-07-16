@@ -257,7 +257,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_context_is_terminated(
     app_context_h app_context,
-    ffi.Pointer<bool> terminated,
+    ffi.Pointer<ffi.Bool> terminated,
   ) {
     return _app_context_is_terminated(
       app_context,
@@ -266,11 +266,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_context_is_terminatedPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(app_context_h, ffi.Pointer<bool>)>>(
-      'app_context_is_terminated');
+      ffi.NativeFunction<
+          ffi.Int Function(app_context_h,
+              ffi.Pointer<ffi.Bool>)>>('app_context_is_terminated');
   late final _app_context_is_terminated = _app_context_is_terminatedPtr
-      .asFunction<int Function(app_context_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_context_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether two application contexts are equal.
   ///
@@ -291,7 +291,7 @@ class Tizen90CapiAppfwAppManager {
   int app_context_is_equal(
     app_context_h lhs,
     app_context_h rhs,
-    ffi.Pointer<bool> equal,
+    ffi.Pointer<ffi.Bool> equal,
   ) {
     return _app_context_is_equal(
       lhs,
@@ -303,9 +303,9 @@ class Tizen90CapiAppfwAppManager {
   late final _app_context_is_equalPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(app_context_h, app_context_h,
-              ffi.Pointer<bool>)>>('app_context_is_equal');
+              ffi.Pointer<ffi.Bool>)>>('app_context_is_equal');
   late final _app_context_is_equal = _app_context_is_equalPtr.asFunction<
-      int Function(app_context_h, app_context_h, ffi.Pointer<bool>)>();
+      int Function(app_context_h, app_context_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the application is running as a sub application of the application group.
   ///
@@ -324,7 +324,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_context_is_sub_app(
     app_context_h app_context,
-    ffi.Pointer<bool> is_sub_app,
+    ffi.Pointer<ffi.Bool> is_sub_app,
   ) {
     return _app_context_is_sub_app(
       app_context,
@@ -333,11 +333,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_context_is_sub_appPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(app_context_h, ffi.Pointer<bool>)>>(
-      'app_context_is_sub_app');
+      ffi.NativeFunction<
+          ffi.Int Function(
+              app_context_h, ffi.Pointer<ffi.Bool>)>>('app_context_is_sub_app');
   late final _app_context_is_sub_app = _app_context_is_sub_appPtr
-      .asFunction<int Function(app_context_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_context_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Clones the application context handle.
   ///
@@ -799,7 +799,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_info_is_nodisplay(
     app_info_h app_info,
-    ffi.Pointer<bool> nodisplay,
+    ffi.Pointer<ffi.Bool> nodisplay,
   ) {
     return _app_info_is_nodisplay(
       app_info,
@@ -808,10 +808,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_info_is_nodisplayPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<ffi.Bool>)>>(
       'app_info_is_nodisplay');
   late final _app_info_is_nodisplay = _app_info_is_nodisplayPtr
-      .asFunction<int Function(app_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether two application information are equal.
   ///
@@ -832,7 +833,7 @@ class Tizen90CapiAppfwAppManager {
   int app_info_is_equal(
     app_info_h lhs,
     app_info_h rhs,
-    ffi.Pointer<bool> equal,
+    ffi.Pointer<ffi.Bool> equal,
   ) {
     return _app_info_is_equal(
       lhs,
@@ -843,10 +844,10 @@ class Tizen90CapiAppfwAppManager {
 
   late final _app_info_is_equalPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(
-              app_info_h, app_info_h, ffi.Pointer<bool>)>>('app_info_is_equal');
-  late final _app_info_is_equal = _app_info_is_equalPtr
-      .asFunction<int Function(app_info_h, app_info_h, ffi.Pointer<bool>)>();
+          ffi.Int Function(app_info_h, app_info_h,
+              ffi.Pointer<ffi.Bool>)>>('app_info_is_equal');
+  late final _app_info_is_equal = _app_info_is_equalPtr.asFunction<
+      int Function(app_info_h, app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether application is enabled.
   ///
@@ -865,7 +866,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_info_is_enabled(
     app_info_h app_info,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _app_info_is_enabled(
       app_info,
@@ -874,10 +875,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_info_is_enabledPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<ffi.Bool>)>>(
       'app_info_is_enabled');
   late final _app_info_is_enabled = _app_info_is_enabledPtr
-      .asFunction<int Function(app_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether application is launched on booting time.
   ///
@@ -896,7 +898,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_info_is_onboot(
     app_info_h app_info,
-    ffi.Pointer<bool> onboot,
+    ffi.Pointer<ffi.Bool> onboot,
   ) {
     return _app_info_is_onboot(
       app_info,
@@ -905,10 +907,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_info_is_onbootPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<ffi.Bool>)>>(
       'app_info_is_onboot');
   late final _app_info_is_onboot = _app_info_is_onbootPtr
-      .asFunction<int Function(app_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether application is preloaded.
   ///
@@ -927,7 +930,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_info_is_preload(
     app_info_h app_info,
-    ffi.Pointer<bool> preload,
+    ffi.Pointer<ffi.Bool> preload,
   ) {
     return _app_info_is_preload(
       app_info,
@@ -936,10 +939,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_info_is_preloadPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<ffi.Bool>)>>(
       'app_info_is_preload');
   late final _app_info_is_preload = _app_info_is_preloadPtr
-      .asFunction<int Function(app_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the application supports ambient mode.
   ///
@@ -958,7 +962,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_info_is_support_ambient(
     app_info_h app_info,
-    ffi.Pointer<bool> ambient_supported,
+    ffi.Pointer<ffi.Bool> ambient_supported,
   ) {
     return _app_info_is_support_ambient(
       app_info,
@@ -967,10 +971,11 @@ class Tizen90CapiAppfwAppManager {
   }
 
   late final _app_info_is_support_ambientPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(app_info_h, ffi.Pointer<ffi.Bool>)>>(
       'app_info_is_support_ambient');
   late final _app_info_is_support_ambient = _app_info_is_support_ambientPtr
-      .asFunction<int Function(app_info_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(app_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Clones the application information handle.
   ///
@@ -1142,7 +1147,7 @@ class Tizen90CapiAppfwAppManager {
   int app_info_filter_add_bool(
     app_info_filter_h handle,
     ffi.Pointer<ffi.Char> property,
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _app_info_filter_add_bool(
       handle,
@@ -1154,11 +1159,10 @@ class Tizen90CapiAppfwAppManager {
   late final _app_info_filter_add_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(app_info_filter_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('app_info_filter_add_bool');
+              ffi.Bool)>>('app_info_filter_add_bool');
   late final _app_info_filter_add_bool =
       _app_info_filter_add_boolPtr.asFunction<
-          int Function(
-              app_info_filter_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+          int Function(app_info_filter_h, ffi.Pointer<ffi.Char>, bool)>();
 
   /// Adds a string filter property to the filter handle.
   ///
@@ -1693,7 +1697,7 @@ class Tizen90CapiAppfwAppManager {
   /// - `APP_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int app_manager_is_running(
     ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<bool> running,
+    ffi.Pointer<ffi.Bool> running,
   ) {
     return _app_manager_is_running(
       app_id,
@@ -1704,9 +1708,9 @@ class Tizen90CapiAppfwAppManager {
   late final _app_manager_is_runningPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('app_manager_is_running');
+              ffi.Pointer<ffi.Bool>)>>('app_manager_is_running');
   late final _app_manager_is_running = _app_manager_is_runningPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Resumes the application.
   ///
@@ -2322,29 +2326,6 @@ typedef __pid_t = ffi.Int;
 /// @nodoc
 typedef Dart__pid_t = int;
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// Enumeration for application component type.
 ///
 /// A component is an application considered as a part of a package. The application component type indicates what type of a component an application is in a package.
@@ -2411,11 +2392,15 @@ typedef app_info_h = ffi.Pointer<app_info_s>;
 typedef app_info_metadata_cb
     = ffi.Pointer<ffi.NativeFunction<app_info_metadata_cbFunction>>;
 /// @nodoc
-typedef app_info_metadata_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef app_info_metadata_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> metadata_key,
+    ffi.Pointer<ffi.Char> metadata_value,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_info_metadata_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartapp_info_metadata_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> metadata_key,
+    ffi.Pointer<ffi.Char> metadata_value,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called for each application category in app_info_foreach_category().
 ///
@@ -2442,11 +2427,11 @@ typedef Dartapp_info_metadata_cbFunction = int Function(
 typedef app_info_category_cb
     = ffi.Pointer<ffi.NativeFunction<app_info_category_cbFunction>>;
 /// @nodoc
-typedef app_info_category_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef app_info_category_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> category, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_info_category_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartapp_info_category_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> category, ffi.Pointer<ffi.Void> user_data);
 
 /// Application filter handle.
 ///
@@ -2476,11 +2461,11 @@ typedef app_info_filter_h = ffi.Pointer<app_info_filter_s>;
 typedef app_info_filter_cb
     = ffi.Pointer<ffi.NativeFunction<app_info_filter_cbFunction>>;
 /// @nodoc
-typedef app_info_filter_cbFunction = ffi.Int Function(
-    app_info_h, ffi.Pointer<ffi.Void>);
+typedef app_info_filter_cbFunction = ffi.Bool Function(
+    app_info_h app_info, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_info_filter_cbFunction = int Function(
-    app_info_h, ffi.Pointer<ffi.Void>);
+typedef Dartapp_info_filter_cbFunction = bool Function(
+    app_info_h app_info, ffi.Pointer<ffi.Void> user_data);
 
 /// Application metadata filter handle.
 ///
@@ -2516,19 +2501,19 @@ typedef app_info_metadata_filter_h = ffi.Pointer<app_info_metadata_filter_s>;
 typedef app_info_res_control_cb
     = ffi.Pointer<ffi.NativeFunction<app_info_res_control_cbFunction>>;
 /// @nodoc
-typedef app_info_res_control_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef app_info_res_control_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> res_type,
+    ffi.Pointer<ffi.Char> min_res_version,
+    ffi.Pointer<ffi.Char> max_res_version,
+    ffi.Pointer<ffi.Char> auto_close,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_info_res_control_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef Dartapp_info_res_control_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> res_type,
+    ffi.Pointer<ffi.Char> min_res_version,
+    ffi.Pointer<ffi.Char> max_res_version,
+    ffi.Pointer<ffi.Char> auto_close,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Enumerations for Application Manager Error.
 ///
@@ -2670,11 +2655,11 @@ typedef Dartapp_manager_app_context_event_cbFunction = void Function(
 typedef app_manager_app_context_cb
     = ffi.Pointer<ffi.NativeFunction<app_manager_app_context_cbFunction>>;
 /// @nodoc
-typedef app_manager_app_context_cbFunction = ffi.Int Function(
-    app_context_h, ffi.Pointer<ffi.Void>);
+typedef app_manager_app_context_cbFunction = ffi.Bool Function(
+    app_context_h app_context, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_manager_app_context_cbFunction = int Function(
-    app_context_h, ffi.Pointer<ffi.Void>);
+typedef Dartapp_manager_app_context_cbFunction = bool Function(
+    app_context_h app_context, ffi.Pointer<ffi.Void> user_data);
 
 /// Called to get the application information once for each installed application.
 ///
@@ -2697,11 +2682,11 @@ typedef Dartapp_manager_app_context_cbFunction = int Function(
 typedef app_manager_app_info_cb
     = ffi.Pointer<ffi.NativeFunction<app_manager_app_info_cbFunction>>;
 /// @nodoc
-typedef app_manager_app_info_cbFunction = ffi.Int Function(
-    app_info_h, ffi.Pointer<ffi.Void>);
+typedef app_manager_app_info_cbFunction = ffi.Bool Function(
+    app_info_h app_info, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_manager_app_info_cbFunction = int Function(
-    app_info_h, ffi.Pointer<ffi.Void>);
+typedef Dartapp_manager_app_info_cbFunction = bool Function(
+    app_info_h app_info, ffi.Pointer<ffi.Void> user_data);
 
 /// App manager event handle.
 ///

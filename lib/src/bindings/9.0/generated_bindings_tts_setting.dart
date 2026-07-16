@@ -313,7 +313,7 @@ class Tizen90TtsSetting {
   /// **See also:**
   /// - `tts_setting_set_auto_voice()`
   int tts_setting_get_auto_voice(
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _tts_setting_get_auto_voice(
       value,
@@ -321,10 +321,10 @@ class Tizen90TtsSetting {
   }
 
   late final _tts_setting_get_auto_voicePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'tts_setting_get_auto_voice');
   late final _tts_setting_get_auto_voice = _tts_setting_get_auto_voicePtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Set a automatic option of voice.
   ///
@@ -344,7 +344,7 @@ class Tizen90TtsSetting {
   /// **See also:**
   /// - `tts_setting_get_auto_voice()`
   int tts_setting_set_auto_voice(
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _tts_setting_set_auto_voice(
       value,
@@ -352,10 +352,10 @@ class Tizen90TtsSetting {
   }
 
   late final _tts_setting_set_auto_voicePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'tts_setting_set_auto_voice');
-  late final _tts_setting_set_auto_voice = _tts_setting_set_auto_voicePtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+  late final _tts_setting_set_auto_voice =
+      _tts_setting_set_auto_voicePtr.asFunction<int Function(bool)>();
 
   /// Gets the speed range.
   ///
@@ -984,17 +984,17 @@ abstract class tts_setting_error_e {
 typedef tts_setting_supported_engine_cb
     = ffi.Pointer<ffi.NativeFunction<tts_setting_supported_engine_cbFunction>>;
 /// @nodoc
-typedef tts_setting_supported_engine_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef tts_setting_supported_engine_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttts_setting_supported_engine_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef Darttts_setting_supported_engine_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called to get a voice.
 ///
@@ -1016,37 +1016,17 @@ typedef Darttts_setting_supported_engine_cbFunction = int Function(
 typedef tts_setting_supported_voice_cb
     = ffi.Pointer<ffi.NativeFunction<tts_setting_supported_voice_cbFunction>>;
 /// @nodoc
-typedef tts_setting_supported_voice_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Int,
-    ffi.Pointer<ffi.Void>);
+typedef tts_setting_supported_voice_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    ffi.Int voice_type,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Darttts_setting_supported_voice_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+typedef Darttts_setting_supported_voice_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    int voice_type,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the default engine is changed.
 ///
@@ -1091,13 +1071,13 @@ typedef tts_setting_voice_changed_cb
 typedef tts_setting_voice_changed_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> language,
     ffi.Int voice_type,
-    ffi.Pointer<bool> auto_voice,
+    ffi.Bool auto_voice,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Darttts_setting_voice_changed_cbFunction = void Function(
     ffi.Pointer<ffi.Char> language,
     int voice_type,
-    ffi.Pointer<bool> auto_voice,
+    bool auto_voice,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the default speed is changed.

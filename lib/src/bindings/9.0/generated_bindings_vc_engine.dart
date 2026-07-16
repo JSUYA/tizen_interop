@@ -1545,36 +1545,13 @@ typedef vce_get_info_cbFunction = ffi.Int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_settings_app_id,
-    ffi.Pointer<bool> use_network);
+    ffi.Pointer<ffi.Bool> use_network);
 /// @nodoc
 typedef Dartvce_get_info_cbFunction = int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_settings_app_id,
-    ffi.Pointer<bool> use_network);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+    ffi.Pointer<ffi.Bool> use_network);
 
 /// Called when the engine service user requests the recording format of VC engine.
 ///
@@ -1679,11 +1656,11 @@ typedef Dartvce_foreach_supported_languages_cbFunction = int Function(
 typedef vce_supported_language_cb
     = ffi.Pointer<ffi.NativeFunction<vce_supported_language_cbFunction>>;
 /// @nodoc
-typedef vce_supported_language_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef vce_supported_language_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartvce_supported_language_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartvce_supported_language_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the engine service user checks whether a language is supported or not.
 ///
@@ -1703,11 +1680,11 @@ typedef Dartvce_supported_language_cbFunction = int Function(
 typedef vce_is_language_supported_cb
     = ffi.Pointer<ffi.NativeFunction<vce_is_language_supported_cbFunction>>;
 /// @nodoc
-typedef vce_is_language_supported_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>);
+typedef vce_is_language_supported_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> language);
 /// @nodoc
-typedef Dartvce_is_language_supported_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>);
+typedef Dartvce_is_language_supported_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> language);
 
 /// Called when the engine service user initializes Voice Control (VC) engine.
 ///
@@ -1893,11 +1870,9 @@ typedef Dartvce_unset_commands_cbFunction = int Function();
 /// @nodoc
 typedef vce_start_cb = ffi.Pointer<ffi.NativeFunction<vce_start_cbFunction>>;
 /// @nodoc
-typedef vce_start_cbFunction = ffi.Int Function(
-    ffi.Pointer<bool> stop_by_silence);
+typedef vce_start_cbFunction = ffi.Int Function(ffi.Bool stop_by_silence);
 /// @nodoc
-typedef Dartvce_start_cbFunction = int Function(
-    ffi.Pointer<bool> stop_by_silence);
+typedef Dartvce_start_cbFunction = int Function(bool stop_by_silence);
 
 /// Called when the engine service user sets recording data for speech recognition from recorder.
 ///
@@ -2320,17 +2295,23 @@ typedef Dartvce_specific_engine_request_cbFunction = int Function(
 typedef vce_command_cb
     = ffi.Pointer<ffi.NativeFunction<vce_command_cbFunction>>;
 /// @nodoc
-typedef vce_command_cbFunction = ffi.Int Function(
-    ffi.Int,
-    ffi.Int,
-    ffi.Int,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Int,
-    ffi.Pointer<ffi.Void>);
+typedef vce_command_cbFunction = ffi.Bool Function(
+    ffi.Int id,
+    ffi.Int type,
+    ffi.Int format,
+    ffi.Pointer<ffi.Char> command,
+    ffi.Pointer<ffi.Char> param,
+    ffi.Int domain,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartvce_command_cbFunction = int Function(int, int, int,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
+typedef Dartvce_command_cbFunction = bool Function(
+    int id,
+    int type,
+    int format,
+    ffi.Pointer<ffi.Char> command,
+    ffi.Pointer<ffi.Char> param,
+    int domain,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the engine service user (voice control client) requests to send TTS feedback.
 ///

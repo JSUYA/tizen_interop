@@ -153,7 +153,7 @@ class Tizen90CapiSystemSystemSettings {
   /// - Platform API.
   int system_settings_set_value_bool(
     int key,
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _system_settings_set_value_bool(
       key,
@@ -161,12 +161,11 @@ class Tizen90CapiSystemSystemSettings {
     );
   }
 
-  late final _system_settings_set_value_boolPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
-      'system_settings_set_value_bool');
+  late final _system_settings_set_value_boolPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Bool)>>(
+          'system_settings_set_value_bool');
   late final _system_settings_set_value_bool =
-      _system_settings_set_value_boolPtr
-          .asFunction<int Function(int, ffi.Pointer<bool>)>();
+      _system_settings_set_value_boolPtr.asFunction<int Function(int, bool)>();
 
   /// Gets the system settings value associated with the given key as a boolean.
   ///
@@ -196,7 +195,7 @@ class Tizen90CapiSystemSystemSettings {
   /// - <http://tizen.org/privilege/systemsettings (public level privilege) <b>MUST NOT</b> be declared to use this function since 2.3.1.>
   int system_settings_get_value_bool(
     int key,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _system_settings_get_value_bool(
       key,
@@ -205,11 +204,12 @@ class Tizen90CapiSystemSystemSettings {
   }
 
   late final _system_settings_get_value_boolPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'system_settings_get_value_bool');
   late final _system_settings_get_value_bool =
       _system_settings_get_value_boolPtr
-          .asFunction<int Function(int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the system settings value associated with the given key as a string.
   ///
@@ -866,29 +866,6 @@ abstract class system_settings_uds_state_e {
   static const int SYSTEM_SETTINGS_UDS_ON_WHITELISTED = 2;
 }
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// Called when the system settings changes.
 ///
 /// **Since Tizen:**
@@ -935,8 +912,8 @@ typedef Dartsystem_settings_changed_cbFunction = void Function(
 typedef system_settings_iter_cb
     = ffi.Pointer<ffi.NativeFunction<system_settings_iter_cbFunction>>;
 /// @nodoc
-typedef system_settings_iter_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef system_settings_iter_cbFunction = ffi.Bool Function(
+    ffi.Int index, ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> cb_data);
 /// @nodoc
-typedef Dartsystem_settings_iter_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartsystem_settings_iter_cbFunction = bool Function(
+    int index, ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> cb_data);

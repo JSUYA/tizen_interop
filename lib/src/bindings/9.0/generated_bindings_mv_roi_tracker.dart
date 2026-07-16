@@ -229,6 +229,35 @@ class Tizen90MvRoiTracker {
           mv_roi_tracker_tracked_cb, ffi.Pointer<ffi.Void>)>();
 }
 
+/// The ROI tracker result structure.
+///
+/// Contains roi tracker result such as coordinates.
+///
+/// **Since Tizen:**
+/// - 7.0
+/// @nodoc
+final class mv_roi_tracker_result_s extends ffi.Struct {
+  /// < Left-top x coordinate of tracked region
+  @ffi.Int()
+  external int x;
+
+  /// < Left-top y coordinate of tracked region
+  @ffi.Int()
+  external int y;
+
+  /// < Width of tracked region
+  @ffi.Int()
+  external int width;
+
+  /// < Height of tracked region
+  @ffi.Int()
+  external int height;
+
+  /// < flag that struct is initialized or not
+  @ffi.Bool()
+  external bool initialized;
+}
+
 /// Enumeration for ROI tracker type.
 ///
 /// **Since Tizen:**

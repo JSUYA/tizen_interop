@@ -4238,8 +4238,8 @@ abstract class dpm_zone_state_e {
 typedef dpm_zone_foreach_name_cb
     = ffi.Pointer<ffi.NativeFunction<dpm_zone_foreach_name_cbFunction>>;
 /// @nodoc
-typedef dpm_zone_foreach_name_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef dpm_zone_foreach_name_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartdpm_zone_foreach_name_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartdpm_zone_foreach_name_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> name, ffi.Pointer<ffi.Void> user_data);

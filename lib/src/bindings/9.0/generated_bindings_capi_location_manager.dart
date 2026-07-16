@@ -195,7 +195,7 @@ class Tizen90CapiLocationManager {
   /// - `location_bounds_create_rect()`
   /// - `location_bounds_create_circle()`
   /// - `location_bounds_create_polygon()`
-  int location_bounds_contains_coordinates(
+  bool location_bounds_contains_coordinates(
     location_bounds_h bounds,
     location_coords_s coords,
   ) {
@@ -207,11 +207,11 @@ class Tizen90CapiLocationManager {
 
   late final _location_bounds_contains_coordinatesPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(location_bounds_h,
+          ffi.Bool Function(location_bounds_h,
               location_coords_s)>>('location_bounds_contains_coordinates');
   late final _location_bounds_contains_coordinates =
       _location_bounds_contains_coordinatesPtr
-          .asFunction<int Function(location_bounds_h, location_coords_s)>();
+          .asFunction<bool Function(location_bounds_h, location_coords_s)>();
 
   /// Checks whether the edges of the bounds contain the specified coordinates within tolerance.
   ///
@@ -236,7 +236,7 @@ class Tizen90CapiLocationManager {
   /// - `location_bounds_create_rect()`
   /// - `location_bounds_create_circle()`
   /// - `location_bounds_create_polygon()`
-  int location_bounds_contains_coordinates_on_edge(
+  bool location_bounds_contains_coordinates_on_edge(
     location_bounds_h bounds,
     location_coords_s coords,
     double tolerance,
@@ -250,11 +250,11 @@ class Tizen90CapiLocationManager {
 
   late final _location_bounds_contains_coordinates_on_edgePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(location_bounds_h, location_coords_s,
+          ffi.Bool Function(location_bounds_h, location_coords_s,
               ffi.Double)>>('location_bounds_contains_coordinates_on_edge');
   late final _location_bounds_contains_coordinates_on_edge =
       _location_bounds_contains_coordinates_on_edgePtr.asFunction<
-          int Function(location_bounds_h, location_coords_s, double)>();
+          bool Function(location_bounds_h, location_coords_s, double)>();
 
   /// Gets the type of location bounds.
   ///
@@ -562,7 +562,7 @@ class Tizen90CapiLocationManager {
   /// **See also:**
   /// - `location_manager_create()`
   /// - `location_manager_get_method()`
-  int location_manager_is_supported_method(
+  bool location_manager_is_supported_method(
     int method,
   ) {
     return _location_manager_is_supported_method(
@@ -571,10 +571,10 @@ class Tizen90CapiLocationManager {
   }
 
   late final _location_manager_is_supported_methodPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
           'location_manager_is_supported_method');
   late final _location_manager_is_supported_method =
-      _location_manager_is_supported_methodPtr.asFunction<int Function(int)>();
+      _location_manager_is_supported_methodPtr.asFunction<bool Function(int)>();
 
   /// Checks whether the given location method is enabled or not on setting.
   ///
@@ -600,7 +600,7 @@ class Tizen90CapiLocationManager {
   /// - `location_manager_unset_setting_changed_cb()`
   int location_manager_is_enabled_method(
     int method,
-    ffi.Pointer<bool> enable,
+    ffi.Pointer<ffi.Bool> enable,
   ) {
     return _location_manager_is_enabled_method(
       method,
@@ -609,11 +609,12 @@ class Tizen90CapiLocationManager {
   }
 
   late final _location_manager_is_enabled_methodPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'location_manager_is_enabled_method');
   late final _location_manager_is_enabled_method =
       _location_manager_is_enabled_methodPtr
-          .asFunction<int Function(int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Enables the given location method.
   ///
@@ -647,7 +648,7 @@ class Tizen90CapiLocationManager {
   /// - Platform API.
   int location_manager_enable_method(
     int method,
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _location_manager_enable_method(
       method,
@@ -655,12 +656,11 @@ class Tizen90CapiLocationManager {
     );
   }
 
-  late final _location_manager_enable_methodPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
-      'location_manager_enable_method');
+  late final _location_manager_enable_methodPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Bool)>>(
+          'location_manager_enable_method');
   late final _location_manager_enable_method =
-      _location_manager_enable_methodPtr
-          .asFunction<int Function(int, ffi.Pointer<bool>)>();
+      _location_manager_enable_methodPtr.asFunction<int Function(int, bool)>();
 
   /// Creates a new location manager.
   ///
@@ -2587,7 +2587,7 @@ class Tizen90CapiLocationManager {
   /// - `location_manager_set_mock_location()`
   /// - `location_manager_clear_mock_location()`
   int location_manager_is_enabled_mock_location(
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _location_manager_is_enabled_mock_location(
       enabled,
@@ -2595,11 +2595,11 @@ class Tizen90CapiLocationManager {
   }
 
   late final _location_manager_is_enabled_mock_locationPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'location_manager_is_enabled_mock_location');
   late final _location_manager_is_enabled_mock_location =
       _location_manager_is_enabled_mock_locationPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Enables mock location.
   ///
@@ -2634,7 +2634,7 @@ class Tizen90CapiLocationManager {
   /// - `location_manager_set_mock_location()`
   /// - `location_manager_clear_mock_location()`
   int location_manager_enable_mock_location(
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _location_manager_enable_mock_location(
       enable,
@@ -2642,11 +2642,11 @@ class Tizen90CapiLocationManager {
   }
 
   late final _location_manager_enable_mock_locationPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'location_manager_enable_mock_location');
   late final _location_manager_enable_mock_location =
       _location_manager_enable_mock_locationPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(bool)>();
 
   /// Sets a mock location for the given location method.
   ///
@@ -3293,11 +3293,11 @@ typedef location_bounds_h = ffi.Pointer<location_bounds_s>;
 typedef polygon_coords_cb
     = ffi.Pointer<ffi.NativeFunction<polygon_coords_cbFunction>>;
 /// @nodoc
-typedef polygon_coords_cbFunction = ffi.Int Function(
-    location_coords_s, ffi.Pointer<ffi.Void>);
+typedef polygon_coords_cbFunction = ffi.Bool Function(
+    location_coords_s coords, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartpolygon_coords_cbFunction = int Function(
-    location_coords_s, ffi.Pointer<ffi.Void>);
+typedef Dartpolygon_coords_cbFunction = bool Function(
+    location_coords_s coords, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the given boundary is entered or exited.
 ///
@@ -3465,29 +3465,6 @@ abstract class location_fused_mode_e {
 /// @nodoc
 final class location_manager_s extends ffi.Opaque {}
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// The location manager handle.
 ///
 /// **Since Tizen:**
@@ -3563,11 +3540,11 @@ typedef Dartlocation_updated_cbFunction = void Function(
 typedef location_bounds_cb
     = ffi.Pointer<ffi.NativeFunction<location_bounds_cbFunction>>;
 /// @nodoc
-typedef location_bounds_cbFunction = ffi.Int Function(
-    location_bounds_h, ffi.Pointer<ffi.Void>);
+typedef location_bounds_cbFunction = ffi.Bool Function(
+    location_bounds_h bounds, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartlocation_bounds_cbFunction = int Function(
-    location_bounds_h, ffi.Pointer<ffi.Void>);
+typedef Dartlocation_bounds_cbFunction = bool Function(
+    location_bounds_h bounds, ffi.Pointer<ffi.Void> user_data);
 
 /// Called at defined interval with updated position information.
 ///
@@ -3729,12 +3706,10 @@ typedef location_setting_changed_cb
     = ffi.Pointer<ffi.NativeFunction<location_setting_changed_cbFunction>>;
 /// @nodoc
 typedef location_setting_changed_cbFunction = ffi.Void Function(
-    ffi.Int32 method,
-    ffi.Pointer<bool> enable,
-    ffi.Pointer<ffi.Void> user_data);
+    ffi.Int32 method, ffi.Bool enable, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartlocation_setting_changed_cbFunction = void Function(
-    int method, ffi.Pointer<bool> enable, ffi.Pointer<ffi.Void> user_data);
+    int method, bool enable, ffi.Pointer<ffi.Void> user_data);
 
 /// Called at defined interval with updated location information.
 ///
@@ -3835,19 +3810,27 @@ typedef Dartlocation_batch_cbFunction = void Function(
 typedef location_batch_get_location_cb
     = ffi.Pointer<ffi.NativeFunction<location_batch_get_location_cbFunction>>;
 /// @nodoc
-typedef location_batch_get_location_cbFunction = ffi.Int Function(
-    ffi.Double,
-    ffi.Double,
-    ffi.Double,
-    ffi.Double,
-    ffi.Double,
-    ffi.Double,
-    ffi.Double,
-    ffi_lib.Long,
-    ffi.Pointer<ffi.Void>);
+typedef location_batch_get_location_cbFunction = ffi.Bool Function(
+    ffi.Double latitude,
+    ffi.Double longitude,
+    ffi.Double altitude,
+    ffi.Double speed,
+    ffi.Double direction,
+    ffi.Double horizontal,
+    ffi.Double vertical,
+    ffi_lib.Long timestamp,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartlocation_batch_get_location_cbFunction = int Function(double,
-    double, double, double, double, double, double, int, ffi.Pointer<ffi.Void>);
+typedef Dartlocation_batch_get_location_cbFunction = bool Function(
+    double latitude,
+    double longitude,
+    double altitude,
+    double speed,
+    double direction,
+    double horizontal,
+    double vertical,
+    int timestamp,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called at defined interval with updated satellite information.
 ///
@@ -3908,16 +3891,21 @@ typedef Dartgps_status_satellite_updated_cbFunction = void Function(
 typedef gps_status_get_satellites_cb
     = ffi.Pointer<ffi.NativeFunction<gps_status_get_satellites_cbFunction>>;
 /// @nodoc
-typedef gps_status_get_satellites_cbFunction = ffi.Int Function(
-    ffi.UnsignedInt,
-    ffi.UnsignedInt,
-    ffi.UnsignedInt,
-    ffi.Int,
-    ffi.Pointer<bool>,
-    ffi.Pointer<ffi.Void>);
+typedef gps_status_get_satellites_cbFunction = ffi.Bool Function(
+    ffi.UnsignedInt azimuth,
+    ffi.UnsignedInt elevation,
+    ffi.UnsignedInt prn,
+    ffi.Int snr,
+    ffi.Bool is_active,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartgps_status_get_satellites_cbFunction = int Function(
-    int, int, int, int, ffi.Pointer<bool>, ffi.Pointer<ffi.Void>);
+typedef Dartgps_status_get_satellites_cbFunction = bool Function(
+    int azimuth,
+    int elevation,
+    int prn,
+    int snr,
+    bool is_active,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int LOCATION_BOUNDS_ERROR_CLASS = -46137312;

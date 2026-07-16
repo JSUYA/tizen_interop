@@ -740,7 +740,7 @@ class Tizen90CapiAppfwAlarm {
   /// - `alarm_schedule_with_recurrence_week_flag()`
   int alarm_set_global(
     int alarm_id,
-    imp1.bool global,
+    bool global,
   ) {
     return _alarm_set_global(
       alarm_id,
@@ -749,10 +749,10 @@ class Tizen90CapiAppfwAlarm {
   }
 
   late final _alarm_set_globalPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Bool)>>(
           'alarm_set_global');
   late final _alarm_set_global =
-      _alarm_set_globalPtr.asFunction<int Function(int, imp1.bool)>();
+      _alarm_set_globalPtr.asFunction<int Function(int, bool)>();
 
   /// Gets whether the alarm will launch global application or not.
   ///
@@ -781,7 +781,7 @@ class Tizen90CapiAppfwAlarm {
   /// - `alarm_set_global()`
   int alarm_get_global(
     int alarm_id,
-    ffi.Pointer<imp1.bool> global,
+    ffi.Pointer<ffi.Bool> global,
   ) {
     return _alarm_get_global(
       alarm_id,
@@ -790,11 +790,10 @@ class Tizen90CapiAppfwAlarm {
   }
 
   late final _alarm_get_globalPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<imp1.bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
       'alarm_get_global');
   late final _alarm_get_global = _alarm_get_globalPtr
-      .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets a notification alarm to be triggered at a specific time.
   ///
@@ -1376,11 +1375,11 @@ abstract class alarm_standard_interval_e {
 typedef alarm_registered_alarm_cb
     = ffi.Pointer<ffi.NativeFunction<alarm_registered_alarm_cbFunction>>;
 /// @nodoc
-typedef alarm_registered_alarm_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Pointer<ffi.Void>);
+typedef alarm_registered_alarm_cbFunction = ffi.Bool Function(
+    ffi.Int alarm_id, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartalarm_registered_alarm_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartalarm_registered_alarm_cbFunction = bool Function(
+    int alarm_id, ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const String APP_CONTROL_DATA_ALARM_ID =

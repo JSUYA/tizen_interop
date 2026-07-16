@@ -272,7 +272,7 @@ class Tizen90CapiNnstreamer {
   /// - `ML_ERROR_STREAMS_PIPE`: Failed to flush the pipeline.
   int ml_pipeline_flush(
     ml_pipeline_h pipe,
-    imp1.bool start,
+    bool start,
   ) {
     return _ml_pipeline_flush(
       pipe,
@@ -281,10 +281,10 @@ class Tizen90CapiNnstreamer {
   }
 
   late final _ml_pipeline_flushPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ml_pipeline_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ml_pipeline_h, ffi.Bool)>>(
           'ml_pipeline_flush');
-  late final _ml_pipeline_flush = _ml_pipeline_flushPtr
-      .asFunction<int Function(ml_pipeline_h, imp1.bool)>();
+  late final _ml_pipeline_flush =
+      _ml_pipeline_flushPtr.asFunction<int Function(ml_pipeline_h, bool)>();
 
   /// NNStreamer Pipeline Sink/Src Control ** / /**
   ///
@@ -910,7 +910,7 @@ class Tizen90CapiNnstreamer {
   /// - `ML_ERROR_INVALID_PARAMETER`: Given parameter is invalid.
   int ml_pipeline_valve_set_open(
     ml_pipeline_valve_h valve_handle,
-    imp1.bool open,
+    bool open,
   ) {
     return _ml_pipeline_valve_set_open(
       valve_handle,
@@ -919,10 +919,10 @@ class Tizen90CapiNnstreamer {
   }
 
   late final _ml_pipeline_valve_set_openPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ml_pipeline_valve_h, imp1.bool)>>(
+          ffi.NativeFunction<ffi.Int Function(ml_pipeline_valve_h, ffi.Bool)>>(
       'ml_pipeline_valve_set_open');
   late final _ml_pipeline_valve_set_open = _ml_pipeline_valve_set_openPtr
-      .asFunction<int Function(ml_pipeline_valve_h, imp1.bool)>();
+      .asFunction<int Function(ml_pipeline_valve_h, bool)>();
 
   /// Gets an element handle in NNStreamer pipelines to control its properties.
   ///
@@ -1829,7 +1829,7 @@ class Tizen90CapiNnstreamer {
   int ml_check_nnfw_availability(
     int nnfw,
     int hw,
-    ffi.Pointer<imp1.bool> available,
+    ffi.Pointer<ffi.Bool> available,
   ) {
     return _ml_check_nnfw_availability(
       nnfw,
@@ -1841,9 +1841,9 @@ class Tizen90CapiNnstreamer {
   late final _ml_check_nnfw_availabilityPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Int32, ffi.Int32,
-              ffi.Pointer<imp1.bool>)>>('ml_check_nnfw_availability');
+              ffi.Pointer<ffi.Bool>)>>('ml_check_nnfw_availability');
   late final _ml_check_nnfw_availability = _ml_check_nnfw_availabilityPtr
-      .asFunction<int Function(int, int, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(int, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks the availability of the given execution environments with custom option.
   ///
@@ -1869,7 +1869,7 @@ class Tizen90CapiNnstreamer {
     int nnfw,
     int hw,
     ffi.Pointer<ffi.Char> custom_option,
-    ffi.Pointer<imp1.bool> available,
+    ffi.Pointer<ffi.Bool> available,
   ) {
     return _ml_check_nnfw_availability_full(
       nnfw,
@@ -1882,11 +1882,11 @@ class Tizen90CapiNnstreamer {
   late final _ml_check_nnfw_availability_fullPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Int32, ffi.Int32, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<imp1.bool>)>>('ml_check_nnfw_availability_full');
+              ffi.Pointer<ffi.Bool>)>>('ml_check_nnfw_availability_full');
   late final _ml_check_nnfw_availability_full =
       _ml_check_nnfw_availability_fullPtr.asFunction<
           int Function(
-              int, int, ffi.Pointer<ffi.Char>, ffi.Pointer<imp1.bool>)>();
+              int, int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks if the element is registered and available on the pipeline.
   ///
@@ -1908,7 +1908,7 @@ class Tizen90CapiNnstreamer {
   /// - `ML_ERROR_INVALID_PARAMETER`: Given parameter is invalid.
   int ml_check_element_availability(
     ffi.Pointer<ffi.Char> element_name,
-    ffi.Pointer<imp1.bool> available,
+    ffi.Pointer<ffi.Bool> available,
   ) {
     return _ml_check_element_availability(
       element_name,
@@ -1919,10 +1919,9 @@ class Tizen90CapiNnstreamer {
   late final _ml_check_element_availabilityPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<imp1.bool>)>>('ml_check_element_availability');
-  late final _ml_check_element_availability =
-      _ml_check_element_availabilityPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<imp1.bool>)>();
+              ffi.Pointer<ffi.Bool>)>>('ml_check_element_availability');
+  late final _ml_check_element_availability = _ml_check_element_availabilityPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Registers a custom filter.
   ///

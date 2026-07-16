@@ -1922,7 +1922,7 @@ class Tizen90CalendarService2 {
   /// - `calendar_list_create()`
   int calendar_list_destroy(
     calendar_list_h list,
-    ffi.Pointer<bool> delete_record,
+    bool delete_record,
   ) {
     return _calendar_list_destroy(
       list,
@@ -1930,12 +1930,11 @@ class Tizen90CalendarService2 {
     );
   }
 
-  late final _calendar_list_destroyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              calendar_list_h, ffi.Pointer<bool>)>>('calendar_list_destroy');
+  late final _calendar_list_destroyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(calendar_list_h, ffi.Bool)>>(
+          'calendar_list_destroy');
   late final _calendar_list_destroy = _calendar_list_destroyPtr
-      .asFunction<int Function(calendar_list_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(calendar_list_h, bool)>();
 
   /// Retrieves the number of calendar entities in a calendar list.
   ///
@@ -2364,7 +2363,7 @@ class Tizen90CalendarService2 {
   /// - `CALENDAR_ERROR_NOT_SUPPORTED`: Not supported
   int calendar_query_set_distinct(
     calendar_query_h query,
-    ffi.Pointer<bool> set1,
+    bool set1,
   ) {
     return _calendar_query_set_distinct(
       query,
@@ -2372,12 +2371,11 @@ class Tizen90CalendarService2 {
     );
   }
 
-  late final _calendar_query_set_distinctPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(calendar_query_h,
-              ffi.Pointer<bool>)>>('calendar_query_set_distinct');
+  late final _calendar_query_set_distinctPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(calendar_query_h, ffi.Bool)>>(
+          'calendar_query_set_distinct');
   late final _calendar_query_set_distinct = _calendar_query_set_distinctPtr
-      .asFunction<int Function(calendar_query_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(calendar_query_h, bool)>();
 
   /// Sets the filter for a query.
   ///
@@ -2435,7 +2433,7 @@ class Tizen90CalendarService2 {
   int calendar_query_set_sort(
     calendar_query_h query,
     int property_id,
-    ffi.Pointer<bool> is_ascending,
+    bool is_ascending,
   ) {
     return _calendar_query_set_sort(
       query,
@@ -2447,9 +2445,9 @@ class Tizen90CalendarService2 {
   late final _calendar_query_set_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(calendar_query_h, ffi.UnsignedInt,
-              ffi.Pointer<bool>)>>('calendar_query_set_sort');
+              ffi.Bool)>>('calendar_query_set_sort');
   late final _calendar_query_set_sort = _calendar_query_set_sortPtr
-      .asFunction<int Function(calendar_query_h, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(calendar_query_h, int, bool)>();
 
   /// Creates a record handle.
   ///
@@ -2519,7 +2517,7 @@ class Tizen90CalendarService2 {
   /// - `calendar_record_create()`
   int calendar_record_destroy(
     calendar_record_h record,
-    ffi.Pointer<bool> delete_child,
+    bool delete_child,
   ) {
     return _calendar_record_destroy(
       record,
@@ -2528,11 +2526,10 @@ class Tizen90CalendarService2 {
   }
 
   late final _calendar_record_destroyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(calendar_record_h,
-              ffi.Pointer<bool>)>>('calendar_record_destroy');
+          ffi.NativeFunction<ffi.Int Function(calendar_record_h, ffi.Bool)>>(
+      'calendar_record_destroy');
   late final _calendar_record_destroy = _calendar_record_destroyPtr
-      .asFunction<int Function(calendar_record_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(calendar_record_h, bool)>();
 
   /// Makes a clone of a record handle.
   ///
@@ -5185,14 +5182,7 @@ abstract class calendar_match_int_flag_e {
 /// **Since Tizen:**
 /// - 2.3
 /// @nodoc
-typedef calendar_time_s = CalendarService2UnnamedStruct1;
-
-/// The structure of time.
-///
-/// **Since Tizen:**
-/// - 2.3
-/// @nodoc
-final class CalendarService2UnnamedStruct1 extends ffi.Struct {
+final class calendar_time_s extends ffi.Struct {
   /// < type
   @ffi.Int32()
   external int type;
@@ -5219,11 +5209,11 @@ final class CalendarService2UnnamedUnion1 extends ffi.Union {
   @ffi.LongLong()
   external int utime;
 
-  external CalendarService2UnnamedStruct2 date;
+  external CalendarService2UnnamedStruct1 date;
 }
 
 /// @nodoc
-final class CalendarService2UnnamedStruct2 extends ffi.Struct {
+final class CalendarService2UnnamedStruct1 extends ffi.Struct {
   /// < year
   @ffi.Int()
   external int year;
@@ -5249,31 +5239,9 @@ final class CalendarService2UnnamedStruct2 extends ffi.Struct {
   external int second;
 
   /// < Deprecated since 2.4:leap month
+  @ffi.Bool()
   external bool is_leap_month;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Enumeration for a filter operator.
 ///
@@ -5313,11 +5281,11 @@ abstract class calendar_filter_operator_e {
 typedef calendar_vcalendar_parse_cb
     = ffi.Pointer<ffi.NativeFunction<calendar_vcalendar_parse_cbFunction>>;
 /// @nodoc
-typedef calendar_vcalendar_parse_cbFunction = ffi.Int Function(
-    calendar_record_h, ffi.Pointer<ffi.Void>);
+typedef calendar_vcalendar_parse_cbFunction = ffi.Bool Function(
+    calendar_record_h record, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcalendar_vcalendar_parse_cbFunction = int Function(
-    calendar_record_h, ffi.Pointer<ffi.Void>);
+typedef Dartcalendar_vcalendar_parse_cbFunction = bool Function(
+    calendar_record_h record, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when an alarm is alerted.
 ///

@@ -19,6 +19,8 @@ typedef void (*notification_detailed_changed_cb)(void *data,
 
 typedef void (*notification_status_message_cb)(const char *message, void *data);
 
+typedef struct _notification_list *notification_list_h;
+
 int notification_clear(notification_type_e type);
 int notification_get_list(notification_type_e type, int count,
                           notification_list_h *list);

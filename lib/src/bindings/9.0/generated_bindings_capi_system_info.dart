@@ -49,7 +49,7 @@ class Tizen90CapiSystemInfo {
   /// - `SYSTEM_INFO_ERROR_PERMISSION_DENIED`: No permission to use the API
   int system_info_get_platform_bool(
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _system_info_get_platform_bool(
       key,
@@ -60,9 +60,9 @@ class Tizen90CapiSystemInfo {
   late final _system_info_get_platform_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('system_info_get_platform_bool');
+              ffi.Pointer<ffi.Bool>)>>('system_info_get_platform_bool');
   late final _system_info_get_platform_bool = _system_info_get_platform_boolPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the integer type value of the `platform` feature.
   ///
@@ -201,7 +201,7 @@ class Tizen90CapiSystemInfo {
   /// - `SYSTEM_INFO_ERROR_PERMISSION_DENIED`: No permission to use the API
   int system_info_get_custom_bool(
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _system_info_get_custom_bool(
       key,
@@ -212,9 +212,9 @@ class Tizen90CapiSystemInfo {
   late final _system_info_get_custom_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('system_info_get_custom_bool');
+              ffi.Pointer<ffi.Bool>)>>('system_info_get_custom_bool');
   late final _system_info_get_custom_bool = _system_info_get_custom_boolPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the integer type value of the `custom` feature.
   ///
@@ -353,7 +353,7 @@ class Tizen90CapiSystemInfo {
   /// Do not use it. It will be removed.
   int system_info_get_value_bool(
     int key,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _system_info_get_value_bool(
       key,
@@ -362,10 +362,11 @@ class Tizen90CapiSystemInfo {
   }
 
   late final _system_info_get_value_boolPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'system_info_get_value_bool');
   late final _system_info_get_value_bool = _system_info_get_value_boolPtr
-      .asFunction<int Function(int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Do not use it. It will be removed.
   int system_info_get_value_double(
@@ -523,26 +524,3 @@ abstract class system_info_key_e {
   /// < @internal Indicates whether the device supports tethering
   static const int SYSTEM_INFO_KEY_TETHERING_SUPPORTED = 14;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

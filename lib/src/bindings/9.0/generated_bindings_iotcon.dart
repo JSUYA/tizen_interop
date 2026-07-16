@@ -160,7 +160,7 @@ class Tizen90Iotcon {
   /// - `IOTCON_ERROR_INVALID_TYPE`: Invalid type
   int iotcon_list_add_bool(
     iotcon_list_h list,
-    ffi.Pointer<bool> val,
+    bool val,
     int pos,
   ) {
     return _iotcon_list_add_bool(
@@ -171,11 +171,11 @@ class Tizen90Iotcon {
   }
 
   late final _iotcon_list_add_boolPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(iotcon_list_h, ffi.Pointer<bool>,
-              ffi.Int)>>('iotcon_list_add_bool');
+          ffi
+          .NativeFunction<ffi.Int Function(iotcon_list_h, ffi.Bool, ffi.Int)>>(
+      'iotcon_list_add_bool');
   late final _iotcon_list_add_bool = _iotcon_list_add_boolPtr
-      .asFunction<int Function(iotcon_list_h, ffi.Pointer<bool>, int)>();
+      .asFunction<int Function(iotcon_list_h, bool, int)>();
 
   /// Adds a new element double value into the list at the given position.
   ///
@@ -446,7 +446,7 @@ class Tizen90Iotcon {
   int iotcon_list_get_nth_bool(
     iotcon_list_h list,
     int pos,
-    ffi.Pointer<bool> val,
+    ffi.Pointer<ffi.Bool> val,
   ) {
     return _iotcon_list_get_nth_bool(
       list,
@@ -458,9 +458,9 @@ class Tizen90Iotcon {
   late final _iotcon_list_get_nth_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(iotcon_list_h, ffi.Int,
-              ffi.Pointer<bool>)>>('iotcon_list_get_nth_bool');
+              ffi.Pointer<ffi.Bool>)>>('iotcon_list_get_nth_bool');
   late final _iotcon_list_get_nth_bool = _iotcon_list_get_nth_boolPtr
-      .asFunction<int Function(iotcon_list_h, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(iotcon_list_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the double value at the given position.
   ///
@@ -1719,7 +1719,7 @@ class Tizen90Iotcon {
   int iotcon_attributes_add_bool(
     iotcon_attributes_h attributes,
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> val,
+    bool val,
   ) {
     return _iotcon_attributes_add_bool(
       attributes,
@@ -1731,11 +1731,10 @@ class Tizen90Iotcon {
   late final _iotcon_attributes_add_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('iotcon_attributes_add_bool');
+              ffi.Bool)>>('iotcon_attributes_add_bool');
   late final _iotcon_attributes_add_bool =
       _iotcon_attributes_add_boolPtr.asFunction<
-          int Function(
-              iotcon_attributes_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+          int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>, bool)>();
 
   /// Adds a new key and double value into the attributes.
   ///
@@ -2045,7 +2044,7 @@ class Tizen90Iotcon {
   int iotcon_attributes_get_bool(
     iotcon_attributes_h attributes,
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> val,
+    ffi.Pointer<ffi.Bool> val,
   ) {
     return _iotcon_attributes_get_bool(
       attributes,
@@ -2057,11 +2056,11 @@ class Tizen90Iotcon {
   late final _iotcon_attributes_get_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('iotcon_attributes_get_bool');
+              ffi.Pointer<ffi.Bool>)>>('iotcon_attributes_get_bool');
   late final _iotcon_attributes_get_bool =
       _iotcon_attributes_get_boolPtr.asFunction<
-          int Function(
-              iotcon_attributes_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+          int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the double value from the given key.
   ///
@@ -2306,7 +2305,7 @@ class Tizen90Iotcon {
   int iotcon_attributes_is_null(
     iotcon_attributes_h attributes,
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> is_null,
+    ffi.Pointer<ffi.Bool> is_null,
   ) {
     return _iotcon_attributes_is_null(
       attributes,
@@ -2318,11 +2317,11 @@ class Tizen90Iotcon {
   late final _iotcon_attributes_is_nullPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('iotcon_attributes_is_null');
+              ffi.Pointer<ffi.Bool>)>>('iotcon_attributes_is_null');
   late final _iotcon_attributes_is_null =
       _iotcon_attributes_is_nullPtr.asFunction<
-          int Function(
-              iotcon_attributes_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+          int Function(iotcon_attributes_h, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Bool>)>();
 
   /// Removes the key and its associated value from the attributes.
   ///
@@ -8432,29 +8431,6 @@ abstract class iotcon_type_e {
 /// @nodoc
 typedef iotcon_list_h = ffi.Pointer<icl_list_s>;
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// The attributes handle.
 ///
 /// `iotcon_attributes_h` is an opaque data structure to have attribute value map. Attribute value map consists of a key and a value. Datatype of the key is string and the value should be one of them `IOTCON_TYPE_INT`, `IOTCON_TYPE_BOOL`, `IOTCON_TYPE_DOUBLE`, `IOTCON_TYPE_STR`, `IOTCON_TYPE_NULL`, `IOTCON_TYPE_LIST` and `IOTCON_TYPE_ATTRIBUTES`.
@@ -8486,11 +8462,11 @@ typedef iotcon_attributes_h = ffi.Pointer<icl_attributes_s>;
 typedef iotcon_list_int_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_int_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_int_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_int_cbFunction = ffi.Bool Function(
+    ffi.Int pos, ffi.Int value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_int_cbFunction = int Function(
-    int, int, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_int_cbFunction = bool Function(
+    int pos, int value, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_bool().
 ///
@@ -8514,11 +8490,11 @@ typedef Dartiotcon_list_int_cbFunction = int Function(
 typedef iotcon_list_bool_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_bool_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_bool_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Pointer<bool>, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_bool_cbFunction = ffi.Bool Function(
+    ffi.Int pos, ffi.Bool value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_bool_cbFunction = int Function(
-    int, ffi.Pointer<bool>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_bool_cbFunction = bool Function(
+    int pos, bool value, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_double().
 ///
@@ -8542,11 +8518,11 @@ typedef Dartiotcon_list_bool_cbFunction = int Function(
 typedef iotcon_list_double_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_double_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_double_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Double, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_double_cbFunction = ffi.Bool Function(
+    ffi.Int pos, ffi.Double value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_double_cbFunction = int Function(
-    int, double, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_double_cbFunction = bool Function(
+    int pos, double value, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_byte_str().
 ///
@@ -8571,11 +8547,17 @@ typedef Dartiotcon_list_double_cbFunction = int Function(
 typedef iotcon_list_byte_str_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_byte_str_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_byte_str_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Pointer<ffi.UnsignedChar>, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_byte_str_cbFunction = ffi.Bool Function(
+    ffi.Int pos,
+    ffi.Pointer<ffi.UnsignedChar> value,
+    ffi.Int len,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_byte_str_cbFunction = int Function(
-    int, ffi.Pointer<ffi.UnsignedChar>, int, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_byte_str_cbFunction = bool Function(
+    int pos,
+    ffi.Pointer<ffi.UnsignedChar> value,
+    int len,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_str().
 ///
@@ -8599,11 +8581,11 @@ typedef Dartiotcon_list_byte_str_cbFunction = int Function(
 typedef iotcon_list_str_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_str_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_str_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_str_cbFunction = ffi.Bool Function(
+    ffi.Int pos, ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_str_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_str_cbFunction = bool Function(
+    int pos, ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_list().
 ///
@@ -8627,11 +8609,11 @@ typedef Dartiotcon_list_str_cbFunction = int Function(
 typedef iotcon_list_list_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_list_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_list_cbFunction = ffi.Int Function(
-    ffi.Int, iotcon_list_h, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_list_cbFunction = ffi.Bool Function(
+    ffi.Int pos, iotcon_list_h value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_list_cbFunction = int Function(
-    int, iotcon_list_h, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_list_cbFunction = bool Function(
+    int pos, iotcon_list_h value, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_list_foreach_attributes().
 ///
@@ -8655,11 +8637,11 @@ typedef Dartiotcon_list_list_cbFunction = int Function(
 typedef iotcon_list_attributes_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_list_attributes_cbFunction>>;
 /// @nodoc
-typedef iotcon_list_attributes_cbFunction = ffi.Int Function(
-    ffi.Int, iotcon_attributes_h, ffi.Pointer<ffi.Void>);
+typedef iotcon_list_attributes_cbFunction = ffi.Bool Function(
+    ffi.Int pos, iotcon_attributes_h value, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_list_attributes_cbFunction = int Function(
-    int, iotcon_attributes_h, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_list_attributes_cbFunction = bool Function(
+    int pos, iotcon_attributes_h value, ffi.Pointer<ffi.Void> user_data);
 
 /// The query handle.
 ///
@@ -8692,11 +8674,15 @@ typedef iotcon_query_h = ffi.Pointer<icl_query>;
 typedef iotcon_query_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_query_foreach_cbFunction>>;
 /// @nodoc
-typedef iotcon_query_foreach_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_query_foreach_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Char> value,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_query_foreach_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_query_foreach_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Char> value,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_attributes_foreach().
 ///
@@ -8720,11 +8706,15 @@ typedef Dartiotcon_query_foreach_cbFunction = int Function(
 typedef iotcon_attributes_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_attributes_cbFunction>>;
 /// @nodoc
-typedef iotcon_attributes_cbFunction = ffi.Int Function(
-    iotcon_attributes_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_attributes_cbFunction = ffi.Bool Function(
+    iotcon_attributes_h attributes,
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_attributes_cbFunction = int Function(
-    iotcon_attributes_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_attributes_cbFunction = bool Function(
+    iotcon_attributes_h attributes,
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The options handle.
 ///
@@ -8757,11 +8747,13 @@ typedef iotcon_options_h = ffi.Pointer<icl_options>;
 typedef iotcon_options_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_options_foreach_cbFunction>>;
 /// @nodoc
-typedef iotcon_options_foreach_cbFunction = ffi.Int Function(
-    ffi.UnsignedShort, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_options_foreach_cbFunction = ffi.Bool Function(
+    ffi.UnsignedShort id,
+    ffi.Pointer<ffi.Char> data,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_options_foreach_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_options_foreach_cbFunction = bool Function(
+    int id, ffi.Pointer<ffi.Char> data, ffi.Pointer<ffi.Void> user_data);
 
 /// The representation handle.
 ///
@@ -8811,11 +8803,11 @@ typedef iotcon_resource_interfaces_h = ffi.Pointer<icl_resource_ifaces>;
 typedef iotcon_children_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_children_cbFunction>>;
 /// @nodoc
-typedef iotcon_children_cbFunction = ffi.Int Function(
-    iotcon_representation_h, ffi.Pointer<ffi.Void>);
+typedef iotcon_children_cbFunction = ffi.Bool Function(
+    iotcon_representation_h child, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_children_cbFunction = int Function(
-    iotcon_representation_h, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_children_cbFunction = bool Function(
+    iotcon_representation_h child, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_resource_types_foreach().
 ///
@@ -8838,11 +8830,11 @@ typedef Dartiotcon_children_cbFunction = int Function(
 typedef iotcon_resource_types_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_resource_types_foreach_cbFunction>>;
 /// @nodoc
-typedef iotcon_resource_types_foreach_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_resource_types_foreach_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> type, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_resource_types_foreach_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_resource_types_foreach_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> type, ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the iface of function passed to iotcon_resource_interfaces_foreach().
 ///
@@ -8868,11 +8860,11 @@ typedef Dartiotcon_resource_types_foreach_cbFunction = int Function(
 typedef iotcon_resource_interfaces_foreach_cb = ffi
     .Pointer<ffi.NativeFunction<iotcon_resource_interfaces_foreach_cbFunction>>;
 /// @nodoc
-typedef iotcon_resource_interfaces_foreach_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef iotcon_resource_interfaces_foreach_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> iface, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_resource_interfaces_foreach_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_resource_interfaces_foreach_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> iface, ffi.Pointer<ffi.Void> user_data);
 
 /// Enumeration for IoTCon error code.
 ///
@@ -9017,11 +9009,15 @@ abstract class iotcon_qos_e {
 typedef iotcon_lite_resource_post_request_cb = ffi
     .Pointer<ffi.NativeFunction<iotcon_lite_resource_post_request_cbFunction>>;
 /// @nodoc
-typedef iotcon_lite_resource_post_request_cbFunction = ffi.Int Function(
-    iotcon_lite_resource_h, iotcon_attributes_h, ffi.Pointer<ffi.Void>);
+typedef iotcon_lite_resource_post_request_cbFunction = ffi.Bool Function(
+    iotcon_lite_resource_h resource,
+    iotcon_attributes_h attributes,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_lite_resource_post_request_cbFunction = int Function(
-    iotcon_lite_resource_h, iotcon_attributes_h, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_lite_resource_post_request_cbFunction = bool Function(
+    iotcon_lite_resource_h resource,
+    iotcon_attributes_h attributes,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The lite resource handle.
 ///
@@ -9425,11 +9421,15 @@ abstract class iotcon_presence_trigger_e {
 typedef iotcon_found_resource_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_found_resource_cbFunction>>;
 /// @nodoc
-typedef iotcon_found_resource_cbFunction = ffi.Int Function(
-    iotcon_remote_resource_h, ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef iotcon_found_resource_cbFunction = ffi.Bool Function(
+    iotcon_remote_resource_h resource,
+    ffi.Int32 result,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_found_resource_cbFunction = int Function(
-    iotcon_remote_resource_h, int, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_found_resource_cbFunction = bool Function(
+    iotcon_remote_resource_h resource,
+    int result,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Specifies the type of function passed to iotcon_find_device_info().
 ///
@@ -9456,11 +9456,15 @@ typedef Dartiotcon_found_resource_cbFunction = int Function(
 typedef iotcon_device_info_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_device_info_cbFunction>>;
 /// @nodoc
-typedef iotcon_device_info_cbFunction = ffi.Int Function(
-    iotcon_device_info_h, ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef iotcon_device_info_cbFunction = ffi.Bool Function(
+    iotcon_device_info_h device_info,
+    ffi.Int32 result,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_device_info_cbFunction = int Function(
-    iotcon_device_info_h, int, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_device_info_cbFunction = bool Function(
+    iotcon_device_info_h device_info,
+    int result,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The device information handle.
 ///
@@ -9515,11 +9519,15 @@ abstract class iotcon_device_info_e {
 typedef iotcon_platform_info_cb
     = ffi.Pointer<ffi.NativeFunction<iotcon_platform_info_cbFunction>>;
 /// @nodoc
-typedef iotcon_platform_info_cbFunction = ffi.Int Function(
-    iotcon_platform_info_h, ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef iotcon_platform_info_cbFunction = ffi.Bool Function(
+    iotcon_platform_info_h platform_info,
+    ffi.Int32 result,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartiotcon_platform_info_cbFunction = int Function(
-    iotcon_platform_info_h, int, ffi.Pointer<ffi.Void>);
+typedef Dartiotcon_platform_info_cbFunction = bool Function(
+    iotcon_platform_info_h platform_info,
+    int result,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// The platform information handle.
 ///

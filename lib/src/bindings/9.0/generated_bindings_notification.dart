@@ -2548,7 +2548,7 @@ class Tizen90Notification {
   /// ```
   int notification_set_auto_remove(
     notification_h noti,
-    imp1.bool auto_remove,
+    bool auto_remove,
   ) {
     return _notification_set_auto_remove(
       noti,
@@ -2557,10 +2557,10 @@ class Tizen90Notification {
   }
 
   late final _notification_set_auto_removePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(notification_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(notification_h, ffi.Bool)>>(
           'notification_set_auto_remove');
   late final _notification_set_auto_remove = _notification_set_auto_removePtr
-      .asFunction<int Function(notification_h, imp1.bool)>();
+      .asFunction<int Function(notification_h, bool)>();
 
   /// Gets the 'auto remove' option of the active notification.
   ///
@@ -2601,7 +2601,7 @@ class Tizen90Notification {
   /// ```
   int notification_get_auto_remove(
     notification_h noti,
-    ffi.Pointer<imp1.bool> auto_remove,
+    ffi.Pointer<ffi.Bool> auto_remove,
   ) {
     return _notification_get_auto_remove(
       noti,
@@ -2612,9 +2612,9 @@ class Tizen90Notification {
   late final _notification_get_auto_removePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(notification_h,
-              ffi.Pointer<imp1.bool>)>>('notification_get_auto_remove');
+              ffi.Pointer<ffi.Bool>)>>('notification_get_auto_remove');
   late final _notification_get_auto_remove = _notification_get_auto_removePtr
-      .asFunction<int Function(notification_h, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(notification_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Saves a notification template to the notification database.
   ///
@@ -3151,7 +3151,7 @@ class Tizen90Notification {
   int notification_get_list(
     int type,
     int count,
-    ffi.Pointer<ffi.Int> list,
+    ffi.Pointer<notification_list_h> list,
   ) {
     return _notification_get_list(
       type,
@@ -3163,9 +3163,9 @@ class Tizen90Notification {
   late final _notification_get_listPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Int32, ffi.Int,
-              ffi.Pointer<ffi.Int>)>>('notification_get_list');
+              ffi.Pointer<notification_list_h>)>>('notification_get_list');
   late final _notification_get_list = _notification_get_listPtr
-      .asFunction<int Function(int, int, ffi.Pointer<ffi.Int>)>();
+      .asFunction<int Function(int, int, ffi.Pointer<notification_list_h>)>();
 
   int notification_register_detailed_changed_cb(
     notification_detailed_changed_cb callback,
@@ -3913,6 +3913,11 @@ abstract class notification_block_state {
   static const int NOTIFICATION_BLOCK_STATE_DO_NOT_DISTURB = 2;
 }
 
+/// @nodoc
+final class _notification_list extends ffi.Opaque {}
+
+/// @nodoc
+typedef notification_list_h = ffi.Pointer<_notification_list>;
 /// @nodoc
 typedef notification_detailed_changed_cb
     = ffi.Pointer<ffi.NativeFunction<notification_detailed_changed_cbFunction>>;

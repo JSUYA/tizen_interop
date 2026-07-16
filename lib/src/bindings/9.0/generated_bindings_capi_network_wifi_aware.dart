@@ -1906,7 +1906,7 @@ class Tizen90CapiNetworkWifiAware {
   /// - `wifi_aware_publish_create()`
   int wifi_aware_publish_enable_ranging(
     wifi_aware_publish_h publish,
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _wifi_aware_publish_enable_ranging(
       publish,
@@ -1915,12 +1915,11 @@ class Tizen90CapiNetworkWifiAware {
   }
 
   late final _wifi_aware_publish_enable_rangingPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(wifi_aware_publish_h,
-              ffi.Pointer<bool>)>>('wifi_aware_publish_enable_ranging');
+          ffi.NativeFunction<ffi.Int Function(wifi_aware_publish_h, ffi.Bool)>>(
+      'wifi_aware_publish_enable_ranging');
   late final _wifi_aware_publish_enable_ranging =
       _wifi_aware_publish_enable_rangingPtr
-          .asFunction<int Function(wifi_aware_publish_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(wifi_aware_publish_h, bool)>();
 
   /// Creates a Subscribe request.
   ///
@@ -2757,26 +2756,3 @@ typedef Dartwifi_aware_data_path_terminated_cbFunction = void Function(
     wifi_aware_data_path_h data_path,
     int reason,
     ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

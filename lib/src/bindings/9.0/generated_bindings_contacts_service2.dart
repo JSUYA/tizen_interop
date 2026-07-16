@@ -569,7 +569,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_record_create()`
   int contacts_record_destroy(
     contacts_record_h record,
-    ffi.Pointer<bool> delete_child,
+    bool delete_child,
   ) {
     return _contacts_record_destroy(
       record,
@@ -578,11 +578,10 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_record_destroyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(contacts_record_h,
-              ffi.Pointer<bool>)>>('contacts_record_destroy');
+          ffi.NativeFunction<ffi.Int Function(contacts_record_h, ffi.Bool)>>(
+      'contacts_record_destroy');
   late final _contacts_record_destroy = _contacts_record_destroyPtr
-      .asFunction<int Function(contacts_record_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_record_h, bool)>();
 
   /// Makes a clone of a record.
   ///
@@ -942,7 +941,7 @@ class Tizen90ContactsService2 {
   int contacts_record_get_bool(
     contacts_record_h record,
     int property_id,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _contacts_record_get_bool(
       record,
@@ -954,9 +953,10 @@ class Tizen90ContactsService2 {
   late final _contacts_record_get_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_record_h, ffi.UnsignedInt,
-              ffi.Pointer<bool>)>>('contacts_record_get_bool');
-  late final _contacts_record_get_bool = _contacts_record_get_boolPtr
-      .asFunction<int Function(contacts_record_h, int, ffi.Pointer<bool>)>();
+              ffi.Pointer<ffi.Bool>)>>('contacts_record_get_bool');
+  late final _contacts_record_get_bool =
+      _contacts_record_get_boolPtr.asFunction<
+          int Function(contacts_record_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets a boolean value to a record.
   ///
@@ -982,7 +982,7 @@ class Tizen90ContactsService2 {
   int contacts_record_set_bool(
     contacts_record_h record,
     int property_id,
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _contacts_record_set_bool(
       record,
@@ -994,9 +994,9 @@ class Tizen90ContactsService2 {
   late final _contacts_record_set_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_record_h, ffi.UnsignedInt,
-              ffi.Pointer<bool>)>>('contacts_record_set_bool');
+              ffi.Bool)>>('contacts_record_set_bool');
   late final _contacts_record_set_bool = _contacts_record_set_boolPtr
-      .asFunction<int Function(contacts_record_h, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_record_h, int, bool)>();
 
   /// Gets a record's double value.
   ///
@@ -1395,7 +1395,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_list_create()`
   int contacts_list_destroy(
     contacts_list_h contacts_list,
-    ffi.Pointer<bool> delete_child,
+    bool delete_child,
   ) {
     return _contacts_list_destroy(
       contacts_list,
@@ -1403,12 +1403,11 @@ class Tizen90ContactsService2 {
     );
   }
 
-  late final _contacts_list_destroyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              contacts_list_h, ffi.Pointer<bool>)>>('contacts_list_destroy');
+  late final _contacts_list_destroyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(contacts_list_h, ffi.Bool)>>(
+          'contacts_list_destroy');
   late final _contacts_list_destroy = _contacts_list_destroyPtr
-      .asFunction<int Function(contacts_list_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_list_h, bool)>();
 
   /// Retrieves the number of contact entities from a contacts list.
   ///
@@ -1979,7 +1978,7 @@ class Tizen90ContactsService2 {
   int contacts_filter_add_bool(
     contacts_filter_h filter,
     int property_id,
-    ffi.Pointer<bool> match_value,
+    bool match_value,
   ) {
     return _contacts_filter_add_bool(
       filter,
@@ -1991,9 +1990,9 @@ class Tizen90ContactsService2 {
   late final _contacts_filter_add_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_filter_h, ffi.UnsignedInt,
-              ffi.Pointer<bool>)>>('contacts_filter_add_bool');
+              ffi.Bool)>>('contacts_filter_add_bool');
   late final _contacts_filter_add_bool = _contacts_filter_add_boolPtr
-      .asFunction<int Function(contacts_filter_h, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_filter_h, int, bool)>();
 
   /// Adds an operator between conditions.
   ///
@@ -2204,7 +2203,7 @@ class Tizen90ContactsService2 {
   /// - `CONTACTS_ERROR_SYSTEM`: Internal system module error
   int contacts_query_set_distinct(
     contacts_query_h query,
-    ffi.Pointer<bool> set1,
+    bool set1,
   ) {
     return _contacts_query_set_distinct(
       query,
@@ -2212,12 +2211,11 @@ class Tizen90ContactsService2 {
     );
   }
 
-  late final _contacts_query_set_distinctPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(contacts_query_h,
-              ffi.Pointer<bool>)>>('contacts_query_set_distinct');
+  late final _contacts_query_set_distinctPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(contacts_query_h, ffi.Bool)>>(
+          'contacts_query_set_distinct');
   late final _contacts_query_set_distinct = _contacts_query_set_distinctPtr
-      .asFunction<int Function(contacts_query_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_query_h, bool)>();
 
   /// Sets a filter for query.
   ///
@@ -2277,7 +2275,7 @@ class Tizen90ContactsService2 {
   int contacts_query_set_sort(
     contacts_query_h query,
     int property_id,
-    ffi.Pointer<bool> is_ascending,
+    bool is_ascending,
   ) {
     return _contacts_query_set_sort(
       query,
@@ -2289,9 +2287,9 @@ class Tizen90ContactsService2 {
   late final _contacts_query_set_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_query_h, ffi.UnsignedInt,
-              ffi.Pointer<bool>)>>('contacts_query_set_sort');
+              ffi.Bool)>>('contacts_query_set_sort');
   late final _contacts_query_set_sort = _contacts_query_set_sortPtr
-      .asFunction<int Function(contacts_query_h, int, ffi.Pointer<bool>)>();
+      .asFunction<int Function(contacts_query_h, int, bool)>();
 
   /// Inserts a record to the contacts database.
   ///
@@ -5170,7 +5168,7 @@ class Tizen90ContactsService2 {
   /// **See also:**
   /// - `contacts_connect()`
   int contacts_sim_get_initialization_status(
-    ffi.Pointer<bool> completed,
+    ffi.Pointer<ffi.Bool> completed,
   ) {
     return _contacts_sim_get_initialization_status(
       completed,
@@ -5178,11 +5176,11 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_sim_get_initialization_statusPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'contacts_sim_get_initialization_status');
   late final _contacts_sim_get_initialization_status =
       _contacts_sim_get_initialization_statusPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Imports all contacts from SIM of the given SIM slot number to the Contacts Database.
   ///
@@ -5275,7 +5273,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_connect()`
   int contacts_sim_get_initialization_status_by_sim_slot_no(
     int sim_slot_no,
-    ffi.Pointer<bool> completed,
+    ffi.Pointer<ffi.Bool> completed,
   ) {
     return _contacts_sim_get_initialization_status_by_sim_slot_no(
       sim_slot_no,
@@ -5284,11 +5282,13 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_sim_get_initialization_status_by_sim_slot_noPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<bool>)>>(
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
           'contacts_sim_get_initialization_status_by_sim_slot_no');
   late final _contacts_sim_get_initialization_status_by_sim_slot_no =
       _contacts_sim_get_initialization_status_by_sim_slot_noPtr
-          .asFunction<int Function(int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Retrieves all contacts with a record handle (_contacts_contact) from a vCard file.
   ///
@@ -8151,29 +8151,6 @@ final class _contacts_sip_property_ids extends ffi.Struct {
 
 /// @nodoc
 typedef contacts_record_h = ffi.Pointer<__contacts_record_h>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 /// @nodoc
 typedef contacts_list_h = ffi.Pointer<__contacts_list_h>;
 
@@ -8405,11 +8382,11 @@ abstract class contacts_person_property_e {
 typedef contacts_sim_import_progress_cb
     = ffi.Pointer<ffi.NativeFunction<contacts_sim_import_progress_cbFunction>>;
 /// @nodoc
-typedef contacts_sim_import_progress_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef contacts_sim_import_progress_cbFunction = ffi.Bool Function(
+    ffi.Int total, ffi.Int imported_cnt, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcontacts_sim_import_progress_cbFunction = int Function(
-    int, int, ffi.Pointer<ffi.Void>);
+typedef Dartcontacts_sim_import_progress_cbFunction = bool Function(
+    int total, int imported_cnt, ffi.Pointer<ffi.Void> user_data);
 
 /// Called to get a record handle of `CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact.`
 ///
@@ -8432,11 +8409,11 @@ typedef Dartcontacts_sim_import_progress_cbFunction = int Function(
 typedef contacts_vcard_parse_cb
     = ffi.Pointer<ffi.NativeFunction<contacts_vcard_parse_cbFunction>>;
 /// @nodoc
-typedef contacts_vcard_parse_cbFunction = ffi.Int Function(
-    contacts_record_h, ffi.Pointer<ffi.Void>);
+typedef contacts_vcard_parse_cbFunction = ffi.Bool Function(
+    contacts_record_h record, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcontacts_vcard_parse_cbFunction = int Function(
-    contacts_record_h, ffi.Pointer<ffi.Void>);
+typedef Dartcontacts_vcard_parse_cbFunction = bool Function(
+    contacts_record_h record, ffi.Pointer<ffi.Void> user_data);
 
 /// Enumeration for contact DB status.
 ///

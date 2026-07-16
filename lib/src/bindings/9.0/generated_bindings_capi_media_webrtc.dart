@@ -949,7 +949,7 @@ class Tizen90CapiMediaWebrtc {
     webrtc_h webrtc,
     int source_id,
     int media_type,
-    imp3.bool pause,
+    bool pause,
   ) {
     return _webrtc_media_source_set_pause(
       webrtc,
@@ -962,9 +962,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_media_source_set_pausePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt, ffi.Int32,
-              imp3.bool)>>('webrtc_media_source_set_pause');
+              ffi.Bool)>>('webrtc_media_source_set_pause');
   late final _webrtc_media_source_set_pause = _webrtc_media_source_set_pausePtr
-      .asFunction<int Function(webrtc_h, int, int, imp3.bool)>();
+      .asFunction<int Function(webrtc_h, int, int, bool)>();
 
   /// Gets the pause state of the media source.
   ///
@@ -995,7 +995,7 @@ class Tizen90CapiMediaWebrtc {
     webrtc_h webrtc,
     int source_id,
     int media_type,
-    ffi.Pointer<imp3.bool> paused,
+    ffi.Pointer<ffi.Bool> paused,
   ) {
     return _webrtc_media_source_get_pause(
       webrtc,
@@ -1008,9 +1008,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_media_source_get_pausePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt, ffi.Int32,
-              ffi.Pointer<imp3.bool>)>>('webrtc_media_source_get_pause');
+              ffi.Pointer<ffi.Bool>)>>('webrtc_media_source_get_pause');
   late final _webrtc_media_source_get_pause = _webrtc_media_source_get_pausePtr
-      .asFunction<int Function(webrtc_h, int, int, ffi.Pointer<imp3.bool>)>();
+      .asFunction<int Function(webrtc_h, int, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets mute to the media source.
   ///
@@ -1039,7 +1039,7 @@ class Tizen90CapiMediaWebrtc {
     webrtc_h webrtc,
     int source_id,
     int media_type,
-    imp3.bool mute,
+    bool mute,
   ) {
     return _webrtc_media_source_set_mute(
       webrtc,
@@ -1052,9 +1052,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_media_source_set_mutePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt, ffi.Int32,
-              imp3.bool)>>('webrtc_media_source_set_mute');
+              ffi.Bool)>>('webrtc_media_source_set_mute');
   late final _webrtc_media_source_set_mute = _webrtc_media_source_set_mutePtr
-      .asFunction<int Function(webrtc_h, int, int, imp3.bool)>();
+      .asFunction<int Function(webrtc_h, int, int, bool)>();
 
   /// Gets the mute state of the media source.
   ///
@@ -1086,7 +1086,7 @@ class Tizen90CapiMediaWebrtc {
     webrtc_h webrtc,
     int source_id,
     int media_type,
-    ffi.Pointer<imp3.bool> muted,
+    ffi.Pointer<ffi.Bool> muted,
   ) {
     return _webrtc_media_source_get_mute(
       webrtc,
@@ -1099,9 +1099,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_media_source_get_mutePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt, ffi.Int32,
-              ffi.Pointer<imp3.bool>)>>('webrtc_media_source_get_mute');
+              ffi.Pointer<ffi.Bool>)>>('webrtc_media_source_get_mute');
   late final _webrtc_media_source_get_mute = _webrtc_media_source_get_mutePtr
-      .asFunction<int Function(webrtc_h, int, int, ffi.Pointer<imp3.bool>)>();
+      .asFunction<int Function(webrtc_h, int, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets an encoder target bitrate(in bits/sec) to the media source.
   ///
@@ -1824,7 +1824,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_file_source_set_looping(
     webrtc_h webrtc,
     int source_id,
-    imp3.bool looping,
+    bool looping,
   ) {
     return _webrtc_file_source_set_looping(
       webrtc,
@@ -1836,10 +1836,10 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_file_source_set_loopingPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt,
-              imp3.bool)>>('webrtc_file_source_set_looping');
+              ffi.Bool)>>('webrtc_file_source_set_looping');
   late final _webrtc_file_source_set_looping =
       _webrtc_file_source_set_loopingPtr
-          .asFunction<int Function(webrtc_h, int, imp3.bool)>();
+          .asFunction<int Function(webrtc_h, int, bool)>();
 
   /// Gets looping mode of the file source.
   ///
@@ -1867,7 +1867,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_file_source_get_looping(
     webrtc_h webrtc,
     int source_id,
-    ffi.Pointer<imp3.bool> looping,
+    ffi.Pointer<ffi.Bool> looping,
   ) {
     return _webrtc_file_source_get_looping(
       webrtc,
@@ -1879,10 +1879,10 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_file_source_get_loopingPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt,
-              ffi.Pointer<imp3.bool>)>>('webrtc_file_source_get_looping');
+              ffi.Pointer<ffi.Bool>)>>('webrtc_file_source_get_looping');
   late final _webrtc_file_source_get_looping =
       _webrtc_file_source_get_loopingPtr
-          .asFunction<int Function(webrtc_h, int, ffi.Pointer<imp3.bool>)>();
+          .asFunction<int Function(webrtc_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the crop coordinates of a screen source.
   ///
@@ -2131,7 +2131,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_set_audio_mute(
     webrtc_h webrtc,
     int track_id,
-    imp3.bool mute,
+    bool mute,
   ) {
     return _webrtc_set_audio_mute(
       webrtc,
@@ -2143,9 +2143,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_set_audio_mutePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(
-              webrtc_h, ffi.UnsignedInt, imp3.bool)>>('webrtc_set_audio_mute');
-  late final _webrtc_set_audio_mute = _webrtc_set_audio_mutePtr
-      .asFunction<int Function(webrtc_h, int, imp3.bool)>();
+              webrtc_h, ffi.UnsignedInt, ffi.Bool)>>('webrtc_set_audio_mute');
+  late final _webrtc_set_audio_mute =
+      _webrtc_set_audio_mutePtr.asFunction<int Function(webrtc_h, int, bool)>();
 
   /// Gets the mute state of the audio track.
   ///
@@ -2177,7 +2177,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_get_audio_mute(
     webrtc_h webrtc,
     int track_id,
-    ffi.Pointer<imp3.bool> muted,
+    ffi.Pointer<ffi.Bool> muted,
   ) {
     return _webrtc_get_audio_mute(
       webrtc,
@@ -2189,9 +2189,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_get_audio_mutePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt,
-              ffi.Pointer<imp3.bool>)>>('webrtc_get_audio_mute');
+              ffi.Pointer<ffi.Bool>)>>('webrtc_get_audio_mute');
   late final _webrtc_get_audio_mute = _webrtc_get_audio_mutePtr
-      .asFunction<int Function(webrtc_h, int, ffi.Pointer<imp3.bool>)>();
+      .asFunction<int Function(webrtc_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets a display to the video track to be rendered.
   ///
@@ -2372,7 +2372,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_set_display_visible(
     webrtc_h webrtc,
     int track_id,
-    imp3.bool visible,
+    bool visible,
   ) {
     return _webrtc_set_display_visible(
       webrtc,
@@ -2384,9 +2384,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_set_display_visiblePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt,
-              imp3.bool)>>('webrtc_set_display_visible');
+              ffi.Bool)>>('webrtc_set_display_visible');
   late final _webrtc_set_display_visible = _webrtc_set_display_visiblePtr
-      .asFunction<int Function(webrtc_h, int, imp3.bool)>();
+      .asFunction<int Function(webrtc_h, int, bool)>();
 
   /// Gets the display visibleness of the video track.
   ///
@@ -2419,7 +2419,7 @@ class Tizen90CapiMediaWebrtc {
   int webrtc_get_display_visible(
     webrtc_h webrtc,
     int track_id,
-    ffi.Pointer<imp3.bool> visible,
+    ffi.Pointer<ffi.Bool> visible,
   ) {
     return _webrtc_get_display_visible(
       webrtc,
@@ -2431,9 +2431,9 @@ class Tizen90CapiMediaWebrtc {
   late final _webrtc_get_display_visiblePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(webrtc_h, ffi.UnsignedInt,
-              ffi.Pointer<imp3.bool>)>>('webrtc_get_display_visible');
+              ffi.Pointer<ffi.Bool>)>>('webrtc_get_display_visible');
   late final _webrtc_get_display_visible = _webrtc_get_display_visiblePtr
-      .asFunction<int Function(webrtc_h, int, ffi.Pointer<imp3.bool>)>();
+      .asFunction<int Function(webrtc_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets an encoded audio frame callback function to be invoked when each audio frame is ready to be rendered.
   ///
@@ -5852,6 +5852,44 @@ final class webrtc_stats_prop_info_s extends ffi.Struct {
   /// < The property data type
   @ffi.Int32()
   external int type;
+
+  /// The property value as per the data type above
+  external CapiMediaWebrtcUnnamedUnion1 unnamed;
+}
+
+/// The property value as per the data type above
+/// @nodoc
+final class CapiMediaWebrtcUnnamedUnion1 extends ffi.Union {
+  /// < For boolean
+  @ffi.Bool()
+  external bool v_bool;
+
+  /// < For signed integer
+  @ffi.Int()
+  external int v_int;
+
+  /// < For unsigned integer
+  @ffi.UnsignedInt()
+  external int v_uint;
+
+  /// < For 64-bit signed integer
+  @ffi.Int64()
+  external int v_int64;
+
+  /// < For 64-bit unsigned integer
+  @ffi.Uint64()
+  external int v_uint64;
+
+  /// < For float
+  @ffi.Float()
+  external double v_float;
+
+  /// < For double
+  @ffi.Double()
+  external double v_double;
+
+  /// < For string
+  external ffi.Pointer<ffi.Char> v_string;
 }
 
 /// WebRTC handle type.
@@ -5938,11 +5976,11 @@ typedef webrtc_media_source_supported_transceiver_codec_cb = ffi.Pointer<
     ffi.NativeFunction<
         webrtc_media_source_supported_transceiver_codec_cbFunction>>;
 /// @nodoc
-typedef webrtc_media_source_supported_transceiver_codec_cbFunction = ffi.Int
-    Function(ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef webrtc_media_source_supported_transceiver_codec_cbFunction = ffi.Bool
+    Function(ffi.Int32 codec, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartwebrtc_media_source_supported_transceiver_codec_cbFunction = int
-    Function(int, ffi.Pointer<ffi.Void>);
+typedef Dartwebrtc_media_source_supported_transceiver_codec_cbFunction = bool
+    Function(int codec, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the buffer state of media packet source is changed.
 ///
@@ -6045,11 +6083,11 @@ typedef Dartwebrtc_encoded_frame_cbFunction = void Function(
 typedef webrtc_turn_server_cb
     = ffi.Pointer<ffi.NativeFunction<webrtc_turn_server_cbFunction>>;
 /// @nodoc
-typedef webrtc_turn_server_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef webrtc_turn_server_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> turn_server, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartwebrtc_turn_server_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartwebrtc_turn_server_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> turn_server, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the WebRTC peer connection state is changed.
 ///
@@ -6547,11 +6585,15 @@ typedef Dartwebrtc_data_channel_buffered_amount_low_cbFunction = void Function(
 typedef webrtc_stats_cb
     = ffi.Pointer<ffi.NativeFunction<webrtc_stats_cbFunction>>;
 /// @nodoc
-typedef webrtc_stats_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<webrtc_stats_prop_info_s>, ffi.Pointer<ffi.Void>);
+typedef webrtc_stats_cbFunction = ffi.Bool Function(
+    ffi.Int32 type,
+    ffi.Pointer<webrtc_stats_prop_info_s> prop_info,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartwebrtc_stats_cbFunction = int Function(
-    int, ffi.Pointer<webrtc_stats_prop_info_s>, ffi.Pointer<ffi.Void>);
+typedef Dartwebrtc_stats_cbFunction = bool Function(
+    int type,
+    ffi.Pointer<webrtc_stats_prop_info_s> prop_info,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int WEBRTC_STATS_TYPE_ALL = 0;

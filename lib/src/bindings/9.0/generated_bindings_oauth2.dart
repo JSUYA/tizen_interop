@@ -2232,7 +2232,7 @@ class Tizen90Oauth2 {
   /// - `false`: No pending request
   /// - `true`: There is pending request.
   /// - `OAUTH2_ERROR_NOT_SUPPORTED`: Not supported
-  int oauth2_manager_is_request_in_progress(
+  bool oauth2_manager_is_request_in_progress(
     oauth2_manager_h handle,
   ) {
     return _oauth2_manager_is_request_in_progress(
@@ -2241,11 +2241,11 @@ class Tizen90Oauth2 {
   }
 
   late final _oauth2_manager_is_request_in_progressPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(oauth2_manager_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(oauth2_manager_h)>>(
           'oauth2_manager_is_request_in_progress');
   late final _oauth2_manager_is_request_in_progress =
       _oauth2_manager_is_request_in_progressPtr
-          .asFunction<int Function(oauth2_manager_h)>();
+          .asFunction<bool Function(oauth2_manager_h)>();
 
   /// Clears the cookies.
   ///

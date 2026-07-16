@@ -690,11 +690,11 @@ typedef mv_surveillance_result_h = ffi.Pointer<ffi.Void>;
 typedef mv_surveillance_event_type_cb
     = ffi.Pointer<ffi.NativeFunction<mv_surveillance_event_type_cbFunction>>;
 /// @nodoc
-typedef mv_surveillance_event_type_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mv_surveillance_event_type_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> event_type, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmv_surveillance_event_type_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmv_surveillance_event_type_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> event_type, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0
 ///
@@ -722,11 +722,11 @@ typedef Dartmv_surveillance_event_type_cbFunction = int Function(
 typedef mv_surveillance_event_result_name_cb = ffi
     .Pointer<ffi.NativeFunction<mv_surveillance_event_result_name_cbFunction>>;
 /// @nodoc
-typedef mv_surveillance_event_result_name_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef mv_surveillance_event_result_name_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> name, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartmv_surveillance_event_result_name_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartmv_surveillance_event_result_name_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> name, ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const String MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED =

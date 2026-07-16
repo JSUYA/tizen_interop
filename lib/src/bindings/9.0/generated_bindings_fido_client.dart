@@ -464,7 +464,7 @@ class Tizen90FidoClient {
   ///
   /// **Returns:**
   /// - `true` if its only second factor, otherwise false.
-  int fido_authenticator_get_is_second_factor_only(
+  bool fido_authenticator_get_is_second_factor_only(
     fido_authenticator_h auth,
   ) {
     return _fido_authenticator_get_is_second_factor_only(
@@ -473,11 +473,11 @@ class Tizen90FidoClient {
   }
 
   late final _fido_authenticator_get_is_second_factor_onlyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(fido_authenticator_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(fido_authenticator_h)>>(
           'fido_authenticator_get_is_second_factor_only');
   late final _fido_authenticator_get_is_second_factor_only =
       _fido_authenticator_get_is_second_factor_onlyPtr
-          .asFunction<int Function(fido_authenticator_h)>();
+          .asFunction<bool Function(fido_authenticator_h)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -698,7 +698,7 @@ class Tizen90FidoClient {
   /// - `FIDO_ERROR_UNTRUSTED_FACET_ID`: The caller's id is not allowed to use this operation.
   int fido_uaf_is_supported(
     ffi.Pointer<ffi.Char> uaf_message_json,
-    ffi.Pointer<bool> is_supported,
+    ffi.Pointer<ffi.Bool> is_supported,
   ) {
     return _fido_uaf_is_supported(
       uaf_message_json,
@@ -709,9 +709,9 @@ class Tizen90FidoClient {
   late final _fido_uaf_is_supportedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('fido_uaf_is_supported');
+              ffi.Pointer<ffi.Bool>)>>('fido_uaf_is_supported');
   late final _fido_uaf_is_supported = _fido_uaf_is_supportedPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -1094,29 +1094,6 @@ abstract class fido_auth_tc_display_type_e {
   /// < Transaction confirmation display is provided on a distinct device from the FIDO User Device.
   static const int FIDO_AUTH_TC_DISP_TYPE_REMOTE = 16;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 8.0.
 ///

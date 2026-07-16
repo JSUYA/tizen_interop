@@ -111,7 +111,7 @@ class Tizen90CapiSystemDevice {
   /// ...
   /// ```
   int device_battery_is_charging(
-    ffi.Pointer<bool> charging,
+    ffi.Pointer<ffi.Bool> charging,
   ) {
     return _device_battery_is_charging(
       charging,
@@ -119,10 +119,10 @@ class Tizen90CapiSystemDevice {
   }
 
   late final _device_battery_is_chargingPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'device_battery_is_charging');
   late final _device_battery_is_charging = _device_battery_is_chargingPtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the current device's battery level status as a `device_battery_level_e`.
   ///
@@ -1225,7 +1225,7 @@ class Tizen90CapiSystemDevice {
   /// ...
   /// ```
   int device_ir_is_available(
-    ffi.Pointer<bool> available,
+    ffi.Pointer<ffi.Bool> available,
   ) {
     return _device_ir_is_available(
       available,
@@ -1233,10 +1233,10 @@ class Tizen90CapiSystemDevice {
   }
 
   late final _device_ir_is_availablePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'device_ir_is_available');
-  late final _device_ir_is_available =
-      _device_ir_is_availablePtr.asFunction<int Function(ffi.Pointer<bool>)>();
+  late final _device_ir_is_available = _device_ir_is_availablePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Transmits IR command with the specified carrier frequency and pattern.
   ///
@@ -1736,7 +1736,7 @@ class Tizen90CapiSystemDevice {
   /// **Postconditions:**
   /// - The device will be in `DISPLAY_STATE_NORMAL` state.
   int device_power_wakeup(
-    ffi.Pointer<bool> dim,
+    bool dim,
   ) {
     return _device_power_wakeup(
       dim,
@@ -1744,10 +1744,10 @@ class Tizen90CapiSystemDevice {
   }
 
   late final _device_power_wakeupPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'device_power_wakeup');
   late final _device_power_wakeup =
-      _device_power_wakeupPtr.asFunction<int Function(ffi.Pointer<bool>)>();
+      _device_power_wakeupPtr.asFunction<int Function(bool)>();
 
   /// Sends a request to the deviced Rebooting the current device.
   ///
@@ -2004,29 +2004,6 @@ abstract class device_battery_status_e {
   /// < Battery is not charging
   static const int DEVICE_BATTERY_STATUS_NOT_CHARGING = 3;
 }
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Enumeration for the device state callback.
 ///

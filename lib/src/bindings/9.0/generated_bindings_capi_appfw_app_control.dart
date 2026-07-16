@@ -928,7 +928,7 @@ class Tizen90CapiAppfwAppControl {
   int app_control_is_extra_data_array(
     app_control_h app_control,
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<bool> array,
+    ffi.Pointer<ffi.Bool> array,
   ) {
     return _app_control_is_extra_data_array(
       app_control,
@@ -940,11 +940,11 @@ class Tizen90CapiAppfwAppControl {
   late final _app_control_is_extra_data_arrayPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(app_control_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('app_control_is_extra_data_array');
+              ffi.Pointer<ffi.Bool>)>>('app_control_is_extra_data_array');
   late final _app_control_is_extra_data_array =
       _app_control_is_extra_data_arrayPtr.asFunction<
           int Function(
-              app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+              app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
 
   /// Retrieves all extra data contained in app_control.
   ///
@@ -1279,7 +1279,7 @@ class Tizen90CapiAppfwAppControl {
   /// - `APP_CONTROL_ERROR_OUT_OF_MEMORY`: Out of memory
   int app_control_is_reply_requested(
     app_control_h app_control,
-    ffi.Pointer<bool> requested,
+    ffi.Pointer<ffi.Bool> requested,
   ) {
     return _app_control_is_reply_requested(
       app_control,
@@ -1288,12 +1288,12 @@ class Tizen90CapiAppfwAppControl {
   }
 
   late final _app_control_is_reply_requestedPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(app_control_h, ffi.Pointer<bool>)>>(
-      'app_control_is_reply_requested');
+      ffi.NativeFunction<
+          ffi.Int Function(app_control_h,
+              ffi.Pointer<ffi.Bool>)>>('app_control_is_reply_requested');
   late final _app_control_is_reply_requested =
       _app_control_is_reply_requestedPtr
-          .asFunction<int Function(app_control_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(app_control_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the launch mode of the application.
   ///
@@ -1889,29 +1889,6 @@ abstract class app_control_launch_mode_e {
 /// @nodoc
 typedef app_control_h = ffi.Pointer<app_control_s>;
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// Called to retrieve the extra data contained in the app_control.
 ///
 /// **Since Tizen:**
@@ -1937,11 +1914,15 @@ typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 typedef app_control_extra_data_cb
     = ffi.Pointer<ffi.NativeFunction<app_control_extra_data_cbFunction>>;
 /// @nodoc
-typedef app_control_extra_data_cbFunction = ffi.Int Function(
-    app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef app_control_extra_data_cbFunction = ffi.Bool Function(
+    app_control_h app_control,
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_control_extra_data_cbFunction = int Function(
-    app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartapp_control_extra_data_cbFunction = bool Function(
+    app_control_h app_control,
+    ffi.Pointer<ffi.Char> key,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called once for each matched application that can be launched to handle the given app_control request.
 ///
@@ -1965,11 +1946,15 @@ typedef Dartapp_control_extra_data_cbFunction = int Function(
 typedef app_control_app_matched_cb
     = ffi.Pointer<ffi.NativeFunction<app_control_app_matched_cbFunction>>;
 /// @nodoc
-typedef app_control_app_matched_cbFunction = ffi.Int Function(
-    app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef app_control_app_matched_cbFunction = ffi.Bool Function(
+    app_control_h app_control,
+    ffi.Pointer<ffi.Char> appid,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartapp_control_app_matched_cbFunction = int Function(
-    app_control_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartapp_control_app_matched_cbFunction = bool Function(
+    app_control_h app_control,
+    ffi.Pointer<ffi.Char> appid,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the reply of the launch request is delivered.
 ///

@@ -279,7 +279,7 @@ class Tizen90CapiContext {
   /// - `CONTEXT_HISTORY_ERROR_OPERATION_FAILED`: Operation failed
   int context_history_is_supported(
     int data_type,
-    ffi.Pointer<imp1.bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _context_history_is_supported(
       data_type,
@@ -289,10 +289,10 @@ class Tizen90CapiContext {
 
   late final _context_history_is_supportedPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'context_history_is_supported');
   late final _context_history_is_supported = _context_history_is_supportedPtr
-      .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Reads context statistics or patterns.
   ///
@@ -1380,7 +1380,7 @@ class Tizen90CapiContext {
   /// - `CONTEXT_TRIGGER_ERROR_NOT_SUPPORTED`: Not supported
   int context_trigger_rule_event_is_supported(
     int event_item,
-    ffi.Pointer<imp1.bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _context_trigger_rule_event_is_supported(
       event_item,
@@ -1390,11 +1390,11 @@ class Tizen90CapiContext {
 
   late final _context_trigger_rule_event_is_supportedPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'context_trigger_rule_event_is_supported');
   late final _context_trigger_rule_event_is_supported =
       _context_trigger_rule_event_is_supportedPtr
-          .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Creates a condition entry.
   ///
@@ -1471,7 +1471,7 @@ class Tizen90CapiContext {
   /// - `CONTEXT_TRIGGER_ERROR_NOT_SUPPORTED`: Not supported
   int context_trigger_rule_condition_is_supported(
     int condition_item,
-    ffi.Pointer<imp1.bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _context_trigger_rule_condition_is_supported(
       condition_item,
@@ -1481,11 +1481,11 @@ class Tizen90CapiContext {
 
   late final _context_trigger_rule_condition_is_supportedPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
       'context_trigger_rule_condition_is_supported');
   late final _context_trigger_rule_condition_is_supported =
       _context_trigger_rule_condition_is_supportedPtr
-          .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Releases the resource occupied by an entry.
   ///

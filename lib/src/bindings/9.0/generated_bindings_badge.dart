@@ -677,11 +677,13 @@ abstract class badge_action {
 typedef badge_foreach_cb
     = ffi.Pointer<ffi.NativeFunction<badge_foreach_cbFunction>>;
 /// @nodoc
-typedef badge_foreach_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.UnsignedInt, ffi.Pointer<ffi.Void>);
+typedef badge_foreach_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> app_id,
+    ffi.UnsignedInt count,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartbadge_foreach_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
+typedef Dartbadge_foreach_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> app_id, int count, ffi.Pointer<ffi.Void> user_data);
 
 /// **Deprecated:** Deprecated since 9.0
 ///

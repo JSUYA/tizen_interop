@@ -504,7 +504,7 @@ class Tizen90CapiMediaImageUtil {
   /// - `IMAGE_UTIL_ERROR_NOT_SUPPORTED_FORMAT`: Not supported format
   int image_util_encode_set_lossless(
     image_util_encode_h handle,
-    imp1.bool lossless,
+    bool lossless,
   ) {
     return _image_util_encode_set_lossless(
       handle,
@@ -513,11 +513,11 @@ class Tizen90CapiMediaImageUtil {
   }
 
   late final _image_util_encode_set_losslessPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(image_util_encode_h, imp1.bool)>>(
+          ffi.NativeFunction<ffi.Int Function(image_util_encode_h, ffi.Bool)>>(
       'image_util_encode_set_lossless');
   late final _image_util_encode_set_lossless =
       _image_util_encode_set_losslessPtr
-          .asFunction<int Function(image_util_encode_h, imp1.bool)>();
+          .asFunction<int Function(image_util_encode_h, bool)>();
 
   /// Encodes an `image` using given `handle` synchronously.
   ///
@@ -1177,7 +1177,7 @@ class Tizen90CapiMediaImageUtil {
   /// - `IMAGE_UTIL_ERROR_NOT_SUPPORTED_FORMAT`: Not supported format
   int image_util_anim_encode_set_lossless(
     image_util_anim_encode_h handle,
-    imp1.bool lossless,
+    bool lossless,
   ) {
     return _image_util_anim_encode_set_lossless(
       handle,
@@ -1188,10 +1188,10 @@ class Tizen90CapiMediaImageUtil {
   late final _image_util_anim_encode_set_losslessPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(image_util_anim_encode_h,
-              imp1.bool)>>('image_util_anim_encode_set_lossless');
+              ffi.Bool)>>('image_util_anim_encode_set_lossless');
   late final _image_util_anim_encode_set_lossless =
       _image_util_anim_encode_set_losslessPtr
-          .asFunction<int Function(image_util_anim_encode_h, imp1.bool)>();
+          .asFunction<int Function(image_util_anim_encode_h, bool)>();
 
   /// Encodes an image and adds image to the frame of the animated image.
   ///
@@ -2766,11 +2766,11 @@ typedef Dartimage_util_transform_completed2_cbFunction = void Function(
 typedef image_util_supported_colorspace_cb = ffi
     .Pointer<ffi.NativeFunction<image_util_supported_colorspace_cbFunction>>;
 /// @nodoc
-typedef image_util_supported_colorspace_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef image_util_supported_colorspace_cbFunction = ffi.Bool Function(
+    ffi.Int32 colorspace, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartimage_util_supported_colorspace_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartimage_util_supported_colorspace_cbFunction = bool Function(
+    int colorspace, ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int IMAGE_UTIL_ERROR_CLASS = -26345472;

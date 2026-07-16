@@ -1678,11 +1678,11 @@ typedef ml_train_datagen_cb
 typedef ml_train_datagen_cbFunction = ffi.Int Function(
     ffi.Pointer<ffi.Pointer<ffi.Float>> input,
     ffi.Pointer<ffi.Pointer<ffi.Float>> label,
-    ffi.Pointer<imp1.bool> last,
+    ffi.Pointer<ffi.Bool> last,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartml_train_datagen_cbFunction = int Function(
     ffi.Pointer<ffi.Pointer<ffi.Float>> input,
     ffi.Pointer<ffi.Pointer<ffi.Float>> label,
-    ffi.Pointer<imp1.bool> last,
+    ffi.Pointer<ffi.Bool> last,
     ffi.Pointer<ffi.Void> user_data);

@@ -217,7 +217,7 @@ class Tizen90Mmi {
   /// mmi_primitive_value_destroy(handle);
   /// ```
   int mmi_primitive_value_create_bool(
-    ffi.Pointer<bool> data,
+    bool data,
     ffi.Pointer<mmi_primitive_value_h> handle,
   ) {
     return _mmi_primitive_value_create_bool(
@@ -228,13 +228,11 @@ class Tizen90Mmi {
 
   late final _mmi_primitive_value_create_boolPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(
-                  ffi.Pointer<bool>, ffi.Pointer<mmi_primitive_value_h>)>>(
+              ffi.Int Function(ffi.Bool, ffi.Pointer<mmi_primitive_value_h>)>>(
       'mmi_primitive_value_create_bool');
   late final _mmi_primitive_value_create_bool =
-      _mmi_primitive_value_create_boolPtr.asFunction<
-          int Function(
-              ffi.Pointer<bool>, ffi.Pointer<mmi_primitive_value_h>)>();
+      _mmi_primitive_value_create_boolPtr
+          .asFunction<int Function(bool, ffi.Pointer<mmi_primitive_value_h>)>();
 
   /// Creates a primitive value handle for an array.
   ///
@@ -499,7 +497,7 @@ class Tizen90Mmi {
   /// - `MMI_ERROR_INVALID_PARAMETER`: Invalid parameter
   int mmi_primitive_value_get_bool(
     mmi_primitive_value_h handle,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _mmi_primitive_value_get_bool(
       handle,
@@ -510,9 +508,9 @@ class Tizen90Mmi {
   late final _mmi_primitive_value_get_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(mmi_primitive_value_h,
-              ffi.Pointer<bool>)>>('mmi_primitive_value_get_bool');
+              ffi.Pointer<ffi.Bool>)>>('mmi_primitive_value_get_bool');
   late final _mmi_primitive_value_get_bool = _mmi_primitive_value_get_boolPtr
-      .asFunction<int Function(mmi_primitive_value_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(mmi_primitive_value_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the count of elements in the array.
   ///
@@ -1298,7 +1296,7 @@ class Tizen90Mmi {
   /// mmi_data_destroy(data);
   /// ```
   int mmi_data_create_bool(
-    ffi.Pointer<bool> value,
+    bool value,
     ffi.Pointer<mmi_data_h> data,
   ) {
     return _mmi_data_create_bool(
@@ -1308,11 +1306,11 @@ class Tizen90Mmi {
   }
 
   late final _mmi_data_create_boolPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<bool>,
-              ffi.Pointer<mmi_data_h>)>>('mmi_data_create_bool');
+          ffi
+          .NativeFunction<ffi.Int Function(ffi.Bool, ffi.Pointer<mmi_data_h>)>>(
+      'mmi_data_create_bool');
   late final _mmi_data_create_bool = _mmi_data_create_boolPtr
-      .asFunction<int Function(ffi.Pointer<bool>, ffi.Pointer<mmi_data_h>)>();
+      .asFunction<int Function(bool, ffi.Pointer<mmi_data_h>)>();
 
   /// Creates an integer data object.
   ///
@@ -1965,7 +1963,7 @@ class Tizen90Mmi {
   /// - `MMI_ERROR_INVALID_PARAMETER`: Invalid parameter
   int mmi_data_get_bool(
     mmi_data_h data,
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _mmi_data_get_bool(
       data,
@@ -1974,10 +1972,11 @@ class Tizen90Mmi {
   }
 
   late final _mmi_data_get_boolPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(mmi_data_h, ffi.Pointer<bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(mmi_data_h, ffi.Pointer<ffi.Bool>)>>(
       'mmi_data_get_bool');
   late final _mmi_data_get_bool = _mmi_data_get_boolPtr
-      .asFunction<int Function(mmi_data_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(mmi_data_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Retrieves the integer value from a data handle.
   ///
@@ -5929,29 +5928,6 @@ final class mmi_primitive_value_s extends ffi.Opaque {}
 /// - 9.0
 /// @nodoc
 typedef mmi_primitive_value_h = ffi.Pointer<mmi_primitive_value_s>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// @nodoc
 final class mmi_attribute_s extends ffi.Opaque {}

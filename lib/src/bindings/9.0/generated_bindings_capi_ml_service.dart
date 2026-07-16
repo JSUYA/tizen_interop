@@ -845,7 +845,7 @@ class Tizen90CapiMlService {
   int ml_service_model_register(
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Char> path,
-    imp1.bool activate,
+    bool activate,
     ffi.Pointer<ffi.Char> description,
     ffi.Pointer<ffi.UnsignedInt> version,
   ) {
@@ -863,12 +863,12 @@ class Tizen90CapiMlService {
           ffi.Int Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              imp1.bool,
+              ffi.Bool,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.UnsignedInt>)>>('ml_service_model_register');
   late final _ml_service_model_register =
       _ml_service_model_registerPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, imp1.bool,
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.UnsignedInt>)>();
 
   /// Updates the description of neural network model with given `name` and `version`.

@@ -447,7 +447,7 @@ class Tizen90CapiMediaMetadataExtractor {
   int metadata_extractor_get_frame_at_time(
     metadata_extractor_h metadata,
     int timestamp,
-    ffi.Pointer<bool> is_accurate,
+    bool is_accurate,
     ffi.Pointer<ffi.Pointer<ffi.Void>> frame,
     ffi.Pointer<ffi.Int> size,
   ) {
@@ -465,12 +465,12 @@ class Tizen90CapiMediaMetadataExtractor {
           ffi.Int Function(
               metadata_extractor_h,
               ffi.UnsignedLong,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               ffi.Pointer<ffi.Pointer<ffi.Void>>,
               ffi.Pointer<ffi.Int>)>>('metadata_extractor_get_frame_at_time');
   late final _metadata_extractor_get_frame_at_time =
       _metadata_extractor_get_frame_at_timePtr.asFunction<
-          int Function(metadata_extractor_h, int, ffi.Pointer<bool>,
+          int Function(metadata_extractor_h, int, bool,
               ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.Int>)>();
 }
 
@@ -632,29 +632,6 @@ final class metadata_extractor_s extends ffi.Opaque {}
 /// - CAPI_METADATA_EXTRACTOR_MODULE
 /// @nodoc
 typedef metadata_extractor_h = ffi.Pointer<metadata_extractor_s>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// @nodoc
 const int METADATA_EXTRACTOR_ERROR_CLASS = -26411008;

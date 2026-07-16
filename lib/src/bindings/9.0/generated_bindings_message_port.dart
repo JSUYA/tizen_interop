@@ -219,7 +219,7 @@ class Tizen90MessagePort {
   int message_port_check_remote_port(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> exist,
+    ffi.Pointer<ffi.Bool> exist,
   ) {
     return _message_port_check_remote_port(
       remote_app_id,
@@ -231,11 +231,11 @@ class Tizen90MessagePort {
   late final _message_port_check_remote_portPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('message_port_check_remote_port');
+              ffi.Pointer<ffi.Bool>)>>('message_port_check_remote_port');
   late final _message_port_check_remote_port =
       _message_port_check_remote_portPtr.asFunction<
           int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>();
+              ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the trusted message port of a remote application is registered.
   ///
@@ -262,7 +262,7 @@ class Tizen90MessagePort {
   int message_port_check_trusted_remote_port(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> exist,
+    ffi.Pointer<ffi.Bool> exist,
   ) {
     return _message_port_check_trusted_remote_port(
       remote_app_id,
@@ -272,13 +272,14 @@ class Tizen90MessagePort {
   }
 
   late final _message_port_check_trusted_remote_portPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('message_port_check_trusted_remote_port');
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<ffi.Bool>)>>(
+      'message_port_check_trusted_remote_port');
   late final _message_port_check_trusted_remote_port =
       _message_port_check_trusted_remote_portPtr.asFunction<
           int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>();
+              ffi.Pointer<ffi.Bool>)>();
 
   /// Sends a message to the message port of a remote application.
   ///
@@ -572,7 +573,7 @@ class Tizen90MessagePort {
   int message_port_add_registered_cb(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    bool trusted_remote_port,
     message_port_registration_event_cb registered_cb,
     ffi.Pointer<ffi.Void> user_data,
     ffi.Pointer<ffi.Int> watcher_id,
@@ -592,7 +593,7 @@ class Tizen90MessagePort {
           ffi.Int Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               message_port_registration_event_cb,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Int>)>>('message_port_add_registered_cb');
@@ -601,7 +602,7 @@ class Tizen90MessagePort {
           int Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              bool,
               message_port_registration_event_cb,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Int>)>();
@@ -639,7 +640,7 @@ class Tizen90MessagePort {
   int message_port_add_unregistered_cb(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    bool trusted_remote_port,
     message_port_registration_event_cb unregistered_cb,
     ffi.Pointer<ffi.Void> user_data,
     ffi.Pointer<ffi.Int> watcher_id,
@@ -659,7 +660,7 @@ class Tizen90MessagePort {
           ffi.Int Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               message_port_registration_event_cb,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Int>)>>('message_port_add_unregistered_cb');
@@ -668,7 +669,7 @@ class Tizen90MessagePort {
           int Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>,
+              bool,
               message_port_registration_event_cb,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Int>)>();
@@ -776,7 +777,7 @@ typedef message_port_message_cbFunction = ffi.Void Function(
     ffi.Int local_port_id,
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    ffi.Bool trusted_remote_port,
     ffi.Pointer<imp1.bundle> message,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -784,32 +785,9 @@ typedef Dartmessage_port_message_cbFunction = void Function(
     int local_port_id,
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    bool trusted_remote_port,
     ffi.Pointer<imp1.bundle> message,
     ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when a trusted message is received.
 ///
@@ -848,7 +826,7 @@ typedef message_port_trusted_message_cbFunction = ffi.Void Function(
     ffi.Int trusted_local_port_id,
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    ffi.Bool trusted_remote_port,
     ffi.Pointer<imp1.bundle> message,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -856,7 +834,7 @@ typedef Dartmessage_port_trusted_message_cbFunction = void Function(
     int trusted_local_port_id,
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    bool trusted_remote_port,
     ffi.Pointer<imp1.bundle> message,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -892,11 +870,11 @@ typedef message_port_registration_event_cb = ffi
 typedef message_port_registration_event_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    ffi.Bool trusted_remote_port,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartmessage_port_registration_event_cbFunction = void Function(
     ffi.Pointer<ffi.Char> remote_app_id,
     ffi.Pointer<ffi.Char> remote_port,
-    ffi.Pointer<bool> trusted_remote_port,
+    bool trusted_remote_port,
     ffi.Pointer<ffi.Void> user_data);

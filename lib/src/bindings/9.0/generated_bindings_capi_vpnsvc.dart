@@ -622,7 +622,7 @@ class Tizen90CapiVpnsvc {
   /// - `vpnsvc_init()`
   int vpnsvc_set_blocking(
     vpnsvc_h handle,
-    ffi.Pointer<bool> blocking,
+    bool blocking,
   ) {
     return _vpnsvc_set_blocking(
       handle,
@@ -630,11 +630,11 @@ class Tizen90CapiVpnsvc {
     );
   }
 
-  late final _vpnsvc_set_blockingPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(vpnsvc_h, ffi.Pointer<bool>)>>(
-      'vpnsvc_set_blocking');
-  late final _vpnsvc_set_blocking = _vpnsvc_set_blockingPtr
-      .asFunction<int Function(vpnsvc_h, ffi.Pointer<bool>)>();
+  late final _vpnsvc_set_blockingPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(vpnsvc_h, ffi.Bool)>>(
+          'vpnsvc_set_blocking');
+  late final _vpnsvc_set_blocking =
+      _vpnsvc_set_blockingPtr.asFunction<int Function(vpnsvc_h, bool)>();
 
   /// Sets the session name for the VPN. (It will be displayed in system-managed dialogs and notifications.)
   ///
@@ -1063,26 +1063,3 @@ abstract class vpnsvc_error_e {
 /// - `vpnsvc_deinit()`
 /// @nodoc
 typedef vpnsvc_h = ffi.Pointer<ffi.Void>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

@@ -310,7 +310,7 @@ class Tizen90SttSetting {
   /// **See also:**
   /// - `stt_setting_get_auto_language()`
   int stt_setting_set_auto_language(
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _stt_setting_set_auto_language(
       value,
@@ -318,10 +318,10 @@ class Tizen90SttSetting {
   }
 
   late final _stt_setting_set_auto_languagePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'stt_setting_set_auto_language');
-  late final _stt_setting_set_auto_language = _stt_setting_set_auto_languagePtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+  late final _stt_setting_set_auto_language =
+      _stt_setting_set_auto_languagePtr.asFunction<int Function(bool)>();
 
   /// Get a automatic option of voice.
   ///
@@ -341,7 +341,7 @@ class Tizen90SttSetting {
   /// **See also:**
   /// - `stt_setting_set_auto_language()`
   int stt_setting_get_auto_language(
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _stt_setting_get_auto_language(
       value,
@@ -349,10 +349,10 @@ class Tizen90SttSetting {
   }
 
   late final _stt_setting_get_auto_languagePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'stt_setting_get_auto_language');
   late final _stt_setting_get_auto_language = _stt_setting_get_auto_languagePtr
-      .asFunction<int Function(ffi.Pointer<bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Get silence detection.
   ///
@@ -372,7 +372,7 @@ class Tizen90SttSetting {
   /// **See also:**
   /// - `stt_setting_set_silence_detection()`
   int stt_setting_get_silence_detection(
-    ffi.Pointer<bool> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _stt_setting_get_silence_detection(
       value,
@@ -380,11 +380,11 @@ class Tizen90SttSetting {
   }
 
   late final _stt_setting_get_silence_detectionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
           'stt_setting_get_silence_detection');
   late final _stt_setting_get_silence_detection =
       _stt_setting_get_silence_detectionPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
 
   /// Set silence detection.
   ///
@@ -404,7 +404,7 @@ class Tizen90SttSetting {
   /// **See also:**
   /// - `stt_setting_get_silence_detection()`
   int stt_setting_set_silence_detection(
-    ffi.Pointer<bool> value,
+    bool value,
   ) {
     return _stt_setting_set_silence_detection(
       value,
@@ -412,11 +412,10 @@ class Tizen90SttSetting {
   }
 
   late final _stt_setting_set_silence_detectionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
           'stt_setting_set_silence_detection');
   late final _stt_setting_set_silence_detection =
-      _stt_setting_set_silence_detectionPtr
-          .asFunction<int Function(ffi.Pointer<bool>)>();
+      _stt_setting_set_silence_detectionPtr.asFunction<int Function(bool)>();
 
   /// Registers a callback function to be called when engine information is changed
   ///
@@ -604,17 +603,17 @@ abstract class stt_setting_state_e {
 typedef stt_setting_supported_engine_cb
     = ffi.Pointer<ffi.NativeFunction<stt_setting_supported_engine_cbFunction>>;
 /// @nodoc
-typedef stt_setting_supported_engine_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef stt_setting_supported_engine_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartstt_setting_supported_engine_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef Dartstt_setting_supported_engine_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> engine_name,
+    ffi.Pointer<ffi.Char> setting_path,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called to get a language.
 ///
@@ -635,34 +634,15 @@ typedef Dartstt_setting_supported_engine_cbFunction = int Function(
 typedef stt_setting_supported_language_cb = ffi
     .Pointer<ffi.NativeFunction<stt_setting_supported_language_cbFunction>>;
 /// @nodoc
-typedef stt_setting_supported_language_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef stt_setting_supported_language_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartstt_setting_supported_language_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+typedef Dartstt_setting_supported_language_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> engine_id,
+    ffi.Pointer<ffi.Char> language,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the engine information is changed.
 ///

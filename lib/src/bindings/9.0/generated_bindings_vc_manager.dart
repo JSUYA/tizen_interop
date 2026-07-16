@@ -432,7 +432,7 @@ class Tizen90VcManager {
   /// - Platform API.
   int vc_mgr_is_command_format_supported(
     int format,
-    ffi.Pointer<imp1.bool> support,
+    ffi.Pointer<ffi.Bool> support,
   ) {
     return _vc_mgr_is_command_format_supported(
       format,
@@ -441,12 +441,11 @@ class Tizen90VcManager {
   }
 
   late final _vc_mgr_is_command_format_supportedPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<imp1.bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
       'vc_mgr_is_command_format_supported');
   late final _vc_mgr_is_command_format_supported =
       _vc_mgr_is_command_format_supportedPtr
-          .asFunction<int Function(int, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets all types of commands.
   ///
@@ -1131,7 +1130,7 @@ class Tizen90VcManager {
   /// **Platform:**
   /// - Platform API.
   int vc_mgr_start(
-    imp1.bool exclusive_command_option,
+    bool exclusive_command_option,
   ) {
     return _vc_mgr_start(
       exclusive_command_option,
@@ -1139,9 +1138,8 @@ class Tizen90VcManager {
   }
 
   late final _vc_mgr_startPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(imp1.bool)>>('vc_mgr_start');
-  late final _vc_mgr_start =
-      _vc_mgr_startPtr.asFunction<int Function(imp1.bool)>();
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>('vc_mgr_start');
+  late final _vc_mgr_start = _vc_mgr_startPtr.asFunction<int Function(bool)>();
 
   /// Stops recognition.
   ///
@@ -3374,15 +3372,19 @@ abstract class _vc_service_state_e {
 typedef vc_mgr_all_result_cb
     = ffi.Pointer<ffi.NativeFunction<vc_mgr_all_result_cbFunction>>;
 /// @nodoc
-typedef vc_mgr_all_result_cbFunction = ffi.Int Function(
-    ffi.Int32,
-    imp1.vc_cmd_list_h,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Char>,
-    ffi.Pointer<ffi.Void>);
+typedef vc_mgr_all_result_cbFunction = ffi.Bool Function(
+    ffi.Int32 event,
+    imp1.vc_cmd_list_h vc_cmd_list,
+    ffi.Pointer<ffi.Char> result,
+    ffi.Pointer<ffi.Char> msg,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartvc_mgr_all_result_cbFunction = int Function(int, imp1.vc_cmd_list_h,
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartvc_mgr_all_result_cbFunction = bool Function(
+    int event,
+    imp1.vc_cmd_list_h vc_cmd_list,
+    ffi.Pointer<ffi.Char> result,
+    ffi.Pointer<ffi.Char> msg,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Enumeration for result event.
 ///
@@ -3515,14 +3517,14 @@ typedef vc_mgr_dialog_request_cbFunction = ffi.Void Function(
     ffi.Int pid,
     ffi.Pointer<ffi.Char> disp_text,
     ffi.Pointer<ffi.Char> utt_text,
-    imp1.bool continuous,
+    ffi.Bool continuous,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartvc_mgr_dialog_request_cbFunction = void Function(
     int pid,
     ffi.Pointer<ffi.Char> disp_text,
     ffi.Pointer<ffi.Char> utt_text,
-    imp1.bool continuous,
+    bool continuous,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when engine sets private data to manager client.

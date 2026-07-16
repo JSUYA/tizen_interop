@@ -799,7 +799,7 @@ class Tizen90Asp {
   /// - `asp_advert_create()`
   int asp_advert_set_auto_accept(
     asp_advert_service_h adv_service,
-    ffi.Pointer<bool> auto_accept,
+    bool auto_accept,
   ) {
     return _asp_advert_set_auto_accept(
       adv_service,
@@ -808,11 +808,10 @@ class Tizen90Asp {
   }
 
   late final _asp_advert_set_auto_acceptPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(asp_advert_service_h,
-              ffi.Pointer<bool>)>>('asp_advert_set_auto_accept');
+          ffi.NativeFunction<ffi.Int Function(asp_advert_service_h, ffi.Bool)>>(
+      'asp_advert_set_auto_accept');
   late final _asp_advert_set_auto_accept = _asp_advert_set_auto_acceptPtr
-      .asFunction<int Function(asp_advert_service_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(asp_advert_service_h, bool)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -2529,7 +2528,7 @@ class Tizen90Asp {
   /// - `asp_session_create()`
   int asp_session_confirm(
     asp_session_h session,
-    ffi.Pointer<bool> confirmed,
+    bool confirmed,
     ffi.Pointer<ffi.Char> pin,
   ) {
     return _asp_session_confirm(
@@ -2541,10 +2540,10 @@ class Tizen90Asp {
 
   late final _asp_session_confirmPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(asp_session_h, ffi.Pointer<bool>,
+          ffi.Int Function(asp_session_h, ffi.Bool,
               ffi.Pointer<ffi.Char>)>>('asp_session_confirm');
-  late final _asp_session_confirm = _asp_session_confirmPtr.asFunction<
-      int Function(asp_session_h, ffi.Pointer<bool>, ffi.Pointer<ffi.Char>)>();
+  late final _asp_session_confirm = _asp_session_confirmPtr
+      .asFunction<int Function(asp_session_h, bool, ffi.Pointer<ffi.Char>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -3218,7 +3217,7 @@ typedef asp_session_request_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> device_name,
     ffi.Pointer<ffi.Char> info,
     ffi.Int info_size,
-    ffi.Pointer<bool> get_network_config_pin,
+    ffi.Bool get_network_config_pin,
     ffi.Pointer<ffi.Char> network_config_pin,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -3229,7 +3228,7 @@ typedef Dartasp_session_request_cbFunction = void Function(
     ffi.Pointer<ffi.Char> device_name,
     ffi.Pointer<ffi.Char> info,
     int info_size,
-    ffi.Pointer<bool> get_network_config_pin,
+    bool get_network_config_pin,
     ffi.Pointer<ffi.Char> network_config_pin,
     ffi.Pointer<ffi.Void> user_data);
 
@@ -3241,29 +3240,6 @@ typedef Dartasp_session_request_cbFunction = void Function(
 /// - 4.0
 /// @nodoc
 typedef asp_session_h = ffi.Pointer<ffi.Void>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 9.0
 ///
@@ -3296,14 +3272,14 @@ typedef asp_session_config_request_cb
 typedef asp_session_config_request_cbFunction = ffi.Void Function(
     ffi.Int error_code,
     asp_session_h session,
-    ffi.Pointer<bool> get_pin,
+    ffi.Bool get_pin,
     ffi.Pointer<ffi.Char> config_pin,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartasp_session_config_request_cbFunction = void Function(
     int error_code,
     asp_session_h session,
-    ffi.Pointer<bool> get_pin,
+    bool get_pin,
     ffi.Pointer<ffi.Char> config_pin,
     ffi.Pointer<ffi.Void> user_data);
 

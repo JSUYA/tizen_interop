@@ -217,7 +217,7 @@ class Tizen90MvFace {
     mv_face_tracking_model_h tracking_model,
     imp1.mv_engine_config_h engine_cfg,
     mv_face_tracked_cb tracked_cb,
-    ffi.Pointer<bool> do_learn,
+    bool do_learn,
     ffi.Pointer<ffi.Void> user_data,
   ) {
     return _mv_face_track(
@@ -237,7 +237,7 @@ class Tizen90MvFace {
               mv_face_tracking_model_h,
               imp1.mv_engine_config_h,
               mv_face_tracked_cb,
-              ffi.Pointer<bool>,
+              ffi.Bool,
               ffi.Pointer<ffi.Void>)>>('mv_face_track');
   late final _mv_face_track = _mv_face_trackPtr.asFunction<
       int Function(
@@ -245,7 +245,7 @@ class Tizen90MvFace {
           mv_face_tracking_model_h,
           imp1.mv_engine_config_h,
           mv_face_tracked_cb,
-          ffi.Pointer<bool>,
+          bool,
           ffi.Pointer<ffi.Void>)>();
 
   /// **Deprecated:** Deprecated since 9.0
@@ -1426,29 +1426,6 @@ typedef Dartmv_face_tracked_cbFunction = void Function(
 /// - 2.4
 /// @nodoc
 typedef mv_quadrangle_s = imp1.mv_quadrangle_s;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 9.0
 ///

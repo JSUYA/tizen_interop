@@ -331,7 +331,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_deactivate_ducking()`
   int sound_manager_is_ducked(
     sound_stream_ducking_h stream_ducking,
-    ffi.Pointer<bool> is_ducked,
+    ffi.Pointer<ffi.Bool> is_ducked,
   ) {
     return _sound_manager_is_ducked(
       stream_ducking,
@@ -342,9 +342,9 @@ class Tizen90CapiMediaSoundManager {
   late final _sound_manager_is_duckedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(sound_stream_ducking_h,
-              ffi.Pointer<bool>)>>('sound_manager_is_ducked');
-  late final _sound_manager_is_ducked = _sound_manager_is_duckedPtr
-      .asFunction<int Function(sound_stream_ducking_h, ffi.Pointer<bool>)>();
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_is_ducked');
+  late final _sound_manager_is_ducked = _sound_manager_is_duckedPtr.asFunction<
+      int Function(sound_stream_ducking_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Activates ducking, asynchronously.
   ///
@@ -1242,7 +1242,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_create_stream_information()`
   int sound_manager_set_focus_reacquisition(
     sound_stream_info_h stream_info,
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _sound_manager_set_focus_reacquisition(
       stream_info,
@@ -1251,12 +1251,11 @@ class Tizen90CapiMediaSoundManager {
   }
 
   late final _sound_manager_set_focus_reacquisitionPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(sound_stream_info_h,
-              ffi.Pointer<bool>)>>('sound_manager_set_focus_reacquisition');
+          ffi.NativeFunction<ffi.Int Function(sound_stream_info_h, ffi.Bool)>>(
+      'sound_manager_set_focus_reacquisition');
   late final _sound_manager_set_focus_reacquisition =
       _sound_manager_set_focus_reacquisitionPtr
-          .asFunction<int Function(sound_stream_info_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_stream_info_h, bool)>();
 
   /// Gets auto focus reacquisition property.
   ///
@@ -1284,7 +1283,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_create_stream_information()`
   int sound_manager_get_focus_reacquisition(
     sound_stream_info_h stream_info,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _sound_manager_get_focus_reacquisition(
       stream_info,
@@ -1295,10 +1294,10 @@ class Tizen90CapiMediaSoundManager {
   late final _sound_manager_get_focus_reacquisitionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(sound_stream_info_h,
-              ffi.Pointer<bool>)>>('sound_manager_get_focus_reacquisition');
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_get_focus_reacquisition');
   late final _sound_manager_get_focus_reacquisition =
-      _sound_manager_get_focus_reacquisitionPtr
-          .asFunction<int Function(sound_stream_info_h, ffi.Pointer<bool>)>();
+      _sound_manager_get_focus_reacquisitionPtr.asFunction<
+          int Function(sound_stream_info_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Delivers focuses to another stream information.
   ///
@@ -1383,7 +1382,7 @@ class Tizen90CapiMediaSoundManager {
   int sound_manager_is_stream_on_device(
     sound_stream_info_h stream_info,
     sound_device_h device,
-    ffi.Pointer<bool> is_on,
+    ffi.Pointer<ffi.Bool> is_on,
   ) {
     return _sound_manager_is_stream_on_device(
       stream_info,
@@ -1395,11 +1394,11 @@ class Tizen90CapiMediaSoundManager {
   late final _sound_manager_is_stream_on_devicePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(sound_stream_info_h, sound_device_h,
-              ffi.Pointer<bool>)>>('sound_manager_is_stream_on_device');
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_is_stream_on_device');
   late final _sound_manager_is_stream_on_device =
       _sound_manager_is_stream_on_devicePtr.asFunction<
           int Function(
-              sound_stream_info_h, sound_device_h, ffi.Pointer<bool>)>();
+              sound_stream_info_h, sound_device_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the current device type for media playback stream.
   ///
@@ -2003,7 +2002,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_free_device_list()`
   int sound_manager_is_device_running(
     sound_device_h device,
-    ffi.Pointer<bool> is_running,
+    ffi.Pointer<ffi.Bool> is_running,
   ) {
     return _sound_manager_is_device_running(
       device,
@@ -2012,12 +2011,12 @@ class Tizen90CapiMediaSoundManager {
   }
 
   late final _sound_manager_is_device_runningPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(sound_device_h, ffi.Pointer<bool>)>>(
-      'sound_manager_is_device_running');
+      ffi.NativeFunction<
+          ffi.Int Function(sound_device_h,
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_is_device_running');
   late final _sound_manager_is_device_running =
       _sound_manager_is_device_runningPtr
-          .asFunction<int Function(sound_device_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_device_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the device's supported sample formats.
   ///
@@ -2326,7 +2325,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_get_avoid_resampling()`
   int sound_manager_set_avoid_resampling(
     sound_device_h device,
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _sound_manager_set_avoid_resampling(
       device,
@@ -2334,13 +2333,12 @@ class Tizen90CapiMediaSoundManager {
     );
   }
 
-  late final _sound_manager_set_avoid_resamplingPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(sound_device_h, ffi.Pointer<bool>)>>(
-      'sound_manager_set_avoid_resampling');
+  late final _sound_manager_set_avoid_resamplingPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(sound_device_h, ffi.Bool)>>(
+          'sound_manager_set_avoid_resampling');
   late final _sound_manager_set_avoid_resampling =
       _sound_manager_set_avoid_resamplingPtr
-          .asFunction<int Function(sound_device_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_device_h, bool)>();
 
   /// Gets the device's 'avoid resampling' property.
   ///
@@ -2370,7 +2368,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_set_avoid_resampling()`
   int sound_manager_get_avoid_resampling(
     sound_device_h device,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _sound_manager_get_avoid_resampling(
       device,
@@ -2379,12 +2377,12 @@ class Tizen90CapiMediaSoundManager {
   }
 
   late final _sound_manager_get_avoid_resamplingPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(sound_device_h, ffi.Pointer<bool>)>>(
-      'sound_manager_get_avoid_resampling');
+      ffi.NativeFunction<
+          ffi.Int Function(sound_device_h,
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_get_avoid_resampling');
   late final _sound_manager_get_avoid_resampling =
       _sound_manager_get_avoid_resamplingPtr
-          .asFunction<int Function(sound_device_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_device_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the restriction of stream type only for media.
   ///
@@ -2415,7 +2413,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_get_media_stream_only()`
   int sound_manager_set_media_stream_only(
     sound_device_h device,
-    ffi.Pointer<bool> enable,
+    bool enable,
   ) {
     return _sound_manager_set_media_stream_only(
       device,
@@ -2423,13 +2421,12 @@ class Tizen90CapiMediaSoundManager {
     );
   }
 
-  late final _sound_manager_set_media_stream_onlyPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(sound_device_h, ffi.Pointer<bool>)>>(
-      'sound_manager_set_media_stream_only');
+  late final _sound_manager_set_media_stream_onlyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(sound_device_h, ffi.Bool)>>(
+          'sound_manager_set_media_stream_only');
   late final _sound_manager_set_media_stream_only =
       _sound_manager_set_media_stream_onlyPtr
-          .asFunction<int Function(sound_device_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_device_h, bool)>();
 
   /// Gets the restriction of stream type only for media.
   ///
@@ -2459,7 +2456,7 @@ class Tizen90CapiMediaSoundManager {
   /// - `sound_manager_set_media_stream_only()`
   int sound_manager_get_media_stream_only(
     sound_device_h device,
-    ffi.Pointer<bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _sound_manager_get_media_stream_only(
       device,
@@ -2468,12 +2465,12 @@ class Tizen90CapiMediaSoundManager {
   }
 
   late final _sound_manager_get_media_stream_onlyPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(sound_device_h, ffi.Pointer<bool>)>>(
-      'sound_manager_get_media_stream_only');
+      ffi.NativeFunction<
+          ffi.Int Function(sound_device_h,
+              ffi.Pointer<ffi.Bool>)>>('sound_manager_get_media_stream_only');
   late final _sound_manager_get_media_stream_only =
       _sound_manager_get_media_stream_onlyPtr
-          .asFunction<int Function(sound_device_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(sound_device_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Adds a callback function to be invoked when the connection state of a sound device was changed.
   ///
@@ -3220,12 +3217,12 @@ typedef sound_stream_ducking_state_changed_cb = ffi
 /// @nodoc
 typedef sound_stream_ducking_state_changed_cbFunction = ffi.Void Function(
     sound_stream_ducking_h stream_ducking,
-    ffi.Pointer<bool> is_ducked,
+    ffi.Bool is_ducked,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartsound_stream_ducking_state_changed_cbFunction = void Function(
     sound_stream_ducking_h stream_ducking,
-    ffi.Pointer<bool> is_ducked,
+    bool is_ducked,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Sound stream ducking handle.
@@ -3234,29 +3231,6 @@ typedef Dartsound_stream_ducking_state_changed_cbFunction = void Function(
 /// - 5.5
 /// @nodoc
 typedef sound_stream_ducking_h = ffi.Pointer<sound_stream_ducking_s>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the state of focus that belongs to the stream_info is changed.
 ///
@@ -3394,13 +3368,11 @@ typedef sound_device_connection_changed_cb = ffi
 /// @nodoc
 typedef sound_device_connection_changed_cbFunction = ffi.Void Function(
     sound_device_h device,
-    ffi.Pointer<bool> is_connected,
+    ffi.Bool is_connected,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartsound_device_connection_changed_cbFunction = void Function(
-    sound_device_h device,
-    ffi.Pointer<bool> is_connected,
-    ffi.Pointer<ffi.Void> user_data);
+    sound_device_h device, bool is_connected, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the state of a sound device was changed.
 ///
@@ -3427,13 +3399,11 @@ typedef sound_device_running_changed_cb
 /// @nodoc
 typedef sound_device_running_changed_cbFunction = ffi.Void Function(
     sound_device_h device,
-    ffi.Pointer<bool> is_running,
+    ffi.Bool is_running,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartsound_device_running_changed_cbFunction = void Function(
-    sound_device_h device,
-    ffi.Pointer<bool> is_running,
-    ffi.Pointer<ffi.Void> user_data);
+    sound_device_h device, bool is_running, ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int SOUND_MANAGER_STREAM_NO_PREFERRED_DEVICE = 0;

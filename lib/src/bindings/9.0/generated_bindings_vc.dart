@@ -85,7 +85,7 @@ class Tizen90Vc {
   /// - `vc_cmd_list_create()`
   int vc_cmd_list_destroy(
     vc_cmd_list_h vc_cmd_list,
-    ffi.Pointer<bool> free_command,
+    bool free_command,
   ) {
     return _vc_cmd_list_destroy(
       vc_cmd_list,
@@ -93,12 +93,11 @@ class Tizen90Vc {
     );
   }
 
-  late final _vc_cmd_list_destroyPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(vc_cmd_list_h, ffi.Pointer<bool>)>>(
-      'vc_cmd_list_destroy');
-  late final _vc_cmd_list_destroy = _vc_cmd_list_destroyPtr
-      .asFunction<int Function(vc_cmd_list_h, ffi.Pointer<bool>)>();
+  late final _vc_cmd_list_destroyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(vc_cmd_list_h, ffi.Bool)>>(
+          'vc_cmd_list_destroy');
+  late final _vc_cmd_list_destroy =
+      _vc_cmd_list_destroyPtr.asFunction<int Function(vc_cmd_list_h, bool)>();
 
   /// Gets command count of list.
   ///
@@ -1215,7 +1214,7 @@ class Tizen90Vc {
   int vc_request_dialog(
     ffi.Pointer<ffi.Char> disp_text,
     ffi.Pointer<ffi.Char> utt_text,
-    ffi.Pointer<bool> auto_start,
+    bool auto_start,
   ) {
     return _vc_request_dialog(
       disp_text,
@@ -1227,10 +1226,9 @@ class Tizen90Vc {
   late final _vc_request_dialogPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>)>>('vc_request_dialog');
+              ffi.Bool)>>('vc_request_dialog');
   late final _vc_request_dialog = _vc_request_dialogPtr.asFunction<
-      int Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool)>();
 
   /// Sets command list.
   ///
@@ -1829,7 +1827,7 @@ class Tizen90Vc {
   int vc_tts_request(
     ffi.Pointer<ffi.Char> text,
     ffi.Pointer<ffi.Char> language,
-    ffi.Pointer<bool> to_vc_manager,
+    bool to_vc_manager,
     ffi.Pointer<ffi.Int> utt_id,
   ) {
     return _vc_tts_request(
@@ -1843,10 +1841,10 @@ class Tizen90Vc {
   late final _vc_tts_requestPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<bool>, ffi.Pointer<ffi.Int>)>>('vc_tts_request');
+              ffi.Bool, ffi.Pointer<ffi.Int>)>>('vc_tts_request');
   late final _vc_tts_request = _vc_tts_requestPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<bool>, ffi.Pointer<ffi.Int>)>();
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool,
+          ffi.Pointer<ffi.Int>)>();
 
   /// Requests to cancel TTS streaming data.
   ///
@@ -2128,29 +2126,6 @@ final class vc_cmd_list_s extends ffi.Opaque {}
 /// @nodoc
 typedef vc_cmd_list_h = ffi.Pointer<vc_cmd_list_s>;
 
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
-
 /// The voice command handle.
 ///
 /// **Since Tizen:**
@@ -2182,11 +2157,11 @@ typedef vc_cmd_h = ffi.Pointer<vc_cmd_s>;
 typedef vc_cmd_list_cb
     = ffi.Pointer<ffi.NativeFunction<vc_cmd_list_cbFunction>>;
 /// @nodoc
-typedef vc_cmd_list_cbFunction = ffi.Int Function(
-    vc_cmd_h, ffi.Pointer<ffi.Void>);
+typedef vc_cmd_list_cbFunction = ffi.Bool Function(
+    vc_cmd_h vc_command, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartvc_cmd_list_cbFunction = int Function(
-    vc_cmd_h, ffi.Pointer<ffi.Void>);
+typedef Dartvc_cmd_list_cbFunction = bool Function(
+    vc_cmd_h vc_command, ffi.Pointer<ffi.Void> user_data);
 
 /// Enumeration for error codes.
 ///
@@ -2407,11 +2382,11 @@ abstract class vc_tts_utterance_status_e {
 typedef vc_supported_language_cb
     = ffi.Pointer<ffi.NativeFunction<vc_supported_language_cbFunction>>;
 /// @nodoc
-typedef vc_supported_language_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef vc_supported_language_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartvc_supported_language_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+typedef Dartvc_supported_language_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when client gets the recognition result.
 ///

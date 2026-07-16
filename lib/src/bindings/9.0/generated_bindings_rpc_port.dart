@@ -572,7 +572,7 @@ class Tizen90RpcPort {
   /// - `RPC_PORT_ERROR_INVALID_PARAMETER`: The specified `h` is NULL
   int rpc_port_stub_set_trusted(
     rpc_port_stub_h h,
-    ffi.Pointer<bool> trusted,
+    bool trusted,
   ) {
     return _rpc_port_stub_set_trusted(
       h,
@@ -580,12 +580,11 @@ class Tizen90RpcPort {
     );
   }
 
-  late final _rpc_port_stub_set_trustedPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(rpc_port_stub_h,
-              ffi.Pointer<bool>)>>('rpc_port_stub_set_trusted');
+  late final _rpc_port_stub_set_trustedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(rpc_port_stub_h, ffi.Bool)>>(
+          'rpc_port_stub_set_trusted');
   late final _rpc_port_stub_set_trusted = _rpc_port_stub_set_trustedPtr
-      .asFunction<int Function(rpc_port_stub_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(rpc_port_stub_h, bool)>();
 
   /// Adds a stub connected callback.
   ///
@@ -1343,7 +1342,7 @@ class Tizen90RpcPort {
   /// - `rpc_port_parcel_read_bool()`
   int rpc_port_parcel_write_bool(
     rpc_port_parcel_h h,
-    ffi.Pointer<bool> b,
+    bool b,
   ) {
     return _rpc_port_parcel_write_bool(
       h,
@@ -1352,11 +1351,10 @@ class Tizen90RpcPort {
   }
 
   late final _rpc_port_parcel_write_boolPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(rpc_port_parcel_h,
-              ffi.Pointer<bool>)>>('rpc_port_parcel_write_bool');
+          ffi.NativeFunction<ffi.Int Function(rpc_port_parcel_h, ffi.Bool)>>(
+      'rpc_port_parcel_write_bool');
   late final _rpc_port_parcel_write_bool = _rpc_port_parcel_write_boolPtr
-      .asFunction<int Function(rpc_port_parcel_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(rpc_port_parcel_h, bool)>();
 
   /// Writes a bundle data into rpc port parcel handle.
   ///
@@ -1740,7 +1738,7 @@ class Tizen90RpcPort {
   /// - `rpc_port_parcel_write_bool()`
   int rpc_port_parcel_read_bool(
     rpc_port_parcel_h h,
-    ffi.Pointer<bool> b,
+    ffi.Pointer<ffi.Bool> b,
   ) {
     return _rpc_port_parcel_read_bool(
       h,
@@ -1751,9 +1749,9 @@ class Tizen90RpcPort {
   late final _rpc_port_parcel_read_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(rpc_port_parcel_h,
-              ffi.Pointer<bool>)>>('rpc_port_parcel_read_bool');
+              ffi.Pointer<ffi.Bool>)>>('rpc_port_parcel_read_bool');
   late final _rpc_port_parcel_read_bool = _rpc_port_parcel_read_boolPtr
-      .asFunction<int Function(rpc_port_parcel_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(rpc_port_parcel_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Reads a bundle data from rpc port parcel handle.
   ///
@@ -2461,29 +2459,6 @@ typedef Dartrpc_port_proxy_received_event_cbFunction = void Function(
 /// - 4.0
 /// @nodoc
 typedef rpc_port_stub_h = ffi.Pointer<ffi.Void>;
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the proxy is connected with stub.
 ///

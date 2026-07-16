@@ -919,7 +919,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_set_af_mode()`
   int camera_start_focusing(
     camera_h camera,
-    imp1.bool continuous,
+    bool continuous,
   ) {
     return _camera_start_focusing(
       camera,
@@ -928,10 +928,10 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_start_focusingPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_start_focusing');
   late final _camera_start_focusing =
-      _camera_start_focusingPtr.asFunction<int Function(camera_h, imp1.bool)>();
+      _camera_start_focusingPtr.asFunction<int Function(camera_h, bool)>();
 
   /// Stops camera auto focusing.
   ///
@@ -1305,7 +1305,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_is_supported_continuous_capture(
+  bool camera_is_supported_continuous_capture(
     camera_h camera,
   ) {
     return _camera_is_supported_continuous_capture(
@@ -1314,11 +1314,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_is_supported_continuous_capturePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_is_supported_continuous_capture');
   late final _camera_is_supported_continuous_capture =
       _camera_is_supported_continuous_capturePtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Retrieves all supported camera preview resolutions by invoking the callback function once for each supported camera preview resolution.
   ///
@@ -1565,7 +1565,7 @@ class Tizen90CapiMediaCamera {
   /// - CAPI_MEDIA_CAMERA_DISPLAY_MODULE
   int camera_set_display_visible(
     camera_h camera,
-    imp1.bool visible,
+    bool visible,
   ) {
     return _camera_set_display_visible(
       camera,
@@ -1574,10 +1574,10 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_set_display_visiblePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_set_display_visible');
-  late final _camera_set_display_visible = _camera_set_display_visiblePtr
-      .asFunction<int Function(camera_h, imp1.bool)>();
+  late final _camera_set_display_visible =
+      _camera_set_display_visiblePtr.asFunction<int Function(camera_h, bool)>();
 
   /// Gets the visible property of display.
   ///
@@ -1605,7 +1605,7 @@ class Tizen90CapiMediaCamera {
   /// - CAPI_MEDIA_CAMERA_DISPLAY_MODULE
   int camera_is_display_visible(
     camera_h camera,
-    ffi.Pointer<imp1.bool> visible,
+    ffi.Pointer<ffi.Bool> visible,
   ) {
     return _camera_is_display_visible(
       camera,
@@ -1615,10 +1615,10 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_is_display_visiblePtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_is_display_visible');
   late final _camera_is_display_visible = _camera_is_display_visiblePtr
-      .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the display mode.
   ///
@@ -1733,7 +1733,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_change_device()`
   int camera_set_display_reuse_hint(
     camera_h camera,
-    imp1.bool hint,
+    bool hint,
   ) {
     return _camera_set_display_reuse_hint(
       camera,
@@ -1742,10 +1742,10 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_set_display_reuse_hintPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_set_display_reuse_hint');
   late final _camera_set_display_reuse_hint = _camera_set_display_reuse_hintPtr
-      .asFunction<int Function(camera_h, imp1.bool)>();
+      .asFunction<int Function(camera_h, bool)>();
 
   /// Gets the hint for display reuse.
   ///
@@ -1773,7 +1773,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_change_device()`
   int camera_get_display_reuse_hint(
     camera_h camera,
-    ffi.Pointer<imp1.bool> hint,
+    ffi.Pointer<ffi.Bool> hint,
   ) {
     return _camera_get_display_reuse_hint(
       camera,
@@ -1783,10 +1783,10 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_get_display_reuse_hintPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_get_display_reuse_hint');
   late final _camera_get_display_reuse_hint = _camera_get_display_reuse_hintPtr
-      .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the resolution of the captured image.
   ///
@@ -2508,7 +2508,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_is_supported_face_detection(
+  bool camera_is_supported_face_detection(
     camera_h camera,
   ) {
     return _camera_is_supported_face_detection(
@@ -2517,11 +2517,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_is_supported_face_detectionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_is_supported_face_detection');
   late final _camera_is_supported_face_detection =
       _camera_is_supported_face_detectionPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Gets the zero shutter lag feature's supported state.
   ///
@@ -2546,7 +2546,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_is_supported_zero_shutter_lag(
+  bool camera_is_supported_zero_shutter_lag(
     camera_h camera,
   ) {
     return _camera_is_supported_zero_shutter_lag(
@@ -2555,11 +2555,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_is_supported_zero_shutter_lagPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_is_supported_zero_shutter_lag');
   late final _camera_is_supported_zero_shutter_lag =
       _camera_is_supported_zero_shutter_lagPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Gets the camera device count.
   ///
@@ -2623,7 +2623,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_is_supported_media_packet_preview_cb(
+  bool camera_is_supported_media_packet_preview_cb(
     camera_h camera,
   ) {
     return _camera_is_supported_media_packet_preview_cb(
@@ -2632,11 +2632,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_is_supported_media_packet_preview_cbPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_is_supported_media_packet_preview_cb');
   late final _camera_is_supported_media_packet_preview_cb =
       _camera_is_supported_media_packet_preview_cbPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Gets the extra preview feature's supported state.
   ///
@@ -2658,7 +2658,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_is_supported_extra_preview(
+  bool camera_is_supported_extra_preview(
     camera_h camera,
   ) {
     return _camera_is_supported_extra_preview(
@@ -2667,11 +2667,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_is_supported_extra_previewPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_is_supported_extra_preview');
   late final _camera_is_supported_extra_preview =
       _camera_is_supported_extra_previewPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Sets a callback function to be invoked once per frame when previewing.
   ///
@@ -6361,7 +6361,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_enabled_tag()`
   int camera_attr_enable_tag(
     camera_h camera,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _camera_attr_enable_tag(
       camera,
@@ -6370,10 +6370,10 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_enable_tagPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_attr_enable_tag');
-  late final _camera_attr_enable_tag = _camera_attr_enable_tagPtr
-      .asFunction<int Function(camera_h, imp1.bool)>();
+  late final _camera_attr_enable_tag =
+      _camera_attr_enable_tagPtr.asFunction<int Function(camera_h, bool)>();
 
   /// Gets the value that indicates whether writing EXIF (Exchangeable image file format) tags in a JPEG file is enabled.
   ///
@@ -6398,7 +6398,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_enable_tag()`
   int camera_attr_is_enabled_tag(
     camera_h camera,
-    ffi.Pointer<imp1.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _camera_attr_is_enabled_tag(
       camera,
@@ -6408,10 +6408,10 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_attr_is_enabled_tagPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_attr_is_enabled_tag');
   late final _camera_attr_is_enabled_tag = _camera_attr_is_enabled_tagPtr
-      .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+      .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Sets the camera image description in the EXIF (Exchangeable image file format) tag.
   ///
@@ -7431,7 +7431,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_attr_is_supported_hdr_capture(
+  bool camera_attr_is_supported_hdr_capture(
     camera_h camera,
   ) {
     return _camera_attr_is_supported_hdr_capture(
@@ -7440,11 +7440,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_is_supported_hdr_capturePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_attr_is_supported_hdr_capture');
   late final _camera_attr_is_supported_hdr_capture =
       _camera_attr_is_supported_hdr_capturePtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Enables/Disables the anti-shake feature.
   ///
@@ -7473,7 +7473,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_supported_anti_shake()`
   int camera_attr_enable_anti_shake(
     camera_h camera,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _camera_attr_enable_anti_shake(
       camera,
@@ -7482,10 +7482,10 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_enable_anti_shakePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_attr_enable_anti_shake');
   late final _camera_attr_enable_anti_shake = _camera_attr_enable_anti_shakePtr
-      .asFunction<int Function(camera_h, imp1.bool)>();
+      .asFunction<int Function(camera_h, bool)>();
 
   /// Gets the state of the anti-shake feature.
   ///
@@ -7511,7 +7511,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_supported_anti_shake()`
   int camera_attr_is_enabled_anti_shake(
     camera_h camera,
-    ffi.Pointer<imp1.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _camera_attr_is_enabled_anti_shake(
       camera,
@@ -7521,11 +7521,11 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_attr_is_enabled_anti_shakePtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_attr_is_enabled_anti_shake');
   late final _camera_attr_is_enabled_anti_shake =
       _camera_attr_is_enabled_anti_shakePtr
-          .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the support state of the anti-shake feature.
   ///
@@ -7553,7 +7553,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_attr_is_supported_anti_shake(
+  bool camera_attr_is_supported_anti_shake(
     camera_h camera,
   ) {
     return _camera_attr_is_supported_anti_shake(
@@ -7562,11 +7562,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_is_supported_anti_shakePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_attr_is_supported_anti_shake');
   late final _camera_attr_is_supported_anti_shake =
       _camera_attr_is_supported_anti_shakePtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Enables/Disables the video stabilization feature.
   ///
@@ -7596,7 +7596,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_supported_video_stabilization()`
   int camera_attr_enable_video_stabilization(
     camera_h camera,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _camera_attr_enable_video_stabilization(
       camera,
@@ -7605,11 +7605,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_enable_video_stabilizationPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_attr_enable_video_stabilization');
   late final _camera_attr_enable_video_stabilization =
       _camera_attr_enable_video_stabilizationPtr
-          .asFunction<int Function(camera_h, imp1.bool)>();
+          .asFunction<int Function(camera_h, bool)>();
 
   /// Gets the state of the video stabilization feature.
   ///
@@ -7635,7 +7635,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_supported_video_stabilization()`
   int camera_attr_is_enabled_video_stabilization(
     camera_h camera,
-    ffi.Pointer<imp1.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _camera_attr_is_enabled_video_stabilization(
       camera,
@@ -7645,11 +7645,11 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_attr_is_enabled_video_stabilizationPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_attr_is_enabled_video_stabilization');
   late final _camera_attr_is_enabled_video_stabilization =
       _camera_attr_is_enabled_video_stabilizationPtr
-          .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the support state of the video stabilization feature.
   ///
@@ -7677,7 +7677,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_attr_is_supported_video_stabilization(
+  bool camera_attr_is_supported_video_stabilization(
     camera_h camera,
   ) {
     return _camera_attr_is_supported_video_stabilization(
@@ -7686,11 +7686,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_is_supported_video_stabilizationPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_attr_is_supported_video_stabilization');
   late final _camera_attr_is_supported_video_stabilization =
       _camera_attr_is_supported_video_stabilizationPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Enables/Disables auto contrast.
   ///
@@ -7719,7 +7719,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_is_enabled_auto_contrast()`
   int camera_attr_enable_auto_contrast(
     camera_h camera,
-    imp1.bool enable,
+    bool enable,
   ) {
     return _camera_attr_enable_auto_contrast(
       camera,
@@ -7728,11 +7728,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_enable_auto_contrastPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_attr_enable_auto_contrast');
   late final _camera_attr_enable_auto_contrast =
       _camera_attr_enable_auto_contrastPtr
-          .asFunction<int Function(camera_h, imp1.bool)>();
+          .asFunction<int Function(camera_h, bool)>();
 
   /// Gets the state of auto contrast.
   ///
@@ -7757,7 +7757,7 @@ class Tizen90CapiMediaCamera {
   /// - `camera_attr_enable_auto_contrast()`
   int camera_attr_is_enabled_auto_contrast(
     camera_h camera,
-    ffi.Pointer<imp1.bool> enabled,
+    ffi.Pointer<ffi.Bool> enabled,
   ) {
     return _camera_attr_is_enabled_auto_contrast(
       camera,
@@ -7767,11 +7767,11 @@ class Tizen90CapiMediaCamera {
 
   late final _camera_attr_is_enabled_auto_contrastPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<imp1.bool>)>>(
+          .NativeFunction<ffi.Int Function(camera_h, ffi.Pointer<ffi.Bool>)>>(
       'camera_attr_is_enabled_auto_contrast');
   late final _camera_attr_is_enabled_auto_contrast =
       _camera_attr_is_enabled_auto_contrastPtr
-          .asFunction<int Function(camera_h, ffi.Pointer<imp1.bool>)>();
+          .asFunction<int Function(camera_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets state of support of auto contrast feature.
   ///
@@ -7799,7 +7799,7 @@ class Tizen90CapiMediaCamera {
   ///
   /// **Group:**
   /// - CAPI_MEDIA_CAMERA_CAPABILITY_MODULE
-  int camera_attr_is_supported_auto_contrast(
+  bool camera_attr_is_supported_auto_contrast(
     camera_h camera,
   ) {
     return _camera_attr_is_supported_auto_contrast(
@@ -7808,11 +7808,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_is_supported_auto_contrastPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(camera_h)>>(
           'camera_attr_is_supported_auto_contrast');
   late final _camera_attr_is_supported_auto_contrast =
       _camera_attr_is_supported_auto_contrastPtr
-          .asFunction<int Function(camera_h)>();
+          .asFunction<bool Function(camera_h)>();
 
   /// Disables shutter sound.
   ///
@@ -7838,7 +7838,7 @@ class Tizen90CapiMediaCamera {
   /// - `CAMERA_ERROR_SERVICE_DISCONNECTED`: The socket to multimedia server is disconnected
   int camera_attr_disable_shutter_sound(
     camera_h camera,
-    imp1.bool disable,
+    bool disable,
   ) {
     return _camera_attr_disable_shutter_sound(
       camera,
@@ -7847,11 +7847,11 @@ class Tizen90CapiMediaCamera {
   }
 
   late final _camera_attr_disable_shutter_soundPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, imp1.bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(camera_h, ffi.Bool)>>(
           'camera_attr_disable_shutter_sound');
   late final _camera_attr_disable_shutter_sound =
       _camera_attr_disable_shutter_soundPtr
-          .asFunction<int Function(camera_h, imp1.bool)>();
+          .asFunction<int Function(camera_h, bool)>();
 
   /// Sets the position to move horizontally.
   ///
@@ -8703,6 +8703,142 @@ final class camera_detected_face_s extends ffi.Struct {
   external int height;
 }
 
+/// The structure type to preview stream data.
+///
+/// **Since Tizen:**
+/// - 2.3
+/// @nodoc
+final class camera_preview_data_s extends ffi.Struct {
+  /// < The format of the frame pixel
+  @ffi.Int32()
+  external int format;
+
+  /// < The width of the frame
+  @ffi.Int()
+  external int width;
+
+  /// < The height of the frame
+  @ffi.Int()
+  external int height;
+
+  /// < The number of planes
+  @ffi.Int()
+  external int num_of_planes;
+
+  /// < The timestamp of the frame
+  @ffi.UnsignedInt()
+  external int timestamp;
+
+  /// < The frame data
+  external CapiMediaCameraUnnamedUnion1 data;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedUnion1 extends ffi.Union {
+  /// < Single plane frame data
+  external CapiMediaCameraUnnamedStruct1 single_plane;
+
+  /// < Double plane frame data
+  external CapiMediaCameraUnnamedStruct2 double_plane;
+
+  /// < Triple plane frame data
+  external CapiMediaCameraUnnamedStruct3 triple_plane;
+
+  /// < Encoded plane frame data
+  external CapiMediaCameraUnnamedStruct4 encoded_plane;
+
+  /// < Depth plane frame data (Since 5.0)
+  external CapiMediaCameraUnnamedStruct5 depth_plane;
+
+  /// < RGB plane frame data (Since 5.0)
+  external CapiMediaCameraUnnamedStruct6 rgb_plane;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct1 extends ffi.Struct {
+  /// < The yuv data pointer
+  external ffi.Pointer<ffi.UnsignedChar> yuv;
+
+  /// < The size of data
+  @ffi.UnsignedInt()
+  external int size;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct2 extends ffi.Struct {
+  /// < The y data pointer
+  external ffi.Pointer<ffi.UnsignedChar> y;
+
+  /// < The uv data pointer
+  external ffi.Pointer<ffi.UnsignedChar> uv;
+
+  /// < The size of y data
+  @ffi.UnsignedInt()
+  external int y_size;
+
+  /// < The size of uv data
+  @ffi.UnsignedInt()
+  external int uv_size;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct3 extends ffi.Struct {
+  /// < The y data pointer
+  external ffi.Pointer<ffi.UnsignedChar> y;
+
+  /// < The u data pointer
+  external ffi.Pointer<ffi.UnsignedChar> u;
+
+  /// < The v data pointer
+  external ffi.Pointer<ffi.UnsignedChar> v;
+
+  /// < The size of y data
+  @ffi.UnsignedInt()
+  external int y_size;
+
+  /// < The size of u data
+  @ffi.UnsignedInt()
+  external int u_size;
+
+  /// < The size of v data
+  @ffi.UnsignedInt()
+  external int v_size;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct4 extends ffi.Struct {
+  /// < The encoded data pointer
+  external ffi.Pointer<ffi.UnsignedChar> data;
+
+  /// < The size of encoded data
+  @ffi.UnsignedInt()
+  external int size;
+
+  /// < The flag indicating whether it's delta frame or not (Since 6.0)
+  @ffi.Bool()
+  external bool is_delta_frame;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct5 extends ffi.Struct {
+  /// < The depth data pointer
+  external ffi.Pointer<ffi.UnsignedChar> data;
+
+  /// < The size of depth data
+  @ffi.UnsignedInt()
+  external int size;
+}
+
+/// @nodoc
+final class CapiMediaCameraUnnamedStruct6 extends ffi.Struct {
+  /// < The RGB data pointer
+  external ffi.Pointer<ffi.UnsignedChar> data;
+
+  /// < The size of RGB data
+  @ffi.UnsignedInt()
+  external int size;
+}
+
 /// The structure type for the camera device.
 ///
 /// **Since Tizen:**
@@ -9231,11 +9367,11 @@ typedef camera_device_manager_h = ffi.Pointer<ffi.Void>;
 typedef camera_supported_device_cb
     = ffi.Pointer<ffi.NativeFunction<camera_supported_device_cbFunction>>;
 /// @nodoc
-typedef camera_supported_device_cbFunction = ffi.Int Function(
-    ffi.Pointer<camera_device_s>, ffi.Pointer<ffi.Void>);
+typedef camera_supported_device_cbFunction = ffi.Bool Function(
+    ffi.Pointer<camera_device_s> device, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_supported_device_cbFunction = int Function(
-    ffi.Pointer<camera_device_s>, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_supported_device_cbFunction = bool Function(
+    ffi.Pointer<camera_device_s> device, ffi.Pointer<ffi.Void> user_data);
 
 /// The structure type for the camera device.
 ///
@@ -9266,12 +9402,12 @@ typedef camera_device_connection_changed_cb = ffi
 /// @nodoc
 typedef camera_device_connection_changed_cbFunction = ffi.Void Function(
     ffi.Pointer<camera_device_s> device,
-    imp1.bool is_connected,
+    ffi.Bool is_connected,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartcamera_device_connection_changed_cbFunction = void Function(
     ffi.Pointer<camera_device_s> device,
-    imp1.bool is_connected,
+    bool is_connected,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get information about image data taken by the camera once per frame while capturing.
@@ -9401,11 +9537,11 @@ typedef Dartcamera_face_detected_cbFunction = void Function(
 typedef camera_supported_preview_resolution_cb = ffi.Pointer<
     ffi.NativeFunction<camera_supported_preview_resolution_cbFunction>>;
 /// @nodoc
-typedef camera_supported_preview_resolution_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef camera_supported_preview_resolution_cbFunction = ffi.Bool Function(
+    ffi.Int width, ffi.Int height, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_supported_preview_resolution_cbFunction = int Function(
-    int, int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_supported_preview_resolution_cbFunction = bool Function(
+    int width, int height, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked once for each supported capture resolution.
 ///
@@ -9429,11 +9565,11 @@ typedef Dartcamera_supported_preview_resolution_cbFunction = int Function(
 typedef camera_supported_capture_resolution_cb = ffi.Pointer<
     ffi.NativeFunction<camera_supported_capture_resolution_cbFunction>>;
 /// @nodoc
-typedef camera_supported_capture_resolution_cbFunction = ffi.Int Function(
-    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef camera_supported_capture_resolution_cbFunction = ffi.Bool Function(
+    ffi.Int width, ffi.Int height, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_supported_capture_resolution_cbFunction = int Function(
-    int, int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_supported_capture_resolution_cbFunction = bool Function(
+    int width, int height, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked once for the pixel format of each supported capture format.
 ///
@@ -9456,11 +9592,11 @@ typedef Dartcamera_supported_capture_resolution_cbFunction = int Function(
 typedef camera_supported_capture_format_cb = ffi
     .Pointer<ffi.NativeFunction<camera_supported_capture_format_cbFunction>>;
 /// @nodoc
-typedef camera_supported_capture_format_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_supported_capture_format_cbFunction = ffi.Bool Function(
+    ffi.Int32 format, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_supported_capture_format_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_supported_capture_format_cbFunction = bool Function(
+    int format, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked when the extra preview frame is delivered from the camera device.
 ///
@@ -9496,148 +9632,6 @@ typedef Dartcamera_extra_preview_cbFunction = void Function(
     int stream_id,
     ffi.Pointer<ffi.Void> user_data);
 
-/// The structure type to preview stream data.
-///
-/// **Since Tizen:**
-/// - 2.3
-/// @nodoc
-typedef camera_preview_data_s = CapiMediaCameraUnnamedStruct1;
-
-/// The structure type to preview stream data.
-///
-/// **Since Tizen:**
-/// - 2.3
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct1 extends ffi.Struct {
-  /// < The format of the frame pixel
-  @ffi.Int32()
-  external int format;
-
-  /// < The width of the frame
-  @ffi.Int()
-  external int width;
-
-  /// < The height of the frame
-  @ffi.Int()
-  external int height;
-
-  /// < The number of planes
-  @ffi.Int()
-  external int num_of_planes;
-
-  /// < The timestamp of the frame
-  @ffi.UnsignedInt()
-  external int timestamp;
-
-  /// < The frame data
-  external CapiMediaCameraUnnamedUnion1 data;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedUnion1 extends ffi.Union {
-  /// < Single plane frame data
-  external CapiMediaCameraUnnamedStruct2 single_plane;
-
-  /// < Double plane frame data
-  external CapiMediaCameraUnnamedStruct3 double_plane;
-
-  /// < Triple plane frame data
-  external CapiMediaCameraUnnamedStruct4 triple_plane;
-
-  /// < Encoded plane frame data
-  external CapiMediaCameraUnnamedStruct5 encoded_plane;
-
-  /// < Depth plane frame data (Since 5.0)
-  external CapiMediaCameraUnnamedStruct6 depth_plane;
-
-  /// < RGB plane frame data (Since 5.0)
-  external CapiMediaCameraUnnamedStruct7 rgb_plane;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct2 extends ffi.Struct {
-  /// < The yuv data pointer
-  external ffi.Pointer<ffi.UnsignedChar> yuv;
-
-  /// < The size of data
-  @ffi.UnsignedInt()
-  external int size;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct3 extends ffi.Struct {
-  /// < The y data pointer
-  external ffi.Pointer<ffi.UnsignedChar> y;
-
-  /// < The uv data pointer
-  external ffi.Pointer<ffi.UnsignedChar> uv;
-
-  /// < The size of y data
-  @ffi.UnsignedInt()
-  external int y_size;
-
-  /// < The size of uv data
-  @ffi.UnsignedInt()
-  external int uv_size;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct4 extends ffi.Struct {
-  /// < The y data pointer
-  external ffi.Pointer<ffi.UnsignedChar> y;
-
-  /// < The u data pointer
-  external ffi.Pointer<ffi.UnsignedChar> u;
-
-  /// < The v data pointer
-  external ffi.Pointer<ffi.UnsignedChar> v;
-
-  /// < The size of y data
-  @ffi.UnsignedInt()
-  external int y_size;
-
-  /// < The size of u data
-  @ffi.UnsignedInt()
-  external int u_size;
-
-  /// < The size of v data
-  @ffi.UnsignedInt()
-  external int v_size;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct5 extends ffi.Struct {
-  /// < The encoded data pointer
-  external ffi.Pointer<ffi.UnsignedChar> data;
-
-  /// < The size of encoded data
-  @ffi.UnsignedInt()
-  external int size;
-
-  /// < The flag indicating whether it's delta frame or not (Since 6.0)
-  external imp1.bool is_delta_frame;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct6 extends ffi.Struct {
-  /// < The depth data pointer
-  external ffi.Pointer<ffi.UnsignedChar> data;
-
-  /// < The size of depth data
-  @ffi.UnsignedInt()
-  external int size;
-}
-
-/// @nodoc
-final class CapiMediaCameraUnnamedStruct7 extends ffi.Struct {
-  /// < The RGB data pointer
-  external ffi.Pointer<ffi.UnsignedChar> data;
-
-  /// < The size of RGB data
-  @ffi.UnsignedInt()
-  external int size;
-}
-
 /// Invoked once for the pixel format of each supported preview format.
 ///
 /// **Since Tizen:**
@@ -9659,11 +9653,11 @@ final class CapiMediaCameraUnnamedStruct7 extends ffi.Struct {
 typedef camera_supported_preview_format_cb = ffi
     .Pointer<ffi.NativeFunction<camera_supported_preview_format_cbFunction>>;
 /// @nodoc
-typedef camera_supported_preview_format_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_supported_preview_format_cbFunction = ffi.Bool Function(
+    ffi.Int32 format, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_supported_preview_format_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_supported_preview_format_cbFunction = bool Function(
+    int format, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked for notifications about delivering a copy of the new preview frame when every preview frame is displayed.
 ///
@@ -9748,10 +9742,10 @@ typedef camera_state_changed_cb
     = ffi.Pointer<ffi.NativeFunction<camera_state_changed_cbFunction>>;
 /// @nodoc
 typedef camera_state_changed_cbFunction = ffi.Void Function(ffi.Int32 previous,
-    ffi.Int32 current, imp1.bool by_policy, ffi.Pointer<ffi.Void> user_data);
+    ffi.Int32 current, ffi.Bool by_policy, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_state_changed_cbFunction = void Function(int previous,
-    int current, imp1.bool by_policy, ffi.Pointer<ffi.Void> user_data);
+typedef Dartcamera_state_changed_cbFunction = void Function(
+    int previous, int current, bool by_policy, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked when the camera is interrupted by policy.
 ///
@@ -9912,11 +9906,11 @@ typedef Dartcamera_device_state_changed_cbFunction = void Function(
 typedef camera_attr_supported_fps_cb
     = ffi.Pointer<ffi.NativeFunction<camera_attr_supported_fps_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_fps_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_fps_cbFunction = ffi.Bool Function(
+    ffi.Int32 fps, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_fps_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_fps_cbFunction = bool Function(
+    int fps, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported auto-focus mode.
 ///
@@ -9939,11 +9933,11 @@ typedef Dartcamera_attr_supported_fps_cbFunction = int Function(
 typedef camera_attr_supported_af_mode_cb
     = ffi.Pointer<ffi.NativeFunction<camera_attr_supported_af_mode_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_af_mode_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_af_mode_cbFunction = ffi.Bool Function(
+    ffi.Int32 mode, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_af_mode_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_af_mode_cbFunction = bool Function(
+    int mode, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported exposure mode.
 ///
@@ -9967,11 +9961,11 @@ typedef Dartcamera_attr_supported_af_mode_cbFunction = int Function(
 typedef camera_attr_supported_exposure_mode_cb = ffi.Pointer<
     ffi.NativeFunction<camera_attr_supported_exposure_mode_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_exposure_mode_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_exposure_mode_cbFunction = ffi.Bool Function(
+    ffi.Int32 mode, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_exposure_mode_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_exposure_mode_cbFunction = bool Function(
+    int mode, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported ISO mode.
 ///
@@ -9994,11 +9988,11 @@ typedef Dartcamera_attr_supported_exposure_mode_cbFunction = int Function(
 typedef camera_attr_supported_iso_cb
     = ffi.Pointer<ffi.NativeFunction<camera_attr_supported_iso_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_iso_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_iso_cbFunction = ffi.Bool Function(
+    ffi.Int32 iso, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_iso_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_iso_cbFunction = bool Function(
+    int iso, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported theater mode.
 ///
@@ -10021,11 +10015,11 @@ typedef Dartcamera_attr_supported_iso_cbFunction = int Function(
 typedef camera_attr_supported_theater_mode_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_theater_mode_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_theater_mode_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_theater_mode_cbFunction = ffi.Bool Function(
+    ffi.Int32 mode, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_theater_mode_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_theater_mode_cbFunction = bool Function(
+    int mode, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported white balance.
 ///
@@ -10049,11 +10043,11 @@ typedef Dartcamera_attr_supported_theater_mode_cbFunction = int Function(
 typedef camera_attr_supported_whitebalance_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_whitebalance_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_whitebalance_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_whitebalance_cbFunction = ffi.Bool Function(
+    ffi.Int32 wb, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_whitebalance_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_whitebalance_cbFunction = bool Function(
+    int wb, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported effect mode.
 ///
@@ -10076,11 +10070,11 @@ typedef Dartcamera_attr_supported_whitebalance_cbFunction = int Function(
 typedef camera_attr_supported_effect_cb
     = ffi.Pointer<ffi.NativeFunction<camera_attr_supported_effect_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_effect_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_effect_cbFunction = ffi.Bool Function(
+    ffi.Int32 effect, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_effect_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_effect_cbFunction = bool Function(
+    int effect, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported scene mode.
 ///
@@ -10104,11 +10098,11 @@ typedef Dartcamera_attr_supported_effect_cbFunction = int Function(
 typedef camera_attr_supported_scene_mode_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_scene_mode_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_scene_mode_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_scene_mode_cbFunction = ffi.Bool Function(
+    ffi.Int32 mode, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_scene_mode_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_scene_mode_cbFunction = bool Function(
+    int mode, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported flash mode.
 ///
@@ -10131,11 +10125,11 @@ typedef Dartcamera_attr_supported_scene_mode_cbFunction = int Function(
 typedef camera_attr_supported_flash_mode_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_flash_mode_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_flash_mode_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_flash_mode_cbFunction = ffi.Bool Function(
+    ffi.Int32 mode, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_flash_mode_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_flash_mode_cbFunction = bool Function(
+    int mode, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported stream rotation mode.
 ///
@@ -10158,11 +10152,11 @@ typedef Dartcamera_attr_supported_flash_mode_cbFunction = int Function(
 typedef camera_attr_supported_stream_rotation_cb = ffi.Pointer<
     ffi.NativeFunction<camera_attr_supported_stream_rotation_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_stream_rotation_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_stream_rotation_cbFunction = ffi.Bool Function(
+    ffi.Int32 rotation, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_stream_rotation_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_stream_rotation_cbFunction = bool Function(
+    int rotation, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked to get each supported stream flip mode.
 ///
@@ -10185,11 +10179,11 @@ typedef Dartcamera_attr_supported_stream_rotation_cbFunction = int Function(
 typedef camera_attr_supported_stream_flip_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_stream_flip_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_stream_flip_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_stream_flip_cbFunction = ffi.Bool Function(
+    ffi.Int32 flip, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_stream_flip_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_stream_flip_cbFunction = bool Function(
+    int flip, ffi.Pointer<ffi.Void> user_data);
 
 /// Invoked when the HDR capture process is updated.
 ///
@@ -10239,11 +10233,11 @@ typedef Dartcamera_attr_hdr_progress_cbFunction = void Function(
 typedef camera_attr_supported_ptz_type_cb = ffi
     .Pointer<ffi.NativeFunction<camera_attr_supported_ptz_type_cbFunction>>;
 /// @nodoc
-typedef camera_attr_supported_ptz_type_cbFunction = ffi.Int Function(
-    ffi.Int32, ffi.Pointer<ffi.Void>);
+typedef camera_attr_supported_ptz_type_cbFunction = ffi.Bool Function(
+    ffi.Int32 type, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartcamera_attr_supported_ptz_type_cbFunction = int Function(
-    int, ffi.Pointer<ffi.Void>);
+typedef Dartcamera_attr_supported_ptz_type_cbFunction = bool Function(
+    int type, ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int CAMERA_ERROR_CLASS = -26279936;

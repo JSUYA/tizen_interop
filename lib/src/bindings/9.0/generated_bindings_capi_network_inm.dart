@@ -715,7 +715,7 @@ class Tizen90CapiNetworkInm {
   /// - `INM_ERROR_OPERATION_FAILED`: Operation failed
   int inm_ip_conflict_detect_is_enabled(
     inm_h inm,
-    ffi.Pointer<bool> state,
+    ffi.Pointer<ffi.Bool> state,
   ) {
     return _inm_ip_conflict_detect_is_enabled(
       inm,
@@ -723,12 +723,12 @@ class Tizen90CapiNetworkInm {
     );
   }
 
-  late final _inm_ip_conflict_detect_is_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(inm_h, ffi.Pointer<bool>)>>(
-          'inm_ip_conflict_detect_is_enabled');
+  late final _inm_ip_conflict_detect_is_enabledPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(inm_h, ffi.Pointer<ffi.Bool>)>>(
+      'inm_ip_conflict_detect_is_enabled');
   late final _inm_ip_conflict_detect_is_enabled =
       _inm_ip_conflict_detect_is_enabledPtr
-          .asFunction<int Function(inm_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(inm_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the state of the IP conflict.
   ///
@@ -2437,7 +2437,7 @@ class Tizen90CapiNetworkInm {
   int inm_reachable_urls_is_check_running(
     inm_h inm,
     int type,
-    ffi.Pointer<bool> is_running,
+    ffi.Pointer<ffi.Bool> is_running,
   ) {
     return _inm_reachable_urls_is_check_running(
       inm,
@@ -2449,10 +2449,10 @@ class Tizen90CapiNetworkInm {
   late final _inm_reachable_urls_is_check_runningPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(inm_h, ffi.Int32,
-              ffi.Pointer<bool>)>>('inm_reachable_urls_is_check_running');
+              ffi.Pointer<ffi.Bool>)>>('inm_reachable_urls_is_check_running');
   late final _inm_reachable_urls_is_check_running =
       _inm_reachable_urls_is_check_runningPtr
-          .asFunction<int Function(inm_h, int, ffi.Pointer<bool>)>();
+          .asFunction<int Function(inm_h, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the connection ID.
   ///
@@ -3799,7 +3799,7 @@ class Tizen90CapiNetworkInm {
   /// - `INM_ERROR_OPERATION_FAILED`: Operation failed
   int inm_wifi_ap_is_favorite(
     inm_connection_h ap,
-    ffi.Pointer<bool> favorite,
+    ffi.Pointer<ffi.Bool> favorite,
   ) {
     return _inm_wifi_ap_is_favorite(
       ap,
@@ -3809,10 +3809,10 @@ class Tizen90CapiNetworkInm {
 
   late final _inm_wifi_ap_is_favoritePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(
-              inm_connection_h, ffi.Pointer<bool>)>>('inm_wifi_ap_is_favorite');
+          ffi.Int Function(inm_connection_h,
+              ffi.Pointer<ffi.Bool>)>>('inm_wifi_ap_is_favorite');
   late final _inm_wifi_ap_is_favorite = _inm_wifi_ap_is_favoritePtr
-      .asFunction<int Function(inm_connection_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(inm_connection_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the access point is a Passpoint or not.
   ///
@@ -3833,7 +3833,7 @@ class Tizen90CapiNetworkInm {
   /// - `INM_ERROR_OPERATION_FAILED`: Operation failed
   int inm_wifi_ap_is_passpoint(
     inm_connection_h ap,
-    ffi.Pointer<bool> passpoint,
+    ffi.Pointer<ffi.Bool> passpoint,
   ) {
     return _inm_wifi_ap_is_passpoint(
       ap,
@@ -3844,9 +3844,9 @@ class Tizen90CapiNetworkInm {
   late final _inm_wifi_ap_is_passpointPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(inm_connection_h,
-              ffi.Pointer<bool>)>>('inm_wifi_ap_is_passpoint');
+              ffi.Pointer<ffi.Bool>)>>('inm_wifi_ap_is_passpoint');
   late final _inm_wifi_ap_is_passpoint = _inm_wifi_ap_is_passpointPtr
-      .asFunction<int Function(inm_connection_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(inm_connection_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the Wi-Fi security mode.
   ///
@@ -3939,7 +3939,7 @@ class Tizen90CapiNetworkInm {
   /// - `INM_ERROR_OPERATION_FAILED`: Operation failed
   int inm_wifi_ap_is_passphrase_required(
     inm_connection_h ap,
-    ffi.Pointer<bool> required1,
+    ffi.Pointer<ffi.Bool> required1,
   ) {
     return _inm_wifi_ap_is_passphrase_required(
       ap,
@@ -3950,10 +3950,10 @@ class Tizen90CapiNetworkInm {
   late final _inm_wifi_ap_is_passphrase_requiredPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(inm_connection_h,
-              ffi.Pointer<bool>)>>('inm_wifi_ap_is_passphrase_required');
+              ffi.Pointer<ffi.Bool>)>>('inm_wifi_ap_is_passphrase_required');
   late final _inm_wifi_ap_is_passphrase_required =
       _inm_wifi_ap_is_passphrase_requiredPtr
-          .asFunction<int Function(inm_connection_h, ffi.Pointer<bool>)>();
+          .asFunction<int Function(inm_connection_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Checks whether the WPS (Wi-Fi Protected Setup) is supported or not.
   ///
@@ -3974,7 +3974,7 @@ class Tizen90CapiNetworkInm {
   /// - `INM_ERROR_OPERATION_FAILED`: Operation failed
   int inm_wifi_ap_is_wps_supported(
     inm_connection_h ap,
-    ffi.Pointer<bool> supported,
+    ffi.Pointer<ffi.Bool> supported,
   ) {
     return _inm_wifi_ap_is_wps_supported(
       ap,
@@ -3985,9 +3985,9 @@ class Tizen90CapiNetworkInm {
   late final _inm_wifi_ap_is_wps_supportedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(inm_connection_h,
-              ffi.Pointer<bool>)>>('inm_wifi_ap_is_wps_supported');
+              ffi.Pointer<ffi.Bool>)>>('inm_wifi_ap_is_wps_supported');
   late final _inm_wifi_ap_is_wps_supported = _inm_wifi_ap_is_wps_supportedPtr
-      .asFunction<int Function(inm_connection_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(inm_connection_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the Wi-Fi disconnect reason from the supplicant.
   ///
@@ -4924,7 +4924,7 @@ class Tizen90CapiNetworkInm {
   /// - `inm_link_foreach_route()`
   int inm_link_route_is_default(
     inm_link_route_h route,
-    ffi.Pointer<bool> is_default,
+    ffi.Pointer<ffi.Bool> is_default,
   ) {
     return _inm_link_route_is_default(
       route,
@@ -4935,9 +4935,9 @@ class Tizen90CapiNetworkInm {
   late final _inm_link_route_is_defaultPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(inm_link_route_h,
-              ffi.Pointer<bool>)>>('inm_link_route_is_default');
+              ffi.Pointer<ffi.Bool>)>>('inm_link_route_is_default');
   late final _inm_link_route_is_default = _inm_link_route_is_defaultPtr
-      .asFunction<int Function(inm_link_route_h, ffi.Pointer<bool>)>();
+      .asFunction<int Function(inm_link_route_h, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the route type.
   ///
@@ -5829,37 +5829,14 @@ typedef inm_default_gateway_state_changed_cb = ffi
     .Pointer<ffi.NativeFunction<inm_default_gateway_state_changed_cbFunction>>;
 /// @nodoc
 typedef inm_default_gateway_state_changed_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> found,
+    ffi.Bool found,
     ffi.Pointer<ffi.Char> gateway_ip,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartinm_default_gateway_state_changed_cbFunction = void Function(
-    ffi.Pointer<bool> found,
+    bool found,
     ffi.Pointer<ffi.Char> gateway_ip,
     ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the DNS state is changed.
 ///
@@ -5878,10 +5855,10 @@ typedef inm_default_dns_state_changed_cb
     = ffi.Pointer<ffi.NativeFunction<inm_default_dns_state_changed_cbFunction>>;
 /// @nodoc
 typedef inm_default_dns_state_changed_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> found, ffi.Pointer<ffi.Void> user_data);
+    ffi.Bool found, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartinm_default_dns_state_changed_cbFunction = void Function(
-    ffi.Pointer<bool> found, ffi.Pointer<ffi.Void> user_data);
+    bool found, ffi.Pointer<ffi.Void> user_data);
 
 /// Called after inm_http_online_check() is completed.
 ///
@@ -5902,10 +5879,10 @@ typedef inm_default_http_check_finished_cb = ffi
     .Pointer<ffi.NativeFunction<inm_default_http_check_finished_cbFunction>>;
 /// @nodoc
 typedef inm_default_http_check_finished_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> status, ffi.Pointer<ffi.Void> user_data);
+    ffi.Bool status, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartinm_default_http_check_finished_cbFunction = void Function(
-    ffi.Pointer<bool> status, ffi.Pointer<ffi.Void> user_data);
+    bool status, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the IP conflict state is changed.
 ///
@@ -6111,11 +6088,11 @@ typedef inm_connection_iterator_h = ffi.Pointer<ffi.Void>;
 /// @nodoc
 typedef inm_link_cb = ffi.Pointer<ffi.NativeFunction<inm_link_cbFunction>>;
 /// @nodoc
-typedef inm_link_cbFunction = ffi.Int Function(
-    inm_link_h, ffi.Pointer<ffi.Void>);
+typedef inm_link_cbFunction = ffi.Bool Function(
+    inm_link_h link, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_link_cbFunction = int Function(
-    inm_link_h, ffi.Pointer<ffi.Void>);
+typedef Dartinm_link_cbFunction = bool Function(
+    inm_link_h link, ffi.Pointer<ffi.Void> user_data);
 
 /// The link handle.
 ///
@@ -6146,14 +6123,10 @@ typedef inm_arp_request_ip_found_cb
     = ffi.Pointer<ffi.NativeFunction<inm_arp_request_ip_found_cbFunction>>;
 /// @nodoc
 typedef inm_arp_request_ip_found_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> found,
-    ffi.Pointer<ffi.Char> ip,
-    ffi.Pointer<ffi.Void> user_data);
+    ffi.Bool found, ffi.Pointer<ffi.Char> ip, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartinm_arp_request_ip_found_cbFunction = void Function(
-    ffi.Pointer<bool> found,
-    ffi.Pointer<ffi.Char> ip,
-    ffi.Pointer<ffi.Void> user_data);
+    bool found, ffi.Pointer<ffi.Char> ip, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the gateway IP is found in a local network by sending ARP packets.
 ///
@@ -6176,15 +6149,11 @@ typedef Dartinm_arp_request_ip_found_cbFunction = void Function(
 typedef inm_default_gateway_found_cb
     = ffi.Pointer<ffi.NativeFunction<inm_default_gateway_found_cbFunction>>;
 /// @nodoc
-typedef inm_default_gateway_found_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> found,
-    ffi.Pointer<ffi.Char> gateway_ip,
-    ffi.Pointer<ffi.Void> user_data);
+typedef inm_default_gateway_found_cbFunction = ffi.Void Function(ffi.Bool found,
+    ffi.Pointer<ffi.Char> gateway_ip, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_default_gateway_found_cbFunction = void Function(
-    ffi.Pointer<bool> found,
-    ffi.Pointer<ffi.Char> gateway_ip,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartinm_default_gateway_found_cbFunction = void Function(bool found,
+    ffi.Pointer<ffi.Char> gateway_ip, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the DNS lookup result is received.
 ///
@@ -6202,10 +6171,10 @@ typedef inm_default_dns_lookup_result_cb
     = ffi.Pointer<ffi.NativeFunction<inm_default_dns_lookup_result_cbFunction>>;
 /// @nodoc
 typedef inm_default_dns_lookup_result_cbFunction = ffi.Void Function(
-    ffi.Pointer<bool> found, ffi.Pointer<ffi.Void> user_data);
+    ffi.Bool found, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartinm_default_dns_lookup_result_cbFunction = void Function(
-    ffi.Pointer<bool> found, ffi.Pointer<ffi.Void> user_data);
+    bool found, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the URL responds to HTTP GET generated by curl.
 ///
@@ -6306,11 +6275,11 @@ typedef Dartinm_wifi_scan_state_changed_cbFunction = void Function(
 typedef inm_wifi_found_ap_cb
     = ffi.Pointer<ffi.NativeFunction<inm_wifi_found_ap_cbFunction>>;
 /// @nodoc
-typedef inm_wifi_found_ap_cbFunction = ffi.Int Function(
-    inm_connection_h, ffi.Pointer<ffi.Void>);
+typedef inm_wifi_found_ap_cbFunction = ffi.Bool Function(
+    inm_connection_h ap, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_wifi_found_ap_cbFunction = int Function(
-    inm_connection_h, ffi.Pointer<ffi.Void>);
+typedef Dartinm_wifi_found_ap_cbFunction = bool Function(
+    inm_connection_h ap, ffi.Pointer<ffi.Void> user_data);
 
 /// Called with VSIE data and length of VSIE.
 ///
@@ -6339,11 +6308,15 @@ typedef Dartinm_wifi_found_ap_cbFunction = int Function(
 typedef inm_wifi_ap_vsie_cb
     = ffi.Pointer<ffi.NativeFunction<inm_wifi_ap_vsie_cbFunction>>;
 /// @nodoc
-typedef inm_wifi_ap_vsie_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.UnsignedChar>, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef inm_wifi_ap_vsie_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.UnsignedChar> vsie,
+    ffi.Int length,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_wifi_ap_vsie_cbFunction = int Function(
-    ffi.Pointer<ffi.UnsignedChar>, int, ffi.Pointer<ffi.Void>);
+typedef Dartinm_wifi_ap_vsie_cbFunction = bool Function(
+    ffi.Pointer<ffi.UnsignedChar> vsie,
+    int length,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called with handle of the link address.
 ///
@@ -6371,11 +6344,11 @@ typedef Dartinm_wifi_ap_vsie_cbFunction = int Function(
 typedef inm_link_address_cb
     = ffi.Pointer<ffi.NativeFunction<inm_link_address_cbFunction>>;
 /// @nodoc
-typedef inm_link_address_cbFunction = ffi.Int Function(
-    inm_link_address_h, ffi.Pointer<ffi.Void>);
+typedef inm_link_address_cbFunction = ffi.Bool Function(
+    inm_link_address_h address, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_link_address_cbFunction = int Function(
-    inm_link_address_h, ffi.Pointer<ffi.Void>);
+typedef Dartinm_link_address_cbFunction = bool Function(
+    inm_link_address_h address, ffi.Pointer<ffi.Void> user_data);
 
 /// The link address handle.
 ///
@@ -6410,11 +6383,11 @@ typedef inm_link_address_h = ffi.Pointer<ffi.Void>;
 typedef inm_link_route_cb
     = ffi.Pointer<ffi.NativeFunction<inm_link_route_cbFunction>>;
 /// @nodoc
-typedef inm_link_route_cbFunction = ffi.Int Function(
-    inm_link_route_h, ffi.Pointer<ffi.Void>);
+typedef inm_link_route_cbFunction = ffi.Bool Function(
+    inm_link_route_h route, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartinm_link_route_cbFunction = int Function(
-    inm_link_route_h, ffi.Pointer<ffi.Void>);
+typedef Dartinm_link_route_cbFunction = bool Function(
+    inm_link_route_h route, ffi.Pointer<ffi.Void> user_data);
 
 /// The link route table handle.
 ///

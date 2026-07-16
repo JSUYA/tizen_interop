@@ -774,36 +774,13 @@ typedef ttse_get_info_cbFunction = ffi.Int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_setting,
-    ffi.Pointer<bool> use_network);
+    ffi.Pointer<ffi.Bool> use_network);
 /// @nodoc
 typedef Dartttse_get_info_cbFunction = int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_setting,
-    ffi.Pointer<bool> use_network);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+    ffi.Pointer<ffi.Bool> use_network);
 
 /// Called when the engine service user initializes TTS engine.
 ///
@@ -925,11 +902,13 @@ typedef Dartttse_foreach_supported_voices_cbFunction = int Function(
 typedef ttse_supported_voice_cb
     = ffi.Pointer<ffi.NativeFunction<ttse_supported_voice_cbFunction>>;
 /// @nodoc
-typedef ttse_supported_voice_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<ffi.Void>);
+typedef ttse_supported_voice_cbFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Char> language,
+    ffi.Int type,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartttse_supported_voice_cbFunction = int Function(
-    ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
+typedef Dartttse_supported_voice_cbFunction = bool Function(
+    ffi.Pointer<ffi.Char> language, int type, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the engine service user checks whether the voice is valid or not in TTS engine.
 ///
@@ -958,10 +937,12 @@ typedef ttse_is_valid_voice_cb
     = ffi.Pointer<ffi.NativeFunction<ttse_is_valid_voice_cbFunction>>;
 /// @nodoc
 typedef ttse_is_valid_voice_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char> language, ffi.Int type, ffi.Pointer<bool> is_valid);
+    ffi.Pointer<ffi.Char> language,
+    ffi.Int type,
+    ffi.Pointer<ffi.Bool> is_valid);
 /// @nodoc
 typedef Dartttse_is_valid_voice_cbFunction = int Function(
-    ffi.Pointer<ffi.Char> language, int type, ffi.Pointer<bool> is_valid);
+    ffi.Pointer<ffi.Char> language, int type, ffi.Pointer<ffi.Bool> is_valid);
 
 /// Called when the engine service user sets the default pitch of TTS engine.
 ///
@@ -1176,10 +1157,10 @@ typedef ttse_check_app_agreed_cb
     = ffi.Pointer<ffi.NativeFunction<ttse_check_app_agreed_cbFunction>>;
 /// @nodoc
 typedef ttse_check_app_agreed_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char> appid, ffi.Pointer<bool> is_agreed);
+    ffi.Pointer<ffi.Char> appid, ffi.Pointer<ffi.Bool> is_agreed);
 /// @nodoc
 typedef Dartttse_check_app_agreed_cbFunction = int Function(
-    ffi.Pointer<ffi.Char> appid, ffi.Pointer<bool> is_agreed);
+    ffi.Pointer<ffi.Char> appid, ffi.Pointer<ffi.Bool> is_agreed);
 
 /// Called when the engine service user checks whether TTS engine needs the application's credential.
 ///
@@ -1195,9 +1176,9 @@ typedef Dartttse_check_app_agreed_cbFunction = int Function(
 typedef ttse_need_app_credential_cb
     = ffi.Pointer<ffi.NativeFunction<ttse_need_app_credential_cbFunction>>;
 /// @nodoc
-typedef ttse_need_app_credential_cbFunction = ffi.Int Function();
+typedef ttse_need_app_credential_cbFunction = ffi.Bool Function();
 /// @nodoc
-typedef Dartttse_need_app_credential_cbFunction = int Function();
+typedef Dartttse_need_app_credential_cbFunction = bool Function();
 
 /// Called when TTS engine receives the private data from the engine service user.
 ///
