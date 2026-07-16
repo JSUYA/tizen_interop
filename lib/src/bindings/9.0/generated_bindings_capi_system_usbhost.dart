@@ -181,7 +181,7 @@ class Tizen90CapiSystemUsbhost {
   /// - CAPI_USB_HOST_DEV_MODULE
   int usb_host_free_device_list(
     ffi.Pointer<usb_host_device_h> devs,
-    bool unref_devices,
+    ffi.Pointer<bool> unref_devices,
   ) {
     return _usb_host_free_device_list(
       devs,
@@ -192,9 +192,10 @@ class Tizen90CapiSystemUsbhost {
   late final _usb_host_free_device_listPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<usb_host_device_h>,
-              ffi.Bool)>>('usb_host_free_device_list');
-  late final _usb_host_free_device_list = _usb_host_free_device_listPtr
-      .asFunction<int Function(ffi.Pointer<usb_host_device_h>, bool)>();
+              ffi.Pointer<bool>)>>('usb_host_free_device_list');
+  late final _usb_host_free_device_list =
+      _usb_host_free_device_listPtr.asFunction<
+          int Function(ffi.Pointer<usb_host_device_h>, ffi.Pointer<bool>)>();
 
   /// Increments the reference counter of given USB device
   ///
@@ -1053,7 +1054,7 @@ class Tizen90CapiSystemUsbhost {
   /// - CAPI_USB_HOST_DEV_MODULE
   int usb_host_is_device_opened(
     usb_host_device_h dev,
-    ffi.Pointer<ffi.Bool> is_opened,
+    ffi.Pointer<bool> is_opened,
   ) {
     return _usb_host_is_device_opened(
       dev,
@@ -1064,9 +1065,9 @@ class Tizen90CapiSystemUsbhost {
   late final _usb_host_is_device_openedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(usb_host_device_h,
-              ffi.Pointer<ffi.Bool>)>>('usb_host_is_device_opened');
+              ffi.Pointer<bool>)>>('usb_host_is_device_opened');
   late final _usb_host_is_device_opened = _usb_host_is_device_openedPtr
-      .asFunction<int Function(usb_host_device_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(usb_host_device_h, ffi.Pointer<bool>)>();
 
   /// Gets string describing an open device's manufacturer, in ASCII.
   ///
@@ -1274,7 +1275,7 @@ class Tizen90CapiSystemUsbhost {
   /// - CAPI_USB_HOST_CONFIG_MODULE
   int usb_host_config_is_self_powered(
     usb_host_config_h config,
-    ffi.Pointer<ffi.Bool> self_powered,
+    ffi.Pointer<bool> self_powered,
   ) {
     return _usb_host_config_is_self_powered(
       config,
@@ -1285,10 +1286,10 @@ class Tizen90CapiSystemUsbhost {
   late final _usb_host_config_is_self_poweredPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(usb_host_config_h,
-              ffi.Pointer<ffi.Bool>)>>('usb_host_config_is_self_powered');
+              ffi.Pointer<bool>)>>('usb_host_config_is_self_powered');
   late final _usb_host_config_is_self_powered =
       _usb_host_config_is_self_poweredPtr
-          .asFunction<int Function(usb_host_config_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(usb_host_config_h, ffi.Pointer<bool>)>();
 
   /// Checks if device in given configuration supports remote wakeup.
   ///
@@ -1313,7 +1314,7 @@ class Tizen90CapiSystemUsbhost {
   /// - CAPI_USB_HOST_CONFIG_MODULE
   int usb_host_config_support_remote_wakeup(
     usb_host_config_h config,
-    ffi.Pointer<ffi.Bool> remote_wakeup,
+    ffi.Pointer<bool> remote_wakeup,
   ) {
     return _usb_host_config_support_remote_wakeup(
       config,
@@ -1324,10 +1325,10 @@ class Tizen90CapiSystemUsbhost {
   late final _usb_host_config_support_remote_wakeupPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(usb_host_config_h,
-              ffi.Pointer<ffi.Bool>)>>('usb_host_config_support_remote_wakeup');
+              ffi.Pointer<bool>)>>('usb_host_config_support_remote_wakeup');
   late final _usb_host_config_support_remote_wakeup =
       _usb_host_config_support_remote_wakeupPtr
-          .asFunction<int Function(usb_host_config_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(usb_host_config_h, ffi.Pointer<bool>)>();
 
   /// Gets maximum power in given USB configuration, in mA.
   ///
@@ -1527,7 +1528,7 @@ class Tizen90CapiSystemUsbhost {
   /// - CAPI_USB_HOST_INTERFACE_MODULE
   int usb_host_claim_interface(
     usb_host_interface_h interface1,
-    bool force,
+    ffi.Pointer<bool> force,
   ) {
     return _usb_host_claim_interface(
       interface1,
@@ -1536,10 +1537,11 @@ class Tizen90CapiSystemUsbhost {
   }
 
   late final _usb_host_claim_interfacePtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(usb_host_interface_h, ffi.Bool)>>(
-      'usb_host_claim_interface');
+      ffi.NativeFunction<
+          ffi.Int Function(usb_host_interface_h,
+              ffi.Pointer<bool>)>>('usb_host_claim_interface');
   late final _usb_host_claim_interface = _usb_host_claim_interfacePtr
-      .asFunction<int Function(usb_host_interface_h, bool)>();
+      .asFunction<int Function(usb_host_interface_h, ffi.Pointer<bool>)>();
 
   /// Releases a previously claimed interface on a device.
   ///
@@ -3730,6 +3732,29 @@ typedef usb_host_context_h = ffi.Pointer<usb_host_context_s>;
 /// - CAPI_USB_HOST_DEV_MODULE
 /// @nodoc
 typedef usb_host_device_h = ffi.Pointer<usb_host_device_s>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// An opaque handle representing a USB device configuration.
 ///

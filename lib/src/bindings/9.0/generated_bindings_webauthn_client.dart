@@ -907,7 +907,6 @@ final class __wauthn_authenticator_sel_cri extends ffi.Struct {
 
   /// <
   /// Relying Parties SHOULD set it to true if, and only if, residentKey is set to required.
-  @ffi.Bool()
   external bool require_resident_key;
 
   /// <
@@ -915,6 +914,29 @@ final class __wauthn_authenticator_sel_cri extends ffi.Struct {
   @ffi.Int32()
   external int user_verification;
 }
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// The list structure for public key credential hints.
 ///

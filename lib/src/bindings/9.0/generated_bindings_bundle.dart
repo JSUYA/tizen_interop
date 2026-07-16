@@ -582,7 +582,7 @@ class Tizen90Bundle {
   int bundle_keyval_get_basic_val(
     ffi.Pointer<bundle_keyval_t> kv,
     ffi.Pointer<ffi.Pointer<ffi.Void>> val,
-    ffi.Pointer<ffi.Size> size,
+    ffi.Pointer<ffi.Int> size,
   ) {
     return _bundle_keyval_get_basic_val(
       kv,
@@ -596,11 +596,11 @@ class Tizen90Bundle {
           ffi.Int Function(
               ffi.Pointer<bundle_keyval_t>,
               ffi.Pointer<ffi.Pointer<ffi.Void>>,
-              ffi.Pointer<ffi.Size>)>>('bundle_keyval_get_basic_val');
+              ffi.Pointer<ffi.Int>)>>('bundle_keyval_get_basic_val');
   late final _bundle_keyval_get_basic_val =
       _bundle_keyval_get_basic_valPtr.asFunction<
           int Function(ffi.Pointer<bundle_keyval_t>,
-              ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.Size>)>();
+              ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.Int>)>();
 
   /// Gets the value array, length of the array, and size of each array item.
   ///
@@ -667,7 +667,7 @@ class Tizen90Bundle {
     ffi.Pointer<bundle_keyval_t> kv,
     ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Void>>> array_val,
     ffi.Pointer<ffi.UnsignedInt> array_len,
-    ffi.Pointer<ffi.Pointer<ffi.Size>> array_element_size,
+    ffi.Pointer<ffi.Pointer<ffi.Int>> array_element_size,
   ) {
     return _bundle_keyval_get_array_val(
       kv,
@@ -683,7 +683,7 @@ class Tizen90Bundle {
                   ffi.Pointer<bundle_keyval_t>,
                   ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Void>>>,
                   ffi.Pointer<ffi.UnsignedInt>,
-                  ffi.Pointer<ffi.Pointer<ffi.Size>>)>>(
+                  ffi.Pointer<ffi.Pointer<ffi.Int>>)>>(
       'bundle_keyval_get_array_val');
   late final _bundle_keyval_get_array_val =
       _bundle_keyval_get_array_valPtr.asFunction<
@@ -691,7 +691,7 @@ class Tizen90Bundle {
               ffi.Pointer<bundle_keyval_t>,
               ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Void>>>,
               ffi.Pointer<ffi.UnsignedInt>,
-              ffi.Pointer<ffi.Pointer<ffi.Size>>)>();
+              ffi.Pointer<ffi.Pointer<ffi.Int>>)>();
 
   /// Encodes a bundle to the bundle_raw format (uses base64 format).
   ///
@@ -911,7 +911,7 @@ class Tizen90Bundle {
   late final _bundle_add_bytePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<bundle>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('bundle_add_byte');
+              ffi.Pointer<ffi.Void>, ffi.Int)>>('bundle_add_byte');
   late final _bundle_add_byte = _bundle_add_bytePtr.asFunction<
       int Function(ffi.Pointer<bundle>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Void>, int)>();
@@ -1022,7 +1022,7 @@ class Tizen90Bundle {
     ffi.Pointer<bundle> b,
     ffi.Pointer<ffi.Char> key,
     ffi.Pointer<ffi.Pointer<ffi.Void>> bytes,
-    ffi.Pointer<ffi.Size> size,
+    ffi.Pointer<ffi.Int> size,
   ) {
     return _bundle_get_byte(
       b,
@@ -1038,10 +1038,10 @@ class Tizen90Bundle {
               ffi.Pointer<bundle>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Void>>,
-              ffi.Pointer<ffi.Size>)>>('bundle_get_byte');
+              ffi.Pointer<ffi.Int>)>>('bundle_get_byte');
   late final _bundle_get_byte = _bundle_get_bytePtr.asFunction<
       int Function(ffi.Pointer<bundle>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.Size>)>();
+          ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.Int>)>();
 
   /// Adds an 'array of byte sequences' type key-value pair into a bundle.
   ///
@@ -1138,7 +1138,7 @@ class Tizen90Bundle {
               ffi.Pointer<ffi.Char>,
               ffi.UnsignedInt,
               ffi.Pointer<ffi.Void>,
-              ffi.Size)>>('bundle_set_byte_array_element');
+              ffi.Int)>>('bundle_set_byte_array_element');
   late final _bundle_set_byte_array_element =
       _bundle_set_byte_array_elementPtr.asFunction<
           int Function(ffi.Pointer<bundle>, ffi.Pointer<ffi.Char>, int,

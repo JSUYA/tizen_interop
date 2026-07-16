@@ -1692,7 +1692,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_wifi_passphrase_required(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> required1,
+    ffi.Pointer<bool> required1,
   ) {
     return _connection_profile_is_wifi_passphrase_required(
       profile,
@@ -1702,11 +1702,11 @@ class Tizen90CapiNetworkConnection {
 
   late final _connection_profile_is_wifi_passphrase_requiredPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(connection_profile_h, ffi.Pointer<bool>)>>(
       'connection_profile_is_wifi_passphrase_required');
   late final _connection_profile_is_wifi_passphrase_required =
-      _connection_profile_is_wifi_passphrase_requiredPtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_wifi_passphrase_requiredPtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Sets the passphrase of the Wi-Fi WPA.
   ///
@@ -1771,7 +1771,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_wifi_wps_supported(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _connection_profile_is_wifi_wps_supported(
       profile,
@@ -1780,12 +1780,12 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_profile_is_wifi_wps_supportedPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>>(
-      'connection_profile_is_wifi_wps_supported');
+      ffi.NativeFunction<
+          ffi.Int Function(connection_profile_h,
+              ffi.Pointer<bool>)>>('connection_profile_is_wifi_wps_supported');
   late final _connection_profile_is_wifi_wps_supported =
-      _connection_profile_is_wifi_wps_supportedPtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_wifi_wps_supportedPtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Gets the service type.
   ///
@@ -2050,7 +2050,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_cellular_roaming(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> is_roaming,
+    ffi.Pointer<bool> is_roaming,
   ) {
     return _connection_profile_is_cellular_roaming(
       profile,
@@ -2059,12 +2059,12 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_profile_is_cellular_roamingPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>>(
-      'connection_profile_is_cellular_roaming');
+      ffi.NativeFunction<
+          ffi.Int Function(connection_profile_h,
+              ffi.Pointer<bool>)>>('connection_profile_is_cellular_roaming');
   late final _connection_profile_is_cellular_roaming =
-      _connection_profile_is_cellular_roamingPtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_cellular_roamingPtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the profile is hidden.
   ///
@@ -2085,7 +2085,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_cellular_hidden(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> is_hidden,
+    ffi.Pointer<bool> is_hidden,
   ) {
     return _connection_profile_is_cellular_hidden(
       profile,
@@ -2096,10 +2096,10 @@ class Tizen90CapiNetworkConnection {
   late final _connection_profile_is_cellular_hiddenPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(connection_profile_h,
-              ffi.Pointer<ffi.Bool>)>>('connection_profile_is_cellular_hidden');
+              ffi.Pointer<bool>)>>('connection_profile_is_cellular_hidden');
   late final _connection_profile_is_cellular_hidden =
-      _connection_profile_is_cellular_hiddenPtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_cellular_hiddenPtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the profile is editable.
   ///
@@ -2120,7 +2120,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_cellular_editable(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> is_editable,
+    ffi.Pointer<bool> is_editable,
   ) {
     return _connection_profile_is_cellular_editable(
       profile,
@@ -2129,12 +2129,12 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_profile_is_cellular_editablePtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>>(
-      'connection_profile_is_cellular_editable');
+      ffi.NativeFunction<
+          ffi.Int Function(connection_profile_h,
+              ffi.Pointer<bool>)>>('connection_profile_is_cellular_editable');
   late final _connection_profile_is_cellular_editable =
-      _connection_profile_is_cellular_editablePtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_cellular_editablePtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the profile is default.
   ///
@@ -2155,7 +2155,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_profile_is_cellular_default(
     connection_profile_h profile,
-    ffi.Pointer<ffi.Bool> is_default,
+    ffi.Pointer<bool> is_default,
   ) {
     return _connection_profile_is_cellular_default(
       profile,
@@ -2164,12 +2164,12 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_profile_is_cellular_defaultPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>>(
-      'connection_profile_is_cellular_default');
+      ffi.NativeFunction<
+          ffi.Int Function(connection_profile_h,
+              ffi.Pointer<bool>)>>('connection_profile_is_cellular_default');
   late final _connection_profile_is_cellular_default =
-      _connection_profile_is_cellular_defaultPtr.asFunction<
-          int Function(connection_profile_h, ffi.Pointer<ffi.Bool>)>();
+      _connection_profile_is_cellular_defaultPtr
+          .asFunction<int Function(connection_profile_h, ffi.Pointer<bool>)>();
 
   /// Sets the service type.
   ///
@@ -2686,7 +2686,7 @@ class Tizen90CapiNetworkConnection {
   /// - `CONNECTION_ERROR_NOT_SUPPORTED`: Not supported
   int connection_is_metered_network(
     connection_h connection,
-    ffi.Pointer<ffi.Bool> is_metered,
+    ffi.Pointer<bool> is_metered,
   ) {
     return _connection_is_metered_network(
       connection,
@@ -2695,11 +2695,11 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_is_metered_networkPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(connection_h,
-              ffi.Pointer<ffi.Bool>)>>('connection_is_metered_network');
+          ffi
+          .NativeFunction<ffi.Int Function(connection_h, ffi.Pointer<bool>)>>(
+      'connection_is_metered_network');
   late final _connection_is_metered_network = _connection_is_metered_networkPtr
-      .asFunction<int Function(connection_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(connection_h, ffi.Pointer<bool>)>();
 
   /// Gets the state of cellular connection.
   ///
@@ -3739,7 +3739,7 @@ class Tizen90CapiNetworkConnection {
   ///
   /// **See also:**
   /// - `get_last_result()`
-  bool connection_profile_iterator_has_next(
+  int connection_profile_iterator_has_next(
     connection_profile_iterator_h profile_iterator,
   ) {
     return _connection_profile_iterator_has_next(
@@ -3748,11 +3748,11 @@ class Tizen90CapiNetworkConnection {
   }
 
   late final _connection_profile_iterator_has_nextPtr = _lookup<
-          ffi.NativeFunction<ffi.Bool Function(connection_profile_iterator_h)>>(
+          ffi.NativeFunction<ffi.Int Function(connection_profile_iterator_h)>>(
       'connection_profile_iterator_has_next');
   late final _connection_profile_iterator_has_next =
       _connection_profile_iterator_has_nextPtr
-          .asFunction<bool Function(connection_profile_iterator_h)>();
+          .asFunction<int Function(connection_profile_iterator_h)>();
 
   /// Destroys a profiles iterator.
   ///
@@ -4983,6 +4983,29 @@ typedef connection_profile_state_changed_cbFunction = ffi.Void Function(
 typedef Dartconnection_profile_state_changed_cbFunction = void Function(
     int state, ffi.Pointer<ffi.Void> user_data);
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// Enumeration for connection type.
 ///
 /// **Since Tizen:**
@@ -5496,8 +5519,8 @@ typedef Dartconnection_reset_cbFunction = void Function(
 typedef connection_ipv6_address_cb
     = ffi.Pointer<ffi.NativeFunction<connection_ipv6_address_cbFunction>>;
 /// @nodoc
-typedef connection_ipv6_address_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> ipv6_address, ffi.Pointer<ffi.Void> user_data);
+typedef connection_ipv6_address_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartconnection_ipv6_address_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> ipv6_address, ffi.Pointer<ffi.Void> user_data);
+typedef Dartconnection_ipv6_address_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);

@@ -28,80 +28,38 @@ class Tizen90CalendarService2 {
           lookup)
       : _lookup = lookup;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_book _calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar book view </td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the calendar book </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td> Unique identifier </td></tr> <tr><td> string </td><td> name </td><td> read, write </td><td> Calendar book name </td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td> Calendar book description </td></tr> <tr><td> string </td><td> color </td><td> read, write </td><td> Calendar book color for UX </td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td> Location of the event </td></tr> <tr><td> integer </td><td> visibility </td><td> read, write </td><td> Visibility of the calendar book for UX</td></tr> <tr><td> integer </td><td> sync_event </td><td> read, write </td><td> </td>Currently NOT Used</tr> <tr><td> integer </td><td> account_id </td><td> read, write once </td><td> Account for this calendar </td></tr> <tr><td> integer </td><td> store_type </td><td> read, write </td><td> Type of calendar contents(refer to the `calendar_book_type_e)` </td></tr> <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> integer </td><td> mode </td><td> read, write </td><td> Calendar book mode (refer to the `calendar_book_mode_e)` </td></tr> </table>
   late final ffi.Pointer<_calendar_book_property_ids> __calendar_book =
       _lookup<_calendar_book_property_ids>('_calendar_book');
 
   _calendar_book_property_ids get _calendar_book => __calendar_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event _calendar_event view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td>Identifier of this event view</td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td>DB record ID of the event</td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td>ID of the calendar book to which the event belongs</td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td>The short description of the event</td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td>The description of the event</td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td>The location of the event</td></tr> <tr><td> string </td><td> categories </td><td> read, write </td><td>The category of the event. For example APPOINTMENT, BIRTHDAY</td></tr> <tr><td> string </td><td> exdate </td><td> read, write </td><td>The exception list of the event. If this event has a recurrence rule, the instance of the exdate is removed. Format is "YYYYMMDD"(allday event) or "YYYYMMDDTHHMMSS". Multiple exceptions can be included with a comma </td></tr> <tr><td> integer </td><td> event_status </td><td> read, write </td><td>Refer to the `calendar_event_status_e</td></tr>` <tr><td> integer </td><td> priority </td><td> read, write </td><td></td>Refer to the `calendar_event_priority_e</tr>` <tr><td> integer </td><td> timezone </td><td> read, write </td><td>The timezone_id of the event if it exists. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_timezone</td></tr>` <tr><td> integer </td><td> person_id </td><td> read, write </td><td>The person_id of the event if the event is a birthday. Refer to the contacts-service</td></tr> <tr><td> integer </td><td> busy_status </td><td> read, write </td><td>Refer to the `calendar_event_busy_status_e</td></tr>` <tr><td> integer </td><td> sensitivity </td><td> read, write </td><td>Refer to the `calendar_sensitivity_e` </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td>The unique ID of the event</td></tr> <tr><td> string </td><td> organizer_name </td><td> read, write </td><td>The name of organizer of the event</td></tr> <tr><td> string </td><td> organizer_email </td><td> read, write </td><td>The email address of the organizer of the event</td></tr> <tr><td> integer </td><td> meeting_status </td><td> read, write </td><td>Refer to the `calendar_meeting_status_e</td></tr>` <tr><td> integer </td><td> original_event_id </td><td> read, write </td><td>The ID of the original event if the event is an exception.</td></tr> <tr><td> double </td><td> latitude </td><td> read, write </td><td> The latitude of the location of the event</td></tr> <tr><td> double </td><td> longitude </td><td> read, write </td><td> The longitude of the location of the event</td></tr> <tr><td> integer </td><td> email_id </td><td> read, write </td><td>ID of the email_id. Refer to the email-service.</td></tr> <tr><td> long long int </td><td> created_time </td><td> read, write </td><td> The time when the event is created</td></tr> <tr><td> long long int </td><td> last_modified_time </td><td> read only </td><td>The time when the event is updated</td></tr> <tr><td> integer </td><td> is_deleted </td><td> read only </td><td></td></tr> <tr><td> integer </td><td> freq </td><td> read, write </td><td>The frequent type of event recurrence. Refer to the `calendar_recurrence_frequency_e</td></tr>` <tr><td> integer </td><td> range_type </td><td> read, write </td><td>Refer to the `calendar_range_type_e</td></tr>` <tr><td> calendar time </td><td> until_time </td><td> read, write </td><td>The end time of the event recurrence. If the range_type is `CALENDAR_RANGE_UNTIL</td></tr>` <tr><td> integer </td><td> count </td><td> read, write </td><td>The count of the event recurrence. If the range_type is `CALENDAR_RANGE_COUNT</td></tr>` <tr><td> integer </td><td> interval </td><td> read, write </td><td>The interval of the event recurrence</td></tr> <tr><td> string </td><td> bysecond </td><td> read, write </td><td>The second list of the event recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byminute </td><td> read, write </td><td>The minute list of the event recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byhour </td><td> read, write </td><td>The hour list of the event recurrence. The value can be from 0 to 23. The list is seperated by commas</td></tr> <tr><td> string </td><td> byday </td><td> read, write </td><td>The day list of the event recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonthday </td><td> read, write </td><td>The month day list of the event recurrence. The value can be from 1 to 31 and from -31 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byyearday </td><td> read, write </td><td>The year day list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byweekno </td><td> read, write </td><td>The week number list of the event recurrence. The value can be from 1 to 53 and from -53 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonth </td><td> read, write </td><td>The month list of the event recurrence. The value can be from 1 to 12. The list is seperated by commas</td></tr> <tr><td> string </td><td> bysetpos </td><td> read, write </td><td>The position list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> integer </td><td> wkst </td><td> read, write </td><td>The start day of the week. Refer to the `calendar_days_of_week_e</td></tr>` <tr><td> string </td><td> recurrence_id </td><td> read, write </td><td>RECURRENCE-ID of RFC #2445</td></tr> <tr><td> string </td><td> rdate </td><td> read, write </td><td>RDATE of RFC #2445</td></tr> <tr><td> integer </td><td> has_attendee </td><td> read only </td><td>Whether or not the event has an attendee list </td></tr> <tr><td> integer </td><td> has_alarm </td><td> read only </td><td>Whether or not the event has an alarm list </td></tr> <tr><td> integer </td><td> calendar_system_type </td><td> read, write </td><td>Refer to the `calendar_system_type_e</td></tr>` <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> calendar time </td><td> start_time </td><td> read, write </td><td>The start time of the event</td></tr> <tr><td> string </td><td> start_tzid </td><td> read, write </td><td></td>The timezone of the start_time</tr> <tr><td> calendar time </td><td> end_time </td><td> read, write </td><td>The end time of the event</td></tr> <tr><td> string </td><td> end_tzid </td><td> read, write </td><td>The timezone of the end_time</td></tr> <tr><td> child list </td><td> calendar_alarm </td><td> read, write </td><td>The alarm list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm</td></tr>` <tr><td> child list </td><td> calendar_attendee </td><td> read, write </td><td>The attendee list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee</td></tr>` <tr><td> child list </td><td> exception </td><td> read, write </td><td>The exception mod event list of the event</td></tr> <tr><td> child list </td><td> extended </td><td> read, write </td><td>The extended property list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property</td></tr>` <tr><td> integer </td><td> is_allday </td><td> read only </td><td>The event is an allday event or not </td></tr> <tr><td> integer </td><td> link_count </td><td> read only </td><td>The event is a linked event (Since 4.0)</td></tr> <tr><td> integer </td><td> link_base_id </td><td> read only </td><td>The event is a base linked event (Since 4.0)</td></tr> </table>
   late final ffi.Pointer<_calendar_event_property_ids> __calendar_event =
       _lookup<_calendar_event_property_ids>('_calendar_event');
 
   _calendar_event_property_ids get _calendar_event => __calendar_event.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo _calendar_todo view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td>Identifier of this todo view</td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td>DB record ID of the todo</td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td>ID of the calendar book to which the todo belongs</td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td>The short description of the todo</td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td>The description of the todo</td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td>The location of the todo</td></tr> <tr><td> string </td><td> categories </td><td> read, write </td><td>The category of the todo. For example APPOINTMENT, BIRTHDAY</td></tr> <tr><td> integer </td><td> todo_status </td><td> read, write </td><td>Refer to the `calendar_todo_status_e</td></tr>` <tr><td> integer </td><td> priority </td><td> read, write </td><td>Refer to the `calendar_todo_priority_e</td></tr>` <tr><td> integer </td><td> sensitivity </td><td> read, write </td><td>Refer to the `calendar_sensitivity_e` </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td>The unique ID of the todo</td></tr> <tr><td> double </td><td> latitude </td><td> read, write </td><td>The latitude of the location of the todo</td></tr> <tr><td> double </td><td> longitude </td><td> read, write </td><td>The longitude of the location of the todo</td></tr> <tr><td> long long int </td><td> created_time </td><td> read, write </td><td>The time when the todo is created</td></tr> <tr><td> long long int </td><td> last_modified_time </td><td> read only </td><td>The time when the todo is updated</td></tr> <tr><td> long long int </td><td> completed_time </td><td> read, write </td><td>The time when the todo is completed</td></tr> <tr><td> integer </td><td> progress </td><td> read, write </td><td> The progression of the todo. The value can be from 0 to 100</td></tr> <tr><td> integer </td><td> is_deleted </td><td> read only </td><td></td></tr> <tr><td> integer </td><td> freq </td><td> read, write </td><td>The frequent type of todo recurrence. Refer to the `calendar_recurrence_frequency_e</td></tr>` <tr><td> integer </td><td> range_type </td><td> read, write </td><td>Refer to the `calendar_range_type_e</td></tr>` <tr><td> calendar time </td><td> until_time </td><td> read, write </td><td>The end time of the todo recurrence. If the range_type is CALENDAR_RANGE_UNTIL</td></tr> <tr><td> integer </td><td> count </td><td> read, write </td><td>The count of the todo recurrence. If the range_type is CALENDAR_RANGE_COUNT</td></tr> <tr><td> integer </td><td> interval </td><td> read, write </td><td>The interval of the todo recurrence</td></tr> <tr><td> string </td><td> bysecond </td><td> read, write </td><td>The second list of the todo recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byminute </td><td> read, write </td><td>The minute list of the todo recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byhour </td><td> read, write </td><td>The hour list of the todo recurrence. The value can be from 0 to 23. The list is seperated by commas</td></tr> <tr><td> string </td><td> byday </td><td> read, write </td><td>The day list of the todo recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonthday </td><td> read, write </td><td>The month day list of the todo recurrence. The value can be from 1 to 31 and from -31 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byyearday </td><td> read, write </td><td>The year day list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byweekno </td><td> read, write </td><td>The week number list of the todo recurrence. The value can be from 1 to 53 and from -53 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonth </td><td> read, write </td><td>The month list of the todo recurrence. The value can be from 1 to 12. The list is seperated by commas</td></tr> <tr><td> string </td><td> bysetpos </td><td> read, write </td><td>The position list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> integer </td><td> wkst </td><td> read, write </td><td>The start day of the week. Refer to the `calendar_days_of_week_e</td></tr>` <tr><td> integer </td><td> has_alarm </td><td> read only </td><td>Whether or not the todo has an alarm list </td></tr> <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> calendar time </td><td> start_time </td><td> read, write </td><td>The start time of the todo</td></tr> <tr><td> string </td><td> start_tzid </td><td> read, write </td><td></td>The timezone of the start_time</tr> <tr><td> calendar time </td><td> due_time </td><td> read, write </td><td>The due time of the todo</td></tr> <tr><td> string </td><td> due_tzid </td><td> read, write </td><td>The timezone of the due_time</td></tr> <tr><td> child list </td><td> calendar_alarm </td><td> read, write </td><td>The alarm list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm</td></tr>` <tr><td> string </td><td> organizer_name </td><td> read, write </td><td>The name of the organizer of the event</td></tr> <tr><td> string </td><td> organizer_email </td><td> read, write </td><td>The email address of the organizer of the event</td></tr> <tr><td> integer </td><td> has_attendee </td><td> read only </td><td>Whether or not the todo has an attendee list </td></tr> <tr><td> child list </td><td> calendar_attendee </td><td> read, write </td><td>The attendee list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee</td></tr>` <tr><td> child list </td><td> extended </td><td> read, write </td><td>The extended property list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property</td></tr>` <tr><td> integer </td><td> is_allday </td><td> read only </td><td>The todo is an allday event or not </td></tr> </table>
   late final ffi.Pointer<_calendar_todo_property_ids> __calendar_todo =
       _lookup<_calendar_todo_property_ids>('_calendar_todo');
 
   _calendar_todo_property_ids get _calendar_todo => __calendar_todo.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_timezone _calendar_timezone view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this timezone view </td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the timezone </td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td> DB record ID of a related calendar book </td></tr> <tr><td> integer </td><td> tz_offset_from_gmt </td><td> read, write </td><td> UTC offset which is in use when the onset of this time zone observance begins. Valid values are -720(-12:00) to 840(+14:00) </td></tr> <tr><td> string </td><td> standard_name </td><td> read, write </td><td> Name of the Standard Time </td></tr> <tr><td> integer </td><td> standard_start_month </td><td> read, write </td><td> Starting month of the Standard Time. Month is 0-based. eg, 0 for January </td></tr> <tr><td> integer </td><td> standard_start_position_of_week </td><td> read, write </td><td> Starting day-of-week-in-month of the Standard Time. Day is 1-based </td></tr> <tr><td> integer </td><td> standard_start_day </td><td> read, write </td><td> Starting day-of-week of the Standard Time. Valid values are 1(SUNDAY) to 7(SATURDAY) </td></tr> <tr><td> integer </td><td> standard_start_hour </td><td> read, write </td><td> Starting hour of the Standard Time. Valid values are 0 to 23 </td></tr> <tr><td> integer </td><td> standard_bias </td><td> read, write </td><td> The number of minutes added during the Standard Time </td></tr> <tr><td> string </td><td> day_light_name </td><td> read, write </td><td> Name of Daylight </td></tr> <tr><td> integer </td><td> day_light_start_month </td><td> read, write </td><td> Starting month of Daylight. Month is 0-based. eg, 0 for January </td></tr> <tr><td> integer </td><td> day_light_start_position_of_week </td><td> read, write </td><td> Starting day-of-week-in-month of Daylight. Day is 1-based </td></tr> <tr><td> integer </td><td> day_light_start_day </td><td> read, write </td><td> Starting day-of-week of Daylight. Valid values are 1(SUNDAY) to 7(SATURDAY) </td></tr> <tr><td> integer </td><td> day_light_start_hour </td><td> read, write </td><td> Starting hour of Daylight. Valid values are 0 to 23 </td></tr> <tr><td> integer </td><td> day_light_bias </td><td> read, write </td><td> The number of minutes added during Daylight Time </td></tr> </table>
   late final ffi.Pointer<_calendar_timezone_property_ids> __calendar_timezone =
       _lookup<_calendar_timezone_property_ids>('_calendar_timezone');
 
   _calendar_timezone_property_ids get _calendar_timezone =>
       __calendar_timezone.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee _calendar_attendee view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar attendee view </td></tr> <tr><td> integer </td><td> event_id </td><td> read only </td><td> Event/TODO that the attendee belongs to </td></tr> <tr><td> string </td><td> number </td><td> read, write </td><td> The number of the attendee </td></tr> <tr><td> integer </td><td> cutype </td><td> read, write </td><td> The type of attendee (one of CALENDAR_ATTENDEE_CUTYPE_INDIVIDUAL, CALENDAR_ATTENDEE_CUTYPE_GROUP, CALENDAR_ATTENDEE_CUTYPE_RESOURCE, CALENDAR_ATTENDEE_CUTYPE_ROOM, CALENDAR_ATTENDEE_CUTYPE_UNKNOWN) </tr> <tr><td> integer </td><td> person_id </td><td> read, write </td><td> Person ID that the attendee belongs to </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td> Unique identifier </td></tr> <tr><td> string </td><td> email </td><td> read, write </td><td> The email address of the attendee </td></tr> <tr><td> integer </td><td> role </td><td> read, write </td><td> Attendee role (one of CALENDAR_ATTENDEE_ROLE_REQ_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_OPT_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_NON_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_CHAIR) </td></tr> <tr><td> integer </td><td> status </td><td> read, write </td><td> Attendee status (one of CALENDAR_ATTENDEE_STATUS_PENDING, CALENDAR_ATTENDEE_STATUS_ACCEPTED, CALENDAR_ATTENDEE_STATUS_DECLINED, CALENDAR_ATTENDEE_STATUS_TENTATIVE, CALENDAR_ATTENDEE_STATUS_DELEGATED, CALENDAR_ATTENDEE_STATUS_COMPLETED, CALENDAR_ATTENDEE_STATUS_IN_PROCESS) </td></tr> <tr><td> integer </td><td> rsvp </td><td> read, write </td><td> RSVP invitation reply (one of true, false) </td></tr> <tr><td> string </td><td> delegatee_uri </td><td> read, write </td><td> Delegatee (DELEGATED-TO) </td></tr> <tr><td> string </td><td> delegator_uri </td><td> read, write </td><td> Delegator (DELEGATED-FROM) </td></tr> <tr><td> string </td><td> name </td><td> read, write </td><td> Attendee name </td></tr> <tr><td> string </td><td> member </td><td> read, write </td><td> Group that the attendee belongs to </td></tr> </table>
   late final ffi.Pointer<_calendar_attendee_property_ids> __calendar_attendee =
       _lookup<_calendar_attendee_property_ids>('_calendar_attendee');
 
   _calendar_attendee_property_ids get _calendar_attendee =>
       __calendar_attendee.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm _calendar_alarm view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar alarm view </td></tr> <tr><td> integer </td><td> parent_id </td><td> read only </td><td> Event that the alarm belongs to </td></tr> <tr><td> integer </td><td> type </td><td> read, write </td><td> Currently NOT used </td></tr> <tr><td> long long int </td><td> time </td><td> read, write </td><td> The alarm time of the event(This represents the number of seconds elapsed since the Epoch, 1970-01-01 00:00:00 +0000(UTC)). This MUST be used with CALENDAR_ALARM_TIME_UNIT_SPECIFIC </td></tr> <tr><td> integer </td><td> tick </td><td> read, write </td><td> The number of unit before start time. This MUST be used with one of CALENDAR_ALARM_TIME_UNIT_MINUTE, CALENDAR_ALARM_TIME_UNIT_HOUR, CALENDAR_ALARM_TIME_UNIT_DAY, CALENDAR_ALARM_TIME_UNIT_WEEK. </td></tr> <tr><td> integer </td><td> tick_unit </td><td> read, write </td><td> Reminder tick time unit (one of CALENDAR_ALARM_NONE, CALENDAR_ALARM_TIME_UNIT_SPECIFIC, CALENDAR_ALARM_TIME_UNIT_MINUTE, CALENDAR_ALARM_TIME_UNIT_HOUR, CALENDAR_ALARM_TIME_UNIT_DAY, CALENDAR_ALARM_TIME_UNIT_WEEK) </td></tr> <tr><td> string </td><td> attach </td><td> read, write </td><td> Alarm tone path </td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td> Alarm summary </td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td> Alarm description </td></tr> <tr><td> integer </td><td> action </td><td> read, write </td><td> Action of alarm (one of CALENDAR_ALARM_ACTION_AUDIO, CALENDAR_ALARM_ACTION_DISPLAY, CALENDAR_ALARM_ACTION_EMAIL) </td></tr> <tr><td> calendar time </td><td> alarm_time </td><td> read, write </td><td>The alarm time </td></tr> </table>
   late final ffi.Pointer<_calendar_alarm_property_ids> __calendar_alarm =
       _lookup<_calendar_alarm_property_ids>('_calendar_alarm');
 
   _calendar_alarm_property_ids get _calendar_alarm => __calendar_alarm.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_updated_info _calendar_updated_info view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> Identifier of this updated_info view </td></tr> <tr><td> integer </td><td> id </td><td> Modified event(or todo) record ID </td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> Calendar book ID of the modified event(or todo) record </td></tr> <tr><td> integer </td><td> modified_status </td><td> Enumeration value of the modified status (`calendar_record_modified_status_e)` </td></tr> <tr><td> integer </td><td> version </td><td> Version after change </td></tr> </table>
   late final ffi.Pointer<_calendar_updated_info_property_ids>
       __calendar_updated_info =
       _lookup<_calendar_updated_info_property_ids>('_calendar_updated_info');
@@ -109,12 +67,6 @@ class Tizen90CalendarService2 {
   _calendar_updated_info_property_ids get _calendar_updated_info =>
       __calendar_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event_calendar_book _calendar_event_calendar_book view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> string </td><td> exdate </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> timezone </td></tr> <tr><td> integer </td><td> person_id </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> organizer_email </td></tr> <tr><td> integer </td><td> meeting_status </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> email_id </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> string </td><td> recurrence_id </td></tr> <tr><td> string </td><td> rdate </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> calendar_system_type </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> end_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> </table>
   late final ffi.Pointer<_calendar_event_calendar_book_property_ids>
       __calendar_event_calendar_book =
       _lookup<_calendar_event_calendar_book_property_ids>(
@@ -123,12 +75,6 @@ class Tizen90CalendarService2 {
   _calendar_event_calendar_book_property_ids
       get _calendar_event_calendar_book => __calendar_event_calendar_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo_calendar_book _calendar_todo_calendar_book view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> todo_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> todo_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> long long int </td><td> completed_time </td></tr> <tr><td> integer </td><td> progress </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> due_time </td></tr> <tr><td> string </td><td> due_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> </table>
   late final ffi.Pointer<_calendar_todo_calendar_book_property_ids>
       __calendar_todo_calendar_book =
       _lookup<_calendar_todo_calendar_book_property_ids>(
@@ -137,12 +83,6 @@ class Tizen90CalendarService2 {
   _calendar_todo_calendar_book_property_ids get _calendar_todo_calendar_book =>
       __calendar_todo_calendar_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event_calendar_book_attendee _calendar_event_calendar_book_attendee view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> string </td><td> exdate </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> timezone </td></tr> <tr><td> integer </td><td> person_id </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> organizer_email </td></tr> <tr><td> integer </td><td> meeting_status </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> email_id </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> string </td><td> recurrence_id </td></tr> <tr><td> string </td><td> rdate </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> calendar_system_type </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> end_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> filter string </td><td> attendee_email </td></tr> <tr><td> filter string </td><td> attendee_name </td></tr> <tr><td> filter string </td><td> attendee_member </td></tr> </table>
   late final ffi.Pointer<_calendar_event_calendar_book_attendee_property_ids>
       __calendar_event_calendar_book_attendee =
       _lookup<_calendar_event_calendar_book_attendee_property_ids>(
@@ -152,12 +92,6 @@ class Tizen90CalendarService2 {
       get _calendar_event_calendar_book_attendee =>
           __calendar_event_calendar_book_attendee.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_utime_calendar_book _calendar_instance_utime_calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> </table>
   late final ffi.Pointer<_calendar_instance_utime_calendar_book_property_ids>
       __calendar_instance_utime_calendar_book =
       _lookup<_calendar_instance_utime_calendar_book_property_ids>(
@@ -167,12 +101,6 @@ class Tizen90CalendarService2 {
       get _calendar_instance_utime_calendar_book =>
           __calendar_instance_utime_calendar_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_localtime_calendar_book _calendar_instance_localtime_calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> int </td><td> is_allday </td></tr> </table>
   late final ffi
       .Pointer<_calendar_instance_localtime_calendar_book_property_ids>
       __calendar_instance_localtime_calendar_book =
@@ -183,12 +111,6 @@ class Tizen90CalendarService2 {
       get _calendar_instance_localtime_calendar_book =>
           __calendar_instance_localtime_calendar_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_utime_calendar_book_extended _calendar_instance_utime_calendar_book_extended view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> </table>
   late final ffi
       .Pointer<_calendar_instance_utime_calendar_book_extended_property_ids>
       __calendar_instance_utime_calendar_book_extended =
@@ -199,12 +121,6 @@ class Tizen90CalendarService2 {
       get _calendar_instance_utime_calendar_book_extended =>
           __calendar_instance_utime_calendar_book_extended.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_localtime_calendar_book_extended _calendar_instance_localtime_calendar_book_extended view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> </table>
   late final ffi
       .Pointer<_calendar_instance_localtime_calendar_book_extended_property_ids>
       __calendar_instance_localtime_calendar_book_extended =
@@ -215,12 +131,6 @@ class Tizen90CalendarService2 {
       get _calendar_instance_localtime_calendar_book_extended =>
           __calendar_instance_localtime_calendar_book_extended.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property _calendar_extended_property view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td></td> Identifier of this extended_property view </tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the extended_property </td></tr> <tr><td> integer </td><td> record_id </td><td> read,write </td><td> Related record ID </td></tr> <tr><td> integer </td><td> record_type </td><td> read, write </td><td> Enumeration value of the record type (`calendar_record_type_e)` </td></tr> <tr><td> string </td><td> key </td><td> read, write </td><td> The key of the property </td></tr> <tr><td> string </td><td> value </td><td> read, write </td><td> The value of the property </td></tr> </table>
   late final ffi.Pointer<_calendar_extended_property_property_ids>
       __calendar_extended_property =
       _lookup<_calendar_extended_property_property_ids>(
@@ -2012,7 +1922,7 @@ class Tizen90CalendarService2 {
   /// - `calendar_list_create()`
   int calendar_list_destroy(
     calendar_list_h list,
-    bool delete_record,
+    ffi.Pointer<bool> delete_record,
   ) {
     return _calendar_list_destroy(
       list,
@@ -2020,11 +1930,12 @@ class Tizen90CalendarService2 {
     );
   }
 
-  late final _calendar_list_destroyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(calendar_list_h, ffi.Bool)>>(
-          'calendar_list_destroy');
+  late final _calendar_list_destroyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              calendar_list_h, ffi.Pointer<bool>)>>('calendar_list_destroy');
   late final _calendar_list_destroy = _calendar_list_destroyPtr
-      .asFunction<int Function(calendar_list_h, bool)>();
+      .asFunction<int Function(calendar_list_h, ffi.Pointer<bool>)>();
 
   /// Retrieves the number of calendar entities in a calendar list.
   ///
@@ -2453,7 +2364,7 @@ class Tizen90CalendarService2 {
   /// - `CALENDAR_ERROR_NOT_SUPPORTED`: Not supported
   int calendar_query_set_distinct(
     calendar_query_h query,
-    bool set1,
+    ffi.Pointer<bool> set1,
   ) {
     return _calendar_query_set_distinct(
       query,
@@ -2461,11 +2372,12 @@ class Tizen90CalendarService2 {
     );
   }
 
-  late final _calendar_query_set_distinctPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(calendar_query_h, ffi.Bool)>>(
-          'calendar_query_set_distinct');
+  late final _calendar_query_set_distinctPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(calendar_query_h,
+              ffi.Pointer<bool>)>>('calendar_query_set_distinct');
   late final _calendar_query_set_distinct = _calendar_query_set_distinctPtr
-      .asFunction<int Function(calendar_query_h, bool)>();
+      .asFunction<int Function(calendar_query_h, ffi.Pointer<bool>)>();
 
   /// Sets the filter for a query.
   ///
@@ -2523,7 +2435,7 @@ class Tizen90CalendarService2 {
   int calendar_query_set_sort(
     calendar_query_h query,
     int property_id,
-    bool is_ascending,
+    ffi.Pointer<bool> is_ascending,
   ) {
     return _calendar_query_set_sort(
       query,
@@ -2535,9 +2447,9 @@ class Tizen90CalendarService2 {
   late final _calendar_query_set_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(calendar_query_h, ffi.UnsignedInt,
-              ffi.Bool)>>('calendar_query_set_sort');
+              ffi.Pointer<bool>)>>('calendar_query_set_sort');
   late final _calendar_query_set_sort = _calendar_query_set_sortPtr
-      .asFunction<int Function(calendar_query_h, int, bool)>();
+      .asFunction<int Function(calendar_query_h, int, ffi.Pointer<bool>)>();
 
   /// Creates a record handle.
   ///
@@ -2607,7 +2519,7 @@ class Tizen90CalendarService2 {
   /// - `calendar_record_create()`
   int calendar_record_destroy(
     calendar_record_h record,
-    bool delete_child,
+    ffi.Pointer<bool> delete_child,
   ) {
     return _calendar_record_destroy(
       record,
@@ -2616,10 +2528,11 @@ class Tizen90CalendarService2 {
   }
 
   late final _calendar_record_destroyPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(calendar_record_h, ffi.Bool)>>(
-      'calendar_record_destroy');
+      ffi.NativeFunction<
+          ffi.Int Function(calendar_record_h,
+              ffi.Pointer<bool>)>>('calendar_record_destroy');
   late final _calendar_record_destroy = _calendar_record_destroyPtr
-      .asFunction<int Function(calendar_record_h, bool)>();
+      .asFunction<int Function(calendar_record_h, ffi.Pointer<bool>)>();
 
   /// Makes a clone of a record handle.
   ///
@@ -3827,12 +3740,6 @@ abstract class calendar_error_e {
   static const int CALENDAR_ERROR_NOT_SUPPORTED = -1073741822;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_book _calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar book view </td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the calendar book </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td> Unique identifier </td></tr> <tr><td> string </td><td> name </td><td> read, write </td><td> Calendar book name </td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td> Calendar book description </td></tr> <tr><td> string </td><td> color </td><td> read, write </td><td> Calendar book color for UX </td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td> Location of the event </td></tr> <tr><td> integer </td><td> visibility </td><td> read, write </td><td> Visibility of the calendar book for UX</td></tr> <tr><td> integer </td><td> sync_event </td><td> read, write </td><td> </td>Currently NOT Used</tr> <tr><td> integer </td><td> account_id </td><td> read, write once </td><td> Account for this calendar </td></tr> <tr><td> integer </td><td> store_type </td><td> read, write </td><td> Type of calendar contents(refer to the `calendar_book_type_e)` </td></tr> <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td> Generic data for use by syncing </td></tr> <tr><td> integer </td><td> mode </td><td> read, write </td><td> Calendar book mode (refer to the `calendar_book_mode_e)` </td></tr> </table>
 /// @nodoc
 final class _calendar_book_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -3883,12 +3790,6 @@ final class _calendar_book_property_ids extends ffi.Struct {
   external int mode;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event _calendar_event view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td>Identifier of this event view</td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td>DB record ID of the event</td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td>ID of the calendar book to which the event belongs</td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td>The short description of the event</td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td>The description of the event</td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td>The location of the event</td></tr> <tr><td> string </td><td> categories </td><td> read, write </td><td>The category of the event. For example APPOINTMENT, BIRTHDAY</td></tr> <tr><td> string </td><td> exdate </td><td> read, write </td><td>The exception list of the event. If this event has a recurrence rule, the instance of the exdate is removed. Format is "YYYYMMDD"(allday event) or "YYYYMMDDTHHMMSS". Multiple exceptions can be included with a comma </td></tr> <tr><td> integer </td><td> event_status </td><td> read, write </td><td>Refer to the `calendar_event_status_e</td></tr>` <tr><td> integer </td><td> priority </td><td> read, write </td><td></td>Refer to the `calendar_event_priority_e</tr>` <tr><td> integer </td><td> timezone </td><td> read, write </td><td>The timezone_id of the event if it exists. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_timezone</td></tr>` <tr><td> integer </td><td> person_id </td><td> read, write </td><td>The person_id of the event if the event is a birthday. Refer to the contacts-service</td></tr> <tr><td> integer </td><td> busy_status </td><td> read, write </td><td>Refer to the `calendar_event_busy_status_e</td></tr>` <tr><td> integer </td><td> sensitivity </td><td> read, write </td><td>Refer to the `calendar_sensitivity_e` </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td>The unique ID of the event</td></tr> <tr><td> string </td><td> organizer_name </td><td> read, write </td><td>The name of organizer of the event</td></tr> <tr><td> string </td><td> organizer_email </td><td> read, write </td><td>The email address of the organizer of the event</td></tr> <tr><td> integer </td><td> meeting_status </td><td> read, write </td><td>Refer to the `calendar_meeting_status_e</td></tr>` <tr><td> integer </td><td> original_event_id </td><td> read, write </td><td>The ID of the original event if the event is an exception.</td></tr> <tr><td> double </td><td> latitude </td><td> read, write </td><td> The latitude of the location of the event</td></tr> <tr><td> double </td><td> longitude </td><td> read, write </td><td> The longitude of the location of the event</td></tr> <tr><td> integer </td><td> email_id </td><td> read, write </td><td>ID of the email_id. Refer to the email-service.</td></tr> <tr><td> long long int </td><td> created_time </td><td> read, write </td><td> The time when the event is created</td></tr> <tr><td> long long int </td><td> last_modified_time </td><td> read only </td><td>The time when the event is updated</td></tr> <tr><td> integer </td><td> is_deleted </td><td> read only </td><td></td></tr> <tr><td> integer </td><td> freq </td><td> read, write </td><td>The frequent type of event recurrence. Refer to the `calendar_recurrence_frequency_e</td></tr>` <tr><td> integer </td><td> range_type </td><td> read, write </td><td>Refer to the `calendar_range_type_e</td></tr>` <tr><td> calendar time </td><td> until_time </td><td> read, write </td><td>The end time of the event recurrence. If the range_type is `CALENDAR_RANGE_UNTIL</td></tr>` <tr><td> integer </td><td> count </td><td> read, write </td><td>The count of the event recurrence. If the range_type is `CALENDAR_RANGE_COUNT</td></tr>` <tr><td> integer </td><td> interval </td><td> read, write </td><td>The interval of the event recurrence</td></tr> <tr><td> string </td><td> bysecond </td><td> read, write </td><td>The second list of the event recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byminute </td><td> read, write </td><td>The minute list of the event recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byhour </td><td> read, write </td><td>The hour list of the event recurrence. The value can be from 0 to 23. The list is seperated by commas</td></tr> <tr><td> string </td><td> byday </td><td> read, write </td><td>The day list of the event recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonthday </td><td> read, write </td><td>The month day list of the event recurrence. The value can be from 1 to 31 and from -31 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byyearday </td><td> read, write </td><td>The year day list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byweekno </td><td> read, write </td><td>The week number list of the event recurrence. The value can be from 1 to 53 and from -53 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonth </td><td> read, write </td><td>The month list of the event recurrence. The value can be from 1 to 12. The list is seperated by commas</td></tr> <tr><td> string </td><td> bysetpos </td><td> read, write </td><td>The position list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> integer </td><td> wkst </td><td> read, write </td><td>The start day of the week. Refer to the `calendar_days_of_week_e</td></tr>` <tr><td> string </td><td> recurrence_id </td><td> read, write </td><td>RECURRENCE-ID of RFC #2445</td></tr> <tr><td> string </td><td> rdate </td><td> read, write </td><td>RDATE of RFC #2445</td></tr> <tr><td> integer </td><td> has_attendee </td><td> read only </td><td>Whether or not the event has an attendee list </td></tr> <tr><td> integer </td><td> has_alarm </td><td> read only </td><td>Whether or not the event has an alarm list </td></tr> <tr><td> integer </td><td> calendar_system_type </td><td> read, write </td><td>Refer to the `calendar_system_type_e</td></tr>` <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td>The sync data of the event. If developer need to save some information related to the event, they can use this property</td></tr> <tr><td> calendar time </td><td> start_time </td><td> read, write </td><td>The start time of the event</td></tr> <tr><td> string </td><td> start_tzid </td><td> read, write </td><td></td>The timezone of the start_time</tr> <tr><td> calendar time </td><td> end_time </td><td> read, write </td><td>The end time of the event</td></tr> <tr><td> string </td><td> end_tzid </td><td> read, write </td><td>The timezone of the end_time</td></tr> <tr><td> child list </td><td> calendar_alarm </td><td> read, write </td><td>The alarm list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm</td></tr>` <tr><td> child list </td><td> calendar_attendee </td><td> read, write </td><td>The attendee list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee</td></tr>` <tr><td> child list </td><td> exception </td><td> read, write </td><td>The exception mod event list of the event</td></tr> <tr><td> child list </td><td> extended </td><td> read, write </td><td>The extended property list of the event. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property</td></tr>` <tr><td> integer </td><td> is_allday </td><td> read only </td><td>The event is an allday event or not </td></tr> <tr><td> integer </td><td> link_count </td><td> read only </td><td>The event is a linked event (Since 4.0)</td></tr> <tr><td> integer </td><td> link_base_id </td><td> read only </td><td>The event is a base linked event (Since 4.0)</td></tr> </table>
 /// @nodoc
 final class _calendar_event_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4071,12 +3972,6 @@ final class _calendar_event_property_ids extends ffi.Struct {
   external int link_base_id;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo _calendar_todo view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td>Identifier of this todo view</td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td>DB record ID of the todo</td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td>ID of the calendar book to which the todo belongs</td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td>The short description of the todo</td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td>The description of the todo</td></tr> <tr><td> string </td><td> location </td><td> read, write </td><td>The location of the todo</td></tr> <tr><td> string </td><td> categories </td><td> read, write </td><td>The category of the todo. For example APPOINTMENT, BIRTHDAY</td></tr> <tr><td> integer </td><td> todo_status </td><td> read, write </td><td>Refer to the `calendar_todo_status_e</td></tr>` <tr><td> integer </td><td> priority </td><td> read, write </td><td>Refer to the `calendar_todo_priority_e</td></tr>` <tr><td> integer </td><td> sensitivity </td><td> read, write </td><td>Refer to the `calendar_sensitivity_e` </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td>The unique ID of the todo</td></tr> <tr><td> double </td><td> latitude </td><td> read, write </td><td>The latitude of the location of the todo</td></tr> <tr><td> double </td><td> longitude </td><td> read, write </td><td>The longitude of the location of the todo</td></tr> <tr><td> long long int </td><td> created_time </td><td> read, write </td><td>The time when the todo is created</td></tr> <tr><td> long long int </td><td> last_modified_time </td><td> read only </td><td>The time when the todo is updated</td></tr> <tr><td> long long int </td><td> completed_time </td><td> read, write </td><td>The time when the todo is completed</td></tr> <tr><td> integer </td><td> progress </td><td> read, write </td><td> The progression of the todo. The value can be from 0 to 100</td></tr> <tr><td> integer </td><td> is_deleted </td><td> read only </td><td></td></tr> <tr><td> integer </td><td> freq </td><td> read, write </td><td>The frequent type of todo recurrence. Refer to the `calendar_recurrence_frequency_e</td></tr>` <tr><td> integer </td><td> range_type </td><td> read, write </td><td>Refer to the `calendar_range_type_e</td></tr>` <tr><td> calendar time </td><td> until_time </td><td> read, write </td><td>The end time of the todo recurrence. If the range_type is CALENDAR_RANGE_UNTIL</td></tr> <tr><td> integer </td><td> count </td><td> read, write </td><td>The count of the todo recurrence. If the range_type is CALENDAR_RANGE_COUNT</td></tr> <tr><td> integer </td><td> interval </td><td> read, write </td><td>The interval of the todo recurrence</td></tr> <tr><td> string </td><td> bysecond </td><td> read, write </td><td>The second list of the todo recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byminute </td><td> read, write </td><td>The minute list of the todo recurrence. The value can be from 0 to 59. The list is seperated by commas</td></tr> <tr><td> string </td><td> byhour </td><td> read, write </td><td>The hour list of the todo recurrence. The value can be from 0 to 23. The list is seperated by commas</td></tr> <tr><td> string </td><td> byday </td><td> read, write </td><td>The day list of the todo recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonthday </td><td> read, write </td><td>The month day list of the todo recurrence. The value can be from 1 to 31 and from -31 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byyearday </td><td> read, write </td><td>The year day list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> byweekno </td><td> read, write </td><td>The week number list of the todo recurrence. The value can be from 1 to 53 and from -53 to -1. The list is seperated by commas</td></tr> <tr><td> string </td><td> bymonth </td><td> read, write </td><td>The month list of the todo recurrence. The value can be from 1 to 12. The list is seperated by commas</td></tr> <tr><td> string </td><td> bysetpos </td><td> read, write </td><td>The position list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is seperated by commas</td></tr> <tr><td> integer </td><td> wkst </td><td> read, write </td><td>The start day of the week. Refer to the `calendar_days_of_week_e</td></tr>` <tr><td> integer </td><td> has_alarm </td><td> read only </td><td>Whether or not the todo has an alarm list </td></tr> <tr><td> string </td><td> sync_data1 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data2 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data3 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> string </td><td> sync_data4 </td><td> read, write </td><td>The sync data of the todo. If developers need to save some information related to the todo, they can use this property</td></tr> <tr><td> calendar time </td><td> start_time </td><td> read, write </td><td>The start time of the todo</td></tr> <tr><td> string </td><td> start_tzid </td><td> read, write </td><td></td>The timezone of the start_time</tr> <tr><td> calendar time </td><td> due_time </td><td> read, write </td><td>The due time of the todo</td></tr> <tr><td> string </td><td> due_tzid </td><td> read, write </td><td>The timezone of the due_time</td></tr> <tr><td> child list </td><td> calendar_alarm </td><td> read, write </td><td>The alarm list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm</td></tr>` <tr><td> string </td><td> organizer_name </td><td> read, write </td><td>The name of the organizer of the event</td></tr> <tr><td> string </td><td> organizer_email </td><td> read, write </td><td>The email address of the organizer of the event</td></tr> <tr><td> integer </td><td> has_attendee </td><td> read only </td><td>Whether or not the todo has an attendee list </td></tr> <tr><td> child list </td><td> calendar_attendee </td><td> read, write </td><td>The attendee list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee</td></tr>` <tr><td> child list </td><td> extended </td><td> read, write </td><td>The extended property list of the todo. Refer to the `CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property</td></tr>` <tr><td> integer </td><td> is_allday </td><td> read only </td><td>The todo is an allday event or not </td></tr> </table>
 /// @nodoc
 final class _calendar_todo_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4226,12 +4121,6 @@ final class _calendar_todo_property_ids extends ffi.Struct {
   external int is_allday;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_timezone _calendar_timezone view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this timezone view </td></tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the timezone </td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> read, write </td><td> DB record ID of a related calendar book </td></tr> <tr><td> integer </td><td> tz_offset_from_gmt </td><td> read, write </td><td> UTC offset which is in use when the onset of this time zone observance begins. Valid values are -720(-12:00) to 840(+14:00) </td></tr> <tr><td> string </td><td> standard_name </td><td> read, write </td><td> Name of the Standard Time </td></tr> <tr><td> integer </td><td> standard_start_month </td><td> read, write </td><td> Starting month of the Standard Time. Month is 0-based. eg, 0 for January </td></tr> <tr><td> integer </td><td> standard_start_position_of_week </td><td> read, write </td><td> Starting day-of-week-in-month of the Standard Time. Day is 1-based </td></tr> <tr><td> integer </td><td> standard_start_day </td><td> read, write </td><td> Starting day-of-week of the Standard Time. Valid values are 1(SUNDAY) to 7(SATURDAY) </td></tr> <tr><td> integer </td><td> standard_start_hour </td><td> read, write </td><td> Starting hour of the Standard Time. Valid values are 0 to 23 </td></tr> <tr><td> integer </td><td> standard_bias </td><td> read, write </td><td> The number of minutes added during the Standard Time </td></tr> <tr><td> string </td><td> day_light_name </td><td> read, write </td><td> Name of Daylight </td></tr> <tr><td> integer </td><td> day_light_start_month </td><td> read, write </td><td> Starting month of Daylight. Month is 0-based. eg, 0 for January </td></tr> <tr><td> integer </td><td> day_light_start_position_of_week </td><td> read, write </td><td> Starting day-of-week-in-month of Daylight. Day is 1-based </td></tr> <tr><td> integer </td><td> day_light_start_day </td><td> read, write </td><td> Starting day-of-week of Daylight. Valid values are 1(SUNDAY) to 7(SATURDAY) </td></tr> <tr><td> integer </td><td> day_light_start_hour </td><td> read, write </td><td> Starting hour of Daylight. Valid values are 0 to 23 </td></tr> <tr><td> integer </td><td> day_light_bias </td><td> read, write </td><td> The number of minutes added during Daylight Time </td></tr> </table>
 /// @nodoc
 final class _calendar_timezone_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4282,12 +4171,6 @@ final class _calendar_timezone_property_ids extends ffi.Struct {
   external int day_light_bias;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_attendee _calendar_attendee view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar attendee view </td></tr> <tr><td> integer </td><td> event_id </td><td> read only </td><td> Event/TODO that the attendee belongs to </td></tr> <tr><td> string </td><td> number </td><td> read, write </td><td> The number of the attendee </td></tr> <tr><td> integer </td><td> cutype </td><td> read, write </td><td> The type of attendee (one of CALENDAR_ATTENDEE_CUTYPE_INDIVIDUAL, CALENDAR_ATTENDEE_CUTYPE_GROUP, CALENDAR_ATTENDEE_CUTYPE_RESOURCE, CALENDAR_ATTENDEE_CUTYPE_ROOM, CALENDAR_ATTENDEE_CUTYPE_UNKNOWN) </tr> <tr><td> integer </td><td> person_id </td><td> read, write </td><td> Person ID that the attendee belongs to </td></tr> <tr><td> string </td><td> uid </td><td> read, write </td><td> Unique identifier </td></tr> <tr><td> string </td><td> email </td><td> read, write </td><td> The email address of the attendee </td></tr> <tr><td> integer </td><td> role </td><td> read, write </td><td> Attendee role (one of CALENDAR_ATTENDEE_ROLE_REQ_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_OPT_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_NON_PARTICIPANT, CALENDAR_ATTENDEE_ROLE_CHAIR) </td></tr> <tr><td> integer </td><td> status </td><td> read, write </td><td> Attendee status (one of CALENDAR_ATTENDEE_STATUS_PENDING, CALENDAR_ATTENDEE_STATUS_ACCEPTED, CALENDAR_ATTENDEE_STATUS_DECLINED, CALENDAR_ATTENDEE_STATUS_TENTATIVE, CALENDAR_ATTENDEE_STATUS_DELEGATED, CALENDAR_ATTENDEE_STATUS_COMPLETED, CALENDAR_ATTENDEE_STATUS_IN_PROCESS) </td></tr> <tr><td> integer </td><td> rsvp </td><td> read, write </td><td> RSVP invitation reply (one of true, false) </td></tr> <tr><td> string </td><td> delegatee_uri </td><td> read, write </td><td> Delegatee (DELEGATED-TO) </td></tr> <tr><td> string </td><td> delegator_uri </td><td> read, write </td><td> Delegator (DELEGATED-FROM) </td></tr> <tr><td> string </td><td> name </td><td> read, write </td><td> Attendee name </td></tr> <tr><td> string </td><td> member </td><td> read, write </td><td> Group that the attendee belongs to </td></tr> </table>
 /// @nodoc
 final class _calendar_attendee_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4335,12 +4218,6 @@ final class _calendar_attendee_property_ids extends ffi.Struct {
   external int member;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_alarm _calendar_alarm view <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td> Identifier of this calendar alarm view </td></tr> <tr><td> integer </td><td> parent_id </td><td> read only </td><td> Event that the alarm belongs to </td></tr> <tr><td> integer </td><td> type </td><td> read, write </td><td> Currently NOT used </td></tr> <tr><td> long long int </td><td> time </td><td> read, write </td><td> The alarm time of the event(This represents the number of seconds elapsed since the Epoch, 1970-01-01 00:00:00 +0000(UTC)). This MUST be used with CALENDAR_ALARM_TIME_UNIT_SPECIFIC </td></tr> <tr><td> integer </td><td> tick </td><td> read, write </td><td> The number of unit before start time. This MUST be used with one of CALENDAR_ALARM_TIME_UNIT_MINUTE, CALENDAR_ALARM_TIME_UNIT_HOUR, CALENDAR_ALARM_TIME_UNIT_DAY, CALENDAR_ALARM_TIME_UNIT_WEEK. </td></tr> <tr><td> integer </td><td> tick_unit </td><td> read, write </td><td> Reminder tick time unit (one of CALENDAR_ALARM_NONE, CALENDAR_ALARM_TIME_UNIT_SPECIFIC, CALENDAR_ALARM_TIME_UNIT_MINUTE, CALENDAR_ALARM_TIME_UNIT_HOUR, CALENDAR_ALARM_TIME_UNIT_DAY, CALENDAR_ALARM_TIME_UNIT_WEEK) </td></tr> <tr><td> string </td><td> attach </td><td> read, write </td><td> Alarm tone path </td></tr> <tr><td> string </td><td> summary </td><td> read, write </td><td> Alarm summary </td></tr> <tr><td> string </td><td> description </td><td> read, write </td><td> Alarm description </td></tr> <tr><td> integer </td><td> action </td><td> read, write </td><td> Action of alarm (one of CALENDAR_ALARM_ACTION_AUDIO, CALENDAR_ALARM_ACTION_DISPLAY, CALENDAR_ALARM_ACTION_EMAIL) </td></tr> <tr><td> calendar time </td><td> alarm_time </td><td> read, write </td><td>The alarm time </td></tr> </table>
 /// @nodoc
 final class _calendar_alarm_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4370,12 +4247,6 @@ final class _calendar_alarm_property_ids extends ffi.Struct {
   external int alarm_time;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_updated_info _calendar_updated_info view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> Identifier of this updated_info view </td></tr> <tr><td> integer </td><td> id </td><td> Modified event(or todo) record ID </td></tr> <tr><td> integer </td><td> calendar_book_id </td><td> Calendar book ID of the modified event(or todo) record </td></tr> <tr><td> integer </td><td> modified_status </td><td> Enumeration value of the modified status (`calendar_record_modified_status_e)` </td></tr> <tr><td> integer </td><td> version </td><td> Version after change </td></tr> </table>
 /// @nodoc
 final class _calendar_updated_info_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4393,12 +4264,6 @@ final class _calendar_updated_info_property_ids extends ffi.Struct {
   external int version;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event_calendar_book _calendar_event_calendar_book view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> string </td><td> exdate </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> timezone </td></tr> <tr><td> integer </td><td> person_id </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> organizer_email </td></tr> <tr><td> integer </td><td> meeting_status </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> email_id </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> string </td><td> recurrence_id </td></tr> <tr><td> string </td><td> rdate </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> calendar_system_type </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> end_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> </table>
 /// @nodoc
 final class _calendar_event_calendar_book_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4566,12 +4431,6 @@ final class _calendar_event_calendar_book_property_ids extends ffi.Struct {
   external int calendar_book_account_id;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_todo_calendar_book _calendar_todo_calendar_book view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> todo_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> todo_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> long long int </td><td> completed_time </td></tr> <tr><td> integer </td><td> progress </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> due_time </td></tr> <tr><td> string </td><td> due_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> </table>
 /// @nodoc
 final class _calendar_todo_calendar_book_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -4715,12 +4574,6 @@ final class _calendar_todo_calendar_book_property_ids extends ffi.Struct {
   external int calendar_book_account_id;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_event_calendar_book_attendee _calendar_event_calendar_book_attendee view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> string </td><td> exdate </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> timezone </td></tr> <tr><td> integer </td><td> person_id </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> string </td><td> uid </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> organizer_email </td></tr> <tr><td> integer </td><td> meeting_status </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> email_id </td></tr> <tr><td> long long int </td><td> created_time </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> integer </td><td> freq </td></tr> <tr><td> integer </td><td> range_type </td></tr> <tr><td> calendar time </td><td> until_time </td></tr> <tr><td> integer </td><td> count </td></tr> <tr><td> integer </td><td> interval </td></tr> <tr><td> string </td><td> bysecond </td></tr> <tr><td> string </td><td> byminute </td></tr> <tr><td> string </td><td> byhour </td></tr> <tr><td> string </td><td> byday </td></tr> <tr><td> string </td><td> bymonthday </td></tr> <tr><td> string </td><td> byyearday </td></tr> <tr><td> string </td><td> byweekno </td></tr> <tr><td> string </td><td> bymonth </td></tr> <tr><td> string </td><td> bysetpos </td></tr> <tr><td> integer </td><td> wkst </td></tr> <tr><td> string </td><td> recurrence_id </td></tr> <tr><td> string </td><td> rdate </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> calendar_system_type </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> string </td><td> start_tzid </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> end_tzid </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> filter string </td><td> attendee_email </td></tr> <tr><td> filter string </td><td> attendee_name </td></tr> <tr><td> filter string </td><td> attendee_member </td></tr> </table>
 /// @nodoc
 final class _calendar_event_calendar_book_attendee_property_ids
     extends ffi.Struct {
@@ -4898,12 +4751,6 @@ final class _calendar_event_calendar_book_attendee_property_ids
   external int attendee_member;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_utime_calendar_book _calendar_instance_utime_calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> </table>
 /// @nodoc
 final class _calendar_instance_utime_calendar_book_property_ids
     extends ffi.Struct {
@@ -4970,12 +4817,6 @@ final class _calendar_instance_utime_calendar_book_property_ids
   external int sync_data1;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_localtime_calendar_book _calendar_instance_localtime_calendar_book view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> long long int </td><td> last_modified_time </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> int </td><td> is_allday </td></tr> </table>
 /// @nodoc
 final class _calendar_instance_localtime_calendar_book_property_ids
     extends ffi.Struct {
@@ -5045,12 +4886,6 @@ final class _calendar_instance_localtime_calendar_book_property_ids
   external int is_allday;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_utime_calendar_book_extended _calendar_instance_utime_calendar_book_extended view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> </table>
 /// @nodoc
 final class _calendar_instance_utime_calendar_book_extended_property_ids
     extends ffi.Struct {
@@ -5135,12 +4970,6 @@ final class _calendar_instance_utime_calendar_book_extended_property_ids
   external int sync_data4;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_instance_localtime_calendar_book_extended _calendar_instance_localtime_calendar_book_extended view <table> <tr> <th> Type </th> <th> Property ID </th> </tr> <tr><td> string </td><td> _uri </td></tr> <tr><td> integer </td><td> event_id </td></tr> <tr><td> calendar time </td><td> start_time </td></tr> <tr><td> calendar time </td><td> end_time </td></tr> <tr><td> string </td><td> summary </td></tr> <tr><td> string </td><td> location </td></tr> <tr><td> integer </td><td> calendar_book_id </td></tr> <tr><td> string </td><td> description </td></tr> <tr><td> integer </td><td> busy_status </td></tr> <tr><td> integer </td><td> event_status </td></tr> <tr><td> integer </td><td> priority </td></tr> <tr><td> integer </td><td> sensitivity </td></tr> <tr><td> integer </td><td> has_rrule </td></tr> <tr><td> double </td><td> latitude </td></tr> <tr><td> double </td><td> longitude </td></tr> <tr><td> integer </td><td> has_alarm </td></tr> <tr><td> integer </td><td> original_event_id </td></tr> <tr><td> filter integer </td><td> calendar_book_visibility </td></tr> <tr><td> filter integer </td><td> calendar_book_account_id </td></tr> <tr><td> string </td><td> organizer_name </td></tr> <tr><td> string </td><td> categories </td></tr> <tr><td> integer </td><td> has_attendee </td></tr> <tr><td> string </td><td> sync_data1 </td></tr> <tr><td> string </td><td> sync_data2 </td></tr> <tr><td> string </td><td> sync_data3 </td></tr> <tr><td> string </td><td> sync_data4 </td></tr> </table>
 /// @nodoc
 final class _calendar_instance_localtime_calendar_book_extended_property_ids
     extends ffi.Struct {
@@ -5228,12 +5057,6 @@ final class _calendar_instance_localtime_calendar_book_extended_property_ids
   external int sync_data4;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_MODULE
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CALENDAR_SVC_VIEW_MODULE_calendar_extended_property _calendar_extended_property view (read only) <table> <tr> <th> Type </th> <th> Property ID </th> <th> Read, Write </th> <th> Description </th> </tr> <tr><td> string </td><td> _uri </td><td> read only </td><td></td> Identifier of this extended_property view </tr> <tr><td> integer </td><td> id </td><td> read only </td><td> DB record ID of the extended_property </td></tr> <tr><td> integer </td><td> record_id </td><td> read,write </td><td> Related record ID </td></tr> <tr><td> integer </td><td> record_type </td><td> read, write </td><td> Enumeration value of the record type (`calendar_record_type_e)` </td></tr> <tr><td> string </td><td> key </td><td> read, write </td><td> The key of the property </td></tr> <tr><td> string </td><td> value </td><td> read, write </td><td> The value of the property </td></tr> </table>
 /// @nodoc
 final class _calendar_extended_property_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -5254,30 +5077,18 @@ final class _calendar_extended_property_property_ids extends ffi.Struct {
   external int value;
 }
 
-/// Handle for calendar record.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef calendar_record_h = ffi.Pointer<__calendar_record_h>;
 
 /// @nodoc
 final class __calendar_record_h extends ffi.Opaque {}
 
-/// Handle for calendar list.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef calendar_list_h = ffi.Pointer<__calendar_list_h>;
 
 /// @nodoc
 final class __calendar_list_h extends ffi.Opaque {}
 
-/// Handle for calendar query.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef calendar_query_h = ffi.Pointer<__calendar_query_h>;
 
@@ -5304,11 +5115,6 @@ typedef calendar_db_changed_cbFunction = ffi.Void Function(
 /// @nodoc
 typedef Dartcalendar_db_changed_cbFunction = void Function(
     ffi.Pointer<ffi.Char> view_uri, ffi.Pointer<ffi.Void> user_data);
-
-/// Handle for calendar filter.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef calendar_filter_h = ffi.Pointer<__calendar_filter_h>;
 
@@ -5379,12 +5185,19 @@ abstract class calendar_match_int_flag_e {
 /// **Since Tizen:**
 /// - 2.3
 /// @nodoc
-final class calendar_time_s extends ffi.Struct {
+typedef calendar_time_s = CalendarService2UnnamedStruct1;
+
+/// The structure of time.
+///
+/// **Since Tizen:**
+/// - 2.3
+/// @nodoc
+final class CalendarService2UnnamedStruct1 extends ffi.Struct {
   /// < type
   @ffi.Int32()
   external int type;
 
-  external UnnamedUnion1 time;
+  external CalendarService2UnnamedUnion1 time;
 }
 
 /// Enumeration for the time type.
@@ -5401,16 +5214,16 @@ abstract class calendar_time_type_e {
 }
 
 /// @nodoc
-final class UnnamedUnion1 extends ffi.Union {
+final class CalendarService2UnnamedUnion1 extends ffi.Union {
   /// < utime
   @ffi.LongLong()
   external int utime;
 
-  external UnnamedStruct1 date;
+  external CalendarService2UnnamedStruct2 date;
 }
 
 /// @nodoc
-final class UnnamedStruct1 extends ffi.Struct {
+final class CalendarService2UnnamedStruct2 extends ffi.Struct {
   /// < year
   @ffi.Int()
   external int year;
@@ -5436,9 +5249,31 @@ final class UnnamedStruct1 extends ffi.Struct {
   external int second;
 
   /// < Deprecated since 2.4:leap month
-  @ffi.Bool()
   external bool is_leap_month;
 }
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Enumeration for a filter operator.
 ///
@@ -5478,11 +5313,11 @@ abstract class calendar_filter_operator_e {
 typedef calendar_vcalendar_parse_cb
     = ffi.Pointer<ffi.NativeFunction<calendar_vcalendar_parse_cbFunction>>;
 /// @nodoc
-typedef calendar_vcalendar_parse_cbFunction = ffi.Bool Function(
-    calendar_record_h record, ffi.Pointer<ffi.Void> user_data);
+typedef calendar_vcalendar_parse_cbFunction = ffi.Int Function(
+    calendar_record_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartcalendar_vcalendar_parse_cbFunction = bool Function(
-    calendar_record_h record, ffi.Pointer<ffi.Void> user_data);
+typedef Dartcalendar_vcalendar_parse_cbFunction = int Function(
+    calendar_record_h, ffi.Pointer<ffi.Void>);
 
 /// Called when an alarm is alerted.
 ///

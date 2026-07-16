@@ -550,7 +550,7 @@ class Tizen90CapiAppfwPackageManager {
   /// - `PACKAGE_MANAGER_ERROR_IO_ERROR`: I/O error
   int package_info_is_system_package(
     package_info_h package_info,
-    ffi.Pointer<ffi.Bool> system,
+    ffi.Pointer<bool> system,
   ) {
     return _package_info_is_system_package(
       package_info,
@@ -559,12 +559,12 @@ class Tizen90CapiAppfwPackageManager {
   }
 
   late final _package_info_is_system_packagePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(package_info_h,
-              ffi.Pointer<ffi.Bool>)>>('package_info_is_system_package');
+          ffi
+          .NativeFunction<ffi.Int Function(package_info_h, ffi.Pointer<bool>)>>(
+      'package_info_is_system_package');
   late final _package_info_is_system_package =
       _package_info_is_system_packagePtr
-          .asFunction<int Function(package_info_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(package_info_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the package is removable.
   ///
@@ -585,7 +585,7 @@ class Tizen90CapiAppfwPackageManager {
   /// - `PACKAGE_MANAGER_ERROR_IO_ERROR`: IO error
   int package_info_is_removable_package(
     package_info_h package_info,
-    ffi.Pointer<ffi.Bool> removable,
+    ffi.Pointer<bool> removable,
   ) {
     return _package_info_is_removable_package(
       package_info,
@@ -594,12 +594,12 @@ class Tizen90CapiAppfwPackageManager {
   }
 
   late final _package_info_is_removable_packagePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(package_info_h,
-              ffi.Pointer<ffi.Bool>)>>('package_info_is_removable_package');
+          ffi
+          .NativeFunction<ffi.Int Function(package_info_h, ffi.Pointer<bool>)>>(
+      'package_info_is_removable_package');
   late final _package_info_is_removable_package =
       _package_info_is_removable_packagePtr
-          .asFunction<int Function(package_info_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(package_info_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the package is preloaded.
   ///
@@ -620,7 +620,7 @@ class Tizen90CapiAppfwPackageManager {
   /// - `PACKAGE_MANAGER_ERROR_IO_ERROR`: I/O error
   int package_info_is_preload_package(
     package_info_h package_info,
-    ffi.Pointer<ffi.Bool> preload,
+    ffi.Pointer<bool> preload,
   ) {
     return _package_info_is_preload_package(
       package_info,
@@ -629,12 +629,12 @@ class Tizen90CapiAppfwPackageManager {
   }
 
   late final _package_info_is_preload_packagePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(package_info_h,
-              ffi.Pointer<ffi.Bool>)>>('package_info_is_preload_package');
+          ffi
+          .NativeFunction<ffi.Int Function(package_info_h, ffi.Pointer<bool>)>>(
+      'package_info_is_preload_package');
   late final _package_info_is_preload_package =
       _package_info_is_preload_packagePtr
-          .asFunction<int Function(package_info_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(package_info_h, ffi.Pointer<bool>)>();
 
   /// Checks whether two package information is equal.
   ///
@@ -657,7 +657,7 @@ class Tizen90CapiAppfwPackageManager {
   int package_info_is_equal(
     package_info_h lhs,
     package_info_h rhs,
-    ffi.Pointer<ffi.Bool> equal,
+    ffi.Pointer<bool> equal,
   ) {
     return _package_info_is_equal(
       lhs,
@@ -669,9 +669,9 @@ class Tizen90CapiAppfwPackageManager {
   late final _package_info_is_equalPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(package_info_h, package_info_h,
-              ffi.Pointer<ffi.Bool>)>>('package_info_is_equal');
+              ffi.Pointer<bool>)>>('package_info_is_equal');
   late final _package_info_is_equal = _package_info_is_equalPtr.asFunction<
-      int Function(package_info_h, package_info_h, ffi.Pointer<ffi.Bool>)>();
+      int Function(package_info_h, package_info_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the package info is accessible for the given package.
   ///
@@ -690,7 +690,7 @@ class Tizen90CapiAppfwPackageManager {
   /// - `PACKAGE_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int package_info_is_accessible(
     package_info_h package_info,
-    ffi.Pointer<ffi.Bool> accessible,
+    ffi.Pointer<bool> accessible,
   ) {
     return _package_info_is_accessible(
       package_info,
@@ -699,11 +699,11 @@ class Tizen90CapiAppfwPackageManager {
   }
 
   late final _package_info_is_accessiblePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(package_info_h,
-              ffi.Pointer<ffi.Bool>)>>('package_info_is_accessible');
+          ffi
+          .NativeFunction<ffi.Int Function(package_info_h, ffi.Pointer<bool>)>>(
+      'package_info_is_accessible');
   late final _package_info_is_accessible = _package_info_is_accessiblePtr
-      .asFunction<int Function(package_info_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(package_info_h, ffi.Pointer<bool>)>();
 
   /// Gets the installed time for the given package.
   ///
@@ -2229,7 +2229,7 @@ class Tizen90CapiAppfwPackageManager {
   /// - `PACKAGE_MANAGER_ERROR_IO_ERROR`: I/O error
   int package_manager_is_preload_package_by_app_id(
     ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Bool> preload,
+    ffi.Pointer<bool> preload,
   ) {
     return _package_manager_is_preload_package_by_app_id(
       app_id,
@@ -2239,11 +2239,11 @@ class Tizen90CapiAppfwPackageManager {
 
   late final _package_manager_is_preload_package_by_app_idPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>>(
       'package_manager_is_preload_package_by_app_id');
   late final _package_manager_is_preload_package_by_app_id =
-      _package_manager_is_preload_package_by_app_idPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      _package_manager_is_preload_package_by_app_idPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Gets the package permission type by `app_id`.
   ///
@@ -2625,7 +2625,7 @@ class Tizen90CapiAppfwPackageManager {
   int package_manager_filter_add_bool(
     package_manager_filter_h handle,
     ffi.Pointer<ffi.Char> property,
-    bool value,
+    ffi.Pointer<bool> value,
   ) {
     return _package_manager_filter_add_bool(
       handle,
@@ -2637,11 +2637,11 @@ class Tizen90CapiAppfwPackageManager {
   late final _package_manager_filter_add_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(package_manager_filter_h, ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('package_manager_filter_add_bool');
+              ffi.Pointer<bool>)>>('package_manager_filter_add_bool');
   late final _package_manager_filter_add_bool =
       _package_manager_filter_add_boolPtr.asFunction<
-          int Function(
-              package_manager_filter_h, ffi.Pointer<ffi.Char>, bool)>();
+          int Function(package_manager_filter_h, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<bool>)>();
 
   /// Adds a string filter property to the filter handle.
   ///
@@ -4835,11 +4835,34 @@ typedef package_info_h = ffi.Pointer<package_info_s>;
 typedef package_info_app_cb
     = ffi.Pointer<ffi.NativeFunction<package_info_app_cbFunction>>;
 /// @nodoc
-typedef package_info_app_cbFunction = ffi.Bool Function(ffi.Int32 comp_type,
-    ffi.Pointer<ffi.Char> app_id, ffi.Pointer<ffi.Void> user_data);
+typedef package_info_app_cbFunction = ffi.Int Function(
+    ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_app_cbFunction = bool Function(int comp_type,
-    ffi.Pointer<ffi.Char> app_id, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_app_cbFunction = int Function(
+    int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called to get the certification information.
 ///
@@ -4864,17 +4887,11 @@ typedef Dartpackage_info_app_cbFunction = bool Function(int comp_type,
 typedef package_info_cert_info_cb
     = ffi.Pointer<ffi.NativeFunction<package_info_cert_info_cbFunction>>;
 /// @nodoc
-typedef package_info_cert_info_cbFunction = ffi.Bool Function(
-    package_info_h handle,
-    ffi.Int32 cert_type,
-    ffi.Pointer<ffi.Char> cert_value,
-    ffi.Pointer<ffi.Void> user_data);
+typedef package_info_cert_info_cbFunction = ffi.Int Function(
+    package_info_h, ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_cert_info_cbFunction = bool Function(
-    package_info_h handle,
-    int cert_type,
-    ffi.Pointer<ffi.Char> cert_value,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_cert_info_cbFunction = int Function(
+    package_info_h, int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called to get the privilege information.
 ///
@@ -4897,11 +4914,11 @@ typedef Dartpackage_info_cert_info_cbFunction = bool Function(
 typedef package_info_privilege_info_cb
     = ffi.Pointer<ffi.NativeFunction<package_info_privilege_info_cbFunction>>;
 /// @nodoc
-typedef package_info_privilege_info_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> privilege_name, ffi.Pointer<ffi.Void> user_data);
+typedef package_info_privilege_info_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_privilege_info_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> privilege_name, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_privilege_info_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called when dependency information between packages is retrieved.
 ///
@@ -4932,19 +4949,19 @@ typedef Dartpackage_info_privilege_info_cbFunction = bool Function(
 typedef package_info_dependency_info_cb
     = ffi.Pointer<ffi.NativeFunction<package_info_dependency_info_cbFunction>>;
 /// @nodoc
-typedef package_info_dependency_info_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> from,
-    ffi.Pointer<ffi.Char> to,
-    ffi.Pointer<ffi.Char> type,
-    ffi.Pointer<ffi.Char> required_version,
-    ffi.Pointer<ffi.Void> user_data);
+typedef package_info_dependency_info_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_dependency_info_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> from,
-    ffi.Pointer<ffi.Char> to,
-    ffi.Pointer<ffi.Char> type,
-    ffi.Pointer<ffi.Char> required_version,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_dependency_info_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Void>);
 
 /// Called to get the allowed package information of resource package.
 ///
@@ -4971,15 +4988,15 @@ typedef Dartpackage_info_dependency_info_cbFunction = bool Function(
 typedef package_info_res_allowed_package_cb = ffi
     .Pointer<ffi.NativeFunction<package_info_res_allowed_package_cbFunction>>;
 /// @nodoc
-typedef package_info_res_allowed_package_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> allowed_package,
-    allowed_package_required_privilege_h privilege_handle,
-    ffi.Pointer<ffi.Void> user_data);
+typedef package_info_res_allowed_package_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>,
+    allowed_package_required_privilege_h,
+    ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_res_allowed_package_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> allowed_package,
-    allowed_package_required_privilege_h privilege_handle,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_res_allowed_package_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>,
+    allowed_package_required_privilege_h,
+    ffi.Pointer<ffi.Void>);
 
 /// The required privilege handle.
 ///
@@ -5023,11 +5040,11 @@ typedef package_updateinfo_h = ffi.Pointer<package_updateinfo_s>;
 typedef package_info_updateinfo_cb
     = ffi.Pointer<ffi.NativeFunction<package_info_updateinfo_cbFunction>>;
 /// @nodoc
-typedef package_info_updateinfo_cbFunction = ffi.Bool Function(
-    package_updateinfo_h info, ffi.Pointer<ffi.Void> user_data);
+typedef package_info_updateinfo_cbFunction = ffi.Int Function(
+    package_updateinfo_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_info_updateinfo_cbFunction = bool Function(
-    package_updateinfo_h info, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_info_updateinfo_cbFunction = int Function(
+    package_updateinfo_h, ffi.Pointer<ffi.Void>);
 
 /// @nodoc
 final class package_archive_info_s extends ffi.Opaque {}
@@ -5354,11 +5371,11 @@ typedef package_manager_res_event_info_h
 typedef package_manager_package_info_cb
     = ffi.Pointer<ffi.NativeFunction<package_manager_package_info_cbFunction>>;
 /// @nodoc
-typedef package_manager_package_info_cbFunction = ffi.Bool Function(
-    package_info_h package_info, ffi.Pointer<ffi.Void> user_data);
+typedef package_manager_package_info_cbFunction = ffi.Int Function(
+    package_info_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_manager_package_info_cbFunction = bool Function(
-    package_info_h package_info, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_manager_package_info_cbFunction = int Function(
+    package_info_h, ffi.Pointer<ffi.Void>);
 
 /// @nodoc
 final class package_size_info extends ffi.Opaque {}
@@ -5569,13 +5586,11 @@ typedef Dartpackage_manager_request_res_event_cbFunction = void Function(
 typedef package_manager_res_event_path_cb = ffi
     .Pointer<ffi.NativeFunction<package_manager_res_event_path_cbFunction>>;
 /// @nodoc
-typedef package_manager_res_event_path_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> path,
-    ffi.Int32 state,
-    ffi.Pointer<ffi.Void> user_data);
+typedef package_manager_res_event_path_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Int32, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpackage_manager_res_event_path_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> path, int state, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpackage_manager_res_event_path_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
 
 /// @nodoc
 const String PACKAGE_MANAGER_PKGINFO_PROP_REMOVABLE =

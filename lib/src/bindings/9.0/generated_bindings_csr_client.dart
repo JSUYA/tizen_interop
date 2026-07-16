@@ -320,7 +320,7 @@ class Tizen90CsrClient {
   /// - tner
   int csr_cs_set_scan_on_cloud(
     csr_cs_context_h handle,
-    bool scan_on_cloud,
+    ffi.Pointer<bool> scan_on_cloud,
   ) {
     return _csr_cs_set_scan_on_cloud(
       handle,
@@ -328,11 +328,12 @@ class Tizen90CsrClient {
     );
   }
 
-  late final _csr_cs_set_scan_on_cloudPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(csr_cs_context_h, ffi.Bool)>>(
-          'csr_cs_set_scan_on_cloud');
+  late final _csr_cs_set_scan_on_cloudPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(csr_cs_context_h,
+              ffi.Pointer<bool>)>>('csr_cs_set_scan_on_cloud');
   late final _csr_cs_set_scan_on_cloud = _csr_cs_set_scan_on_cloudPtr
-      .asFunction<int Function(csr_cs_context_h, bool)>();
+      .asFunction<int Function(csr_cs_context_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -1366,7 +1367,7 @@ class Tizen90CsrClient {
   /// - tner
   int csr_cs_malware_is_app(
     csr_cs_malware_h malware,
-    ffi.Pointer<ffi.Bool> is_app,
+    ffi.Pointer<bool> is_app,
   ) {
     return _csr_cs_malware_is_app(
       malware,
@@ -1376,10 +1377,10 @@ class Tizen90CsrClient {
 
   late final _csr_cs_malware_is_appPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(csr_cs_malware_h,
-              ffi.Pointer<ffi.Bool>)>>('csr_cs_malware_is_app');
+          ffi.Int Function(
+              csr_cs_malware_h, ffi.Pointer<bool>)>>('csr_cs_malware_is_app');
   late final _csr_cs_malware_is_app = _csr_cs_malware_is_appPtr
-      .asFunction<int Function(csr_cs_malware_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(csr_cs_malware_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -2928,6 +2929,29 @@ abstract class csr_error_e {
 /// - tner
 /// @nodoc
 typedef csr_cs_context_h = ffi.Pointer<__csr_cs_context_s>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 8.0.
 ///

@@ -230,15 +230,15 @@ class Tizen90CapiNetworkNfc {
   ///
   /// **Group:**
   /// - CAPI_NETWORK_NFC_MANAGER_MODULE
-  bool nfc_manager_is_supported() {
+  int nfc_manager_is_supported() {
     return _nfc_manager_is_supported();
   }
 
   late final _nfc_manager_is_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
           'nfc_manager_is_supported');
   late final _nfc_manager_is_supported =
-      _nfc_manager_is_supportedPtr.asFunction<bool Function()>();
+      _nfc_manager_is_supportedPtr.asFunction<int Function()>();
 
   /// Sets NFC Activation state changed callback.
   ///
@@ -362,7 +362,7 @@ class Tizen90CapiNetworkNfc {
   /// **Group:**
   /// - CAPI_NETWORK_NFC_MANAGER_MODULE
   int nfc_manager_set_activation(
-    bool activation,
+    ffi.Pointer<bool> activation,
     nfc_activation_completed_cb callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -375,12 +375,12 @@ class Tizen90CapiNetworkNfc {
 
   late final _nfc_manager_set_activationPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Bool, nfc_activation_completed_cb,
+          ffi.Int Function(ffi.Pointer<bool>, nfc_activation_completed_cb,
               ffi.Pointer<ffi.Void>)>>('nfc_manager_set_activation');
   late final _nfc_manager_set_activation =
       _nfc_manager_set_activationPtr.asFunction<
-          int Function(
-              bool, nfc_activation_completed_cb, ffi.Pointer<ffi.Void>)>();
+          int Function(ffi.Pointer<bool>, nfc_activation_completed_cb,
+              ffi.Pointer<ffi.Void>)>();
 
   /// Gets NFC Activation state.
   ///
@@ -404,15 +404,15 @@ class Tizen90CapiNetworkNfc {
   ///
   /// **Group:**
   /// - CAPI_NETWORK_NFC_MANAGER_MODULE
-  bool nfc_manager_is_activated() {
+  int nfc_manager_is_activated() {
     return _nfc_manager_is_activated();
   }
 
   late final _nfc_manager_is_activatedPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
           'nfc_manager_is_activated');
   late final _nfc_manager_is_activated =
-      _nfc_manager_is_activatedPtr.asFunction<bool Function()>();
+      _nfc_manager_is_activatedPtr.asFunction<int Function()>();
 
   /// Initializes NFC Manager.
   ///
@@ -1344,7 +1344,7 @@ class Tizen90CapiNetworkNfc {
   /// **Group:**
   /// - CAPI_NETWORK_NFC_MANAGER_MODULE
   int nfc_manager_set_system_handler_enable(
-    bool enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _nfc_manager_set_system_handler_enable(
       enable,
@@ -1352,11 +1352,11 @@ class Tizen90CapiNetworkNfc {
   }
 
   late final _nfc_manager_set_system_handler_enablePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'nfc_manager_set_system_handler_enable');
   late final _nfc_manager_set_system_handler_enable =
       _nfc_manager_set_system_handler_enablePtr
-          .asFunction<int Function(bool)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the state of the system handler.
   ///
@@ -1391,15 +1391,15 @@ class Tizen90CapiNetworkNfc {
   ///
   /// **Group:**
   /// - CAPI_NETWORK_NFC_MANAGER_MODULE
-  bool nfc_manager_is_system_handler_enabled() {
+  int nfc_manager_is_system_handler_enabled() {
     return _nfc_manager_is_system_handler_enabled();
   }
 
   late final _nfc_manager_is_system_handler_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
           'nfc_manager_is_system_handler_enabled');
   late final _nfc_manager_is_system_handler_enabled =
-      _nfc_manager_is_system_handler_enabledPtr.asFunction<bool Function()>();
+      _nfc_manager_is_system_handler_enabledPtr.asFunction<int Function()>();
 
   /// Sets the card emulation Secure Element type.
   ///
@@ -2801,7 +2801,7 @@ class Tizen90CapiNetworkNfc {
   /// - CAPI_NETWORK_NFC_TAG_MODULE
   int nfc_tag_is_support_ndef(
     nfc_tag_h tag,
-    ffi.Pointer<ffi.Bool> is_supported,
+    ffi.Pointer<bool> is_supported,
   ) {
     return _nfc_tag_is_support_ndef(
       tag,
@@ -2810,11 +2810,10 @@ class Tizen90CapiNetworkNfc {
   }
 
   late final _nfc_tag_is_support_ndefPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(nfc_tag_h, ffi.Pointer<ffi.Bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(nfc_tag_h, ffi.Pointer<bool>)>>(
       'nfc_tag_is_support_ndef');
   late final _nfc_tag_is_support_ndef = _nfc_tag_is_support_ndefPtr
-      .asFunction<int Function(nfc_tag_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(nfc_tag_h, ffi.Pointer<bool>)>();
 
   /// Gets the maximum NDEF message size that can be stored in NFC tag.
   ///
@@ -4798,7 +4797,7 @@ class Tizen90CapiNetworkNfc {
   int nfc_se_is_activated_handler_for_aid(
     int se_type,
     ffi.Pointer<ffi.Char> aid,
-    ffi.Pointer<ffi.Bool> is_activated_handler,
+    ffi.Pointer<bool> is_activated_handler,
   ) {
     return _nfc_se_is_activated_handler_for_aid(
       se_type,
@@ -4810,10 +4809,10 @@ class Tizen90CapiNetworkNfc {
   late final _nfc_se_is_activated_handler_for_aidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('nfc_se_is_activated_handler_for_aid');
+              ffi.Pointer<bool>)>>('nfc_se_is_activated_handler_for_aid');
   late final _nfc_se_is_activated_handler_for_aid =
       _nfc_se_is_activated_handler_for_aidPtr.asFunction<
-          int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+          int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Gets the state whether an application to call this function is currently the activated handler for category.
   ///
@@ -4852,7 +4851,7 @@ class Tizen90CapiNetworkNfc {
   int nfc_se_is_activated_handler_for_category(
     int se_type,
     int category,
-    ffi.Pointer<ffi.Bool> is_activated_handler,
+    ffi.Pointer<bool> is_activated_handler,
   ) {
     return _nfc_se_is_activated_handler_for_category(
       se_type,
@@ -4862,12 +4861,12 @@ class Tizen90CapiNetworkNfc {
   }
 
   late final _nfc_se_is_activated_handler_for_categoryPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(ffi.Int32, ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
-      'nfc_se_is_activated_handler_for_category');
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int32, ffi.Int32,
+              ffi.Pointer<bool>)>>('nfc_se_is_activated_handler_for_category');
   late final _nfc_se_is_activated_handler_for_category =
       _nfc_se_is_activated_handler_for_categoryPtr
-          .asFunction<int Function(int, int, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(int, int, ffi.Pointer<bool>)>();
 
   /// Registers a AID for a specific category.
   ///
@@ -5562,10 +5561,33 @@ typedef nfc_activation_changed_cb
     = ffi.Pointer<ffi.NativeFunction<nfc_activation_changed_cbFunction>>;
 /// @nodoc
 typedef nfc_activation_changed_cbFunction = ffi.Void Function(
-    ffi.Bool activated, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> activated, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartnfc_activation_changed_cbFunction = void Function(
-    bool activated, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> activated, ffi.Pointer<ffi.Void> user_data);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called after nfc_manager_set_activation() has completed.
 ///
@@ -5890,17 +5912,11 @@ typedef nfc_ndef_record_h = ffi.Pointer<_ndef_record_s>;
 typedef nfc_tag_information_cb
     = ffi.Pointer<ffi.NativeFunction<nfc_tag_information_cbFunction>>;
 /// @nodoc
-typedef nfc_tag_information_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.UnsignedChar> value,
-    ffi.Int value_size,
-    ffi.Pointer<ffi.Void> user_data);
+typedef nfc_tag_information_cbFunction = ffi.Int Function(ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.UnsignedChar>, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartnfc_tag_information_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.UnsignedChar> value,
-    int value_size,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartnfc_tag_information_cbFunction = int Function(ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.UnsignedChar>, int, ffi.Pointer<ffi.Void>);
 
 /// Called after nfc_tag_transceive() has completed.
 ///
@@ -6420,11 +6436,14 @@ typedef nfc_se_registered_aid_cb
 typedef nfc_se_registered_aid_cbFunction = ffi.Void Function(
     ffi.Int32 se_type,
     ffi.Pointer<ffi.Char> aid,
-    ffi.Bool read_only,
+    ffi.Pointer<bool> read_only,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartnfc_se_registered_aid_cbFunction = void Function(int se_type,
-    ffi.Pointer<ffi.Char> aid, bool read_only, ffi.Pointer<ffi.Void> user_data);
+typedef Dartnfc_se_registered_aid_cbFunction = void Function(
+    int se_type,
+    ffi.Pointer<ffi.Char> aid,
+    ffi.Pointer<bool> read_only,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// @nodoc
 const int NFC_ERROR_CLASS = -29491200;

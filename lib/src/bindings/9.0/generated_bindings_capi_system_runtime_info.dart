@@ -87,7 +87,7 @@ class Tizen90CapiSystemRuntimeInfo {
   /// - `RUNTIME_INFO_ERROR_NOT_SUPPORTED`: Not supported parameter
   int runtime_info_get_value_bool(
     int key,
-    ffi.Pointer<ffi.Bool> value,
+    ffi.Pointer<bool> value,
   ) {
     return _runtime_info_get_value_bool(
       key,
@@ -96,11 +96,10 @@ class Tizen90CapiSystemRuntimeInfo {
   }
 
   late final _runtime_info_get_value_boolPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Pointer<bool>)>>(
       'runtime_info_get_value_bool');
   late final _runtime_info_get_value_bool = _runtime_info_get_value_boolPtr
-      .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(int, ffi.Pointer<bool>)>();
 
   /// Gets the double value from the runtime information.
   ///
@@ -1027,6 +1026,29 @@ abstract class runtime_info_audio_jack_status_e {
   /// < 4-conductor wire is connected.
   static const int RUNTIME_INFO_AUDIO_JACK_STATUS_CONNECTED_4WIRE = 2;
 }
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the runtime information changes.
 ///

@@ -148,7 +148,7 @@ class Tizen90CapiMlCommon {
   /// - `ML_ERROR_INVALID_PARAMETER`: Given parameter is invalid.
   int ml_tensors_info_validate(
     ml_tensors_info_h info,
-    ffi.Pointer<ffi.Bool> valid,
+    ffi.Pointer<bool> valid,
   ) {
     return _ml_tensors_info_validate(
       info,
@@ -159,9 +159,9 @@ class Tizen90CapiMlCommon {
   late final _ml_tensors_info_validatePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ml_tensors_info_h,
-              ffi.Pointer<ffi.Bool>)>>('ml_tensors_info_validate');
+              ffi.Pointer<bool>)>>('ml_tensors_info_validate');
   late final _ml_tensors_info_validate = _ml_tensors_info_validatePtr
-      .asFunction<int Function(ml_tensors_info_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ml_tensors_info_h, ffi.Pointer<bool>)>();
 
   /// Copies the tensors information.
   ///
@@ -1336,6 +1336,29 @@ abstract class ml_tensor_type_e {
 /// - 5.5
 /// @nodoc
 typedef ml_tensors_info_h = ffi.Pointer<ffi.Void>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// A handle of input or output frames. `ml_tensors_info_h` is the handle for tensors metadata.
 ///

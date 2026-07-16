@@ -1472,7 +1472,7 @@ class Tizen90CapiUiInputmethod {
   int ime_send_key_event(
     int keycode,
     int keymask,
-    bool forward_key,
+    ffi.Pointer<bool> forward_key,
   ) {
     return _ime_send_key_event(
       keycode,
@@ -1482,10 +1482,11 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_send_key_eventPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Int32, ffi.Bool)>>(
-      'ime_send_key_event');
-  late final _ime_send_key_event =
-      _ime_send_key_eventPtr.asFunction<int Function(int, int, bool)>();
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Int32, ffi.Int32, ffi.Pointer<bool>)>>('ime_send_key_event');
+  late final _ime_send_key_event = _ime_send_key_eventPtr
+      .asFunction<int Function(int, int, ffi.Pointer<bool>)>();
 
   /// Sends the text to the associated text input UI control.
   ///
@@ -2442,7 +2443,7 @@ class Tizen90CapiUiInputmethod {
   /// - `ime_return_key_state_set_cb()`
   int ime_context_get_return_key_state(
     ime_context_h context,
-    ffi.Pointer<ffi.Bool> return_key_state,
+    ffi.Pointer<bool> return_key_state,
   ) {
     return _ime_context_get_return_key_state(
       context,
@@ -2451,12 +2452,12 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_context_get_return_key_statePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ime_context_h,
-              ffi.Pointer<ffi.Bool>)>>('ime_context_get_return_key_state');
+          ffi
+          .NativeFunction<ffi.Int Function(ime_context_h, ffi.Pointer<bool>)>>(
+      'ime_context_get_return_key_state');
   late final _ime_context_get_return_key_state =
       _ime_context_get_return_key_statePtr
-          .asFunction<int Function(ime_context_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ime_context_h, ffi.Pointer<bool>)>();
 
   /// Gets the prediction mode information from the given input context.
   ///
@@ -2491,7 +2492,7 @@ class Tizen90CapiUiInputmethod {
   /// - `ime_show_cb()`
   int ime_context_get_prediction_mode(
     ime_context_h context,
-    ffi.Pointer<ffi.Bool> prediction_mode,
+    ffi.Pointer<bool> prediction_mode,
   ) {
     return _ime_context_get_prediction_mode(
       context,
@@ -2500,12 +2501,12 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_context_get_prediction_modePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ime_context_h,
-              ffi.Pointer<ffi.Bool>)>>('ime_context_get_prediction_mode');
+          ffi
+          .NativeFunction<ffi.Int Function(ime_context_h, ffi.Pointer<bool>)>>(
+      'ime_context_get_prediction_mode');
   late final _ime_context_get_prediction_mode =
       _ime_context_get_prediction_modePtr
-          .asFunction<int Function(ime_context_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ime_context_h, ffi.Pointer<bool>)>();
 
   /// Gets the password mode information from the given input context.
   ///
@@ -2543,7 +2544,7 @@ class Tizen90CapiUiInputmethod {
   /// - `ime_show_cb()`
   int ime_context_get_password_mode(
     ime_context_h context,
-    ffi.Pointer<ffi.Bool> password_mode,
+    ffi.Pointer<bool> password_mode,
   ) {
     return _ime_context_get_password_mode(
       context,
@@ -2552,11 +2553,11 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_context_get_password_modePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ime_context_h,
-              ffi.Pointer<ffi.Bool>)>>('ime_context_get_password_mode');
+          ffi
+          .NativeFunction<ffi.Int Function(ime_context_h, ffi.Pointer<bool>)>>(
+      'ime_context_get_password_mode');
   late final _ime_context_get_password_mode = _ime_context_get_password_modePtr
-      .asFunction<int Function(ime_context_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ime_context_h, ffi.Pointer<bool>)>();
 
   /// Gets the input hint information from the given input context.
   ///
@@ -3062,7 +3063,7 @@ class Tizen90CapiUiInputmethod {
   /// - `ime_set_floating_drag_start()`
   /// - `ime_set_floating_drag_end()`
   int ime_set_floating_mode(
-    bool floating_mode,
+    ffi.Pointer<bool> floating_mode,
   ) {
     return _ime_set_floating_mode(
       floating_mode,
@@ -3070,10 +3071,10 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_set_floating_modePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'ime_set_floating_mode');
   late final _ime_set_floating_mode =
-      _ime_set_floating_modePtr.asFunction<int Function(bool)>();
+      _ime_set_floating_modePtr.asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Allows the floating input panel window to move along with the mouse pointer when the mouse is pressed.
   ///
@@ -3298,7 +3299,7 @@ class Tizen90CapiUiInputmethod {
   /// - `IME_ERROR_PERMISSION_DENIED`: The application does not have the privilege to call this function.
   /// - `IME_ERROR_NOT_RUNNING`: IME main loop is not started yet
   int ime_set_candidate_visibility_state(
-    bool visible,
+    ffi.Pointer<bool> visible,
   ) {
     return _ime_set_candidate_visibility_state(
       visible,
@@ -3306,10 +3307,11 @@ class Tizen90CapiUiInputmethod {
   }
 
   late final _ime_set_candidate_visibility_statePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'ime_set_candidate_visibility_state');
   late final _ime_set_candidate_visibility_state =
-      _ime_set_candidate_visibility_statePtr.asFunction<int Function(bool)>();
+      _ime_set_candidate_visibility_statePtr
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Sets the event callback function that is called when an associated text input UI control requests the input panel to set input hint.
   ///
@@ -5173,10 +5175,33 @@ typedef ime_return_key_state_set_cb
     = ffi.Pointer<ffi.NativeFunction<ime_return_key_state_set_cbFunction>>;
 /// @nodoc
 typedef ime_return_key_state_set_cbFunction = ffi.Void Function(
-    ffi.Bool disabled, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> disabled, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartime_return_key_state_set_cbFunction = void Function(
-    bool disabled, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> disabled, ffi.Pointer<ffi.Void> user_data);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when an associated text input UI control requests the position and size from the input panel.
 ///
@@ -5265,14 +5290,11 @@ typedef Dartime_geometry_requested_cbFunction = void Function(
 typedef ime_process_key_event_cb
     = ffi.Pointer<ffi.NativeFunction<ime_process_key_event_cbFunction>>;
 /// @nodoc
-typedef ime_process_key_event_cbFunction = ffi.Bool Function(
-    ffi.Int32 key_code,
-    ffi.Int32 key_mask,
-    ime_device_info_h dev_info,
-    ffi.Pointer<ffi.Void> user_data);
+typedef ime_process_key_event_cbFunction = ffi.Int Function(
+    ffi.Int32, ffi.Int32, ime_device_info_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartime_process_key_event_cbFunction = bool Function(int key_code,
-    int key_mask, ime_device_info_h dev_info, ffi.Pointer<ffi.Void> user_data);
+typedef Dartime_process_key_event_cbFunction = int Function(
+    int, int, ime_device_info_h, ffi.Pointer<ffi.Void>);
 
 /// Handle of the device information of the key event.
 ///
@@ -5333,19 +5355,15 @@ typedef ime_device_info_h = ffi.Pointer<_ime_device_info>;
 typedef ime_process_key_event_with_keycode_cb = ffi
     .Pointer<ffi.NativeFunction<ime_process_key_event_with_keycode_cbFunction>>;
 /// @nodoc
-typedef ime_process_key_event_with_keycode_cbFunction = ffi.Bool Function(
-    ffi.UnsignedInt key_code,
-    ffi.Int32 key_sym,
-    ffi.Int32 key_mask,
-    ime_device_info_h dev_info,
-    ffi.Pointer<ffi.Void> user_data);
+typedef ime_process_key_event_with_keycode_cbFunction = ffi.Int Function(
+    ffi.UnsignedInt,
+    ffi.Int32,
+    ffi.Int32,
+    ime_device_info_h,
+    ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartime_process_key_event_with_keycode_cbFunction = bool Function(
-    int key_code,
-    int key_sym,
-    int key_mask,
-    ime_device_info_h dev_info,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartime_process_key_event_with_keycode_cbFunction = int Function(
+    int, int, int, ime_device_info_h, ffi.Pointer<ffi.Void>);
 
 /// Called when the system display language is changed.
 ///
@@ -5432,10 +5450,10 @@ typedef ime_accessibility_state_changed_cb = ffi
     .Pointer<ffi.NativeFunction<ime_accessibility_state_changed_cbFunction>>;
 /// @nodoc
 typedef ime_accessibility_state_changed_cbFunction = ffi.Void Function(
-    ffi.Bool state, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> state, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartime_accessibility_state_changed_cbFunction = void Function(
-    bool state, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> state, ffi.Pointer<ffi.Void> user_data);
 
 /// Called to create the option window.
 ///

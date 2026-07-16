@@ -229,7 +229,7 @@ class Tizen90CapiNetworkHttp {
   /// - `http_session_get_auto_redirection()`
   int http_session_set_auto_redirection(
     http_session_h http_session,
-    bool auto_redirection,
+    ffi.Pointer<bool> auto_redirection,
   ) {
     return _http_session_set_auto_redirection(
       http_session,
@@ -237,12 +237,13 @@ class Tizen90CapiNetworkHttp {
     );
   }
 
-  late final _http_session_set_auto_redirectionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(http_session_h, ffi.Bool)>>(
-          'http_session_set_auto_redirection');
+  late final _http_session_set_auto_redirectionPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Int Function(http_session_h, ffi.Pointer<bool>)>>(
+      'http_session_set_auto_redirection');
   late final _http_session_set_auto_redirection =
       _http_session_set_auto_redirectionPtr
-          .asFunction<int Function(http_session_h, bool)>();
+          .asFunction<int Function(http_session_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -268,7 +269,7 @@ class Tizen90CapiNetworkHttp {
   /// - `http_session_set_auto_redirection()`
   int http_session_get_auto_redirection(
     http_session_h http_session,
-    ffi.Pointer<ffi.Bool> auto_redirect,
+    ffi.Pointer<bool> auto_redirect,
   ) {
     return _http_session_get_auto_redirection(
       http_session,
@@ -277,12 +278,12 @@ class Tizen90CapiNetworkHttp {
   }
 
   late final _http_session_get_auto_redirectionPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(http_session_h,
-              ffi.Pointer<ffi.Bool>)>>('http_session_get_auto_redirection');
+          ffi
+          .NativeFunction<ffi.Int Function(http_session_h, ffi.Pointer<bool>)>>(
+      'http_session_get_auto_redirection');
   late final _http_session_get_auto_redirection =
       _http_session_get_auto_redirectionPtr
-          .asFunction<int Function(http_session_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(http_session_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -921,7 +922,7 @@ class Tizen90CapiNetworkHttp {
   /// - `HTTP_ERROR_NOT_SUPPORTED`: Not Supported
   int http_transaction_set_ready_to_write(
     http_transaction_h http_transaction,
-    bool read_to_write,
+    ffi.Pointer<bool> read_to_write,
   ) {
     return _http_transaction_set_ready_to_write(
       http_transaction,
@@ -930,11 +931,12 @@ class Tizen90CapiNetworkHttp {
   }
 
   late final _http_transaction_set_ready_to_writePtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(http_transaction_h, ffi.Bool)>>(
-      'http_transaction_set_ready_to_write');
+      ffi.NativeFunction<
+          ffi.Int Function(http_transaction_h,
+              ffi.Pointer<bool>)>>('http_transaction_set_ready_to_write');
   late final _http_transaction_set_ready_to_write =
       _http_transaction_set_ready_to_writePtr
-          .asFunction<int Function(http_transaction_h, bool)>();
+          .asFunction<int Function(http_transaction_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -1038,7 +1040,7 @@ class Tizen90CapiNetworkHttp {
   /// - `HTTP_ERROR_NOT_SUPPORTED`: Not Supported
   int http_transaction_set_server_certificate_verification(
     http_transaction_h http_transaction,
-    bool verify,
+    ffi.Pointer<bool> verify,
   ) {
     return _http_transaction_set_server_certificate_verification(
       http_transaction,
@@ -1047,11 +1049,12 @@ class Tizen90CapiNetworkHttp {
   }
 
   late final _http_transaction_set_server_certificate_verificationPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(http_transaction_h, ffi.Bool)>>(
+          ffi.NativeFunction<
+              ffi.Int Function(http_transaction_h, ffi.Pointer<bool>)>>(
       'http_transaction_set_server_certificate_verification');
   late final _http_transaction_set_server_certificate_verification =
       _http_transaction_set_server_certificate_verificationPtr
-          .asFunction<int Function(http_transaction_h, bool)>();
+          .asFunction<int Function(http_transaction_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -1074,7 +1077,7 @@ class Tizen90CapiNetworkHttp {
   /// - `HTTP_ERROR_NOT_SUPPORTED`: Not Supported
   int http_transaction_get_server_certificate_verification(
     http_transaction_h http_transaction,
-    ffi.Pointer<ffi.Bool> verify,
+    ffi.Pointer<bool> verify,
   ) {
     return _http_transaction_get_server_certificate_verification(
       http_transaction,
@@ -1084,11 +1087,11 @@ class Tizen90CapiNetworkHttp {
 
   late final _http_transaction_get_server_certificate_verificationPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(http_transaction_h, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(http_transaction_h, ffi.Pointer<bool>)>>(
       'http_transaction_get_server_certificate_verification');
   late final _http_transaction_get_server_certificate_verification =
-      _http_transaction_get_server_certificate_verificationPtr.asFunction<
-          int Function(http_transaction_h, ffi.Pointer<ffi.Bool>)>();
+      _http_transaction_get_server_certificate_verificationPtr
+          .asFunction<int Function(http_transaction_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -1115,7 +1118,7 @@ class Tizen90CapiNetworkHttp {
   /// - `HTTP_ERROR_NOT_SUPPORTED`: Not Supported
   int http_transaction_set_tcp_fastopen(
     http_transaction_h http_transaction,
-    bool enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _http_transaction_set_tcp_fastopen(
       http_transaction,
@@ -1124,11 +1127,12 @@ class Tizen90CapiNetworkHttp {
   }
 
   late final _http_transaction_set_tcp_fastopenPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(http_transaction_h, ffi.Bool)>>(
-      'http_transaction_set_tcp_fastopen');
+      ffi.NativeFunction<
+          ffi.Int Function(http_transaction_h,
+              ffi.Pointer<bool>)>>('http_transaction_set_tcp_fastopen');
   late final _http_transaction_set_tcp_fastopen =
       _http_transaction_set_tcp_fastopenPtr
-          .asFunction<int Function(http_transaction_h, bool)>();
+          .asFunction<int Function(http_transaction_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -1155,7 +1159,7 @@ class Tizen90CapiNetworkHttp {
   /// - `HTTP_ERROR_NOT_SUPPORTED`: Not Supported
   int http_transaction_get_tcp_fastopen(
     http_transaction_h http_transaction,
-    ffi.Pointer<ffi.Bool> enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _http_transaction_get_tcp_fastopen(
       http_transaction,
@@ -1166,10 +1170,10 @@ class Tizen90CapiNetworkHttp {
   late final _http_transaction_get_tcp_fastopenPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(http_transaction_h,
-              ffi.Pointer<ffi.Bool>)>>('http_transaction_get_tcp_fastopen');
+              ffi.Pointer<bool>)>>('http_transaction_get_tcp_fastopen');
   late final _http_transaction_get_tcp_fastopen =
-      _http_transaction_get_tcp_fastopenPtr.asFunction<
-          int Function(http_transaction_h, ffi.Pointer<ffi.Bool>)>();
+      _http_transaction_get_tcp_fastopenPtr
+          .asFunction<int Function(http_transaction_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 9.0
   ///
@@ -2451,6 +2455,29 @@ typedef http_session_h = ffi.Pointer<ffi.Void>;
 /// - 3.0
 /// @nodoc
 typedef http_transaction_h = ffi.Pointer<ffi.Void>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 9.0
 ///

@@ -310,7 +310,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_is_activated(
     wifi_manager_h wifi,
-    ffi.Pointer<ffi.Bool> activated,
+    ffi.Pointer<bool> activated,
   ) {
     return _wifi_manager_is_activated(
       wifi,
@@ -319,11 +319,11 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_is_activatedPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(wifi_manager_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_is_activated');
+          ffi
+          .NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Pointer<bool>)>>(
+      'wifi_manager_is_activated');
   late final _wifi_manager_is_activated = _wifi_manager_is_activatedPtr
-      .asFunction<int Function(wifi_manager_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(wifi_manager_h, ffi.Pointer<bool>)>();
 
   /// Gets the local MAC address.
   ///
@@ -3063,7 +3063,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_ap_is_favorite(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> favorite,
+    ffi.Pointer<bool> favorite,
   ) {
     return _wifi_manager_ap_is_favorite(
       ap,
@@ -3074,9 +3074,9 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_favoritePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(wifi_manager_ap_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_is_favorite');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_favorite');
   late final _wifi_manager_ap_is_favorite = _wifi_manager_ap_is_favoritePtr
-      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the access point is passpoint or not.
   ///
@@ -3098,7 +3098,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_ap_is_passpoint(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> passpoint,
+    ffi.Pointer<bool> passpoint,
   ) {
     return _wifi_manager_ap_is_passpoint(
       ap,
@@ -3109,9 +3109,9 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_passpointPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(wifi_manager_ap_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_is_passpoint');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_passpoint');
   late final _wifi_manager_ap_is_passpoint = _wifi_manager_ap_is_passpointPtr
-      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Checks whether the access point is hidden or not.
   ///
@@ -3133,7 +3133,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_ap_is_hidden(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> is_hidden,
+    ffi.Pointer<bool> is_hidden,
   ) {
     return _wifi_manager_ap_is_hidden(
       ap,
@@ -3144,9 +3144,9 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_hiddenPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(wifi_manager_ap_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_is_hidden');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_hidden');
   late final _wifi_manager_ap_is_hidden = _wifi_manager_ap_is_hiddenPtr
-      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Gets the connection state.
   ///
@@ -4378,7 +4378,7 @@ class Tizen90CapiNetworkWifiManager {
   int wifi_manager_ap_is_security_type_supported(
     wifi_manager_ap_h ap,
     int type,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _wifi_manager_ap_is_security_type_supported(
       ap,
@@ -4390,11 +4390,11 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_security_type_supportedPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(
-                  wifi_manager_ap_h, ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
+                  wifi_manager_ap_h, ffi.Int32, ffi.Pointer<bool>)>>(
       'wifi_manager_ap_is_security_type_supported');
   late final _wifi_manager_ap_is_security_type_supported =
       _wifi_manager_ap_is_security_type_supportedPtr.asFunction<
-          int Function(wifi_manager_ap_h, int, ffi.Pointer<ffi.Bool>)>();
+          int Function(wifi_manager_ap_h, int, ffi.Pointer<bool>)>();
 
   /// Sets the Wi-Fi security mode.
   ///
@@ -4525,7 +4525,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_ap_is_passphrase_required(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> required1,
+    ffi.Pointer<bool> required1,
   ) {
     return _wifi_manager_ap_is_passphrase_required(
       ap,
@@ -4534,12 +4534,12 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_ap_is_passphrase_requiredPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>>(
-      'wifi_manager_ap_is_passphrase_required');
+      ffi.NativeFunction<
+          ffi.Int Function(wifi_manager_ap_h,
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_passphrase_required');
   late final _wifi_manager_ap_is_passphrase_required =
       _wifi_manager_ap_is_passphrase_requiredPtr
-          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Sets the passphrase.
   ///
@@ -4601,7 +4601,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `wifi_manager_connect_by_wps_pin()`
   int wifi_manager_ap_is_wps_supported(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _wifi_manager_ap_is_wps_supported(
       ap,
@@ -4612,10 +4612,10 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_wps_supportedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(wifi_manager_ap_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_is_wps_supported');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_wps_supported');
   late final _wifi_manager_ap_is_wps_supported =
       _wifi_manager_ap_is_wps_supportedPtr
-          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Checks whether Protected Management Frame is required.
   ///
@@ -4635,7 +4635,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_INVALID_PARAMETER`: Invalid parameter
   int wifi_manager_ap_is_pmf_required(
     wifi_manager_ap_h ap,
-    ffi.Pointer<ffi.Bool> required1,
+    ffi.Pointer<bool> required1,
   ) {
     return _wifi_manager_ap_is_pmf_required(
       ap,
@@ -4646,10 +4646,10 @@ class Tizen90CapiNetworkWifiManager {
   late final _wifi_manager_ap_is_pmf_requiredPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(wifi_manager_ap_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_is_pmf_required');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_is_pmf_required');
   late final _wifi_manager_ap_is_pmf_required =
       _wifi_manager_ap_is_pmf_requiredPtr
-          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_ap_h, ffi.Pointer<bool>)>();
 
   /// Sets the passphrase of EAP.
   ///
@@ -4723,7 +4723,7 @@ class Tizen90CapiNetworkWifiManager {
   int wifi_manager_ap_get_eap_passphrase(
     wifi_manager_ap_h ap,
     ffi.Pointer<ffi.Pointer<ffi.Char>> user_name,
-    ffi.Pointer<ffi.Bool> is_password_set,
+    ffi.Pointer<bool> is_password_set,
   ) {
     return _wifi_manager_ap_get_eap_passphrase(
       ap,
@@ -4737,11 +4737,11 @@ class Tizen90CapiNetworkWifiManager {
           ffi.Int Function(
               wifi_manager_ap_h,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_ap_get_eap_passphrase');
+              ffi.Pointer<bool>)>>('wifi_manager_ap_get_eap_passphrase');
   late final _wifi_manager_ap_get_eap_passphrase =
       _wifi_manager_ap_get_eap_passphrasePtr.asFunction<
           int Function(wifi_manager_ap_h, ffi.Pointer<ffi.Pointer<ffi.Char>>,
-              ffi.Pointer<ffi.Bool>)>();
+              ffi.Pointer<bool>)>();
 
   /// Sets access point anonymous identity.
   ///
@@ -5695,7 +5695,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `wifi_manager_config_save()`
   int wifi_manager_config_set_hidden_ap_property(
     wifi_manager_config_h config,
-    bool is_hidden,
+    ffi.Pointer<bool> is_hidden,
   ) {
     return _wifi_manager_config_set_hidden_ap_property(
       config,
@@ -5704,12 +5704,12 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_config_set_hidden_ap_propertyPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(wifi_manager_config_h, ffi.Bool)>>(
+          ffi.NativeFunction<
+              ffi.Int Function(wifi_manager_config_h, ffi.Pointer<bool>)>>(
       'wifi_manager_config_set_hidden_ap_property');
   late final _wifi_manager_config_set_hidden_ap_property =
       _wifi_manager_config_set_hidden_ap_propertyPtr
-          .asFunction<int Function(wifi_manager_config_h, bool)>();
+          .asFunction<int Function(wifi_manager_config_h, ffi.Pointer<bool>)>();
 
   /// Gets the hidden property of access point from the configuration.
   ///
@@ -5731,7 +5731,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_config_get_hidden_ap_property(
     wifi_manager_config_h config,
-    ffi.Pointer<ffi.Bool> is_hidden,
+    ffi.Pointer<bool> is_hidden,
   ) {
     return _wifi_manager_config_get_hidden_ap_property(
       config,
@@ -5741,11 +5741,11 @@ class Tizen90CapiNetworkWifiManager {
 
   late final _wifi_manager_config_get_hidden_ap_propertyPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(wifi_manager_config_h, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(wifi_manager_config_h, ffi.Pointer<bool>)>>(
       'wifi_manager_config_get_hidden_ap_property');
   late final _wifi_manager_config_get_hidden_ap_property =
-      _wifi_manager_config_get_hidden_ap_propertyPtr.asFunction<
-          int Function(wifi_manager_config_h, ffi.Pointer<ffi.Bool>)>();
+      _wifi_manager_config_get_hidden_ap_propertyPtr
+          .asFunction<int Function(wifi_manager_config_h, ffi.Pointer<bool>)>();
 
   /// Gets access point IP config type from configuration.
   ///
@@ -7488,7 +7488,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_set_ip_conflict_detect_enable(
     wifi_manager_h wifi,
-    bool detect,
+    ffi.Pointer<bool> detect,
   ) {
     return _wifi_manager_set_ip_conflict_detect_enable(
       wifi,
@@ -7496,12 +7496,13 @@ class Tizen90CapiNetworkWifiManager {
     );
   }
 
-  late final _wifi_manager_set_ip_conflict_detect_enablePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Bool)>>(
-          'wifi_manager_set_ip_conflict_detect_enable');
+  late final _wifi_manager_set_ip_conflict_detect_enablePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Pointer<bool>)>>(
+      'wifi_manager_set_ip_conflict_detect_enable');
   late final _wifi_manager_set_ip_conflict_detect_enable =
       _wifi_manager_set_ip_conflict_detect_enablePtr
-          .asFunction<int Function(wifi_manager_h, bool)>();
+          .asFunction<int Function(wifi_manager_h, ffi.Pointer<bool>)>();
 
   /// Checks whether IP conflict detection is enabled.
   ///
@@ -7530,7 +7531,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_ip_conflict_detect_is_enabled(
     wifi_manager_h wifi,
-    ffi.Pointer<ffi.Bool> state,
+    ffi.Pointer<bool> state,
   ) {
     return _wifi_manager_ip_conflict_detect_is_enabled(
       wifi,
@@ -7539,12 +7540,12 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_ip_conflict_detect_is_enabledPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(wifi_manager_h, ffi.Pointer<ffi.Bool>)>>(
+          ffi
+          .NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Pointer<bool>)>>(
       'wifi_manager_ip_conflict_detect_is_enabled');
   late final _wifi_manager_ip_conflict_detect_is_enabled =
       _wifi_manager_ip_conflict_detect_is_enabledPtr
-          .asFunction<int Function(wifi_manager_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_h, ffi.Pointer<bool>)>();
 
   /// Gets the state of the IP conflict.
   ///
@@ -7616,7 +7617,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_is_5ghz_band_supported(
     wifi_manager_h wifi,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _wifi_manager_is_5ghz_band_supported(
       wifi,
@@ -7625,12 +7626,12 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_is_5ghz_band_supportedPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(wifi_manager_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_is_5ghz_band_supported');
+          ffi
+          .NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Pointer<bool>)>>(
+      'wifi_manager_is_5ghz_band_supported');
   late final _wifi_manager_is_5ghz_band_supported =
       _wifi_manager_is_5ghz_band_supportedPtr
-          .asFunction<int Function(wifi_manager_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_h, ffi.Pointer<bool>)>();
 
   /// Gets whether 6Ghz Wi-Fi band is supported.
   ///
@@ -7659,7 +7660,7 @@ class Tizen90CapiNetworkWifiManager {
   /// - `WIFI_MANAGER_ERROR_NOT_SUPPORTED`: Not supported
   int wifi_manager_is_6ghz_band_supported(
     wifi_manager_h wifi,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _wifi_manager_is_6ghz_band_supported(
       wifi,
@@ -7668,12 +7669,12 @@ class Tizen90CapiNetworkWifiManager {
   }
 
   late final _wifi_manager_is_6ghz_band_supportedPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(wifi_manager_h,
-              ffi.Pointer<ffi.Bool>)>>('wifi_manager_is_6ghz_band_supported');
+          ffi
+          .NativeFunction<ffi.Int Function(wifi_manager_h, ffi.Pointer<bool>)>>(
+      'wifi_manager_is_6ghz_band_supported');
   late final _wifi_manager_is_6ghz_band_supported =
       _wifi_manager_is_6ghz_band_supportedPtr
-          .asFunction<int Function(wifi_manager_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(wifi_manager_h, ffi.Pointer<bool>)>();
 }
 
 /// Enumeration for the Wi-Fi error type.
@@ -8360,6 +8361,29 @@ typedef wifi_manager_deactivated_cbFunction = ffi.Void Function(
 typedef Dartwifi_manager_deactivated_cbFunction = void Function(
     int result, ffi.Pointer<ffi.Void> user_data);
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// Called when the scan is finished.
 ///
 /// The following error codes can be received: `WIFI_MANAGER_ERROR_NONE` Successful `WIFI_MANAGER_ERROR_OPERATION_FAILED` Operation failed
@@ -8462,11 +8486,11 @@ typedef wifi_manager_ap_h = ffi.Pointer<ffi.Void>;
 typedef wifi_manager_found_ap_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_manager_found_ap_cbFunction>>;
 /// @nodoc
-typedef wifi_manager_found_ap_cbFunction = ffi.Bool Function(
-    wifi_manager_ap_h ap, ffi.Pointer<ffi.Void> user_data);
+typedef wifi_manager_found_ap_cbFunction = ffi.Int Function(
+    wifi_manager_ap_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_manager_found_ap_cbFunction = bool Function(
-    wifi_manager_ap_h ap, ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_manager_found_ap_cbFunction = int Function(
+    wifi_manager_ap_h, ffi.Pointer<ffi.Void>);
 
 /// Called after wifi_manager_disconnect() is completed.
 ///
@@ -8683,11 +8707,11 @@ typedef Dartwifi_manager_bssid_scan_finished_cbFunction = void Function(
 typedef wifi_manager_ap_ipv6_address_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_manager_ap_ipv6_address_cbFunction>>;
 /// @nodoc
-typedef wifi_manager_ap_ipv6_address_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> ipv6_address, ffi.Pointer<ffi.Void> user_data);
+typedef wifi_manager_ap_ipv6_address_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_manager_ap_ipv6_address_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> ipv6_address, ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_manager_ap_ipv6_address_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called with VSIE data and length of VSIE.
 ///
@@ -8716,15 +8740,11 @@ typedef Dartwifi_manager_ap_ipv6_address_cbFunction = bool Function(
 typedef wifi_manager_ap_vsie_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_manager_ap_vsie_cbFunction>>;
 /// @nodoc
-typedef wifi_manager_ap_vsie_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.UnsignedChar> vsie,
-    ffi.Int length,
-    ffi.Pointer<ffi.Void> user_data);
+typedef wifi_manager_ap_vsie_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.UnsignedChar>, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_manager_ap_vsie_cbFunction = bool Function(
-    ffi.Pointer<ffi.UnsignedChar> vsie,
-    int length,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_manager_ap_vsie_cbFunction = int Function(
+    ffi.Pointer<ffi.UnsignedChar>, int, ffi.Pointer<ffi.Void>);
 
 /// Called for each found BSSID.
 ///
@@ -8751,17 +8771,11 @@ typedef Dartwifi_manager_ap_vsie_cbFunction = bool Function(
 typedef wifi_manager_found_bssid_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_manager_found_bssid_cbFunction>>;
 /// @nodoc
-typedef wifi_manager_found_bssid_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> bssid,
-    ffi.Int rssi,
-    ffi.Int freq,
-    ffi.Pointer<ffi.Void> user_data);
+typedef wifi_manager_found_bssid_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_manager_found_bssid_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> bssid,
-    int rssi,
-    int freq,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_manager_found_bssid_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, int, int, ffi.Pointer<ffi.Void>);
 
 /// The Wi-Fi access point configuration handle.
 ///
@@ -8794,11 +8808,11 @@ typedef wifi_manager_config_h = ffi.Pointer<ffi.Void>;
 typedef wifi_manager_config_list_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_manager_config_list_cbFunction>>;
 /// @nodoc
-typedef wifi_manager_config_list_cbFunction = ffi.Bool Function(
-    wifi_manager_config_h config, ffi.Pointer<ffi.Void> user_data);
+typedef wifi_manager_config_list_cbFunction = ffi.Int Function(
+    wifi_manager_config_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_manager_config_list_cbFunction = bool Function(
-    wifi_manager_config_h config, ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_manager_config_list_cbFunction = int Function(
+    wifi_manager_config_h, ffi.Pointer<ffi.Void>);
 
 /// Called when the Wi-Fi TDLS is discovered.
 ///

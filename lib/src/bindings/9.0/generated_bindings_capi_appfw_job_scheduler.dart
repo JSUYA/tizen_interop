@@ -162,7 +162,7 @@ class Tizen90CapiAppfwJobScheduler {
   /// - `job_scheduler_schedule()`
   int job_info_set_persistent(
     job_info_h job_info,
-    bool persistent,
+    ffi.Pointer<bool> persistent,
   ) {
     return _job_info_set_persistent(
       job_info,
@@ -170,11 +170,11 @@ class Tizen90CapiAppfwJobScheduler {
     );
   }
 
-  late final _job_info_set_persistentPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Bool)>>(
-          'job_info_set_persistent');
-  late final _job_info_set_persistent =
-      _job_info_set_persistentPtr.asFunction<int Function(job_info_h, bool)>();
+  late final _job_info_set_persistentPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Pointer<bool>)>>(
+      'job_info_set_persistent');
+  late final _job_info_set_persistent = _job_info_set_persistentPtr
+      .asFunction<int Function(job_info_h, ffi.Pointer<bool>)>();
 
   /// Sets the job not to be repeated.
   ///
@@ -201,7 +201,7 @@ class Tizen90CapiAppfwJobScheduler {
   /// - `job_scheduler_schedule()`
   int job_info_set_once(
     job_info_h job_info,
-    bool once,
+    ffi.Pointer<bool> once,
   ) {
     return _job_info_set_once(
       job_info,
@@ -209,11 +209,11 @@ class Tizen90CapiAppfwJobScheduler {
     );
   }
 
-  late final _job_info_set_oncePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Bool)>>(
-          'job_info_set_once');
-  late final _job_info_set_once =
-      _job_info_set_oncePtr.asFunction<int Function(job_info_h, bool)>();
+  late final _job_info_set_oncePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Pointer<bool>)>>(
+      'job_info_set_once');
+  late final _job_info_set_once = _job_info_set_oncePtr
+      .asFunction<int Function(job_info_h, ffi.Pointer<bool>)>();
 
   /// Sets the timeout interval of the requirements.
   ///
@@ -277,7 +277,7 @@ class Tizen90CapiAppfwJobScheduler {
   /// - `job_scheduler_init()`
   int job_info_set_requires_battery_not_low(
     job_info_h job_info,
-    bool battery_not_low,
+    ffi.Pointer<bool> battery_not_low,
   ) {
     return _job_info_set_requires_battery_not_low(
       job_info,
@@ -285,12 +285,12 @@ class Tizen90CapiAppfwJobScheduler {
     );
   }
 
-  late final _job_info_set_requires_battery_not_lowPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Bool)>>(
-          'job_info_set_requires_battery_not_low');
+  late final _job_info_set_requires_battery_not_lowPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Pointer<bool>)>>(
+      'job_info_set_requires_battery_not_low');
   late final _job_info_set_requires_battery_not_low =
       _job_info_set_requires_battery_not_lowPtr
-          .asFunction<int Function(job_info_h, bool)>();
+          .asFunction<int Function(job_info_h, ffi.Pointer<bool>)>();
 
   /// Sets that the battery must be charging to run the job.
   ///
@@ -318,7 +318,7 @@ class Tizen90CapiAppfwJobScheduler {
   /// - `job_scheduler_init()`
   int job_info_set_requires_charging(
     job_info_h job_info,
-    bool charging,
+    ffi.Pointer<bool> charging,
   ) {
     return _job_info_set_requires_charging(
       job_info,
@@ -326,12 +326,12 @@ class Tizen90CapiAppfwJobScheduler {
     );
   }
 
-  late final _job_info_set_requires_chargingPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Bool)>>(
-          'job_info_set_requires_charging');
+  late final _job_info_set_requires_chargingPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Pointer<bool>)>>(
+      'job_info_set_requires_charging');
   late final _job_info_set_requires_charging =
       _job_info_set_requires_chargingPtr
-          .asFunction<int Function(job_info_h, bool)>();
+          .asFunction<int Function(job_info_h, ffi.Pointer<bool>)>();
 
   /// Sets that the WiFi must be connected to run the job.
   ///
@@ -366,7 +366,7 @@ class Tizen90CapiAppfwJobScheduler {
   /// - `job_scheduler_init()`
   int job_info_set_requires_wifi_connection(
     job_info_h job_info,
-    bool wifi_connection,
+    ffi.Pointer<bool> wifi_connection,
   ) {
     return _job_info_set_requires_wifi_connection(
       job_info,
@@ -374,12 +374,12 @@ class Tizen90CapiAppfwJobScheduler {
     );
   }
 
-  late final _job_info_set_requires_wifi_connectionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Bool)>>(
-          'job_info_set_requires_wifi_connection');
+  late final _job_info_set_requires_wifi_connectionPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(job_info_h, ffi.Pointer<bool>)>>(
+      'job_info_set_requires_wifi_connection');
   late final _job_info_set_requires_wifi_connection =
       _job_info_set_requires_wifi_connectionPtr
-          .asFunction<int Function(job_info_h, bool)>();
+          .asFunction<int Function(job_info_h, ffi.Pointer<bool>)>();
 
   /// Adds the trigger event to the job info handle.
   ///
@@ -1011,6 +1011,29 @@ final class job_info_s extends ffi.Opaque {}
 /// @nodoc
 typedef job_info_h = ffi.Pointer<job_info_s>;
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// @nodoc
 final class job_service_s extends ffi.Opaque {}
 
@@ -1110,11 +1133,11 @@ typedef Dartjob_service_stop_cbFunction = void Function(
 typedef job_scheduler_foreach_job_cb
     = ffi.Pointer<ffi.NativeFunction<job_scheduler_foreach_job_cbFunction>>;
 /// @nodoc
-typedef job_scheduler_foreach_job_cbFunction = ffi.Bool Function(
-    job_info_h job_info, ffi.Pointer<ffi.Void> user_data);
+typedef job_scheduler_foreach_job_cbFunction = ffi.Int Function(
+    job_info_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartjob_scheduler_foreach_job_cbFunction = bool Function(
-    job_info_h job_info, ffi.Pointer<ffi.Void> user_data);
+typedef Dartjob_scheduler_foreach_job_cbFunction = int Function(
+    job_info_h, ffi.Pointer<ffi.Void>);
 
 /// The job service handle.
 ///

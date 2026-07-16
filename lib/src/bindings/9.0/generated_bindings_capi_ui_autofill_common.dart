@@ -345,7 +345,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_item_set_sensitive_data(
     autofill_item_h it,
-    bool sensitive,
+    ffi.Pointer<bool> sensitive,
   ) {
     return _autofill_item_set_sensitive_data(
       it,
@@ -353,12 +353,13 @@ class Tizen90CapiUiAutofillCommon {
     );
   }
 
-  late final _autofill_item_set_sensitive_dataPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(autofill_item_h, ffi.Bool)>>(
-          'autofill_item_set_sensitive_data');
+  late final _autofill_item_set_sensitive_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(autofill_item_h,
+              ffi.Pointer<bool>)>>('autofill_item_set_sensitive_data');
   late final _autofill_item_set_sensitive_data =
       _autofill_item_set_sensitive_dataPtr
-          .asFunction<int Function(autofill_item_h, bool)>();
+          .asFunction<int Function(autofill_item_h, ffi.Pointer<bool>)>();
 
   /// Gets the sensitive data from an autofill item.
   ///
@@ -377,7 +378,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_item_get_sensitive_data(
     autofill_item_h it,
-    ffi.Pointer<ffi.Bool> sensitive,
+    ffi.Pointer<bool> sensitive,
   ) {
     return _autofill_item_get_sensitive_data(
       it,
@@ -388,10 +389,10 @@ class Tizen90CapiUiAutofillCommon {
   late final _autofill_item_get_sensitive_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(autofill_item_h,
-              ffi.Pointer<ffi.Bool>)>>('autofill_item_get_sensitive_data');
+              ffi.Pointer<bool>)>>('autofill_item_get_sensitive_data');
   late final _autofill_item_get_sensitive_data =
       _autofill_item_get_sensitive_dataPtr
-          .asFunction<int Function(autofill_item_h, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(autofill_item_h, ffi.Pointer<bool>)>();
 
   /// Sets the autofill value in an autofill item.
   ///
@@ -682,7 +683,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_auth_info_set_autofill_data_present(
     autofill_auth_info_h ai,
-    bool autofill_data_present,
+    ffi.Pointer<bool> autofill_data_present,
   ) {
     return _autofill_auth_info_set_autofill_data_present(
       ai,
@@ -691,11 +692,12 @@ class Tizen90CapiUiAutofillCommon {
   }
 
   late final _autofill_auth_info_set_autofill_data_presentPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(autofill_auth_info_h, ffi.Bool)>>(
+          ffi.NativeFunction<
+              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<bool>)>>(
       'autofill_auth_info_set_autofill_data_present');
   late final _autofill_auth_info_set_autofill_data_present =
       _autofill_auth_info_set_autofill_data_presentPtr
-          .asFunction<int Function(autofill_auth_info_h, bool)>();
+          .asFunction<int Function(autofill_auth_info_h, ffi.Pointer<bool>)>();
 
   /// Gets the 'autofill data present' attribute from autofill authentication information.
   ///
@@ -714,7 +716,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_auth_info_get_autofill_data_present(
     autofill_auth_info_h ai,
-    ffi.Pointer<ffi.Bool> autofill_data_present,
+    ffi.Pointer<bool> autofill_data_present,
   ) {
     return _autofill_auth_info_get_autofill_data_present(
       ai,
@@ -724,11 +726,11 @@ class Tizen90CapiUiAutofillCommon {
 
   late final _autofill_auth_info_get_autofill_data_presentPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<bool>)>>(
       'autofill_auth_info_get_autofill_data_present');
   late final _autofill_auth_info_get_autofill_data_present =
-      _autofill_auth_info_get_autofill_data_presentPtr.asFunction<
-          int Function(autofill_auth_info_h, ffi.Pointer<ffi.Bool>)>();
+      _autofill_auth_info_get_autofill_data_presentPtr
+          .asFunction<int Function(autofill_auth_info_h, ffi.Pointer<bool>)>();
 
   /// Sets the 'authentication needed' attribute in autofill authentication information.
   ///
@@ -747,7 +749,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_auth_info_set_authentication_needed(
     autofill_auth_info_h ai,
-    bool authentication_needed,
+    ffi.Pointer<bool> authentication_needed,
   ) {
     return _autofill_auth_info_set_authentication_needed(
       ai,
@@ -756,11 +758,12 @@ class Tizen90CapiUiAutofillCommon {
   }
 
   late final _autofill_auth_info_set_authentication_neededPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(autofill_auth_info_h, ffi.Bool)>>(
+          ffi.NativeFunction<
+              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<bool>)>>(
       'autofill_auth_info_set_authentication_needed');
   late final _autofill_auth_info_set_authentication_needed =
       _autofill_auth_info_set_authentication_neededPtr
-          .asFunction<int Function(autofill_auth_info_h, bool)>();
+          .asFunction<int Function(autofill_auth_info_h, ffi.Pointer<bool>)>();
 
   /// Gets the 'authentication needed' attribute from autofill authentication information.
   ///
@@ -779,7 +782,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_auth_info_get_authentication_needed(
     autofill_auth_info_h ai,
-    ffi.Pointer<ffi.Bool> authentication_needed,
+    ffi.Pointer<bool> authentication_needed,
   ) {
     return _autofill_auth_info_get_authentication_needed(
       ai,
@@ -789,11 +792,11 @@ class Tizen90CapiUiAutofillCommon {
 
   late final _autofill_auth_info_get_authentication_neededPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<ffi.Bool>)>>(
+              ffi.Int Function(autofill_auth_info_h, ffi.Pointer<bool>)>>(
       'autofill_auth_info_get_authentication_needed');
   late final _autofill_auth_info_get_authentication_needed =
-      _autofill_auth_info_get_authentication_neededPtr.asFunction<
-          int Function(autofill_auth_info_h, ffi.Pointer<ffi.Bool>)>();
+      _autofill_auth_info_get_authentication_neededPtr
+          .asFunction<int Function(autofill_auth_info_h, ffi.Pointer<bool>)>();
 
   /// Sets the service name in autofill authentication information.
   ///
@@ -2828,7 +2831,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_save_item_set_sensitive_data(
     autofill_save_item_h it,
-    bool sensitive,
+    ffi.Pointer<bool> sensitive,
   ) {
     return _autofill_save_item_set_sensitive_data(
       it,
@@ -2837,11 +2840,12 @@ class Tizen90CapiUiAutofillCommon {
   }
 
   late final _autofill_save_item_set_sensitive_dataPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(autofill_save_item_h, ffi.Bool)>>(
-      'autofill_save_item_set_sensitive_data');
+      ffi.NativeFunction<
+          ffi.Int Function(autofill_save_item_h,
+              ffi.Pointer<bool>)>>('autofill_save_item_set_sensitive_data');
   late final _autofill_save_item_set_sensitive_data =
       _autofill_save_item_set_sensitive_dataPtr
-          .asFunction<int Function(autofill_save_item_h, bool)>();
+          .asFunction<int Function(autofill_save_item_h, ffi.Pointer<bool>)>();
 
   /// Gets the sensitive data from an autofill save item.
   ///
@@ -2860,7 +2864,7 @@ class Tizen90CapiUiAutofillCommon {
   /// - `AUTOFILL_ERROR_INVALID_PARAMETER`: Invalid parameter
   int autofill_save_item_get_sensitive_data(
     autofill_save_item_h it,
-    ffi.Pointer<ffi.Bool> sensitive,
+    ffi.Pointer<bool> sensitive,
   ) {
     return _autofill_save_item_get_sensitive_data(
       it,
@@ -2871,10 +2875,10 @@ class Tizen90CapiUiAutofillCommon {
   late final _autofill_save_item_get_sensitive_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(autofill_save_item_h,
-              ffi.Pointer<ffi.Bool>)>>('autofill_save_item_get_sensitive_data');
+              ffi.Pointer<bool>)>>('autofill_save_item_get_sensitive_data');
   late final _autofill_save_item_get_sensitive_data =
-      _autofill_save_item_get_sensitive_dataPtr.asFunction<
-          int Function(autofill_save_item_h, ffi.Pointer<ffi.Bool>)>();
+      _autofill_save_item_get_sensitive_dataPtr
+          .asFunction<int Function(autofill_save_item_h, ffi.Pointer<bool>)>();
 
   /// Sets the autofill value in an autofill save item.
   ///
@@ -3230,6 +3234,29 @@ final class autofill_error_info_s extends ffi.Opaque {}
 /// @nodoc
 typedef autofill_item_h = ffi.Pointer<autofill_item_s>;
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// The autofill authentication information handle.
 ///
 /// **Since Tizen:**
@@ -3268,11 +3295,11 @@ typedef autofill_view_info_h = ffi.Pointer<autofill_view_info_s>;
 typedef autofill_item_cb
     = ffi.Pointer<ffi.NativeFunction<autofill_item_cbFunction>>;
 /// @nodoc
-typedef autofill_item_cbFunction = ffi.Bool Function(
-    autofill_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef autofill_item_cbFunction = ffi.Int Function(
+    autofill_item_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartautofill_item_cbFunction = bool Function(
-    autofill_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef Dartautofill_item_cbFunction = int Function(
+    autofill_item_h, ffi.Pointer<ffi.Void>);
 
 /// The handle of the view having autofill entries.
 ///
@@ -3312,11 +3339,11 @@ typedef autofill_save_item_h = ffi.Pointer<autofill_save_item_s>;
 typedef autofill_save_item_cb
     = ffi.Pointer<ffi.NativeFunction<autofill_save_item_cbFunction>>;
 /// @nodoc
-typedef autofill_save_item_cbFunction = ffi.Bool Function(
-    autofill_save_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef autofill_save_item_cbFunction = ffi.Int Function(
+    autofill_save_item_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartautofill_save_item_cbFunction = bool Function(
-    autofill_save_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef Dartautofill_save_item_cbFunction = int Function(
+    autofill_save_item_h, ffi.Pointer<ffi.Void>);
 
 /// The handle for having a response of the requested autofill.
 ///
@@ -3357,11 +3384,11 @@ typedef autofill_fill_response_group_h
 typedef autofill_fill_response_group_cb
     = ffi.Pointer<ffi.NativeFunction<autofill_fill_response_group_cbFunction>>;
 /// @nodoc
-typedef autofill_fill_response_group_cbFunction = ffi.Bool Function(
-    autofill_fill_response_group_h item, ffi.Pointer<ffi.Void> user_data);
+typedef autofill_fill_response_group_cbFunction = ffi.Int Function(
+    autofill_fill_response_group_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartautofill_fill_response_group_cbFunction = bool Function(
-    autofill_fill_response_group_h item, ffi.Pointer<ffi.Void> user_data);
+typedef Dartautofill_fill_response_group_cbFunction = int Function(
+    autofill_fill_response_group_h, ffi.Pointer<ffi.Void>);
 
 /// The autofill fill response item handle.
 ///
@@ -3394,11 +3421,11 @@ typedef autofill_fill_response_item_h = ffi.Pointer<autofill_response_item_s>;
 typedef autofill_fill_response_item_cb
     = ffi.Pointer<ffi.NativeFunction<autofill_fill_response_item_cbFunction>>;
 /// @nodoc
-typedef autofill_fill_response_item_cbFunction = ffi.Bool Function(
-    autofill_fill_response_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef autofill_fill_response_item_cbFunction = ffi.Int Function(
+    autofill_fill_response_item_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartautofill_fill_response_item_cbFunction = bool Function(
-    autofill_fill_response_item_h item, ffi.Pointer<ffi.Void> user_data);
+typedef Dartautofill_fill_response_item_cbFunction = int Function(
+    autofill_fill_response_item_h, ffi.Pointer<ffi.Void>);
 
 /// The autofill error information handle.
 ///

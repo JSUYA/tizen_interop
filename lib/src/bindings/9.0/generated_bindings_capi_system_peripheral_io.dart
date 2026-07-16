@@ -1219,7 +1219,7 @@ class Tizen90CapiSystemPeripheralIo {
   /// - Platform API.
   int peripheral_pwm_set_enabled(
     peripheral_pwm_h pwm,
-    bool enabled,
+    ffi.Pointer<bool> enabled,
   ) {
     return _peripheral_pwm_set_enabled(
       pwm,
@@ -1227,11 +1227,12 @@ class Tizen90CapiSystemPeripheralIo {
     );
   }
 
-  late final _peripheral_pwm_set_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(peripheral_pwm_h, ffi.Bool)>>(
-          'peripheral_pwm_set_enabled');
+  late final _peripheral_pwm_set_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(peripheral_pwm_h,
+              ffi.Pointer<bool>)>>('peripheral_pwm_set_enabled');
   late final _peripheral_pwm_set_enabled = _peripheral_pwm_set_enabledPtr
-      .asFunction<int Function(peripheral_pwm_h, bool)>();
+      .asFunction<int Function(peripheral_pwm_h, ffi.Pointer<bool>)>();
 
   /// Opens the ADC pin and returns a handle representing it
   ///
@@ -2649,6 +2650,29 @@ abstract class peripheral_pwm_polarity_e {
 /// - 4.0
 /// @nodoc
 typedef peripheral_pwm_h = ffi.Pointer<_peripheral_pwm_s>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// @nodoc
 final class _peripheral_adc_s extends ffi.Opaque {}

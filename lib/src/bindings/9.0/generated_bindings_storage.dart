@@ -780,19 +780,11 @@ abstract class storage_state_e {
 typedef storage_device_supported_cb
     = ffi.Pointer<ffi.NativeFunction<storage_device_supported_cbFunction>>;
 /// @nodoc
-typedef storage_device_supported_cbFunction = ffi.Bool Function(
-    ffi.Int storage_id,
-    ffi.Int32 type,
-    ffi.Int32 state,
-    ffi.Pointer<ffi.Char> path,
-    ffi.Pointer<ffi.Void> user_data);
+typedef storage_device_supported_cbFunction = ffi.Int Function(ffi.Int,
+    ffi.Int32, ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstorage_device_supported_cbFunction = bool Function(
-    int storage_id,
-    int type,
-    int state,
-    ffi.Pointer<ffi.Char> path,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartstorage_device_supported_cbFunction = int Function(
+    int, int, int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Enumeration for the storage directory types.
 ///
@@ -932,7 +924,7 @@ typedef storage_changed_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> fstype,
     ffi.Pointer<ffi.Char> fsuuid,
     ffi.Pointer<ffi.Char> mountpath,
-    ffi.Bool primary,
+    ffi.Pointer<bool> primary,
     ffi.Int flags,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
@@ -943,9 +935,32 @@ typedef Dartstorage_changed_cbFunction = void Function(
     ffi.Pointer<ffi.Char> fstype,
     ffi.Pointer<ffi.Char> fsuuid,
     ffi.Pointer<ffi.Char> mountpath,
-    bool primary,
+    ffi.Pointer<bool> primary,
     int flags,
     ffi.Pointer<ffi.Void> user_data);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// @nodoc
 final class statvfs extends ffi.Struct {

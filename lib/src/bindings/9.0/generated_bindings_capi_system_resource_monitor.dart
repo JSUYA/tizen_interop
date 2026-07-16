@@ -471,7 +471,7 @@ class Tizen90CapiSystemResourceMonitor {
     int monitor_id,
     int resource_id,
     int attr_id,
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _resource_monitor_is_resource_attr_supported(
       monitor_id,
@@ -484,11 +484,11 @@ class Tizen90CapiSystemResourceMonitor {
   late final _resource_monitor_is_resource_attr_supportedPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(
-                  ffi.Int, ffi.Int, ffi.Int32, ffi.Pointer<ffi.Bool>)>>(
+                  ffi.Int, ffi.Int, ffi.Int32, ffi.Pointer<bool>)>>(
       'resource_monitor_is_resource_attr_supported');
   late final _resource_monitor_is_resource_attr_supported =
       _resource_monitor_is_resource_attr_supportedPtr
-          .asFunction<int Function(int, int, int, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(int, int, int, ffi.Pointer<bool>)>();
 
   /// Updates the value of attributes of interest for all created resource.
   ///
@@ -1613,6 +1613,28 @@ abstract class resource_monitor_ctrl_id_e {
   static const int RESOURCE_MONITOR_DISK_CTRL_DEVICE_ID = 1;
 }
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 /// @nodoc
 typedef u_int32_t = __uint32_t;
 /// @nodoc

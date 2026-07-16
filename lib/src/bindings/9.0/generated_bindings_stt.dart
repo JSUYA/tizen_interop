@@ -728,7 +728,7 @@ class Tizen90Stt {
   int stt_is_recognition_type_supported(
     stt_h stt,
     ffi.Pointer<ffi.Char> type,
-    ffi.Pointer<ffi.Bool> support,
+    ffi.Pointer<bool> support,
   ) {
     return _stt_is_recognition_type_supported(
       stt,
@@ -740,10 +740,10 @@ class Tizen90Stt {
   late final _stt_is_recognition_type_supportedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(stt_h, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('stt_is_recognition_type_supported');
+              ffi.Pointer<bool>)>>('stt_is_recognition_type_supported');
   late final _stt_is_recognition_type_supported =
       _stt_is_recognition_type_supportedPtr.asFunction<
-          int Function(stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+          int Function(stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Sets the silence detection.
   ///
@@ -2299,17 +2299,11 @@ typedef stt_h = ffi.Pointer<stt_s>;
 typedef stt_supported_engine_cb
     = ffi.Pointer<ffi.NativeFunction<stt_supported_engine_cbFunction>>;
 /// @nodoc
-typedef stt_supported_engine_cbFunction = ffi.Bool Function(
-    stt_h stt,
-    ffi.Pointer<ffi.Char> engine_id,
-    ffi.Pointer<ffi.Char> engine_name,
-    ffi.Pointer<ffi.Void> user_data);
+typedef stt_supported_engine_cbFunction = ffi.Int Function(
+    stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstt_supported_engine_cbFunction = bool Function(
-    stt_h stt,
-    ffi.Pointer<ffi.Char> engine_id,
-    ffi.Pointer<ffi.Char> engine_name,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartstt_supported_engine_cbFunction = int Function(
+    stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called to retrieve the supported languages.
 ///
@@ -2336,11 +2330,34 @@ typedef Dartstt_supported_engine_cbFunction = bool Function(
 typedef stt_supported_language_cb
     = ffi.Pointer<ffi.NativeFunction<stt_supported_language_cbFunction>>;
 /// @nodoc
-typedef stt_supported_language_cbFunction = ffi.Bool Function(
-    stt_h stt, ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
+typedef stt_supported_language_cbFunction = ffi.Int Function(
+    stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstt_supported_language_cbFunction = bool Function(
-    stt_h stt, ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
+typedef Dartstt_supported_language_cbFunction = int Function(
+    stt_h, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when STT get the result time stamp in free partial type.
 ///
@@ -2368,23 +2385,11 @@ typedef Dartstt_supported_language_cbFunction = bool Function(
 typedef stt_result_time_cb
     = ffi.Pointer<ffi.NativeFunction<stt_result_time_cbFunction>>;
 /// @nodoc
-typedef stt_result_time_cbFunction = ffi.Bool Function(
-    stt_h stt,
-    ffi.Int index,
-    ffi.Int32 event,
-    ffi.Pointer<ffi.Char> text,
-    ffi.Long start_time,
-    ffi.Long end_time,
-    ffi.Pointer<ffi.Void> user_data);
+typedef stt_result_time_cbFunction = ffi.Int Function(stt_h, ffi.Int, ffi.Int32,
+    ffi.Pointer<ffi.Char>, ffi.Long, ffi.Long, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstt_result_time_cbFunction = bool Function(
-    stt_h stt,
-    int index,
-    int event,
-    ffi.Pointer<ffi.Char> text,
-    int start_time,
-    int end_time,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartstt_result_time_cbFunction = int Function(
+    stt_h, int, int, ffi.Pointer<ffi.Char>, int, int, ffi.Pointer<ffi.Void>);
 
 /// Called when STT gets the recognition result from the engine.
 ///
@@ -2539,16 +2544,16 @@ typedef stt_engine_changed_cbFunction = ffi.Void Function(
     stt_h stt,
     ffi.Pointer<ffi.Char> engine_id,
     ffi.Pointer<ffi.Char> language,
-    ffi.Bool support_silence,
-    ffi.Bool need_credential,
+    ffi.Pointer<bool> support_silence,
+    ffi.Pointer<bool> need_credential,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartstt_engine_changed_cbFunction = void Function(
     stt_h stt,
     ffi.Pointer<ffi.Char> engine_id,
     ffi.Pointer<ffi.Char> language,
-    bool support_silence,
-    bool need_credential,
+    ffi.Pointer<bool> support_silence,
+    ffi.Pointer<bool> need_credential,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when STT engine detects the beginning or end of the speech.

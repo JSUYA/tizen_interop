@@ -464,7 +464,7 @@ class Tizen90CapiMessagingEmail {
   /// - `email_set_message_sent_cb()`
   int email_send_message(
     email_h email,
-    bool save_to_sentbox,
+    ffi.Pointer<bool> save_to_sentbox,
   ) {
     return _email_send_message(
       email,
@@ -473,10 +473,10 @@ class Tizen90CapiMessagingEmail {
   }
 
   late final _email_send_messagePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(email_h, ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(email_h, ffi.Pointer<bool>)>>(
           'email_send_message');
-  late final _email_send_message =
-      _email_send_messagePtr.asFunction<int Function(email_h, bool)>();
+  late final _email_send_message = _email_send_messagePtr
+      .asFunction<int Function(email_h, ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -594,6 +594,29 @@ abstract class email_recipient_type_e {
   /// < BCC(blind carbon copy) recipient
   static const int EMAIL_RECIPIENT_TYPE_BCC = 3;
 }
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// **Deprecated:** Deprecated since 8.0.
 ///

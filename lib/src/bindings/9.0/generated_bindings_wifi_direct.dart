@@ -1644,7 +1644,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_start_discovery(
-    bool listen_only,
+    ffi.Pointer<bool> listen_only,
     int timeout,
   ) {
     return _wifi_direct_start_discovery(
@@ -1654,10 +1654,10 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_start_discoveryPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool, ffi.Int)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>, ffi.Int)>>(
           'wifi_direct_start_discovery');
-  late final _wifi_direct_start_discovery =
-      _wifi_direct_start_discoveryPtr.asFunction<int Function(bool, int)>();
+  late final _wifi_direct_start_discovery = _wifi_direct_start_discoveryPtr
+      .asFunction<int Function(ffi.Pointer<bool>, int)>();
 
   /// Starts discovery to find all P2P capable devices with specified channel, asynchronously.
   ///
@@ -1778,7 +1778,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_start_discovery_specific_channel(
-    bool listen_only,
+    ffi.Pointer<bool> listen_only,
     int timeout,
     int channel,
   ) {
@@ -1790,11 +1790,12 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_start_discovery_specific_channelPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Bool, ffi.Int, ffi.Int32)>>(
-      'wifi_direct_start_discovery_specific_channel');
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<bool>, ffi.Int,
+              ffi.Int32)>>('wifi_direct_start_discovery_specific_channel');
   late final _wifi_direct_start_discovery_specific_channel =
       _wifi_direct_start_discovery_specific_channelPtr
-          .asFunction<int Function(bool, int, int)>();
+          .asFunction<int Function(ffi.Pointer<bool>, int, int)>();
 
   /// Starts discovery to find all P2P capable devices with specified frequency, asynchronously.
   ///
@@ -1914,7 +1915,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_start_discovery_specific_freq(
-    bool listen_only,
+    ffi.Pointer<bool> listen_only,
     int timeout,
     int frequency,
   ) {
@@ -1925,12 +1926,13 @@ class Tizen90WifiDirect {
     );
   }
 
-  late final _wifi_direct_start_discovery_specific_freqPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool, ffi.Int, ffi.Int)>>(
-          'wifi_direct_start_discovery_specific_freq');
+  late final _wifi_direct_start_discovery_specific_freqPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<bool>, ffi.Int,
+              ffi.Int)>>('wifi_direct_start_discovery_specific_freq');
   late final _wifi_direct_start_discovery_specific_freq =
       _wifi_direct_start_discovery_specific_freqPtr
-          .asFunction<int Function(bool, int, int)>();
+          .asFunction<int Function(ffi.Pointer<bool>, int, int)>();
 
   /// Cancels discovery process, asynchronously.
   ///
@@ -3177,7 +3179,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_group_owner(
-    ffi.Pointer<ffi.Bool> is_group_owner,
+    ffi.Pointer<bool> is_group_owner,
   ) {
     return _wifi_direct_is_group_owner(
       is_group_owner,
@@ -3185,10 +3187,10 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_group_ownerPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_group_owner');
   late final _wifi_direct_is_group_owner = _wifi_direct_is_group_ownerPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Checks whether the current group is the autonomous group or not.
   ///
@@ -3282,7 +3284,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_autonomous_group(
-    ffi.Pointer<ffi.Bool> is_autonomous_group,
+    ffi.Pointer<bool> is_autonomous_group,
   ) {
     return _wifi_direct_is_autonomous_group(
       is_autonomous_group,
@@ -3290,11 +3292,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_autonomous_groupPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_autonomous_group');
   late final _wifi_direct_is_autonomous_group =
       _wifi_direct_is_autonomous_groupPtr
-          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Sets the friendly name of a local device.
   ///
@@ -4550,7 +4552,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_discoverable(
-    ffi.Pointer<ffi.Bool> discoverable,
+    ffi.Pointer<bool> discoverable,
   ) {
     return _wifi_direct_is_discoverable(
       discoverable,
@@ -4558,10 +4560,10 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_discoverablePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_discoverable');
   late final _wifi_direct_is_discoverable = _wifi_direct_is_discoverablePtr
-      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Checks whether the local device is listening only.
   ///
@@ -4678,7 +4680,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_listening_only(
-    ffi.Pointer<ffi.Bool> listen_only,
+    ffi.Pointer<bool> listen_only,
   ) {
     return _wifi_direct_is_listening_only(
       listen_only,
@@ -4686,10 +4688,10 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_listening_onlyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_listening_only');
   late final _wifi_direct_is_listening_only = _wifi_direct_is_listening_onlyPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the primary device type of a local device.
   ///
@@ -6667,7 +6669,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_set_autoconnection_mode(
-    bool mode,
+    ffi.Pointer<bool> mode,
   ) {
     return _wifi_direct_set_autoconnection_mode(
       mode,
@@ -6675,10 +6677,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_set_autoconnection_modePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_set_autoconnection_mode');
   late final _wifi_direct_set_autoconnection_mode =
-      _wifi_direct_set_autoconnection_modePtr.asFunction<int Function(bool)>();
+      _wifi_direct_set_autoconnection_modePtr
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the Autoconnection mode status.
   ///
@@ -6749,7 +6752,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_autoconnection_mode(
-    ffi.Pointer<ffi.Bool> mode,
+    ffi.Pointer<bool> mode,
   ) {
     return _wifi_direct_is_autoconnection_mode(
       mode,
@@ -6757,11 +6760,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_autoconnection_modePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_autoconnection_mode');
   late final _wifi_direct_is_autoconnection_mode =
       _wifi_direct_is_autoconnection_modePtr
-          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Allows a device to connect automatically.
   ///
@@ -7001,7 +7004,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_set_persistent_group_enabled(
-    bool enabled,
+    ffi.Pointer<bool> enabled,
   ) {
     return _wifi_direct_set_persistent_group_enabled(
       enabled,
@@ -7009,11 +7012,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_set_persistent_group_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_set_persistent_group_enabled');
   late final _wifi_direct_set_persistent_group_enabled =
       _wifi_direct_set_persistent_group_enabledPtr
-          .asFunction<int Function(bool)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Checks whether the persistent group is enabled or disabled.
   ///
@@ -7088,7 +7091,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_is_persistent_group_enabled(
-    ffi.Pointer<ffi.Bool> enabled,
+    ffi.Pointer<bool> enabled,
   ) {
     return _wifi_direct_is_persistent_group_enabled(
       enabled,
@@ -7096,11 +7099,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_is_persistent_group_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_is_persistent_group_enabled');
   late final _wifi_direct_is_persistent_group_enabled =
       _wifi_direct_is_persistent_group_enabledPtr
-          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the persistent groups.
   ///
@@ -7901,7 +7904,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_init_miracast(
-    bool enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _wifi_direct_init_miracast(
       enable,
@@ -7909,10 +7912,10 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_init_miracastPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_init_miracast');
-  late final _wifi_direct_init_miracast =
-      _wifi_direct_init_miracastPtr.asFunction<int Function(bool)>();
+  late final _wifi_direct_init_miracast = _wifi_direct_init_miracastPtr
+      .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the information of a discovered peer.
   ///
@@ -8342,7 +8345,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_set_display_availability(
-    bool availability,
+    ffi.Pointer<bool> availability,
   ) {
     return _wifi_direct_set_display_availability(
       availability,
@@ -8350,10 +8353,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_set_display_availabilityPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_set_display_availability');
   late final _wifi_direct_set_display_availability =
-      _wifi_direct_set_display_availabilityPtr.asFunction<int Function(bool)>();
+      _wifi_direct_set_display_availabilityPtr
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the Wi-Fi Display parameters for the WFD IE of local device.
   ///
@@ -8526,7 +8530,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_get_display_availability(
-    ffi.Pointer<ffi.Bool> availability,
+    ffi.Pointer<bool> availability,
   ) {
     return _wifi_direct_get_display_availability(
       availability,
@@ -8534,11 +8538,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_get_display_availabilityPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_get_display_availability');
   late final _wifi_direct_get_display_availability =
       _wifi_direct_get_display_availabilityPtr
-          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Gets the information of a peer's Wi-Fi Display device type.
   ///
@@ -8716,7 +8720,7 @@ class Tizen90WifiDirect {
   /// ```
   int wifi_direct_get_peer_display_availability(
     ffi.Pointer<ffi.Char> mac_address,
-    ffi.Pointer<ffi.Bool> availability,
+    ffi.Pointer<bool> availability,
   ) {
     return _wifi_direct_get_peer_display_availability(
       mac_address,
@@ -8725,12 +8729,12 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_get_peer_display_availabilityPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>>(
-      'wifi_direct_get_peer_display_availability');
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<bool>)>>('wifi_direct_get_peer_display_availability');
   late final _wifi_direct_get_peer_display_availability =
-      _wifi_direct_get_peer_display_availabilityPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      _wifi_direct_get_peer_display_availabilityPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Gets the information of a peer's Wi-Fi Display HDCP support.
   ///
@@ -9094,7 +9098,7 @@ class Tizen90WifiDirect {
   /// }
   /// ```
   int wifi_direct_set_auto_group_removal(
-    bool enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _wifi_direct_set_auto_group_removal(
       enable,
@@ -9102,10 +9106,11 @@ class Tizen90WifiDirect {
   }
 
   late final _wifi_direct_set_auto_group_removalPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'wifi_direct_set_auto_group_removal');
   late final _wifi_direct_set_auto_group_removal =
-      _wifi_direct_set_auto_group_removalPtr.asFunction<int Function(bool)>();
+      _wifi_direct_set_auto_group_removalPtr
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Sets the timer which is used to expire the connection session.
   ///
@@ -10743,138 +10748,6 @@ final class wifi_direct_connection_state_cb_data_s extends ffi.Struct {
   external ffi.Array<ffi.Char> mac_address;
 }
 
-/// Wi-Fi Direct buffer structure to store result of peer discovery.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Remarks:**
-/// - You can use APIs for Wi-Fi Direct display function instead of is_miracast_device value
-/// - which is deprecated since 2.4.
-///
-/// **See also:**
-/// - `wifi_direct_discovered_peer_cb()`
-/// - `wifi_direct_get_peer_info()`
-/// - `wifi_direct_get_connecting_peer_info()`
-/// @nodoc
-final class wifi_direct_discovered_peer_info_s extends ffi.Struct {
-  /// Device's friendly name
-  external ffi.Pointer<ffi.Char> device_name;
-
-  /// Device's P2P Device Address
-  external ffi.Pointer<ffi.Char> mac_address;
-
-  /// Device's P2P Interface Address, Valid only if device is a P2P GO
-  external ffi.Pointer<ffi.Char> interface_address;
-
-  /// Channel the device is listening on
-  @ffi.Int()
-  external int channel;
-
-  /// Is peer connected
-  @ffi.Bool()
-  external bool is_connected;
-
-  /// Is an active P2P Group Owner
-  @ffi.Bool()
-  external bool is_group_owner;
-
-  /// Is a stored Persistent GO
-  @ffi.Bool()
-  external bool is_persistent_group_owner;
-
-  /// Primary category of device
-  @ffi.Int32()
-  external int primary_device_type;
-
-  /// Sub category of device
-  @ffi.Int32()
-  external int secondary_device_type;
-
-  /// The list of supported WPS type. The OR operation on
-  /// #wifi_direct_wps_type_e can be used like
-  /// #WIFI_DIRECT_WPS_TYPE_PBC | #WIFI_DIRECT_WPS_TYPE_PIN_DISPLAY
-  @ffi.Int()
-  external int supported_wps_types;
-
-  /// Is capable of processing P2P Invitation Procedure signaling
-  @ffi.Bool()
-  external bool is_p2p_invitation_procedure_supported;
-
-  /// The number of Registered services
-  @ffi.UnsignedInt()
-  external int service_count;
-
-  /// The list of registered services
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_list;
-
-  /// **Deprecated:** Deprecated since 2.4, use wifi direct display APIs instead of is_miracast_device value.
-  ///
-  /// Is a wifi display device
-  @ffi.Bool()
-  external bool is_miracast_device;
-
-  /// **Deprecated:** Deprecated since 5.0, use wifi_direct_get_peer_vsie() API instead of vsie_info value.
-  ///
-  /// The information for vendor specific information element
-  external ffi.Pointer<ffi.Void> vsie_info;
-}
-
-/// Wi-Fi Direct buffer structure to store information of connected peer.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Remarks:**
-/// - You can use APIs for wifi-direct display function instead of is_miracast_device value
-/// - which is deprecated since 2.4.
-///
-/// **See also:**
-/// - `wifi_direct_connected_peer_cb()`
-/// @nodoc
-final class wifi_direct_connected_peer_info_s extends ffi.Struct {
-  /// Device's friendly name
-  external ffi.Pointer<ffi.Char> device_name;
-
-  /// The IP address
-  external ffi.Pointer<ffi.Char> ip_address;
-
-  /// Device's P2P Device Address
-  external ffi.Pointer<ffi.Char> mac_address;
-
-  /// Device's P2P Interface Address
-  external ffi.Pointer<ffi.Char> interface_address;
-
-  /// Operating channel
-  @ffi.Int()
-  external int channel;
-
-  /// Whether peer is a P2P device
-  @ffi.Bool()
-  external bool p2p_supported;
-
-  /// Primary category of device
-  @ffi.Int32()
-  external int primary_device_type;
-
-  /// Sub category of device
-  @ffi.Int32()
-  external int secondary_device_type;
-
-  /// The number of Registered services
-  @ffi.UnsignedInt()
-  external int service_count;
-
-  /// The list of registered services
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_list;
-
-  /// **Deprecated:** since tizen 2.4, use wifi direct display APIs instead of is_miracast_device value.
-  ///
-  /// Is a wifi display device
-  @ffi.Bool()
-  external bool is_miracast_device;
-}
-
 /// Called when the state of device is changed.
 ///
 /// The following error codes can be delivered `WIFI_DIRECT_ERROR_NONE` `WIFI_DIRECT_ERROR_OPERATION_FAILED` `WIFI_DIRECT_ERROR_NOT_PERMITTED`
@@ -11172,6 +11045,29 @@ typedef wifi_direct_state_changed_cbFunction = ffi.Void Function(
 typedef Dartwifi_direct_state_changed_cbFunction = void Function(
     int state, ffi.Pointer<ffi.Void> user_data);
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// Called repeatedly when you get the information of discovered peers.
 ///
 /// **Since Tizen:**
@@ -11193,13 +11089,99 @@ typedef Dartwifi_direct_state_changed_cbFunction = void Function(
 typedef wifi_direct_discovered_peer_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_direct_discovered_peer_cbFunction>>;
 /// @nodoc
-typedef wifi_direct_discovered_peer_cbFunction = ffi.Bool Function(
-    ffi.Pointer<wifi_direct_discovered_peer_info_s> peer,
-    ffi.Pointer<ffi.Void> user_data);
+typedef wifi_direct_discovered_peer_cbFunction = ffi.Int Function(
+    ffi.Pointer<wifi_direct_discovered_peer_info_s>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_direct_discovered_peer_cbFunction = bool Function(
-    ffi.Pointer<wifi_direct_discovered_peer_info_s> peer,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_direct_discovered_peer_cbFunction = int Function(
+    ffi.Pointer<wifi_direct_discovered_peer_info_s>, ffi.Pointer<ffi.Void>);
+
+/// Wi-Fi Direct buffer structure to store result of peer discovery.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Remarks:**
+/// - You can use APIs for Wi-Fi Direct display function instead of is_miracast_device value
+/// - which is deprecated since 2.4.
+///
+/// **See also:**
+/// - `wifi_direct_discovered_peer_cb()`
+/// - `wifi_direct_get_peer_info()`
+/// - `wifi_direct_get_connecting_peer_info()`
+/// @nodoc
+typedef wifi_direct_discovered_peer_info_s = WifiDirectUnnamedStruct1;
+
+/// Wi-Fi Direct buffer structure to store result of peer discovery.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Remarks:**
+/// - You can use APIs for Wi-Fi Direct display function instead of is_miracast_device value
+/// - which is deprecated since 2.4.
+///
+/// **See also:**
+/// - `wifi_direct_discovered_peer_cb()`
+/// - `wifi_direct_get_peer_info()`
+/// - `wifi_direct_get_connecting_peer_info()`
+/// @nodoc
+final class WifiDirectUnnamedStruct1 extends ffi.Struct {
+  /// Device's friendly name
+  external ffi.Pointer<ffi.Char> device_name;
+
+  /// Device's P2P Device Address
+  external ffi.Pointer<ffi.Char> mac_address;
+
+  /// Device's P2P Interface Address, Valid only if device is a P2P GO
+  external ffi.Pointer<ffi.Char> interface_address;
+
+  /// Channel the device is listening on
+  @ffi.Int()
+  external int channel;
+
+  /// Is peer connected
+  external bool is_connected;
+
+  /// Is an active P2P Group Owner
+  external bool is_group_owner;
+
+  /// Is a stored Persistent GO
+  external bool is_persistent_group_owner;
+
+  /// Primary category of device
+  @ffi.Int32()
+  external int primary_device_type;
+
+  /// Sub category of device
+  @ffi.Int32()
+  external int secondary_device_type;
+
+  /// The list of supported WPS type. The OR operation on
+  /// #wifi_direct_wps_type_e can be used like
+  /// #WIFI_DIRECT_WPS_TYPE_PBC | #WIFI_DIRECT_WPS_TYPE_PIN_DISPLAY
+  @ffi.Int()
+  external int supported_wps_types;
+
+  /// Is capable of processing P2P Invitation Procedure signaling
+  external bool is_p2p_invitation_procedure_supported;
+
+  /// The number of Registered services
+  @ffi.UnsignedInt()
+  external int service_count;
+
+  /// The list of registered services
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_list;
+
+  /// **Deprecated:** Deprecated since 2.4, use wifi direct display APIs instead of is_miracast_device value.
+  ///
+  /// Is a wifi display device
+  external bool is_miracast_device;
+
+  /// **Deprecated:** Deprecated since 5.0, use wifi_direct_get_peer_vsie() API instead of vsie_info value.
+  ///
+  /// The information for vendor specific information element
+  external ffi.Pointer<ffi.Void> vsie_info;
+}
 
 /// Called repeatedly when you get the information of connected peers.
 ///
@@ -11222,13 +11204,78 @@ typedef Dartwifi_direct_discovered_peer_cbFunction = bool Function(
 typedef wifi_direct_connected_peer_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_direct_connected_peer_cbFunction>>;
 /// @nodoc
-typedef wifi_direct_connected_peer_cbFunction = ffi.Bool Function(
-    ffi.Pointer<wifi_direct_connected_peer_info_s> peer,
-    ffi.Pointer<ffi.Void> user_data);
+typedef wifi_direct_connected_peer_cbFunction = ffi.Int Function(
+    ffi.Pointer<wifi_direct_connected_peer_info_s>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_direct_connected_peer_cbFunction = bool Function(
-    ffi.Pointer<wifi_direct_connected_peer_info_s> peer,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_direct_connected_peer_cbFunction = int Function(
+    ffi.Pointer<wifi_direct_connected_peer_info_s>, ffi.Pointer<ffi.Void>);
+
+/// Wi-Fi Direct buffer structure to store information of connected peer.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Remarks:**
+/// - You can use APIs for wifi-direct display function instead of is_miracast_device value
+/// - which is deprecated since 2.4.
+///
+/// **See also:**
+/// - `wifi_direct_connected_peer_cb()`
+/// @nodoc
+typedef wifi_direct_connected_peer_info_s = WifiDirectUnnamedStruct2;
+
+/// Wi-Fi Direct buffer structure to store information of connected peer.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Remarks:**
+/// - You can use APIs for wifi-direct display function instead of is_miracast_device value
+/// - which is deprecated since 2.4.
+///
+/// **See also:**
+/// - `wifi_direct_connected_peer_cb()`
+/// @nodoc
+final class WifiDirectUnnamedStruct2 extends ffi.Struct {
+  /// Device's friendly name
+  external ffi.Pointer<ffi.Char> device_name;
+
+  /// The IP address
+  external ffi.Pointer<ffi.Char> ip_address;
+
+  /// Device's P2P Device Address
+  external ffi.Pointer<ffi.Char> mac_address;
+
+  /// Device's P2P Interface Address
+  external ffi.Pointer<ffi.Char> interface_address;
+
+  /// Operating channel
+  @ffi.Int()
+  external int channel;
+
+  /// Whether peer is a P2P device
+  external bool p2p_supported;
+
+  /// Primary category of device
+  @ffi.Int32()
+  external int primary_device_type;
+
+  /// Sub category of device
+  @ffi.Int32()
+  external int secondary_device_type;
+
+  /// The number of Registered services
+  @ffi.UnsignedInt()
+  external int service_count;
+
+  /// The list of registered services
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> service_list;
+
+  /// **Deprecated:** since tizen 2.4, use wifi direct display APIs instead of is_miracast_device value.
+  ///
+  /// Is a wifi display device
+  external bool is_miracast_device;
+}
 
 /// Called when you get the supported WPS (Wi-Fi Protected Setup) type repeatedly.
 ///
@@ -11251,11 +11298,11 @@ typedef Dartwifi_direct_connected_peer_cbFunction = bool Function(
 typedef wifi_direct_supported_wps_type_cb = ffi
     .Pointer<ffi.NativeFunction<wifi_direct_supported_wps_type_cbFunction>>;
 /// @nodoc
-typedef wifi_direct_supported_wps_type_cbFunction = ffi.Bool Function(
-    ffi.Int32 type, ffi.Pointer<ffi.Void> user_data);
+typedef wifi_direct_supported_wps_type_cbFunction = ffi.Int Function(
+    ffi.Int32, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_direct_supported_wps_type_cbFunction = bool Function(
-    int type, ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_direct_supported_wps_type_cbFunction = int Function(
+    int, ffi.Pointer<ffi.Void>);
 
 /// Called when you get the persistent groups repeatedly.
 ///
@@ -11283,15 +11330,11 @@ typedef Dartwifi_direct_supported_wps_type_cbFunction = bool Function(
 typedef wifi_direct_persistent_group_cb
     = ffi.Pointer<ffi.NativeFunction<wifi_direct_persistent_group_cbFunction>>;
 /// @nodoc
-typedef wifi_direct_persistent_group_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> mac_address,
-    ffi.Pointer<ffi.Char> ssid,
-    ffi.Pointer<ffi.Void> user_data);
+typedef wifi_direct_persistent_group_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartwifi_direct_persistent_group_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> mac_address,
-    ffi.Pointer<ffi.Char> ssid,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartwifi_direct_persistent_group_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// @nodoc
 const int WIFI_DIRECT_MAX_DEVICE_NAME_LEN = 32;

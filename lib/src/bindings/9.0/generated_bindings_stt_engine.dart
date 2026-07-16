@@ -690,13 +690,36 @@ typedef stte_get_info_cbFunction = ffi.Int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_setting,
-    ffi.Pointer<ffi.Bool> use_network);
+    ffi.Pointer<bool> use_network);
 /// @nodoc
 typedef Dartstte_get_info_cbFunction = int Function(
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_uuid,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> engine_setting,
-    ffi.Pointer<ffi.Bool> use_network);
+    ffi.Pointer<bool> use_network);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the engine service user initializes STT engine.
 ///
@@ -820,11 +843,11 @@ typedef Dartstte_foreach_supported_langs_cbFunction = int Function(
 typedef stte_supported_language_cb
     = ffi.Pointer<ffi.NativeFunction<stte_supported_language_cbFunction>>;
 /// @nodoc
-typedef stte_supported_language_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
+typedef stte_supported_language_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstte_supported_language_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Void> user_data);
+typedef Dartstte_supported_language_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called when the engine service user checks whether the corresponding language is valid or not in STT engine.
 ///
@@ -852,10 +875,10 @@ typedef stte_is_valid_language_cb
     = ffi.Pointer<ffi.NativeFunction<stte_is_valid_language_cbFunction>>;
 /// @nodoc
 typedef stte_is_valid_language_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Bool> is_valid);
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<bool> is_valid);
 /// @nodoc
 typedef Dartstte_is_valid_language_cbFunction = int Function(
-    ffi.Pointer<ffi.Char> language, ffi.Pointer<ffi.Bool> is_valid);
+    ffi.Pointer<ffi.Char> language, ffi.Pointer<bool> is_valid);
 
 /// Called when the engine service user checks whether STT engine supports silence detection.
 ///
@@ -874,9 +897,9 @@ typedef Dartstte_is_valid_language_cbFunction = int Function(
 typedef stte_support_silence_detection_cb = ffi
     .Pointer<ffi.NativeFunction<stte_support_silence_detection_cbFunction>>;
 /// @nodoc
-typedef stte_support_silence_detection_cbFunction = ffi.Bool Function();
+typedef stte_support_silence_detection_cbFunction = ffi.Int Function();
 /// @nodoc
-typedef Dartstte_support_silence_detection_cbFunction = bool Function();
+typedef Dartstte_support_silence_detection_cbFunction = int Function();
 
 /// Called when the engine service user checks whether STT engine supports the corresponding recognition type.
 ///
@@ -901,10 +924,10 @@ typedef stte_support_recognition_type_cb
     = ffi.Pointer<ffi.NativeFunction<stte_support_recognition_type_cbFunction>>;
 /// @nodoc
 typedef stte_support_recognition_type_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char> type, ffi.Pointer<ffi.Bool> is_supported);
+    ffi.Pointer<ffi.Char> type, ffi.Pointer<bool> is_supported);
 /// @nodoc
 typedef Dartstte_support_recognition_type_cbFunction = int Function(
-    ffi.Pointer<ffi.Char> type, ffi.Pointer<ffi.Bool> is_supported);
+    ffi.Pointer<ffi.Char> type, ffi.Pointer<bool> is_supported);
 
 /// Called when the engine service user gets the proper recording format of STT engine.
 ///
@@ -1018,21 +1041,11 @@ typedef Dartstte_foreach_result_time_cbFunction = int Function(
 typedef stte_result_time_cb
     = ffi.Pointer<ffi.NativeFunction<stte_result_time_cbFunction>>;
 /// @nodoc
-typedef stte_result_time_cbFunction = ffi.Bool Function(
-    ffi.Int index,
-    ffi.Int32 event,
-    ffi.Pointer<ffi.Char> text,
-    ffi.Long start_time,
-    ffi.Long end_time,
-    ffi.Pointer<ffi.Void> user_data);
+typedef stte_result_time_cbFunction = ffi.Int Function(ffi.Int, ffi.Int32,
+    ffi.Pointer<ffi.Char>, ffi.Long, ffi.Long, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartstte_result_time_cbFunction = bool Function(
-    int index,
-    int event,
-    ffi.Pointer<ffi.Char> text,
-    int start_time,
-    int end_time,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartstte_result_time_cbFunction = int Function(
+    int, int, ffi.Pointer<ffi.Char>, int, int, ffi.Pointer<ffi.Void>);
 
 /// Called when the engine service user sets the silence detection.
 ///
@@ -1058,9 +1071,10 @@ typedef stte_set_silence_detection_cb
     = ffi.Pointer<ffi.NativeFunction<stte_set_silence_detection_cbFunction>>;
 /// @nodoc
 typedef stte_set_silence_detection_cbFunction = ffi.Int Function(
-    ffi.Bool is_set);
+    ffi.Pointer<bool> is_set);
 /// @nodoc
-typedef Dartstte_set_silence_detection_cbFunction = int Function(bool is_set);
+typedef Dartstte_set_silence_detection_cbFunction = int Function(
+    ffi.Pointer<bool> is_set);
 
 /// Called when the engine service user starts to recognize the recording data.
 ///
@@ -1255,10 +1269,10 @@ typedef stte_check_app_agreed_cb
     = ffi.Pointer<ffi.NativeFunction<stte_check_app_agreed_cbFunction>>;
 /// @nodoc
 typedef stte_check_app_agreed_cbFunction = ffi.Int Function(
-    ffi.Pointer<ffi.Char> appid, ffi.Pointer<ffi.Bool> is_agreed);
+    ffi.Pointer<ffi.Char> appid, ffi.Pointer<bool> is_agreed);
 /// @nodoc
 typedef Dartstte_check_app_agreed_cbFunction = int Function(
-    ffi.Pointer<ffi.Char> appid, ffi.Pointer<ffi.Bool> is_agreed);
+    ffi.Pointer<ffi.Char> appid, ffi.Pointer<bool> is_agreed);
 
 /// Called when the engine service user checks whether STT engine needs the application's credential.
 ///
@@ -1274,9 +1288,9 @@ typedef Dartstte_check_app_agreed_cbFunction = int Function(
 typedef stte_need_app_credential_cb
     = ffi.Pointer<ffi.NativeFunction<stte_need_app_credential_cbFunction>>;
 /// @nodoc
-typedef stte_need_app_credential_cbFunction = ffi.Bool Function();
+typedef stte_need_app_credential_cbFunction = ffi.Int Function();
 /// @nodoc
-typedef Dartstte_need_app_credential_cbFunction = bool Function();
+typedef Dartstte_need_app_credential_cbFunction = int Function();
 
 /// Called when STT engine receives the private data from the engine service user.
 ///

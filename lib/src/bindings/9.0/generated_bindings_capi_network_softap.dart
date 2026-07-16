@@ -234,7 +234,7 @@ class Tizen90CapiNetworkSoftap {
   /// - `SOFTAP_ERROR_PERMISSION_DENIED`: Permission denied
   int softap_is_enabled(
     softap_h softap,
-    ffi.Pointer<ffi.Bool> enable,
+    ffi.Pointer<bool> enable,
   ) {
     return _softap_is_enabled(
       softap,
@@ -243,11 +243,10 @@ class Tizen90CapiNetworkSoftap {
   }
 
   late final _softap_is_enabledPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<ffi.Bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<bool>)>>(
       'softap_is_enabled');
   late final _softap_is_enabled = _softap_is_enabledPtr
-      .asFunction<int Function(softap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(softap_h, ffi.Pointer<bool>)>();
 
   /// Gets the Media Access Control (MAC) address of the local device in the format "FC:A1:3E:D6:B1:B1".
   ///
@@ -1403,7 +1402,7 @@ class Tizen90CapiNetworkSoftap {
   /// - `softap_get_ssid_visibility()`
   int softap_set_ssid_visibility(
     softap_h softap,
-    bool visible,
+    ffi.Pointer<bool> visible,
   ) {
     return _softap_set_ssid_visibility(
       softap,
@@ -1411,11 +1410,11 @@ class Tizen90CapiNetworkSoftap {
     );
   }
 
-  late final _softap_set_ssid_visibilityPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(softap_h, ffi.Bool)>>(
-          'softap_set_ssid_visibility');
-  late final _softap_set_ssid_visibility =
-      _softap_set_ssid_visibilityPtr.asFunction<int Function(softap_h, bool)>();
+  late final _softap_set_ssid_visibilityPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<bool>)>>(
+      'softap_set_ssid_visibility');
+  late final _softap_set_ssid_visibility = _softap_set_ssid_visibilityPtr
+      .asFunction<int Function(softap_h, ffi.Pointer<bool>)>();
 
   /// Gets the visibility of SSID (service set identifier) for SoftAP.
   ///
@@ -1447,7 +1446,7 @@ class Tizen90CapiNetworkSoftap {
   /// - `softap_set_ssid_visibility()`
   int softap_get_ssid_visibility(
     softap_h softap,
-    ffi.Pointer<ffi.Bool> visible,
+    ffi.Pointer<bool> visible,
   ) {
     return _softap_get_ssid_visibility(
       softap,
@@ -1456,11 +1455,10 @@ class Tizen90CapiNetworkSoftap {
   }
 
   late final _softap_get_ssid_visibilityPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<ffi.Bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<bool>)>>(
       'softap_get_ssid_visibility');
   late final _softap_get_ssid_visibility = _softap_get_ssid_visibilityPtr
-      .asFunction<int Function(softap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(softap_h, ffi.Pointer<bool>)>();
 
   /// Sets the passphrase for SoftAP.
   ///
@@ -1990,7 +1988,7 @@ class Tizen90CapiNetworkSoftap {
   /// - `SOFTAP_ERROR_PERMISSION_DENIED`: Permission denied
   int softap_is_dhcp_enabled(
     softap_h softap,
-    ffi.Pointer<ffi.Bool> dhcp_enabled,
+    ffi.Pointer<bool> dhcp_enabled,
   ) {
     return _softap_is_dhcp_enabled(
       softap,
@@ -1999,11 +1997,10 @@ class Tizen90CapiNetworkSoftap {
   }
 
   late final _softap_is_dhcp_enabledPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<ffi.Bool>)>>(
+          ffi.NativeFunction<ffi.Int Function(softap_h, ffi.Pointer<bool>)>>(
       'softap_is_dhcp_enabled');
   late final _softap_is_dhcp_enabled = _softap_is_dhcp_enabledPtr
-      .asFunction<int Function(softap_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(softap_h, ffi.Pointer<bool>)>();
 
   /// Enables the DHCP server with the address range.
   ///
@@ -2541,6 +2538,29 @@ abstract class softap_address_family_e {
 /// @nodoc
 typedef softap_h = ffi.Pointer<ffi.Void>;
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// Called when you get the connected client repeatedly.
 ///
 /// **Since Tizen:**
@@ -2566,11 +2586,11 @@ typedef softap_h = ffi.Pointer<ffi.Void>;
 typedef softap_connected_client_cb
     = ffi.Pointer<ffi.NativeFunction<softap_connected_client_cbFunction>>;
 /// @nodoc
-typedef softap_connected_client_cbFunction = ffi.Bool Function(
-    softap_client_h client, ffi.Pointer<ffi.Void> user_data);
+typedef softap_connected_client_cbFunction = ffi.Int Function(
+    softap_client_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartsoftap_connected_client_cbFunction = bool Function(
-    softap_client_h client, ffi.Pointer<ffi.Void> user_data);
+typedef Dartsoftap_connected_client_cbFunction = int Function(
+    softap_client_h, ffi.Pointer<ffi.Void>);
 
 /// The SoftAP client handle.
 ///
@@ -2601,11 +2621,11 @@ typedef softap_client_h = ffi.Pointer<ffi.Void>;
 typedef softap_enabled_cb
     = ffi.Pointer<ffi.NativeFunction<softap_enabled_cbFunction>>;
 /// @nodoc
-typedef softap_enabled_cbFunction = ffi.Void Function(
-    ffi.Int32 result, ffi.Bool is_requested, ffi.Pointer<ffi.Void> user_data);
+typedef softap_enabled_cbFunction = ffi.Void Function(ffi.Int32 result,
+    ffi.Pointer<bool> is_requested, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
-typedef Dartsoftap_enabled_cbFunction = void Function(
-    int result, bool is_requested, ffi.Pointer<ffi.Void> user_data);
+typedef Dartsoftap_enabled_cbFunction = void Function(int result,
+    ffi.Pointer<bool> is_requested, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the SoftAP is disabled.
 ///
@@ -2660,10 +2680,14 @@ typedef softap_client_connection_state_changed_cb = ffi.Pointer<
     ffi.NativeFunction<softap_client_connection_state_changed_cbFunction>>;
 /// @nodoc
 typedef softap_client_connection_state_changed_cbFunction = ffi.Void Function(
-    softap_client_h client, ffi.Bool opened, ffi.Pointer<ffi.Void> user_data);
+    softap_client_h client,
+    ffi.Pointer<bool> opened,
+    ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartsoftap_client_connection_state_changed_cbFunction = void Function(
-    softap_client_h client, bool opened, ffi.Pointer<ffi.Void> user_data);
+    softap_client_h client,
+    ffi.Pointer<bool> opened,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the security type of SoftAP is changed.
 ///
@@ -2704,10 +2728,10 @@ typedef softap_ssid_visibility_changed_cb = ffi
     .Pointer<ffi.NativeFunction<softap_ssid_visibility_changed_cbFunction>>;
 /// @nodoc
 typedef softap_ssid_visibility_changed_cbFunction = ffi.Void Function(
-    ffi.Bool changed_visible, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> changed_visible, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Dartsoftap_ssid_visibility_changed_cbFunction = void Function(
-    bool changed_visible, ffi.Pointer<ffi.Void> user_data);
+    ffi.Pointer<bool> changed_visible, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the passphrase is changed.
 ///

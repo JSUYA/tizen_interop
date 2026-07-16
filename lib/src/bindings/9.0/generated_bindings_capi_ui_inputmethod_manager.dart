@@ -124,7 +124,7 @@ class Tizen90CapiUiInputmethodManager {
   /// - `ime_manager_show_ime_list()`
   int ime_manager_is_ime_enabled(
     ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Bool> enabled,
+    ffi.Pointer<bool> enabled,
   ) {
     return _ime_manager_is_ime_enabled(
       app_id,
@@ -135,9 +135,9 @@ class Tizen90CapiUiInputmethodManager {
   late final _ime_manager_is_ime_enabledPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('ime_manager_is_ime_enabled');
+              ffi.Pointer<bool>)>>('ime_manager_is_ime_enabled');
   late final _ime_manager_is_ime_enabled = _ime_manager_is_ime_enabledPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Checks which IME is the current activated (selected) IME.
   ///
@@ -267,3 +267,26 @@ abstract class ime_manager_error_e {
   /// < Operation failed
   static const int IME_MANAGER_ERROR_OPERATION_FAILED = -49414128;
 }
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

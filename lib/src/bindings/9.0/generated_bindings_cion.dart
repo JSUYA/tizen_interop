@@ -4189,7 +4189,7 @@ class Tizen90Cion {
   /// ```
   int cion_server_set_on_demand_launch_enabled(
     cion_server_h server,
-    bool enabled,
+    ffi.Pointer<bool> enabled,
   ) {
     return _cion_server_set_on_demand_launch_enabled(
       server,
@@ -4197,12 +4197,13 @@ class Tizen90Cion {
     );
   }
 
-  late final _cion_server_set_on_demand_launch_enabledPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(cion_server_h, ffi.Bool)>>(
-          'cion_server_set_on_demand_launch_enabled');
+  late final _cion_server_set_on_demand_launch_enabledPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Int Function(cion_server_h, ffi.Pointer<bool>)>>(
+      'cion_server_set_on_demand_launch_enabled');
   late final _cion_server_set_on_demand_launch_enabled =
       _cion_server_set_on_demand_launch_enabledPtr
-          .asFunction<int Function(cion_server_h, bool)>();
+          .asFunction<int Function(cion_server_h, ffi.Pointer<bool>)>();
 }
 
 /// Enumeration for payload types.
@@ -4654,11 +4655,11 @@ typedef Dartcion_server_payload_async_result_cbFunction = void Function(
 typedef cion_server_connected_peer_info_cb = ffi
     .Pointer<ffi.NativeFunction<cion_server_connected_peer_info_cbFunction>>;
 /// @nodoc
-typedef cion_server_connected_peer_info_cbFunction = ffi.Bool Function(
-    cion_peer_info_h peer_info, ffi.Pointer<ffi.Void> user_data);
+typedef cion_server_connected_peer_info_cbFunction = ffi.Int Function(
+    cion_peer_info_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartcion_server_connected_peer_info_cbFunction = bool Function(
-    cion_peer_info_h peer_info, ffi.Pointer<ffi.Void> user_data);
+typedef Dartcion_server_connected_peer_info_cbFunction = int Function(
+    cion_peer_info_h, ffi.Pointer<ffi.Void>);
 
 /// Called when the connection is accepted or rejected.
 ///
@@ -4794,3 +4795,26 @@ typedef Dartcion_server_disconnected_cbFunction = void Function(
     ffi.Pointer<ffi.Char> service_name,
     cion_peer_info_h peer_info,
     ffi.Pointer<ffi.Void> user_data);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

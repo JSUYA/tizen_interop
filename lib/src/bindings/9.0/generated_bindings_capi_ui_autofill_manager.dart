@@ -393,8 +393,8 @@ typedef Dartautofill_manager_connection_status_changed_cbFunction
 typedef autofill_manager_autofill_service_cb = ffi
     .Pointer<ffi.NativeFunction<autofill_manager_autofill_service_cbFunction>>;
 /// @nodoc
-typedef autofill_manager_autofill_service_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> app_id, ffi.Pointer<ffi.Void> user_data);
+typedef autofill_manager_autofill_service_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartautofill_manager_autofill_service_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> app_id, ffi.Pointer<ffi.Void> user_data);
+typedef Dartautofill_manager_autofill_service_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);

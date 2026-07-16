@@ -1888,7 +1888,7 @@ class Tizen90AccountsSvc {
   /// - `account_query_account_by_package_name()`
   /// - `account_query_account_by_capability()`
   int account_foreach_account_from_db(
-    account_cb callback,
+    int callback,
     ffi.Pointer<ffi.Void> user_data,
   ) {
     return _account_foreach_account_from_db(
@@ -1898,12 +1898,11 @@ class Tizen90AccountsSvc {
   }
 
   late final _account_foreach_account_from_dbPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(account_cb, ffi.Pointer<ffi.Void>)>>(
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Void>)>>(
       'account_foreach_account_from_db');
   late final _account_foreach_account_from_db =
       _account_foreach_account_from_dbPtr
-          .asFunction<int Function(account_cb, ffi.Pointer<ffi.Void>)>();
+          .asFunction<int Function(int, ffi.Pointer<ffi.Void>)>();
 
   /// Retrieves an account with the account ID.
   ///
@@ -2056,7 +2055,7 @@ class Tizen90AccountsSvc {
   /// - `account_query_account_by_package_name()`
   /// - `account_query_account_by_capability()`
   int account_query_account_by_user_name(
-    account_cb callback,
+    int callback,
     ffi.Pointer<ffi.Char> user_name,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -2069,12 +2068,11 @@ class Tizen90AccountsSvc {
 
   late final _account_query_account_by_user_namePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(account_cb, ffi.Pointer<ffi.Char>,
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Void>)>>('account_query_account_by_user_name');
   late final _account_query_account_by_user_name =
       _account_query_account_by_user_namePtr.asFunction<
-          int Function(
-              account_cb, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
+          int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
 
   /// Retrieves all accounts with the package name.
   ///
@@ -2117,7 +2115,7 @@ class Tizen90AccountsSvc {
   /// - `account_query_account_by_user_name()`
   /// - `account_query_account_by_capability()`
   int account_query_account_by_package_name(
-    account_cb callback,
+    int callback,
     ffi.Pointer<ffi.Char> package_name,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -2130,12 +2128,11 @@ class Tizen90AccountsSvc {
 
   late final _account_query_account_by_package_namePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(account_cb, ffi.Pointer<ffi.Char>,
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Void>)>>('account_query_account_by_package_name');
   late final _account_query_account_by_package_name =
       _account_query_account_by_package_namePtr.asFunction<
-          int Function(
-              account_cb, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
+          int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
 
   /// Retrieves all accounts with the capability type and capability value.
   ///
@@ -2179,7 +2176,7 @@ class Tizen90AccountsSvc {
   /// - `account_query_account_by_user_name()`
   /// - `account_query_account_by_package_name()`
   int account_query_account_by_capability(
-    account_cb callback,
+    int callback,
     ffi.Pointer<ffi.Char> capability_type,
     int capability_value,
     ffi.Pointer<ffi.Void> user_data,
@@ -2194,12 +2191,12 @@ class Tizen90AccountsSvc {
 
   late final _account_query_account_by_capabilityPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(account_cb, ffi.Pointer<ffi.Char>, ffi.Int32,
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Int32,
               ffi.Pointer<ffi.Void>)>>('account_query_account_by_capability');
   late final _account_query_account_by_capability =
       _account_query_account_by_capabilityPtr.asFunction<
           int Function(
-              account_cb, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>)>();
+              int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>)>();
 
   /// Retrieves all accounts with the capability type.
   ///
@@ -2242,7 +2239,7 @@ class Tizen90AccountsSvc {
   /// - `account_query_account_by_user_name()`
   /// - `account_query_account_by_package_name()`
   int account_query_account_by_capability_type(
-    account_cb callback,
+    int callback,
     ffi.Pointer<ffi.Char> capability_type,
     ffi.Pointer<ffi.Void> user_data,
   ) {
@@ -2256,12 +2253,11 @@ class Tizen90AccountsSvc {
   late final _account_query_account_by_capability_typePtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(
-                  account_cb, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>>(
+                  ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>>(
       'account_query_account_by_capability_type');
   late final _account_query_account_by_capability_type =
       _account_query_account_by_capability_typePtr.asFunction<
-          int Function(
-              account_cb, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
+          int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
 
   /// Retrieves all capabilities with the account database ID.
   ///
@@ -2570,7 +2566,7 @@ class Tizen90AccountsSvc {
   ///
   /// **Preconditions:**
   /// - This function requires an open connection to an account service by account_connect() on tizen 2.3 . But the account_connect() is not required to use this function since tizen 2.4.
-  bool account_type_query_supported_feature(
+  int account_type_query_supported_feature(
     ffi.Pointer<ffi.Char> app_id,
     ffi.Pointer<ffi.Char> capability,
   ) {
@@ -2582,11 +2578,11 @@ class Tizen90AccountsSvc {
 
   late final _account_type_query_supported_featurePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<ffi.Char>,
+          ffi.Int Function(ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>>('account_type_query_supported_feature');
   late final _account_type_query_supported_feature =
       _account_type_query_supported_featurePtr.asFunction<
-          bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// Gets the application ID of an account provider.
   ///
@@ -3468,15 +3464,11 @@ abstract class account_capability_state_e {
 /// @nodoc
 typedef capability_cb = ffi.Pointer<ffi.NativeFunction<capability_cbFunction>>;
 /// @nodoc
-typedef capability_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> capability_type,
-    ffi.Int32 capability_state,
-    ffi.Pointer<ffi.Void> user_data);
+typedef capability_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Int32, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartcapability_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> capability_type,
-    int capability_state,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartcapability_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
 
 /// Enumeration for the account auth type.
 ///
@@ -3566,40 +3558,11 @@ abstract class account_sync_state_e {
 typedef account_custom_cb
     = ffi.Pointer<ffi.NativeFunction<account_custom_cbFunction>>;
 /// @nodoc
-typedef account_custom_cbFunction = ffi.Bool Function(ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> user_data);
+typedef account_custom_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartaccount_custom_cbFunction = bool Function(ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Char> value, ffi.Pointer<ffi.Void> user_data);
-
-/// Called once for each account from the database.
-///
-/// **Since Tizen:**
-/// - 2.3
-///
-/// **Parameters:**
-/// - `account` (in): The account handle
-/// - `user_data` (in): The user data passed from the foreach function
-///
-/// **Returns:**
-/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
-///
-/// **Preconditions:**
-/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
-///
-/// **See also:**
-/// - `account_foreach_account_from_db()`
-/// - `account_query_account_by_account_id()`
-/// - `account_query_account_by_user_name()`
-/// - `account_query_account_by_package_name()`
-/// @nodoc
-typedef account_cb = ffi.Pointer<ffi.NativeFunction<account_cbFunction>>;
-/// @nodoc
-typedef account_cbFunction = ffi.Bool Function(
-    account_h account, ffi.Pointer<ffi.Void> user_data);
-/// @nodoc
-typedef Dartaccount_cbFunction = bool Function(
-    account_h account, ffi.Pointer<ffi.Void> user_data);
+typedef Dartaccount_custom_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// The structure type for the Account provider handle.
 ///
@@ -3634,15 +3597,11 @@ final class account_type_s extends ffi.Opaque {}
 typedef provider_feature_cb
     = ffi.Pointer<ffi.NativeFunction<provider_feature_cbFunction>>;
 /// @nodoc
-typedef provider_feature_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Void> user_data);
+typedef provider_feature_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartprovider_feature_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartprovider_feature_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called once for each account label.
 ///
@@ -3668,17 +3627,11 @@ typedef Dartprovider_feature_cbFunction = bool Function(
 typedef account_label_cb
     = ffi.Pointer<ffi.NativeFunction<account_label_cbFunction>>;
 /// @nodoc
-typedef account_label_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Char> label,
-    ffi.Pointer<ffi.Char> locale,
-    ffi.Pointer<ffi.Void> user_data);
+typedef account_label_cbFunction = ffi.Int Function(ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartaccount_label_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> app_id,
-    ffi.Pointer<ffi.Char> label,
-    ffi.Pointer<ffi.Char> locale,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartaccount_label_cbFunction = int Function(ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 
 /// Called once for each account provider in the database.
 ///
@@ -3702,11 +3655,11 @@ typedef Dartaccount_label_cbFunction = bool Function(
 typedef account_type_cb
     = ffi.Pointer<ffi.NativeFunction<account_type_cbFunction>>;
 /// @nodoc
-typedef account_type_cbFunction = ffi.Bool Function(
-    account_type_h account_type, ffi.Pointer<ffi.Void> user_data);
+typedef account_type_cbFunction = ffi.Int Function(
+    account_type_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartaccount_type_cbFunction = bool Function(
-    account_type_h account_type, ffi.Pointer<ffi.Void> user_data);
+typedef Dartaccount_type_cbFunction = int Function(
+    account_type_h, ffi.Pointer<ffi.Void>);
 
 /// The structure type for the Account subscribe handle.
 ///
@@ -3740,12 +3693,8 @@ final class account_subscribe_s extends ffi.Opaque {}
 typedef account_event_cb
     = ffi.Pointer<ffi.NativeFunction<account_event_cbFunction>>;
 /// @nodoc
-typedef account_event_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> event_type,
-    ffi.Int account_id,
-    ffi.Pointer<ffi.Void> user_data);
+typedef account_event_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartaccount_event_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> event_type,
-    int account_id,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartaccount_event_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);

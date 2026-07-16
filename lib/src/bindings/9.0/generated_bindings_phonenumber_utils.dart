@@ -767,7 +767,7 @@ class Tizen90PhonenumberUtils {
   /// - tner
   int phone_number_check_blocking(
     ffi.Pointer<ffi.Char> number,
-    ffi.Pointer<ffi.Bool> is_blocked,
+    ffi.Pointer<bool> is_blocked,
   ) {
     return _phone_number_check_blocking(
       number,
@@ -778,9 +778,9 @@ class Tizen90PhonenumberUtils {
   late final _phone_number_check_blockingPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('phone_number_check_blocking');
+              ffi.Pointer<bool>)>>('phone_number_check_blocking');
   late final _phone_number_check_blocking = _phone_number_check_blockingPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 }
 
 /// Enumeration for language type.
@@ -1693,3 +1693,26 @@ abstract class phone_number_error_e {
 /// - 4.0
 /// @nodoc
 typedef phone_number_blocking_rule_h = ffi.Pointer<ffi.Void>;
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;

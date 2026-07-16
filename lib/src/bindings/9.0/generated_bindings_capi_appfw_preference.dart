@@ -280,7 +280,7 @@ class Tizen90CapiAppfwPreference {
   /// - `preference_get_boolean()`
   int preference_set_boolean(
     ffi.Pointer<ffi.Char> key,
-    bool value,
+    ffi.Pointer<bool> value,
   ) {
     return _preference_set_boolean(
       key,
@@ -289,11 +289,11 @@ class Tizen90CapiAppfwPreference {
   }
 
   late final _preference_set_booleanPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Bool)>>(
-      'preference_set_boolean');
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<bool>)>>('preference_set_boolean');
   late final _preference_set_boolean = _preference_set_booleanPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, bool)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Gets a boolean value from the preference.
   ///
@@ -318,7 +318,7 @@ class Tizen90CapiAppfwPreference {
   /// - `preference_set_boolean()`
   int preference_get_boolean(
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Bool> value,
+    ffi.Pointer<bool> value,
   ) {
     return _preference_get_boolean(
       key,
@@ -329,9 +329,9 @@ class Tizen90CapiAppfwPreference {
   late final _preference_get_booleanPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('preference_get_boolean');
+              ffi.Pointer<bool>)>>('preference_get_boolean');
   late final _preference_get_boolean = _preference_get_booleanPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Removes any value with the given `key` from the preference.
   ///
@@ -383,7 +383,7 @@ class Tizen90CapiAppfwPreference {
   /// - `PREFERENCE_ERROR_IO_ERROR`: Internal I/O Error
   int preference_is_existing(
     ffi.Pointer<ffi.Char> key,
-    ffi.Pointer<ffi.Bool> existing,
+    ffi.Pointer<bool> existing,
   ) {
     return _preference_is_existing(
       key,
@@ -394,9 +394,9 @@ class Tizen90CapiAppfwPreference {
   late final _preference_is_existingPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Bool>)>>('preference_is_existing');
+              ffi.Pointer<bool>)>>('preference_is_existing');
   late final _preference_is_existing = _preference_is_existingPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<bool>)>();
 
   /// Removes all key-value pairs from the preference.
   ///
@@ -625,6 +625,29 @@ abstract class preference_type_e {
   static const int PREFERENCE_TYPE_BOOLEAN = 4;
 }
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// Called when the given key's value in the preference changes.
 ///
 /// When the `key` is added or removed, this callback function is skipped(only update can be handled).
@@ -680,8 +703,8 @@ typedef Dartpreference_changed_cbFunction = void Function(
 typedef preference_item_cb
     = ffi.Pointer<ffi.NativeFunction<preference_item_cbFunction>>;
 /// @nodoc
-typedef preference_item_cbFunction = ffi.Bool Function(
-    ffi.Pointer<ffi.Char> key, ffi.Pointer<ffi.Void> user_data);
+typedef preference_item_cbFunction = ffi.Int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartpreference_item_cbFunction = bool Function(
-    ffi.Pointer<ffi.Char> key, ffi.Pointer<ffi.Void> user_data);
+typedef Dartpreference_item_cbFunction = int Function(
+    ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>);

@@ -811,7 +811,7 @@ class Tizen90Tts {
   /// - `tts_unset_screen_reader_changed_cb()`
   int tts_check_screen_reader_on(
     tts_h tts,
-    ffi.Pointer<ffi.Bool> is_on,
+    ffi.Pointer<bool> is_on,
   ) {
     return _tts_check_screen_reader_on(
       tts,
@@ -819,11 +819,11 @@ class Tizen90Tts {
     );
   }
 
-  late final _tts_check_screen_reader_onPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(tts_h, ffi.Pointer<ffi.Bool>)>>(
-      'tts_check_screen_reader_on');
+  late final _tts_check_screen_reader_onPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(tts_h, ffi.Pointer<bool>)>>(
+          'tts_check_screen_reader_on');
   late final _tts_check_screen_reader_on = _tts_check_screen_reader_onPtr
-      .asFunction<int Function(tts_h, ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(tts_h, ffi.Pointer<bool>)>();
 
   /// Adds a text to the queue.
   ///
@@ -2552,17 +2552,11 @@ typedef tts_h = ffi.Pointer<tts_s>;
 typedef tts_supported_voice_cb
     = ffi.Pointer<ffi.NativeFunction<tts_supported_voice_cbFunction>>;
 /// @nodoc
-typedef tts_supported_voice_cbFunction = ffi.Bool Function(
-    tts_h tts,
-    ffi.Pointer<ffi.Char> language,
-    ffi.Int voice_type,
-    ffi.Pointer<ffi.Void> user_data);
+typedef tts_supported_voice_cbFunction = ffi.Int Function(
+    tts_h, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Darttts_supported_voice_cbFunction = bool Function(
-    tts_h tts,
-    ffi.Pointer<ffi.Char> language,
-    int voice_type,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_supported_voice_cbFunction = int Function(
+    tts_h, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Void>);
 
 /// Called to retrieve the supported personal voice.
 ///
@@ -2589,21 +2583,44 @@ typedef Darttts_supported_voice_cbFunction = bool Function(
 typedef tts_supported_personal_voice_cb
     = ffi.Pointer<ffi.NativeFunction<tts_supported_personal_voice_cbFunction>>;
 /// @nodoc
-typedef tts_supported_personal_voice_cbFunction = ffi.Bool Function(
-    tts_h tts,
-    ffi.Pointer<ffi.Char> language,
-    ffi.Pointer<ffi.Char> unique_id,
-    ffi.Pointer<ffi.Char> display_name,
-    ffi.Pointer<ffi.Char> device_name,
-    ffi.Pointer<ffi.Void> user_data);
+typedef tts_supported_personal_voice_cbFunction = ffi.Int Function(
+    tts_h,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Darttts_supported_personal_voice_cbFunction = bool Function(
-    tts_h tts,
-    ffi.Pointer<ffi.Char> language,
-    ffi.Pointer<ffi.Char> unique_id,
-    ffi.Pointer<ffi.Char> display_name,
-    ffi.Pointer<ffi.Char> device_name,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Darttts_supported_personal_voice_cbFunction = int Function(
+    tts_h,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Char>,
+    ffi.Pointer<ffi.Void>);
+
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 
 /// Called when the state of TTS is changed.
 ///
@@ -2776,7 +2793,7 @@ typedef tts_engine_changed_cbFunction = ffi.Void Function(
     ffi.Pointer<ffi.Char> engine_id,
     ffi.Pointer<ffi.Char> language,
     ffi.Int voice_type,
-    ffi.Bool need_credential,
+    ffi.Pointer<bool> need_credential,
     ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Darttts_engine_changed_cbFunction = void Function(
@@ -2784,7 +2801,7 @@ typedef Darttts_engine_changed_cbFunction = void Function(
     ffi.Pointer<ffi.Char> engine_id,
     ffi.Pointer<ffi.Char> language,
     int voice_type,
-    bool need_credential,
+    ffi.Pointer<bool> need_credential,
     ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the option of screen reader is changed.
@@ -2804,10 +2821,10 @@ typedef tts_screen_reader_changed_cb
     = ffi.Pointer<ffi.NativeFunction<tts_screen_reader_changed_cbFunction>>;
 /// @nodoc
 typedef tts_screen_reader_changed_cbFunction = ffi.Void Function(
-    tts_h tts, ffi.Bool is_on, ffi.Pointer<ffi.Void> user_data);
+    tts_h tts, ffi.Pointer<bool> is_on, ffi.Pointer<ffi.Void> user_data);
 /// @nodoc
 typedef Darttts_screen_reader_changed_cbFunction = void Function(
-    tts_h tts, bool is_on, ffi.Pointer<ffi.Void> user_data);
+    tts_h tts, ffi.Pointer<bool> is_on, ffi.Pointer<ffi.Void> user_data);
 
 /// Called when the state of TTS service is changed.
 ///

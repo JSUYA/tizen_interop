@@ -194,11 +194,6 @@ class Tizen90ContactsService2 {
   late final _contacts_connect_with_flags =
       _contacts_connect_with_flagsPtr.asFunction<int Function(int)>();
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_address_book _contacts_address_book view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts addressbook view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the addressbook </td></tr> <tr><td>integer</td><td> account_id </td><td>read, write once</td><td> Account ID that the addressbook belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> It cannot be `NULL`. Duplicate names are not allowed. </td></tr> <tr><td>integer</td><td> mode </td><td>read, write</td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> </table>
   late final ffi.Pointer<_contacts_address_book_property_ids>
       __contacts_address_book =
       _lookup<_contacts_address_book_property_ids>('_contacts_address_book');
@@ -206,31 +201,16 @@ class Tizen90ContactsService2 {
   _contacts_address_book_property_ids get _contacts_address_book =>
       __contacts_address_book.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group _contacts_group view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts group view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the group </td></tr> <tr><td>integer</td><td> address_book_id </td><td>read, write once</td><td> Addressbook ID that the group belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Group name </td></tr> <tr><td>string</td><td> ringtone_path </td><td>read, write</td><td> Ringtone path of the group </td></tr> <tr><td>string</td><td> image_path </td><td>read, write</td><td> Image path of the group </td></tr> <tr><td>string</td><td> vibration </td><td>read, write</td><td> Vibration path of the group </td></tr> <tr><td>string</td><td> extra_data </td><td>read, write</td><td> Extra data for default group name </td></tr> <tr><td>boolean</td><td> is_read_only </td><td>read, write once</td><td> The group is read only or not </td></tr> <tr><td>string</td><td> message_alert </td><td>read, write</td><td> Message alert path of the group </td></tr> </table>
   late final ffi.Pointer<_contacts_group_property_ids> __contacts_group =
       _lookup<_contacts_group_property_ids>('_contacts_group');
 
   _contacts_group_property_ids get _contacts_group => __contacts_group.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person _contacts_person view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts person view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td>read only</td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td>read only</td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td>read only</td><td> Display contact ID that the person belongs to </td></tr> <tr><td>string</td><td> ringtone_path </td><td>read, write</td><td> Ringtone path of the person </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td>read only</td><td> Image thumbnail path of the person </td></tr> <tr><td>string</td><td> vibration </td><td>read, write</td><td> Vibration path of the person </td></tr> <tr><td>string</td><td> message_alert </td><td>read, write</td><td> Message alert path of the person </td></tr> <tr><td>string</td><td> status </td><td>read only</td><td> Status of social account </td></tr> <tr><td>boolean</td><td> is_favorite </td><td>read, write</td><td> The person is favorite or not </td></tr> <tr><td>double</td><td> favorite_priority </td><td> read only </td><td> The priority of favorite contacts. it can be used as sorting key, see the `contacts_query_set_sort` </td></tr> <tr><td>integer</td><td> link_count </td><td>read only</td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> addressbook_ids </td><td>read only</td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td>read only</td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td>read only</td><td> The person has email or not </td></tr> <tr><td>integer</td><td> snippet_type </td><td>read only</td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td>read only</td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_property_ids> __contacts_person =
       _lookup<_contacts_person_property_ids>('_contacts_person');
 
   _contacts_person_property_ids get _contacts_person => __contacts_person.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_simple_contact _contacts_simple_contact view You can only get simple contact using this view. <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this simple contact view </td></tr> <tr><td>integer</td><td>id</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the contact </td></tr> <tr><td>integer</td><td>display_source_id</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook that the contact belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the contact </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the contact </td></tr> <tr><td>boolean</td><td>is_favorite</td><td> The contact is favorite or not </td></tr> <tr><td>boolean</td><td>has_phonenumber</td><td> The contact has phone number or not </td></tr> <tr><td>boolean</td><td>has_email</td><td> The contact has email or not </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the contact belongs to </td></tr> <tr><td>string</td><td>uid</td><td> Unique identifier </td></tr> <tr><td>string</td><td>vibration</td><td> Vibration path of the contact </td></tr> <tr><td>string</td><td>message_alert</td><td> Message alert path of the contact </td></tr> <tr><td>integer</td><td>changed_time</td><td> Last changed contact time </td></tr> </table>
   late final ffi.Pointer<_contacts_simple_contact_property_ids>
       __contacts_simple_contact =
       _lookup<_contacts_simple_contact_property_ids>(
@@ -239,22 +219,12 @@ class Tizen90ContactsService2 {
   _contacts_simple_contact_property_ids get _contacts_simple_contact =>
       __contacts_simple_contact.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact _contacts_contact view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact view </td></tr> <tr><td>integer</td><td>id</td><td>read only</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td>display_name</td><td>read only</td><td> Display name of the contact </td></tr> <tr><td>integer</td><td>display_source_id</td><td>read only</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` </td></tr> <tr><td>integer</td><td>address_book_id</td><td>read, write once</td><td> Addressbook ID that the contact belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td>read, write</td><td> Ringtone path of the contact </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td>read only</td><td> Image thumbnail path of the contact </td></tr> <tr><td>boolean</td><td>is_favorite</td><td>read, write</td><td> The contact is favorite or not </td></tr> <tr><td>boolean</td><td>has_phonenumber</td><td>read only</td><td> The contact has phone number or not </td></tr> <tr><td>boolean</td><td>has_email</td><td>read only</td><td> The contact has email or not </td></tr> <tr><td>integer</td><td>person_id</td><td>read, write once</td><td> Person ID that the contact belongs to. If set when inserting, a contact will be linked to person </td></tr> <tr><td>string</td><td>uid</td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>string</td><td>vibration</td><td>read, write</td><td> Vibration path of the contact </td></tr> <tr><td>string</td><td>message_alert</td><td>read, write</td><td> Message alert path of the contact </td></tr> <tr><td>integer</td><td>changed_time</td><td>read only</td><td> Last changed contact time </td></tr> <tr><td>integer</td><td>link_mode</td><td>read, write once</td><td> The link mode, refer to the `contacts_contact_link_mode_e.` If the person_id was set, this value will be ignored </td></tr> <tr><td>record</td><td>name</td><td>read, write</td><td> _contacts_name child record (single) </td></tr> <tr><td>record</td><td>company</td><td>read, write</td><td> _contacts_company child record (multiple) </td></tr> <tr><td>record</td><td>note</td><td>read, write</td><td> _contacts_note child record (multiple) </td></tr> <tr><td>record</td><td>number</td><td>read, write</td><td> _contacts_number child record (multiple) </td></tr> <tr><td>record</td><td>email</td><td>read, write</td><td> _contacts_email child record (multiple) </td></tr> <tr><td>record</td><td>event</td><td>read, write</td><td> _contacts_event child record (multiple) </td></tr> <tr><td>record</td><td>messenger</td><td>read, write</td><td> _contacts_messenger child record (multiple) </td></tr> <tr><td>record</td><td>address</td><td>read, write</td><td> _contacts_address child record (multiple) </td></tr> <tr><td>record</td><td>url</td><td>read, write</td><td> _contacts_url child record (multiple) </td></tr> <tr><td>record</td><td>nickname</td><td>read, write</td><td> _contacts_nickname child record (multiple) </td></tr> <tr><td>record</td><td>profile</td><td>read, write</td><td> _contacts_profile child record (multiple) </td></tr> <tr><td>record</td><td>relationship</td><td>read, write</td><td> _contacts_relationship child record (multiple)</td></tr> <tr><td>record</td><td>image</td><td>read, write</td><td> _contacts_image child record (multiple)</td></tr> <tr><td>record</td><td>group_relation</td><td>read, write</td><td> _contacts_group_relation child record (multiple)</td></tr> <tr><td>record</td><td>sip</td><td>read, write</td><td> _contacts_sip child record (multiple) (Since 3.0)</td></tr> </table>
   late final ffi.Pointer<_contacts_contact_property_ids> __contacts_contact =
       _lookup<_contacts_contact_property_ids>('_contacts_contact');
 
   _contacts_contact_property_ids get _contacts_contact =>
       __contacts_contact.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_my_profile _contacts_my_profile view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this my profile view </td></tr> <tr><td>integer</td><td>id</td><td>read only</td><td> DB record ID of the my profile </td></tr> <tr><td>string</td><td>display_name</td><td>read only</td><td> Display name of the profile </td></tr> <tr><td>integer</td><td>address_book_id</td><td>read, write once</td><td> Addressbook ID that the profile belongs to </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td>read only</td><td> Image thumbnail path of the profile </td></tr> <tr><td>string</td><td>uid</td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>integer</td><td>changed_time</td><td>read only</td><td> Last changed profile time </td></tr> <tr><td>record</td><td>name</td><td>read, write</td><td> _contacts_name child record (single) </td></tr> <tr><td>record</td><td>company</td><td>read, write</td><td> _contacts_company child record (multiple) </td></tr> <tr><td>record</td><td>note</td><td>read, write</td><td> _contacts_note child record (multiple) </td></tr> <tr><td>record</td><td>number</td><td>read, write</td><td> _contacts_number child record (multiple) </td></tr> <tr><td>record</td><td>email</td><td>read, write</td><td> _contacts_email child record (multiple) </td></tr> <tr><td>record</td><td>event</td><td>read, write</td><td> _contacts_event child record (multiple) </td></tr> <tr><td>record</td><td>messenger</td><td>read, write</td><td> _contacts_messenger child record (multiple) </td></tr> <tr><td>record</td><td>address</td><td>read, write</td><td> _contacts_address child record (multiple) </td></tr> <tr><td>record</td><td>url</td><td>read, write</td><td> _contacts_url child record (multiple) </td></tr> <tr><td>record</td><td>nickname</td><td>read, write</td><td> _contacts_nickname child record (multiple) </td></tr> <tr><td>record</td><td>profile</td><td>read, write</td><td> _contacts_profile child record (multiple) </td></tr> <tr><td>record</td><td>relationship</td><td>read, write</td><td> _contacts_relationship child record (multiple) </td></tr> <tr><td>record</td><td>image</td><td>read, write</td><td> _contacts_image child record (multiple) </td></tr> <tr><td>record</td><td>sip</td><td>read, write</td><td> _contacts_sip child record (multiple) (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_my_profile_property_ids>
       __contacts_my_profile =
       _lookup<_contacts_my_profile_property_ids>('_contacts_my_profile');
@@ -262,82 +232,42 @@ class Tizen90ContactsService2 {
   _contacts_my_profile_property_ids get _contacts_my_profile =>
       __contacts_my_profile.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_name _contacts_name view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts name view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the name </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contacts ID that the name record belongs to </td></tr> <tr><td>string</td><td> first </td><td>read, write</td><td> First name </td></tr> <tr><td>string</td><td> last </td><td>read, write</td><td> Last name </td></tr> <tr><td>string</td><td> addition </td><td>read, write</td><td> Middle name </td></tr> <tr><td>string</td><td> suffix </td><td>read, write</td><td> Suffix </td></tr> <tr><td>string</td><td> prefix </td><td>read, write</td><td> Prefix </td></tr> <tr><td>string</td><td> phonetic_first </td><td>read, write</td><td> Pronounce the first name </td></tr> <tr><td>string</td><td> phonetic_middle </td><td>read, write</td><td> Pronounce the middle name </td></tr> <tr><td>string</td><td> phonetic_last </td><td>read, write</td><td> Pronounce the last name </td></tr> </table>
   late final ffi.Pointer<_contacts_name_property_ids> __contacts_name =
       _lookup<_contacts_name_property_ids>('_contacts_name');
 
   _contacts_name_property_ids get _contacts_name => __contacts_name.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_number _contacts_number view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts number view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the number </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the number belongs to</td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Number type, refer to the `contacts_number_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td>read, write</td><td> Number </td></tr> <tr><td>string</td><td> normalized_number </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> <tr><td>string</td><td> cleaned_number </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> <tr><td>string</td><td> number_filter </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> </table>
   late final ffi.Pointer<_contacts_number_property_ids> __contacts_number =
       _lookup<_contacts_number_property_ids>('_contacts_number');
 
   _contacts_number_property_ids get _contacts_number => __contacts_number.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_email _contacts_email view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts email view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the email </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the email belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Email type, refer to the `contacts_email_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The email is default email or not </td></tr> <tr><td>string</td><td> email </td><td>read, write</td><td> Email address</td></tr> </table>
   late final ffi.Pointer<_contacts_email_property_ids> __contacts_email =
       _lookup<_contacts_email_property_ids>('_contacts_email');
 
   _contacts_email_property_ids get _contacts_email => __contacts_email.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_address _contacts_address view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts address view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the address </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the address belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Address type, refer to the `contacts_address_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Address type label, when the address type is `CONTACTS_ADDRESS_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> postbox </td><td>read, write</td><td> Post office box </td></tr> <tr><td>string</td><td> postal_code </td><td>read, write</td><td> Postal code </td></tr> <tr><td>string</td><td> region </td><td>read, write</td><td> Region </td></tr> <tr><td>string</td><td> locality </td><td>read, write</td><td> Locality </td></tr> <tr><td>string</td><td> street </td><td>read, write</td><td> Street </td></tr> <tr><td>string</td><td> country </td><td>read, write</td><td> Country </td></tr> <tr><td>string</td><td> extended </td><td>read, write</td><td> Extended address </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The address is default or not </td></tr> </table>
   late final ffi.Pointer<_contacts_address_property_ids> __contacts_address =
       _lookup<_contacts_address_property_ids>('_contacts_address');
 
   _contacts_address_property_ids get _contacts_address =>
       __contacts_address.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_note _contacts_note view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts note view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the note </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the note belongs to </td></tr> <tr><td>string</td><td> note </td><td>read, write</td><td> Note contents </td></tr> </table>
   late final ffi.Pointer<_contacts_note_property_ids> __contacts_note =
       _lookup<_contacts_note_property_ids>('_contacts_note');
 
   _contacts_note_property_ids get _contacts_note => __contacts_note.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_url _contacts_url view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts URL view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the URL </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the URL belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> URL type, refer to the `contacts_url_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom URL type label, when the URL type is `CONTACTS_URL_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> url </td><td>read, write</td><td> URL </td></tr> </table>
   late final ffi.Pointer<_contacts_url_property_ids> __contacts_url =
       _lookup<_contacts_url_property_ids>('_contacts_url');
 
   _contacts_url_property_ids get _contacts_url => __contacts_url.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_event _contacts_event view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts event view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the event </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the event belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Event type, refer to the `contacts_event_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom event type label, when the event type is `CONTACTS_EVENT_TYPE_CUSTOM` </td></tr> <tr><td>integer</td><td> date </td><td>read, write</td><td> Event date(YYYYMMDD). e.g. 2014/1/1 : 20140101. Even if the calendar_type is set as CONTACTS_EVENT_CALENDAR_TYPE_CHINESE, you SHOULD set Gregorian date </td></tr> <tr><td>integer</td><td> calendar_type </td><td>read, write</td><td> Calendar type, refer to the `contacts_event_calendar_type_e` </td></tr> <tr><td>bool</td><td> is_leap_month (Deprecated) </td><td>read, write</td><td> The month is leap or not (valid on lunisolar calendar only) </td></tr> </table>
   late final ffi.Pointer<_contacts_event_property_ids> __contacts_event =
       _lookup<_contacts_event_property_ids>('_contacts_event');
 
   _contacts_event_property_ids get _contacts_event => __contacts_event.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_relation _contacts_group_relation view Refer `contacts_group_add_contact,` `contacts_group_remove_contact` <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this relationship view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the group (can not be used as filter) </td></tr> <tr><td>integer</td><td> group_id </td><td>read, write once</td><td> DB record ID of the group </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td> name </td><td>read only</td><td> Group name </td></tr> </table>
   late final ffi.Pointer<_contacts_group_relation_property_ids>
       __contacts_group_relation =
       _lookup<_contacts_group_relation_property_ids>(
@@ -346,11 +276,6 @@ class Tizen90ContactsService2 {
   _contacts_group_relation_property_ids get _contacts_group_relation =>
       __contacts_group_relation.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_relationship _contacts_relationship view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this relationship view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the relationship </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the relationship belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Relationship type, refer to the `contacts_relationship_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom relationship type label, when the relationship type is CONTACTS_RELATIONSHIP_TYPE_CUSTOM </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Selected contact name that the relationship belongs to </td></tr> </table>
   late final ffi.Pointer<_contacts_relationship_property_ids>
       __contacts_relationship =
       _lookup<_contacts_relationship_property_ids>('_contacts_relationship');
@@ -358,43 +283,23 @@ class Tizen90ContactsService2 {
   _contacts_relationship_property_ids get _contacts_relationship =>
       __contacts_relationship.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_image _contacts_image view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts image view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the image </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the image belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Image type, refer to the `contacts_image_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom image type label, when the image type is `CONTACTS_IMAGE_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> path </td><td>read, write</td><td> Image thumbnail path </td></tr> </table>
   late final ffi.Pointer<_contacts_image_property_ids> __contacts_image =
       _lookup<_contacts_image_property_ids>('_contacts_image');
 
   _contacts_image_property_ids get _contacts_image => __contacts_image.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_company _contacts_company view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts company view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the company </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the company belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Company type, refer to the `contacts_company_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom company type label, when the company type is `CONTACTS_COMPANY_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Company name </td></tr> <tr><td>string</td><td> department </td><td>read, write</td><td> Department </td></tr> <tr><td>string</td><td> job_title </td><td>read, write</td><td> Job title </td></tr> <tr><td>string</td><td> assistant_name </td><td>read, write</td><td> Assistant name </td></tr> <tr><td>string</td><td> role </td><td>read, write</td><td> Role </td></tr> <tr><td>string</td><td> logo </td><td>read, write</td><td> Company logo image file path </td></tr> <tr><td>string</td><td> location </td><td>read, write</td><td> Company location </td></tr> <tr><td>string</td><td> description </td><td>read, write</td><td> Description </td></tr> <tr><td>string</td><td> phonetic_name </td><td>read, write</td><td> Pronounce the company name </td></tr> </table>
   late final ffi.Pointer<_contacts_company_property_ids> __contacts_company =
       _lookup<_contacts_company_property_ids>('_contacts_company');
 
   _contacts_company_property_ids get _contacts_company =>
       __contacts_company.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_nickname _contacts_nickname view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts nickname view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the nickname </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the nickname belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Nickname </td></tr> </table>
   late final ffi.Pointer<_contacts_nickname_property_ids> __contacts_nickname =
       _lookup<_contacts_nickname_property_ids>('_contacts_nickname');
 
   _contacts_nickname_property_ids get _contacts_nickname =>
       __contacts_nickname.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_messenger _contacts_messenger view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts messenger view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the messenger </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the messenger belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Messenger type, refer to the `contacts_messenger_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom messenger type label, when the messenger type is `CONTACTS_MESSENGER_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> im_id </td><td>read, write</td><td> Messenger ID (email address or email ID...) </td></tr> </table>
   late final ffi.Pointer<_contacts_messenger_property_ids>
       __contacts_messenger =
       _lookup<_contacts_messenger_property_ids>('_contacts_messenger');
@@ -402,11 +307,6 @@ class Tizen90ContactsService2 {
   _contacts_messenger_property_ids get _contacts_messenger =>
       __contacts_messenger.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_extension _contacts_extension view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts extension view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the contact extension </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the contact extension belongs to </td></tr> <tr><td>integer</td><td> data1 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data2 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data3 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data4 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data5 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data6 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data7 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data8 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data9 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data10 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data11 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data12 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> </table>
   late final ffi.Pointer<_contacts_extension_property_ids>
       __contacts_extension =
       _lookup<_contacts_extension_property_ids>('_contacts_extension');
@@ -414,32 +314,17 @@ class Tizen90ContactsService2 {
   _contacts_extension_property_ids get _contacts_extension =>
       __contacts_extension.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_sdn _contacts_sdn view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts sdn view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the sdn </td></tr> <tr><td>string</td><td> name </td><td>read only</td><td> Provided name of sdn </td></tr> <tr><td>string</td><td> number </td><td>read only</td><td> Provided number of sdn </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>read only</td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
   late final ffi.Pointer<_contacts_sdn_property_ids> __contacts_sdn =
       _lookup<_contacts_sdn_property_ids>('_contacts_sdn');
 
   _contacts_sdn_property_ids get _contacts_sdn => __contacts_sdn.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_profile _contacts_profile view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts profile view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of profile </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contacts ID that the profile belongs to </td></tr> <tr><td>string</td><td> uid </td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>string</td><td> text </td><td>read, write</td><td> Profile contents </td></tr> <tr><td>integer</td><td> order </td><td>read, write</td><td> Priority to display the profile </td></tr> <tr><td>string</td><td> service_operation </td><td>read, write</td><td> Data for app_control_set_operation </td></tr> <tr><td>string</td><td> mime </td><td>read, write</td><td> Data for app_control_set_mime </td></tr> <tr><td>string</td><td> app_id </td><td>read, write</td><td> Data for app_control_set_app_id </td></tr> <tr><td>string</td><td> uri </td><td>read, write</td><td> Data for app_control_set_uri </td></tr> <tr><td>string</td><td> category </td><td>read, write</td><td> Data for app_control_set_category </td></tr> <tr><td>string</td><td> extra_data </td><td>read, write</td><td> It includes "key:value,key:value," pairs. You should parse it. And you must base64 encode each key and value</td></tr> </table>
   late final ffi.Pointer<_contacts_profile_property_ids> __contacts_profile =
       _lookup<_contacts_profile_property_ids>('_contacts_profile');
 
   _contacts_profile_property_ids get _contacts_profile =>
       __contacts_profile.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_activity_photo _contacts_activity_photo view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact activity photo view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of activity photo </td></tr> <tr><td>integer</td><td> activity_id </td><td>read, write once</td><td> Activity ID that the activity photo belongs to </td></tr> <tr><td>string</td><td> photo_url </td><td>read, write</td><td> Photo URL </td></tr> <tr><td>integer</td><td> sort_index </td><td>read, write</td><td> Sorted photo index </td></tr> </table>
   late final ffi.Pointer<_contacts_activity_photo_property_ids>
       __contacts_activity_photo =
       _lookup<_contacts_activity_photo_property_ids>(
@@ -448,22 +333,12 @@ class Tizen90ContactsService2 {
   _contacts_activity_photo_property_ids get _contacts_activity_photo =>
       __contacts_activity_photo.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_activity _contacts_activity view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this activity view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of activity </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the activity belongs to </td></tr> <tr><td>string</td><td> source_name </td><td>read, write</td><td> Account name that the activity belongs to </td></tr> <tr><td>int</td><td> timestamp </td><td>read, write</td><td> Published time of activity </td></tr> <tr><td>string</td><td> status </td><td>read, write</td><td> Activity status </td></tr> <tr><td>string</td><td> service_operation </td><td>read, write</td><td> Data for app_control_set_operation </td></tr> <tr><td>string</td><td> uri </td><td>read, write</td><td> Data for app_control_set_uri </td></tr> <tr><td>record</td><td> photo </td><td>read, write</td><td> _contacts_activity_photo child record (multiple) </td></tr> </table>
   late final ffi.Pointer<_contacts_activity_property_ids> __contacts_activity =
       _lookup<_contacts_activity_property_ids>('_contacts_activity');
 
   _contacts_activity_property_ids get _contacts_activity =>
       __contacts_activity.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_speeddial _contacts_speeddial view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact speed dial view </td></tr> <tr><td>integer</td><td> speeddial_number </td><td>read, write once</td><td> Stored speed dial number </td></tr> <tr><td>integer</td><td> number_id </td><td>read, write</td><td> Number ID that the speed dial belongs to </td></tr> <tr><td>string</td><td> number </td><td>read only</td><td> Contact number of specified speed dial </td></tr> <tr><td>string</td><td> number_label </td><td>read only</td><td> Contact number label of specified speed dial, when the number type is CONTACTS_NUMBER_TYPE_CUSTOM </td></tr> <tr><td>integer</td><td> number_type </td><td>read only</td><td> Contact number type, refer to the `contacts_number_type_e` </td></tr> <tr><td>integer</td><td> person_id </td><td>read only</td><td> Person ID that the speed dial belongs to </td></tr> <tr><td>string</td><td> display_name </td><td>read only</td><td> Display name that the speed dial belongs to </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td>read only</td><td> Image thumbnail path that the speed dial belongs to </td></tr> <tr><td>string</td><td> normalized_number </td><td>filter only</td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_number </td><td>filter only</td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> number_filter </td><td>filter only</td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> </table>
   late final ffi.Pointer<_contacts_speeddial_property_ids>
       __contacts_speeddial =
       _lookup<_contacts_speeddial_property_ids>('_contacts_speeddial');
@@ -471,11 +346,6 @@ class Tizen90ContactsService2 {
   _contacts_speeddial_property_ids get _contacts_speeddial =>
       __contacts_speeddial.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_phone_log _contacts_phone_log view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this phone log view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of phone log </td></tr> <tr><td>integer</td><td> person_id </td><td>read, write once </td><td> Person ID that the phone log belongs to </td></tr> <tr><td>string</td><td> address </td><td>read, write once </td><td> Number or Email that the phone log displays </td></tr> <tr><td>integer</td><td> log_time </td><td>read, write once</td><td> Call end time. The value means number of seconds since 1970-01-01 00:00:00 (UTC) </td></tr> <tr><td>integer</td><td> log_type </td><td>read, write</td><td> Log type, refer to the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> extra_data1 </td><td>read, write once</td><td> You can set the related integer data (e.g. message_id, email_id or duration(seconds) of call) </td></tr> <tr><td>string</td><td> extra_data2 </td><td>read, write once</td><td> You can set the related string data (e.g. short message, subject) </td></tr> <tr><td>string</td><td> normalized_address </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> cleaned_address </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> address_filter </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>read, write once</td><td> You can set the related SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
   late final ffi.Pointer<_contacts_phone_log_property_ids>
       __contacts_phone_log =
       _lookup<_contacts_phone_log_property_ids>('_contacts_phone_log');
@@ -483,11 +353,6 @@ class Tizen90ContactsService2 {
   _contacts_phone_log_property_ids get _contacts_phone_log =>
       __contacts_phone_log.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_updated_info _contacts_contact_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact updated info view </td></tr> <tr><td>integer</td><td> contact_id </td><td> Updated contact ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the updated contact belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Contact updated type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> <tr><td>boolean</td><td> image_changed </td><td> Contact image is changed or not </td></tr> </table>
   late final ffi.Pointer<_contacts_contact_updated_info_property_ids>
       __contacts_contact_updated_info =
       _lookup<_contacts_contact_updated_info_property_ids>(
@@ -496,11 +361,6 @@ class Tizen90ContactsService2 {
   _contacts_contact_updated_info_property_ids
       get _contacts_contact_updated_info => __contacts_contact_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_my_profile_updated_info _contacts_my_profile_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this my profile updated info view </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated my profile belongs to </td></tr> <tr><td>integer</td><td> last_changed_type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
   late final ffi.Pointer<_contacts_my_profile_updated_info_property_ids>
       __contacts_my_profile_updated_info =
       _lookup<_contacts_my_profile_updated_info_property_ids>(
@@ -510,11 +370,6 @@ class Tizen90ContactsService2 {
       get _contacts_my_profile_updated_info =>
           __contacts_my_profile_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_updated_info _contacts_group_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Updated group ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated group belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
   late final ffi.Pointer<_contacts_group_updated_info_property_ids>
       __contacts_group_updated_info =
       _lookup<_contacts_group_updated_info_property_ids>(
@@ -523,11 +378,6 @@ class Tizen90ContactsService2 {
   _contacts_group_updated_info_property_ids get _contacts_group_updated_info =>
       __contacts_group_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_member_updated_info _contacts_group_member_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group member updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Updated group ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated group belongs to </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
   late final ffi.Pointer<_contacts_group_member_updated_info_property_ids>
       __contacts_group_member_updated_info =
       _lookup<_contacts_group_member_updated_info_property_ids>(
@@ -537,11 +387,6 @@ class Tizen90ContactsService2 {
       get _contacts_group_member_updated_info =>
           __contacts_group_member_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_grouprel_updated_info _contacts_grouprel_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group relation updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID of group relation </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID of the updated group relation </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID of contact that the updated group relation </td></tr> <tr><td>integer</td><td> type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
   late final ffi.Pointer<_contacts_grouprel_updated_info_property_ids>
       __contacts_grouprel_updated_info =
       _lookup<_contacts_grouprel_updated_info_property_ids>(
@@ -551,11 +396,6 @@ class Tizen90ContactsService2 {
       get _contacts_grouprel_updated_info =>
           __contacts_grouprel_updated_info.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_contact _contacts_person_contact view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person contact view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person</td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to </td></tr> <tr><td>string</td><td> addressbook_ids </td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>string</td><td> address_book_name </td><td> Addressbook name that the person belongs to </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_contact_property_ids>
       __contacts_person_contact =
       _lookup<_contacts_person_contact_property_ids>(
@@ -564,11 +404,6 @@ class Tizen90ContactsService2 {
   _contacts_person_contact_property_ids get _contacts_person_contact =>
       __contacts_person_contact.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_number _contacts_person_number view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person number view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person</td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> number_id </td><td> Number ID that the person belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Number type, refer to the `contacts_number_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_primary_default </td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td> Number </td></tr> <tr><td>string</td><td> number_filter </td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> <tr><td>string</td><td> normalized_number </td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> cleaned_number </td><td>You can only use this property for search filter </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_number_property_ids>
       __contacts_person_number =
       _lookup<_contacts_person_number_property_ids>('_contacts_person_number');
@@ -576,11 +411,6 @@ class Tizen90ContactsService2 {
   _contacts_person_number_property_ids get _contacts_person_number =>
       __contacts_person_number.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_email _contacts_person_email view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person email view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> email_id </td><td> Email ID that the person belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Email type, refer to the `contacts_email_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_primary_default </td><td> The email is default email or not </td></tr> <tr><td>string</td><td> email </td><td> Email address</td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_email_property_ids>
       __contacts_person_email =
       _lookup<_contacts_person_email_property_ids>('_contacts_person_email');
@@ -588,11 +418,6 @@ class Tizen90ContactsService2 {
   _contacts_person_email_property_ids get _contacts_person_email =>
       __contacts_person_email.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_grouprel _contacts_person_grouprel view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group relation view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> addressbook_ids </td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>string</td><td> address_book_name </td><td> Addressbook name that the person belongs to </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID that the person belongs to </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_grouprel_property_ids>
       __contacts_person_grouprel =
       _lookup<_contacts_person_grouprel_property_ids>(
@@ -601,11 +426,6 @@ class Tizen90ContactsService2 {
   _contacts_person_grouprel_property_ids get _contacts_person_grouprel =>
       __contacts_person_grouprel.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_assigned _contacts_person_group_assigned view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group assigned view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> linked_address_book_ids </td><td> Addressbook IDs that the linked person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID that the person belongs to </td></tr> <tr><td>integer<dtd><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_group_assigned_property_ids>
       __contacts_person_group_assigned =
       _lookup<_contacts_person_group_assigned_property_ids>(
@@ -615,11 +435,6 @@ class Tizen90ContactsService2 {
       get _contacts_person_group_assigned =>
           __contacts_person_group_assigned.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_not_assigned _contacts_person_group_not_assigned view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group not assigned view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> linked_address_book_ids </td><td> Addressbook IDs that the linked person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
   late final ffi.Pointer<_contacts_person_group_not_assigned_property_ids>
       __contacts_person_group_not_assigned =
       _lookup<_contacts_person_group_not_assigned_property_ids>(
@@ -629,11 +444,6 @@ class Tizen90ContactsService2 {
       get _contacts_person_group_not_assigned =>
           __contacts_person_group_not_assigned.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_phone_log _contacts_person_phone_log view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this phone log view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>integer</td><td> log_id </td><td> DB record ID of phone log </td></tr> <tr><td>string</td><td> address </td><td> Number or Email that the phone log displays </td></tr> <tr><td>integer</td><td> address_type </td><td> Number or Email type (projection)</td></tr> <tr><td>integer</td><td> log_time </td><td> Call end time. The value means number of seconds since 1970-01-01 00:00:00 (UTC) </td></tr> <tr><td>integer</td><td> log_type </td><td> Log type, refer to the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> extra_data1 </td><td> You can set the related integer data (e.g. message_id, email_id or duration(seconds) of call) (projection) </td></tr> <tr><td>string</td><td> extra_data2 </td><td> You can set the related string data (e.g. short message, subject) (projection) </td></tr> <tr><td>string</td><td> normalized_address </td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_address </td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> address_filter </td><td> You can only use this property for search filter </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
   late final ffi.Pointer<_contacts_person_phone_log_property_ids>
       __contacts_person_phone_log =
       _lookup<_contacts_person_phone_log_property_ids>(
@@ -642,11 +452,6 @@ class Tizen90ContactsService2 {
   _contacts_person_phone_log_property_ids get _contacts_person_phone_log =>
       __contacts_person_phone_log.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_usage _contacts_person_usage view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person usage view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection)</td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> usage_type </td><td> Usage type, refer to the `contacts_usage_type_e` </td></tr> <tr><td>integer</td><td> times_used </td><td> Usage number of person </td></tr> </table>
   late final ffi.Pointer<_contacts_person_usage_property_ids>
       __contacts_person_usage =
       _lookup<_contacts_person_usage_property_ids>('_contacts_person_usage');
@@ -654,11 +459,6 @@ class Tizen90ContactsService2 {
   _contacts_person_usage_property_ids get _contacts_person_usage =>
       __contacts_person_usage.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_number _contacts_contact_number view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contacts number view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the number belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of contact that the number belongs to</td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the number belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the number belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path that the number belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path that the number belongs to (projection) </td></tr> <tr><td>integer</td><td> number_id </td><td> DB record ID of the number </td></tr> <tr><td>integer</td><td> type </td><td> Number type, refer to the `contacts_number_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_default </td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td> Number </td></tr> <tr><td>string</td><td> number_filter </td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> <tr><td>string</td><td> normalized_number </td><td>You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_number </td><td>You can only use this property for search filter </td></tr> </table>
   late final ffi.Pointer<_contacts_contact_number_property_ids>
       __contacts_contact_number =
       _lookup<_contacts_contact_number_property_ids>(
@@ -667,11 +467,6 @@ class Tizen90ContactsService2 {
   _contacts_contact_number_property_ids get _contacts_contact_number =>
       __contacts_contact_number.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_email _contacts_contact_email view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contacts email view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the email belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name that the email belongs to </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name that the email belongs to (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the email belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the email belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path that the email belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path that the email belongs to (projection) </td></tr> <tr><td>integer</td><td> email_id </td><td> DB record ID of the email </td></tr> <tr><td>integer</td><td> type </td><td> Email type, refer to the `contacts_email_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_default </td><td> Email is default email or not </td></tr> <tr><td>string</td><td> email </td><td> Email address </td></tr> </table>
   late final ffi.Pointer<_contacts_contact_email_property_ids>
       __contacts_contact_email =
       _lookup<_contacts_contact_email_property_ids>('_contacts_contact_email');
@@ -679,11 +474,6 @@ class Tizen90ContactsService2 {
   _contacts_contact_email_property_ids get _contacts_contact_email =>
       __contacts_contact_email.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_grouprel _contacts_contact_grouprel view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact grouprel view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the contact group relation belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the group relation </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the group relation belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the group relation belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the group relation (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the group relation (projection) </td></tr> <tr><td>integer</td><td> group_id </td><td> DB record ID of the group relation </td></tr> <tr><td>string</td><td> group_name </td><td> Group name (projection) </td></tr> </table>
   late final ffi.Pointer<_contacts_contact_grouprel_property_ids>
       __contacts_contact_grouprel =
       _lookup<_contacts_contact_grouprel_property_ids>(
@@ -692,11 +482,6 @@ class Tizen90ContactsService2 {
   _contacts_contact_grouprel_property_ids get _contacts_contact_grouprel =>
       __contacts_contact_grouprel.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_activity _contacts_contact_activity view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact activity view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the activity belongs to</td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the contact that the activity belongs to </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name that the activity belongs to </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook that the activity belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the activity belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the contact that the activity belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the contact that the activity belongs to (projection) </td></tr> <tr><td>integer</td><td> activity_id </td><td> DB record ID of the activity </td></tr> <tr><td>string</td><td> source_name </td><td> Account name that the activity belongs to </td></tr> <tr><td>string</td><td> status </td><td> Activity status (projection) </td></tr> <tr><td>integer</td><td> timestamp </td><td> Published time of activity </td></tr> <tr><td>string</td><td> service_operation </td><td> Data for service_set_operation </td></tr> <tr><td>string</td><td> uri </td><td> Data for service_set_uri </td></tr> </table>
   late final ffi.Pointer<_contacts_contact_activity_property_ids>
       __contacts_contact_activity =
       _lookup<_contacts_contact_activity_property_ids>(
@@ -705,11 +490,6 @@ class Tizen90ContactsService2 {
   _contacts_contact_activity_property_ids get _contacts_contact_activity =>
       __contacts_contact_activity.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_phone_log_stat _contacts_phone_log_stat view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this log stat view </td></tr> <tr><td>integer</td><td> log_count </td><td>Log count (projection) </td></tr> <tr><td>integer</td><td> log_type </td><td> Log type, see the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() (Since 3.0)</td></tr> </table>
   late final ffi.Pointer<_contacts_phone_log_stat_property_ids>
       __contacts_phone_log_stat =
       _lookup<_contacts_phone_log_stat_property_ids>(
@@ -718,11 +498,6 @@ class Tizen90ContactsService2 {
   _contacts_phone_log_stat_property_ids get _contacts_phone_log_stat =>
       __contacts_phone_log_stat.ref;
 
-  /// **Group:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-  ///
-  /// **Section:**
-  /// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_sip _contacts_sip view (Since 3.0) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts sip view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the sip </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the sip belongs to </td></tr> <tr><td>string</td><td> address </td><td>read, write</td><td> SIP address </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> sip type, refer to the `contacts_sip_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom sip type label, when the sip type is `CONTACTS_SIP_TYPE_CUSTOM` </td></tr> </table>
   late final ffi.Pointer<_contacts_sip_property_ids> __contacts_sip =
       _lookup<_contacts_sip_property_ids>('_contacts_sip');
 
@@ -794,7 +569,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_record_create()`
   int contacts_record_destroy(
     contacts_record_h record,
-    bool delete_child,
+    ffi.Pointer<bool> delete_child,
   ) {
     return _contacts_record_destroy(
       record,
@@ -803,10 +578,11 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_record_destroyPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(contacts_record_h, ffi.Bool)>>(
-      'contacts_record_destroy');
+      ffi.NativeFunction<
+          ffi.Int Function(contacts_record_h,
+              ffi.Pointer<bool>)>>('contacts_record_destroy');
   late final _contacts_record_destroy = _contacts_record_destroyPtr
-      .asFunction<int Function(contacts_record_h, bool)>();
+      .asFunction<int Function(contacts_record_h, ffi.Pointer<bool>)>();
 
   /// Makes a clone of a record.
   ///
@@ -1166,7 +942,7 @@ class Tizen90ContactsService2 {
   int contacts_record_get_bool(
     contacts_record_h record,
     int property_id,
-    ffi.Pointer<ffi.Bool> value,
+    ffi.Pointer<bool> value,
   ) {
     return _contacts_record_get_bool(
       record,
@@ -1178,10 +954,9 @@ class Tizen90ContactsService2 {
   late final _contacts_record_get_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_record_h, ffi.UnsignedInt,
-              ffi.Pointer<ffi.Bool>)>>('contacts_record_get_bool');
-  late final _contacts_record_get_bool =
-      _contacts_record_get_boolPtr.asFunction<
-          int Function(contacts_record_h, int, ffi.Pointer<ffi.Bool>)>();
+              ffi.Pointer<bool>)>>('contacts_record_get_bool');
+  late final _contacts_record_get_bool = _contacts_record_get_boolPtr
+      .asFunction<int Function(contacts_record_h, int, ffi.Pointer<bool>)>();
 
   /// Sets a boolean value to a record.
   ///
@@ -1207,7 +982,7 @@ class Tizen90ContactsService2 {
   int contacts_record_set_bool(
     contacts_record_h record,
     int property_id,
-    bool value,
+    ffi.Pointer<bool> value,
   ) {
     return _contacts_record_set_bool(
       record,
@@ -1219,9 +994,9 @@ class Tizen90ContactsService2 {
   late final _contacts_record_set_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_record_h, ffi.UnsignedInt,
-              ffi.Bool)>>('contacts_record_set_bool');
+              ffi.Pointer<bool>)>>('contacts_record_set_bool');
   late final _contacts_record_set_bool = _contacts_record_set_boolPtr
-      .asFunction<int Function(contacts_record_h, int, bool)>();
+      .asFunction<int Function(contacts_record_h, int, ffi.Pointer<bool>)>();
 
   /// Gets a record's double value.
   ///
@@ -1620,7 +1395,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_list_create()`
   int contacts_list_destroy(
     contacts_list_h contacts_list,
-    bool delete_child,
+    ffi.Pointer<bool> delete_child,
   ) {
     return _contacts_list_destroy(
       contacts_list,
@@ -1628,11 +1403,12 @@ class Tizen90ContactsService2 {
     );
   }
 
-  late final _contacts_list_destroyPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(contacts_list_h, ffi.Bool)>>(
-          'contacts_list_destroy');
+  late final _contacts_list_destroyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              contacts_list_h, ffi.Pointer<bool>)>>('contacts_list_destroy');
   late final _contacts_list_destroy = _contacts_list_destroyPtr
-      .asFunction<int Function(contacts_list_h, bool)>();
+      .asFunction<int Function(contacts_list_h, ffi.Pointer<bool>)>();
 
   /// Retrieves the number of contact entities from a contacts list.
   ///
@@ -2203,7 +1979,7 @@ class Tizen90ContactsService2 {
   int contacts_filter_add_bool(
     contacts_filter_h filter,
     int property_id,
-    bool match_value,
+    ffi.Pointer<bool> match_value,
   ) {
     return _contacts_filter_add_bool(
       filter,
@@ -2215,9 +1991,9 @@ class Tizen90ContactsService2 {
   late final _contacts_filter_add_boolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_filter_h, ffi.UnsignedInt,
-              ffi.Bool)>>('contacts_filter_add_bool');
+              ffi.Pointer<bool>)>>('contacts_filter_add_bool');
   late final _contacts_filter_add_bool = _contacts_filter_add_boolPtr
-      .asFunction<int Function(contacts_filter_h, int, bool)>();
+      .asFunction<int Function(contacts_filter_h, int, ffi.Pointer<bool>)>();
 
   /// Adds an operator between conditions.
   ///
@@ -2428,7 +2204,7 @@ class Tizen90ContactsService2 {
   /// - `CONTACTS_ERROR_SYSTEM`: Internal system module error
   int contacts_query_set_distinct(
     contacts_query_h query,
-    bool set1,
+    ffi.Pointer<bool> set1,
   ) {
     return _contacts_query_set_distinct(
       query,
@@ -2436,11 +2212,12 @@ class Tizen90ContactsService2 {
     );
   }
 
-  late final _contacts_query_set_distinctPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(contacts_query_h, ffi.Bool)>>(
-          'contacts_query_set_distinct');
+  late final _contacts_query_set_distinctPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(contacts_query_h,
+              ffi.Pointer<bool>)>>('contacts_query_set_distinct');
   late final _contacts_query_set_distinct = _contacts_query_set_distinctPtr
-      .asFunction<int Function(contacts_query_h, bool)>();
+      .asFunction<int Function(contacts_query_h, ffi.Pointer<bool>)>();
 
   /// Sets a filter for query.
   ///
@@ -2500,7 +2277,7 @@ class Tizen90ContactsService2 {
   int contacts_query_set_sort(
     contacts_query_h query,
     int property_id,
-    bool is_ascending,
+    ffi.Pointer<bool> is_ascending,
   ) {
     return _contacts_query_set_sort(
       query,
@@ -2512,9 +2289,9 @@ class Tizen90ContactsService2 {
   late final _contacts_query_set_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(contacts_query_h, ffi.UnsignedInt,
-              ffi.Bool)>>('contacts_query_set_sort');
+              ffi.Pointer<bool>)>>('contacts_query_set_sort');
   late final _contacts_query_set_sort = _contacts_query_set_sortPtr
-      .asFunction<int Function(contacts_query_h, int, bool)>();
+      .asFunction<int Function(contacts_query_h, int, ffi.Pointer<bool>)>();
 
   /// Inserts a record to the contacts database.
   ///
@@ -5393,7 +5170,7 @@ class Tizen90ContactsService2 {
   /// **See also:**
   /// - `contacts_connect()`
   int contacts_sim_get_initialization_status(
-    ffi.Pointer<ffi.Bool> completed,
+    ffi.Pointer<bool> completed,
   ) {
     return _contacts_sim_get_initialization_status(
       completed,
@@ -5401,11 +5178,11 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_sim_get_initialization_statusPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'contacts_sim_get_initialization_status');
   late final _contacts_sim_get_initialization_status =
       _contacts_sim_get_initialization_statusPtr
-          .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// Imports all contacts from SIM of the given SIM slot number to the Contacts Database.
   ///
@@ -5498,7 +5275,7 @@ class Tizen90ContactsService2 {
   /// - `contacts_connect()`
   int contacts_sim_get_initialization_status_by_sim_slot_no(
     int sim_slot_no,
-    ffi.Pointer<ffi.Bool> completed,
+    ffi.Pointer<bool> completed,
   ) {
     return _contacts_sim_get_initialization_status_by_sim_slot_no(
       sim_slot_no,
@@ -5507,13 +5284,11 @@ class Tizen90ContactsService2 {
   }
 
   late final _contacts_sim_get_initialization_status_by_sim_slot_noPtr =
-      _lookup<
-              ffi.NativeFunction<
-                  ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<bool>)>>(
           'contacts_sim_get_initialization_status_by_sim_slot_no');
   late final _contacts_sim_get_initialization_status_by_sim_slot_no =
       _contacts_sim_get_initialization_status_by_sim_slot_noPtr
-          .asFunction<int Function(int, ffi.Pointer<ffi.Bool>)>();
+          .asFunction<int Function(int, ffi.Pointer<bool>)>();
 
   /// Retrieves all contacts with a record handle (_contacts_contact) from a vCard file.
   ///
@@ -6200,38 +5975,18 @@ abstract class contacts_error_e {
   static const int CONTACTS_ERROR_INTERNAL = -33619713;
 }
 
-/// Handle for contacts record.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 final class __contacts_record_h extends ffi.Opaque {}
 
-/// Handle for contacts filter.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 final class __contacts_filter_h extends ffi.Opaque {}
 
-/// Handle for contacts list.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 final class __contacts_list_h extends ffi.Opaque {}
 
-/// Handle for contacts query.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 final class __contacts_query_h extends ffi.Opaque {}
 
-/// The contacts handle.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 final class __contacts_h extends ffi.Opaque {}
 
@@ -6754,11 +6509,6 @@ abstract class contacts_sip_type_e {
   static const int CONTACTS_SIP_TYPE_WORK = 3;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_address_book _contacts_address_book view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts addressbook view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the addressbook </td></tr> <tr><td>integer</td><td> account_id </td><td>read, write once</td><td> Account ID that the addressbook belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> It cannot be `NULL`. Duplicate names are not allowed. </td></tr> <tr><td>integer</td><td> mode </td><td>read, write</td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> </table>
 /// @nodoc
 final class _contacts_address_book_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -6776,11 +6526,6 @@ final class _contacts_address_book_property_ids extends ffi.Struct {
   external int mode;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group _contacts_group view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts group view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the group </td></tr> <tr><td>integer</td><td> address_book_id </td><td>read, write once</td><td> Addressbook ID that the group belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Group name </td></tr> <tr><td>string</td><td> ringtone_path </td><td>read, write</td><td> Ringtone path of the group </td></tr> <tr><td>string</td><td> image_path </td><td>read, write</td><td> Image path of the group </td></tr> <tr><td>string</td><td> vibration </td><td>read, write</td><td> Vibration path of the group </td></tr> <tr><td>string</td><td> extra_data </td><td>read, write</td><td> Extra data for default group name </td></tr> <tr><td>boolean</td><td> is_read_only </td><td>read, write once</td><td> The group is read only or not </td></tr> <tr><td>string</td><td> message_alert </td><td>read, write</td><td> Message alert path of the group </td></tr> </table>
 /// @nodoc
 final class _contacts_group_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -6813,11 +6558,6 @@ final class _contacts_group_property_ids extends ffi.Struct {
   external int message_alert;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person _contacts_person view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts person view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td>read only</td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td>read only</td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td>read only</td><td> Display contact ID that the person belongs to </td></tr> <tr><td>string</td><td> ringtone_path </td><td>read, write</td><td> Ringtone path of the person </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td>read only</td><td> Image thumbnail path of the person </td></tr> <tr><td>string</td><td> vibration </td><td>read, write</td><td> Vibration path of the person </td></tr> <tr><td>string</td><td> message_alert </td><td>read, write</td><td> Message alert path of the person </td></tr> <tr><td>string</td><td> status </td><td>read only</td><td> Status of social account </td></tr> <tr><td>boolean</td><td> is_favorite </td><td>read, write</td><td> The person is favorite or not </td></tr> <tr><td>double</td><td> favorite_priority </td><td> read only </td><td> The priority of favorite contacts. it can be used as sorting key, see the `contacts_query_set_sort` </td></tr> <tr><td>integer</td><td> link_count </td><td>read only</td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> addressbook_ids </td><td>read only</td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td>read only</td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td>read only</td><td> The person has email or not </td></tr> <tr><td>integer</td><td> snippet_type </td><td>read only</td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td>read only</td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -6874,11 +6614,6 @@ final class _contacts_person_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_simple_contact _contacts_simple_contact view You can only get simple contact using this view. <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this simple contact view </td></tr> <tr><td>integer</td><td>id</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the contact </td></tr> <tr><td>integer</td><td>display_source_id</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook that the contact belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the contact </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the contact </td></tr> <tr><td>boolean</td><td>is_favorite</td><td> The contact is favorite or not </td></tr> <tr><td>boolean</td><td>has_phonenumber</td><td> The contact has phone number or not </td></tr> <tr><td>boolean</td><td>has_email</td><td> The contact has email or not </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the contact belongs to </td></tr> <tr><td>string</td><td>uid</td><td> Unique identifier </td></tr> <tr><td>string</td><td>vibration</td><td> Vibration path of the contact </td></tr> <tr><td>string</td><td>message_alert</td><td> Message alert path of the contact </td></tr> <tr><td>integer</td><td>changed_time</td><td> Last changed contact time </td></tr> </table>
 /// @nodoc
 final class _contacts_simple_contact_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -6926,11 +6661,6 @@ final class _contacts_simple_contact_property_ids extends ffi.Struct {
   external int message_alert;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact _contacts_contact view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact view </td></tr> <tr><td>integer</td><td>id</td><td>read only</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td>display_name</td><td>read only</td><td> Display name of the contact </td></tr> <tr><td>integer</td><td>display_source_id</td><td>read only</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` </td></tr> <tr><td>integer</td><td>address_book_id</td><td>read, write once</td><td> Addressbook ID that the contact belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td>read, write</td><td> Ringtone path of the contact </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td>read only</td><td> Image thumbnail path of the contact </td></tr> <tr><td>boolean</td><td>is_favorite</td><td>read, write</td><td> The contact is favorite or not </td></tr> <tr><td>boolean</td><td>has_phonenumber</td><td>read only</td><td> The contact has phone number or not </td></tr> <tr><td>boolean</td><td>has_email</td><td>read only</td><td> The contact has email or not </td></tr> <tr><td>integer</td><td>person_id</td><td>read, write once</td><td> Person ID that the contact belongs to. If set when inserting, a contact will be linked to person </td></tr> <tr><td>string</td><td>uid</td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>string</td><td>vibration</td><td>read, write</td><td> Vibration path of the contact </td></tr> <tr><td>string</td><td>message_alert</td><td>read, write</td><td> Message alert path of the contact </td></tr> <tr><td>integer</td><td>changed_time</td><td>read only</td><td> Last changed contact time </td></tr> <tr><td>integer</td><td>link_mode</td><td>read, write once</td><td> The link mode, refer to the `contacts_contact_link_mode_e.` If the person_id was set, this value will be ignored </td></tr> <tr><td>record</td><td>name</td><td>read, write</td><td> _contacts_name child record (single) </td></tr> <tr><td>record</td><td>company</td><td>read, write</td><td> _contacts_company child record (multiple) </td></tr> <tr><td>record</td><td>note</td><td>read, write</td><td> _contacts_note child record (multiple) </td></tr> <tr><td>record</td><td>number</td><td>read, write</td><td> _contacts_number child record (multiple) </td></tr> <tr><td>record</td><td>email</td><td>read, write</td><td> _contacts_email child record (multiple) </td></tr> <tr><td>record</td><td>event</td><td>read, write</td><td> _contacts_event child record (multiple) </td></tr> <tr><td>record</td><td>messenger</td><td>read, write</td><td> _contacts_messenger child record (multiple) </td></tr> <tr><td>record</td><td>address</td><td>read, write</td><td> _contacts_address child record (multiple) </td></tr> <tr><td>record</td><td>url</td><td>read, write</td><td> _contacts_url child record (multiple) </td></tr> <tr><td>record</td><td>nickname</td><td>read, write</td><td> _contacts_nickname child record (multiple) </td></tr> <tr><td>record</td><td>profile</td><td>read, write</td><td> _contacts_profile child record (multiple) </td></tr> <tr><td>record</td><td>relationship</td><td>read, write</td><td> _contacts_relationship child record (multiple)</td></tr> <tr><td>record</td><td>image</td><td>read, write</td><td> _contacts_image child record (multiple)</td></tr> <tr><td>record</td><td>group_relation</td><td>read, write</td><td> _contacts_group_relation child record (multiple)</td></tr> <tr><td>record</td><td>sip</td><td>read, write</td><td> _contacts_sip child record (multiple) (Since 3.0)</td></tr> </table>
 /// @nodoc
 final class _contacts_contact_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7029,11 +6759,6 @@ final class _contacts_contact_property_ids extends ffi.Struct {
   external int sip;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_my_profile _contacts_my_profile view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this my profile view </td></tr> <tr><td>integer</td><td>id</td><td>read only</td><td> DB record ID of the my profile </td></tr> <tr><td>string</td><td>display_name</td><td>read only</td><td> Display name of the profile </td></tr> <tr><td>integer</td><td>address_book_id</td><td>read, write once</td><td> Addressbook ID that the profile belongs to </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td>read only</td><td> Image thumbnail path of the profile </td></tr> <tr><td>string</td><td>uid</td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>integer</td><td>changed_time</td><td>read only</td><td> Last changed profile time </td></tr> <tr><td>record</td><td>name</td><td>read, write</td><td> _contacts_name child record (single) </td></tr> <tr><td>record</td><td>company</td><td>read, write</td><td> _contacts_company child record (multiple) </td></tr> <tr><td>record</td><td>note</td><td>read, write</td><td> _contacts_note child record (multiple) </td></tr> <tr><td>record</td><td>number</td><td>read, write</td><td> _contacts_number child record (multiple) </td></tr> <tr><td>record</td><td>email</td><td>read, write</td><td> _contacts_email child record (multiple) </td></tr> <tr><td>record</td><td>event</td><td>read, write</td><td> _contacts_event child record (multiple) </td></tr> <tr><td>record</td><td>messenger</td><td>read, write</td><td> _contacts_messenger child record (multiple) </td></tr> <tr><td>record</td><td>address</td><td>read, write</td><td> _contacts_address child record (multiple) </td></tr> <tr><td>record</td><td>url</td><td>read, write</td><td> _contacts_url child record (multiple) </td></tr> <tr><td>record</td><td>nickname</td><td>read, write</td><td> _contacts_nickname child record (multiple) </td></tr> <tr><td>record</td><td>profile</td><td>read, write</td><td> _contacts_profile child record (multiple) </td></tr> <tr><td>record</td><td>relationship</td><td>read, write</td><td> _contacts_relationship child record (multiple) </td></tr> <tr><td>record</td><td>image</td><td>read, write</td><td> _contacts_image child record (multiple) </td></tr> <tr><td>record</td><td>sip</td><td>read, write</td><td> _contacts_sip child record (multiple) (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_my_profile_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7102,11 +6827,6 @@ final class _contacts_my_profile_property_ids extends ffi.Struct {
   external int sip;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_name _contacts_name view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts name view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the name </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contacts ID that the name record belongs to </td></tr> <tr><td>string</td><td> first </td><td>read, write</td><td> First name </td></tr> <tr><td>string</td><td> last </td><td>read, write</td><td> Last name </td></tr> <tr><td>string</td><td> addition </td><td>read, write</td><td> Middle name </td></tr> <tr><td>string</td><td> suffix </td><td>read, write</td><td> Suffix </td></tr> <tr><td>string</td><td> prefix </td><td>read, write</td><td> Prefix </td></tr> <tr><td>string</td><td> phonetic_first </td><td>read, write</td><td> Pronounce the first name </td></tr> <tr><td>string</td><td> phonetic_middle </td><td>read, write</td><td> Pronounce the middle name </td></tr> <tr><td>string</td><td> phonetic_last </td><td>read, write</td><td> Pronounce the last name </td></tr> </table>
 /// @nodoc
 final class _contacts_name_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7142,11 +6862,6 @@ final class _contacts_name_property_ids extends ffi.Struct {
   external int phonetic_last;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_number _contacts_number view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts number view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the number </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the number belongs to</td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Number type, refer to the `contacts_number_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td>read, write</td><td> Number </td></tr> <tr><td>string</td><td> normalized_number </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> <tr><td>string</td><td> cleaned_number </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> <tr><td>string</td><td> number_filter </td><td> filter only </td><td> You can only use this property for search filter. </td></tr> </table>
 /// @nodoc
 final class _contacts_number_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7179,11 +6894,6 @@ final class _contacts_number_property_ids extends ffi.Struct {
   external int number_filter;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_email _contacts_email view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts email view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the email </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the email belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Email type, refer to the `contacts_email_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The email is default email or not </td></tr> <tr><td>string</td><td> email </td><td>read, write</td><td> Email address</td></tr> </table>
 /// @nodoc
 final class _contacts_email_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7207,11 +6917,6 @@ final class _contacts_email_property_ids extends ffi.Struct {
   external int email;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_address _contacts_address view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts address view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the address </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the address belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Address type, refer to the `contacts_address_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Address type label, when the address type is `CONTACTS_ADDRESS_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> postbox </td><td>read, write</td><td> Post office box </td></tr> <tr><td>string</td><td> postal_code </td><td>read, write</td><td> Postal code </td></tr> <tr><td>string</td><td> region </td><td>read, write</td><td> Region </td></tr> <tr><td>string</td><td> locality </td><td>read, write</td><td> Locality </td></tr> <tr><td>string</td><td> street </td><td>read, write</td><td> Street </td></tr> <tr><td>string</td><td> country </td><td>read, write</td><td> Country </td></tr> <tr><td>string</td><td> extended </td><td>read, write</td><td> Extended address </td></tr> <tr><td>boolean</td><td> is_default </td><td>read, write</td><td> The address is default or not </td></tr> </table>
 /// @nodoc
 final class _contacts_address_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7253,11 +6958,6 @@ final class _contacts_address_property_ids extends ffi.Struct {
   external int is_default;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_note _contacts_note view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts note view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the note </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the note belongs to </td></tr> <tr><td>string</td><td> note </td><td>read, write</td><td> Note contents </td></tr> </table>
 /// @nodoc
 final class _contacts_note_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7272,11 +6972,6 @@ final class _contacts_note_property_ids extends ffi.Struct {
   external int note;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_url _contacts_url view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts URL view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the URL </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the URL belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> URL type, refer to the `contacts_url_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom URL type label, when the URL type is `CONTACTS_URL_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> url </td><td>read, write</td><td> URL </td></tr> </table>
 /// @nodoc
 final class _contacts_url_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7297,11 +6992,6 @@ final class _contacts_url_property_ids extends ffi.Struct {
   external int url;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_event _contacts_event view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts event view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the event </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the event belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Event type, refer to the `contacts_event_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom event type label, when the event type is `CONTACTS_EVENT_TYPE_CUSTOM` </td></tr> <tr><td>integer</td><td> date </td><td>read, write</td><td> Event date(YYYYMMDD). e.g. 2014/1/1 : 20140101. Even if the calendar_type is set as CONTACTS_EVENT_CALENDAR_TYPE_CHINESE, you SHOULD set Gregorian date </td></tr> <tr><td>integer</td><td> calendar_type </td><td>read, write</td><td> Calendar type, refer to the `contacts_event_calendar_type_e` </td></tr> <tr><td>bool</td><td> is_leap_month (Deprecated) </td><td>read, write</td><td> The month is leap or not (valid on lunisolar calendar only) </td></tr> </table>
 /// @nodoc
 final class _contacts_event_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7328,11 +7018,6 @@ final class _contacts_event_property_ids extends ffi.Struct {
   external int is_leap_month;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_relation _contacts_group_relation view Refer `contacts_group_add_contact,` `contacts_group_remove_contact` <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this relationship view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the group (can not be used as filter) </td></tr> <tr><td>integer</td><td> group_id </td><td>read, write once</td><td> DB record ID of the group </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> DB record ID of the contact </td></tr> <tr><td>string</td><td> name </td><td>read only</td><td> Group name </td></tr> </table>
 /// @nodoc
 final class _contacts_group_relation_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7350,11 +7035,6 @@ final class _contacts_group_relation_property_ids extends ffi.Struct {
   external int name;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_relationship _contacts_relationship view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this relationship view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the relationship </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the relationship belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Relationship type, refer to the `contacts_relationship_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom relationship type label, when the relationship type is CONTACTS_RELATIONSHIP_TYPE_CUSTOM </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Selected contact name that the relationship belongs to </td></tr> </table>
 /// @nodoc
 final class _contacts_relationship_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7375,11 +7055,6 @@ final class _contacts_relationship_property_ids extends ffi.Struct {
   external int name;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_image _contacts_image view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts image view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the image </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the image belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Image type, refer to the `contacts_image_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom image type label, when the image type is `CONTACTS_IMAGE_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> path </td><td>read, write</td><td> Image thumbnail path </td></tr> </table>
 /// @nodoc
 final class _contacts_image_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7403,11 +7078,6 @@ final class _contacts_image_property_ids extends ffi.Struct {
   external int is_default;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_company _contacts_company view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts company view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the company </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the company belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Company type, refer to the `contacts_company_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom company type label, when the company type is `CONTACTS_COMPANY_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Company name </td></tr> <tr><td>string</td><td> department </td><td>read, write</td><td> Department </td></tr> <tr><td>string</td><td> job_title </td><td>read, write</td><td> Job title </td></tr> <tr><td>string</td><td> assistant_name </td><td>read, write</td><td> Assistant name </td></tr> <tr><td>string</td><td> role </td><td>read, write</td><td> Role </td></tr> <tr><td>string</td><td> logo </td><td>read, write</td><td> Company logo image file path </td></tr> <tr><td>string</td><td> location </td><td>read, write</td><td> Company location </td></tr> <tr><td>string</td><td> description </td><td>read, write</td><td> Description </td></tr> <tr><td>string</td><td> phonetic_name </td><td>read, write</td><td> Pronounce the company name </td></tr> </table>
 /// @nodoc
 final class _contacts_company_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7452,11 +7122,6 @@ final class _contacts_company_property_ids extends ffi.Struct {
   external int phonetic_name;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_nickname _contacts_nickname view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts nickname view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the nickname </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the nickname belongs to </td></tr> <tr><td>string</td><td> name </td><td>read, write</td><td> Nickname </td></tr> </table>
 /// @nodoc
 final class _contacts_nickname_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7471,11 +7136,6 @@ final class _contacts_nickname_property_ids extends ffi.Struct {
   external int name;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_messenger _contacts_messenger view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts messenger view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the messenger </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the messenger belongs to </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> Messenger type, refer to the `contacts_messenger_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom messenger type label, when the messenger type is `CONTACTS_MESSENGER_TYPE_CUSTOM` </td></tr> <tr><td>string</td><td> im_id </td><td>read, write</td><td> Messenger ID (email address or email ID...) </td></tr> </table>
 /// @nodoc
 final class _contacts_messenger_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7496,11 +7156,6 @@ final class _contacts_messenger_property_ids extends ffi.Struct {
   external int im_id;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_extension _contacts_extension view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts extension view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the contact extension </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the contact extension belongs to </td></tr> <tr><td>integer</td><td> data1 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data2 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data3 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data4 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data5 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data6 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data7 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data8 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data9 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data10 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data11 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> <tr><td>string</td><td> data12 </td><td>read, write</td><td> The extra child record format for non-provided from contacts-service </td></tr> </table>
 /// @nodoc
 final class _contacts_extension_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7548,11 +7203,6 @@ final class _contacts_extension_property_ids extends ffi.Struct {
   external int data12;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_sdn _contacts_sdn view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts sdn view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the sdn </td></tr> <tr><td>string</td><td> name </td><td>read only</td><td> Provided name of sdn </td></tr> <tr><td>string</td><td> number </td><td>read only</td><td> Provided number of sdn </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>read only</td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
 /// @nodoc
 final class _contacts_sdn_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7570,11 +7220,6 @@ final class _contacts_sdn_property_ids extends ffi.Struct {
   external int sim_slot_no;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_profile _contacts_profile view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts profile view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of profile </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contacts ID that the profile belongs to </td></tr> <tr><td>string</td><td> uid </td><td>read, write</td><td> Unique identifier </td></tr> <tr><td>string</td><td> text </td><td>read, write</td><td> Profile contents </td></tr> <tr><td>integer</td><td> order </td><td>read, write</td><td> Priority to display the profile </td></tr> <tr><td>string</td><td> service_operation </td><td>read, write</td><td> Data for app_control_set_operation </td></tr> <tr><td>string</td><td> mime </td><td>read, write</td><td> Data for app_control_set_mime </td></tr> <tr><td>string</td><td> app_id </td><td>read, write</td><td> Data for app_control_set_app_id </td></tr> <tr><td>string</td><td> uri </td><td>read, write</td><td> Data for app_control_set_uri </td></tr> <tr><td>string</td><td> category </td><td>read, write</td><td> Data for app_control_set_category </td></tr> <tr><td>string</td><td> extra_data </td><td>read, write</td><td> It includes "key:value,key:value," pairs. You should parse it. And you must base64 encode each key and value</td></tr> </table>
 /// @nodoc
 final class _contacts_profile_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7613,11 +7258,6 @@ final class _contacts_profile_property_ids extends ffi.Struct {
   external int contact_id;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_activity_photo _contacts_activity_photo view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact activity photo view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of activity photo </td></tr> <tr><td>integer</td><td> activity_id </td><td>read, write once</td><td> Activity ID that the activity photo belongs to </td></tr> <tr><td>string</td><td> photo_url </td><td>read, write</td><td> Photo URL </td></tr> <tr><td>integer</td><td> sort_index </td><td>read, write</td><td> Sorted photo index </td></tr> </table>
 /// @nodoc
 final class _contacts_activity_photo_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7635,11 +7275,6 @@ final class _contacts_activity_photo_property_ids extends ffi.Struct {
   external int sort_index;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_activity _contacts_activity view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this activity view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of activity </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the activity belongs to </td></tr> <tr><td>string</td><td> source_name </td><td>read, write</td><td> Account name that the activity belongs to </td></tr> <tr><td>int</td><td> timestamp </td><td>read, write</td><td> Published time of activity </td></tr> <tr><td>string</td><td> status </td><td>read, write</td><td> Activity status </td></tr> <tr><td>string</td><td> service_operation </td><td>read, write</td><td> Data for app_control_set_operation </td></tr> <tr><td>string</td><td> uri </td><td>read, write</td><td> Data for app_control_set_uri </td></tr> <tr><td>record</td><td> photo </td><td>read, write</td><td> _contacts_activity_photo child record (multiple) </td></tr> </table>
 /// @nodoc
 final class _contacts_activity_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7669,11 +7304,6 @@ final class _contacts_activity_property_ids extends ffi.Struct {
   external int photo;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_speeddial _contacts_speeddial view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contact speed dial view </td></tr> <tr><td>integer</td><td> speeddial_number </td><td>read, write once</td><td> Stored speed dial number </td></tr> <tr><td>integer</td><td> number_id </td><td>read, write</td><td> Number ID that the speed dial belongs to </td></tr> <tr><td>string</td><td> number </td><td>read only</td><td> Contact number of specified speed dial </td></tr> <tr><td>string</td><td> number_label </td><td>read only</td><td> Contact number label of specified speed dial, when the number type is CONTACTS_NUMBER_TYPE_CUSTOM </td></tr> <tr><td>integer</td><td> number_type </td><td>read only</td><td> Contact number type, refer to the `contacts_number_type_e` </td></tr> <tr><td>integer</td><td> person_id </td><td>read only</td><td> Person ID that the speed dial belongs to </td></tr> <tr><td>string</td><td> display_name </td><td>read only</td><td> Display name that the speed dial belongs to </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td>read only</td><td> Image thumbnail path that the speed dial belongs to </td></tr> <tr><td>string</td><td> normalized_number </td><td>filter only</td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_number </td><td>filter only</td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> number_filter </td><td>filter only</td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> </table>
 /// @nodoc
 final class _contacts_speeddial_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7712,11 +7342,6 @@ final class _contacts_speeddial_property_ids extends ffi.Struct {
   external int number_filter;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_phone_log _contacts_phone_log view <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this phone log view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of phone log </td></tr> <tr><td>integer</td><td> person_id </td><td>read, write once </td><td> Person ID that the phone log belongs to </td></tr> <tr><td>string</td><td> address </td><td>read, write once </td><td> Number or Email that the phone log displays </td></tr> <tr><td>integer</td><td> log_time </td><td>read, write once</td><td> Call end time. The value means number of seconds since 1970-01-01 00:00:00 (UTC) </td></tr> <tr><td>integer</td><td> log_type </td><td>read, write</td><td> Log type, refer to the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> extra_data1 </td><td>read, write once</td><td> You can set the related integer data (e.g. message_id, email_id or duration(seconds) of call) </td></tr> <tr><td>string</td><td> extra_data2 </td><td>read, write once</td><td> You can set the related string data (e.g. short message, subject) </td></tr> <tr><td>string</td><td> normalized_address </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> cleaned_address </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> address_filter </td><td> filter only</td><td> You can only use this property for search filter</td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>read, write once</td><td> You can set the related SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
 /// @nodoc
 final class _contacts_phone_log_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7755,11 +7380,6 @@ final class _contacts_phone_log_property_ids extends ffi.Struct {
   external int sim_slot_no;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_updated_info _contacts_contact_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact updated info view </td></tr> <tr><td>integer</td><td> contact_id </td><td> Updated contact ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the updated contact belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Contact updated type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> <tr><td>boolean</td><td> image_changed </td><td> Contact image is changed or not </td></tr> </table>
 /// @nodoc
 final class _contacts_contact_updated_info_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7780,11 +7400,6 @@ final class _contacts_contact_updated_info_property_ids extends ffi.Struct {
   external int image_changed;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_my_profile_updated_info _contacts_my_profile_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this my profile updated info view </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated my profile belongs to </td></tr> <tr><td>integer</td><td> last_changed_type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
 /// @nodoc
 final class _contacts_my_profile_updated_info_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7799,11 +7414,6 @@ final class _contacts_my_profile_updated_info_property_ids extends ffi.Struct {
   external int version;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_updated_info _contacts_group_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Updated group ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated group belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
 /// @nodoc
 final class _contacts_group_updated_info_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7821,11 +7431,6 @@ final class _contacts_group_updated_info_property_ids extends ffi.Struct {
   external int version;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_group_member_updated_info _contacts_group_member_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group member updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Updated group ID </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID that the updated group belongs to </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
 /// @nodoc
 final class _contacts_group_member_updated_info_property_ids
     extends ffi.Struct {
@@ -7841,11 +7446,6 @@ final class _contacts_group_member_updated_info_property_ids
   external int version;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_grouprel_updated_info _contacts_grouprel_updated_info view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this group relation updated info view </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID of group relation </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID of the updated group relation </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Address book ID of contact that the updated group relation </td></tr> <tr><td>integer</td><td> type </td><td> Changed update type, refer to the `contacts_changed_e` </td></tr> <tr><td>integer</td><td> version </td><td> Updated version </td></tr> </table>
 /// @nodoc
 final class _contacts_grouprel_updated_info_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7866,11 +7466,6 @@ final class _contacts_grouprel_updated_info_property_ids extends ffi.Struct {
   external int version;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_contact _contacts_person_contact view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person contact view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person</td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to </td></tr> <tr><td>string</td><td> addressbook_ids </td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>string</td><td> address_book_name </td><td> Addressbook name that the person belongs to </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_contact_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -7936,11 +7531,6 @@ final class _contacts_person_contact_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_number _contacts_person_number view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person number view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person</td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> number_id </td><td> Number ID that the person belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Number type, refer to the `contacts_number_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_primary_default </td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td> Number </td></tr> <tr><td>string</td><td> number_filter </td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> <tr><td>string</td><td> normalized_number </td><td> You can only use this property for search filter</td></tr> <tr><td>string</td><td> cleaned_number </td><td>You can only use this property for search filter </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_number_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8009,11 +7599,6 @@ final class _contacts_person_number_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_email _contacts_person_email view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person email view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> email_id </td><td> Email ID that the person belongs to </td></tr> <tr><td>integer</td><td> type </td><td> Email type, refer to the `contacts_email_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_primary_default </td><td> The email is default email or not </td></tr> <tr><td>string</td><td> email </td><td> Email address</td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_email_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8073,11 +7658,6 @@ final class _contacts_person_email_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_grouprel _contacts_person_grouprel view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group relation view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> addressbook_ids </td><td> Addressbook IDs that the person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>string</td><td> address_book_name </td><td> Addressbook name that the person belongs to </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID that the person belongs to </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_grouprel_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8146,11 +7726,6 @@ final class _contacts_person_grouprel_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_assigned _contacts_person_group_assigned view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group assigned view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> linked_address_book_ids </td><td> Addressbook IDs that the linked person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>integer</td><td> group_id </td><td> Group ID that the person belongs to </td></tr> <tr><td>integer<dtd><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_group_assigned_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8216,11 +7791,6 @@ final class _contacts_person_group_assigned_property_ids extends ffi.Struct {
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_not_assigned _contacts_person_group_not_assigned view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person group not assigned view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>string</td><td> status </td><td> Status of social account (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>integer</td><td> link_count </td><td> Link count of contact records (projection) </td></tr> <tr><td>string</td><td> linked_address_book_ids </td><td> Addressbook IDs that the linked person belongs to (projection) </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> address_book_id </td><td> Addressbook ID that the person belongs to </td></tr> <tr><td>integer</td><td> address_book_mode </td><td> Addressbook mode, refer to the `contacts_address_book_mode_e` </td></tr> <tr><td>integer</td><td> contact_id </td><td> Contact ID that the person belongs to (projection) </td></tr> <tr><td>integer</td><td> snippet_type </td><td> keyword matched data type, refer to they `contacts_data_type_e` (Since 3.0) </td></tr> <tr><td>string</td><td> snippet_string </td><td> keyword matched data string (Since 3.0) </td></tr> </table>
 /// @nodoc
 final class _contacts_person_group_not_assigned_property_ids
     extends ffi.Struct {
@@ -8284,11 +7854,6 @@ final class _contacts_person_group_not_assigned_property_ids
   external int snippet_string;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_phone_log _contacts_person_phone_log view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this phone log view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection) </td></tr> <tr><td>integer</td><td> log_id </td><td> DB record ID of phone log </td></tr> <tr><td>string</td><td> address </td><td> Number or Email that the phone log displays </td></tr> <tr><td>integer</td><td> address_type </td><td> Number or Email type (projection)</td></tr> <tr><td>integer</td><td> log_time </td><td> Call end time. The value means number of seconds since 1970-01-01 00:00:00 (UTC) </td></tr> <tr><td>integer</td><td> log_type </td><td> Log type, refer to the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> extra_data1 </td><td> You can set the related integer data (e.g. message_id, email_id or duration(seconds) of call) (projection) </td></tr> <tr><td>string</td><td> extra_data2 </td><td> You can set the related string data (e.g. short message, subject) (projection) </td></tr> <tr><td>string</td><td> normalized_address </td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_address </td><td> You can only use this property for search filter </td></tr> <tr><td>string</td><td> address_filter </td><td> You can only use this property for search filter </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() </td></tr> </table>
 /// @nodoc
 final class _contacts_person_phone_log_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8336,11 +7901,6 @@ final class _contacts_person_phone_log_property_ids extends ffi.Struct {
   external int sim_slot_no;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_usage _contacts_person_usage view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this person usage view </td></tr> <tr><td>integer</td><td> person_id </td><td> DB record ID of the person </td></tr> <tr><td>string</td><td> display_name </td><td> Display name of the person </td></tr> <tr><td>string</td><td> display_name_index </td><td> The first character of first string for grouping. This is normalized using icu (projection) </td></tr> <tr><td>integer</td><td> display_contact_id </td><td> Display contact ID that the person belongs to (projection) </td></tr> <tr><td>string</td><td> ringtone_path </td><td> Ringtone path of the person (projection) </td></tr> <tr><td>string</td><td> image_thumbnail_path </td><td> Image thumbnail path of the person (projection)</td></tr> <tr><td>string</td><td> vibration </td><td> Vibration path of the person (projection) </td></tr> <tr><td>string</td><td> message_alert </td><td> Message alert path of the person (projection) </td></tr> <tr><td>boolean</td><td> is_favorite </td><td> The person is favorite or not </td></tr> <tr><td>boolean</td><td> has_phonenumber </td><td> The person has phone number or not </td></tr> <tr><td>boolean</td><td> has_email </td><td> The person has email or not </td></tr> <tr><td>integer</td><td> usage_type </td><td> Usage type, refer to the `contacts_usage_type_e` </td></tr> <tr><td>integer</td><td> times_used </td><td> Usage number of person </td></tr> </table>
 /// @nodoc
 final class _contacts_person_usage_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8385,11 +7945,6 @@ final class _contacts_person_usage_property_ids extends ffi.Struct {
   external int message_alert;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_number _contacts_contact_number view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contacts number view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the number belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of contact that the number belongs to</td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name, refer to the `contacts_display_name_source_type_e` (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the number belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the number belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path that the number belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path that the number belongs to (projection) </td></tr> <tr><td>integer</td><td> number_id </td><td> DB record ID of the number </td></tr> <tr><td>integer</td><td> type </td><td> Number type, refer to the `contacts_number_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom number type label, when the number type is `CONTACTS_NUMBER_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_default </td><td> The number is default number or not </td></tr> <tr><td>string</td><td> number </td><td> Number </td></tr> <tr><td>string</td><td> number_filter </td><td> If you add filter with this property, the string will be normalized as minmatch length internally and the match rule will be applied CONTACTS_MATCH_EXACTLY </td></tr> <tr><td>string</td><td> normalized_number </td><td>You can only use this property for search filter </td></tr> <tr><td>string</td><td> cleaned_number </td><td>You can only use this property for search filter </td></tr> </table>
 /// @nodoc
 final class _contacts_contact_number_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8440,11 +7995,6 @@ final class _contacts_contact_number_property_ids extends ffi.Struct {
   external int cleaned_number;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_email _contacts_contact_email view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contacts email view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the email belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name that the email belongs to </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name that the email belongs to (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the email belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the email belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path that the email belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path that the email belongs to (projection) </td></tr> <tr><td>integer</td><td> email_id </td><td> DB record ID of the email </td></tr> <tr><td>integer</td><td> type </td><td> Email type, refer to the `contacts_email_type_e` (projection) </td></tr> <tr><td>string</td><td> label </td><td> Custom mail type label, when the email type is `CONTACTS_EMAIL_TYPE_CUSTOM` (projection) </td></tr> <tr><td>boolean</td><td> is_default </td><td> Email is default email or not </td></tr> <tr><td>string</td><td> email </td><td> Email address </td></tr> </table>
 /// @nodoc
 final class _contacts_contact_email_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8486,11 +8036,6 @@ final class _contacts_contact_email_property_ids extends ffi.Struct {
   external int email;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_grouprel _contacts_contact_grouprel view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact grouprel view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the contact group relation belongs to </td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the group relation </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name (projection) </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook ID that the group relation belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the group relation belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the group relation (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the group relation (projection) </td></tr> <tr><td>integer</td><td> group_id </td><td> DB record ID of the group relation </td></tr> <tr><td>string</td><td> group_name </td><td> Group name (projection) </td></tr> </table>
 /// @nodoc
 final class _contacts_contact_grouprel_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8523,11 +8068,6 @@ final class _contacts_contact_grouprel_property_ids extends ffi.Struct {
   external int group_name;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact_activity _contacts_contact_activity view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this contact activity view </td></tr> <tr><td>integer</td><td>contact_id</td><td> Contact ID that the activity belongs to</td></tr> <tr><td>string</td><td>display_name</td><td> Display name of the contact that the activity belongs to </td></tr> <tr><td>integer</td><td>display_source_type</td><td> The source type of display name that the activity belongs to </td></tr> <tr><td>integer</td><td>address_book_id</td><td> Addressbook that the activity belongs to </td></tr> <tr><td>integer</td><td>person_id</td><td> Person ID that the activity belongs to </td></tr> <tr><td>string</td><td>ringtone_path</td><td> Ringtone path of the contact that the activity belongs to (projection) </td></tr> <tr><td>string</td><td>image_thumbnail_path</td><td> Image thumbnail path of the contact that the activity belongs to (projection) </td></tr> <tr><td>integer</td><td> activity_id </td><td> DB record ID of the activity </td></tr> <tr><td>string</td><td> source_name </td><td> Account name that the activity belongs to </td></tr> <tr><td>string</td><td> status </td><td> Activity status (projection) </td></tr> <tr><td>integer</td><td> timestamp </td><td> Published time of activity </td></tr> <tr><td>string</td><td> service_operation </td><td> Data for service_set_operation </td></tr> <tr><td>string</td><td> uri </td><td> Data for service_set_uri </td></tr> </table>
 /// @nodoc
 final class _contacts_contact_activity_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8575,11 +8115,6 @@ final class _contacts_contact_activity_property_ids extends ffi.Struct {
   external int uri;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_phone_log_stat _contacts_phone_log_stat view (read only) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td> Identifier of this log stat view </td></tr> <tr><td>integer</td><td> log_count </td><td>Log count (projection) </td></tr> <tr><td>integer</td><td> log_type </td><td> Log type, see the `contacts_phone_log_type_e` </td></tr> <tr><td>integer</td><td> sim_slot_no </td><td>It is related to the SIM slot number. sim_slot_no 0 means first SIM card, sim_slot_no 1 means second SIM. It is same with handle index of telephony handle list. Refer to the telephony_init() (Since 3.0)</td></tr> </table>
 /// @nodoc
 final class _contacts_phone_log_stat_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8594,11 +8129,6 @@ final class _contacts_phone_log_stat_property_ids extends ffi.Struct {
   external int sim_slot_no;
 }
 
-/// **Group:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE View/Property
-///
-/// **Section:**
-/// - CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_sip _contacts_sip view (Since 3.0) <table> <tr> <th>Type</th> <th>Property ID</th> <th>Read, Write</th> <th>Description</th> </tr> <tr><td>string</td><td>_uri</td><td>read only</td><td> Identifier of this contacts sip view </td></tr> <tr><td>integer</td><td> id </td><td>read only</td><td> DB record ID of the sip </td></tr> <tr><td>integer</td><td> contact_id </td><td>read, write once</td><td> Contact ID that the sip belongs to </td></tr> <tr><td>string</td><td> address </td><td>read, write</td><td> SIP address </td></tr> <tr><td>integer</td><td> type </td><td>read, write</td><td> sip type, refer to the `contacts_sip_type_e` </td></tr> <tr><td>string</td><td> label </td><td>read, write</td><td> Custom sip type label, when the sip type is `CONTACTS_SIP_TYPE_CUSTOM` </td></tr> </table>
 /// @nodoc
 final class _contacts_sip_property_ids extends ffi.Struct {
   external ffi.Pointer<ffi.Char> _uri;
@@ -8619,17 +8149,31 @@ final class _contacts_sip_property_ids extends ffi.Struct {
   external int label;
 }
 
-/// Handle for contacts record.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef contacts_record_h = ffi.Pointer<__contacts_record_h>;
 
-/// Handle for contacts list.
+/// Called once for each account from the database.
 ///
 /// **Since Tizen:**
 /// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
 /// @nodoc
 typedef contacts_list_h = ffi.Pointer<__contacts_list_h>;
 
@@ -8699,17 +8243,8 @@ abstract class contacts_filter_operator_e {
   static const int CONTACTS_FILTER_OPERATOR_OR = 1;
 }
 
-/// Handle for contacts filter.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef contacts_filter_h = ffi.Pointer<__contacts_filter_h>;
-
-/// Handle for contacts query.
-///
-/// **Since Tizen:**
-/// - 2.3
 /// @nodoc
 typedef contacts_query_h = ffi.Pointer<__contacts_query_h>;
 
@@ -8870,11 +8405,11 @@ abstract class contacts_person_property_e {
 typedef contacts_sim_import_progress_cb
     = ffi.Pointer<ffi.NativeFunction<contacts_sim_import_progress_cbFunction>>;
 /// @nodoc
-typedef contacts_sim_import_progress_cbFunction = ffi.Bool Function(
-    ffi.Int total, ffi.Int imported_cnt, ffi.Pointer<ffi.Void> user_data);
+typedef contacts_sim_import_progress_cbFunction = ffi.Int Function(
+    ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartcontacts_sim_import_progress_cbFunction = bool Function(
-    int total, int imported_cnt, ffi.Pointer<ffi.Void> user_data);
+typedef Dartcontacts_sim_import_progress_cbFunction = int Function(
+    int, int, ffi.Pointer<ffi.Void>);
 
 /// Called to get a record handle of `CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact.`
 ///
@@ -8897,11 +8432,11 @@ typedef Dartcontacts_sim_import_progress_cbFunction = bool Function(
 typedef contacts_vcard_parse_cb
     = ffi.Pointer<ffi.NativeFunction<contacts_vcard_parse_cbFunction>>;
 /// @nodoc
-typedef contacts_vcard_parse_cbFunction = ffi.Bool Function(
-    contacts_record_h record, ffi.Pointer<ffi.Void> user_data);
+typedef contacts_vcard_parse_cbFunction = ffi.Int Function(
+    contacts_record_h, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartcontacts_vcard_parse_cbFunction = bool Function(
-    contacts_record_h record, ffi.Pointer<ffi.Void> user_data);
+typedef Dartcontacts_vcard_parse_cbFunction = int Function(
+    contacts_record_h, ffi.Pointer<ffi.Void>);
 
 /// Enumeration for contact DB status.
 ///

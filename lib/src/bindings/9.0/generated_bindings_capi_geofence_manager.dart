@@ -48,7 +48,7 @@ class Tizen90CapiGeofenceManager {
   /// **See also:**
   /// - `geofence_manager_create()`
   int geofence_manager_is_supported(
-    ffi.Pointer<ffi.Bool> supported,
+    ffi.Pointer<bool> supported,
   ) {
     return _geofence_manager_is_supported(
       supported,
@@ -56,10 +56,10 @@ class Tizen90CapiGeofenceManager {
   }
 
   late final _geofence_manager_is_supportedPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Bool>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<bool>)>>(
           'geofence_manager_is_supported');
   late final _geofence_manager_is_supported = _geofence_manager_is_supportedPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Bool>)>();
+      .asFunction<int Function(ffi.Pointer<bool>)>();
 
   /// **Deprecated:** Deprecated since 8.0.
   ///
@@ -1893,6 +1893,29 @@ final class geofence_s extends ffi.Opaque {}
 /// @nodoc
 final class geofence_status_s extends ffi.Opaque {}
 
+/// Called once for each account from the database.
+///
+/// **Since Tizen:**
+/// - 2.3
+///
+/// **Parameters:**
+/// - `account` (in): The account handle
+/// - `user_data` (in): The user data passed from the foreach function
+///
+/// **Returns:**
+/// - `true` to continue with the next iteration of the loop, otherwise `false` to break out of the loop
+///
+/// **Preconditions:**
+/// - account_foreach_account_from_db(), account_query_account_by_account_id(), account_query_account_by_user_name() or account_query_account_by_package_name() must be called.
+///
+/// **See also:**
+/// - `account_foreach_account_from_db()`
+/// - `account_query_account_by_account_id()`
+/// - `account_query_account_by_user_name()`
+/// - `account_query_account_by_package_name()`
+/// @nodoc
+typedef bool = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>;
+
 /// **Deprecated:** Deprecated since 8.0.
 ///
 /// The geofence manager handle.
@@ -2042,19 +2065,11 @@ typedef Dartgeofence_proximity_state_changed_cbFunction = void Function(
 typedef geofence_manager_fence_cb
     = ffi.Pointer<ffi.NativeFunction<geofence_manager_fence_cbFunction>>;
 /// @nodoc
-typedef geofence_manager_fence_cbFunction = ffi.Bool Function(
-    ffi.Int geofence_id,
-    geofence_h fence,
-    ffi.Int fence_index,
-    ffi.Int fence_cnt,
-    ffi.Pointer<ffi.Void> user_data);
+typedef geofence_manager_fence_cbFunction = ffi.Int Function(
+    ffi.Int, geofence_h, ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartgeofence_manager_fence_cbFunction = bool Function(
-    int geofence_id,
-    geofence_h fence,
-    int fence_index,
-    int fence_cnt,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartgeofence_manager_fence_cbFunction = int Function(
+    int, geofence_h, int, int, ffi.Pointer<ffi.Void>);
 
 /// **Deprecated:** Deprecated since 8.0.
 ///
@@ -2083,19 +2098,11 @@ typedef Dartgeofence_manager_fence_cbFunction = bool Function(
 typedef geofence_manager_place_cb
     = ffi.Pointer<ffi.NativeFunction<geofence_manager_place_cbFunction>>;
 /// @nodoc
-typedef geofence_manager_place_cbFunction = ffi.Bool Function(
-    ffi.Int place_id,
-    ffi.Pointer<ffi.Char> place_name,
-    ffi.Int place_index,
-    ffi.Int place_cnt,
-    ffi.Pointer<ffi.Void> user_data);
+typedef geofence_manager_place_cbFunction = ffi.Int Function(
+    ffi.Int, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int, ffi.Pointer<ffi.Void>);
 /// @nodoc
-typedef Dartgeofence_manager_place_cbFunction = bool Function(
-    int place_id,
-    ffi.Pointer<ffi.Char> place_name,
-    int place_index,
-    int place_cnt,
-    ffi.Pointer<ffi.Void> user_data);
+typedef Dartgeofence_manager_place_cbFunction = int Function(
+    int, ffi.Pointer<ffi.Char>, int, int, ffi.Pointer<ffi.Void>);
 
 /// **Deprecated:** Deprecated since 8.0.
 ///
