@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   tizen_interop:
     path: ../
+  tizen_interop_callbacks:
+    path: ../packages/tizen_interop_callbacks
 
 dev_dependencies:
   flutter_test:
